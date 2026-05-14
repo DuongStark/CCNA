@@ -19,7 +19,14 @@
       ],
       "answer_images": [],
       "explanation": "From the line “Trunking VLANs Enabled: 1,22” of the output of the above command, we learn that currently only VLAN 1 and 22 is being allowed to communicate. The best command to add vlan 23 to the allowed list is using command “switchport trunk allowed vlan add 23”.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSW1#\nName: Et0/0\nSwitchport: Enabled\nAdministrative Node: trunk\nOperational Mode: trunk\nAdministrative Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nNegotiation of Trunking: On\nAccess Mode VLAN: 1 (default)\nTrunking Native Mode VLAN: 1 (default)\nAdministrative Native VLAN tagging: enabled\nVoice VLAN: none\nAdministrative private-vlan host-association: none\nAdministrative private-vlan mapping: none\nAdministrative private-vlan trunk native VLAN: none\nAdministrative private-vlan trunk Native VLAN tagging: enabled\nAdministrative private-vlan trunk encapsulation: dot1q\nAdministrative private-vlan trunk normal VLANs: none\nAdministrative private—vlan trunk associations: none\nAdministrative private-vlan trunk mappings: none\nOperational private-vlan: none\nTrunking VLANs Enabled: 1,22\nPruning VLANs Enabled: 2-1001\nCapture Mode Disabled\nCapture VLANs Allowed: ALL\nVLAN 23 đang được triển khai giữa SW1 và SW2. Lệnh show interface ethernet0/0 switchport đã được thực thi trên SW1. Ethernet0/0 trên SW1 là đường uplink đến SW2. Lệnh nào khi được nhập trên giao diện uplink cho phép PC 1 và PC 2 giao tiếp mà không ảnh hưởng đến việc giao tiếp giữa PC 11 và PC 12?",
+      "options_vi": {
+        "A": "switchport trunk allowed vlan 2-1001",
+        "B": "switchport trunk allowed vlan add 23",
+        "C": "switchport trunk allowed vlan 23",
+        "D": "switchport trunk allowed vlan 22-23"
+      }
     },
     {
       "id": "16.2",
@@ -37,7 +44,14 @@
       ],
       "answer_images": [],
       "explanation": "A secure link in which data is encrypted using CAPWAP DTLS protocol (-> Answer C is not correct) can be established between two controllers. This secured link is called Encrypted Mobility Tunnel.\nIf encrypted mobility tunnel is in enabled state, the data traffic is encrypted and the controller uses UDP port 16667 (-> Answer B is not correct), instead of EoIP (-> Answer A is not correct), to send the data traffic.\nIn Release 8.5.164.0, when encryption is enabled on a controller, by default both control and data traffic is encrypted (-> Answer D is correct). However, based on your network requirements you can disable or enable data traffic encryption on the controller.\nReference:",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Điều kiện mặc định nào phải được xem xét khi một đường hầm di động được mã hóa (encrypted mobility tunnel) được sử dụng giữa hai Cisco WLC?",
+      "options_vi": {
+        "A": "Đường hầm sử dụng giao thức EoIP để truyền lưu lượng dữ liệu.",
+        "B": "TCP port 443 và UDP 21 được sử dụng.",
+        "C": "Đường hầm sử dụng giao thức IPsec để đóng gói.",
+        "D": "Mã hóa lưu lượng điều khiển và dữ liệu được bật."
+      }
     },
     {
       "id": "16.3",
@@ -55,7 +69,14 @@
       ],
       "answer_images": [],
       "explanation": "API keys allow the server to distinguish between different clients. By uniquely identifying each client, the system can monitor how many requests each one makes and enforce rate limiting (e.g., 100 requests per minute).",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tại sao API key được sử dụng để thực thi giới hạn tốc độ (rate limiting)?",
+      "options_vi": {
+        "A": "để xác định duy nhất các máy khách nhằm giám sát các mẫu sử dụng của họ",
+        "B": "để mã hóa dữ liệu nhằm ngăn chặn việc sử dụng quá mức",
+        "C": "để chứa các quyền được nhúng tự động hết hạn",
+        "D": "để theo dõi vị trí địa lý của mỗi yêu cầu"
+      }
     },
     {
       "id": "16.4",
@@ -75,7 +96,15 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Hai hành vi nào của mô hình WAN điểm-tới-điểm (point-to-point)? (Chọn hai)",
+      "options_vi": {
+        "A": "Nó sử dụng một router duy nhất để định tuyến lưu lượng giữa các site.",
+        "B": "Nó tận dụng một kết nối chuyên dụng (dedicated connection).",
+        "C": "Nó kết nối các mạng từ xa thông qua một đường dây duy nhất.",
+        "D": "Nó cung cấp dự phòng giữa văn phòng trung tâm và các văn phòng chi nhánh.",
+        "E": "Nó cung cấp kết nối trực tiếp giữa mỗi router trong mô hình."
+      }
     },
     {
       "id": "16.5",
@@ -93,7 +122,14 @@
       ],
       "answer_images": [],
       "explanation": "The maximum amount of retransmissions for the same frame in the collision mechanism is 16. If it fails 16 consecutive times, it is counted as an excessive collision.\nReference:",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nAMDP2_FE-5-COLL: AMDP2/FE 0/0/ [DEC] , Excessive collisions, TDR=[DEC] , TRC=[DEC]\n%DEC21140-5-COLL: [chars] excessive collisions\n%ILACC-5-COLL: Unit [DEC], excessive collisions. TDR=[DEC]\n%LANCE—5-COLL: Unit [DEC], excessive collisions. TDR=[DEC]\n%PQUICC-5-COLL: Unit [DEC], excessive collisions. Retry limit [DEC] exceeded\n%PQUICC_ETHER-5-COLL: Unit [DEC], excessive collisions. Retry limit [DEC] exceeded\nĐiều gì đang xảy ra trên switch này?",
+      "options_vi": {
+        "A": "Một số lượng lớn các khung nhỏ hơn 64 byte được nhận.",
+        "B": "Các khung bị loại bỏ sau 16 lần truyền thất bại.",
+        "C": "Bộ đệm truyền nội bộ bị quá tải.",
+        "D": "Một số lượng quá mức các khung lớn hơn 1518 byte được nhận."
+      }
     },
     {
       "id": "16.6",
@@ -111,7 +147,14 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Công nghệ nào cho phép nhiều hệ điều hành chạy trên một máy chủ vật lý duy nhất?",
+      "options_vi": {
+        "A": "điện toán đám mây (cloud computing)",
+        "B": "ảo hóa (virtualization)",
+        "C": "lưu trữ ứng dụng (application hosting)",
+        "D": "container"
+      }
     },
     {
       "id": "16.7",
@@ -129,7 +172,14 @@
       ],
       "answer_images": [],
       "explanation": "Multifactor authentication (MFA) enhances security by requiring an additional authentication factor, such as:\n+ Something you know (password or PIN…).+ Something you have (a hardware token or mobile app…).+ Something you are (biometric authentication like a fingerprint…).",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Yếu tố bảo mật nào sử dụng kết hợp mật khẩu dùng một lần (one-time passwords), tên đăng nhập và điện thoại thông minh cá nhân?",
+      "options_vi": {
+        "A": "phân đoạn được xác định bằng phần mềm (software-defined segmentation)",
+        "B": "xác thực đa yếu tố (multifactor authentication)",
+        "C": "kiểm soát truy cập dựa trên thuộc tính (attribute-based access control)",
+        "D": "kiểm soát truy cập dựa trên quy tắc (rule-based access control)"
+      }
     },
     {
       "id": "16.8",
@@ -149,7 +199,14 @@
       ],
       "answer_images": [],
       "explanation": "SFTP uses port number 22 by default so we need to change “Transfer Mode” to SFTP.\nFrom the reference below: Step 5. In the IP Address field, enter the IP address of the server. -> Answer C is correct.\nReference:",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nNhững tác vụ nào phải được thực hiện trên tab Download File để cài đặt phần mềm mới sử dụng TCP port 22?",
+      "options_vi": {
+        "A": "Đặt File Type thành Code, đặt Transfer Mode thành SFTP, và chỉ định địa chỉ IP của WLC.",
+        "B": "Đặt File Type thành Configuration, đặt Transfer Mode thành FTP, và chỉ định địa chỉ IP của file server.",
+        "C": "Đặt File Type thành Code, đặt Transfer Mode thành SFTP, và chỉ định địa chỉ IP của file server.",
+        "D": "Đặt File Type thành Configuration, đặt Transfer Mode thành SFTP, và chỉ định địa chỉ IP của WLC."
+      }
     },
     {
       "id": "16.9",
@@ -167,7 +224,14 @@
       ],
       "answer_images": [],
       "explanation": "Predictive AI aims to forecast future events or trends. It does this by analyzing historical data and identifying patterns -> Answer A is the best choice.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Các mô hình AI dự đoán (predictive AI) đóng vai trò gì trong cân bằng tải mạng (network load balancing)?",
+      "options_vi": {
+        "A": "Chúng dự đoán các đợt tăng đột biến lưu lượng trong tương lai.",
+        "B": "Chúng gán địa chỉ IP cho các thiết bị.",
+        "C": "Chúng chọn loại cáp chính xác để triển khai.",
+        "D": "Chúng chỉ giám sát khối lượng lưu lượng lịch sử."
+      }
     },
     {
       "id": "16.10",
@@ -185,7 +249,14 @@
       ],
       "answer_images": [],
       "explanation": "Bridge mode: bridge together the WLAN and the wired infrastructure together -> Answer C is not correct.\nIn Bridge Mode, Access Points are used to connect two networks. There are two sub modes coming with Bridge mode:+ Point-to-Point: connect the LAN of a router to a remote access-point.+ Point-to-Multipoint: connect two LANs with one wireless link\nTherefore maybe this question implies about the Point-to-multipoint Bridge mode. But this option is not available so the best choice should be “bridge” mode.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Chế độ AP nào kết nối không dây hai phân đoạn mạng riêng biệt, mỗi phân đoạn được thiết lập trong một tòa nhà khuôn viên khác nhau?",
+      "options_vi": {
+        "A": "mesh",
+        "B": "local",
+        "C": "bridge",
+        "D": "point-to-point"
+      }
     },
     {
       "id": "16.11",
@@ -203,7 +274,14 @@
       ],
       "answer_images": [],
       "explanation": "Virtual Routing and Forwarding (VRF) is a technology that logically partitions a single physical router into multiple virtual Layer 3 routers, each with its own independent routing table and forwarding instance.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Công nghệ nào cho phép phân tách logic Layer 3 trên thiết bị mạng vật lý?",
+      "options_vi": {
+        "A": "Virtual Switch System",
+        "B": "Virtual Route Forwarding",
+        "C": "IPsec Transport Mode",
+        "D": "Time Division Multiplexer"
+      }
     },
     {
       "id": "16.12",
@@ -221,7 +299,14 @@
       ],
       "answer_images": [],
       "explanation": "The Syslog levels are:\nLevel\nKeyword\nDescription\n0\nemergencies\nSystem is unusable\n1\nalerts\nImmediate action is needed\n2\ncritical\nCritical conditions exist\n3\nerrors\nError conditions exist\n4\nwarnings\nWarning conditions exist\n5\nnotification\nNormal, but significant, conditions exist\n6\ninformational\nInformational messages\n7\ndebugging\nDebugging messages\nNote: You can remember the order above with the sentence: “Eventually All Critical Errors Will Not Involve Damage”.\nIf you specify a level, that level and all the higher levels will be displayed. To change the minimum severity level that is sent to syslog, use the logging trap level configuration command.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Hành động nào ngăn các thông báo debug được gửi qua syslog trong khi vẫn cho phép các thông báo khác khi một số lượng lớn bất thường các thông báo syslog được tạo bởi thiết bị có tiến trình debug được bật?",
+      "options_vi": {
+        "A": "Sử dụng access list để lọc các thông báo syslog.",
+        "B": "Tắt logging monitor trong chế độ cấu hình toàn cục (global configuration mode).",
+        "C": "Vô hiệu hóa logging ra console.",
+        "D": "Đặt mức nghiêm trọng logging trap thành informational."
+      }
     },
     {
       "id": "16.13",
@@ -239,7 +324,14 @@
       ],
       "answer_images": [],
       "explanation": "The virtual interface is used to manage and support wireless clients by providing DHCP relay functionality, guest web authentication, VPN termination and other services.\nReference:",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Giao diện nào trên WLC được sử dụng riêng biệt như một DHCP relay?",
+      "options_vi": {
+        "A": "distribution",
+        "B": "service",
+        "C": "AP-manager",
+        "D": "virtual"
+      }
     },
     {
       "id": "16.14",
@@ -257,7 +349,14 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "AI được sử dụng như thế nào để xác định các vấn đề trong lưu lượng mạng?",
+      "options_vi": {
+        "A": "Nó chỉ dự đoán các sự cố thiết bị.",
+        "B": "Nó tăng cường tốc độ phân phối gói dữ liệu.",
+        "C": "Nó đơn giản hóa việc lập bản đồ tuyến đường lưu lượng.",
+        "D": "Nó phân tích các mẫu để phát hiện bất thường (anomaly detection)."
+      }
     },
     {
       "id": "16.15",
@@ -275,7 +374,14 @@
       ],
       "answer_images": [],
       "explanation": "Remote access IPsec VPNs are used to provide secure, encrypted connections for individual users to a corporate network over the internet. They enable remote employees to access internal resources, such as servers, databases, and applications, from any location, extending the reach of the private network. This is achieved by establishing a secure IPsec tunnel, which uses encryption to protect data and authentication to verify the identity of users and devices.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tại sao quản trị viên chọn triển khai VPN IPsec truy cập từ xa (remote access)?",
+      "options_vi": {
+        "A": "để thiết lập một đường hầm được mã hóa giữa người dùng từ xa và mạng riêng qua internet",
+        "B": "để cho phép truy cập mạng doanh nghiệp sử dụng bất kỳ vị trí nào có kết nối internet thông qua trình duyệt web sử dụng SSL",
+        "C": "để cung cấp một liên kết an toàn giữa máy chủ HTTPS, hệ thống xác thực phụ và người dùng cuối",
+        "D": "để sử dụng mật mã học (cryptography) cho xác thực giữa thiết bị và người dùng qua một VPN gateway được thương lượng"
+      }
     },
     {
       "id": "16.16",
@@ -293,7 +399,14 @@
       ],
       "answer_images": [],
       "explanation": "A lightweight access point (LAP) does not hold its own full management interface. Instead, it is managed centrally by the WLC. When an administrator wants to perform web-based management of a LAP, the connection must be made to the WLC’s IP address, not the AP itself.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Địa chỉ IP nào được sử dụng khi quản trị viên phải mở phiên quản lý dựa trên web với một lightweight AP?",
+      "options_vi": {
+        "A": "WLC IP",
+        "B": "gateway IP",
+        "C": "autonomous AP IP",
+        "D": "ACS IP"
+      }
     },
     {
       "id": "16.17",
@@ -315,7 +428,15 @@
       "explanation": "+ Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed (crossed the maximum configured rate), the excess traffic is generally dropped or remarked. The result of traffic policing is an output rate that appears as a saw-tooth with crests and troughs. Traffic policing can be applied to inbound and outbound interfaces. Unlike traffic shaping, QoS policing avoids delays due to queuing. Policing is configured in bytes.\n+ Shaping: retains excess packets in a queue and then schedules the excess for later transmission over increments of time. When traffic reaches the maximum configured rate, additional packets are queued instead of being dropped to proceed later. Traffic shaping is applicable only on outbound interfaces as buffering and queuing happens only on outbound interfaces. Shaping is configured in bits per second.",
       "explanation_images": [
         "q16.17_img1.jpg"
-      ]
+      ],
+      "question_vi": "Hai nguyên tắc nào phải được xem xét khi sử dụng hành vi theo từng chặng (per-hop behavior) trong QoS? (Chọn hai)",
+      "options_vi": {
+        "A": "Policing không được hỗ trợ trên các subinterface.",
+        "B": "Shaping và rate limiting có cùng hiệu quả.",
+        "C": "Shaping loại bỏ lưu lượng vượt mức mà không thêm độ trễ lưu lượng.",
+        "D": "Shaping làm phẳng các đợt bùng phát lưu lượng bằng cách trì hoãn lưu lượng vượt mức.",
+        "E": "Policing được thực hiện theo cả hướng vào (inbound) và hướng ra (outbound)."
+      }
     },
     {
       "id": "16.18",
@@ -333,7 +454,14 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Điều gì phân biệt giao thức TCP và UDP?",
+      "options_vi": {
+        "A": "TCP theo dõi các phân đoạn đang được truyền hoặc nhận bằng cách gán số phân đoạn, và UDP điều chỉnh luồng dữ liệu theo điều kiện mạng.",
+        "B": "TCP thiết lập kết nối với thiết bị ở đầu kia trước khi truyền, và UDP truyền mà không thiết lập kết nối.",
+        "C": "TCP gửi dữ liệu ở tốc độ không đổi với kiểm tra lỗi trên các lớp giao thức phía trên, và UDP cung cấp kiểm tra lỗi và sắp xếp thứ tự.",
+        "D": "TCP truyền dữ liệu ngay lập tức mà không chờ bắt tay (handshake), và UDP chờ phản hồi từ bên nhận trước khi gửi dữ liệu bổ sung."
+      }
     },
     {
       "id": "16.19",
@@ -351,7 +479,14 @@
       ],
       "answer_images": [],
       "explanation": "An SSID (Service Set Identifier) is the name of a wireless network that allows wireless clients to identify and connect to a specific WLAN. It’s broadcast by the access point so devices can see available networks. For example, when you open your phone’s Wi-Fi list and see names like “Home_WiFi” or “CoffeeShop_Free_WiFi”;  those are SSIDs.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Đặc điểm của SSID trong mạng không dây là gì?",
+      "options_vi": {
+        "A": "cung cấp bảo vệ chống phần mềm gián điệp (spyware)",
+        "B": "được sử dụng để xác định Wireless LAN Controller",
+        "C": "cho phép các máy khách không dây kết nối đến một mạng cụ thể",
+        "D": "mật khẩu được sử dụng để kết nối đến access point"
+      }
     },
     {
       "id": "16.20",
@@ -369,7 +504,14 @@
       ],
       "answer_images": [],
       "explanation": "Generative AI for Network Configuration GenerationIt’s not just monitoring, we need to deploy our changes as we need them and Generative AI models can be used to automatically generate network configurations based on specified requirements or our templates.\nReference:",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "AI tạo sinh (generative AI) hỗ trợ mô phỏng mạng theo cách nào?",
+      "options_vi": {
+        "A": "Nó tính toán các giải pháp lưu trữ dữ liệu tối ưu.",
+        "B": "Nó tạo ra các cấu hình mạng tổng hợp (synthetic).",
+        "C": "Nó triển khai các bản cập nhật firmware mạng.",
+        "D": "Nó tạo ra một thiết kế mạng greenfield."
+      }
     },
     {
       "id": "16.23",
@@ -387,7 +529,14 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Chức năng của HSRP là gì?",
+      "options_vi": {
+        "A": "Cung cấp khả năng dự phòng router và hội tụ lại tuyến đường khi một router bị lỗi.",
+        "B": "Sử dụng gratuitous ARP để cập nhật bộ nhớ đệm ARP (ARP cache) của client khi router active chuyển đổi.",
+        "C": "Yêu cầu các tuyến đường active và standby để cung cấp chuyển đổi dự phòng (failover) trong trường hợp router bị lỗi.",
+        "D": "Sử dụng địa chỉ MAC ảo (virtual MAC addressing) để cung cấp khả năng dự phòng gateway trên mạng LAN."
+      }
     },
     {
       "id": "16.25",
@@ -405,7 +554,14 @@
       ],
       "answer_images": [],
       "explanation": "The destination address of 10.10.10.14 matches entry “C 10.10.10.8/29 is directly connected, FastEthernet 0/1” so Fa0/1 is the exit-interface.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR3#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP, D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area,\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2,\nE1 - OSPF external type 1, E2 - OSPF external type 2, i - IS-IS,\nsu - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS\ninter area, * - candidate default, I - per-user static route, o - ODR,\nP - periodic download static route, H - NHRP, I - LISP,\na - application route, + - replicated route, % - next hop override,\np - overrides from PfR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC 10.10.10.16/28 is directly connected, FastEthernet 0/0\nL 10.10.10.17/32 is directly connected, FastEthernet 0/0\nC 10.10.10.8/29 is directly connected, FastEthernet 0/1\nL 10.10.10.9/32 is directly connected, FastEthernet 0/1\nC 10.10.10.4/30 is directly connected, FastEthernet 0/2\nL 10.10.10.5/32 is directly connected, FastEthernet 0/2\nC 10.10.10.0/30 is directly connected, Serial 0/0\nL 10.10.10.1/32 is directly connected, Serial 0/0\nGiao diện nào mà gói tin sử dụng để đến địa chỉ đích 10.10.10.14?",
+      "options_vi": {
+        "A": "Serial 0/0",
+        "B": "FastEthernet 0/1",
+        "C": "FastEthernet 0/0",
+        "D": "FastEthernet 0/2"
+      }
     },
     {
       "id": "16.26",
@@ -425,7 +581,14 @@
       ],
       "answer_images": [],
       "explanation": "Cisco WLC’s Web Passthrough Layer 3 Web Policy is a guest access feature that redirects users to a policy page upon first connection, without requiring them to login with credentials. Once the user accepts the policy, the WLC grants them full internet access.\nReference:",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng đang cấu hình mạng LAN không dây với Web Passthrough Layer 3 Web Policy. Kỹ sư phải thực hiện hành động nào để hoàn tất cấu hình?",
+      "options_vi": {
+        "A": "Bật WPA Policy.",
+        "B": "Đặt Layer 2 Security thành 802.1X.",
+        "C": "Bật TKIP và CCMP256 WPA2 Encryption.",
+        "D": "Đặt Layer 2 Security thành None."
+      }
     },
     {
       "id": "16.28",
@@ -443,7 +606,14 @@
       ],
       "answer_images": [],
       "explanation": "Etherchannel can connect a switch to a host, as long as the host supports NIC teaming or link aggregation (LACP/static).",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Đặc điểm của switch Layer 2 là gì?",
+      "options_vi": {
+        "A": "Chuyển tiếp tất cả các frame nhận được đến mọi thiết bị được kết nối",
+        "B": "Duy trì thông tin giao dịch có trạng thái (stateful)",
+        "C": "Cung cấp khả năng gộp liên kết (link bundling) đến các máy chủ",
+        "D": "Truyền dữ liệu chỉ ở chế độ half duplex"
+      }
     },
     {
       "id": "16.29",
@@ -461,7 +631,14 @@
       ],
       "answer_images": [],
       "explanation": "Line 2 {\"switch\": \"SW_admin\", \"interface\":\"ge7/41\"} represents a JSON object, because it is enclosed in curly braces {} and contains key-value pairs.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Dòng 2 trong JSON schema này đại diện cho điều gì?\n1 [\n2 {\"switch\": \"SW_admin\", \"interface\":\"ge7/41\"},\n3 {\"VPN concentrator\": \"VPN_finance\", \"interface\":\"fe9/5\"},\n4 {\"IDS\": \"IPS_admin\", \"interface\":\"te2/10\"},\n5 ]",
+      "options_vi": {
+        "A": "array",
+        "B": "value",
+        "C": "key",
+        "D": "object"
+      }
     },
     {
       "id": "16.31",
@@ -479,7 +656,14 @@
       ],
       "answer_images": [],
       "explanation": "Private IPv4 addressing refers to IP addresses that are not routable on the public internet. These addresses are intended for use within internal networks; for example, in homes, offices, or enterprise LANs…\nThe Internet Assigned Numbers Authority (IANA) reserved specific ranges for private use:\n+ 10.0.0.0 – 10.255.255.255 (10.0.0.0/8)+ 172.16.0.0 – 172.31.255.255 (172.16.0.0/12)+ 192.168.0.0 – 192.168.255.255 (192.168.0.0/16)\nBecause these addresses are isolated from the internet, they cannot be reached directly from public networks. To communicate externally, devices using private IPs typically rely on Network Address Translation (NAT), which converts private addresses to a public one for internet access.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Đặc điểm của địa chỉ IPv4 riêng (private IPv4 addressing) là gì?",
+      "options_vi": {
+        "A": "Giảm bảng chuyển tiếp (forwarding table) trên các router mạng",
+        "B": "Đi qua internet khi một ACL outbound được áp dụng",
+        "C": "Không gian địa chỉ được cách ly khỏi internet",
+        "D": "Loại bỏ nhu cầu định tuyến giữa các thiết bị"
+      }
     },
     {
       "id": "16.32",
@@ -499,7 +683,15 @@
       ],
       "answer_images": [],
       "explanation": "In RESTful APIs, both POST and PUT can be used to create resources, depending on the situation:\n– POST: Create a new resource under a collection– Create or replace a specific resource at a known URI (client provides the ID). For example: PUT /users/123 creates user 123 if it doesn’t exist",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Hai phương thức HTTP (HTTP verbs) nào mà lệnh gọi API dựa trên REST sử dụng để tạo tài nguyên? (Chọn hai)",
+      "options_vi": {
+        "A": "GET",
+        "B": "DELETE",
+        "C": "POST",
+        "D": "PUT",
+        "E": "PATCH"
+      }
     },
     {
       "id": "16.33",
@@ -517,7 +709,14 @@
       ],
       "answer_images": [],
       "explanation": "The learned route “10.255.2.2/32 [90/130816] via 10.0.24.2, 00:14:46, GigabitEthernet0/1” has Administrative Distance of 90, which means EIGRP (default value).",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR4#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 14 subnets, 2 masks\n10.0.12.0/24 [100/2] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\n10.0.13.0/24 [90/3072] via 10.0.34.3, 00:00:19, GigabitEthernet0/0\n10.0.24.0/24 is directly connected, GigabitEthernet0/1\n10.0.24.4/32 is directly connected, GigabitEthernet0/1\n10.0.34.0/24 is directly connected, GigabitEthernet0/0\n10.0.34.4/32 is directly connected, GigabitEthernet0/0\n10.0.45.0/24 is directly connected, GigabitEthernet0/2\n10.0.45.4/32 is directly connected, GigabitEthernet0/2\n10.2.0.0/24 [90/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\n10.255.1.1/32 [100/3] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\n[100/3] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\n10.255.2.2/32 [90/130816] via 10.0.24.2, 00:14:46, GigabitEthernet0/1\n10.255.3.3/32 [100/2] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\n10.255.4.4/32 is directly connected, Loopback0\n10.255.5.5/32 [90/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\nXem xét cấu hình giao thức định tuyến mặc định được sử dụng, giao thức định tuyến nào được dùng để học tuyến đường 10.255.2.2/32?",
+      "options_vi": {
+        "A": "EIGRP",
+        "B": "BGP",
+        "C": "RIP",
+        "D": "OSPF"
+      }
     },
     {
       "id": "16.34",
@@ -535,7 +734,14 @@
       ],
       "answer_images": [],
       "explanation": "600 servers -> 600 connections for production (we don’t care about backup and management connections as “each connection resides on a different subnet”)-> 600 IP addresses in the same subnet. Therefore we need at least 210 = 1024 hosts/subnet(>600) -> We need 10 bit 0 in the subnet mask -> 11111111.11111111.1111 1100.0000 0000 -> 255.255.252.0 -> Answer D is correct.\nNote: In fact, we need to subtract 2 from 210 for the host’s calculation but we ignored it because it does not affect the result.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Một ứng dụng trong mạng đang được mở rộng từ 300 máy chủ lên 600. Mỗi máy chủ yêu cầu 3 kết nối mạng để hỗ trợ lưu lượng production, backup và management. Mỗi kết nối nằm trên một subnet khác nhau. Cấu hình router cho mạng production phải được cấu hình trước tiên sử dụng một subnet trong mạng 10.0.0.0/8. Lệnh nào phải được cấu hình trên giao diện của router để đáp ứng các yêu cầu và hạn chế lãng phí không gian địa chỉ IP?",
+      "options_vi": {
+        "A": "ip address 10.10.10.1 255.255.255.240",
+        "B": "ip address 10.10.10.1 255.255.240.0",
+        "C": "ip address 10.10.10.1 255.255.254.0",
+        "D": "ip address 10.10.10.1 255.255.252.0"
+      }
     },
     {
       "id": "16.35",
@@ -553,7 +759,14 @@
       ],
       "answer_images": [],
       "explanation": "The WLC uses the management interface to communicate with the access points, and we can use the management interface to configure the WLC through SSH or the GUI.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Giao diện nào được quản trị viên sử dụng để truy cập GUI của WLC nhằm cập nhật cài đặt cấu hình?",
+      "options_vi": {
+        "A": "management",
+        "B": "service",
+        "C": "dynamic",
+        "D": "virtual"
+      }
     },
     {
       "id": "16.36",
@@ -571,7 +784,14 @@
       ],
       "answer_images": [],
       "explanation": "We only care about the destination MAC address “3C:5D:7E:9F:1A:2B” and see that it has not been installed into the MAC address table. Therefore the switch will floods the frame to all ports except the incoming port.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Một switch nhận được một frame với địa chỉ MAC đích 3C:5D:7E:9F:1A:2B.\nSwitch# show ethernet-frame-and-mac-address-table\nEthernet Frame:\n+----------------------------------------------------+\n| Destination MAC Address: 3C:5D:7E:9F:1A:2B |\n| Source MAC Address: D3:F4:47:57:67:46 |\n| EtherType/Length: 0x0800 (IPv4) |\n| Payload: [Data] |\n| Frame Check Sequence: [CRC] |\n+----------------------------------------------------+\nMAC Address Table:\nVLAN MAC Address Type Ports\n---- ----------------- -------- ----------\n12 D3:F4:47:57:67:46 Dynamic Gi1/0/1\n16 20:31:42:53:64:DE Static Gi1/0/2\n24 A0:B3:C4:D3:B4:48 Secure Gi1/0/3\n31 B5:16:32:12:6B:68 Dynamic Gi1/0/4\n44 8F:A0:B3:C4:34:50 Static Gi1/0/5\nSwitch xử lý frame này như thế nào?",
+      "options_vi": {
+        "A": "Nó flood frame đến tất cả các cổng ngoại trừ cổng nhận vào.",
+        "B": "Nó chuyển mạch frame đến một cổng được xác định trước dựa trên cài đặt.",
+        "C": "Nó giữ frame cho đến khi địa chỉ MAC được nhận biết.",
+        "D": "Nó loại bỏ frame để tránh tắc nghẽn mạng không cần thiết."
+      }
     },
     {
       "id": "16.37",
@@ -589,7 +809,14 @@
       ],
       "answer_images": [],
       "explanation": "A virtual machine is a software-based emulation of a physical computer. It runs an operating system (guest OS) and applications (services) on top of a hypervisor, which manages multiple VMs on a single physical host.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Phát biểu nào mô tả máy ảo (virtual machines)?",
+      "options_vi": {
+        "A": "Chúng bao gồm hệ điều hành khách (guest OS) và dịch vụ.",
+        "B": "Chúng hỗ trợ quản lý cục bộ các thiết bị hạ tầng.",
+        "C": "Chúng sử dụng một supervisor để cung cấp quản lý cho các dịch vụ.",
+        "D": "Chúng cho phép mạng trở nên linh hoạt và tập trung vào phần cứng."
+      }
     },
     {
       "id": "16.38",
@@ -607,7 +834,14 @@
       ],
       "answer_images": [],
       "explanation": "Multifactor authentication (MFA) enhances security by requiring an additional authentication factor, such as:\n+ Something you know (password or PIN…).+ Something you have (a hardware token or mobile app…).+ Something you are (biometric authentication like a fingerprint…).\nTherefore the correct answer must have at least two different factors mentioned above.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Sự kết hợp phương thức nào đáp ứng các yêu cầu bảo mật tối thiểu khi triển khai giải pháp xác thực đa yếu tố (multifactor authentication) mới?",
+      "options_vi": {
+        "A": "Mật khẩu từ 8 đến 15 ký tự và mã PIN cá nhân 12 chữ số",
+        "B": "USB dongle được ủy quyền và điện thoại di động",
+        "C": "Mật khẩu phức tạp và mật khẩu một lần dựa trên thời gian (time-based one-time password)",
+        "D": "Quét vân tay và nhận dạng khuôn mặt"
+      }
     },
     {
       "id": "16.39",
@@ -625,7 +859,14 @@
       ],
       "answer_images": [],
       "explanation": "The “metric” here is in fact the Administrative Distance (AD) of each dynamic routing protocol. RIP has an AD of 120, which is the least preferred metric of all above dynamic routing protocols.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR4#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 14 subnets, 2 masks\nO 10.0.12.0/24 [100/2] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\nD 10.0.13.0/24 [90/3072] via 10.0.34.3, 00:00:19, GigabitEthernet0/0\nC 10.0.24.0/24 is directly connected, GigabitEthernet0/1\nL 10.0.24.4/32 is directly connected, GigabitEthernet0/1\nC 10.0.34.0/24 is directly connected, GigabitEthernet0/0\nL 10.0.34.4/32 is directly connected, GigabitEthernet0/0\nC 10.0.45.0/24 is directly connected, GigabitEthernet0/2\nL 10.0.45.4/32 is directly connected, GigabitEthernet0/2\nR 10.2.0.0/24 [120/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\nO 10.255.1.1/32 [100/3] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\n[100/3] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\nD 10.255.2.2/32 [90/130816] via 10.0.24.2, 00:01:46, GigabitEthernet0/1\nO 10.255.3.3/32 [100/2] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\nC 10.255.4.4/32 is directly connected, Loopback0\nR 10.255.5.5/32 [120/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\nTrong các tuyến đường được học từ giao thức định tuyến động, tuyến nào có metric ít được ưu tiên nhất?",
+      "options_vi": {
+        "A": "Local",
+        "B": "EIGRP",
+        "C": "OSPF",
+        "D": "RIP"
+      }
     },
     {
       "id": "16.40",
@@ -643,7 +884,14 @@
       ],
       "answer_images": [],
       "explanation": "For this question, surely 192.168.18.16 belongs to 192.168.18.0/24 prefix so we only need to check if it also belongs to another better prefix 192.168.18.0/27 or 192.168.18.0/28:+ 192.168.18.0/28 – increment: 16 -> this prefix ranges from 192.168.18.0 to 192.168.18.15 so 192.168.18.16 does not belong to this prefix+ 192.168.18.0/27 – increment: 32 -> this prefix ranges from 192.168.18.0 to 192.168.18.31 so 192.168.18.16 belongs to this prefix -> The exit interface for this prefix is GigabitEthernet1/0.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP,\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area,\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2,\nE1 - OSPF external type 1, E2 - OSPF external type 2, i - IS-IS,\nsu - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2,\nia - IS-IS inter area, * - candidate default, I - per-user static route,\no - ODR, P - periodic downloaded static route, H - NHRP, I - LISP, a -\napplication route, + - replicated route, % - next hop override,\np - overrides from PFR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 6 subnets, 2 masks\nC 10.10.10.0/24 is directly connected, GigabitEthernet0/0\nL 10.10.10.1/32 is directly connected, GigabitEthernet0/0\nC 10.10.20.0/24 is directly connected, GigabitEthernet1/0\nL 10.10.20.1/32 is directly connected, GigabitEthernet1/0\nC 10.10.30.0/24 is directly connected, GigabitEthernet2/0\nL 10.10.30.1/32 is directly connected, GigabitEthernet2/0\n192.168.18.0/24 is variably subnetted, 3 subnets, 3 masks\nD 192.168.18.0/24 [90/3072] via 10.10.10.10, 00:13:10, GigabitEthernet0/0\nR 192.168.18.0/27 [120/1] via 10.10.20.10, 00:09:15, GigabitEthernet1/0\nO 192.168.18.0/28 [110/2] via 10.10.30.10, 00:12:56, GigabitEthernet2/0\nGiao diện nào mà gói tin sử dụng để đến địa chỉ host 192.168.18.16?",
+      "options_vi": {
+        "A": "GigabitEthernet1/0",
+        "B": "GigabitEthernet0/0",
+        "C": "GigabitEthernet2/0",
+        "D": "Null0"
+      }
     },
     {
       "id": "16.41",
@@ -661,7 +909,14 @@
       ],
       "answer_images": [],
       "explanation": "152.168.32.85 does not belong to 152.168.32.0/26 (increment: 64) and it belongs to 152.168.32.0/24 -> Next hop 10.10.2.2.\nNote: If you are not sure how to find out the increment number, please read our",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nPrefix Interface Next-hop\n152.168.32.0/22 f0/0 10.10.1.2\n152.168.32.0/24 f1/0 10.10.2.2\n152.168.32.0/26 f2/0 10.10.3.2\n152.168.32.0/23 f3/0 10.10.4.2\nNext hop nào được sử dụng để định tuyến các gói tin đến máy chủ ứng dụng (application server) tại 152.168.32.85?",
+      "options_vi": {
+        "A": "10.10.1.2",
+        "B": "10.10.2.2",
+        "C": "10.10.3.2",
+        "D": "10.10.4.2"
+      }
     },
     {
       "id": "16.42",
@@ -681,7 +936,14 @@
       ],
       "answer_images": [],
       "explanation": "The next-hops in the routing table and the topology are different so there is a typo in this question. The explanation below is based on the topology:\nAmong subnets 192.168.2.0/24, 192.168.2.64/27 and 192.168.2.80/29, packets destined to 192.168.2.86 will choose 192.168.2.80/29 (increment: 8) as it has longest prefix length and covers this destination.\nIn fact, above calculation is enough to find out the correct answer so we don’t need to calculate 10.20.1.50. Just for your information, 10.20.1.32/27 has increment of 32 so it also covers 10.20.1.50 destination.\nNote: If we use the routing table and ignore the topology, answer D is the best choice.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1#show ip route static\n10.0.0.0/8 is variably subnetted, 3 subnets, 3 masks\nS 10.20.1.0/26 [1/0] via 172.16.1.4\nS 10.20.1.0/24 [1/0] via 172.16.1.2\nS 10.20.1.32/27 [1/0] via 172.16.1.3\n192.168.2.0/24 is variably subnetted, 3 subnets, 3 masks\nS 192.168.2.0/24 [1/0] via 172.16.1.4\nS 192.168.2.64/27 [1/0] via 172.16.1.2\nS 192.168.2.80/29 [1/0] via 172.16.1.3\nNext hop chính xác để router R1 đến được các địa chỉ IP 192.168.2.86 và 10.20.1.50 là gì?",
+      "options_vi": {
+        "A": "172.16.1.4",
+        "B": "172.16.1.1",
+        "C": "172.16.1.2",
+        "D": "172.16.1.3"
+      }
     },
     {
       "id": "16.43",
@@ -699,7 +961,14 @@
       ],
       "answer_images": [],
       "explanation": "We must configure the default route with lower priority (higher value) than 20 so that BGP will be used when it is in place -> Answer B is correct with AD of 25.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Một tuyến đường mặc định (default route) phải được cấu hình sử dụng địa chỉ IP 192.168.1.1 cho đến khi mạch WAN được lắp đặt. Mạch WAN sẽ sử dụng giao thức định tuyến động với Administrative Distance là 20. Cấu hình nào phải được áp dụng để cho phép tuyến đường động được ưu tiên khi nó hoạt động?",
+      "options_vi": {
+        "A": "ip route 0.0.0.0 0.0.0.0 192.168.1.1",
+        "B": "ip route 0.0.0.0 0.0.0.0 192.168.1.1 25",
+        "C": "ip route 0.0.0.0 0.0.0.0 192.168.1.1 track 1",
+        "D": "ip route 0.0.0.0 0.0.0.0 192.168.1.1 20"
+      }
     },
     {
       "id": "16.44",
@@ -717,7 +986,14 @@
       ],
       "answer_images": [],
       "explanation": "MFA compose of 2 or more identifications\n*Something you have*Something you are*Something you know",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Khả năng chính của xác thực đa yếu tố (multifactor authentication) là gì?",
+      "options_vi": {
+        "A": "Xác định quyền cho người dùng cuối sử dụng ba yếu tố xác thực",
+        "B": "Xác thực và ủy quyền người dùng cuối sử dụng hai yếu tố xác thực",
+        "C": "Xác nhận danh tính người dùng cuối sử dụng hai hoặc nhiều yếu tố xác thực",
+        "D": "Xác minh quyền truy cập của người dùng cuối sử dụng hai yếu tố xác thực"
+      }
     },
     {
       "id": "16.45",
@@ -737,7 +1013,14 @@
       ],
       "answer_images": [],
       "explanation": "Features\nPurpose\nP2P Blocking Action\nControls client-to-client communication within the same SSID through the AP(intra-BSS traffic). But it does not stop Wi-Fi Direct functionality specifically. It only stops communication through the AP, not direct device-to-device links.\nWi-Fi Direct Client Policy\nControls Wi-Fi Direct-capable devices (P2P devices) – that is, clients that can form a direct connection (device-to-device) without going through the access point.\n-> Answer C is the best choice as it does not allow P2P-capable devices connect to the AP from the beginning.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSau một cuộc kiểm tra bảo mật nội bộ gần đây, quản trị viên mạng quyết định chặn tất cả các thiết bị có khả năng P2P khỏi SSID đã chọn. Cài đặt cấu hình nào mà quản trị viên phải áp dụng?",
+      "options_vi": {
+        "A": "Đặt P2P Block Action thành Drop.",
+        "B": "Chọn một Layer 2 ACL được cấu hình đúng.",
+        "C": "Đặt Wi-Fi Direct Client Policy thành Not-Allow.",
+        "D": "Đặt MFP Client Protection thành Required."
+      }
     },
     {
       "id": "16.46",
@@ -755,7 +1038,14 @@
       ],
       "answer_images": [],
       "explanation": "Prune VLANs for Flexconnect mode AP Switch Ports\nFor APs in Flexconnect mode, when using locally switched WLANs mapped to different VLANs (AP switch port is on trunk mode), prune or limit the VLANs present on the port to match the AP configured VLANs.\nReference:\nWhen an AP is running in FlexConnect mode, it can locally switch traffic at the remote site without tunneling all user data back to the WLC.\nNote:\nFlexConnect Local Switching means:+ The AP locally bridges traffic onto the local VLAN at the branch site.+ Each WLAN (SSID) can be mapped to a different VLAN on the local network -> The AP needs to support multiple VLANs for different SSIDs. Therefore, the switch port connected to the AP must be configured as a trunk port.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Cấu hình cổng switch nào phải được thiết lập khi kết nối với AP chạy ở chế độ FlexConnect, và các WLAN sử dụng flex local switching?",
+      "options_vi": {
+        "A": "Cổng access với một VLAN",
+        "B": "Cổng trunk với các VLAN được cắt tỉa (pruned)",
+        "C": "Cổng Layer 3 với địa chỉ IP",
+        "D": "Cổng tagged với MAC Filtering được bật"
+      }
     },
     {
       "id": "16.47",
@@ -773,7 +1063,14 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Lý do để triển khai HSRP trên mạng là gì?",
+      "options_vi": {
+        "A": "Để đảm bảo lưu lượng người dùng trong LAN phục hồi nhanh chóng khi thiết bị định tuyến biên gặp sự cố",
+        "B": "Để cung cấp cân bằng tải qua nhiều gateway trong mạng LAN",
+        "C": "Để định tuyến lưu lượng tối ưu dựa trên khả năng chuyển tiếp của các thiết bị định tuyến biên trong mạng LAN",
+        "D": "Để xác định hop gần nhất đến default gateway trong mạng LAN"
+      }
     },
     {
       "id": "16.48",
@@ -793,7 +1090,14 @@
       "explanation": "WPA3 Personal uses the Simultaneous Authentication of Equals (SAE) protocol with PMF required, replacing WPA2 Personal with Pre-shared Key (PSK).\nReference:\nIn the figure below, we can see PMF is always “required” and cannot be changed.\nNote: Protected Management Frame (PMF) protects unicast and broadcast management frames and encrypts unicast management frames. This means wirelessintrusion detection and wireless intrusion prevention systemsnow have fewer brute-force ways to enforce client policies.",
       "explanation_images": [
         "q16.48_img1.jpg"
-      ]
+      ],
+      "question_vi": "Tính năng nào là bắt buộc khi cấu hình SSID mới cho mạng không dây chạy chế độ WPA3-Personal?",
+      "options_vi": {
+        "A": "Opportunistic Wireless Encryption",
+        "B": "Protected Management Frame",
+        "C": "Enhanced Open",
+        "D": "Fast Transition"
+      }
     },
     {
       "id": "16.49",
@@ -813,7 +1117,14 @@
       ],
       "answer_images": [],
       "explanation": "OSPF cost is calculated using the formula: Cost = Reference Bandwidth [Mpbs] / Interface Bandwidth [Mpbs].\n“R1 is configured with a reference bandwidth of 10 Gbps”. Therefore the cost on each interface is calculated as follows:\n+ Upper link: Cost = 10 / 1 = 10+ Lower link: Cost = 10 / 10 = 1\n-> The lower link has lower cost which is better -> R1 will choose the lower link for outgoing routing -> Answer D is correct.\nNote: As both Reference Bandwidth & Interface Bandwidth use Gpbs, we don’t need to change from Gpbs to Mpbs in the calculation.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nĐịa chỉ IP loopback của R3 đã được học qua hai interface trên R1. R1 được cấu hình với reference bandwidth là 10 Gbps. Dựa trên tính toán metric, địa chỉ IP next hop nào sẽ được sử dụng cho định tuyến đi ra?",
+      "options_vi": {
+        "A": "10.12.0.5",
+        "B": "10.12.0.2",
+        "C": "10.12.0.1",
+        "D": "10.12.0.6"
+      }
     },
     {
       "id": "16.50",
@@ -831,7 +1142,14 @@
       ],
       "answer_images": [],
       "explanation": "Digest authentication is a secure method for web servers to verify a user’s identity by using a challenge-response system to avoid sending plain-text passwords.\nHere’s how it works:\n1. The server sends a nonce (a random value) as a challenge to the client.2. The client uses this nonce, along with the username, password, and other details, to generate a hash (typically MD5).3. The client sends this hash to the server (not the plaintext password).4. The server performs the same hash operation on its side and compares the results to authenticate the user.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tính năng nào của Digest Authentication ngăn thông tin xác thực (credentials) được gửi dưới dạng văn bản thuần (plaintext)?",
+      "options_vi": {
+        "A": "Mã hóa SSL/TLS",
+        "B": "Cơ chế challenge-response",
+        "C": "Ủy quyền dựa trên token (token-based authorization)",
+        "D": "Hạ tầng khóa công khai (Public key infrastructure)"
+      }
     },
     {
       "id": "16.51",
@@ -849,7 +1167,14 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Loại cấu hình cổng nào được sử dụng để truyền lưu lượng cho nhiều VLAN?",
+      "options_vi": {
+        "A": "LAG",
+        "B": "EtherChannel",
+        "C": "trunk",
+        "D": "access"
+      }
     },
     {
       "id": "16.52",
@@ -867,7 +1192,14 @@
       ],
       "answer_images": [],
       "explanation": "192.168.64.0/19 subnet has increment of 32 so it ranges from 192.168.64.0 to 192.168.64.31 which covers destination of 192.168.64.22. Therefore traffic destined to 192.168.64.22 matches the output line “S 192.168.64.0/19 [1/0] via Null0” so it will be forwarded to Null0 interface, which means it will be dropped.\nNote: A Null0 interface is a virtual “black hole” interface in a router that discards any traffic sent to it, and it’s primarily used to prevent routing loops, often when route summarization is configured. We can create above Null0 entry in the routing table with command “ip route 19.268.64.0 255.255.224.0 null0”.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1#show ip route\nS 192.168.64.0/18 [1/0] via 10.1.1.1\nO 192.168.64.0/18 [110/236855] via 10.1.1.2\nO 192.168.64.0/18 [110/229840] via 10.1.1.3\nS 192.168.64.0/19 [1/0] via Null0\nRouter R1 sẽ xử lý các gói tin đến đích 192.168.64.22 như thế nào?",
+      "options_vi": {
+        "A": "Nó sẽ sử dụng tuyến tĩnh (static route) đến 10.1.1.1.",
+        "B": "Nó sẽ sử dụng tuyến có AD cao nhất và IP đích cao nhất.",
+        "C": "Nó sẽ định tuyến các gói tin đến 10.1.1.2.",
+        "D": "Nó sẽ hủy (drop) các gói tin."
+      }
     },
     {
       "id": "16.53",
@@ -885,7 +1217,14 @@
       ],
       "answer_images": [],
       "explanation": "A “trunk” on a Cisco device is a point-to-point link between network devices, like switches, that carries traffic for multiple VLANs over a single physical connection. It uses the IEEE 802.1Q standard to tag frames with VLAN information, allowing them to be separated and routed correctly across the network.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tùy chọn nào trong cấu hình cổng của switch Ethernet cho phép lưu lượng từ nhiều VLAN truyền qua cùng một liên kết vật lý?",
+      "options_vi": {
+        "A": "LAG",
+        "B": "EtherChannel",
+        "C": "trunk",
+        "D": "access"
+      }
     },
     {
       "id": "16.54",
@@ -905,7 +1244,14 @@
       ],
       "answer_images": [],
       "explanation": "When a router learns multiple paths to a destination, it uses the cost to choose the most efficient route. The “cost” is the “price” of the path to reach the destination and the lower is the better. In this question the current (best) route has a cost of 20 so when it is unavailable, the path with cost 30 will be used instead.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác router láng giềng OSPF A, B, C và D đang gửi tuyến cho 10.227.150.160/27. Khi tuyến hiện tại cho 10.227.150.160/27 không khả dụng, router Y sẽ sử dụng cost nào để định tuyến lưu lượng đến 10.227.150.160/27?",
+      "options_vi": {
+        "A": "Cost 20",
+        "B": "Cost 30",
+        "C": "Cost 40",
+        "D": "Cost 50"
+      }
     },
     {
       "id": "16.55",
@@ -923,7 +1269,14 @@
       ],
       "answer_images": [],
       "explanation": "The host IP address 192.168.20.1 is included in the last entry “S 192.168.20.0/24 [1/0] via 192.168.10.2”. This is a static route with AD of 1.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nAA#show ip route\n10.0.0.0/8 is variably subnetted, 6 subnets, 2 masks\nC 10.0.0.0/30 is directly connected, GigabitEthernet0/0\nL 10.0.0.1/32 is directly connected, GigabitEthernet0/0\nC 10.10.0.0/30 is directly connected, GigabitEthernet0/1\nL 10.10.0.1/32 is directly connected, GigabitEthernet0/1\nO 10.20.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\nO 10.30.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\n172.16.0.0/24 is subnetted, 1 subnets\nS 172.16.10.0 [1/0] via 10.0.0.2\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nC 192.168.10.0/24 is directly connected, GigabitEthernet0/2\nL 192.168.10.1/32 is directly connected, GigabitEthernet0/2\nS 192.168.20.0/24 [1/0] via 192.168.10.2\nKhoảng cách quản trị (administrative distance) cho prefix được quảng bá bao gồm địa chỉ host IP 192.168.20.1 là bao nhiêu?",
+      "options_vi": {
+        "A": "0",
+        "B": "192.168.10.2",
+        "C": "24",
+        "D": "1"
+      }
     },
     {
       "id": "16.56",
@@ -943,7 +1296,14 @@
       ],
       "answer_images": [],
       "explanation": "A Cisco router using PAT can theoretically handle up to 64,511 ports per public IP address. These ports are generally in the 1024 to 65535 range to avoid conflicts with well-known ports (0-1023).\nTherefore in order to “handles up to 150,000 concurrent connections”, we need 150,000/64,511 = 2.3. Also to “minimizes consumption of public IP addresses” -> We need a minimum of 3 public IP addresses -> The range “209.165.201.1 209.165.201.3” is the best choice.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHQC cần sử dụng cấu hình mà:\n* Xử lý tối đa 150.000 kết nối đồng thời\n* Giảm thiểu việc sử dụng địa chỉ IP công cộng\nCấu hình nào đáp ứng các yêu cầu?",
+      "options_vi": {
+        "A": "ip nat pool NATPOOL 209.165.201.1 209.165.201.5 netmask 255.255.255.248ip nat inside source list HQC interface gigabitEthernet0/0 overload",
+        "B": "ip nat pool NATPOOL 209.165.200.225 209.165.200.226 netmask 255.255.255.252ip nat outside source list HQC pool NATPOOL overload",
+        "C": "ip nat pool NATPOOL 209.165.201.1 209.165.201.3 netmask 255.255.255.248ip nat inside source list HQC pool NATPOOL overload",
+        "D": "ip nat pool NATPOOL 209.165.201.1 209.165.201.248 netmask 255.255.255.248ip nat outside source list HQC pool NATPOOL overload"
+      }
     },
     {
       "id": "16.57",
@@ -961,7 +1321,14 @@
       ],
       "answer_images": [],
       "explanation": "Rate limiting works by tracking how many requests each client makes. API keys uniquely identify each client, allowing the server to count their requests and enforce limits, such as 1,000 requests per day.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "API key được sử dụng để thực thi giới hạn tốc độ (rate limiting) như thế nào?",
+      "options_vi": {
+        "A": "Để mã hóa dữ liệu gửi trong yêu cầu API",
+        "B": "Để xác định đường dẫn mạng mà yêu cầu API nên đi",
+        "C": "Để chỉ định loại định dạng dữ liệu mà client muốn nhận",
+        "D": "Để nhận dạng duy nhất từng ứng dụng client"
+      }
     },
     {
       "id": "16.58",
@@ -981,7 +1348,14 @@
       "explanation": "The Administrative Distance (AD) of popular routing protocols is shown below. You should learn them by heart:\nNote: The AD of iBGP is 200\nFrom the table above, we see only OSPF is using its default AD of 110.",
       "explanation_images": [
         "q16.58_img1.jpg"
-      ]
+      ],
+      "question_vi": "Tham khảo hình minh họa.\n10.0.0.0/8 is variably subnetted, 15 subnets, 2 masks\nO 10.0.12.0/24 [110/2] via 10.0.14.1, 00:17:46, GigabitEthernet0/2\nC 10.0.14.0/24 is directly connected, GigabitEthernet0/2\nL 10.0.14.4/32 is directly connected, GigabitEthernet0/2\nO 10.0.23.0/24 [110/2] via 10.0.34.3, 00:17:46, GigabitEthernet0/0\nC 10.0.34.0/24 is directly connected, GigabitEthernet0/0\nL 10.0.34.4/32 is directly connected, GigabitEthernet0/0\nC 10.0.45.0/24 is directly connected, GigabitEthernet0/1\nL 10.0.45.4/32 is directly connected, GigabitEthernet0/1\nO 10.0.254.1/32 [110/2] via 10.0.14.1, 00:17:46, GigabitEthernet0/2\nR 10.255.2.4/24 [90/1] via 10.0.45.5, 00:00:13, GigabitEthernet0/1\nO 10.255.1.1/32 [110/2] via 10.0.14.1, 00:17:46, GigabitEthernet0/0\nO 10.255.2.2/32 [110/3] via 10.0.34.3, 00:17:46, GigabitEthernet0/0\n[110/3] via 10.0.14.1, 00:17:46, GigabitEthernet0/2\nO 10.255.3.3/32 [110/2] via 10.0.34.3, 00:17:46, GigabitEthernet0/0\nC 10.255.3.4/32 is directly connected, Loopback0\nR 10.255.5.5/32 [90/1] via 10.0.45.5, 00:00:13, GigabitEthernet0/1\nCác tuyến nào được cấu hình với khoảng cách quản trị (administrative distance) mặc định?",
+      "options_vi": {
+        "A": "EIGRP",
+        "B": "OSPF",
+        "C": "RIP",
+        "D": "Local"
+      }
     },
     {
       "id": "16.59",
@@ -999,7 +1373,14 @@
       ],
       "answer_images": [],
       "explanation": "WPA3 uses GCMP (Galois/Counter Mode Protocol), typically GCMP-256, as its encryption and integrity protocol.\nNote:\n+ TKIP is legacy (WPA/WPA2) and not allowed in WPA3.+ MD5 is a hashing algorithm, not an encryption protocol.+ CCMP (AES-CCMP) is used in WPA2; WPA3 moves to stronger GCMP.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Giao thức bảo mật nào phù hợp cho triển khai WPA3?",
+      "options_vi": {
+        "A": "TKIP",
+        "B": "GCMP",
+        "C": "MD5",
+        "D": "CCMP"
+      }
     },
     {
       "id": "16.61",
@@ -1017,7 +1398,14 @@
       ],
       "answer_images": [],
       "explanation": "AI contributes to network traffic analysis by examining patterns in network data to identify anomalies, which could indicate security threats, unusual activity, or performance issues. Machine learning algorithms can learn from historical network data to detect deviations from normal behavior, enabling proactive threat detection and response.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "AI đóng vai trò gì trong việc giám sát dữ liệu mạng hiện nay?",
+      "options_vi": {
+        "A": "Nó chỉ dự đoán các sự cố thiết bị.",
+        "B": "Nó đơn giản hóa việc lập bản đồ tuyến lưu lượng.",
+        "C": "Nó phân tích các mẫu để phát hiện bất thường (anomaly detection).",
+        "D": "Nó tăng tốc độ phân phối gói dữ liệu."
+      }
     },
     {
       "id": "16.62",
@@ -1035,7 +1423,14 @@
       ],
       "answer_images": [],
       "explanation": "Pure Layer 2 switch (not Layer 3 switch) only communicates via the data link layer (Layer 2 of the OSI model) -> Answer C is correct.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Đặc điểm của switch Layer 2 là gì?",
+      "options_vi": {
+        "A": "Duy trì thông tin giao dịch có trạng thái (stateful)",
+        "B": "Ưu tiên lưu lượng sử dụng kiểm tra gói sâu (deep packet inspection)",
+        "C": "Sử dụng tầng liên kết dữ liệu (data link layer) để truyền thông",
+        "D": "Cung cấp một miền quảng bá (broadcast domain) duy nhất cho tất cả thiết bị kết nối"
+      }
     },
     {
       "id": "16.63",
@@ -1053,7 +1448,14 @@
       ],
       "answer_images": [],
       "explanation": "TFTP (Trivial File Transfer Protocol) does not require a username or password and uses simple ACK (acknowledgment) messages for each block of data sent. It is designed to be lightweight and is commonly used for tasks like booting network devices or transferring configuration files.\nNote for other protocols:+ FTP: Requires username/password.+ SCP & SFTP: Use SSH, require authentication.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Giao thức truyền tệp nào không yêu cầu tên người dùng hoặc mật khẩu và xác nhận tất cả dữ liệu đã gửi?",
+      "options_vi": {
+        "A": "FTP",
+        "B": "TFTP",
+        "C": "SCP",
+        "D": "SFTP"
+      }
     },
     {
       "id": "16.64",
@@ -1075,7 +1477,14 @@
       "explanation": "If the DHCP Server is not on the same subnet with the DHCP Client, we need to configure the router on the DHCP client side to act as a DHCP Relay Agent so that it can forward DHCP messages between the DHCP Client & DHCP Server. To make a router a DHCP Relay Agent, simply put the “ip helper-address <IP-address-of-DHCP-Server>” command under the interface that receives the DHCP messages from the DHCP Client.\nAs we know, router does not forward broadcast packets (it drops them instead) so DHCP messages like DHCPDISCOVER message will be dropped. But with the “ip helper-address …” command, the router will accept that broadcast message and cover it into a unicast packet and forward it to the DHCP Server. The destination IP address of the unicast packet is taken from the “ip helper-address …” command.",
       "explanation_images": [
         "q16.64_img2.jpg"
-      ]
+      ],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cần cấu hình router CPE để cho phép các máy tính trong mạng 172.20.1.0/24 nhận cấu hình IP từ máy chủ DHCP trung tâm. Kỹ sư phải áp dụng cấu hình nào cho CPE?",
+      "options_vi": {
+        "A": "interface GigabitEthernet0/1ip helper-address 172.20.255.11",
+        "B": "interface GigabitEthernet0/0ip helper-address 172.20.255.1",
+        "C": "interface GigabitEthernet0/0ip helper-address 172.20.1.1",
+        "D": "interface GigabitEthernet0/1ip helper-address 172.20.254.1"
+      }
     },
     {
       "id": "16.65",
@@ -1095,7 +1504,14 @@
       ],
       "answer_images": [],
       "explanation": "Protected Management Frame (PMF) protects unicast and broadcast management frames and encrypts unicast management frames. This means wireless intrusion detection and wireless intrusion prevention systems now have fewer brute-force ways to enforce client policies. PMF provides an additional layer of protection from de-authentication and disassociation attacks -> In the exhibit we see the “PMF” box was set to “Required” -> Answer A is not correct as PMF only protects management frames, not data frames.\nFast Transition (FT) is a new concept of roaming where the initial handshake with the new AP is done even before the client roams to the target AP. The initial handshake allows the client and APs to do the Pairwise Transient Key (PTK) calculation in advance. These PTK keys are applied to the client and AP after the client does the reassociation request or response exchange with new target AP -> Answer D is the best choice.\nNote:\n+ The comeback timer specifies the time that an associated client must wait before the association can be tried again when first denied with a status code 30.+ SA query timeout specifies the amount of time the WLC waits for a response from the client for the query process. If there is no response from the client, its association is deleted from the controller.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư được yêu cầu cập nhật cấu hình wireless LAN controller trên SSID mới triển khai \"Office\". Tuy nhiên, cấu hình không được ghi chú hoặc tài liệu hóa đầy đủ. Kỹ sư có thể xác định điều gì về cấu hình này?",
+      "options_vi": {
+        "A": "Có một mức bảo vệ bổ sung giúp bảo mật các khung dữ liệu (data frames) trao đổi giữa các client không dây và access point cho tất cả thiết bị không dây.",
+        "B": "Có một độ trễ mở rộng giúp giảm thiểu thời gian để thiết bị client duy trì kết nối sau hoạt động chuyển vùng (roaming) cho các thiết bị Apple và Android.",
+        "C": "Có một thuật toán bảo mật nâng cao được đưa vào dịch vụ để thêm mức đảm bảo chất lượng bổ sung cho mạng phân phối không dây.",
+        "D": "Có một cơ chế chuyển đổi liền mạch (seamless transition) được sử dụng để đẩy nhanh quá trình chuyển vùng (roaming) cho các thiết bị tương thích bằng cách xác thực chúng trước khi chuyển vùng tiềm năng xảy ra."
+      }
     },
     {
       "id": "16.66",
@@ -1113,7 +1529,14 @@
       ],
       "answer_images": [],
       "explanation": "In general, UDP offers higher potential throughput than TCP because its lack of overhead, flow control, and retransmission mechanisms allows it to “flood” available bandwidth, especially in the presence of latency or packet loss -> Answer A is correct.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Sự khác biệt giữa giao thức TCP và UDP là gì?",
+      "options_vi": {
+        "A": "TCP đảm bảo phân phối dữ liệu có thứ tự và đáng tin cậy, còn UDP cung cấp độ trễ thấp và thông lượng cao.",
+        "B": "TCP quản lý truyền dữ liệu multicast và broadcast, còn UDP chỉ xử lý truyền thông unicast.",
+        "C": "TCP phát hiện các thiết bị lân cận trên phân đoạn mạng cục bộ, còn UDP ngăn chặn vòng lặp chuyển mạch Layer 2.",
+        "D": "TCP nhận dạng thiết bị bằng địa chỉ MAC, còn UDP nhận dạng thiết bị bằng địa chỉ IP."
+      }
     },
     {
       "id": "16.67",
@@ -1133,7 +1556,14 @@
       ],
       "answer_images": [],
       "explanation": "IP 172.16.0.14 does not belong to 172.16.3.0/24 or 172.16.3.0/28 subnets so it will be routed via the default route.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột gói tin đang được gửi qua router R1 đến host 172.16.0.14. Router gửi gói tin đến đích nào?",
+      "options_vi": {
+        "A": "209.165.200.246 via Serial0/1/0",
+        "B": "209.165.200.254 via Serial0/0/0",
+        "C": "209.165.200.254 via Serial0/0/1",
+        "D": "209.165.200.250 via Serial0/0/0"
+      }
     },
     {
       "id": "16.68",
@@ -1153,7 +1583,14 @@
       ],
       "answer_images": [],
       "explanation": "“must have a secured key hashing algorithm” -> choose SHA2 -> Answer A is correct.\nNote: AES (Advanced Encryption Standard) is a symmetric encryption algorithm for confidentiality (encrypting/decrypting data to keep it secret), while SHA-2 (Secure Hash Algorithm 2) is a cryptographic hash function for integrity.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nNgười dùng sẽ sử dụng khóa bí mật (secret key) và SSID được cấu hình sẵn và phải có thuật toán băm khóa (key hashing algorithm) bảo mật được cấu hình. Máy chủ AAA không được sử dụng cho phương thức xác thực người dùng. Hành động nào hoàn thành nhiệm vụ?",
+      "options_vi": {
+        "A": "Cấu hình PSK-SHA2.",
+        "B": "Cấu hình PSK Format HEX với key string.",
+        "C": "Đặt CCMP128(AES).",
+        "D": "Bật AutoConfig iPSK."
+      }
     },
     {
       "id": "16.69",
@@ -1173,7 +1610,15 @@
       ],
       "answer_images": [],
       "explanation": "Ansible uses an agentless architecture to manage network devices. Agentless means that the managed device does not need any code (agent) to be installed on it. Therefore Ansible uses SSH (NETCONF over SSH in particular) to “push” changes and extract information to managed devices -> Answer B and answer E are correct.\nAnsible playbooks are written in YAML, making them human-readable and easy to maintain -> Answer D is correct.\nTherefore in fact we have three correct answers. But answer D and answer E are the most obvious ones so we should choose them.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Hai tính năng nào được Ansible cung cấp trong tự động hóa mạng? (Chọn hai)",
+      "options_vi": {
+        "A": "Cung cấp thông tin xác thực mạng (network credentials)",
+        "B": "Đẩy cấu hình đến client",
+        "C": "Khởi chạy job template sử dụng quản lý phiên bản (version control)",
+        "D": "Sử dụng ngôn ngữ YAML",
+        "E": "Cung cấp triển khai không cần agent (agentless deployment)"
+      }
     },
     {
       "id": "16.70",
@@ -1191,7 +1636,14 @@
       ],
       "answer_images": [],
       "explanation": "Remote-access VPN is used when an individual user (such as an employee) connects securely to a private network or server over an untrusted network like public Wi-Fi.\nRemote access VPNs are often used by Internet Protocol security (IPSec) teams. Over less secure networks, such as public Wi-Fi, a VPN establishes a secure and encrypted connection. A VPN application both encrypts and decrypts the data you send and receive. It also encrypts the network IP addresses from which data is sent and received.\nReference:",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Loại kết nối VPN nào được sử dụng khi nhân viên truy cập máy chủ bảo mật từ Wi-Fi công cộng?",
+      "options_vi": {
+        "A": "site-to-site",
+        "B": "router-to-router",
+        "C": "remote",
+        "D": "open"
+      }
     },
     {
       "id": "16.71",
@@ -1211,7 +1663,14 @@
       "explanation": "The goal of using different non-overlapping channels is to avoid the affects caused by channel utilization and interference.\nThe 2.4 GHz band is subdivided into multiple channels each allotted 22 MHz bandwidth and separated from the next channel by 5 MHz.-> A best practice for 802.11b/g/n WLANs requiring multiple APs is to use non-overlapping channels such as 1, 6, and 11.\nWhen two wireless devices transmit at the same time, their radio signals will collide and become garbled. 802.11 devices on the same channel use a CCA check to avoid these collisions. However, the CCA check may not detect a transmission occurring on a different channel that also has some frequency overlap on the channel the check is being performed on. In this case, two 802.11 devices on different channels that overlap may transmit at the same time causing a collision and possible data corruption or frame loss. This is called interference because one device’s transmission interferes with another device’s transmission.\nReference:",
       "explanation_images": [
         "q16.71_img1.png"
-      ]
+      ],
+      "question_vi": "Vai trò của các kênh không chồng lấn (nonoverlapping channels) trong môi trường không dây là gì?",
+      "options_vi": {
+        "A": "Để giảm nhiễu (interference)",
+        "B": "Để cho phép ghép kênh (channel bonding)",
+        "C": "Để cho phép chuyển vùng (roaming) nhanh hơn",
+        "D": "Để tăng băng thông (bandwidth)"
+      }
     },
     {
       "id": "16.72",
@@ -1229,7 +1688,14 @@
       ],
       "answer_images": [],
       "explanation": "Line 2 {\"load balancer\": \"LB_munich\", \"port\":\"te8/26\"} represents a JSON object, because it is enclosed in curly braces {} and contains key-value pairs.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Điều gì được biểu diễn ở dòng 3 trong JSON schema này?\n1 [\n2 {\"switch\": \"SW_dallas\", \"port\":\"ge16\"},\n3 {\"load balancer\": \"LB_munich\", \"port\":\"te8/26\"},\n4 {\"VPN concentrator\": \"VPN_toronto\", \"port\":\"te8/15\"},\n5 ]",
+      "options_vi": {
+        "A": "array",
+        "B": "value",
+        "C": "key",
+        "D": "object"
+      }
     },
     {
       "id": "16.73",
@@ -1247,7 +1713,14 @@
       ],
       "answer_images": [],
       "explanation": "User awareness campaigns train employees to recognize sensitive information, understand data handling policies, and avoid mistakes such as sending confidential data to the wrong recipient or falling for phishing emails.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Yếu tố nào trong chương trình bảo mật giúp bảo vệ chống lại việc nhân viên vô tình rò rỉ thông tin nhạy cảm qua email?",
+      "options_vi": {
+        "A": "Ghi hình màn hình máy trạm (workstation screen recordings)",
+        "B": "Chiến dịch nâng cao nhận thức người dùng (user awareness campaigns)",
+        "C": "Kiểm soát truy cập internet",
+        "D": "Kiểm soát truy cập vật lý (physical access controls)"
+      }
     },
     {
       "id": "16.74",
@@ -1265,7 +1738,14 @@
       ],
       "answer_images": [],
       "explanation": "A syslog message has the following format:\nseq no:timestamp%FACILTY-SEVERITY-MNEMONIC: message text\nExample: Jul 10 14:32:18.456: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down\nEach portion of a syslog message has a specific meaning. In which the FACILITY tells the protocol, module, or process that generated the message. Some examples are SYS for the operating system, IF for an interface…\nAll syslog messages have a logging facility and a level. The logging facility can be thought of as where and the level can be thought of as what.\nReference:\nIn the example above, the Facility: LINK  means interface/link-related events on Cisco devices.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Mục đích của trường facility trong logging là gì?",
+      "options_vi": {
+        "A": "Nó chỉ ra chương trình hoặc tiến trình đã tạo ra sự kiện syslog.",
+        "B": "Nó chứa thông điệp văn bản mô tả sự kiện syslog.",
+        "C": "Nó xác định mức độ nghiêm trọng (severity) của sự kiện syslog.",
+        "D": "Nó đại diện cho dấu thời gian (timestamp) của sự kiện syslog."
+      }
     },
     {
       "id": "16.75",
@@ -1283,7 +1763,14 @@
       ],
       "answer_images": [],
       "explanation": "Bridge mode: Access Points are used to connect two networks. There are two sub modes coming with Bridge mode:+ Point-to-Point: connect the LAN of a router to a remote access-point.+ Point-to-Multipoint: connect two LANs with one wireless link.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Chế độ AP nào cung cấp kết nối không dây giữa hai phân đoạn mạng?",
+      "options_vi": {
+        "A": "root",
+        "B": "local",
+        "C": "FlexConnect",
+        "D": "bridge"
+      }
     },
     {
       "id": "16.76",
@@ -1301,7 +1788,14 @@
       ],
       "answer_images": [],
       "explanation": "A CNAME (Canonical Name) record is used to create an alias that points to the true (canonical) domain name. This allows multiple domain names to refer to the same host. For example:\nexample.com (apex domain) -> has an A record pointing directly to your server’s IP address (e.g., 192.0.2.1).www.example.com (subdomain) -> has a CNAME record pointing to example.com.When someone visits www.example.com:1. DNS looks up the CNAME record and sees that www.example.com points to example.com.2. It checks the records for example.com.3. The A record for example.com provides the IP address of the server.4. The user is connected to the same destination as if they had typed example.com.",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Mục đích của bản ghi CNAME là gì?",
+      "options_vi": {
+        "A": "Để liên kết một bí danh (alias) với tên miền chính tắc (canonical domain name)",
+        "B": "Để ánh xạ tên miền sang địa chỉ IP",
+        "C": "Để xác định máy chủ tên có thẩm quyền (authoritative name server) cho một miền",
+        "D": "Để chuyển hướng email đến máy chủ thư (mail server)"
+      }
     },
     {
       "id": "16.77",
@@ -1319,7 +1813,14 @@
       ],
       "answer_images": [],
       "explanation": "The best match for the destination 172.16.153.154 is “ip route 172.16.0.0 255.255.0.0 10.56.22.23” so answer D is correct. If we don’t look each statement carefully, we may choose “ip route 122.16.153.0 255.255.255.0 …” by mistake (here is 122, not 172).",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nip route 172.0.0.0 255.0.0.0 10.12.13.14\nip route 172.16.0.0 255.255.0.0 10.56.22.23\nip route 122.16.153.0 255.255.255.0 10.35.47.17\nip route 172.16.153.153 255.255.255.255 10.65.34.19\nip route 0.0.0.0 0.0.0.0 10.17.44.36\nCác tuyến tĩnh (static routes) đã được triển khai trên border router. Địa chỉ IP next hop cho một ping gửi đến 172.16.153.154 từ border router là gì?",
+      "options_vi": {
+        "A": "10.35.47.17",
+        "B": "10.65.34.19",
+        "C": "10.12.13.14",
+        "D": "10.56.22.23"
+      }
     },
     {
       "id": "16.78",
@@ -1337,7 +1838,14 @@
       ],
       "answer_images": [],
       "explanation": "To remember which type of cable you should use, follow these tips:\n– To connect two serial interfaces of 2 routers we use serial cable– To specify when we use crossover cable or straight-through cable, we should remember:Group 1: Router, Host, ServerGroup 2: Hub, SwitchOne device in group 1 + One device in group 2: use straight-through cableTwo devices in the same group: use crossover cable\nFor example: we use straight-through cable to connect switch to router, switch to host, hub to host, hub to server… and we use crossover cable to connect switch to switch, switch to hub, router to router, host to host… )",
-      "explanation_images": []
+      "explanation_images": [],
+      "question_vi": "Loại cáp nào phải được sử dụng khi kết nối router và switch với nhau?",
+      "options_vi": {
+        "A": "console",
+        "B": "rollover",
+        "C": "straight-through",
+        "D": "crossover"
+      }
     }
   ]
 }
