@@ -521,7 +521,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA newly configured PC fails to connect to the internet using TCP port 80 to www.cisco.com. Which\nsetting must be modified for the connection to work?",
       "question_images": [
-        "page_9_img_0.jpeg"
+        "page_64_img_0.jpeg"
       ],
       "options": {
         "A": "Subnet Mask",
@@ -707,7 +707,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is not set\n209.165.200.0/27 is subnetted, 1 subnets\nB 209.165.200.224 [20/0] via 10.10.12.2, 00:08:34\n10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks\nC 10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC 10.10.11.0/30 is directly connected, FastEthernet2/0\nO 10.10.13.0/24 [110/2] via 10.10.10.1, 00:09:25, GigabitEthernet0/0\nC 10.10.12.0/30 is directly connected, GigabitEthernet0/1\nWhich action is taken by the router when a packet is sourced from 10.10.10.2 and destined for\n10.10.10.16?",
       "question_images": [
-        "page_85_img_0.jpeg"
+        "page_22_img_0.jpeg"
       ],
       "options": {
         "A": "It discards the packets",
@@ -735,7 +735,8 @@
       "type": "single",
       "question": "Refer to the exhibit. When PC 1 sends a packet to PC2, the packet has which source and\ndestination IP address when it arrives at interface Gi0/0 on router R2?",
       "question_images": [
-        "page_12_img_0.jpeg"
+        "page_13_img_0.png",
+        "page_13_img_1.jpeg"
       ],
       "options": {
         "A": "source 192.168.10.10 and destination 10.10.2.2",
@@ -850,7 +851,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Which type of route does R1 use to reach host 10.10.13.10/32?\nR1#show ip route\nGateway of last resort is 10.10.10.18 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 4 subnets. 3 Masks\nC 10.10.10.0/30 is directly connected. FastEthernet0/1\nO 10.10.13.0/25 [110/4576] via 10.10.10.1, 02:53:11, FastEthernet0/1\nC 10.10.10.16/30 is directly connected, FastEthernet0/24\n0 10.10.13.144/28 [110/110] via 10.10.10.1, 03:51:21, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.10.10.18, 02:17:53",
       "question_images": [
-        "page_27_img_0.jpeg"
+        "page_16_img_0.png"
       ],
       "options": {
         "A": "floating static route",
@@ -957,7 +958,9 @@
       "source_id": "10",
       "type": "single",
       "question": "Refer to the exhibit. Which route does R1 select for traffic that is destined to 192.168.16.2?\nR1#show ip route\nD 192.168.16.0/26 [90/2679326] via 192.168.1.1\nR 192.168.16.0/24 [120/3] via 192.168.1.2\nO 192.168.16.0/21 [110/2] via 192.168.1.3\ni L1 192.168.16.0/27 [115/30] via 192.168.1.4",
-      "question_images": [],
+      "question_images": [
+        "page_20_img_0.jpeg"
+      ],
       "options": {
         "A": "192.168.16.0/21",
         "B": "192.168.16.0/24",
@@ -1010,7 +1013,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Which prefix does Router 1 use for traffic to Host A?\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is sudnetted, 1 subnets\nB 209.165.200.224 [20/0] via 10.10.12.2, 03:03:03\n209.165.201.0/27 is sudnetted, 1 subnets\nB 209.165.201.0 [20/0] via 10.10.12.2, 03:03:03\n209.165.202.0/27 is subnetted, 1 subnets\nB 209.165.202.128 [20/0] via 10.10.12.2, 03:03:03\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC 10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC 10.10.11.0/30 is directly connected, FastEthernet2/0\nC 10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO 10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nS* 0.0.0.0/0 [1/0] via 10.10.11.2",
       "question_images": [
-        "page_20_img_0.jpeg"
+        "page_22_img_0.jpeg"
       ],
       "options": {
         "A": "10.10.10.0/28",
@@ -1203,7 +1206,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Router R1 is running three different routing protocols. Which route\ncharacteristic is used by the router to forward the packet that it receives for destination IP\n172.16.32.1?\n`",
       "question_images": [
-        "page_24_img_0.jpeg"
+        "page_46_img_0.jpeg"
       ],
       "options": {
         "A": "longest prefix",
@@ -1230,7 +1233,9 @@
       "source_id": "6",
       "type": "single",
       "question": "Refer to the exhibit. How does router R1 handle traffic to 192.168.12.16?\nEIGRP: 192.168.12.0/24\nRIP: 192.168.12.0/27\nOSPF: 192.168.12.0/26",
-      "question_images": [],
+      "question_images": [
+        "page_25_img_0.jpeg"
+      ],
       "options": {
         "A": "It selects the IS-IS route because it has the shortest prefix inclusive of the destination address",
         "B": "It selects the EIGRP route because it has the lowest administrative distance",
@@ -1340,7 +1345,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Which route type is configured to reach the internet?\nR1#show ip route\nGateway of last resort is 10.10.10.18 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 4 subnets. 3 Masks\nC 10.10.10.0/30 is directly connected. FastEthernet0/1\nO 10.10.13.0/25 [110/4576] via 10.10.10.1, 02:53:11, FastEthernet0/1\nC 10.10.10.16/30 is directly connected, FastEthernet0/24\n0 10.10.13.144/28 [110/110] via 10.10.10.1, 03:51:21, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.10.10.18, 02:17:53",
       "question_images": [
-        "page_27_img_0.jpeg"
+        "page_16_img_0.png"
       ],
       "options": {
         "A": "host route",
@@ -1423,7 +1428,9 @@
       "source_id": "36",
       "type": "multi",
       "question": "Refer to the exhibit.\nR2#show ip route\nC 192.68.1.0/26 is directly connected, FastEthernet0/1\nWhich two prefixes are included in this routing table entry? (Choose two)",
-      "question_images": [],
+      "question_images": [
+        "page_28_img_0.jpeg"
+      ],
       "options": {
         "A": "192.168.1.17",
         "B": "192.168.1.61",
@@ -1478,7 +1485,10 @@
       "source_id": "53",
       "type": "single",
       "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route\nGateway of last resort is 192.168.30.10 to network 0.0.0.0\n192.168.30.0/29 is subnetted, 2 subnets\nC 192.168.30.0 is directly connected, FastEthernet0/0\nC 192.168.30.8 is directly connected, Serial0/0.1\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nO IA 192.168.10.32/28 [110/193] via 192.168.30.10, 00:11:34, Serial0/0.1\nO IA 192.168.10.0/27 [110/192] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.20.0/30 is subnetted, 1 subnets\nO IA 192.168.20.0 [110/128] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.50.0/32 is subnetted, 1 subnets\nC 192.168.50.1 is directly connected, Loopback0\nO*IA 0.0.0.0/0 [110/84] via 192.168.30.10, 00:11:21, Serial0/0.1\nWhat is the metric of the route to the 192.168.10.33/28 subnet?",
-      "question_images": [],
+      "question_images": [
+        "page_31_img_0.jpeg",
+        "page_31_img_1.jpeg"
+      ],
       "options": {
         "A": "84",
         "B": "110",
@@ -1535,7 +1545,10 @@
       "source_id": "12",
       "type": "single",
       "question": "Refer to the exhibit.\nWhich command configures a floating static route to provide a backup to the primary link?",
-      "question_images": [],
+      "question_images": [
+        "page_31_img_0.jpeg",
+        "page_31_img_1.jpeg"
+      ],
       "options": {
         "A": "ip route 0.0.0.0 0.0.0.0 209.165.202.131",
         "B": "ip route 209.165.201.0 255.255.255.224 209.165.202.130",
@@ -1647,8 +1660,8 @@
       "type": "single",
       "question": "Refer to the exhibit.\nTraffic sourced from the loopback0 interface is trying to connect via ssh to the host at 10.0.1.15.\nWhat is the next hop to the destination address?",
       "question_images": [
-        "page_91_img_0.jpeg",
-        "page_91_img_1.jpeg"
+        "page_34_img_0.jpeg",
+        "page_34_img_1.jpeg"
       ],
       "options": {
         "A": "192.168.0.7",
@@ -1675,7 +1688,9 @@
       "source_id": "65",
       "type": "single",
       "question": "Refer to the exhibit.\nWhich network prefix was learned via EIGRP?",
-      "question_images": [],
+      "question_images": [
+        "page_28_img_0.jpeg"
+      ],
       "options": {
         "A": "172.16.0.0/16",
         "B": "207.165.200.0/24",
@@ -1730,8 +1745,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich route must be configured on R1 so that OSPF routing is used when OSPF is up. But the\nserver is still reachable when OSPF goes down?",
       "question_images": [
-        "page_76_img_0.png",
-        "page_76_img_1.png"
+        "page_36_img_0.jpeg"
       ],
       "options": {
         "A": "ip route 10.1.1.10 255.255.255.255 172.16.2.2 100",
@@ -1787,8 +1801,8 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA static route must be configured on R14 to forward traffic for the 172.21.34.0/25 network that\nresides on R86. Which command must be used to fulfill the request?",
       "question_images": [
-        "page_41_img_0.jpeg",
-        "page_41_img_1.jpeg"
+        "page_37_img_0.jpeg",
+        "page_37_img_1.jpeg"
       ],
       "options": {
         "A": "ip route 172.21.34.0 255.255.255.192 10.73.65.65",
@@ -1902,7 +1916,8 @@
       "type": "single",
       "question": "Refer to the exhibit.\nR1 learns all routes via OSPF. Which command configures a backup static route on R1 to reach the\n192.168.20.0/24 network via R3?",
       "question_images": [
-        "page_59_img_0.jpeg"
+        "page_39_img_0.jpeg",
+        "page_39_img_1.jpeg"
       ],
       "options": {
         "A": "R1(config)#ip route 192.168.20.0 255.255.255.0 192.168.30.2 111",
@@ -1957,7 +1972,10 @@
       "source_id": "91",
       "type": "single",
       "question": "Refer to the exhibit.\nWhich prefix did router R1 learn from internal EIGRP?",
-      "question_images": [],
+      "question_images": [
+        "page_41_img_0.jpeg",
+        "page_41_img_1.jpeg"
+      ],
       "options": {
         "A": "192.168.2.0/24",
         "B": "192.168.1.0/24",
@@ -1984,7 +2002,8 @@
       "type": "single",
       "question": "Refer to the exhibit.\nRouter R1 must be configured to reach the 10.0.3.0 network from the 10.0.1.0/24 segment. Which\ncommand must be used to configure the route?",
       "question_images": [
-        "page_64_img_0.jpeg"
+        "page_41_img_0.jpeg",
+        "page_41_img_1.jpeg"
       ],
       "options": {
         "A": "route add 10.0.3.0 0.255.255.255 10.0.4.2",
@@ -2039,7 +2058,10 @@
       "source_id": "104",
       "type": "single",
       "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override\nGateway of last resort is 10.56.0.1 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 10.56.0.1\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.56.0.0/17 is directly connected, Vlan56\nL 10.56.0.19/32 is directly connected, Vlan56\nC 10.56.128.0/18 is directly connected, Vlan57\nL 10.56.128.19/32 i directly connected, Vlan57\nWhen router R1 is sending traffic to IP address 10.56.192.1, which interface or next hop address\ndoes it use to route the packet?",
-      "question_images": [],
+      "question_images": [
+        "page_31_img_0.jpeg",
+        "page_31_img_1.jpeg"
+      ],
       "options": {
         "A": "0.0.0.0/0",
         "B": "Vlan57",
@@ -2121,7 +2143,9 @@
       "source_id": "17",
       "type": "single",
       "question": "Refer to the exhibit.\nR1 has just received a packet from host A that is destined to host B. Which route in the routing\ntable is used by R1 to reach host B?",
-      "question_images": [],
+      "question_images": [
+        "page_46_img_0.jpeg"
+      ],
       "options": {
         "A": "10.10.13.0/25[1/0] via 10.10.10.2",
         "B": "10.10.13.0/25[110/2] via 10.10.10.6",
@@ -2232,7 +2256,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA network engineer must configure router R1 with a host route to the server. Which command\nmust the engineer configure?",
       "question_images": [
-        "page_69_img_0.jpeg"
+        "page_48_img_0.jpeg"
       ],
       "options": {
         "A": "R1(config)#ip route 10.10.10.10 255.255.255.255 192.168.0.2",
@@ -2287,7 +2311,9 @@
       "source_id": "74",
       "type": "single",
       "question": "Refer to the exhibit.\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.1.1.0/30 is directly connected, GigabitEthernet0/0\nL 10.1.1.2/32 is directly connected, GigabitEthernet0/0\nS 192.168.0.0/20 [1/0] via 10.1.1.1\n192.168.1.0/30 is subnetted, 1 subnets\nS 192.168.1.0/30 [1/0] via 10.1.1.1\n192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks\nS 192.168.2.0/28 [1/0] via 10.1.1.1\nS 192.168.2.0/29 [1/0] via 10.1.1.1\nAn engineer is checking the routing table in the main router to identify the path to a server on the\nnetwork. Which route does the router use to reach the server at 192.168.2.2?",
-      "question_images": [],
+      "question_images": [
+        "page_50_img_0.jpeg"
+      ],
       "options": {
         "A": "S 192.168.2.0/28 [1/0] via 10.1.1.1",
         "B": "S 192.168.1.0/30(1/0] via 10.1.1.1",
@@ -2341,7 +2367,9 @@
       "source_id": "85",
       "type": "single",
       "question": "Refer to the exhibit.\nGateway of last resort is 172.16.2.2 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.10.8.0/28 is directly connected, GigabitEthernet0/0/2\nC 10.10.10.0/24 is directly connected, GigabitEthernet0/0/0\nL 10.10.10.3/32 is directly connected, GigabitEthernet0/0/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nS 172.16.1.33/32 is directly connected, GigabitEthernet0/0/1\nC 172.16.2.0/23 is directly connected, GigabitEthernet0/0/1\nL 172.16.2.1/32 is directly connected, GigabitEthernet0/0/1\nS* 0.0.0.0/0 [1/0] via 172.16.2.2\nA packet sourced from 10.10.10.1 is destined for 10.10.8.14. What is the subnet mask of the\ndestination route?",
-      "question_images": [],
+      "question_images": [
+        "page_50_img_0.jpeg"
+      ],
       "options": {
         "A": "255.255.254.0",
         "B": "255.255.255.240",
@@ -2367,7 +2395,9 @@
       "source_id": "91",
       "type": "single",
       "question": "Refer to the exhibit. With which metric does router R1 learn the route to host 172.16.0.202?\nR1#show ip route | begin gateway\nGateway of last resort is 209.165.200.246 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 209.165.200.246, Serial0/1/0\nis directly connected, Serial0/1/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 3 masks\nS 172.16.0.0/24 [1/0] via 207.165.200.250, Serial0/0/0\nO 172.16.0.128/25 [110/32445] via 207.165.200.254, 00:00:33, Serial0/0/1\nD 172.16.0.192/29 [90/3184439] via 207.165.200.254, 00:00:33, Serial0/0/1\n207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC 207.165.200.248/30 is directly connected, Serial0/0/0\nL 207.165.200.249/32 is directly connected, Serial0/0/0\nC 207.165.200.252/30 is directly connected, Serial0/0/1\nL 207.165.200.253/32 is directly connected, Serial0/0/1",
-      "question_images": [],
+      "question_images": [
+        "page_52_img_0.jpeg"
+      ],
       "options": {
         "A": "0",
         "B": "110",
@@ -2394,7 +2424,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nGateway of last resort is 0.0.0.0 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 6 subnets, 5 masks\nS 10.0.0.0/8 is directly connected, GigabitEthernet0/0\nC 10.1.1.0/24 is directly connected, GigabitEthernet0/0\nL 10.1.1.1/32 is directly connected, GigabitEthernet0/0\nS 10.10.0.0/22 is directly connected, GigabitEthernet0/0\nS 10.10.10.0/28 is directly connected, GigabitEthernet0/0\nS 10.10.10.1/32 is directly connected, GigabitEthernet0/0\nS* 0.0.0.0/0 is directly connected, GigabitEthernet0/0\nWhich IP route command created the best path for a packet destined for 10.10.10.3?",
       "question_images": [
-        "page_84_img_0.jpeg"
+        "page_52_img_0.jpeg"
       ],
       "options": {
         "A": "ip route 10.0.0.0 255.0.0.0 g0/0",
@@ -2449,7 +2479,9 @@
       "source_id": "16",
       "type": "single",
       "question": "Refer to the exhibit.\nEntry #\n1 192.168.10.0 255.255.254.0\n2 192.168.10.0 255.255.255.192\n3 192.168.10.0 255.255.0.0\n4 192.168.10.0 255.255.224.0\nWhich entry is the longest prefix match for host IP address 192.168.10.5?",
-      "question_images": [],
+      "question_images": [
+        "page_54_img_0.jpeg"
+      ],
       "options": {
         "A": "1",
         "B": "2",
@@ -2475,7 +2507,9 @@
       "source_id": "18",
       "type": "single",
       "question": "Refer to the exhibit.\nrouter# show ip route\n...\nD 172.18.32.0/26 [90/25789217] via 10.1.1.1\nR 172.18.32.0/24 [120/4] via 10.1.1.2\nO 172.18.32.0/19 [110/229840] via 10.1.1.3\nC 172.18.32.32/32 is directly connected, Loopback0\nC 172.18.32.36/30 directly connected, GigabitEthernet0/0\nL 172.18.32.37/32 is directly connected, GigabitEthernet0/0\nA packet sourced from 172.18.33.2 is destined for 172.18.32.38. Where does the router forward\nthe packet?",
-      "question_images": [],
+      "question_images": [
+        "page_54_img_0.jpeg"
+      ],
       "options": {
         "A": "GigabitEthernet0/0",
         "B": "Loopback0",
@@ -2502,7 +2536,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nEIGRP: 192.168.12.0/24\nRIP: 192.168.12.0/27\nOSPF: 192.168.12.0/28\nHow does the router manage traffic to 192.168.12.16?",
       "question_images": [
-        "page_25_img_0.jpeg"
+        "page_54_img_0.jpeg"
       ],
       "options": {
         "A": "It selects the RIP route because it has the longest prefix inclusive of the destination address.",
@@ -2560,7 +2594,9 @@
       "source_id": "60",
       "type": "single",
       "question": "Refer to the exhibit.\nR1# show ip route | begin Gateway\nGateway of last resort is 0.0.0.0 to network 0.0.0.0\nS* 0.0.0.0/0 is directly connected, Serial0/0/1\n172.16.0.0/16 is variably subnetted, 4 subnets, 2 masks\nC 172.16.2.0/24 is directly connected, GigabitKthernet0/0\nL 172.16.2.2/32 is directly connected, GigabitEthernet0/0\nC 172.16.4.0/21 is directly connected, Serial0/0/1\nL 172.16.8.2/26 is directly connected, Serial0/0/1\nWhat is the subnet mask for route 172.16.4.0?",
-      "question_images": [],
+      "question_images": [
+        "page_54_img_0.jpeg"
+      ],
       "options": {
         "A": "255.255.255.192",
         "B": "255.255.248.0",
@@ -2612,7 +2648,9 @@
       "source_id": "76",
       "type": "single",
       "question": "Refer to the exhibit.\nR7#\n172.22.0.0/24 is subnetted, 1 subnets\nD 172.22.49.0 [90/284160] via 10.81.22.2, 04:55:53, FastEthernet0/0\n10.0.0.0/8 is variably subnetted, 26 subnets, 5 masks\nD EX 10.10.10.10/32 [170/35840] via 10.3.5.1, 04:55:55, FastEthernet0/1\nD 10.9.1.0/30 [90/33280] via 10.3.5.1, 04:55:56, FastEthernet0/1\nB 10.111.99.0/24 [20/0] via 10.6.25.2, 03:58:52\nD 10.14.3.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nC 10.9.4.0/30 is directly connected, FastEthernet1/0\nB 10.100.100.0/24 [20/0] via 10.6.25.2, 03:58:53\nD 10.0.1.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nD EX 10.10.10.70/32 [170/1612801 via 10.3.5.1, 04:55:57, FastEthernet0/1\nB 10.90.0.0/16 [200/0] via 0.0.0.0, 03:57:59, Null0\nD EX 10.90.1.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD EX 10.90.2.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD 10.90.3.0/29 [90/161280] via 10.3.5.1, 02:46:03, FastEthernet0/1\nD EX 10.90.3.0/24 [170/158720] via 10.3.5.1, 02:46:04, FastEthernet0/1\nD EX 10.90.4.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nD EX 10.90.5.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.6.25.2, 02:22:38\nAccording to the output, which parameter set is validated using the routing table of R7?",
-      "question_images": [],
+      "question_images": [
+        "page_54_img_0.jpeg"
+      ],
       "options": {
         "A": "R7 is missing a gateway of last resort.\nR7 is receiving routes that were redistributed from BGP\nR7 will forward traffic destined to 10.90.8.0/24.",
         "B": "R7 is missing a gateway of last resort.\nR7 is receiving routes that were redistributed in EIGRP\nR7 will forward traffic destined to 10.90.8.0/24.",
@@ -2639,7 +2677,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nGateway of last resort is 172.16.2.2 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.10.10.0/24 is directly connected, GigabitEthernet0/0/0\nL 10.10.10.3/32 is directly connected, GigabitEthernet0/0/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nS 172.16.1.33/32 is directly connected, GigabitEthernet0/0/1\nC 172.16.2.0/23 is directly connected, GigabitEthernet0/0/1\nL 172.16.2.1/32 is directly connected, GigabitEthernet0/0/1\nS* 0.0.0.0/0 [1/0] via 172.16.2.2\nA packet sourced from 10.10.10.1 is destined for 172.16.3.254. What is the subnet mask of the\ndestination route?",
       "question_images": [
-        "page_16_img_0.png"
+        "page_58_img_0.jpeg"
       ],
       "options": {
         "A": "0.0.0.0",
@@ -2933,7 +2971,9 @@
       "source_id": "9",
       "type": "single",
       "question": "Refer to the exhibit. The “show ip ospf interface” command has been executed on R1. How is OSPF\nconfigured?\nDesignated Router (ID) 10.11.11.11, Interface address 10.10.10.1\nBackup Designated router (ID) 10.3.3.3, Interface address 10.10.10.3\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\noob-resync timeout 40\nHello due in 00:00:08\nSupports Link-local Signaling (LLS)\nCisco NSF helper support enabled\nIETF NSF helper support enabled\nIndex 1/1/1, flood queue length 0\nNext 0x0(0)/0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 6\nLast flood scan time is 0 msec, maximum is 1 msec\nNeighbor Count is 3, Adjacent neighbor count is 3\nAdjacent with neighbor 10.1.1.4\nAdjacent with neighbor 10.2.2.2\nAdjacent with neighbor 10.3.3.3 (Backup Designated Router)\nSuppress hello for 0 neighbor(s)",
-      "question_images": [],
+      "question_images": [
+        "page_81_img_0.jpeg"
+      ],
       "options": {
         "A": "The interface is not participating in OSPF",
         "B": "A point-to-point network type is configured",
@@ -2985,7 +3025,10 @@
       "source_id": "115",
       "type": "single",
       "question": "Refer to the exhibit.\nRouters R1 and R3 have the default configuration. The router R2 priority is set to 99. Which\ncommands on R3 configure it as the DR in the 10.0.4.0/24 network?",
-      "question_images": [],
+      "question_images": [
+        "page_82_img_0.jpeg",
+        "page_82_img_1.jpeg"
+      ],
       "options": {
         "A": "R3(config)#interface Gig0/1\nR3(config-if)#ip ospf priority 100",
         "B": "R3(config)#interface Gig0/0\nR3(config-if)#ip ospf priority 100",
@@ -3069,7 +3112,7 @@
       "type": "single",
       "question": "Refer to the exhibit. To which device does Router1 send packets that are destined to host\n10.10.13.165?\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets\nB 209.165.200.224 [20/0] via 10.10.12.2,03:32:14\n209.165.201.0/27 is subnetted, 1 subnets\nB 209.165.201.0 [20/0] via 10.10.12.2,02:26:53\n209.165.202.0/27 is subnetted, 1 subnets\nB 209.165.202.128 [20/0] via 10.10.12.2,02:46:03\n10.0.0.0/8 is variably subneted, 10 subnets, 4 masks\nO 10.10.13.0/25 [110/2] via 10.10.10.1,00:00:04, GigabitEthernet0/0\nO 10.10.13.128/28 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO 10.10.13.144/28 [110/2] via 10.10.10.9,00:01:57, GigabitEthernet0/2\nO 10.10.13.160/29 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO 10.10.13.208/29 [110/2] via 10.10.10.13,00:01:57, GigabitEthernet0/3\nS* 0.0.0.0/0 [1/0] via 10.10.11.2",
       "question_images": [
-        "page_85_img_0.jpeg"
+        "page_38_img_0.jpeg"
       ],
       "options": {
         "A": "Router2",
@@ -3236,8 +3279,7 @@
       "type": "single",
       "question": "Refer to the exhibit. What action establishes the OSPF neighbor relationship without forming an\nadjacency?",
       "question_images": [
-        "page_89_img_0.png",
-        "page_89_img_1.jpeg"
+        "page_100_img_0.jpeg"
       ],
       "options": {
         "A": "modify priority",
@@ -3264,7 +3306,9 @@
       "source_id": "7",
       "type": "single",
       "question": "Refer to the exhibit. What is the next hop address for traffic that is destined to host 10.0.1.5?",
-      "question_images": [],
+      "question_images": [
+        "page_44_img_0.jpeg"
+      ],
       "options": {
         "A": "Loopback 0",
         "B": "10.0.1.4",
@@ -3376,7 +3420,9 @@
       "source_id": "68",
       "type": "single",
       "question": "Refer to the exhibit.\nR1#show run\n!\nrouter ospf 1\nauto-cost reference-bandwidth\n100000\n!\ninterface GigabitEthernet0/0\nbandwidth 10000000\n!\ninterface GigabitEthernet0/1\nbandwidth 100000000\n!\ninterface GigabitEthernet0/2\nip ospf cost 100\n!\ninterface GigabitEthernet0/3\nip ospf cost 1000\nRouter R1 resides in OSPF Area 0. After updating the R1 configuration to influence the paths that it\nwill use to direct traffic, an engineer verified that each of the four Gigabit interfaces has the same\nroute to 10.10.0.0/16. Which interface will R1 choose to send traffic to reach the route?",
-      "question_images": [],
+      "question_images": [
+        "page_95_img_0.jpeg"
+      ],
       "options": {
         "A": "GigabitEthernet0/0",
         "B": "GigabitEthernet0/1",
@@ -3460,8 +3506,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich command configures OSPF on the point-to-point link between routers R1 and R2?",
       "question_images": [
-        "page_96_img_0.png",
-        "page_96_img_1.jpeg"
+        "page_17_img_0.jpeg"
       ],
       "options": {
         "A": "network 10.0.0.0 0.0.0.255 area 0",
@@ -3517,7 +3562,9 @@
       "source_id": "79",
       "type": "single",
       "question": "Refer to the exhibit.\nR1 has taken the DROTHER role in the OSPF DR/BDR election process. Which configuration must\nan engineer implement so that R1 is elected as the DR?",
-      "question_images": [],
+      "question_images": [
+        "page_93_img_0.jpeg"
+      ],
       "options": {
         "A": "R1(config)#interface FastEthernet0/0\nR1(config-if)#ip ospf priority 1\nR1#clear ip ospf process",
         "B": "R1(config)#interface FastEthernet0/0\nR1(config-if)#ip ospf priority 200\nR1#clear ip ospf process",
@@ -3628,7 +3675,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer must configure router R2 so it is elected as the DR on the WAN subnet. Which\ncommand sequence must be configured?",
       "question_images": [
-        "page_17_img_0.jpeg"
+        "page_100_img_0.jpeg"
       ],
       "options": {
         "A": "interface gigabitethernet0/0\nip address 10.0.1.1 255.255.255.224\nip ospf priority 98",
@@ -3683,7 +3730,9 @@
       "source_id": "7",
       "type": "single",
       "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 20, Wait 20, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the\ninitial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which\nconfiguration must be applied to R2 to complete the OSPF configuration and enable it to establish\nthe neighbor relationship with R1?\nOption A Option B\nR2(config)#interface g0/0/0 R2(config)#router ospf 1\nR2(config-if)#ip ospf hello-interval 15 R2(config-router)#router-id\nR2(config-if)#ip ospf dead-interval 20 192.168.1.2\nOption C Option D\nR2(config)#router ospf 1 R2(config)#interface g0/0/0\nR2(config-router)#network 192.168.1.0 R2(config-if)#ip ospf dead-interval\n255.255.255.0 area 2 20\nR2(config-router)#network 10.1.1.0 255.255.255.255\narea 2",
-      "question_images": [],
+      "question_images": [
+        "page_100_img_0.jpeg"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",

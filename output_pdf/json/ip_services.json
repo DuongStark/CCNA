@@ -58,7 +58,9 @@
       "source_id": "2",
       "type": "single",
       "question": "Refer to the exhibit. An engineer configured NAT translations and has verified that the configuration is\ncorrect. Which IP address is the source IP?\nR1#show ip nat translations\nPro Inside global Inside local Outside local Outside global\ntcp 172.23.104.3:43268 10.4.4.4:43268 172.23.103.10:23 172.23.103.10:23\ntcp 172.23.104.4:45507 10.4.4.5:45507 172.23.103.10:80 172.23.103.10:80",
-      "question_images": [],
+      "question_images": [
+        "page_1_img_0.jpeg"
+      ],
       "options": {
         "A": "10.4.4.4",
         "B": "10.4.4.5",
@@ -219,7 +221,10 @@
       "source_id": "74",
       "type": "single",
       "question": "Refer to the exhibit.\nHow should the configuration be updated to allow PC1 and PC2 access to the Internet?",
-      "question_images": [],
+      "question_images": [
+        "page_4_img_0.jpeg",
+        "page_4_img_1.jpeg"
+      ],
       "options": {
         "A": "Modify the configured number of the second access list",
         "B": "Remove the overload keyword from the ip nat inside source command",

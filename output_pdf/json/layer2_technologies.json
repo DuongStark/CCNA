@@ -1029,7 +1029,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich action must be taken so that neighboring devices rapidly discover switch Cat9300?",
       "question_images": [
-        "page_11_img_0.png"
+        "page_21_img_0.jpeg"
       ],
       "options": {
         "A": "Enable portfast on the ports that connect to neighboring devices",
@@ -1166,7 +1166,9 @@
       "source_id": "1",
       "type": "single",
       "question": "Refer to the exhibit. After the switch configuration the ping test fails between PC A and PC B.\nBased on the output for switch 1, which error must be corrected?\nSwitch 1 Switch 2\nName: Gi0/1 Name: Gi0/1\nSwitchport: Enabled Switchport: Enabled\nAdministrative Mode: trunk (Static TRUNK) Administrative Mode: trunk (Static TRUNK)\nOperational Mode: trunk\nOperational Mode: trunk\nAdministrative Trunking Encapsulation: dot1q\nAdministrative Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nNegotiation of Trunking: Off (DTP Off)\nNegotiation of Trunking: Off\nAccess Mode VLAN: 1 (default)\nAccess Mode VLAN: 1 (default)\nTrunking Native Mode VLAN: 99 (default)\nTrunking Native Mode VLAN: 1 (default)\nAdministrative Native VLAN tagging: enabled\nAdministrative Native VLAN tagging: enabled\nVoice VLAN: none\nVoice VLAN: none\n<output omitted>\n<output omitted>\nTrunking VLANs Enabled: 50-100\nTrunking VLANs Enabled: 50-100\nPruning VLANs Enabled: 2-1001\nPruning VLANs Enabled: 2-1001\nCapture Mode Disabled\nCapture Mode Disabled\nCapture VLANs Allowed: ALL\nCapture VLANs Allowed: ALL",
-      "question_images": [],
+      "question_images": [
+        "page_25_img_0.jpeg"
+      ],
       "options": {
         "A": "There is a native VLAN mismatch",
         "B": "Access mode is configured on the switch ports.",
@@ -1329,7 +1331,9 @@
       "source_id": "6",
       "type": "single",
       "question": "Refer to the exhibit. Which action is expected from SW1 when the untagged frame is received on\nthe GigabitEthernet0/1 interface?\nSW1#show run int gig 0/1\ninterface GigabitEthernet0/1\nswitchport access vlan 11\nswitchport trunk allowed vlan 1-10\nswitchport trunk encapsulation dot1q\nswitchport trunk native vlan 5\nswitchport mode trunk\nspeed 1000\nduplex full",
-      "question_images": [],
+      "question_images": [
+        "page_30_img_0.png"
+      ],
       "options": {
         "A": "The frame is processed in VLAN 5",
         "B": "The frame is processed in VLAN 11",
@@ -1825,7 +1829,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAll VLANs are present in the VLAN database. Which command sequence must be applied to\ncomplete the configuration?",
       "question_images": [
-        "page_16_img_0.png"
+        "page_42_img_0.jpeg"
       ],
       "options": {
         "A": "interface FastEthernet0/1\nswitchport trunk native vlan 10\nswitchport trunk allowed vlan 10,15",
@@ -2203,7 +2207,7 @@
       "type": "multi",
       "question": "Refer to the exhibit. What two conclusions should be made about this configuration? (Choose two)",
       "question_images": [
-        "page_39_img_0.jpeg"
+        "page_42_img_0.jpeg"
       ],
       "options": {
         "A": "The designated port is FastEthernet 2/1",
