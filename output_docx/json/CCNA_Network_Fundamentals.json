@@ -15,7 +15,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Trong tình huống nào thì việc sử dụng địa chỉ IPv4 riêng (private IPv4 addressing) là phù hợp cho một mạng con (subnet) mới trên mạng của một tổ chức?",
+      "options_vi": {
+        "A": "Không gian địa chỉ duy nhất bị hạn chế, và lưu lượng trên mạng con mới sẽ ở trong nội bộ tổ chức.",
+        "B": "Mạng có nhiều thiết bị đầu cuối lắng nghe (endpoint listeners), và mong muốn giới hạn số lượng broadcast.",
+        "C": "Lưu lượng trên mạng con phải đi qua một VPN site-to-site đến một tổ chức bên ngoài.",
+        "D": "ISP yêu cầu mạng con mới phải được quảng bá ra internet cho các dịch vụ web."
+      }
     },
     {
       "id": "5.8",
@@ -31,7 +38,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Các máy chủ (server) kết nối với mạng như thế nào trong môi trường ảo hóa (virtual environment)?",
+      "options_vi": {
+        "A": "không dây đến một điểm truy cập (access point) được kết nối vật lý với mạng",
+        "B": "một cáp kết nối đến một switch vật lý trên mạng",
+        "C": "một switch ảo (virtual switch) liên kết đến một điểm truy cập (access point) được kết nối vật lý với mạng",
+        "D": "một switch phần mềm trên hypervisor được kết nối vật lý với mạng"
+      }
     },
     {
       "id": "5.18",
@@ -47,7 +61,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Băng thông tối đa của một kết nối point-to-point T1 là bao nhiêu?",
+      "options_vi": {
+        "A": "1.544 Mbps",
+        "B": "2.048 Mbps",
+        "C": "34.368 Mbps",
+        "D": "43.7 Mbps"
+      }
     },
     {
       "id": "5.31",
@@ -63,7 +84,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đặc điểm của mạng SOHO là gì?",
+      "options_vi": {
+        "A": "kết nối mỗi switch với mọi switch khác trong mạng",
+        "B": "cho phép nhiều người dùng chia sẻ một kết nối băng thông rộng (broadband) duy nhất",
+        "C": "cung cấp truy cập thông lượng cao cho 1000 người dùng trở lên",
+        "D": "bao gồm ít nhất ba tầng thiết bị để cung cấp cân bằng tải (load balancing) và dự phòng (redundancy)"
+      }
     },
     {
       "id": "5.32",
@@ -79,7 +107,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tài nguyên nào có thể được chia sẻ giữa các máy ảo (virtual machines) được triển khai trên cùng một máy chủ vật lý?",
+      "options_vi": {
+        "A": "ứng dụng (applications)",
+        "B": "hệ điều hành (operating system)",
+        "C": "tệp cấu hình VM (VM configuration file)",
+        "D": "ổ đĩa (disk)"
+      }
     },
     {
       "id": "5.37",
@@ -95,7 +130,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Topo WAN nào cung cấp sự kết hợp giữa tính đơn giản, chất lượng và tính sẵn sàng (availability)?",
+      "options_vi": {
+        "A": "partial mesh",
+        "B": "full mesh",
+        "C": "point-to-point",
+        "D": "hub-and-spoke"
+      }
     },
     {
       "id": "5.50",
@@ -111,7 +153,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đặc điểm của địa chỉ IPv4 riêng (private IPv4 addressing) là gì?",
+      "options_vi": {
+        "A": "được sử dụng mà không cần theo dõi hoặc đăng ký",
+        "B": "được cấp bởi IANA kết hợp với một số hệ thống tự trị (autonomous system number)",
+        "C": "đi qua Internet khi một ACL chiều ra (outbound ACL) được áp dụng",
+        "D": "bao gồm tối đa 65.536 địa chỉ khả dụng"
+      }
     },
     {
       "id": "6.11",
@@ -127,7 +176,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điểm tương đồng giữa cáp quang (fiber optic cable) OM3 và OM4 là gì?",
+      "options_vi": {
+        "A": "Cả hai đều có đường kính lõi (core diameter) 50 micron",
+        "B": "Cả hai đều có đường kính lõi (core diameter) 9 micron",
+        "C": "Cả hai đều có đường kính lõi (core diameter) 62.5 micron",
+        "D": "Cả hai đều có đường kính lõi (core diameter) 100 micron"
+      }
     },
     {
       "id": "6.16",
@@ -143,7 +199,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì mô tả hoạt động của máy ảo (virtual machines)?",
+      "options_vi": {
+        "A": "Máy ảo chịu trách nhiệm quản lý và phân bổ tài nguyên phần cứng của máy chủ",
+        "B": "Máy ảo là các phiên bản hệ điều hành (operating system instances) được tách rời khỏi phần cứng máy chủ",
+        "C": "Máy ảo là phần cứng vật lý hỗ trợ môi trường ảo hóa",
+        "D": "Trong môi trường máy ảo, các máy chủ vật lý phải chạy một hệ điều hành tại một thời điểm"
+      }
     },
     {
       "id": "6.18",
@@ -159,7 +222,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nNgay sau khi SiteA được kết nối với SiteB qua một đường cáp quang đơn mode (single-mode fiber) mới, người dùng tại SiteA báo cáo các vấn đề kết nối không liên tục với các ứng dụng được lưu trữ tại SiteB. Nguyên nhân của vấn đề kết nối không liên tục là gì?",
+      "options_vi": {
+        "A": "Các lỗi giao diện (interface errors) đang tăng",
+        "B": "Loại SFP media không đúng đã được sử dụng tại SiteA",
+        "C": "Mức sử dụng cao đang gây ra độ trễ (latency) cao",
+        "D": "Các site đã được kết nối bằng loại cáp sai"
+      }
     },
     {
       "id": "6.21",
@@ -175,7 +245,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Công nghệ nào cho phép nhiều hệ điều hành chạy trên một máy tính chủ (host computer) duy nhất?",
+      "options_vi": {
+        "A": "virtual device contexts",
+        "B": "network port ID visualization",
+        "C": "virtual routing and forwarding",
+        "D": "ảo hóa máy chủ (server virtualization)"
+      }
     },
     {
       "id": "6.32",
@@ -191,7 +268,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của topo WAN hub-and-spoke là gì?",
+      "options_vi": {
+        "A": "hỗ trợ tối ưu hóa ứng dụng (application optimization)",
+        "B": "cung cấp kết nối trực tiếp giữa các thuê bao (subscribers)",
+        "C": "hỗ trợ VPN Lớp 2 (Layer 2 VPNs)",
+        "D": "cho phép triển khai các hạn chế truy cập giữa các site thuê bao"
+      }
     },
     {
       "id": "7.2",
@@ -207,7 +291,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đặc điểm của topo mạng dựa trên đám mây (cloud-based network topology) là gì?",
+      "options_vi": {
+        "A": "các máy trạm vật lý (physical workstations) được cấu hình để chia sẻ tài nguyên",
+        "B": "các dịch vụ được cung cấp bởi triển khai công khai (public), riêng tư (private), hoặc kết hợp (hybrid)",
+        "C": "các dịch vụ mạng tại chỗ (onsite) được cung cấp với các thành phần Lớp 2 (Layer 2) và Lớp 3 (Layer 3) vật lý",
+        "D": "kết nối không dây cung cấp phương thức truy cập duy nhất đến các dịch vụ"
+      }
     },
     {
       "id": "7.11",
@@ -223,7 +314,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tại sao không gian địa chỉ RFC 1918 được định nghĩa?",
+      "options_vi": {
+        "A": "bảo tồn không gian địa chỉ IPv6 công cộng (public)",
+        "B": "hỗ trợ giao thức NAT",
+        "C": "giảm các trường hợp trùng lặp địa chỉ IP (overlapping IP addresses)",
+        "D": "bảo tồn địa chỉ IPv4 công cộng (public IPv4 addressing)"
+      }
     },
     {
       "id": "7.19",
@@ -239,7 +337,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Router thực hiện hành động nào khi chuyển tiếp một gói tin (packet) qua mạng?",
+      "options_vi": {
+        "A": "Router thay thế nhãn nguồn và đích bằng nhãn giao diện router gửi làm nguồn và nhãn router chặng tiếp theo (next hop) làm đích",
+        "B": "Router đóng gói (encapsulates) địa chỉ IP nguồn và đích với địa chỉ IP của router gửi làm nguồn và địa chỉ IP của router lân cận (neighbor) làm đích",
+        "C": "Router đóng gói gói tin gốc và sau đó bao gồm một thẻ (tag) xác định địa chỉ MAC của router nguồn và truyền trong suốt (transparently) đến đích",
+        "D": "Router thay thế địa chỉ MAC nguồn và đích ban đầu bằng địa chỉ MAC của router gửi làm nguồn và địa chỉ MAC của router lân cận (neighbor) làm đích"
+      }
     },
     {
       "id": "7.32",
@@ -255,7 +360,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một người triển khai đang chuẩn bị phần cứng cho ảo hóa (virtualization) để tạo các máy ảo (virtual machines) trên một máy chủ (host). Cần gì để cung cấp giao tiếp giữa phần cứng và các máy ảo?",
+      "options_vi": {
+        "A": "cáp thẳng (straight cable)",
+        "B": "bộ định tuyến (router)",
+        "C": "hypervisor",
+        "D": "switch"
+      }
     },
     {
       "id": "7.33",
@@ -273,7 +385,15 @@
         "A",
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai đặc điểm của lớp phân phối (distribution layer) trong kiến trúc mạng ba lớp (three-tier) là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "cung cấp ranh giới giữa truyền thông Lớp 2 (Layer 2) và Lớp 3 (Layer 3)",
+        "B": "được thiết kế để đáp ứng yêu cầu hoạt động liên tục, dự phòng (redundant)",
+        "C": "đóng vai trò là điểm tập hợp (aggregation point) của mạng",
+        "D": "điểm kết nối vật lý cho máy in LAN",
+        "E": "là xương sống (backbone) cho cấu trúc liên kết mạng (network topology)"
+      }
     },
     {
       "id": "7.38",
@@ -289,7 +409,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Sự khác biệt trong việc truyền tải dữ liệu và độ tin cậy giữa TCP và UDP là gì?",
+      "options_vi": {
+        "A": "UDP thiết lập kết nối giữa hai thiết bị trước khi truyền dữ liệu. TCP sử dụng bắt tay ba bước (three-way handshake) để truyền dữ liệu với kết nối đáng tin cậy.",
+        "B": "TCP truyền dữ liệu với tốc độ cao hơn và đảm bảo gói tin được gửi đến. UDP truyền lại dữ liệu bị mất để đảm bảo ứng dụng nhận được dữ liệu ở đầu xa.",
+        "C": "UDP được sử dụng cho truyền thông multicast và broadcast. TCP được sử dụng cho truyền thông unicast và truyền dữ liệu với tốc độ cao hơn kèm kiểm tra lỗi.",
+        "D": "TCP yêu cầu kết nối phải được thiết lập trước khi truyền dữ liệu. UDP truyền dữ liệu với tốc độ cao hơn mà không đảm bảo gói tin được gửi đến."
+      }
     },
     {
       "id": "7.39",
@@ -305,7 +432,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Thiết bị đầu cuối (network endpoints) là gì?",
+      "options_vi": {
+        "A": "một mối đe dọa cho mạng nếu chúng bị xâm phạm (compromised)",
+        "B": "hỗ trợ kết nối giữa các VLAN (inter-VLAN connectivity)",
+        "C": "hoạt động như bộ định tuyến (router) để kết nối người dùng với mạng nhà cung cấp dịch vụ (service provider network)",
+        "D": "thực thi các chính sách cho lưu lượng toàn khuôn viên (campus-wide) đi ra Internet"
+      }
     },
     {
       "id": "7.51",
@@ -323,7 +457,15 @@
         "A",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai điểm tương đồng giữa cáp UTP Cat 5e và Cat 6a là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Cả hai đều hỗ trợ đường chạy lên đến 100 mét.",
+        "B": "Cả hai đều hỗ trợ đường chạy lên đến 55 mét.",
+        "C": "Cả hai đều hoạt động ở tần số 500 MHz.",
+        "D": "Cả hai đều hỗ trợ tốc độ ít nhất 1 Gigabit.",
+        "E": "Cả hai đều hỗ trợ tốc độ lên đến 10 Gigabit."
+      }
     },
     {
       "id": "8.2",
@@ -339,7 +481,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điểm tương đồng giữa chuẩn 1000BASE-LX và 1000BASE-T là gì?",
+      "options_vi": {
+        "A": "Cả hai đều sử dụng cùng định dạng header và trailer của lớp liên kết dữ liệu (data-link)",
+        "B": "Cả hai loại cáp đều hỗ trợ đầu nối LP (LP connectors)",
+        "C": "Cả hai loại cáp đều hỗ trợ đầu nối RJ-45",
+        "D": "Cả hai đều hỗ trợ khoảng cách lên đến 550 mét giữa các nút (nodes)"
+      }
     },
     {
       "id": "8.15",
@@ -357,7 +506,15 @@
         "A",
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai đặc điểm của triển khai đám mây công cộng (public cloud) là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Được sở hữu và duy trì bởi một bên, nhưng được chia sẻ giữa nhiều tổ chức",
+        "B": "Cho phép tổ chức tùy chỉnh hoàn toàn cách triển khai tài nguyên mạng",
+        "C": "Cung cấp các dịch vụ được truy cập qua Internet",
+        "D": "Là trung tâm dữ liệu trên Internet công cộng duy trì dịch vụ đám mây chỉ cho một công ty",
+        "E": "Hỗ trợ tài nguyên mạng từ nhà cung cấp bên thứ ba tập trung và tài nguyên ảo thuộc sở hữu riêng"
+      }
     },
     {
       "id": "8.20",
@@ -373,7 +530,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại tổ chức nào nên sử dụng kiến trúc lõi thu gọn (collapsed-core architecture)?",
+      "options_vi": {
+        "A": "lớn và cần thiết kế mạng linh hoạt, có khả năng mở rộng",
+        "B": "nhỏ và cần giảm chi phí mạng hiện tại",
+        "C": "lớn và phải giảm thiểu thời gian ngừng hoạt động khi phần cứng gặp sự cố",
+        "D": "nhỏ nhưng dự kiến sẽ phát triển đáng kể trong tương lai gần"
+      }
     },
     {
       "id": "8.28",
@@ -389,7 +553,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Việc sử dụng phù hợp cho địa chỉ IPv4 riêng (private IPv4 addressing) là gì?",
+      "options_vi": {
+        "A": "trên giao diện hướng ra công cộng (public-facing interface) của tường lửa (firewall)",
+        "B": "để cho phép các máy chủ bên trong giao tiếp hai chiều với các máy chủ bên ngoài tổ chức",
+        "C": "trên các máy chủ nội bộ chỉ truyền dữ liệu đến tài nguyên bên ngoài",
+        "D": "trên các máy chủ chỉ giao tiếp với các máy chủ nội bộ khác"
+      }
     },
     {
       "id": "8.47",
@@ -407,7 +578,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cần cung cấp thông tin chi tiết về địa chỉ IP đã cấu hình để điều tra sự cố quy tắc tường lửa (firewall rule). Subnet và mask nào xác định những gì được cấu hình trên giao diện en0?",
+      "options_vi": {
+        "A": "10.8.0.0/16",
+        "B": "10.8.64.0/18",
+        "C": "10.8.128.0/19",
+        "D": "10.8.138.0/24"
+      }
     },
     {
       "id": "8.51",
@@ -425,7 +603,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nNgay sau khi SiteA được kết nối với SiteB qua một đường cáp quang đơn mode (single-mode fiber) mới, người dùng tại SiteA báo cáo sự cố kết nối không liên tục với các ứng dụng được lưu trữ tại SiteB. Nguyên nhân của sự cố kết nối không liên tục là gì?",
+      "options_vi": {
+        "A": "Một loại bộ thu phát (transceiver) không đúng đã được lắp vào thiết bị trên đường liên kết.",
+        "B": "Loại cáp sai đã được sử dụng để thực hiện kết nối.",
+        "C": "Lưu lượng sử dụng cao đang gây ra độ trễ (latency) cao.",
+        "D": "Lỗi mạng vật lý đang được truyền giữa hai site."
+      }
     },
     {
       "id": "8.71",
@@ -441,7 +626,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đặc điểm của địa chỉ IPv4 riêng (private IPv4 addressing) là gì?",
+      "options_vi": {
+        "A": "bao gồm tối đa 65.536 địa chỉ khả dụng",
+        "B": "được cấp bởi IANA kèm theo số hệ thống tự trị (autonomous system number)",
+        "C": "được sử dụng mà không cần theo dõi hoặc đăng ký",
+        "D": "đi qua Internet khi một ACL chiều ra (outbound ACL) được áp dụng"
+      }
     },
     {
       "id": "8.80",
@@ -457,7 +649,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của một thiết bị đầu cuối (endpoint) trên mạng là gì?",
+      "options_vi": {
+        "A": "cho phép người dùng ghi dữ liệu và truyền đến máy chủ tệp (file server)",
+        "B": "kết nối các thiết bị máy chủ (server) và máy khách (client) vào mạng",
+        "C": "cung cấp dịch vụ không dây cho người dùng trong tòa nhà",
+        "D": "chuyển tiếp lưu lượng giữa các VLAN trên mạng"
+      }
     },
     {
       "id": "9.17",
@@ -475,7 +674,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLưu lượng đang chạy qua giao diện TenGigabitEthernet0/0 gặp tốc độ truyền chậm. Nguyên nhân của sự cố là gì?",
+      "options_vi": {
+        "A": "tắc nghẽn lưu lượng nặng (heavy traffic congestion)",
+        "B": "mất gói do hàng đợi (queuing drops)",
+        "C": "xung đột tốc độ (speed conflict)",
+        "D": "không tương thích duplex (duplex incompatibility)"
+      }
     },
     {
       "id": "9.32",
@@ -493,7 +699,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLý do nào gây ra hiệu suất kém trên giao diện mạng (network interface)?",
+      "options_vi": {
+        "A": "Giao diện đang nhận lưu lượng broadcast quá mức.",
+        "B": "Kết nối cáp giữa hai thiết bị bị lỗi.",
+        "C": "Giao diện đang hoạt động ở tốc độ khác với thiết bị được kết nối.",
+        "D": "Cài đặt băng thông (bandwidth) của giao diện bị cấu hình sai."
+      }
     },
     {
       "id": "9.57",
@@ -509,7 +722,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Cáp UTP và STP so sánh với nhau như thế nào?",
+      "options_vi": {
+        "A": "Cáp STP rẻ hơn để sản xuất và dễ lắp đặt hơn, còn cáp UTP đắt hơn và khó lắp đặt hơn.",
+        "B": "Cáp UTP ít bị xuyên nhiễu (crosstalk) và nhiễu hơn, còn cáp STP dễ bị xuyên nhiễu và nhiễu hơn.",
+        "C": "Cáp UTP cung cấp tốc độ truyền dữ liệu nhanh hơn và đáng tin cậy hơn, còn cáp STP chậm hơn và kém tin cậy hơn.",
+        "D": "Cáp STP được bọc chống nhiễu và bảo vệ khỏi nhiễu điện từ (electromagnetic interference), còn UTP không có cùng mức bảo vệ khỏi nhiễu điện từ."
+      }
     },
     {
       "id": "9.77",
@@ -525,7 +745,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Topo mạng WAN nào có mức độ tin cậy cao nhất?",
+      "options_vi": {
+        "A": "router-on-a-stick",
+        "B": "Point-to-point",
+        "C": "hub-and-spoke",
+        "D": "full mesh"
+      }
     },
     {
       "id": "9.93",
@@ -541,7 +768,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lợi ích nào dành cho người dùng bên ngoài khi sử dụng tài nguyên đám mây công cộng (public cloud)?",
+      "options_vi": {
+        "A": "được triển khai qua đường WAN chuyên dụng",
+        "B": "nằm trong cùng trung tâm dữ liệu (data center) với người dùng",
+        "C": "tất cả được lưu trữ trên máy chủ vật lý",
+        "D": "được truy cập qua Internet"
+      }
     },
     {
       "id": "9.97",
@@ -557,7 +791,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi nào kỹ sư nên triển khai kiến trúc collapsed-core?",
+      "options_vi": {
+        "A": "cho các mạng lớn được kết nối đến nhiều site từ xa",
+        "B": "tầng truy cập (access) và tầng phân phối (distribution) phải nằm trên cùng một thiết bị",
+        "C": "chỉ khi sử dụng công nghệ VSS",
+        "D": "cho các mạng nhỏ với nhu cầu mở rộng tối thiểu"
+      }
     },
     {
       "id": "9.106",
@@ -573,7 +814,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Sự khác biệt giữa giao diện 1000BASE-LX/LH và 1000BASE-ZX là gì?",
+      "options_vi": {
+        "A": "1000BASE-LX/LH tương thích với cáp quang multimode và single-mode, còn 1000BASE-ZX cần cáp patch điều hòa (conditioning patch cable) với multimode.",
+        "B": "1000BASE-ZX được hỗ trợ trên các liên kết lên đến 1000km, còn 1000BASE-LX/LH hoạt động trên các liên kết lên đến 70 km.",
+        "C": "1000BASE-ZX tương thích với SFP dual-rate 100M/1G 10Km qua cáp quang multimode, còn 1000BASE-LX/LH chỉ hỗ trợ single-rate.",
+        "D": "1000BASE-LX/LH được hỗ trợ trên các liên kết lên đến 10km, còn 1000BASE-ZX hoạt động trên các liên kết lên đến 70 km."
+      }
     },
     {
       "id": "9.108",
@@ -591,7 +839,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nĐiều gì được mong đợi khi PC_A gửi dữ liệu đến PC_B sau lần giao tiếp ban đầu của chúng?",
+      "options_vi": {
+        "A": "Địa chỉ MAC nguồn và đích vẫn giữ nguyên",
+        "B": "Switch viết lại địa chỉ MAC nguồn và đích bằng địa chỉ của chính nó",
+        "C": "Địa chỉ MAC nguồn bị thay đổi",
+        "D": "Địa chỉ MAC đích được thay thế bằng ffff.ffff.ffff"
+      }
     },
     {
       "id": "10.3",
@@ -607,7 +862,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tầng nào được gộp lại trong kiến trúc collapsed core?",
+      "options_vi": {
+        "A": "core và WAN",
+        "B": "access và WAN",
+        "C": "distribution và access",
+        "D": "core và distribution"
+      }
     },
     {
       "id": "10.18",
@@ -625,7 +887,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nPC Windows đã cho đang yêu cầu địa chỉ IP của host tại www.cisco.com. Yêu cầu được gửi đến địa chỉ IP nào?",
+      "options_vi": {
+        "A": "192.168.1.226",
+        "B": "192.168.1.253",
+        "C": "192.168.1.100",
+        "D": "192.168.1.254"
+      }
     },
     {
       "id": "10.41",
@@ -641,7 +910,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của thiết bị đầu cuối (endpoint) là gì?",
+      "options_vi": {
+        "A": "Nó chuyển tiếp giao tiếp unicast giữa các host trong mạng",
+        "B": "Nó được người dùng cá nhân sử dụng trực tiếp để truy cập các dịch vụ mạng",
+        "C": "Nó cung cấp bảo mật giữa các phần đáng tin cậy và không đáng tin cậy của mạng",
+        "D": "Nó truyền lưu lượng broadcast giữa các thiết bị trong cùng VLAN"
+      }
     },
     {
       "id": "10.45",
@@ -657,7 +933,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Trong môi trường điện toán đám mây (cloud-computing), tính co giãn nhanh (rapid elasticity) là gì?",
+      "options_vi": {
+        "A": "tự động điều chỉnh dung lượng dựa trên nhu cầu",
+        "B": "kiểm soát và giám sát mức tiêu thụ tài nguyên bởi người thuê (tenant)",
+        "C": "gộp tài nguyên trong mô hình đa người thuê (multitenant) dựa trên nhu cầu",
+        "D": "tự phục vụ tài nguyên tính toán bởi người thuê (tenant)"
+      }
     },
     {
       "id": "10.69",
@@ -675,7 +958,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cần cấu hình liên kết với các yêu cầu sau:\n• Sử dụng càng ít địa chỉ IP càng tốt.\n• Để lại ít nhất hai địa chỉ IP khả dụng bổ sung cho việc mở rộng trong tương lai.\nBộ cấu hình nào phải được áp dụng?",
+      "options_vi": {
+        "A": "R1(config-if)#ip address 10.10.10.1 255.255.255.248 \nR2(config-if)#ip address 10.10.10.4 255.255.255.248",
+        "B": "R1(config-if)#ip address 10.10.10.1 255.255.255.240 \nR2(config-if)#ip address 10.10.10.12 255.255.255.240",
+        "C": "R1 (config-if)#ip address 10.10.10.1 255.255.255.252 \nR2(config-if)#ip address 10.10.10.2 255.255.255.252",
+        "D": "R1 (config-if)#ip address 10.10.10.1 255.255.255.0 \nR2(config-if)#ip address 10.10.10.5 255.255.255.0"
+      }
     },
     {
       "id": "10.81",
@@ -691,7 +981,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "TCP và UDP phù hợp với mô hình truy vấn-phản hồi (query-response) như thế nào?",
+      "options_vi": {
+        "A": "TCP tránh sử dụng đánh số thứ tự (sequencing), còn UDP tránh sử dụng xác nhận (acknowledgments).",
+        "B": "TCP sử dụng phát hiện lỗi (error detection) cho các gói tin, còn UDP sử dụng khôi phục lỗi (error recovery).",
+        "C": "TCP thiết lập kết nối trước khi gửi dữ liệu, còn UDP gửi ngay lập tức.",
+        "D": "TCP khuyến khích gửi gói tin không theo thứ tự, còn UDP ngăn chặn việc sắp xếp lại."
+      }
     },
     {
       "id": "10.86",
@@ -709,7 +1006,15 @@
         "D",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai lý do nào để triển khai địa chỉ IPv4 riêng (private addressing) trên mạng? (Chọn hai)",
+      "options_vi": {
+        "A": "để mở rộng bảng định tuyến (routing table) trên router",
+        "B": "để tạo thuận lợi cho việc đánh số lại khi hợp nhất các mạng",
+        "C": "để cho phép các ứng dụng nội bộ coi các địa chỉ IPv4 riêng là duy nhất",
+        "D": "để tiết kiệm địa chỉ IPv4 duy nhất toàn cầu (global unique)",
+        "E": "để cung cấp bảo vệ khỏi các cuộc tấn công từ chối dịch vụ (denial-of-service) từ bên ngoài"
+      }
     }
   ]
 }

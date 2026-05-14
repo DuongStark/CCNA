@@ -15,7 +15,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một quản trị viên mạng cần gộp 4 cổng thành một liên kết logic duy nhất, liên kết này phải thương lượng kết nối lớp 2 với các cổng trên switch khác. Cần cấu hình gì khi sử dụng chế độ active ở cả hai phía của kết nối?",
+      "options_vi": {
+        "A": "802.1q trunks",
+        "B": "Cisco vPC",
+        "C": "LLDP",
+        "D": "LACP"
+      }
     },
     {
       "id": "5.6",
@@ -33,7 +40,15 @@
         "C",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Ngoài trạng thái loại bỏ (discarding), hai trạng thái nào mà cổng switch chuyển qua khi sử dụng RSTP (802.1w)? (Chọn hai)",
+      "options_vi": {
+        "A": "listening",
+        "B": "blocking",
+        "C": "forwarding",
+        "D": "learning",
+        "E": "speaking"
+      }
     },
     {
       "id": "5.7",
@@ -49,7 +64,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Vai trò của bộ điều khiển không dây (wireless controllers) trong mạng doanh nghiệp là gì?",
+      "options_vi": {
+        "A": "đóng vai trò là tuyến phòng thủ đầu tiên trong mạng doanh nghiệp",
+        "B": "hỗ trợ kiến trúc độc lập hoặc dựa trên bộ điều khiển",
+        "C": "tập trung hóa việc quản lý các điểm truy cập (access points) trong mạng doanh nghiệp",
+        "D": "cung cấp đăng nhập người dùng an toàn cho các thiết bị trên mạng"
+      }
     },
     {
       "id": "5.12",
@@ -65,7 +87,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Thiết bị nào điều khiển việc chuyển tiếp các yêu cầu xác thực cho người dùng khi kết nối vào mạng sử dụng điểm truy cập không dây lightweight (lightweight access point)?",
+      "options_vi": {
+        "A": "TACACS server",
+        "B": "wireless access point",
+        "C": "RADIUS server",
+        "D": "wireless LAN controller"
+      }
     },
     {
       "id": "5.15",
@@ -83,7 +112,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa. PC1 đang cố ping PC3 lần đầu tiên và gửi một ARP đến S1. Hành động nào được S1 thực hiện?",
+      "options_vi": {
+        "A": "Chuyển tiếp ra cổng G0/3 duy nhất",
+        "B": "Được flood ra mọi cổng ngoại trừ G0/0",
+        "C": "Hủy bỏ frame",
+        "D": "Chuyển tiếp ra giao diện G0/2 duy nhất"
+      }
     },
     {
       "id": "5.16",
@@ -99,7 +135,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa. Kết quả là gì nếu Gig1/11 nhận được một STP BPDU?",
+      "options_vi": {
+        "A": "Cổng chuyển sang trạng thái STP blocking",
+        "B": "Cổng chuyển thành root port",
+        "C": "Cổng chuyển ngay lập tức sang trạng thái STP forwarding",
+        "D": "Cổng chuyển sang trạng thái error-disable"
+      }
     },
     {
       "id": "5.17",
@@ -115,7 +158,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư cần cấu hình lưu lượng cho một VLAN không được gắn thẻ (untagged) bởi switch khi đi qua liên kết trunk. Lệnh nào nên được sử dụng?",
+      "options_vi": {
+        "A": "switchport trunk allowed vlan 10",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport mode trunk",
+        "D": "switchport trunk encapsulation dot1q"
+      }
     },
     {
       "id": "5.19",
@@ -131,7 +181,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mạng Cisco Unified Wireless phản hồi như thế nào đối với sự chồng lấn kênh Wi-Fi?",
+      "options_vi": {
+        "A": "Tự động luân phiên giữa 2.4 GHz và 5 GHz trên các điểm truy cập liền kề",
+        "B": "Cho phép quản trị viên gán kênh theo từng thiết bị hoặc từng giao diện",
+        "C": "Phân tách các thiết bị từ các nhà sản xuất khác nhau vào các kênh khác nhau",
+        "D": "Phân tích tải máy khách và nhiễu nền, sau đó gán kênh một cách động"
+      }
     },
     {
       "id": "5.20",
@@ -147,7 +204,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Switch sử dụng gì để xây dựng bảng địa chỉ MAC của nó?",
+      "options_vi": {
+        "A": "VTP",
+        "B": "DTP",
+        "C": "lưu lượng đi ra (egress traffic)",
+        "D": "lưu lượng đi vào (ingress traffic)"
+      }
     },
     {
       "id": "5.23",
@@ -165,7 +229,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch nào trở thành root của spanning tree cho VLAN 110?",
+      "options_vi": {
+        "A": "Switch 1",
+        "B": "Switch 2",
+        "C": "Switch 3",
+        "D": "Switch 4"
+      }
     },
     {
       "id": "5.24",
@@ -183,7 +254,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nQuản trị viên cần cấu hình các giao diện Gi1/1 và Gi1/3 trên switch SW11. PC-1 và PC-2 phải được đặt trong Data VLAN và Phone-1 phải được đặt trong Voice VLAN. Cấu hình nào đáp ứng các yêu cầu này?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "5.26",
@@ -199,7 +277,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Switch xử lý một frame nhận được trên Fa0/1 với địa chỉ MAC đích là 0e38.7363.657b như thế nào khi bảng không có địa chỉ này?",
+      "options_vi": {
+        "A": "Flood frame ra tất cả các giao diện ngoại trừ Fa0/1.",
+        "B": "Chuyển tiếp frame ngược ra giao diện Fa0/1.",
+        "C": "Hủy bỏ frame ngay lập tức.",
+        "D": "Giữ frame cho đến khi bộ đếm thời gian địa chỉ MAC hết hạn rồi hủy bỏ frame."
+      }
     },
     {
       "id": "5.36",
@@ -215,7 +300,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Nếu một cổng switch nhận được một frame mới trong khi đang truyền frame trước đó, nó xử lý các frame như thế nào?",
+      "options_vi": {
+        "A": "Frame trước được gửi đi, frame mới bị hủy, và yêu cầu truyền lại được gửi.",
+        "B": "Frame mới được gửi đi trước, frame trước bị hủy, và yêu cầu truyền lại được gửi.",
+        "C": "Hai frame được xử lý và gửi đi cùng lúc.",
+        "D": "Frame mới được đặt vào hàng đợi để truyền sau frame trước đó."
+      }
     },
     {
       "id": "5.39",
@@ -234,7 +326,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cần cấu hình giao tiếp giữa PC A và File Server. Để tránh gián đoạn cho bất kỳ giao tiếp nào khác, lệnh nào cần được cấu hình?",
+      "options_vi": {
+        "A": "Switch trunk allowed vlan 12",
+        "B": "Switchport trunk allowed vlan none",
+        "C": "Switchport trunk allowed vlan add 13",
+        "D": "Switchport trunk allowed vlan remove 10-11"
+      }
     },
     {
       "id": "5.40",
@@ -250,7 +349,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tại sao switch flood một frame ra tất cả các cổng?",
+      "options_vi": {
+        "A": "Địa chỉ MAC đích của frame không xác định",
+        "B": "Địa chỉ MAC nguồn của frame không xác định",
+        "C": "Địa chỉ MAC nguồn và đích của frame giống nhau",
+        "D": "Frame có địa chỉ MAC đích bằng không"
+      }
     },
     {
       "id": "5.43",
@@ -266,7 +372,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "VLAN native được bảo mật như thế nào trong mạng?",
+      "options_vi": {
+        "A": "tách biệt khỏi các VLAN khác trong miền quản trị",
+        "B": "gán cho nó một giá trị trong phạm vi VLAN riêng tư (private VLAN)",
+        "C": "cấu hình nó là VLAN 1",
+        "D": "cấu hình nó với một VLAN ID khác nhau ở mỗi đầu của liên kết"
+      }
     },
     {
       "id": "5.44",
@@ -282,7 +395,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lệnh nào trên một cổng cho phép chuyển sang trạng thái forwarding ngay lập tức khi PC được kết nối vào?",
+      "options_vi": {
+        "A": "switch(config)#spanning-tree portfast default",
+        "B": "switch(config)#spanning-tree portfast bpduguard default",
+        "C": "switch(config-if)#spanning-tree portfast trunk",
+        "D": "switch(config-if)#no spanning-tree portfast"
+      }
     },
     {
       "id": "5.46",
@@ -298,7 +418,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Công nghệ switch nào thiết lập kết nối mạng ngay lập tức khi được cắm vào?",
+      "options_vi": {
+        "A": "UplinkFast",
+        "B": "PortFast",
+        "C": "BPDU guard",
+        "D": "BackboneFast"
+      }
     },
     {
       "id": "6.3",
@@ -314,7 +441,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư nhận thấy mức sử dụng cao trên các kênh 2.4GHz và mức sử dụng thấp hơn trên các kênh 5GHz. Cần cấu hình gì để cho phép các client ưu tiên sử dụng các access point 5GHz?",
+      "options_vi": {
+        "A": "Client Band Select",
+        "B": "OEAP Split Tunnel",
+        "C": "11ac MU-MIMO",
+        "D": "Re-Anchor Roamed Clients"
+      }
     },
     {
       "id": "6.8",
@@ -330,7 +464,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Quản trị viên cần bảo mật WLC khỏi việc nhận các yêu cầu association giả mạo (spoofed). Các bước nào cần thực hiện để cấu hình WLC hạn chế các yêu cầu và buộc người dùng phải đợi 10 ms để thử lại yêu cầu association?",
+      "options_vi": {
+        "A": "Bật Security Association Teardown Protection và đặt SA Query timeout thành 10",
+        "B": "Bật dịch vụ Protected Management Frame và đặt Comeback timer thành 10",
+        "C": "Bật bảo mật 802.1x Layer 2 và đặt Comeback timer thành 10",
+        "D": "Bật MAC filtering và đặt SA Query timeout thành 10"
+      }
     },
     {
       "id": "6.10",
@@ -346,7 +487,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại khung quản lý (management frame) 802.11 nào được gửi khi một client chuyển vùng (roam) giữa các access point trên cùng một SSID?",
+      "options_vi": {
+        "A": "Authentication Request",
+        "B": "Probe Request",
+        "C": "Reassociation Request",
+        "D": "Association Request"
+      }
     },
     {
       "id": "6.12",
@@ -362,7 +510,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao thức nào được access point sử dụng để nhận nguồn điện từ switch được kết nối?",
+      "options_vi": {
+        "A": "Internet Group Management Protocol",
+        "B": "Cisco Discovery Protocol",
+        "C": "Adaptive Wireless Path Protocol",
+        "D": "Neighbor Discovery Protocol"
+      }
     },
     {
       "id": "6.14",
@@ -380,7 +535,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lệnh nào phải được thực thi trên Gi1/1 của SW1 để cổng thụ động (passively) trở thành cổng trunk nếu Gi1/1 trên SW2 được cấu hình ở chế độ desirable hoặc trunk?",
+      "options_vi": {
+        "A": "switchport mode trunk",
+        "B": "switchport mode dot1-tunnel",
+        "C": "switchport mode dynamic auto",
+        "D": "switchport mode dynamic desirable"
+      }
     },
     {
       "id": "6.15",
@@ -398,7 +560,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư cần cấu hình GigabitEthernet1/1 để hỗ trợ lưu lượng thoại (voice) và dữ liệu (data). Cấu hình nào hoàn thành nhiệm vụ này?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "6.17",
@@ -414,7 +583,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Vai trò của access point trong mạng doanh nghiệp (enterprise network) là gì?",
+      "options_vi": {
+        "A": "kết nối các thiết bị không dây vào mạng có dây",
+        "B": "hỗ trợ đăng nhập an toàn của người dùng vào thiết bị hoặc mạng",
+        "C": "tích hợp với SNMP để ngăn chặn các cuộc tấn công DDoS",
+        "D": "đóng vai trò là tuyến phòng thủ đầu tiên trong mạng doanh nghiệp"
+      }
     },
     {
       "id": "6.19",
@@ -432,7 +608,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nChỉ có bốn switch tham gia vào quá trình spanning-tree của VLAN.\nBranch-1: priority 614440\nBranch-2: priority 39082416\nBranch-3: priority 0\nBranch-4: root primary\nSwitch nào trở thành root bridge vĩnh viễn cho VLAN 5?",
+      "options_vi": {
+        "A": "Branch-1",
+        "B": "Branch-2",
+        "C": "Branch-3",
+        "D": "Branch-4"
+      }
     },
     {
       "id": "6.20",
@@ -451,7 +634,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nToàn bộ nội dung của bảng địa chỉ MAC được hiển thị. Sales-4 gửi một khung dữ liệu (data frame) đến Sales-1. Switch thực hiện gì khi nhận được khung từ Sales-4?",
+      "options_vi": {
+        "A": "Ánh xạ địa chỉ MAC Layer 2 sang địa chỉ IP Layer 3 và chuyển tiếp khung",
+        "B": "Chèn địa chỉ MAC nguồn và cổng vào bảng chuyển tiếp và chuyển tiếp khung đến Sales-1",
+        "C": "Thực hiện tra cứu trong bảng địa chỉ MAC và loại bỏ khung do thiếu mục nhập",
+        "D": "Flood khung ra tất cả các cổng ngoại trừ cổng mà Sales-1 được kết nối"
+      }
     },
     {
       "id": "6.22",
@@ -469,7 +659,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nQuản trị viên cần tắt Cisco Discovery Protocol trên cổng được cấu hình với địa chỉ khả dụng cuối cùng trong subnet 10.0.0.0/30. Bộ lệnh nào đáp ứng yêu cầu?",
+      "options_vi": {
+        "A": "interface gi0/1\nno cdp enable",
+        "B": "interface gi0/1\nclear cdp table",
+        "C": "interface gi0/0\nno cdp run",
+        "D": "interface gi0/0\nno cdp advertise-v2"
+      }
     },
     {
       "id": "6.24",
@@ -485,7 +682,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì xảy ra khi các kênh Wi-Fi chồng lấn (overlapping) được triển khai?",
+      "options_vi": {
+        "A": "Mạng không dây trở nên dễ bị truy cập trái phép",
+        "B": "Các thiết bị không dây không thể phân biệt giữa các SSID khác nhau",
+        "C": "Truyền thông mạng bị mở cho việc nghe lén (eavesdropping)",
+        "D": "Người dùng gặp hiệu suất mạng không dây kém"
+      }
     },
     {
       "id": "6.26",
@@ -501,7 +705,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư cần thêm một switch cũ trở lại mạng. Để ngăn switch làm hỏng cơ sở dữ liệu VLAN (VLAN database), hành động nào phải được thực hiện?",
+      "options_vi": {
+        "A": "Thêm switch vào miền VTP với revision number thấp hơn",
+        "B": "Thêm switch vào miền VTP với revision number cao hơn",
+        "C": "Thêm switch với DTP được đặt thành dynamic desirable",
+        "D": "Thêm switch với DTP được đặt thành desirable"
+      }
     },
     {
       "id": "6.27",
@@ -517,7 +728,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Cổng nào trên WLC kết nối đến switch để truyền lưu lượng access-point thông thường?",
+      "options_vi": {
+        "A": "distribution system",
+        "B": "service",
+        "C": "redundancy",
+        "D": "console"
+      }
     },
     {
       "id": "6.31",
@@ -535,7 +753,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter A phải được cấu hình như thế nào để chỉ gửi thông tin Cisco Discovery Protocol đến router C?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "7.9",
@@ -551,7 +776,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi một switch nhận được một frame cho địa chỉ MAC đích đã biết, frame được xử lý như thế nào?",
+      "options_vi": {
+        "A": "flood đến tất cả các cổng ngoại trừ cổng mà nó đến",
+        "B": "broadcast đến tất cả các cổng",
+        "C": "chuyển tiếp đến cổng khả dụng đầu tiên",
+        "D": "gửi đến cổng được xác định cho địa chỉ MAC đã biết"
+      }
     },
     {
       "id": "7.13",
@@ -567,7 +799,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Sau khi cài đặt máy chủ Cisco ISE mới, kỹ sư phải thực hiện tác vụ nào trên Cisco WLC để kết nối các client không dây vào một VLAN cụ thể dựa trên thông tin xác thực của họ?",
+      "options_vi": {
+        "A": "Bật Authorized MIC APs against auth-list or AAA.",
+        "B": "Bật allow AAA Override",
+        "C": "Tắt LAG Mode or Next Reboot.",
+        "D": "Bật Event Driven RRM."
+      }
     },
     {
       "id": "7.23",
@@ -583,7 +822,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lợi ích của việc cấu hình PortFast trên một interface là gì?",
+      "options_vi": {
+        "A": "Sau khi cáp được kết nối, interface sử dụng tốc độ nhanh nhất có sẵn cho loại cáp đó",
+        "B": "Các frame đi vào interface được đánh dấu với mức ưu tiên cao hơn và sau đó được switch xử lý nhanh hơn",
+        "C": "Sau khi cáp được kết nối, interface sẵn sàng nhanh hơn để gửi và nhận dữ liệu người dùng",
+        "D": "Các frame thoại và video thời gian thực đi vào interface được xử lý nhanh hơn"
+      }
     },
     {
       "id": "7.28",
@@ -599,7 +845,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Các switch trong mô hình spine-and-leaf được kết nối với nhau như thế nào?",
+      "options_vi": {
+        "A": "Mỗi leaf switch được kết nối đến hai spine switch, tạo thành một vòng lặp.",
+        "B": "Mỗi leaf switch được kết nối đến một leaf switch trung tâm, sau đó uplink đến một core spine switch.",
+        "C": "Mỗi leaf switch được kết nối đến mỗi spine switch.",
+        "D": "Mỗi leaf switch được kết nối đến một trong các spine switch."
+      }
     },
     {
       "id": "7.42",
@@ -615,7 +868,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì cần được xem xét khi sử dụng 802.11a?",
+      "options_vi": {
+        "A": "Nó tương thích với các thiết bị không dây tuân thủ 802.11g và 802.11",
+        "B": "Nó được chọn thay vì 802.11b/g khi cần giải pháp chi phí thấp hơn",
+        "C": "Nó dễ bị nhiễu từ các thiết bị 2.4 GHz như lò vi sóng.",
+        "D": "Nó được sử dụng thay cho 802.11b/g khi cần nhiều kênh không chồng lấn"
+      }
     },
     {
       "id": "7.44",
@@ -631,7 +891,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư cấu hình interface Gi1/0 trên router PE của công ty để kết nối đến ISP.\nNeighbor discovery bị tắt.\ninterface Gi1/0\ndescription HQ_DC3392-9383\nduplex full\nspeed 100\nnegotiation auto\nlldp transmit\nlldp receive\nHành động nào cần thiết để hoàn thành cấu hình nếu ISP sử dụng thiết bị mạng của bên thứ ba?",
+      "options_vi": {
+        "A": "Bật LLDP trên toàn bộ thiết bị",
+        "B": "Tắt autonegotiation",
+        "C": "Tắt Cisco Discovery Protocol trên interface",
+        "D": "Bật LLDP-MED trên thiết bị ISP"
+      }
     },
     {
       "id": "7.47",
@@ -649,7 +916,15 @@
         "C",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai lợi ích của việc sử dụng tính năng PortFast là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Các interface được bật sẽ tự động được đặt ở trạng thái listening",
+        "B": "Các interface được bật chờ 50 giây trước khi chuyển sang trạng thái forwarding",
+        "C": "Các interface được bật không bao giờ tạo ra thông báo thay đổi topology.",
+        "D": "Các interface được bật chuyển sang trạng thái learning sẽ tạo ra thông báo thay đổi topology của switch",
+        "E": "Các interface được bật khởi động và chuyển sang trạng thái forwarding ngay lập tức"
+      }
     },
     {
       "id": "7.48",
@@ -665,7 +940,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một quản trị viên mạng được yêu cầu cấu hình VLAN 2, 3 và 4 cho một triển khai mới. Một số cổng phải được gán cho các VLAN mới với các cổng còn lại không sử dụng. Hành động nào nên được thực hiện cho các cổng không sử dụng?",
+      "options_vi": {
+        "A": "cấu hình cổng trong native VLAN",
+        "B": "cấu hình các cổng trong một black hole VLAN",
+        "C": "cấu hình trong một native VLAN không mặc định",
+        "D": "cấu hình các cổng là access port"
+      }
     },
     {
       "id": "8.4",
@@ -681,7 +963,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chế độ nào phải được đặt cho các AP để giao tiếp với Wireless LAN Controller sử dụng giao thức Control and Provisioning of Wireless Access Points (CAPWAP)?",
+      "options_vi": {
+        "A": "bridge",
+        "B": "route",
+        "C": "autonomous",
+        "D": "lightweight"
+      }
     },
     {
       "id": "8.5",
@@ -699,7 +988,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nThay đổi nào trong cấu hình trên Switch2 cho phép hai switch thiết lập một EtherChannel?",
+      "options_vi": {
+        "A": "Thay đổi giao thức sang chế độ EtherChannel on",
+        "B": "Thay đổi chế độ LACP sang active",
+        "C": "Thay đổi chế độ LACP sang desirable",
+        "D": "Thay đổi giao thức sang PAgP và sử dụng chế độ auto"
+      }
     },
     {
       "id": "8.6",
@@ -715,7 +1011,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Xác thực không dây xảy ra ở đâu?",
+      "options_vi": {
+        "A": "SSID",
+        "B": "radio",
+        "C": "band",
+        "D": "Layer 2"
+      }
     },
     {
       "id": "8.7",
@@ -731,7 +1034,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đường đi của lưu lượng được gửi từ một máy trạm người dùng đến một máy trạm khác trên một switch riêng biệt trong mô hình kiến trúc ba lớp là gì?",
+      "options_vi": {
+        "A": "access – core – distribution – access",
+        "B": "access – distribution – distribution – access",
+        "C": "access – core – access",
+        "D": "access – distribution – core – distribution – access"
+      }
     },
     {
       "id": "8.9",
@@ -747,7 +1057,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mục đích của SSID là gì?",
+      "options_vi": {
+        "A": "Nó cung cấp bảo mật mạng",
+        "B": "Nó phân biệt lưu lượng đi vào các access point",
+        "C": "Nó nhận dạng một access point riêng lẻ trên một WLAN",
+        "D": "Nó nhận dạng một WLAN"
+      }
     },
     {
       "id": "8.10",
@@ -765,7 +1082,15 @@
         "A",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai đặc điểm của SSID là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Nó có thể được ẩn hoặc broadcast trong một WLAN",
+        "B": "Nó nhận dạng duy nhất một access point trong một WLAN",
+        "C": "Nó nhận dạng duy nhất một client trong một WLAN",
+        "D": "Nó có tối đa 32 ký tự",
+        "E": "Nó cung cấp truy cập bảo mật vào một WLAN"
+      }
     },
     {
       "id": "8.13",
@@ -781,7 +1106,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại cổng nào hỗ trợ lệnh spanning-tree portfast mà không cần cấu hình bổ sung?",
+      "options_vi": {
+        "A": "access port",
+        "B": "interface chính Layer 3",
+        "C": "subinterface Layer 3",
+        "D": "trunk port"
+      }
     },
     {
       "id": "8.17",
@@ -797,7 +1129,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì ngăn một máy trạm nhận được địa chỉ DHCP?",
+      "options_vi": {
+        "A": "DTP",
+        "B": "STP",
+        "C": "VTP",
+        "D": "802.1Q"
+      }
     },
     {
       "id": "8.23",
@@ -815,7 +1154,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nGiữa các vùng nào người dùng không dây dự kiến sẽ gặp kết nối không ổn định?",
+      "options_vi": {
+        "A": "giữa vùng 1 và 2",
+        "B": "giữa vùng 2 và 5",
+        "C": "giữa vùng 3 và 4",
+        "D": "giữa vùng 3 và 6"
+      }
     },
     {
       "id": "8.29",
@@ -831,7 +1177,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại frame 802.11 nào được chỉ ra bởi probe response sau khi client gửi một probe request?",
+      "options_vi": {
+        "A": "action",
+        "B": "management",
+        "C": "control",
+        "D": "data"
+      }
     },
     {
       "id": "8.30",
@@ -847,7 +1200,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì được khuyến nghị cho thiết kế hạ tầng không dây (wireless infrastructure) của một tổ chức?",
+      "options_vi": {
+        "A": "nhóm các điểm truy cập (access point) lại với nhau để tăng thông lượng trên một kênh nhất định",
+        "B": "cấu hình ba điểm truy cập (access point) đầu tiên sử dụng các kênh 1, 6 và 11",
+        "C": "bao gồm ít nhất hai điểm truy cập (access point) trên các kênh không chồng lấn (nonoverlapping channel) để hỗ trợ cân bằng tải (load balancing)",
+        "D": "gán các điểm truy cập (access point) liền kề vật lý vào cùng một kênh Wi-Fi"
+      }
     },
     {
       "id": "8.31",
@@ -865,7 +1225,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nVì lý do bảo mật, tính năng tự động khám phá láng giềng (automatic neighbor discovery) phải được tắt trên giao diện Gi0/1 của R5.\nCác tác vụ sau phải được hoàn thành:\n* Tắt tất cả các phương thức khám phá láng giềng trên giao diện Gi0/1 của R5.\n* Cho phép khám phá láng giềng trên giao diện Gi0/2 của R5.\n* Xác minh không có láng giềng nào được học động (dynamically learned) trên giao diện Gi0/1 của R5.\n* Hiển thị địa chỉ IP của giao diện Gi0/2 của R6.\nCấu hình nào phải được sử dụng?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "8.49",
@@ -883,7 +1250,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nQuản trị viên phải kết nối SW_1 và máy in vào mạng. SW_2 yêu cầu sử dụng DTP cho kết nối đến SW_1. Máy in được cấu hình là cổng truy cập (access port) với VLAN 5. Bộ lệnh nào hoàn thành kết nối?",
+      "options_vi": {
+        "A": "switchport mode trunk\nswitchport trunk pruning vlan add 5",
+        "B": "switchport mode dynamic desirable \nswitchport trunk allowed vlan add 5",
+        "C": "switchport mode dynamic auto \nswitchport private-vlan association host 5",
+        "D": "switchport mode dynamic auto \nswitchport trunk encapsulation negotiate"
+      }
     },
     {
       "id": "8.53",
@@ -901,7 +1275,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHost A đã gửi một khung dữ liệu (data frame) đến host D.\nSwitch làm gì khi nhận được khung từ host A?",
+      "options_vi": {
+        "A": "Nó tắt cổng Fa0/1 và đặt nó ở chế độ err-disable.",
+        "B": "Nó gặp hiện tượng bão quảng bá (broadcast storm).",
+        "C": "Nó phát tràn (flood) khung ra tất cả các cổng ngoại trừ cổng Fa0/1.",
+        "D": "Nó loại bỏ khung khỏi bảng CAM của switch."
+      }
     },
     {
       "id": "8.54",
@@ -919,7 +1300,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đã bắt đầu cấu hình switch thay thế SW1. Để xác minh một phần cấu hình, kỹ sư đã thực hiện các lệnh như hình và nhận thấy rằng mục nhập cho PC2 bị thiếu. Thay đổi nào phải được áp dụng cho SW1 để PC1 và PC2 giao tiếp bình thường?",
+      "options_vi": {
+        "A": "SW1(config)#interface fa0/2 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#no switchport trunk allowed vlan 3 \nSW1 (config-if)#switchport trunk allowed vlan 2",
+        "B": "SW1(config)#interface fa0/1 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#switchport trunk native vlan 2 \nSW1(config-if)#switchport trunk allowed vlan 3",
+        "C": "SW1(config-if)#interface fa0/2 \nSW1(config-if)#no switchport mode trunk\nSW1(config-if)#no switchport trunk allowed vlan 3 \nSW1(config-if)#switchport mode access",
+        "D": "SW1(config)#interface fa0/1 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#switchport trunk allowed vlan 2"
+      }
     },
     {
       "id": "8.56",
@@ -937,7 +1325,15 @@
         "D",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai trạng thái spanning-tree nào bị bỏ qua trên một giao diện chạy PortFast? (Chọn hai)",
+      "options_vi": {
+        "A": "forwarding",
+        "B": "blocking",
+        "C": "disabled",
+        "D": "learning",
+        "E": "listening"
+      }
     },
     {
       "id": "8.57",
@@ -953,7 +1349,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Yêu cầu khi cấu hình hoặc gỡ bỏ LAG trên WLC là gì?",
+      "options_vi": {
+        "A": "Các cổng vào và ra cho luồng lưu lượng phải được chỉ định nếu LAG được bật.",
+        "B": "Bộ điều khiển (controller) phải được khởi động lại sau khi bật hoặc cấu hình lại LAG.",
+        "C": "Giao diện quản lý (management interface) phải được gán lại nếu LAG bị tắt.",
+        "D": "Nhiều giao diện không gắn thẻ (untagged) trên cùng một cổng phải được hỗ trợ."
+      }
     },
     {
       "id": "8.58",
@@ -969,7 +1372,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Yêu cầu cho các kênh Wi-Fi không chồng lấn (nonoverlapping channel) là gì?",
+      "options_vi": {
+        "A": "các cài đặt bảo mật khác nhau",
+        "B": "tốc độ truyền khác nhau",
+        "C": "dải tần số không liên tục (discontinuous frequency range)",
+        "D": "các SSID duy nhất"
+      }
     },
     {
       "id": "8.60",
@@ -987,7 +1397,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào cho phép EtherChannel hình thành động giữa SW1 và SW2 bằng cách sử dụng giao thức tiêu chuẩn công nghiệp, và hỗ trợ kết nối IP đầy đủ giữa tất cả các PC?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "8.66",
@@ -1005,7 +1422,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đã xây dựng một EtherChannel LACP L2 mới giữa SW1 và SW2 và thực hiện các lệnh show này để xác minh công việc. Tác vụ bổ sung nào cho phép hai switch thiết lập kênh cổng LACP (LACP port channel)?",
+      "options_vi": {
+        "A": "Thay đổi chế độ channel-group trên SW1 thành desirable.",
+        "B": "Thay đổi chế độ channel-group trên SW1 thành active hoặc passive.",
+        "C": "Thay đổi chế độ channel-group trên SW2 thành auto.",
+        "D": "Cấu hình lệnh interface port-channel 1 trên cả hai switch."
+      }
     },
     {
       "id": "8.67",
@@ -1023,7 +1447,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng phải cập nhật cấu hình trên Switch2 để nó gửi các gói LLDP mỗi phút và thông tin gửi qua LLDP được làm mới mỗi 3 phút. Kỹ sư phải áp dụng cấu hình nào?",
+      "options_vi": {
+        "A": "Switch2(config)#lldp timer 60 \nSwitch2(config)# lldp tlv-select 180",
+        "B": "Switch2(config)#lldp timer 60 \nSwitch2(config)#lldp holdtime 180",
+        "C": "Switch2(config)#lldp timer 1\nSwitch2(config)#lldp tlv-select 3",
+        "D": "Switch2(config)#lldp timer 1 \nSwitch2(config)#lldp holdtime 3"
+      }
     },
     {
       "id": "8.72",
@@ -1039,7 +1470,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì cung cấp khả năng kiểm soát tập trung xác thực (authentication) và chuyển vùng (roaming) trong mạng doanh nghiệp?",
+      "options_vi": {
+        "A": "một switch LAN",
+        "B": "một tường lửa (firewall)",
+        "C": "một điểm truy cập nhẹ (lightweight access point)",
+        "D": "một bộ điều khiển mạng LAN không dây (wireless LAN controller)"
+      }
     },
     {
       "id": "8.76",
@@ -1057,7 +1495,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nTất cả các VLAN đều có trong cơ sở dữ liệu VLAN. Chuỗi lệnh nào phải được áp dụng để hoàn thành cấu hình?",
+      "options_vi": {
+        "A": "interface FastEthernet0/1 \nswitchport trunk native vlan 10 \nswitchport trunk allowed vlan 10,15",
+        "B": "interface FastEthernet0/1 \nswitchport mode trunk \nswitchport trunk allowed vlan 10,15",
+        "C": "interface FastEthernet0/1 \nswitchport trunk allowed vlan add 10 \nvlan 10\nprivate-vlan isolated",
+        "D": "interface FastEthernet0/1 \nswitchport mode access \nswitchport voice vlan 10"
+      }
     },
     {
       "id": "9.1",
@@ -1075,7 +1520,15 @@
         "A",
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch#show etherchannel summary\n[output omitted]\nGroup   Port-channel  Protocol   Ports\n-------+--------------+---------+---------------------\n10      Po10(SU)       LACP      Gi0/0(P)  Gi0/1(P)\n20      Po20(SU)       LACP      Gi0/2(P)  Gi0/3(P)\nHai lệnh nào khi sử dụng cùng nhau tạo port channel 10? (Chọn hai)",
+      "options_vi": {
+        "A": "int range g0/0-1\nchannel-group 10 mode active",
+        "B": "int range g0/0-1\nchannel-group 10 mode desirable",
+        "C": "int range g0/0-1\nchannel-group 10 mode passive",
+        "D": "int range g0/0-1 \nchannel-group 10 mode auto",
+        "E": "int range g0/0-1 \nchannel-group 10 mode on"
+      }
     },
     {
       "id": "9.12",
@@ -1091,7 +1544,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Rapid PVST+ tạo topology mạng không vòng lặp (loop-free) nhanh như thế nào?",
+      "options_vi": {
+        "A": "Nó yêu cầu nhiều liên kết giữa các switch lõi (core switch)",
+        "B": "Nó ánh xạ nhiều VLAN vào cùng một phiên bản spanning-tree (spanning-tree instance)",
+        "C": "Nó tạo một phiên bản spanning-tree cho mỗi VLAN",
+        "D": "Nó sử dụng nhiều đường dẫn hoạt động (active path) giữa các trạm cuối (end station)"
+      }
     },
     {
       "id": "9.19",
@@ -1107,7 +1567,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chế độ giao diện (interface mode) nào phải được cấu hình để kết nối các AP nhẹ (lightweight AP) trong kiến trúc tập trung (centralized architecture)?",
+      "options_vi": {
+        "A": "WLAN dynamic",
+        "B": "management",
+        "C": "trunk",
+        "D": "access"
+      }
     },
     {
       "id": "9.23",
@@ -1125,7 +1592,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLiên kết giữa PC1 và switch đang hoạt động, nhưng hiệu suất kém. Điều kiện giao diện nào đang gây ra vấn đề hiệu suất?",
+      "options_vi": {
+        "A": "Có sự không khớp duplex (duplex mismatch) trên giao diện",
+        "B": "Có vấn đề với cáp quang (fiber) trên giao diện switch",
+        "C": "Có sự không khớp tốc độ (speed mismatch) trên giao diện",
+        "D": "Có sự không khớp loại giao diện (interface type mismatch)"
+      }
     },
     {
       "id": "9.24",
@@ -1141,7 +1615,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì cung cấp khả năng kiểm soát tập trung xác thực (authentication) và chuyển vùng (roaming) trong mạng doanh nghiệp?",
+      "options_vi": {
+        "A": "một điểm truy cập nhẹ (lightweight access point)",
+        "B": "một tường lửa (firewall)",
+        "C": "một bộ điều khiển mạng LAN không dây (wireless LAN controller)",
+        "D": "một switch LAN"
+      }
     },
     {
       "id": "9.31",
@@ -1159,7 +1640,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư được yêu cầu thêm VLAN mới vào trunk hiện có mà không thay đổi bất kỳ cấu hình nào đã được thiết lập trước đó. Lệnh nào hoàn thành tác vụ này?",
+      "options_vi": {
+        "A": "switchport trunk allowed vlan 100-104",
+        "B": "switchport trunk allowed vlan all",
+        "C": "switchport trunk allowed vlan add 104",
+        "D": "switchport trunk allowed vlan 104"
+      }
     },
     {
       "id": "9.36",
@@ -1175,7 +1663,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một lý do để triển khai LAG trên Cisco WLC là gì?",
+      "options_vi": {
+        "A": "để tăng cường bảo mật và mã hóa các khung quản lý (management frame)",
+        "B": "để cung cấp dự phòng liên kết (link redundancy) và cân bằng tải (load balancing)",
+        "C": "để cho phép chuyển đổi dự phòng có trạng thái (stateful) và theo trạng thái liên kết (link-state failover)",
+        "D": "để cho phép các cổng switch được kết nối chuyển đổi dự phòng và sử dụng các VLAN khác nhau"
+      }
     },
     {
       "id": "9.38",
@@ -1191,7 +1686,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chế độ PoE nào cho phép phát hiện thiết bị được cấp nguồn và đảm bảo cung cấp nguồn khi thiết bị được phát hiện?",
+      "options_vi": {
+        "A": "dynamic",
+        "B": "static",
+        "C": "active",
+        "D": "auto"
+      }
     },
     {
       "id": "9.39",
@@ -1207,7 +1709,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư Cisco cần cấu hình một cổng switch đơn lẻ để đáp ứng các yêu cầu sau:\n* chấp nhận các frame không được gắn tag và đặt chúng vào VLAN 20\n* chấp nhận các frame được gắn tag trong VLAN 30 khi CDP phát hiện điện thoại IP Cisco\nBộ lệnh nào kỹ sư phải áp dụng?",
+      "options_vi": {
+        "A": "switchport mode access\nswitchport access vlan 20 \nswitchport voice vlan 30",
+        "B": "switchport mode trunk \nswitchport access vlan 20 \nswitchport voice vlan 30",
+        "C": "switchport mode dynamic auto \nswitchport trunk native vlan 20 \nswitchport trunk allowed vlan 30 \nswitchport voice vlan 30",
+        "D": "switchport mode dynamic desirable \nswitchport access vlan 20 \nswitchport trunk allowed vlan 30 \nswitchport voice vlan 30"
+      }
     },
     {
       "id": "9.41",
@@ -1225,7 +1734,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nNgười dùng cần kết nối vào mạng không dây bằng các thiết bị tương thích IEEE 802.11r. Kết nối phải được duy trì khi người dùng di chuyển giữa các tầng hoặc đến các khu vực khác trong tòa nhà. Cấu hình kết nối phải như thế nào?",
+      "options_vi": {
+        "A": "Chọn tùy chọn WPA Policy với tùy chọn CCKM",
+        "B": "Tắt mã hóa AES",
+        "C": "Bật Fast Transition và chọn tùy chọn FT 802.1x",
+        "D": "Bật Fast Transition và chọn tùy chọn FT PSK"
+      }
     },
     {
       "id": "9.42",
@@ -1243,7 +1759,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đang cấu hình EtherChannel sử dụng LACP giữa Switch 1 và Switch 2. Cấu hình nào phải được áp dụng để chỉ Switch 1 gửi các gói tin khởi tạo LACP?",
+      "options_vi": {
+        "A": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode passive",
+        "B": "Switch1(config-if)#channel-group 1 mode passive\nSwitch2(config-if)#channel-group 1 mode active",
+        "C": "Switch1(config-if)#channel-group 1 mode active\nSwitch2(config-if)#channel-group 1 mode passive",
+        "D": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode active"
+      }
     },
     {
       "id": "9.43",
@@ -1261,7 +1784,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch nào trở thành root của spanning tree cho VLAN 20 nếu tất cả các liên kết có tốc độ bằng nhau?",
+      "options_vi": {
+        "A": "SW1",
+        "B": "SW2",
+        "C": "SW3",
+        "D": "SW4"
+      }
     },
     {
       "id": "9.47",
@@ -1277,7 +1807,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giá trị nào là định danh duy nhất mà access point sử dụng để thiết lập và duy trì kết nối không dây với các thiết bị mạng không dây?",
+      "options_vi": {
+        "A": "VLANID",
+        "B": "SSID",
+        "C": "RFID",
+        "D": "WLANID"
+      }
     },
     {
       "id": "9.49",
@@ -1295,7 +1832,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch A được cấu hình mới. Tất cả các VLAN đều có trong cơ sở dữ liệu VLAN. Điện thoại IP và PC A trên Gi0/1 phải được cấu hình cho các VLAN phù hợp để thiết lập kết nối giữa các PC. Bộ lệnh nào đáp ứng yêu cầu?",
+      "options_vi": {
+        "A": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan 51",
+        "B": "SwitchA(config-if)#switchport mode access \nSwitchA(config-if)#switchport access vlan 50 \nSwitchA(config-if)#switchport voice vlan untagged",
+        "C": "SwitchA(config-if)#switchport mode trunk \nSwitchA(config-if)#switchport trunk allowed vlan add 50, 51\nSwitchA(config-if)#switchport voice vlan dot1p",
+        "D": "SwitchA(config-if)#switchport mode trunk \nSwitchA(config-if)#switchport trunk allowed vlan 50, 51 \nSwitchA(config-if)#switchport qos trust cos"
+      }
     },
     {
       "id": "9.52",
@@ -1311,7 +1855,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng nào của switch Layer 2 đóng gói các gói tin cho các VLAN khác nhau để các gói tin đi qua cùng một cổng và duy trì sự phân tách lưu lượng giữa các VLAN?",
+      "options_vi": {
+        "A": "VLAN numbering",
+        "B": "VLAN DSCP",
+        "C": "VLAN tagging",
+        "D": "VLAN marking"
+      }
     },
     {
       "id": "9.55",
@@ -1329,7 +1880,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHành động nào phải được thực hiện để các thiết bị lân cận phát hiện nhanh chóng switch Cat9300?",
+      "options_vi": {
+        "A": "Bật portfast trên các cổng kết nối đến các thiết bị lân cận",
+        "B": "Cấu hình lệnh cdp holdtime 10 trên switch Cat9300",
+        "C": "Cấu hình lệnh cdp timer 10 trên các thiết bị lân cận của switch Cat9300",
+        "D": "Cấu hình lệnh cdp timer 10 trên switch Cat9300"
+      }
     },
     {
       "id": "9.56",
@@ -1347,7 +1905,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSW2 được thay thế do lỗi phần cứng. Một kỹ sư mạng bắt đầu cấu hình SW2 bằng cách sao chép cấu hình giao diện Fa0/1 từ SW1. Lệnh nào phải được cấu hình trên giao diện Fa0/1 của SW2 để cho phép PC1 kết nối đến PC2?",
+      "options_vi": {
+        "A": "switchport mode trunk",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport trunk allowed remove 10",
+        "D": "switchport mode access"
+      }
     },
     {
       "id": "9.59",
@@ -1363,7 +1928,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại cổng nào mà lightweight AP sử dụng để kết nối vào mạng có dây khi được cấu hình ở chế độ FlexConnect với chuyển mạch cục bộ (local switching) và gắn tag VLAN?",
+      "options_vi": {
+        "A": "EtherChannel",
+        "B": "access",
+        "C": "LAG",
+        "D": "trunk"
+      }
     },
     {
       "id": "9.60",
@@ -1379,7 +1951,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cài đặt một máy in không dây mới với địa chỉ IP tĩnh trên mạng Wi-Fi. Tính năng nào phải được bật và cấu hình để ngăn ngừa các sự cố kết nối với máy in?",
+      "options_vi": {
+        "A": "passive client",
+        "B": "static IP tunneling",
+        "C": "DHCP address assignment",
+        "D": "client exclusion"
+      }
     },
     {
       "id": "9.65",
@@ -1397,7 +1976,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào thiết lập EtherChannel LACP Layer 2 khi được áp dụng trên cả hai switch?",
+      "options_vi": {
+        "A": "interface range G1/1 -1/3 \nswitchport mode access \nchannel-group 1 mode passive \nno shutdown",
+        "B": "interface range G1/1 -1/3\nswitchport mode trunk \nchannel-group 1 mode desirable \nno shutdown",
+        "C": "interface range G1/1 -1/3 \nswitchport mode trunk \nchannel-group 1 mode active \nno shutdown",
+        "D": "interface range G1/1 -1/3 \nswitchport mode access\nchannel-group 1 mode on \nno shutdown"
+      }
     },
     {
       "id": "9.76",
@@ -1413,7 +1999,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCat9K-1#show lldp entry Cat9K-2\nLocal Intf: Gi1/0/21\nChassis ID: 308b.b2b3.2880\nPort id: Gi1/0/21\nPort Description: GigabitEthernet1/0/21\nSystem Name: Cat9K-2\nManagement Addresses:\nIP: 10.6.110.2\nQuản trị viên mạng phải ngăn địa chỉ IP của switch Cat9K-2 hiển thị trong LLDP mà không tắt giao thức. Hành động nào phải được thực hiện để hoàn thành nhiệm vụ?",
+      "options_vi": {
+        "A": "Cấu hình lệnh no lldp tlv-select-management-address toàn cục trên Cat9K-2",
+        "B": "Cấu hình lệnh no lldp transmit trên giao diện G1/0/21 của Cat9K-1",
+        "C": "Cấu hình lệnh no lldp receive trên giao diện G1/0/21 của Cat9K-1",
+        "D": "Cấu hình lệnh no lldp mac-phy-cfg toàn cục trên Cat9K-2"
+      }
     },
     {
       "id": "9.85",
@@ -1431,7 +2024,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác điều kiện sau phải được xem xét:\n+ SW1 đã được cấu hình đầy đủ cho tất cả lưu lượng\n+ Các liên kết của SW4 và SW9 đến SW1 đã được cấu hình\n+ Giao diện Gi0/1 của SW4 và Gi0/0 của SW9 đã được cấu hình\n+ Các switch còn lại đã có tất cả các VLAN được thêm vào cơ sở dữ liệu VLAN\nCấu hình nào thiết lập ping thành công từ PC2 đến PC7 mà không gián đoạn luồng lưu lượng giữa các PC khác?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "9.95",
@@ -1447,7 +2047,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư phải cấu hình phát hiện thiết bị lân cận (neighbor discovery) giữa router của công ty và ISP.\nBước tiếp theo để hoàn thành cấu hình là gì nếu ISP sử dụng router của bên thứ ba?",
+      "options_vi": {
+        "A": "Tắt CDP trên gi0/0.",
+        "B": "Tắt auto-negotiation.",
+        "C": "Bật LLDP TLVs trên router ISP.",
+        "D": "Bật LLDP toàn cục."
+      }
     },
     {
       "id": "9.105",
@@ -1463,7 +2070,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của việc học địa chỉ MAC (MAC learning) trên switch là gì?",
+      "options_vi": {
+        "A": "Địa chỉ MAC tĩnh được thêm thủ công vào bảng MAC.",
+        "B": "Việc học địa chỉ MAC bị tắt theo mặc định trên tất cả các VLAN.",
+        "C": "Các frame nhận được cho địa chỉ MAC đích không có trong bảng địa chỉ sẽ bị loại bỏ.",
+        "D": "Bảng địa chỉ MAC được sử dụng để điền vào bảng ARP."
+      }
     },
     {
       "id": "10.7",
@@ -1479,7 +2093,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Bộ kênh không dây 2.4 GHz không chồng lấn (nonoverlapping) nào là tiêu chuẩn tại Hoa Kỳ?",
+      "options_vi": {
+        "A": "kênh 2, 7, 9 và 11",
+        "B": "kênh 1, 6, 11 và 14",
+        "C": "kênh 2, 7 và 11",
+        "D": "kênh 1, 6 và 11"
+      }
     },
     {
       "id": "10.8",
@@ -1495,7 +2116,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lệnh nào được nhập trên switch được cấu hình Rapid-PVST+ để lắng nghe và học (listen and learn) trong một khoảng thời gian cụ thể?",
+      "options_vi": {
+        "A": "switch(config)#spanning-tree vlan 1 max-age 6",
+        "B": "switch(config)#spanning-tree vlan 1 hello-time 10",
+        "C": "switch(config)#spanning-tree vlan 1 priority 4096",
+        "D": "switch(config)#spanning-tree vlan 1 forward-time 20"
+      }
     },
     {
       "id": "10.10",
@@ -1511,7 +2139,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\ninterface g2/0/0\nchannel-group 1 mode active\ninterface g4/0/0\nchannel-group 1 mode active\ninterface Port-channel1\nip address 203.0.113.65 255.255.255.252\n%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to down\nMột kỹ sư đang cấu hình giao diện port-channel Layer 3 với LACP. Cấu hình trên thiết bị đầu tiên đã hoàn tất và đã xác minh rằng cả hai giao diện đã đăng ký thiết bị lân cận trong bảng CDP. Tác vụ nào trên thiết bị lân cận cho phép port channel mới hoạt động mà không cần thương lượng kênh?",
+      "options_vi": {
+        "A": "Bật các giao diện lân cận bằng lệnh no shutdown.",
+        "B": "Thay đổi chế độ EtherChannel trên các giao diện lân cận thành auto",
+        "C": "Sửa đổi cấu hình EtherChannel tĩnh của thiết bị sang chế độ passive",
+        "D": "Cấu hình địa chỉ IP của thiết bị lân cận"
+      }
     },
     {
       "id": "10.20",
@@ -1527,7 +2162,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chế độ điểm truy cập (access point) nào dựa vào bộ điều khiển tập trung (centralized controller) để quản lý, chuyển vùng (roaming) và cấu hình SSID?",
+      "options_vi": {
+        "A": "Chế độ repeater",
+        "B": "Chế độ bridge",
+        "C": "Chế độ lightweight",
+        "D": "Chế độ autonomous"
+      }
     },
     {
       "id": "10.27",
@@ -1543,7 +2185,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của kiến trúc spine-and-leaf là gì?",
+      "options_vi": {
+        "A": "Giảm thiểu tình trạng quá tải (oversubscription) bằng cách thêm một lớp switch leaf",
+        "B": "Giới hạn kích thước payload của lưu lượng trong lớp leaf",
+        "C": "Cung cấp độ trễ có thể dự đoán được trên đường đi của lưu lượng giữa các thiết bị đầu cuối",
+        "D": "Chỉ gửi lưu lượng multicast giữa các máy chủ được kết nối trực tiếp với spine"
+      }
     },
     {
       "id": "10.34",
@@ -1561,7 +2210,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác client trên WLAN được yêu cầu sử dụng 802.11r. Hành động nào phải được thực hiện để đáp ứng yêu cầu?",
+      "options_vi": {
+        "A": "Bật CCKM trong Authentication Key Management",
+        "B": "Trong Protected Management Frames, đặt tùy chọn PMF thành Required",
+        "C": "Đặt tùy chọn Fast Transition thành Enable và bật FT 802.1X trong Authentication Key Management",
+        "D": "Đặt tùy chọn Fast Transition và WPA gtk-randomize State thành disable"
+      }
     },
     {
       "id": "10.35",
@@ -1577,7 +2233,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi một switch nhận được một frame có địa chỉ MAC đích không xác định, frame đó được xử lý như thế nào?",
+      "options_vi": {
+        "A": "Broadcast đến tất cả các cổng trên switch",
+        "B": "Flood đến tất cả các cổng ngoại trừ cổng gốc",
+        "C": "Chuyển tiếp đến cổng khả dụng đầu tiên",
+        "D": "Được kiểm tra và loại bỏ bởi switch"
+      }
     },
     {
       "id": "10.40",
@@ -1595,7 +2258,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác router R1, R2 và R3 sử dụng một giao thức để xác định địa chỉ IP, nền tảng phần cứng và phiên bản phần mềm của các thiết bị lân cận. Kỹ sư mạng phải cấu hình R2 để tránh chia sẻ bất kỳ thông tin lân cận nào với R3, và duy trì mối quan hệ với R1. Hành động nào đáp ứng yêu cầu này?",
+      "options_vi": {
+        "A": "Cấu hình lệnh no lldp run trên toàn cục",
+        "B": "Cấu hình lệnh no lldp receive trên g0/1",
+        "C": "Cấu hình lệnh no cdp run trên toàn cục",
+        "D": "Cấu hình lệnh no cdp enable trên g0/2"
+      }
     },
     {
       "id": "10.47",
@@ -1611,7 +2281,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì phải được xem xét đối với AP FlexConnect chuyển mạch cục bộ (locally switched) nếu các VLAN được sử dụng bởi AP và truy cập client là khác nhau?",
+      "options_vi": {
+        "A": "Các AP phải được kết nối với switch bằng nhiều liên kết ở chế độ LAG.",
+        "B": "VLAN native phải khớp với VLAN quản lý của AP.",
+        "C": "Chế độ cổng switch phải được đặt thành trunk.",
+        "D": "IEEE 802.1Q trunking phải được tắt trên cổng switch."
+      }
     },
     {
       "id": "10.48",
@@ -1627,7 +2304,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lệnh nào cấu hình Cisco WLC để ngăn phiên serial với WLC CLI bị tự động đăng xuất?",
+      "options_vi": {
+        "A": "config sessions maxsessions 0",
+        "B": "config serial timeout 9600",
+        "C": "config serial timeout 0",
+        "D": "config sessions timeout 0"
+      }
     },
     {
       "id": "10.50",
@@ -1645,7 +2329,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kiến trúc sư đang quản lý mạng không dây với các AP từ nhiều văn phòng chi nhánh kết nối đến WLC trong trung tâm dữ liệu. Có một yêu cầu mới cho một WLAN duy nhất xử lý lưu lượng dữ liệu client mà không gửi nó đến WLC. Hành động nào phải được thực hiện để hoàn thành yêu cầu?",
+      "options_vi": {
+        "A": "Bật local HTTP profiling",
+        "B": "Bật FlexConnect Local Switching",
+        "C": "Bật local DHCP Profiling",
+        "D": "Bật Disassociation Imminent"
+      }
     },
     {
       "id": "10.51",
@@ -1661,7 +2352,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của việc học địa chỉ MAC (MAC address learning) là gì?",
+      "options_vi": {
+        "A": "Nó bị tắt theo mặc định trên tất cả các giao diện kết nối với trunk",
+        "B": "Nó tăng cường bảo mật trên VLAN quản lý",
+        "C": "Nó được bật theo mặc định trên tất cả các VLAN và giao diện",
+        "D": "Nó làm tăng khả năng bị tràn địa chỉ MAC (MAC address flooding)"
+      }
     },
     {
       "id": "10.52",
@@ -1677,7 +2375,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư Cisco tại văn phòng chi nhánh mới đang cấu hình mạng không dây với các điểm truy cập kết nối đến bộ điều khiển đặt tại trụ sở chính. Lưu lượng client không dây phải kết thúc tại văn phòng chi nhánh và yêu cầu khả năng duy trì hoạt động của điểm truy cập trong trường hợp mất kết nối WAN. Chế độ điểm truy cập nào phải được chọn?",
+      "options_vi": {
+        "A": "Lightweight với local switching bị tắt",
+        "B": "Local với AP fallback được bật",
+        "C": "OfficeExtend với high availability bị tắt",
+        "D": "FlexConnect với local switching được bật"
+      }
     },
     {
       "id": "10.53",
@@ -1693,7 +2398,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lợi thế của việc sử dụng chế độ auto so với chế độ static để phân bổ nguồn điện khi một điểm truy cập được kết nối với cổng switch PoE là gì?",
+      "options_vi": {
+        "A": "Mức mặc định được sử dụng cho điểm truy cập",
+        "B": "Nó phát hiện thiết bị là một thiết bị được cấp nguồn (powered device)",
+        "C": "Tất cả bốn đôi dây của cáp được sử dụng",
+        "D": "Power policing được bật cùng lúc"
+      }
     },
     {
       "id": "10.62",
@@ -1711,7 +2423,15 @@
         "A",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai chức năng nào mà WLC thực hiện trong kiến trúc điểm truy cập lightweight mà AP thực hiện độc lập trong kiến trúc autonomous? (Chọn hai)",
+      "options_vi": {
+        "A": "Xử lý việc liên kết, xác thực và chuyển vùng của các client không dây",
+        "B": "Mã hóa và giải mã lưu lượng sử dụng họ giao thức WAP",
+        "C": "Ngăn chặn xung đột giữa các client không dây trên cùng kênh RF",
+        "D": "Quản lý các kênh RF, bao gồm công suất phát",
+        "E": "Gửi và xử lý các beacon frame"
+      }
     },
     {
       "id": "10.64",
@@ -1727,7 +2447,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì khiến một cổng bị đặt vào trạng thái err-disabled?",
+      "options_vi": {
+        "A": "Độ trễ (latency)",
+        "B": "Không có gì được cắm vào cổng",
+        "C": "Lệnh shutdown được thực thi trên cổng",
+        "D": "Link flapping"
+      }
     },
     {
       "id": "10.65",
@@ -1743,7 +2470,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng nào chuyển tiếp frame đến các cổng có địa chỉ MAC đích khớp?",
+      "options_vi": {
+        "A": "Frame pushing",
+        "B": "Frame filtering",
+        "C": "Frame flooding",
+        "D": "Frame switching"
+      }
     },
     {
       "id": "10.66",
@@ -1761,7 +2495,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác cổng Gi0/0 của SW1 và SW2 đã được cấu hình trước. Một kỹ sư được đưa ra các yêu cầu sau:\n+ Cho phép tất cả các PC giao tiếp với nhau ở Layer 3.\n+ Cấu hình lưu lượng không được gắn thẻ (untagged) sử dụng VLAN 5.\n+ Vô hiệu hóa VLAN 1 khỏi việc sử dụng.\nBộ cấu hình nào đáp ứng các yêu cầu này?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "10.67",
@@ -1777,7 +2518,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSW1#show ip interface brief\nInterface        IP-Address   OK? Method Status Protocol\nFastEthernet0/1  unassigned   YES manual down   down\nSW1#show interface fa0/1 status\nPort     Name  Status      Vlan   Duplex   Speed  Type\nFa0/1          notconnect  1      a-full   a-100  10/100BaseTX\nNguyên nhân của sự cố là gì?",
+      "options_vi": {
+        "A": "STP",
+        "B": "Lệnh shutdown",
+        "C": "Port security",
+        "D": "Sai loại cáp"
+      }
     },
     {
       "id": "10.70",
@@ -1793,7 +2541,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của switch Layer 3 là gì?",
+      "options_vi": {
+        "A": "Chúng định tuyến lưu lượng giữa các thiết bị trong các VLAN khác nhau.",
+        "B": "Chúng truyền lưu lượng broadcast khi hoạt động ở chế độ Layer 3 độc quyền.",
+        "C": "Chúng chuyển tiếp frame Ethernet giữa các VLAN chỉ sử dụng địa chỉ MAC.",
+        "D": "Chúng di chuyển frame giữa các điểm cuối chỉ giới hạn ở địa chỉ IP."
+      }
     },
     {
       "id": "10.77",
@@ -1809,7 +2564,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một quản trị viên mạng lên kế hoạch cập nhật mạng Wi-Fi tại nhiều văn phòng chi nhánh. Mỗi địa điểm được cấu hình với SSID có tên 'Office'. Quản trị viên muốn mọi người dùng kết nối đến SSID tại bất kỳ địa điểm nào đều có cùng mức truy cập. Điều gì phải được đặt giống nhau trên mỗi mạng để đáp ứng yêu cầu?",
+      "options_vi": {
+        "A": "Radio policy",
+        "B": "Security policies",
+        "C": "Cấu hình NAS-ID",
+        "D": "Profile name"
+      }
     },
     {
       "id": "10.79",
@@ -1827,7 +2589,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột mạng đa nhà cung cấp (multivendor) tồn tại và công ty đang triển khai VoIP trên mạng lần đầu tiên. Cấu hình nào cần thiết để triển khai giao thức khám phá lân cận (neighbor discovery protocol) trên giao diện và cho phép nó vẫn tắt trên các giao diện còn lại?",
+      "options_vi": {
+        "A": "SW1(config)#no cdp enable \nSW1 (config)#interface gigabitethernet1/0/1 \nSW1(config-if)#cdp run",
+        "B": "SW1(config)#lldp enable \nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp run",
+        "C": "SW1(config)#lldp run\nSW1 (config)#interface gigabitethernet1/0/1 \nSW1(config-if)#lldp enable",
+        "D": "SW1(config)#no cdp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp transmit\nSW1(config-if)#lldp receive"
+      }
     }
   ]
 }

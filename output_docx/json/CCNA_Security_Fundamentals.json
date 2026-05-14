@@ -15,7 +15,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại chương trình bảo mật nào bị vi phạm khi một nhóm nhân viên vào tòa nhà chỉ sử dụng thẻ ID của một người?",
+      "options_vi": {
+        "A": "phát hiện xâm nhập (intrusion detection)",
+        "B": "nhận thức người dùng (user awareness)",
+        "C": "kiểm soát truy cập vật lý (physical access control)",
+        "D": "ủy quyền mạng (network authorization)"
+      }
     },
     {
       "id": "5.11",
@@ -31,7 +38,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Thiết bị nào theo dõi trạng thái của các kết nối đang hoạt động để đưa ra quyết định chuyển tiếp gói tin?",
+      "options_vi": {
+        "A": "tường lửa (firewall)",
+        "B": "điểm truy cập không dây (wireless access point)",
+        "C": "bộ định tuyến (router)",
+        "D": "bộ điều khiển mạng LAN không dây (wireless LAN controller)"
+      }
     },
     {
       "id": "5.13",
@@ -49,7 +63,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa. Một quản trị viên mạng được giao nhiệm vụ bảo mật truy cập VTY đến một bộ định tuyến (router). Mục nhập access-list nào hoàn thành nhiệm vụ này?",
+      "options_vi": {
+        "A": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq ssh",
+        "B": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq scp",
+        "C": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq telnet",
+        "D": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq https"
+      }
     },
     {
       "id": "5.29",
@@ -67,7 +88,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột access list được yêu cầu để cho phép lưu lượng từ bất kỳ máy chủ nào trên giao diện G0/0 và từ chối lưu lượng từ giao diện Gi0/1. Access list nào phải được áp dụng?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "5.33",
@@ -83,7 +111,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Triển khai nào cung cấp tổ hợp mã hóa mạnh nhất cho môi trường không dây (wireless)?",
+      "options_vi": {
+        "A": "WPA2 + AES",
+        "B": "WPA + AES",
+        "C": "WEP",
+        "D": "WPA + TKIP"
+      }
     },
     {
       "id": "5.42",
@@ -99,7 +134,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Thiết bị mạng nào kiểm tra trạng thái của một gói tin để xác định xem gói tin đó có hợp lệ hay không?",
+      "options_vi": {
+        "A": "switch Lớp 2 (Layer 2 switch)",
+        "B": "bộ điều khiển LAN (LAN controller)",
+        "C": "bộ cân bằng tải (load balancer)",
+        "D": "tường lửa (firewall)"
+      }
     },
     {
       "id": "5.47",
@@ -115,7 +157,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì khiến một cổng bị đặt vào trạng thái err-disabled?",
+      "options_vi": {
+        "A": "độ trễ (latency)",
+        "B": "không có gì được cắm vào cổng",
+        "C": "lệnh shutdown được thực thi trên cổng",
+        "D": "vi phạm bảo mật cổng (port security violation)"
+      }
     },
     {
       "id": "5.49",
@@ -131,7 +180,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Yếu tố chương trình bảo mật nào liên quan đến việc lắp đặt đầu đọc thẻ trên cửa trung tâm dữ liệu (data center) để cho phép nhân viên ra vào dựa trên vai trò công việc của họ?",
+      "options_vi": {
+        "A": "kiểm soát truy cập vật lý (physical access control)",
+        "B": "sinh trắc học (biometrics)",
+        "C": "kiểm soát truy cập dựa trên vai trò (role-based access control)",
+        "D": "xác thực đa yếu tố (multifactor authentication)"
+      }
     },
     {
       "id": "6.2",
@@ -147,7 +203,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một quản trị viên mạng cần cấu hình SSH để truy cập từ xa đến router R1. Yêu cầu là sử dụng cặp khóa công khai và khóa riêng tư để mã hóa lưu lượng quản lý đến và đi từ máy khách kết nối. Cấu hình nào, khi được áp dụng, đáp ứng các yêu cầu?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "6.4",
@@ -163,7 +226,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi một WLAN với WPA2 PSK được cấu hình trong giao diện GUI của Wireless LAN Controller, định dạng nào được hỗ trợ?",
+      "options_vi": {
+        "A": "Unicode",
+        "B": "base64",
+        "C": "ASCII",
+        "D": "decimal"
+      }
     },
     {
       "id": "6.30",
@@ -181,7 +251,15 @@
         "C",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai giao thức nào được hỗ trợ trên các giao diện service-port? (Chọn hai)",
+      "options_vi": {
+        "A": "RADIUS",
+        "B": "TACACS+",
+        "C": "Telnet",
+        "D": "SCP",
+        "E": "SSH"
+      }
     },
     {
       "id": "6.33",
@@ -197,7 +275,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lệnh toàn cục (global command) nào mã hóa tất cả mật khẩu trong cấu hình đang chạy (running configuration)?",
+      "options_vi": {
+        "A": "enable secret",
+        "B": "enable password-encryption",
+        "C": "service password-encryption",
+        "D": "password-encrypt"
+      }
     },
     {
       "id": "7.20",
@@ -213,7 +298,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi một VPN site-to-site được cấu hình, chế độ IPsec nào cung cấp đóng gói và mã hóa toàn bộ gói IP gốc?",
+      "options_vi": {
+        "A": "IPsec tunnel mode với AH",
+        "B": "IPsec transport mode với AH",
+        "C": "IPsec tunnel mode với ESP",
+        "D": "IPsec transport mode với ESP"
+      }
     },
     {
       "id": "7.22",
@@ -229,7 +321,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Vai trò của tường lửa (firewall) trong mạng doanh nghiệp (enterprise network) là gì?",
+      "options_vi": {
+        "A": "xác định gói tin nào được phép đi qua từ mạng không an toàn sang mạng an toàn",
+        "B": "xử lý các gói tin trái phép và cho phép chuyển đến các phân đoạn mạng kém an toàn hơn",
+        "C": "chuyển tiếp gói tin dựa trên kiểm tra gói tin không trạng thái (stateless packet inspection)",
+        "D": "từ chối rõ ràng tất cả các gói tin đi vào một miền quản trị (administrative domain)"
+      }
     },
     {
       "id": "7.24",
@@ -245,7 +344,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Các cuộc tấn công VLAN hopping được giảm thiểu như thế nào?",
+      "options_vi": {
+        "A": "cấu hình thủ công các cổng trunk và vô hiệu hóa DTP",
+        "B": "cấu hình các VLAN mở rộng (extended VLANs)",
+        "C": "kích hoạt tất cả các cổng và đặt vào VLAN mặc định",
+        "D": "bật kiểm tra ARP động (dynamic ARP inspection)"
+      }
     },
     {
       "id": "7.30",
@@ -263,7 +369,15 @@
         "A",
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai giao thức nào phải được vô hiệu hóa để tăng cường bảo mật cho các kết nối quản lý đến Bộ điều khiển mạng LAN không dây (Wireless LAN Controller)? (Chọn hai)",
+      "options_vi": {
+        "A": "Telnet",
+        "B": "SSH",
+        "C": "HTTP",
+        "D": "HTTPS",
+        "E": "TFTP"
+      }
     },
     {
       "id": "7.40",
@@ -279,7 +393,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Kiểm soát truy cập vật lý (physical access control) điều chỉnh điều gì?",
+      "options_vi": {
+        "A": "truy cập vào các mạng cụ thể dựa trên chức năng kinh doanh",
+        "B": "truy cập vào máy chủ để ngăn chặn hoạt động độc hại",
+        "C": "truy cập vào mạng máy tính và hệ thống tệp",
+        "D": "truy cập vào thiết bị mạng và cơ sở hạ tầng"
+      }
     },
     {
       "id": "7.49",
@@ -295,7 +416,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng nào được thực hiện bởi DHCP snooping?",
+      "options_vi": {
+        "A": "giới hạn tốc độ một số lưu lượng nhất định",
+        "B": "lắng nghe lưu lượng multicast để chuyển tiếp gói tin",
+        "C": "cung cấp giảm thiểu tấn công DDoS",
+        "D": "truyền thông tin VLAN giữa các switch"
+      }
     },
     {
       "id": "7.55",
@@ -311,7 +439,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Kỹ thuật giảm thiểu mối đe dọa tầng truy cập (access layer) nào cung cấp bảo mật dựa trên danh tính (identity)?",
+      "options_vi": {
+        "A": "sử dụng VLAN native không mặc định",
+        "B": "Dynamic ARP Inspection",
+        "C": "DHCP snooping",
+        "D": "802.1x"
+      }
     },
     {
       "id": "8.3",
@@ -327,7 +462,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "WPA3 cải thiện bảo mật như thế nào?",
+      "options_vi": {
+        "A": "Nó sử dụng SAE để xác thực.",
+        "B": "Nó sử dụng bắt tay 4 bước (4-way handshake) để xác thực.",
+        "C": "Nó sử dụng RC4 để mã hóa.",
+        "D": "Nó sử dụng TKIP để mã hóa."
+      }
     },
     {
       "id": "8.16",
@@ -343,7 +485,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại lưu lượng nào được gửi với IPsec thuần túy (pure IPsec)?",
+      "options_vi": {
+        "A": "gói tin broadcast từ một switch đang cố gắng định vị địa chỉ MAC tại một trong nhiều site từ xa",
+        "B": "lưu lượng multicast từ một máy chủ tại một site đến các host tại vị trí khác",
+        "C": "cập nhật spanning-tree giữa các switch tại hai site khác nhau",
+        "D": "thông điệp unicast từ một host tại site từ xa đến máy chủ tại trụ sở chính"
+      }
     },
     {
       "id": "8.24",
@@ -359,7 +508,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Thiết bị nào cho phép hoặc từ chối lưu lượng mạng dựa trên một tập hợp các quy tắc?",
+      "options_vi": {
+        "A": "điểm truy cập (access point)",
+        "B": "switch",
+        "C": "bộ điều khiển không dây (wireless controller)",
+        "D": "tường lửa (firewall)"
+      }
     },
     {
       "id": "8.34",
@@ -377,7 +533,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nTham khảo hình minh họa. Danh sách truy cập (access list) từ chối truy cập Telnet từ PC-1 đến RTR-1 và nên cho phép từ các host khác. PC-2 nhận được thông báo \"% Connection refused by remote host\" khi cố gắng Telnet. Nếu không cho phép Telnet từ PC-1, cần phải làm gì để cho phép lưu lượng này?",
+      "options_vi": {
+        "A": "Thêm lệnh access-list 10 permit any vào cấu hình",
+        "B": "Xóa lệnh access-class 10 in khỏi line vty 0 4.",
+        "C": "Thêm lệnh ip access-group 10 out vào interface g0/0.",
+        "D": "Xóa lệnh password khỏi line vty 0 4."
+      }
     },
     {
       "id": "8.37",
@@ -395,7 +558,15 @@
         "C",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai thành phần nào là một phần của PKI? (Chọn hai)",
+      "options_vi": {
+        "A": "RSA token",
+        "B": "mật khẩu văn bản rõ (clear-text password) xác thực các kết nối",
+        "C": "một hoặc nhiều CRL",
+        "D": "khóa chia sẻ trước (preshared key) xác thực các kết nối",
+        "E": "CA cấp chứng chỉ (certificates)"
+      }
     },
     {
       "id": "8.46",
@@ -411,7 +582,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao thức bảo mật không dây nào dựa vào Bảo mật chuyển tiếp hoàn hảo (Perfect Forward Secrecy)?",
+      "options_vi": {
+        "A": "WPA",
+        "B": "WPA3",
+        "C": "WPA2",
+        "D": "WEP"
+      }
     },
     {
       "id": "8.55",
@@ -431,7 +609,15 @@
         "B",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai lệnh nào phải được cấu hình trên router R1 để cho phép router chấp nhận các kết nối truy cập từ xa an toàn? (Chọn hai)",
+      "options_vi": {
+        "A": "transport input telnet",
+        "B": "username cisco password 0 cisco",
+        "C": "login console",
+        "D": "ip ssh pubkey-chain",
+        "E": "crypto key generate rsa"
+      }
     },
     {
       "id": "8.59",
@@ -447,7 +633,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư phải cấu hình R1 cho một tài khoản người dùng mới. Tài khoản phải đáp ứng các yêu cầu sau:\n* Phải được cấu hình trong cơ sở dữ liệu cục bộ (local database).\n* Tên người dùng là engineer2\n* Phải sử dụng mật khẩu mạnh nhất có thể cấu hình.\nKỹ sư phải cấu hình lệnh nào trên router?",
+      "options_vi": {
+        "A": "R1(config)# username engineer2 algorithm-type scrypt secret test2021",
+        "B": "R1(config)# username engineer2 secret 5 password $1$bUu$kZbBS1Pyh4QzwXyZ",
+        "C": "R1(config)# username engineer2 privilege 1 password 7 test2021",
+        "D": "R1(config)# username engineer2 secret 4 $1Sb1Ju$kZbBSlFyh4QxwXyZ"
+      }
     },
     {
       "id": "8.69",
@@ -463,7 +656,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình truy cập từ xa đến router từ mạng con IP 10.139.58.0/28. Tên miền, khóa mã hóa (crypto keys) và SSH đã được cấu hình. Cấu hình nào cho phép lưu lượng trên router đích?",
+      "options_vi": {
+        "A": "interface FastEthernet0/0 \nip address 10.122.49.1 255.255.255.252 \nip access-group 10 in\n!\nip access-list standard 10\npermit udp 10.139.58.0 0.0.0.7 host 10.122.49.1 eq 22",
+        "B": "line vty 0 15 \naccess-class 120 in\n!\nip access-list extended 120\npermit tcp 10.139.58.0 0.0.0.15 any eq 22",
+        "C": "line vty 0 15 \naccess-group 120 in\n!\nip access-list extended 120\npermit tcp 10.139.58.0 0.0.0.15 any eq 22",
+        "D": "interface FastEthernet0/0 \nip address 10.122.49.1 255.255.255.252 \nip access-group 110 in\n!\nip access-list standard 110\npermit tcp 10.139.58.0 0.0.0.15 eq 22 host 10.122.49.1"
+      }
     },
     {
       "id": "8.70",
@@ -479,7 +679,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao thức nào được sử dụng để truy cập CLI từ xa an toàn?",
+      "options_vi": {
+        "A": "HTTP",
+        "B": "Telnet",
+        "C": "SSH",
+        "D": "HTTPS"
+      }
     },
     {
       "id": "8.77",
@@ -495,7 +702,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư Cisco đang cấu hình một router mặc định từ nhà máy với ba mật khẩu sau:\n* Mật khẩu user EXEC cho truy cập console là p4ssw0rd1.\n* Mật khẩu user EXEC cho truy cập Telnet là s3cr3t2.\n* Mật khẩu cho chế độ privileged EXEC là priv4t3p4ss.\nChuỗi lệnh nào kỹ sư phải cấu hình?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "9.3",
@@ -511,7 +725,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Trường nào trong gói access-request được mã hóa bởi RADIUS?",
+      "options_vi": {
+        "A": "dịch vụ được ủy quyền (authorized services)",
+        "B": "bộ xác thực (authenticator)",
+        "C": "tên người dùng (username)",
+        "D": "mật khẩu (password)"
+      }
     },
     {
       "id": "9.6",
@@ -527,7 +748,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của IPS thế hệ tiếp theo (Next-Generation IPS) là gì?",
+      "options_vi": {
+        "A": "đưa ra quyết định chuyển tiếp dựa trên các địa chỉ MAC đã học",
+        "B": "hoạt động như một bộ điều khiển trong mạng dựa trên bộ điều khiển (controller-based network)",
+        "C": "tích hợp với máy chủ RADIUS để thực thi các quy tắc xác thực thiết bị Lớp 2 (Layer 2)",
+        "D": "tương quan hoạt động của người dùng với các sự kiện mạng"
+      }
     },
     {
       "id": "9.8",
@@ -545,7 +773,15 @@
         "B",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai lệnh nào phải được thêm vào để cập nhật cấu hình của router R1 sao cho nó chỉ chấp nhận các kết nối được mã hóa? (Chọn hai)",
+      "options_vi": {
+        "A": "username CNAC secret R!41!4319115@",
+        "B": "crypto key generate rsa 1024",
+        "C": "ip ssh version 2",
+        "D": "line vty 0 4",
+        "E": "transport input ssh"
+      }
     },
     {
       "id": "9.13",
@@ -561,7 +797,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại kết nối quản lý WLC nào dễ bị tấn công xen giữa (man-in-the-middle)?",
+      "options_vi": {
+        "A": "SSH",
+        "B": "HTTPS",
+        "C": "Telnet",
+        "D": "console"
+      }
     },
     {
       "id": "9.15",
@@ -577,7 +820,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đặc điểm nào phân biệt khái niệm xác thực (authentication) với ủy quyền (authorization) và kế toán (accounting)?",
+      "options_vi": {
+        "A": "ghi nhật ký hoạt động người dùng (user-activity logging)",
+        "B": "giới hạn dịch vụ (service limitations)",
+        "C": "thanh toán dựa trên mức sử dụng (consumption-based billing)",
+        "D": "xác minh danh tính (identity verification)"
+      }
     },
     {
       "id": "9.18",
@@ -593,7 +843,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại tấn công mạng nào làm quá tải máy chủ đích bằng cách gửi nhiều gói tin đến một cổng cho đến khi tài nguyên TCP nửa mở (half-open) của mục tiêu bị cạn kiệt?",
+      "options_vi": {
+        "A": "SYN flood",
+        "B": "reflection",
+        "C": "teardrop",
+        "D": "amplification"
+      }
     },
     {
       "id": "9.28",
@@ -609,7 +866,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của Mã hóa không dây cơ hội (Opportunistic Wireless Encryption) trong một môi trường là gì?",
+      "options_vi": {
+        "A": "cung cấp nén dữ liệu (compression)",
+        "B": "tăng cường bảo mật bằng cách sử dụng kết nối WEP",
+        "C": "cung cấp xác thực (authentication)",
+        "D": "bảo vệ lưu lượng trên các mạng mở (open networks)"
+      }
     },
     {
       "id": "9.30",
@@ -625,7 +889,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hành động nào triển khai kiểm soát truy cập vật lý (physical access control) như một phần của chương trình bảo mật của tổ chức?",
+      "options_vi": {
+        "A": "thiết lập camera IP để giám sát cơ sở hạ tầng quan trọng",
+        "B": "sao lưu syslog tại một vị trí từ xa",
+        "C": "cấu hình mật khẩu enable trên các thiết bị mạng",
+        "D": "cấu hình mật khẩu cho cổng console"
+      }
     },
     {
       "id": "9.40",
@@ -643,7 +914,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác mục cấu hình tối thiểu nào cần thiết để kích hoạt truy cập Secure Shell phiên bản 2 đến R15?",
+      "options_vi": {
+        "A": "Router(config)#hostname R15\nR15(config)#crypto key generate rsa general-keys modulus 1024\nR15(config-line)#line vty 0 15\nR15(config-line)# transport input ssh \nR15(config)#ip ssh source-interface Fa0/0 \nR15(config)#ip ssh stricthostkeycheck",
+        "B": "Router(config)#ip domain-name cisco.com\nRouter(config)#crypto key generate rsa general-keys modulus 1024\nRouter(config)#ip ssh version 2 \nRouter(config-line)#line vty 0 15 \nRouter(config-line)# transport input all \nRouter(config)#ip ssh logging events",
+        "C": "Router(config)#hostname R15 \nR15(config)#ip domain-name cisco.com\nR15(config)#crypto key generate rsa general-keys modulus 1024\nR15(config)#ip ssh version 2 \nR15(config-line)#line vty 0 15 \nR15(config-line)# transport input ssh",
+        "D": "Router(config)#crypto key generate rsa general-keys modulus 1024 \nRouter(config)#ip ssh version 2\nRouter(config-line)#line vty 0 15\nRouter(config-line)# transport input ssh \nRouter(config)#ip ssh logging events \nR15(config)#ip ssh stricthostkeycheck"
+      }
     },
     {
       "id": "9.45",
@@ -659,7 +937,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao thức nào sử dụng SSL?",
+      "options_vi": {
+        "A": "HTTP",
+        "B": "HTTPS",
+        "C": "SSH",
+        "D": "Telnet"
+      }
     },
     {
       "id": "9.48",
@@ -675,7 +960,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư mạng đang cấu hình switch để có thể truy cập từ xa qua SSH. Kỹ sư đã cấu hình tên máy chủ (hostname) trên router. Lệnh bổ sung nào kỹ sư phải cấu hình trước khi nhập lệnh tạo khóa RSA?",
+      "options_vi": {
+        "A": "password password",
+        "B": "crypto key generate rsa modulus 1024",
+        "C": "ip domain-name domain",
+        "D": "ip ssh authentication-retries 2"
+      }
     },
     {
       "id": "9.62",
@@ -693,7 +985,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa. Cần cấu hình gì để kích hoạt 802.11w trên WLAN?",
+      "options_vi": {
+        "A": "Đặt PMF thành Required",
+        "B": "Bật MAC Filtering",
+        "C": "Bật WPA Policy",
+        "D": "Đặt Fast Transition thành Enabled"
+      }
     },
     {
       "id": "9.66",
@@ -711,7 +1010,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cấu hình Cisco WLC để xác thực các máy khách không dây cục bộ với máy chủ RADIUS. Tác vụ nào phải được thực hiện để hoàn tất quy trình?",
+      "options_vi": {
+        "A": "Tắt tùy chọn Server Status",
+        "B": "Bật tùy chọn Management",
+        "C": "Bật tùy chọn Network User",
+        "D": "Bật tùy chọn Support for CoA"
+      }
     },
     {
       "id": "9.71",
@@ -727,7 +1033,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của Cisco Advanced Malware Protection cho IPS thế hệ tiếp theo (next-generation IPS) là gì?",
+      "options_vi": {
+        "A": "ủy quyền lưu lượng không dây có khả năng bị xâm phạm",
+        "B": "lọc URL (URL filtering)",
+        "C": "xác thực người dùng cuối (end users)",
+        "D": "kiểm tra các tệp cụ thể và các loại tệp để phát hiện phần mềm độc hại (malware)"
+      }
     },
     {
       "id": "9.72",
@@ -743,7 +1056,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Quản trị viên phải sử dụng lệnh password complexity not manufacturer-name để ngăn người dùng thêm \"cisco\" làm mật khẩu. Lệnh nào phải được thực thi trước lệnh này?",
+      "options_vi": {
+        "A": "Password complexity enable",
+        "B": "confreg 0x2142",
+        "C": "login authentication my-auth-list",
+        "D": "service password-encryption"
+      }
     },
     {
       "id": "9.74",
@@ -761,7 +1081,15 @@
         "A",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai phương pháp nào được khuyến nghị để đảm bảo tình trạng bảo mật chấp nhận được trong mạng? (Chọn hai)",
+      "options_vi": {
+        "A": "Đặt thiết bị mạng ở vị trí an toàn",
+        "B": "Sao lưu cấu hình thiết bị vào ổ USB được mã hóa để truy xuất an toàn",
+        "C": "Sử dụng chuỗi khóa mật mã (cryptographic keychain) để xác thực với các thiết bị mạng",
+        "D": "Đặt máy chủ email nội bộ và máy chủ tệp trong vùng DMZ được chỉ định",
+        "E": "Vô hiệu hóa các cổng, giao diện và dịch vụ không sử dụng hoặc không cần thiết"
+      }
     },
     {
       "id": "9.75",
@@ -781,7 +1109,15 @@
         "B",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai bước nào mà kỹ sư phải thực hiện để cung cấp mức mã hóa và xác thực cao nhất sử dụng thông tin xác thực miền từ LDAP? (Chọn hai)",
+      "options_vi": {
+        "A": "Chọn chính sách WPA với mã hóa TKIP",
+        "B": "Chọn WPA + WPA2 trên bảo mật lớp 2 (layer 2 security)",
+        "C": "Chọn PSK trong quản lý khóa xác thực (authentication key management)",
+        "D": "Chọn Static-WEP + 802.1x trên bảo mật lớp 2 (Layer 2 security)",
+        "E": "Chọn 802.1x trong quản lý khóa xác thực (authentication key management)"
+      }
     },
     {
       "id": "9.78",
@@ -797,7 +1133,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đâu là một tính năng của WPA?",
+      "options_vi": {
+        "A": "Xác thực 802.1x (802.1x authentication)",
+        "B": "Khóa chia sẻ trước (preshared key)",
+        "C": "Mã hóa TKIP/MIC (TKIP/MIC encryption)",
+        "D": "Ứng dụng Wi-Fi nhỏ"
+      }
     },
     {
       "id": "9.88",
@@ -813,7 +1156,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Xác thực (authentication) khác với ủy quyền (authorization) như thế nào?",
+      "options_vi": {
+        "A": "Xác thực (Authentication) xác minh danh tính của người truy cập mạng, và ủy quyền (authorization) xác định tài nguyên nào mà người dùng có thể truy cập.",
+        "B": "Xác thực (Authentication) được sử dụng để xác định tài nguyên nào người dùng được phép truy cập, và ủy quyền (authorization) được sử dụng để theo dõi thiết bị nào được phép truy cập mạng",
+        "C": "Xác thực (Authentication) được sử dụng để xác minh danh tính của một người, và ủy quyền (authorization) được sử dụng để tạo thông báo syslog cho các lần đăng nhập",
+        "D": "Xác thực (Authentication) được sử dụng để ghi lại tài nguyên mà người dùng truy cập, và ủy quyền (authorization) được sử dụng để xác định tài nguyên nào người dùng có thể truy cập"
+      }
     },
     {
       "id": "9.90",
@@ -829,7 +1179,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nip arp inspection vlan 5-10\ninterface fastethernet0/1\nswitchport mode access\nswitchport access vlan 5\nHiệu ứng của cấu hình này là gì?",
+      "options_vi": {
+        "A": "Lưu lượng đi ra (egress) chỉ được chuyển tiếp nếu đích là máy chủ DHCP.",
+        "B": "Tất cả lưu lượng đi vào và đi ra đều bị loại bỏ vì giao diện không được tin cậy (untrusted).",
+        "C": "Tất cả các gói ARP đều bị switch loại bỏ.",
+        "D": "Switch loại bỏ tất cả lưu lượng ARP đi vào có liên kết MAC-to-IP không hợp lệ."
+      }
     },
     {
       "id": "9.102",
@@ -847,7 +1204,15 @@
         "A",
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai tiêu chuẩn bảo mật không dây nào sử dụng Counter Mode Cipher Block Chaining Message Authentication Code Protocol (CCMP) để mã hóa và toàn vẹn dữ liệu? (Chọn hai)",
+      "options_vi": {
+        "A": "WPA2",
+        "B": "WPA3",
+        "C": "WEP",
+        "D": "WPA",
+        "E": "Wi-Fi 6"
+      }
     },
     {
       "id": "9.103",
@@ -863,7 +1228,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Phương pháp nào bảo vệ mạng khỏi các cuộc tấn công VLAN hopping?",
+      "options_vi": {
+        "A": "Triển khai bảo mật cổng (port security) trên các VLAN hướng ra internet.",
+        "B": "Cấu hình ACL để ngăn lưu lượng chuyển đổi giữa các VLAN.",
+        "C": "Gán tất cả các cổng truy cập (access port) vào các VLAN khác với VLAN gốc (native VLAN).",
+        "D": "Bật kiểm tra ARP động (dynamic ARP inspection)."
+      }
     },
     {
       "id": "10.24",
@@ -879,7 +1251,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đã cấu hình tên miền, tên người dùng và mật khẩu trên router cục bộ. Bước tiếp theo để hoàn thành cấu hình khóa RSA cho truy cập Secure Shell là gì?",
+      "options_vi": {
+        "A": "crypto key generate rsa",
+        "B": "crypto key pubkey-chain rsa",
+        "C": "crypto key import rsa pem",
+        "D": "crypto key zeroize rsa"
+      }
     },
     {
       "id": "10.25",
@@ -895,7 +1274,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Phương pháp mã hóa nào được WPA3 sử dụng?",
+      "options_vi": {
+        "A": "TKIP",
+        "B": "SAE",
+        "C": "PSK",
+        "D": "AES"
+      }
     },
     {
       "id": "10.26",
@@ -911,7 +1297,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình truy cập từ xa đến router từ mạng con IP 10.139.58.0/28. Tên miền, khóa mật mã và SSH đã được cấu hình. Cấu hình nào cho phép lưu lượng trên router đích?",
+      "options_vi": {
+        "A": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.248\nip access-group 10 in\nip access-list standard 10\npermit udp 10.139.58.0 0.0.0.7 host 10.122.49.1 eq 22",
+        "B": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252 \nip access-group 105 in\nip access-list standard 105\npermit tcp 10.139.58.0 0.0.0.7 eq 22 host 10.122.49.1",
+        "C": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252 \nip access-group 110 in\nip access-list extended 110\npermit tcp 10.139.58.0 0.0.0.15 host 10.122.49.1 eq 22",
+        "D": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.240 \naccess-group 120 in\nip access-list extended 120\npermit tcp 10.139.58.0 255.255.255.248 any eq 22"
+      }
     },
     {
       "id": "10.31",
@@ -927,7 +1320,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khai thác zero-day (zero-day exploit) là gì?",
+      "options_vi": {
+        "A": "Là khi kẻ tấn công chèn mã độc vào máy chủ SQL.",
+        "B": "Là khi một lỗ hổng mạng mới được phát hiện trước khi có bản vá.",
+        "C": "Là khi thủ phạm chèn mình vào cuộc hội thoại giữa hai bên và chặn bắt hoặc thay đổi dữ liệu.",
+        "D": "Là khi mạng bị bão hòa bởi lưu lượng độc hại làm quá tải tài nguyên và băng thông."
+      }
     },
     {
       "id": "10.32",
@@ -943,7 +1343,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Sau một sự cố bảo mật gần đây và lỗi RADIUS, kỹ sư phải bảo mật cổng console của mỗi router doanh nghiệp bằng tên người dùng và mật khẩu cục bộ. Cấu hình nào kỹ sư phải áp dụng để hoàn thành nhiệm vụ này?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "10.36",
@@ -959,7 +1366,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hành vi mặc định của bảo mật cổng (port-security) trên liên kết trunk là gì?",
+      "options_vi": {
+        "A": "Nó gây ra vòng lặp mạng (network loop) khi xảy ra vi phạm.",
+        "B": "Nó vô hiệu hóa cấu hình VLAN gốc (native VLAN) ngay khi bảo mật cổng được bật.",
+        "C": "Nó đặt cổng vào trạng thái err-disabled nếu học được nhiều hơn một địa chỉ MAC.",
+        "D": "Nó đặt cổng vào trạng thái err-disabled sau khi 10 địa chỉ MAC được cấu hình tĩnh."
+      }
     },
     {
       "id": "10.38",
@@ -977,7 +1391,15 @@
         "B",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai ví dụ nào là xác thực đa yếu tố (multifactor authentication)? (Chọn hai)",
+      "options_vi": {
+        "A": "Đăng nhập một lần (single sign-on)",
+        "B": "Kiến thức riêng của người dùng (unique user knowledge)",
+        "C": "Mật khẩu có thời hạn (passwords that expire)",
+        "D": "Token mềm (soft tokens)",
+        "E": "Chia sẻ trách nhiệm mật khẩu (shared password responsibility)"
+      }
     },
     {
       "id": "10.42",
@@ -997,7 +1419,15 @@
         "B",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng bắt đầu cấu hình bảo mật cổng (port security) trên một switch mới. Các yêu cầu sau phải được đáp ứng:\n– Địa chỉ MAC phải được học động (dynamically).\n– Thông báo nhật ký (log messages) phải được tạo mà không vô hiệu hóa giao diện khi phát hiện lưu lượng không mong muốn.\nHai lệnh nào phải được cấu hình để hoàn thành nhiệm vụ này? (Chọn hai)",
+      "options_vi": {
+        "A": "SW(config-if)#switchport port-security mac-address 0010.7B84.45E6",
+        "B": "SW(config-if)#switchport port-security maximum 2",
+        "C": "SW(config-if)#switchport port-security mac-address sticky",
+        "D": "SW(config-if)#switchport port-security violation shutdown",
+        "E": "SW(config-if)#switchport port-security violation restrict"
+      }
     },
     {
       "id": "10.57",
@@ -1015,7 +1445,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMạng WLAN khách phải được tạo để yêu cầu máy khách nhập tên người dùng và mật khẩu trên trang web cục bộ của WLC. WLAN được cấu hình cho xác thực EAP cục bộ. Thời gian người dùng truy cập mạng không được bị giới hạn. Hành động nào hoàn thành cấu hình này?",
+      "options_vi": {
+        "A": "Đánh dấu hộp kiểm Guest User Role",
+        "B": "Xóa giá trị Lifetime (seconds)",
+        "C": "Đặt giá trị Lifetime (seconds) thành 0",
+        "D": "Bỏ đánh dấu hộp kiểm Guest User"
+      }
     },
     {
       "id": "10.58",
@@ -1031,7 +1468,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao thức truy cập từ xa nào cung cấp truy cập CLI từ xa không bảo mật?",
+      "options_vi": {
+        "A": "Telnet",
+        "B": "SSH",
+        "C": "console",
+        "D": "Bash"
+      }
     },
     {
       "id": "10.59",
@@ -1049,7 +1493,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư phải cấu hình giao diện kết nối với PC1 và bảo mật nó sao cho chỉ PC1 được phép sử dụng cổng. Không được sử dụng gắn thẻ VLAN (VLAN tagging) ngoại trừ VLAN thoại (voice VLAN). Chuỗi lệnh nào phải được nhập để cấu hình switch?",
+      "options_vi": {
+        "A": "SW1(config-if)#switchport mode nonegotiate \nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security maximum 1",
+        "B": "SW1(config-if)#switchport mode access \nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800",
+        "C": "SW1(config-if)#switchport mode dynamic desirable\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800 \nSW1 (config-if)#switchport port-security mac-address sticky",
+        "D": "SW1(config-if)#switchport mode dynamic auto \nSW1(config-if)#switchport port-security \nSW1(config-if)#switchport port-security violation restrict"
+      }
     },
     {
       "id": "10.73",
@@ -1067,7 +1518,15 @@
         "A",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư mạng đang thay thế các switch thuộc về khách hàng dịch vụ quản lý bằng các switch Cisco Catalyst mới. Các switch mới sẽ được cấu hình theo tiêu chuẩn bảo mật cập nhật, bao gồm thay thế dịch vụ Telnet bằng kết nối mã hóa và tăng gấp đôi kích thước modulus từ 1024. Hai lệnh nào kỹ sư phải cấu hình trên các switch mới? (Chọn hai)",
+      "options_vi": {
+        "A": "transport input ssh",
+        "B": "transport input all",
+        "C": "crypto key generate rsa general-keys modulus 1024",
+        "D": "crypto key generate rsa usage-keys",
+        "E": "crypto key generate rsa modulus 2048"
+      }
     },
     {
       "id": "10.84",
@@ -1083,7 +1542,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột quản trị viên mạng phải cho phép lưu lượng từ mạng con 10.10.0.0/24 đến WAN trên giao diện Serial0. Hiệu ứng của cấu hình khi quản trị viên áp dụng lệnh là gì?",
+      "options_vi": {
+        "A": "Lưu lượng có nguồn từ dải IP 10.0.0.0 – 10.0.0.255 được cho phép trên Serial0.",
+        "B": "Lệnh permit thất bại và trả về mã lỗi.",
+        "C": "Router không thể áp dụng danh sách truy cập (access list) vào giao diện.",
+        "D": "Router chấp nhận tất cả lưu lượng đến Serial0 với octet cuối cùng của IP nguồn được đặt thành 0."
+      }
     },
     {
       "id": "10.87",
@@ -1103,7 +1569,15 @@
         "A",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột WLAN khách phải được tạo để yêu cầu máy khách nhập tên người dùng và mật khẩu trên trang web cục bộ của WLC. Hai hành động nào phải được thực hiện trên tab Layer 2 trước khi bật tùy chọn Authentication trên tab Layer 3? (Chọn hai)",
+      "options_vi": {
+        "A": "Bỏ đánh dấu hộp kiểm tùy chọn MAC Filtering.",
+        "B": "Đặt tùy chọn Security Type thành Personal.",
+        "C": "Thay đổi tùy chọn WPA Encryption từ TKIP sang CCMP128(AES).",
+        "D": "Đặt tùy chọn Layer 2 Security thành None.",
+        "E": "Bỏ đánh dấu hộp kiểm tùy chọn WPA Policy, và đánh dấu hộp kiểm tùy chọn WPA2 Policy."
+      }
     },
     {
       "id": "10.89",
@@ -1119,7 +1593,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chế độ truyền tải IPsec (IPsec transport mode) nào mã hóa tiêu đề IP (IP header) và phần tải (payload)?",
+      "options_vi": {
+        "A": "pipe",
+        "B": "tunnel",
+        "C": "control",
+        "D": "transport"
+      }
     },
     {
       "id": "10.90",
@@ -1135,7 +1616,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "WPA3 cung cấp gì trong mạng không dây?",
+      "options_vi": {
+        "A": "Tăng cường bảo mật và yêu cầu cấu hình phức tạp",
+        "B": "Tương thích ngược với WPA và WPA2",
+        "C": "Thương lượng Protected Management Frame tùy chọn",
+        "D": "Bảo vệ chống lại các cuộc tấn công brute force với SAE"
+      }
     },
     {
       "id": "10.94",
@@ -1151,7 +1639,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "WLC gửi cảnh báo về một AP giả mạo (rogue AP), và quản trị viên mạng xác minh rằng cảnh báo được gây ra bởi một AP tự trị (autonomous AP) hợp lệ. Làm thế nào để dừng cảnh báo cho địa chỉ MAC của AP?",
+      "options_vi": {
+        "A": "Đặt AP vào chế độ ngăn chặn thủ công (manual containment).",
+        "B": "Xóa AP khỏi quản lý WLC.",
+        "C": "Xóa thủ công AP khỏi trạng thái Pending.",
+        "D": "Đặt AP Class Type thành Friendly."
+      }
     },
     {
       "id": "10.95",
@@ -1167,7 +1662,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Phương pháp bảo mật nào được sử dụng để ngăn chặn tấn công man-in-the-middle?",
+      "options_vi": {
+        "A": "authorization",
+        "B": "authentication",
+        "C": "anti-replay",
+        "D": "accounting"
+      }
     }
   ]
 }

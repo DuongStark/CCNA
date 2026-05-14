@@ -17,7 +17,15 @@
         "B",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai công cụ QoS nào được sử dụng để đảm bảo băng thông tối thiểu cho lưu lượng nhất định? (Chọn hai)",
+      "options_vi": {
+        "A": "FIFO",
+        "B": "CBWFQ",
+        "C": "LLC",
+        "D": "WFQ",
+        "E": "RSVP"
+      }
     },
     {
       "id": "5.14",
@@ -33,7 +41,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một quản trị viên mạng cần kích hoạt dịch vụ DHCP giữa hai site. Cần cấu hình gì trên router để chuyển tiếp các thông điệp DHCPDISCOVER đến server?",
+      "options_vi": {
+        "A": "một DHCP Relay Agent",
+        "B": "DHCP Binding",
+        "C": "một DHCP Pool",
+        "D": "DHCP Snooping"
+      }
     },
     {
       "id": "5.22",
@@ -49,7 +64,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Router thực hiện điều gì khi được cấu hình với cài đặt DNS lookup mặc định và một URL được nhập trên CLI?",
+      "options_vi": {
+        "A": "khởi tạo một yêu cầu ping đến URL",
+        "B": "nhắc người dùng chỉ định địa chỉ IP mong muốn",
+        "C": "liên tục cố gắng phân giải URL cho đến khi lệnh bị hủy",
+        "D": "gửi một thông điệp broadcast để cố gắng phân giải URL"
+      }
     },
     {
       "id": "5.25",
@@ -67,7 +89,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào phải được áp dụng cho router để cấu hình PAT nhằm dịch tất cả các địa chỉ trong VLAN 200 trong khi cho phép các thiết bị trên VLAN 100 sử dụng địa chỉ IP của chính chúng?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "5.28",
@@ -83,7 +112,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao thức nào được host IPv4 sử dụng để nhận địa chỉ IP được gán động?",
+      "options_vi": {
+        "A": "ARP",
+        "B": "DNS",
+        "C": "CDP",
+        "D": "DHCP"
+      }
     },
     {
       "id": "5.30",
@@ -99,7 +135,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều kiện nào phải được đáp ứng trước khi NMS xử lý một SNMP trap từ một agent?",
+      "options_vi": {
+        "A": "NMS phải được cấu hình trên cùng router với SNMP agent",
+        "B": "NMS phải nhận được một trap và một thông điệp inform từ SNMP agent trong khoảng thời gian đã cấu hình",
+        "C": "Phần mềm NMS phải được tải với MIB liên kết với trap đó",
+        "D": "NMS phải nhận được cùng một trap từ hai SNMP agent khác nhau để xác minh rằng nó đáng tin cậy"
+      }
     },
     {
       "id": "5.38",
@@ -117,7 +160,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLệnh ntp server 192.168.0.3 đã được cấu hình trên Router1 để biến nó thành NTP client của Router2. Lệnh nào phải được cấu hình trên Router2 để nó hoạt động ở chế độ chỉ làm server (server-only) và chỉ dựa vào đồng hồ nội bộ của nó?",
+      "options_vi": {
+        "A": "Router2(config)#ntp passive",
+        "B": "Router2(config)#ntp master 4",
+        "C": "Router2(config)#ntp server 172.17.0.1",
+        "D": "Router2(config)#ntp server 192.168.0.2"
+      }
     },
     {
       "id": "5.41",
@@ -133,7 +183,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi DHCP được cấu hình trên router, lệnh nào phải được nhập để default gateway được phân phối tự động?",
+      "options_vi": {
+        "A": "default-router",
+        "B": "default-gateway",
+        "C": "ip helper-address",
+        "D": "dns-server"
+      }
     },
     {
       "id": "6.13",
@@ -149,7 +206,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi triển khai syslog, mức độ nghiêm trọng (severity level) nào ghi lại thông điệp thông tin (informational)?",
+      "options_vi": {
+        "A": "0",
+        "B": "2",
+        "C": "4",
+        "D": "6"
+      }
     },
     {
       "id": "6.23",
@@ -167,7 +231,15 @@
         "C",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai công cụ QoS nào cung cấp quản lý tắc nghẽn (congestion management)? (Chọn hai)",
+      "options_vi": {
+        "A": "FRTS",
+        "B": "CAR",
+        "C": "PQ",
+        "D": "PBR",
+        "E": "CBWFQ"
+      }
     },
     {
       "id": "6.28",
@@ -183,7 +255,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một nhóm kỹ thuật yêu cầu người triển khai cấu hình syslog cho các điều kiện cảnh báo (warning) và điều kiện lỗi (error). Người triển khai cấu hình lệnh nào để đạt được kết quả mong muốn?",
+      "options_vi": {
+        "A": "logging trap 2",
+        "B": "logging trap 3",
+        "C": "logging trap 4",
+        "D": "logging trap 5"
+      }
     },
     {
       "id": "7.1",
@@ -199,7 +278,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mức độ nghiêm trọng (severity level) nào phải được đặt để nhận các syslog thông tin (informational)?",
+      "options_vi": {
+        "A": "alert",
+        "B": "critical",
+        "C": "notice",
+        "D": "debug"
+      }
     },
     {
       "id": "7.3",
@@ -215,7 +301,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một nhà phân tích mạng được giao nhiệm vụ cấu hình ngày và giờ trên router bằng chế độ EXEC. Ngày phải được đặt thành 12:00am. Lệnh nào nên được sử dụng?",
+      "options_vi": {
+        "A": "Clock timezone",
+        "B": "Clock summer-time-recurring",
+        "C": "Clock summer-time date",
+        "D": "Clock set"
+      }
     },
     {
       "id": "7.17",
@@ -231,7 +324,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao thức nào yêu cầu xác thực (authentication) để truyền tệp cấu hình sao lưu từ router đến một server từ xa?",
+      "options_vi": {
+        "A": "TFTP",
+        "B": "FTP",
+        "C": "DTP",
+        "D": "SMTP"
+      }
     },
     {
       "id": "7.31",
@@ -247,7 +347,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khi client và server không nằm trên cùng một mạng vật lý, thiết bị nào được sử dụng để chuyển tiếp các yêu cầu và phản hồi giữa client và server cho DHCP?",
+      "options_vi": {
+        "A": "DHCP relay agent",
+        "B": "DHCP server",
+        "C": "DHCPDISCOVER",
+        "D": "DHCPOFFER"
+      }
     },
     {
       "id": "7.34",
@@ -263,7 +370,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Công cụ QoS nào bạn có thể sử dụng để tối ưu hóa lưu lượng thoại trên mạng chủ yếu dành cho lưu lượng dữ liệu?",
+      "options_vi": {
+        "A": "WRED",
+        "B": "FIFO",
+        "C": "PQ",
+        "D": "WFQ"
+      }
     },
     {
       "id": "7.35",
@@ -279,7 +393,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Trên các máy trạm chạy Microsoft Windows, giao thức nào cung cấp cổng mặc định (default gateway) cho thiết bị?",
+      "options_vi": {
+        "A": "STP",
+        "B": "DNS",
+        "C": "SNMP",
+        "D": "DHCP"
+      }
     },
     {
       "id": "7.45",
@@ -295,7 +416,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "QoS tối ưu hóa lưu lượng thoại như thế nào?",
+      "options_vi": {
+        "A": "giảm việc sử dụng băng thông",
+        "B": "bằng cách giảm mất gói tin (packet loss)",
+        "C": "bằng cách phân biệt lưu lượng thoại và video",
+        "D": "bằng cách tăng độ trễ biến thiên (jitter)"
+      }
     },
     {
       "id": "8.11",
@@ -311,7 +439,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Trong QoS, phương pháp ưu tiên nào phù hợp cho thoại và video tương tác?",
+      "options_vi": {
+        "A": "expedited forwarding",
+        "B": "traffic policing",
+        "C": "round-robin scheduling",
+        "D": "low-latency queuing"
+      }
     },
     {
       "id": "8.12",
@@ -327,7 +462,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình dịch vụ dữ liệu và thoại để truyền qua cùng một cổng. Giao diện switch được chỉ định fastethernet0/1 phải truyền các gói tin sử dụng cùng mức ưu tiên cho dữ liệu khi chúng được nhận từ cổng truy cập (access port) của điện thoại IP. Cấu hình nào phải được sử dụng?",
+      "options_vi": {
+        "A": "interface fastethernet0/1\nswitchport priority extend cos 7",
+        "B": "interface fastethernet0/1\nswitchport voice vlan untagged",
+        "C": "interface fastethernet0/1\nswitchport voice vlan dot1p",
+        "D": "interface fastethernet0/1\nswitchport priority extend trust"
+      }
     },
     {
       "id": "8.14",
@@ -343,7 +485,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Syslog facility là gì?",
+      "options_vi": {
+        "A": "máy chủ được cấu hình để hệ thống gửi thông điệp nhật ký (log messages)",
+        "B": "mật khẩu xác thực Hệ thống Quản lý Mạng (Network Management System) để nhận thông điệp nhật ký",
+        "C": "nhóm các thông điệp nhật ký liên kết với mức độ nghiêm trọng (severity level) đã cấu hình",
+        "D": "tập hợp các giá trị đại diện cho các tiến trình có thể tạo ra thông điệp nhật ký"
+      }
     },
     {
       "id": "8.18",
@@ -359,7 +508,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Khả năng của FTP trong các hoạt động quản lý mạng là gì?",
+      "options_vi": {
+        "A": "sử dụng các kết nối điều khiển (control) và dữ liệu (data) riêng biệt để di chuyển tệp giữa máy chủ và máy khách",
+        "B": "các thiết bị được kết nối trực tiếp và sử dụng UDP để truyền thông tin tệp",
+        "C": "mã hóa dữ liệu trước khi gửi giữa các tài nguyên dữ liệu",
+        "D": "cung cấp hỗ trợ độc quyền tại tầng phiên (session layer) khi truyền dữ liệu"
+      }
     },
     {
       "id": "8.33",
@@ -375,7 +531,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hoạt động tra cứu DNS (DNS lookup) là gì?",
+      "options_vi": {
+        "A": "phục vụ các yêu cầu qua cổng đích 53",
+        "B": "máy chủ DNS ping đến đích để xác minh rằng nó khả dụng",
+        "C": "máy chủ DNS chuyển tiếp máy khách đến địa chỉ IP thay thế khi IP chính bị ngừng hoạt động",
+        "D": "phản hồi yêu cầu phân giải địa chỉ IP thành tên miền đến máy chủ DNS"
+      }
     },
     {
       "id": "8.36",
@@ -393,7 +556,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMáy chủ DHCP và các máy khách được kết nối vào cùng một switch. Bước tiếp theo để hoàn thành cấu hình DHCP cho phép các máy khách trên VLAN 1 nhận địa chỉ từ máy chủ DHCP là gì?",
+      "options_vi": {
+        "A": "Cấu hình lệnh ip dhcp snooping trust trên giao diện kết nối đến máy chủ DHCP",
+        "B": "Cấu hình lệnh ip dhcp relay information option trên giao diện kết nối đến máy chủ DHCP",
+        "C": "Cấu hình lệnh ip dhcp relay information option trên giao diện kết nối đến máy khách DHCP",
+        "D": "Cấu hình lệnh ip dhcp snooping trust trên giao diện kết nối đến máy khách DHCP"
+      }
     },
     {
       "id": "8.42",
@@ -411,7 +581,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKế hoạch nào phải được triển khai để đảm bảo các phương pháp đánh dấu QoS (QoS marking) tối ưu trên mạng này?",
+      "options_vi": {
+        "A": "Khi lưu lượng đi vào từ tầng truy cập (access layer) trên SW1 và SW2, tin cậy tất cả các đánh dấu lưu lượng",
+        "B": "Tin cậy các đánh dấu của điện thoại IP trên SW1 và đánh dấu lưu lượng đi vào SW2 tại SW2",
+        "C": "Khi lưu lượng đi qua MLS1, đánh dấu lại lưu lượng, nhưng tin cậy tất cả các đánh dấu tại tầng truy cập",
+        "D": "Đánh dấu lại lưu lượng khi nó đi qua R1 và tin cậy tất cả các đánh dấu tại tầng truy cập"
+      }
     },
     {
       "id": "8.44",
@@ -427,7 +604,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào cho phép đánh địa chỉ DHCP cho các máy chủ kết nối đến giao diện FastEthernet0/1 trên router R4?",
+      "options_vi": {
+        "A": "interface FastEthernet0/1\nip helper-address 10.0.1.1\n!\naccess-list 100 permit tcp host 10.0.1.1 eq 67 host 10.148.2.1",
+        "B": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n!\naccess-list 100 permit host 10.0.1.1 host 10.148.2.1 eq bootps",
+        "C": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1",
+        "D": "interface FastEthernet0/1 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1"
+      }
     },
     {
       "id": "8.74",
@@ -445,7 +629,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nên được cập nhật như thế nào để cho phép PC1 và PC2 truy cập Internet?",
+      "options_vi": {
+        "A": "Sửa đổi số đã cấu hình của access list thứ hai",
+        "B": "Xóa từ khóa overload khỏi lệnh ip nat inside source",
+        "C": "Thêm lệnh ip nat {inside|outside} dưới cả hai giao diện",
+        "D": "Thay đổi lệnh ip nat inside source để sử dụng interface GigabitEthernet0/0"
+      }
     },
     {
       "id": "8.79",
@@ -461,7 +652,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mục đích của lệnh ip address dhcp là gì?",
+      "options_vi": {
+        "A": "để cấu hình một giao diện làm máy chủ DHCP (DHCP server)",
+        "B": "để cấu hình một giao diện làm DHCP relay",
+        "C": "để cấu hình một giao diện làm DHCP helper",
+        "D": "để cấu hình một giao diện làm máy khách DHCP (DHCP client)"
+      }
     },
     {
       "id": "9.10",
@@ -477,7 +675,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "R1 làm máy chủ NTP (NTP server) phải có:\n* Xác thực NTP được bật\n* Các gói NTP có nguồn từ Interface loopback 0\n* NTP stratum 2\n* Các gói NTP chỉ được phép đến IP máy khách 209.165.200.225\nR1 nên được cấu hình như thế nào?",
+      "options_vi": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      }
     },
     {
       "id": "9.26",
@@ -495,7 +700,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đang cấu hình một router mới trên mạng và đã áp dụng cấu hình này. Cấu hình bổ sung nào cho phép PC nhận địa chỉ IP từ máy chủ DHCP?",
+      "options_vi": {
+        "A": "Cấu hình lệnh ip dhcp relay information dưới giao diện Gi0/1",
+        "B": "Cấu hình lệnh ip dhcp smart-relay toàn cục trên router",
+        "C": "Cấu hình lệnh ip helper-address 172.16.2.2 dưới giao diện Gi0/0",
+        "D": "Cấu hình lệnh ip address dhcp dưới giao diện Gi0/0"
+      }
     },
     {
       "id": "9.34",
@@ -511,7 +723,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hành vi per-hop QoS nào thay đổi giá trị của trường ToS trong tiêu đề gói tin IPv4?",
+      "options_vi": {
+        "A": "shaping",
+        "B": "đánh dấu (marking)",
+        "C": "policing",
+        "D": "phân loại (classification)"
+      }
     },
     {
       "id": "9.44",
@@ -529,7 +748,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nNgười dùng trên VLAN 100 hiện tại có thể truy cập các trang web trên Internet. Quản trị viên phải thực hiện hành động nào để thiết lập kết nối Internet cho người dùng trong VLAN 200?",
+      "options_vi": {
+        "A": "Định nghĩa một NAT pool trên router.",
+        "B": "Cập nhật ACL NAT_INSIDE_RANGES",
+        "C": "Cấu hình lệnh ip nat outside trên một interface khác cho VLAN 200",
+        "D": "Cấu hình NAT tĩnh (static NAT) cho VLAN 200"
+      }
     },
     {
       "id": "9.50",
@@ -545,7 +771,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Kỹ thuật xử lý lưu lượng QoS nào giữ lại các gói tin vượt mức trong hàng đợi và lên lịch lại việc truyền các gói tin này cho lần truyền sau khi băng thông tối đa được cấu hình đã bị vượt quá?",
+      "options_vi": {
+        "A": "định hình lưu lượng (traffic shaping)",
+        "B": "kiểm soát lưu lượng (traffic policing)",
+        "C": "phát hiện sớm ngẫu nhiên có trọng số (weighted random early detection)",
+        "D": "ưu tiên lưu lượng (traffic prioritization)"
+      }
     },
     {
       "id": "9.67",
@@ -561,7 +794,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Phương pháp xếp hàng QoS nào loại bỏ hoặc đánh dấu các gói tin vượt quá tốc độ bit mong muốn của luồng lưu lượng?",
+      "options_vi": {
+        "A": "shaping",
+        "B": "policing",
+        "C": "CBWFQ",
+        "D": "LLQ"
+      }
     },
     {
       "id": "9.82",
@@ -577,7 +817,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "TFTP hoạt động như thế nào trong mạng?",
+      "options_vi": {
+        "A": "dựa vào cổng TCP phổ biến 20 để truyền dữ liệu",
+        "B": "yêu cầu hai kết nối riêng biệt cho lưu lượng điều khiển và dữ liệu",
+        "C": "sử dụng số khối (block number) để xác định và giảm thiểu lỗi truyền dữ liệu",
+        "D": "cung cấp truyền dữ liệu an toàn"
+      }
     },
     {
       "id": "9.86",
@@ -593,7 +840,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình switch SW1 để hoạt động như một NTP server khi tất cả kết nối đến NTP server upstream bị mất. Cấu hình nào phải được sử dụng?",
+      "options_vi": {
+        "A": "SW1# config t\nSW1(config)#ntp server 192.168.1.1\nSW1(config)#ntp access-group server accesslist1",
+        "B": "SW1# config t\nSW1(config)3 ntp peer 192.168.1.1\nSW1(config)#ntp access-group peer accesslist1",
+        "C": "SW1# config t\nSW1(config)#ntp backup\nSW1(config)#ntp server 192.168.1.1",
+        "D": "SW1# config t\nSW1(config)#ntp master\nSW1(config)#ntp server 192.168.1.1"
+      }
     },
     {
       "id": "9.100",
@@ -609,7 +863,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng nào được thực hiện bởi một web server?",
+      "options_vi": {
+        "A": "cung cấp một ứng dụng được truyền qua HTTP",
+        "B": "gửi và nhận email từ các thiết bị client",
+        "C": "lưu trữ tệp an toàn cho truy cập FTP",
+        "D": "xác thực và ủy quyền danh tính người dùng"
+      }
     },
     {
       "id": "10.19",
@@ -625,7 +886,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Đặc điểm nào là của TFTP?",
+      "options_vi": {
+        "A": "cung cấp truyền dữ liệu an toàn",
+        "B": "dựa vào cổng TCP phổ biến 20 để truyền dữ liệu",
+        "C": "sử dụng hai kết nối riêng biệt cho lưu lượng điều khiển và dữ liệu",
+        "D": "cung cấp khả năng đăng nhập người dùng ẩn danh (anonymous)"
+      }
     },
     {
       "id": "10.21",
@@ -641,7 +909,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lệnh nào tạo một liên kết NAT tĩnh cho địa chỉ PC 10.1.1.1 đến địa chỉ công cộng có thể định tuyến 209.165.200.225 được gán cho PC?",
+      "options_vi": {
+        "A": "R1(config)#ip nat outside source static 209.165.200.225 10.1.1.1",
+        "B": "R1(config)#ip nat inside source static 209.165.200.225 10.1.1.1",
+        "C": "R1(config)#ip nat outside source static 10.1.1.1 209.165.200.225",
+        "D": "R1(config)#ip nat inside source static 10.1.1.1 209.165.200.225"
+      }
     },
     {
       "id": "10.33",
@@ -657,7 +932,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Lệnh nào ngụ ý việc sử dụng SNMPv3?",
+      "options_vi": {
+        "A": "snmp-server community",
+        "B": "snmp-server host",
+        "C": "snmp-server enable traps",
+        "D": "snmp-server user"
+      }
     },
     {
       "id": "10.43",
@@ -675,7 +957,15 @@
         "A",
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai đặc điểm nào của DHCP relay agent? (Chọn hai)",
+      "options_vi": {
+        "A": "giảm thiểu số lượng DHCP server cần thiết",
+        "B": "gán DNS cục bộ và sau đó chuyển tiếp yêu cầu đến DHCP server",
+        "C": "được cấu hình dưới interface Layer 3 của router trên subnet của client",
+        "D": "chỉ cho phép các đặt trước MAC-to-IP để xác định subnet cục bộ của client",
+        "E": "cho phép một lệnh ip helper duy nhất dưới một interface Layer 3 riêng lẻ"
+      }
     },
     {
       "id": "10.72",
@@ -692,7 +982,13 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter hoặc nhóm router nào là NTP client?",
+      "options_vi": {
+        "A": "R1, R2, và R3",
+        "B": "R1",
+        "C": "R2 và R3 \nD R1, R3, và R4"
+      }
     },
     {
       "id": "10.78",
@@ -710,7 +1006,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nBộ lệnh nào cấu hình ROUTER-1 để cho phép người dùng trên subnet 192.168.1.0/24 truy cập Internet trong khi sử dụng 209.165.202.129 cho Port Address Translation?",
+      "options_vi": {
+        "A": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload",
+        "B": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "C": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "D": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload"
+      }
     },
     {
       "id": "10.92",
@@ -728,7 +1031,15 @@
         "C",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai hành động nào là kết quả của traffic policing? (Chọn hai)",
+      "options_vi": {
+        "A": "bursting",
+        "B": "phân mảnh (fragmentation)",
+        "C": "loại bỏ (dropping)",
+        "D": "đánh dấu lại (remarking)",
+        "E": "đệm (buffering)"
+      }
     }
   ]
 }

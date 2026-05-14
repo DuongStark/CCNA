@@ -15,7 +15,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Thao tác CRUD nào tương ứng với phương thức HTTP GET?",
+      "options_vi": {
+        "A": "read",
+        "B": "update",
+        "C": "create",
+        "D": "delete"
+      }
     },
     {
       "id": "5.10",
@@ -31,7 +38,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Với REST API, header HTTP tiêu chuẩn nào cho máy chủ biết loại phương tiện (media type) mà máy khách mong đợi?",
+      "options_vi": {
+        "A": "Accept-Encoding: gzip, deflate",
+        "B": "Accept-Patch: text/example; charset=utf-8",
+        "C": "Content-Type: application/json; charset=utf-8",
+        "D": "Accept: application/json"
+      }
     },
     {
       "id": "5.21",
@@ -47,7 +61,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mặt phẳng mạng (network plane) nào được tập trung hóa và quản lý các quyết định định tuyến?",
+      "options_vi": {
+        "A": "mặt phẳng chính sách (policy plane)",
+        "B": "mặt phẳng điều khiển (control plane)",
+        "C": "mặt phẳng quản lý (management plane)",
+        "D": "mặt phẳng dữ liệu (data plane)"
+      }
     },
     {
       "id": "5.34",
@@ -65,7 +86,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSau khi chạy đoạn mã trong hình minh họa, bước nào giảm lượng dữ liệu mà máy chủ NETCONF trả về cho máy khách NETCONF, chỉ còn cấu hình của giao diện (interface)?",
+      "options_vi": {
+        "A": "Sử dụng thư viện xml để phân tích dữ liệu được máy chủ NETCONF trả về cho cấu hình của giao diện.",
+        "B": "Tạo một bộ lọc XML dưới dạng chuỗi và truyền nó vào phương thức get_config() như một đối số.",
+        "C": "Tạo một bộ lọc JSON dưới dạng chuỗi và truyền nó vào phương thức get_config() như một đối số.",
+        "D": "Sử dụng thư viện JSON để phân tích dữ liệu được máy chủ NETCONF trả về cho cấu hình của giao diện."
+      }
     },
     {
       "id": "5.35",
@@ -83,7 +111,15 @@
         "A",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai chức năng của bộ điều khiển SDN (SDN controller) là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "phối hợp các VTN",
+        "B": "chuyển tiếp Lớp 2 (Layer 2 forwarding)",
+        "C": "theo dõi các máy chủ (host)",
+        "D": "quản lý cấu trúc liên kết mạng (topology)",
+        "E": "bảo vệ chống lại tấn công DDoS"
+      }
     },
     {
       "id": "5.45",
@@ -99,7 +135,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mục đích của southbound API trong kiến trúc mạng dựa trên bộ điều khiển (controller) là gì?",
+      "options_vi": {
+        "A": "hỗ trợ giao tiếp giữa bộ điều khiển và các ứng dụng",
+        "B": "tích hợp bộ điều khiển với các công cụ tự động hóa và điều phối khác",
+        "C": "cho phép các nhà phát triển ứng dụng tương tác với mạng",
+        "D": "hỗ trợ giao tiếp giữa bộ điều khiển và phần cứng mạng"
+      }
     },
     {
       "id": "5.48",
@@ -115,7 +158,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Công nghệ nào phù hợp cho giao tiếp giữa bộ điều khiển SDN và các ứng dụng chạy trên mạng?",
+      "options_vi": {
+        "A": "OpenFlow",
+        "B": "Southbound API",
+        "C": "NETCONF",
+        "D": "REST API"
+      }
     },
     {
       "id": "5.51",
@@ -131,7 +181,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hành động mạng nào xảy ra trong mặt phẳng dữ liệu (data plane)?",
+      "options_vi": {
+        "A": "so sánh địa chỉ IP đích với bảng định tuyến IP",
+        "B": "thực hiện thay đổi cấu hình từ một NETCONF RPC đến",
+        "C": "chạy các giao thức định tuyến (OSPF, EIGRP, RIP, BGP)",
+        "D": "trả lời yêu cầu ICMP echo request đến"
+      }
     },
     {
       "id": "6.1",
@@ -149,7 +206,15 @@
         "A",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai cải tiến nào mà tự động hóa mang lại cho quản lý mạng trong môi trường SDN? (Chọn hai)",
+      "options_vi": {
+        "A": "Trí tuệ nhân tạo xác định và ngăn chặn các lỗi thiết kế tiềm ẩn",
+        "B": "Các công cụ thu thập và phân tích dữ liệu thiết lập đường cơ sở (baseline) cho mạng",
+        "C": "Các thiết bị mới được đưa vào hoạt động với nỗ lực tối thiểu",
+        "D": "Học máy (machine learning) giảm thiểu tỷ lệ lỗi tổng thể khi tự động hóa quy trình khắc phục sự cố",
+        "E": "Các API độc quyền của Cisco tận dụng nhiều công cụ quản lý mạng"
+      }
     },
     {
       "id": "6.5",
@@ -165,7 +230,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng mạng nào xảy ra trên mặt phẳng dữ liệu (data plane)?",
+      "options_vi": {
+        "A": "hỗ trợ bầu chọn spanning-tree",
+        "B": "xử lý lưu lượng quản lý SSH đến",
+        "C": "chuyển tiếp lưu lượng máy khách/máy chủ từ xa",
+        "D": "gửi và nhận các gói OSPF Hello"
+      }
     },
     {
       "id": "6.6",
@@ -181,7 +253,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Bộ điều khiển SDN sử dụng giao thức truyền thông nào để chuyển tiếp các thay đổi chuyển tiếp đến southbound API?",
+      "options_vi": {
+        "A": "XML",
+        "B": "Java",
+        "C": "REST",
+        "D": "OpenFlow"
+      }
     },
     {
       "id": "6.25",
@@ -197,7 +276,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Kiểu dữ liệu JSON nào là một tập hợp không có thứ tự các cặp thuộc tính-giá trị (attribute-value)?",
+      "options_vi": {
+        "A": "array",
+        "B": "string",
+        "C": "object",
+        "D": "Boolean"
+      }
     },
     {
       "id": "7.4",
@@ -213,7 +299,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mã trạng thái HTTP nào được trả về sau một yêu cầu REST API thành công?",
+      "options_vi": {
+        "A": "200",
+        "B": "301",
+        "C": "404",
+        "D": "500"
+      }
     },
     {
       "id": "7.8",
@@ -229,7 +322,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của bộ điều khiển (controller) trong mạng dựa trên bộ điều khiển là gì?",
+      "options_vi": {
+        "A": "Nó là một cặp bộ định tuyến lõi (core router) duy trì tất cả các quyết định định tuyến cho một khuôn viên (campus)",
+        "B": "Nó tập trung hóa mặt phẳng dữ liệu (data plane) cho mạng",
+        "C": "Nó là card trên bộ định tuyến lõi duy trì tất cả các quyết định định tuyến cho một khuôn viên (campus)",
+        "D": "Nó đóng vai trò là điểm quản lý tập trung của kiến trúc SDN"
+      }
     },
     {
       "id": "7.16",
@@ -245,7 +345,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của Bảng điều khiển Sức khỏe Tổng thể (Overall Health Dashboard) của Cisco DNA Center là gì?",
+      "options_vi": {
+        "A": "Nó tóm tắt mức sử dụng CPU hàng ngày và hàng tuần cho các máy chủ và máy trạm trong mạng.",
+        "B": "Nó cung cấp nhật ký hoạt động chi tiết cho 10 thiết bị và người dùng trên mạng.",
+        "C": "Nó tóm tắt trạng thái hoạt động của từng thiết bị không dây trên mạng.",
+        "D": "Nó cung cấp bản tóm tắt 10 vấn đề toàn cục hàng đầu."
+      }
     },
     {
       "id": "7.18",
@@ -261,7 +368,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Giao diện giữa mặt phẳng điều khiển (control plane) và mặt phẳng dữ liệu (data plane) nằm ở đâu trong kiến trúc phần mềm định nghĩa (software-defined architecture)?",
+      "options_vi": {
+        "A": "tầng ứng dụng (application layer) và tầng quản lý (management layer)",
+        "B": "tầng ứng dụng (application layer) và tầng hạ tầng (infrastructure layer)",
+        "C": "tầng điều khiển (control layer) và tầng ứng dụng (application layer)",
+        "D": "tầng điều khiển (control layer) và tầng hạ tầng (infrastructure layer)"
+      }
     },
     {
       "id": "7.27",
@@ -279,7 +393,15 @@
         "A",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai thành phần nào cần thiết để tạo một tập lệnh Ansible cấu hình VLAN trên switch? (Chọn hai)",
+      "options_vi": {
+        "A": "task",
+        "B": "cookbook",
+        "C": "recipe",
+        "D": "model",
+        "E": "playbook"
+      }
     },
     {
       "id": "7.29",
@@ -295,7 +417,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Trong kiến trúc phần mềm định nghĩa (software-defined architecture), mặt phẳng nào xử lý việc chuyển mạch lưu lượng qua bộ định tuyến Cisco?",
+      "options_vi": {
+        "A": "Data",
+        "B": "Control",
+        "C": "Management",
+        "D": "Application"
+      }
     },
     {
       "id": "7.37",
@@ -313,7 +442,15 @@
         "C",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai động lực chính nào hỗ trợ nhu cầu tự động hóa mạng? (Chọn hai)",
+      "options_vi": {
+        "A": "Tăng cường sự phụ thuộc vào khả năng tự chẩn đoán và tự phục hồi",
+        "B": "Loại bỏ nhu cầu đào tạo",
+        "C": "Cung cấp tài nguyên dựa trên chính sách (policy-derived provisioning)",
+        "D": "Giảm quy mô phần cứng",
+        "E": "Cung cấp một điểm truy cập duy nhất để cấp phát tài nguyên"
+      }
     },
     {
       "id": "7.46",
@@ -331,7 +468,15 @@
         "A",
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai sự kiện nào xảy ra tự động khi một thiết bị được thêm vào Cisco DNA Center? (Chọn hai)",
+      "options_vi": {
+        "A": "Thiết bị được gán vào site Global.",
+        "B": "Thiết bị được đặt vào trạng thái Unmanaged.",
+        "C": "Thiết bị được đặt vào trạng thái Provisioned.",
+        "D": "Thiết bị được đặt vào trạng thái Managed.",
+        "E": "Thiết bị được gán vào site Local."
+      }
     },
     {
       "id": "7.50",
@@ -347,7 +492,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mặt phẳng nào được tập trung hóa bởi bộ điều khiển SDN (SDN controller)?",
+      "options_vi": {
+        "A": "mặt phẳng dữ liệu (data plane)",
+        "B": "mặt phẳng quản lý (management plane)",
+        "C": "mặt phẳng điều khiển (control plane)",
+        "D": "mặt phẳng dịch vụ (services plane)"
+      }
     },
     {
       "id": "8.1",
@@ -363,7 +515,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tương tác truyền thông nào diễn ra khi sử dụng southbound API?",
+      "options_vi": {
+        "A": "giữa bộ điều khiển SDN (SDN controller) và các PC trên mạng",
+        "B": "giữa bộ điều khiển SDN (SDN controller) và các switch và router trên mạng",
+        "C": "giữa bộ điều khiển SDN (SDN controller) và các dịch vụ và ứng dụng trên mạng",
+        "D": "giữa các ứng dụng mạng và các switch và router trên mạng"
+      }
     },
     {
       "id": "8.32",
@@ -379,7 +538,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại API nào cho phép bộ điều khiển SDN (SDN controller) thực hiện các thay đổi động trên mạng?",
+      "options_vi": {
+        "A": "northbound API",
+        "B": "southbound API",
+        "C": "SOAP API",
+        "D": "REST API"
+      }
     },
     {
       "id": "8.63",
@@ -395,7 +561,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của bộ điều khiển (controller) trong mạng phần mềm định nghĩa (software-defined network) là gì?",
+      "options_vi": {
+        "A": "chuyển tiếp gói tin (forwarding packets)",
+        "B": "đưa ra quyết định định tuyến (making routing decisions)",
+        "C": "sao chép multicast ở cấp phần cứng",
+        "D": "phân mảnh và tái hợp gói tin"
+      }
     },
     {
       "id": "9.9",
@@ -411,7 +584,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hành động nào được thực hiện bởi mặt phẳng dữ liệu (data plane) trong một thiết bị mạng?",
+      "options_vi": {
+        "A": "tra cứu giao diện đầu ra trong bảng thông tin chuyển tiếp (forwarding information base)",
+        "B": "xây dựng bảng định tuyến dựa trên giao thức định tuyến",
+        "C": "cung cấp quyền truy cập CLI vào thiết bị mạng",
+        "D": "chuyển tiếp lưu lượng đến hop tiếp theo (next hop)"
+      }
     },
     {
       "id": "9.20",
@@ -429,7 +609,15 @@
         "A",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai hành động mạng nào xảy ra trong mặt phẳng dữ liệu (data plane)? (Chọn hai)",
+      "options_vi": {
+        "A": "Thêm hoặc xóa tiêu đề 802.1Q trunking.",
+        "B": "Thực hiện thay đổi cấu hình từ một NETCONF RPC đến.",
+        "C": "Chạy các giao thức định tuyến.",
+        "D": "Trả lời yêu cầu ICMP echo request đến.",
+        "E": "Khớp địa chỉ MAC đích với bảng địa chỉ MAC."
+      }
     },
     {
       "id": "9.53",
@@ -445,7 +633,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Kết quả mong đợi khi triển khai tự động hóa quản lý mạng là gì?",
+      "options_vi": {
+        "A": "Phải sử dụng mặt phẳng quản lý phân tán (distributed management plane).",
+        "B": "Nâng cấp phần mềm được thực hiện từ bộ điều khiển trung tâm (central controller).",
+        "C": "Độ phức tạp tăng lên khi thêm cấu hình thiết bị mới.",
+        "D": "Cần các ứng dụng tùy chỉnh để cấu hình thiết bị mạng."
+      }
     },
     {
       "id": "9.68",
@@ -461,7 +656,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Vai trò của việc tách rời (disaggregation) trong mạng dựa trên bộ điều khiển (controller-based networking) là gì?",
+      "options_vi": {
+        "A": "Nó phân chia các chức năng của mặt phẳng điều khiển (control plane) và mặt phẳng dữ liệu (data plane).",
+        "B": "Nó tóm tắt các tuyến đường giữa tầng lõi (core) và tầng phân phối (distribution) của cấu trúc mạng.",
+        "C": "Nó cho phép cấu trúc mạng nhanh chóng điều chỉnh từ mạng vòng (ring network) sang mạng hình sao (star network).",
+        "D": "Nó tối ưu hóa việc xử lý lưu lượng bằng cách gán các thiết bị riêng lẻ thực hiện chức năng Layer 2 hoặc Layer 3."
+      }
     },
     {
       "id": "9.69",
@@ -477,7 +679,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Phương thức REST nào cập nhật một đối tượng trong Cisco DNA Center Intent API?",
+      "options_vi": {
+        "A": "CHANGE",
+        "B": "UPDATE",
+        "C": "POST",
+        "D": "PUT"
+      }
     },
     {
       "id": "9.73",
@@ -493,7 +702,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Chức năng của các switch \"có sẵn trên thị trường\" (off-the-shelf) trong mạng dựa trên bộ điều khiển (controller-based network) là gì?",
+      "options_vi": {
+        "A": "Chuyển tiếp gói tin (forwarding packets)",
+        "B": "Đưa ra quyết định định tuyến (routing decision)",
+        "C": "Cung cấp cái nhìn tổng quan về mạng đã triển khai",
+        "D": "Thiết lập các chính sách xử lý gói tin (packet-handling policies)"
+      }
     },
     {
       "id": "9.81",
@@ -511,7 +727,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLoại cấu hình nào được thể hiện trong đầu ra?",
+      "options_vi": {
+        "A": "Chef",
+        "B": "JSON",
+        "C": "Ansible",
+        "D": "Puppet"
+      }
     },
     {
       "id": "9.84",
@@ -529,7 +752,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\n\"R1\" và \"SW1\" đại diện cho điều gì trong đầu ra JSON?",
+      "options_vi": {
+        "A": "mảng (array)",
+        "B": "đối tượng (object)",
+        "C": "giá trị (value)",
+        "D": "khóa (key)"
+      }
     },
     {
       "id": "9.94",
@@ -545,7 +775,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Trong kiến trúc SDN, chức năng nào của một nút mạng (network node) được tập trung hóa trên bộ điều khiển (controller)?",
+      "options_vi": {
+        "A": "cung cấp truy cập giao thức cho các thiết bị truy cập từ xa",
+        "B": "loại bỏ thông điệp do lọc (filtering)",
+        "C": "tạo bảng định tuyến IP (IP routing table)",
+        "D": "đưa ra quyết định định tuyến (routing decision)"
+      }
     },
     {
       "id": "9.96",
@@ -561,7 +798,14 @@
       "answer": [
         "C"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mặt phẳng SDN nào chuyển tiếp lưu lượng do người dùng tạo ra?",
+      "options_vi": {
+        "A": "mặt phẳng chính sách (policy plane)",
+        "B": "mặt phẳng quản lý (management plane)",
+        "C": "mặt phẳng dữ liệu (data plane)",
+        "D": "mặt phẳng điều khiển (control plane)"
+      }
     },
     {
       "id": "10.15",
@@ -577,7 +821,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Mục đích của bộ điều khiển Cisco DNA Center là gì?",
+      "options_vi": {
+        "A": "để quản lý và triển khai các thiết bị mạng một cách an toàn",
+        "B": "để quét mạng và tạo sơ đồ mạng lớp 2 (layer 2)",
+        "C": "để cung cấp dịch vụ Lớp 3 (Layer 3) cho các điểm truy cập tự trị (autonomous access points)",
+        "D": "để bảo mật truy cập vật lý vào trung tâm dữ liệu (data center)"
+      }
     },
     {
       "id": "10.23",
@@ -595,7 +846,15 @@
         "D",
         "E"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Hai lớp mã trạng thái (status-code) REST API nào đại diện cho lỗi? (Chọn hai)",
+      "options_vi": {
+        "A": "1XX",
+        "B": "2XX",
+        "C": "3XX",
+        "D": "4XX",
+        "E": "5XX"
+      }
     },
     {
       "id": "10.28",
@@ -611,7 +870,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Điều gì phân biệt quản lý thiết bị được kích hoạt bởi Cisco DNA Center so với quản lý thiết bị campus truyền thống?",
+      "options_vi": {
+        "A": "thiết bị hướng CLI (CLI-oriented device)",
+        "B": "tập trung hóa (centralized)",
+        "C": "theo từng thiết bị (per-device)",
+        "D": "thao tác thủ công từng thiết bị (device-by-device hands-on)"
+      }
     },
     {
       "id": "10.37",
@@ -629,7 +895,14 @@
       "answer": [
         "D"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCó bao nhiêu đối tượng (object) trong dữ liệu được mã hóa JSON đã cho?",
+      "options_vi": {
+        "A": "một",
+        "B": "bốn",
+        "C": "bảy",
+        "D": "chín"
+      }
     },
     {
       "id": "10.75",
@@ -645,7 +918,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\n{\n\"myCar\": {\n\"name\": \"thunder\",\n\"wheels\": [\"good\", \"good\", \"pressureLow\", \"warning\"],\n\"gasLight\": false\n},\n\"oldCar\": {\n\"name\": \"sleepy\",\n\"wheels\": [\"pressureLow\", \"pressureLow\", \"pressureLow\", \"pressureLow\"],\n\"color\": \"rust\"\n\"gasLight\": true\n},\n\"newCar\": {\n\"name\": \"lightning\",\n\"wheels\": [\"pressureLow\", \"good\", \"pressureLow\", \"good\"],\n\"color\": \"blue\"\n\"gasLight\": true\n}\n}\nTừ \"warning\" trực tiếp nằm trong cấu trúc nào?",
+      "options_vi": {
+        "A": "mảng (array)",
+        "B": "đối tượng (object)",
+        "C": "Boolean",
+        "D": "chuỗi (string)"
+      }
     },
     {
       "id": "10.80",
@@ -661,7 +941,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Một kiến trúc sư mạng đang cân nhắc liệu có nên triển khai Cisco DNA Center để triển khai các thiết bị trên một mạng mới hay không. Tổ chức tập trung vào việc giảm thời gian hiện tại cần thiết để triển khai thiết bị trong thiết kế campus truyền thống. Vì lý do nào Cisco DNA Center sẽ phù hợp hơn so với các tùy chọn quản lý truyền thống?",
+      "options_vi": {
+        "A": "Cisco DNA Center cung cấp khả năng cấp phát không cần chạm (zero-touch provisioning) cho các thiết bị của bên thứ ba.",
+        "B": "Cisco DNA Center hỗ trợ triển khai với một giao diện quản lý duy nhất (single pane of glass).",
+        "C": "Cisco DNA Center giảm thiểu mức độ đầu ra syslog khi báo cáo về các thiết bị Cisco.",
+        "D": "Cisco DNA Center giảm nhu cầu phân tích (analytics) trên các điểm truy cập và thiết bị của bên thứ ba."
+      }
     },
     {
       "id": "10.83",
@@ -677,7 +964,14 @@
       "answer": [
         "B"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Loại giao diện nào cho phép một ứng dụng chạy trên máy khách (client) gửi dữ liệu qua mạng IP đến máy chủ (server)?",
+      "options_vi": {
+        "A": "giao diện hướng nam (southbound interface)",
+        "B": "giao diện lập trình ứng dụng (application programming interface)",
+        "C": "giao diện hướng bắc (northbound interface)",
+        "D": "giao diện lập trình ứng dụng chuyển trạng thái đại diện (Representational State Transfer application programming interface)"
+      }
     },
     {
       "id": "10.88",
@@ -693,7 +987,14 @@
       "answer": [
         "A"
       ],
-      "answer_images": []
+      "answer_images": [],
+      "question_vi": "Puppet sử dụng mô hình kịch bản (script paradigm) nào?",
+      "options_vi": {
+        "A": "manifests và modules",
+        "B": "strings và marionettes",
+        "C": "recipes và cookbooks",
+        "D": "playbooks và roles"
+      }
     }
   ]
 }
