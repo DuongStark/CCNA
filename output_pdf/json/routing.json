@@ -297,7 +297,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA network engineer must provide configured IP addressing details to investigate a firewall rule\nissue. Which subnet and mask identify what is configured on the en0 interface?",
       "question_images": [
-        "page_93_img_0.jpeg"
+        "page_5_img_0.jpeg"
       ],
       "options": {
         "A": "10.8.0.0/16",
@@ -353,7 +353,9 @@
       "source_id": "64",
       "type": "single",
       "question": "Refer to the exhibit.\nAn IP subnet must be configured on each router that provides enough addresses for the number of\nassigned hosts and anticipates no more than 10% growth for new hosts. Which configuration script\nmust be used?\nOption A Option B\nR7# R7#\nconfigure terminal configure terminal\ninterface Fa1/0 interface Fa1/0\nip address 10.1.56.1 255.255.240.0 ip address 10.1.56.1 255.255.248.0\nno shutdown no shutdown\nR8# R8#\nconfigure terminal configure terminal\ninterface Fa0/0 interface Fa0/0\nip address 10.9.32.1 255.255.224.0 ip address 10.9.32.1 255.255.254.0\nno shutdown no shutdown\nR9#\nR9#\nconfigure terminal\nconfigure terminal\ninterface Fa1/1\ninterface Fa1/1\nip address 10.23.96.1 255.255.192.0\nip address 10.23.96.1 255.255.248.0\nno shutdown\nno shutdown\nOption C Option D\nR7# R7#\nconfigure terminal configure terminal\ninterface Fa1/0 interface Fa1/0\nip address 10.1.56.1 255.255.252.0 ip address 10.1.56.1 255.255.192.0\nno shutdown no shutdown\nR8#\nR8#\nconfigure terminal\nconfigure terminal\ninterface Fa0/0\ninterface Fa0/0\nip address 10.9.32.1 255.255.224.0\nip address 10.9.32.1 255.255.255.0\nno shutdown\nno shutdown\nR9#\nconfigure terminal\nR9#\ninterface Fa1/1\nconfigure terminal\nip address 10.23.96.1 255.255.128.0\ninterface Fa1/1\nno shutdown\nip address 10.23.96.1 255.255.240.0\nno shutdown",
-      "question_images": [],
+      "question_images": [
+        "page_6_img_0.jpeg"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -519,7 +521,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA newly configured PC fails to connect to the internet using TCP port 80 to www.cisco.com. Which\nsetting must be modified for the connection to work?",
       "question_images": [
-        "page_64_img_0.jpeg"
+        "page_9_img_0.jpeg"
       ],
       "options": {
         "A": "Subnet Mask",
@@ -705,7 +707,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is not set\n209.165.200.0/27 is subnetted, 1 subnets\nB 209.165.200.224 [20/0] via 10.10.12.2, 00:08:34\n10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks\nC 10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC 10.10.11.0/30 is directly connected, FastEthernet2/0\nO 10.10.13.0/24 [110/2] via 10.10.10.1, 00:09:25, GigabitEthernet0/0\nC 10.10.12.0/30 is directly connected, GigabitEthernet0/1\nWhich action is taken by the router when a packet is sourced from 10.10.10.2 and destined for\n10.10.10.16?",
       "question_images": [
-        "page_22_img_0.jpeg"
+        "page_85_img_0.jpeg"
       ],
       "options": {
         "A": "It discards the packets",
@@ -733,8 +735,7 @@
       "type": "single",
       "question": "Refer to the exhibit. When PC 1 sends a packet to PC2, the packet has which source and\ndestination IP address when it arrives at interface Gi0/0 on router R2?",
       "question_images": [
-        "page_13_img_0.png",
-        "page_13_img_1.jpeg"
+        "page_12_img_0.jpeg"
       ],
       "options": {
         "A": "source 192.168.10.10 and destination 10.10.2.2",
@@ -849,7 +850,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Which type of route does R1 use to reach host 10.10.13.10/32?\nR1#show ip route\nGateway of last resort is 10.10.10.18 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 4 subnets. 3 Masks\nC 10.10.10.0/30 is directly connected. FastEthernet0/1\nO 10.10.13.0/25 [110/4576] via 10.10.10.1, 02:53:11, FastEthernet0/1\nC 10.10.10.16/30 is directly connected, FastEthernet0/24\n0 10.10.13.144/28 [110/110] via 10.10.10.1, 03:51:21, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.10.10.18, 02:17:53",
       "question_images": [
-        "page_16_img_0.png"
+        "page_27_img_0.jpeg"
       ],
       "options": {
         "A": "floating static route",
@@ -1009,7 +1010,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Which prefix does Router 1 use for traffic to Host A?\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is sudnetted, 1 subnets\nB 209.165.200.224 [20/0] via 10.10.12.2, 03:03:03\n209.165.201.0/27 is sudnetted, 1 subnets\nB 209.165.201.0 [20/0] via 10.10.12.2, 03:03:03\n209.165.202.0/27 is subnetted, 1 subnets\nB 209.165.202.128 [20/0] via 10.10.12.2, 03:03:03\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC 10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC 10.10.11.0/30 is directly connected, FastEthernet2/0\nC 10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO 10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nS* 0.0.0.0/0 [1/0] via 10.10.11.2",
       "question_images": [
-        "page_22_img_0.jpeg"
+        "page_20_img_0.jpeg"
       ],
       "options": {
         "A": "10.10.10.0/28",
@@ -1063,7 +1064,7 @@
       "type": "single",
       "question": "Refer to the exhibit. How does router R1 handle traffic to 192.168.10.16?\nR1# show ip route\nD 192.168.10.0/24 [90/2679326] via 192.168.1.1\nR 192.168.10.0/27 [120/3] via 192.168.1.2\nO 192.168.10.0/23 [110/2] via 192.168.1.3\ni L1 192.168.10.0/13 [115/30] via 192.168.1.4",
       "question_images": [
-        "page_36_img_0.jpeg"
+        "page_21_img_0.png"
       ],
       "options": {
         "A": "It selects the IS-IS route because it has the shortest prefix inclusive of the destination address",
@@ -1173,7 +1174,9 @@
       "source_id": "3",
       "type": "single",
       "question": "Refer to the exhibit. Router R1 Fa0/0 cannot ping router R3 Fa0/1. Which action must be taken in\nrouter R1 to help resolve the configuration issue?\nR1#show ip route R2#show ip route\n<output omitted> <output omitted>\nGateway of last resort is not set Gateway of last resort is not set\n10.0.0.0/24 is subnetted, 1 subnets 20.0.0.0/24 is subnetted, 1 subnets\nC 10.10.10.0 is directly connected, C 20.20.20.0 is directly connected,\nFastEthernet0/0 FastEthernet0/1\n10.0.0.0/24 is subnetted, 1 subnets\nC 10.10.10.0 is directly connected,\nFastEthernet0/0\nR3#show ip route\n<output omitted>\nGateway of last resort is not set\n20.0.0.0/24 is subnetted, 1 subnets\nC 20.20.20.0 is directly connected,\nFastEthernet0/1\n10.0.0.0/24 is subnetted, 1 subnets\nS 10.10.10.0 [1/0] via 20.20.20.1",
-      "question_images": [],
+      "question_images": [
+        "page_24_img_0.jpeg"
+      ],
       "options": {
         "A": "set the default network as 20.20.20.0/24",
         "B": "set the default gateway as 20.20.20.2",
@@ -1200,7 +1203,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Router R1 is running three different routing protocols. Which route\ncharacteristic is used by the router to forward the packet that it receives for destination IP\n172.16.32.1?\n`",
       "question_images": [
-        "page_46_img_0.jpeg"
+        "page_24_img_0.jpeg"
       ],
       "options": {
         "A": "longest prefix",
@@ -1337,7 +1340,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Which route type is configured to reach the internet?\nR1#show ip route\nGateway of last resort is 10.10.10.18 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 4 subnets. 3 Masks\nC 10.10.10.0/30 is directly connected. FastEthernet0/1\nO 10.10.13.0/25 [110/4576] via 10.10.10.1, 02:53:11, FastEthernet0/1\nC 10.10.10.16/30 is directly connected, FastEthernet0/24\n0 10.10.13.144/28 [110/110] via 10.10.10.1, 03:51:21, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.10.10.18, 02:17:53",
       "question_images": [
-        "page_16_img_0.png"
+        "page_27_img_0.jpeg"
       ],
       "options": {
         "A": "host route",
@@ -1698,7 +1701,9 @@
       "source_id": "78",
       "type": "single",
       "question": "Refer to the exhibit.\nEIGRP 10.10.10.0/24[90/1441] via F0/10\nEIGRP 10.10.10.0/24[90/144] via F0/11 => Best Route EIGRP\nEIGRP 10.10.10.0/24[90/1441] via F0/12\nOSPF 10.10.10.0/24[110/20] via F0/13 => Best Route OSPF\nOSPF 10.10.10.0/24[110/30] via F0/14\nPackets received by the router from BGP enter via a serial interface at 209.165.201.10. Each route\nis present within the routing table. Which interface is used to forward traffic with a destination IP\nof 10.10.10.24?",
-      "question_images": [],
+      "question_images": [
+        "page_35_img_0.jpeg"
+      ],
       "options": {
         "A": "F0/10",
         "B": "F0/11",
@@ -2006,7 +2011,9 @@
       "source_id": "98",
       "type": "single",
       "question": "Refer to the exhibit.\nRouters R1 and R2 have been configured with their respective LAN interfaces. The two circuits are\noperational and reachable across WAN. Which command set establishes failover redundancy if the\nprimary circuit goes down?",
-      "question_images": [],
+      "question_images": [
+        "page_42_img_0.jpeg"
+      ],
       "options": {
         "A": "R1(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.6 2\nR2(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.5 2",
         "B": "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.6\nR2(config)#ip route 192.166.0.100 255.255.255.255 10.10.10.5",
@@ -2522,7 +2529,9 @@
       "source_id": "57",
       "type": "multi",
       "question": "Refer to the exhibit.\nA network administrator configures the CPE to provide internet access to the company\nheadquarters. Traffic must be load-balanced via ISP1 and ISP2 to ensure redundancy. Which two\ncommand sets must be configured on the CPE router? (Choose two)",
-      "question_images": [],
+      "question_images": [
+        "page_54_img_0.jpeg"
+      ],
       "options": {
         "A": "ip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1 2",
         "B": "ip route 0.0.0.0 128.0.0.0 198.51.100.1\nip route 128.0.0.0 128.0.0.0 203.0.113.1\nip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1",
@@ -3060,7 +3069,7 @@
       "type": "single",
       "question": "Refer to the exhibit. To which device does Router1 send packets that are destined to host\n10.10.13.165?\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets\nB 209.165.200.224 [20/0] via 10.10.12.2,03:32:14\n209.165.201.0/27 is subnetted, 1 subnets\nB 209.165.201.0 [20/0] via 10.10.12.2,02:26:53\n209.165.202.0/27 is subnetted, 1 subnets\nB 209.165.202.128 [20/0] via 10.10.12.2,02:46:03\n10.0.0.0/8 is variably subneted, 10 subnets, 4 masks\nO 10.10.13.0/25 [110/2] via 10.10.10.1,00:00:04, GigabitEthernet0/0\nO 10.10.13.128/28 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO 10.10.13.144/28 [110/2] via 10.10.10.9,00:01:57, GigabitEthernet0/2\nO 10.10.13.160/29 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO 10.10.13.208/29 [110/2] via 10.10.10.13,00:01:57, GigabitEthernet0/3\nS* 0.0.0.0/0 [1/0] via 10.10.11.2",
       "question_images": [
-        "page_38_img_0.jpeg"
+        "page_85_img_0.jpeg"
       ],
       "options": {
         "A": "Router2",
@@ -3087,7 +3096,9 @@
       "source_id": "1",
       "type": "single",
       "question": "Refer to the exhibit. Which configuration issue is preventing the OSPF neighbor relationship from\nbeing established between the two routers?\nR1#show running-config R2#show running-config\nBuilding configuration… Building configuration…\n! !\ninterface GigabitEthernet1/0 interface GigabitEthernet2/0\nmtu 1600 ip address 192.168.0.2 255.255.255.252\nip address 192.168.0.1 255.255.255.252 negotiation auto\nnegotiation auto !\n! router ospf 1\nrouter ospf 1 router-id 2.2.2.2\nrouter-id 1.1.1.1 passive-interface default\npassive-interface default no passive-interface GigabitEthernet2/0\nno passive-interface GigabitEthernet1/0 network 192.168.0.2 0.0.0.0 area 0\nnetwork 192.168.0.1 0.0.0.0 area 0 !\n!",
-      "question_images": [],
+      "question_images": [
+        "page_86_img_0.jpeg"
+      ],
       "options": {
         "A": "R2 is using the passive-interface default command",
         "B": "R1 has an incorrect network command for interface Gi1/0",
@@ -3142,7 +3153,9 @@
       "source_id": "3",
       "type": "single",
       "question": "Refer to the exhibit. After the configuration is applied, the two routers fail to establish an OSPF\nneighbor relationship. what is the reason for the problem?\nRouter2(config)#interface GigabitEthernet1/1\nRouter1(config)#interface\nRouter2(config-if)#description ***Connection\nGigabitEthernet1/1\nto Router1***\nRouter1(config-if)#description\nRouter2(config-if)#ip address 10.10.10.2\n***Connection to Router2***\n255.255.255.252\nRouter1(config-if)#ip address 10.10.10.1\nRouter2(config)#router ospf 1001\n255.255.255.252\nRouter2(config-router)#router-id 2.2.2.2\nRouter1(config-if)#ip ospf hello-interval 5\nRouter2(config-router)#network 10.10.10.0\nRouter1(config)#router ospf 1000\n0.0.0.3 area 0\nRouter1(config-router)#router-id 1.1.1.1\nRouter2(config-router)#passive-interface\nRouter1(config-router)#network 10.10.10.0\ndefault\n0.0.0.3 area 0\nRouter2(config-router)#no passive-interface\nGigabitEthernet1/1",
-      "question_images": [],
+      "question_images": [
+        "page_87_img_0.jpeg"
+      ],
       "options": {
         "A": "The OSPF router IDs are mismatched",
         "B": "Router2 is using the default hello timer",
@@ -3222,7 +3235,10 @@
       "source_id": "6",
       "type": "single",
       "question": "Refer to the exhibit. What action establishes the OSPF neighbor relationship without forming an\nadjacency?",
-      "question_images": [],
+      "question_images": [
+        "page_89_img_0.png",
+        "page_89_img_1.jpeg"
+      ],
       "options": {
         "A": "modify priority",
         "B": "modify process ID",
@@ -3444,7 +3460,8 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich command configures OSPF on the point-to-point link between routers R1 and R2?",
       "question_images": [
-        "page_17_img_0.jpeg"
+        "page_96_img_0.png",
+        "page_96_img_1.jpeg"
       ],
       "options": {
         "A": "network 10.0.0.0 0.0.0.255 area 0",
@@ -3472,8 +3489,8 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA#show ip ospf neighbor\nNeighbor ID Pri State Dead Time Address Interface\n172.1.1.1 1 EXCHANGE/- 00:00:36 172.16.32.1 Serial0.1\nAn engineer assumes a configuration task from a peer. Router A must establish an OSPF neighbor\nrelationship with neighbor 172.1.1.1. The output displays the status of the adjacency after 2\nhours. What is the next step in the configuration process for the routers to establish an adjacency?",
       "question_images": [
-        "page_77_img_0.png",
-        "page_77_img_1.jpeg"
+        "page_96_img_0.png",
+        "page_96_img_1.jpeg"
       ],
       "options": {
         "A": "Set the router B OSPF ID to the same value as its IP address",

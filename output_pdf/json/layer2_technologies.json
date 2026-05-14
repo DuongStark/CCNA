@@ -756,7 +756,9 @@
       "source_id": "5",
       "type": "single",
       "question": "Refer to the exhibit. Which command provides this output?\nCapability Codes: k - Router, I - Trans Bridge, B - source Route bridge\nS - Switch, H - Host, I - IGMP, r - Repeater, P - Phone,\nD - Remote, C - CVTA, M - Two-port Mac Relay\nDevice ID Local Intrfce Holdtme Capability Platform Port ID\n10.1.1.2 Gig37/3 176 RI CPT 600 Gig36/41\n10.1.1.2 Gig37/1 174 RI CPT 600 Gig36/43\n10.1.1.2 Gig36/41 134 RI CPT 600 Gig37/3\n10.1.1.2 Gig36/43 134 RI CPT 600 Gig37/1\n10.1.1.2 Ten3/2 132 RI CPT 600 Ten4/2\n10.1.1.2 Ten4/2 174 RI CPT 600 Ten3/2",
-      "question_images": [],
+      "question_images": [
+        "page_15_img_0.png"
+      ],
       "options": {
         "A": "show ip route",
         "B": "show ip interface",
@@ -887,7 +889,7 @@
       "type": "multi",
       "question": "Refer to the exhibit.\nAn administrator must turn off the Cisco Discovery Protocol on the port configured with last usable\naddress in the 10.0.0.0/30 subnet. Which command set meets the requirement?",
       "question_images": [
-        "page_23_img_0.jpeg"
+        "page_17_img_0.jpeg"
       ],
       "options": {
         "A": "interface gi0/1\nno cdp enable",
@@ -998,7 +1000,9 @@
       "source_id": "67",
       "type": "single",
       "question": "Refer to the exhibit.\nA network engineer must update the configuration on Switch2 so that it sends LLDP packets every\nminute and the information sent via LLDP is refreshed every 3 minutes. Which configuration must\nthe engineer apply?",
-      "question_images": [],
+      "question_images": [
+        "page_20_img_0.jpeg"
+      ],
       "options": {
         "A": "Switch2(config)#lldp timer 60\nSwitch2(config)# lldp tlv-select 180",
         "B": "Switch2(config)#lldp timer 60\nSwitch2(config)#lldp holdtime 180",
@@ -1680,7 +1684,10 @@
       "source_id": "15",
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which\nconfiguration accomplishes this task?\nOption A Option B\ninterface interface\ngigabitethernet1/1 gigabitethernet1/1\nswitchport mode access switchport mode access\nswitchport access vlan switchport access vlan\n300 400\nswitchport voice vlan switchport voice vlan\n400 300\nOption C Option D\ninterface interface\ngigabitethernet1/1 gigabitethernet1/1\nswitchport mode trunk switchport mode trunk\nswitchport access vlan switchport trunk vlan\n300 300\nswitchport voice vlan switchport trunk vlan\n400 400",
-      "question_images": [],
+      "question_images": [
+        "page_38_img_0.png",
+        "page_38_img_1.jpeg"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -1873,7 +1880,9 @@
       "source_id": "131",
       "type": "single",
       "question": "Refer to the exhibit.\nSwitch A is newly configured. All VLANs are present in the VLAN database. The IP phone and PC A\non Gi0/1 must be configured for the appropriate VLANs to establish connectivity between the PCs.\nWhich command set fulfills the requirement?",
-      "question_images": [],
+      "question_images": [
+        "page_44_img_0.jpeg"
+      ],
       "options": {
         "A": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan 51",
         "B": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan untagged",
