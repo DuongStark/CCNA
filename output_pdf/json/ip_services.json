@@ -58,9 +58,7 @@
       "source_id": "2",
       "type": "single",
       "question": "Refer to the exhibit. An engineer configured NAT translations and has verified that the configuration is\ncorrect. Which IP address is the source IP?\nR1#show ip nat translations\nPro Inside global Inside local Outside local Outside global\ntcp 172.23.104.3:43268 10.4.4.4:43268 172.23.103.10:23 172.23.103.10:23\ntcp 172.23.104.4:45507 10.4.4.5:45507 172.23.103.10:80 172.23.103.10:80",
-      "question_images": [
-        "page_1_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "10.4.4.4",
         "B": "10.4.4.5",
@@ -221,10 +219,7 @@
       "source_id": "74",
       "type": "single",
       "question": "Refer to the exhibit.\nHow should the configuration be updated to allow PC1 and PC2 access to the Internet?",
-      "question_images": [
-        "page_4_img_0.jpeg",
-        "page_4_img_1.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Modify the configured number of the second access list",
         "B": "Remove the overload keyword from the ip nat inside source command",
@@ -445,9 +440,7 @@
       "source_id": "38",
       "type": "single",
       "question": "Refer to the exhibit.\nThe ntp server 192.168.0.3 command has been configured on Router1 to make it an NTP client of\nrouter 2. Which command must be configured on Router2 so that it operates in server-only mode and\nrelies only on its internal clock?",
-      "question_images": [
-        "page_9_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Router2(config)#ntp passive",
         "B": "Router2(config)#ntp master 4",
@@ -1934,9 +1927,7 @@
       "source_id": "4",
       "type": "multi",
       "question": "Refer to the exhibit. An engineer deploys a topology in which R1 obtains its IP configuration from\nDHCP. If the switch and DHCP server configurations are complete and correct. Which two sets of\ncommands must be configured on R1 and R2 to complete the task? (Choose two)",
-      "question_images": [
-        "page_39_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "R1 (config)# interface fa0/0\nR1 (config-if)# ip helper-address 198.51.100.100",
         "B": "R2(config)# interface gi0/0\nR2(config-if)# ip helper-address 198.51.100.100",
@@ -2254,9 +2245,7 @@
       "source_id": "108",
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer is configuring a new router on the network and applied this configuration. Which\nadditional configuration allows the PC to obtain its IP address from a DHCP server?",
-      "question_images": [
-        "page_45_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Configure the ip dhcp relay information command under interface Gi0/1",
         "B": "Configure the ip dhcp smart-relay command globally on the router",

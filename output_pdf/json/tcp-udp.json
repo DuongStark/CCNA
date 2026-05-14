@@ -374,9 +374,7 @@
       "source_id": "18",
       "type": "single",
       "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report\nintermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent\nconnectivity issue?",
-      "question_images": [
-        "page_5_img_0.png"
-      ],
+      "question_images": [],
       "options": {
         "A": "Interface errors are incrementing",
         "B": "An incorrect SFP media type was used at SiteA",
@@ -536,7 +534,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report\nintermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent\nconnectivity issue?",
       "question_images": [
-        "page_5_img_0.png"
+        "page_6_img_0.jpeg"
       ],
       "options": {
         "A": "An incorrect type of transceiver has been inserted into a device on the link.",
@@ -836,10 +834,7 @@
       "source_id": "67",
       "type": "single",
       "question": "Refer to the exhibit.\nSW1#show ip interface brief\nInterface IP-Address OK? Method Status Protocol\nFastEthernet0/1 unassigned YES manual down down\nSW1#show interface fa0/1 status\nPort Name Status Vlan Duplex Speed Type\nFa0/1 notconnect 1 a-full a-100 10/100BaseTX\nWhat is the cause of the issue?",
-      "question_images": [
-        "page_12_img_0.png",
-        "page_12_img_1.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "STP",
         "B": "shutdown command",
@@ -917,7 +912,9 @@
       "source_id": "67",
       "type": "single",
       "question": "Refer to the exhibit.\nRouter1#show interface ethernet 1\nEthernet1 is up, line protocol is up\nHardware is Lance, address is 0010.7b36.Ibe8 (bia 0010.7b36.Ibe8)\nInternet address is 10.100.48.240/24\nMTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec,\nreliability 255/255, txload 1/255, rxload 1/255 Encapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:00, output 00:00:06, output hang never\nLast clearing of \"show interface” counters never\nInput queue: 1/75/1/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: random early detection(RED)\nOutput queue :0/40 (size/max)\n5 minute input rate 1000 bits/sec, 2 packets/sec\n5 minute output rate 0 bits/sec, 0 packets/sec\n7558065 packets input, 783768942 bytes, 1 no buffer\nReceived 8280963 broadcasts, 0 runts, 0 giants, 1 throttles\n15 input errors, 14278 GRC, 0 frame, 0 overrun, 3 ignored\n0 input packets with dribble condition detected\n798092 packets output, 50280266 bytes, 0 underruns\n0 output errors, 15000 collisions, 0 interface resets\n0 babbles, 0 late collision, 179 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nAn administrator received a call from a branch office regarding poor application performance hosted at\nthe headquarters. Ethernet 1 is connected between Router1 and the LAN switch. What identifies the\nissue?",
-      "question_images": [],
+      "question_images": [
+        "page_6_img_0.jpeg"
+      ],
       "options": {
         "A": "There is a duplex mismatch.",
         "B": "The MTU is not set to the default value.",

@@ -2530,9 +2530,7 @@
       "source_id": "9",
       "type": "single",
       "question": "Refer to the exhibit.\ncisco_ospf_vrf {\"R1 default\":\nensure => 'present',\nauto_cost => '100',\n}\nWhich type of configuration is represented in the output?",
-      "question_images": [
-        "page_40_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Puppet",
         "B": "JSON",
@@ -2855,11 +2853,7 @@
       "source_id": "81",
       "type": "single",
       "question": "Refer to the exhibit.\nWhich type of configuration is represented in the output?",
-      "question_images": [
-        "page_43_img_0.png",
-        "page_43_img_1.jpeg",
-        "page_43_img_2.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Chef",
         "B": "JSON",
@@ -2943,7 +2937,9 @@
       "type": "single",
       "question": "Refer to the exhibit.\nHow many objects are present in the given JSON-encoded data?",
       "question_images": [
-        "page_45_img_0.jpeg"
+        "page_43_img_0.png",
+        "page_43_img_1.jpeg",
+        "page_43_img_2.jpeg"
       ],
       "options": {
         "A": "one",
@@ -3079,10 +3075,7 @@
       "source_id": "66",
       "type": "single",
       "question": "Refer to the exhibit.\n{\n\"Test_Questions\" : [\n\"Automation\",\n\"Configuration\",\n],\n\"Test_Exam_Level\" : [\n\"CCNA\",\n\"CCNP\",\n],\n\"Test_Response\" : [\n\"Correct\",\n\"Incorrect\",\n]\n}\nHow many arrays are present in the JSON data?",
-      "question_images": [
-        "page_47_img_0.jpeg",
-        "page_47_img_1.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "one",
         "B": "three",

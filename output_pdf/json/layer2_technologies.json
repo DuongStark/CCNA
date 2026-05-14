@@ -756,9 +756,7 @@
       "source_id": "5",
       "type": "single",
       "question": "Refer to the exhibit. Which command provides this output?\nCapability Codes: k - Router, I - Trans Bridge, B - source Route bridge\nS - Switch, H - Host, I - IGMP, r - Repeater, P - Phone,\nD - Remote, C - CVTA, M - Two-port Mac Relay\nDevice ID Local Intrfce Holdtme Capability Platform Port ID\n10.1.1.2 Gig37/3 176 RI CPT 600 Gig36/41\n10.1.1.2 Gig37/1 174 RI CPT 600 Gig36/43\n10.1.1.2 Gig36/41 134 RI CPT 600 Gig37/3\n10.1.1.2 Gig36/43 134 RI CPT 600 Gig37/1\n10.1.1.2 Ten3/2 132 RI CPT 600 Ten4/2\n10.1.1.2 Ten4/2 174 RI CPT 600 Ten3/2",
-      "question_images": [
-        "page_15_img_0.png"
-      ],
+      "question_images": [],
       "options": {
         "A": "show ip route",
         "B": "show ip interface",
@@ -889,7 +887,7 @@
       "type": "multi",
       "question": "Refer to the exhibit.\nAn administrator must turn off the Cisco Discovery Protocol on the port configured with last usable\naddress in the 10.0.0.0/30 subnet. Which command set meets the requirement?",
       "question_images": [
-        "page_17_img_0.jpeg"
+        "page_23_img_0.jpeg"
       ],
       "options": {
         "A": "interface gi0/1\nno cdp enable",
@@ -1000,9 +998,7 @@
       "source_id": "67",
       "type": "single",
       "question": "Refer to the exhibit.\nA network engineer must update the configuration on Switch2 so that it sends LLDP packets every\nminute and the information sent via LLDP is refreshed every 3 minutes. Which configuration must\nthe engineer apply?",
-      "question_images": [
-        "page_20_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Switch2(config)#lldp timer 60\nSwitch2(config)# lldp tlv-select 180",
         "B": "Switch2(config)#lldp timer 60\nSwitch2(config)#lldp holdtime 180",
@@ -1029,7 +1025,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich action must be taken so that neighboring devices rapidly discover switch Cat9300?",
       "question_images": [
-        "page_21_img_0.jpeg"
+        "page_11_img_0.png"
       ],
       "options": {
         "A": "Enable portfast on the ports that connect to neighboring devices",
@@ -1166,9 +1162,7 @@
       "source_id": "1",
       "type": "single",
       "question": "Refer to the exhibit. After the switch configuration the ping test fails between PC A and PC B.\nBased on the output for switch 1, which error must be corrected?\nSwitch 1 Switch 2\nName: Gi0/1 Name: Gi0/1\nSwitchport: Enabled Switchport: Enabled\nAdministrative Mode: trunk (Static TRUNK) Administrative Mode: trunk (Static TRUNK)\nOperational Mode: trunk\nOperational Mode: trunk\nAdministrative Trunking Encapsulation: dot1q\nAdministrative Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nNegotiation of Trunking: Off (DTP Off)\nNegotiation of Trunking: Off\nAccess Mode VLAN: 1 (default)\nAccess Mode VLAN: 1 (default)\nTrunking Native Mode VLAN: 99 (default)\nTrunking Native Mode VLAN: 1 (default)\nAdministrative Native VLAN tagging: enabled\nAdministrative Native VLAN tagging: enabled\nVoice VLAN: none\nVoice VLAN: none\n<output omitted>\n<output omitted>\nTrunking VLANs Enabled: 50-100\nTrunking VLANs Enabled: 50-100\nPruning VLANs Enabled: 2-1001\nPruning VLANs Enabled: 2-1001\nCapture Mode Disabled\nCapture Mode Disabled\nCapture VLANs Allowed: ALL\nCapture VLANs Allowed: ALL",
-      "question_images": [
-        "page_23_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "There is a native VLAN mismatch",
         "B": "Access mode is configured on the switch ports.",
@@ -1331,10 +1325,7 @@
       "source_id": "6",
       "type": "single",
       "question": "Refer to the exhibit. Which action is expected from SW1 when the untagged frame is received on\nthe GigabitEthernet0/1 interface?\nSW1#show run int gig 0/1\ninterface GigabitEthernet0/1\nswitchport access vlan 11\nswitchport trunk allowed vlan 1-10\nswitchport trunk encapsulation dot1q\nswitchport trunk native vlan 5\nswitchport mode trunk\nspeed 1000\nduplex full",
-      "question_images": [
-        "page_28_img_0.jpeg",
-        "page_28_img_1.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "The frame is processed in VLAN 5",
         "B": "The frame is processed in VLAN 11",
@@ -1386,7 +1377,9 @@
       "source_id": "9",
       "type": "single",
       "question": "Refer to the exhibit. An administrator is tasked with configuring a voice VLAN. What is the expected outcome when a Cisco phone is connected to the GigabitEthernet 3/1/4 port on a switch?\ninterface GigabitEthernet3/1/4\nswitchport voice vlan 50\n!",
-      "question_images": [],
+      "question_images": [
+        "page_30_img_0.png"
+      ],
       "options": {
         "A": "The phone and a workstation that is connected to the phone do not have VLAN connectivity.",
         "B": "The phone sends and receives data in VLAN 50, but a workstation connected to the phone sends\nand receives data in VLAN 1.",
@@ -1574,7 +1567,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1 and PC-2 must\nbe placed in the Data VLAN and Phone-1 must be placed in the Voice VLAN. Which configuration\nmeets these requirements?\nOption A Option B\ninterface gigabitethernet1/1 interface gigabitethernet1/1\nswitchport mode access switchport mode access\nswitchport access vlan 8 switchport access vlan 9\n! !\ninterface gigabitethernet1/3 interface gigabitethernet1/3\nswitchport mode access switchport mode trunk\nswitchport voice vlan 8 switchport voice vlan 8\nswitchport access vlan 9 switchport access vlan 9\nOption C Option D\ninterface gigabitethernet1/1 interface gigabitethernet1/1\nswitchport mode access switchport mode access\nswitchport access vlan 8 switchport access vlan 8\n! !\ninterface gigabitethernet1/3 interface gigabitethernet1/3\nswitchport mode access switchport mode trunk\nswitchport access vlan 8 switchport voice vlan 8\nswitchport voice vlan 9 switchport access vlan 9",
       "question_images": [
-        "page_17_img_0.jpeg"
+        "page_35_img_0.jpeg"
       ],
       "options": {
         "A": "Option A",
@@ -1628,7 +1621,9 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA network engineer must configured communication between PC A and the File Server. To prevent\ninterruption for any other communications, which command must be configured?",
       "question_images": [
-        "page_20_img_0.jpeg"
+        "page_37_img_0.jpeg",
+        "page_37_img_1.jpeg",
+        "page_37_img_2.jpeg"
       ],
       "options": {
         "A": "Switchport trunk allowed vlan 12",
@@ -1685,10 +1680,7 @@
       "source_id": "15",
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which\nconfiguration accomplishes this task?\nOption A Option B\ninterface interface\ngigabitethernet1/1 gigabitethernet1/1\nswitchport mode access switchport mode access\nswitchport access vlan switchport access vlan\n300 400\nswitchport voice vlan switchport voice vlan\n400 300\nOption C Option D\ninterface interface\ngigabitethernet1/1 gigabitethernet1/1\nswitchport mode trunk switchport mode trunk\nswitchport access vlan switchport trunk vlan\n300 300\nswitchport voice vlan switchport trunk vlan\n400 400",
-      "question_images": [
-        "page_38_img_0.png",
-        "page_38_img_1.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -1769,7 +1761,8 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn administrator must connect SW_1 and the printer to the network. SW_2 requires DTP to be\nused for the connection to SW_1. The printer is configured as an access port with VLAN 5. Which\nset of commands completes the connectivity?",
       "question_images": [
-        "page_17_img_0.jpeg"
+        "page_41_img_0.jpeg",
+        "page_41_img_1.jpeg"
       ],
       "options": {
         "A": "switchport mode trunk\nswitchport trunk pruning vlan add 5",
@@ -1825,7 +1818,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAll VLANs are present in the VLAN database. Which command sequence must be applied to\ncomplete the configuration?",
       "question_images": [
-        "page_42_img_0.jpeg"
+        "page_16_img_0.png"
       ],
       "options": {
         "A": "interface FastEthernet0/1\nswitchport trunk native vlan 10\nswitchport trunk allowed vlan 10,15",
@@ -1880,9 +1873,7 @@
       "source_id": "131",
       "type": "single",
       "question": "Refer to the exhibit.\nSwitch A is newly configured. All VLANs are present in the VLAN database. The IP phone and PC A\non Gi0/1 must be configured for the appropriate VLANs to establish connectivity between the PCs.\nWhich command set fulfills the requirement?",
-      "question_images": [
-        "page_44_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan 51",
         "B": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan untagged",
@@ -2203,7 +2194,7 @@
       "type": "multi",
       "question": "Refer to the exhibit. What two conclusions should be made about this configuration? (Choose two)",
       "question_images": [
-        "page_52_img_0.jpeg"
+        "page_39_img_0.jpeg"
       ],
       "options": {
         "A": "The designated port is FastEthernet 2/1",
@@ -2234,7 +2225,8 @@
       "type": "single",
       "question": "Refer to the exhibit. Which switch in this configuration will be elected as the root bridge?\nSW1: 0C:E0:38:00:36:75\nSW2: 0C:0E:15:22:05:97\nSW3: 0C:0E:15:1A:3C:9D\nSW4: 0C:E0:18:A1:B3:19",
       "question_images": [
-        "page_52_img_0.jpeg"
+        "page_53_img_0.jpeg",
+        "page_53_img_1.jpeg"
       ],
       "options": {
         "A": "SW1",
@@ -2942,8 +2934,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nA network administrator is configuring an EtherChannel between SW1 and SW2. The SW1\nconfiguration is shown. What is the correct configuration for SW2?",
       "question_images": [
-        "page_33_img_0.jpeg",
-        "page_33_img_1.jpeg"
+        "page_65_img_0.jpeg"
       ],
       "options": {
         "A": "interface FastEthernet 0/1\nchannel-group 1 mode active\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 1 mode active\nswitchport trunk encapsulation dot1q\nswitchport mode trunk",
@@ -3025,7 +3016,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 and SW2 by using\nan industry-standard protocol, and to support full IP connectivity between all PCs?\nOption A Option B\nSW1# SW1#\ninterface Gi0/1 interface Gi0/1\nswitchport switchport\nswitchport mode trunk switchport mode trunk\nchannel-group 1 mode on channel-group 1 mode auto\n! !\ninterface Gi0/2 interface Gi0/2\nswitchport switchport\nswitchport mode trunk switchport mode access\nchannel-group 1 mode auto channel-group 1 mode\nactive\nSW2#\ninterface Gi0/1 SW2#\nswitchport interface gi0/1\nswitchport mode trunk switchport\nchannel-group 1 mode auto switchport mode access\n! channel-group 1 mode\ninterface Gi0/2 desirable\nswitchport !\nswitchport mode trunk interface Gi0/2\nchannel-group 1 mode on switchport\ninterface port-channel 1 switchport mode access\nswitchport channel-group 1 mode\nswitchport mode trunk desirable\nOption C Option D\nSW1# —missing config—\ninterface Gi0/1\nswitchport\nswitchport mode trunk\nchannel-group 1 mode\nactive\n!\ninterface Gi0/2\nswitchport\nswitchport mode trunk\nchannel-group 1 mode\nactive\nSW2#\ninterface Gi0/1\nswitchport\nswitchport mode trunk\nchannel-group 1 mode\npassive\n!\ninterface Gi0/2\nswitchport\nswitchport mode trunk\nchannel-group 1 mode\npassive",
       "question_images": [
-        "page_71_img_0.jpeg"
+        "page_68_img_0.jpeg"
       ],
       "options": {
         "A": "Option A",
@@ -3112,7 +3103,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer is configuring an EtherChannel using LACP between Switches 1 and 2. Which\nconfiguration must be applied so that only Switch 1 sends LACP initiation packets?",
       "question_images": [
-        "page_49_img_0.jpeg"
+        "page_70_img_0.jpeg"
       ],
       "options": {
         "A": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode passive",
