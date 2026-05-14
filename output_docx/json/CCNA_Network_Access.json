@@ -1,0 +1,1833 @@
+{
+  "count": 109,
+  "questions": [
+    {
+      "id": "5.4",
+      "type": "single",
+      "question": "A network administrator needs to aggregate 4 ports into a single logical link which must negotiate layer 2 connectivity to ports on another switch. What must be configured when using active mode on both sides of the connection?",
+      "question_images": [],
+      "options": {
+        "A": "802.1q trunks",
+        "B": "Cisco vPC",
+        "C": "LLDP",
+        "D": "LACP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.6",
+      "type": "multi",
+      "question": "Aside from discarding, which two states does the switch port transition through while using RSTP (802.1w)? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "listening",
+        "B": "blocking",
+        "C": "forwarding",
+        "D": "learning",
+        "E": "speaking"
+      },
+      "answer": [
+        "C",
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.7",
+      "type": "single",
+      "question": "What is a role of wireless controllers in an enterprise network?",
+      "question_images": [],
+      "options": {
+        "A": "serve as the first line of defense in an enterprise network",
+        "B": "support standalone or controller-based architectures",
+        "C": "centralize the management of access points in an enterprise network",
+        "D": "provide secure user logins to devices on the network"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.12",
+      "type": "single",
+      "question": "Which device controls the forwarding of authentication requests for users when connecting to the network using a lightweight access point?",
+      "question_images": [],
+      "options": {
+        "A": "TACACS server",
+        "B": "wireless access point",
+        "C": "RADIUS server",
+        "D": "wireless LAN controller"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.15",
+      "type": "single",
+      "question": "Refer to the exhibit. PC1 is trying to ping PC3 for the first time and sends out an ARP to S1. Which action is taken by S1?",
+      "question_images": [
+        "q5.15_img1.jpg"
+      ],
+      "options": {
+        "A": "It forwards it out G0/3 only",
+        "B": "It is flooded out every port except G0/0",
+        "C": "It drops the frame",
+        "D": "It forwards it out interface G0/2 only"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.16",
+      "type": "single",
+      "question": "Refer to the exhibit. What is the result if Gig1/11 receives an STP BPDU?",
+      "question_images": [],
+      "options": {
+        "A": "The port transitions to STP blocking",
+        "B": "The port transitions to the root port",
+        "C": "The port immediately transitions to STP forwarding",
+        "D": "The port goes into error-disable state"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.17",
+      "type": "single",
+      "question": "An engineer must configure traffic for a VLAN that is untagged by the switch as it crosses a trunk link. Which command should be used?",
+      "question_images": [],
+      "options": {
+        "A": "switchport trunk allowed vlan 10",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport mode trunk",
+        "D": "switchport trunk encapsulation dot1q"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.19",
+      "type": "single",
+      "question": "How does a Cisco Unified Wireless network respond to Wi-Fi channel overlap?",
+      "question_images": [],
+      "options": {
+        "A": "It alternates automatically between 2.4 GHz and 5 GHz on adjacent access points",
+        "B": "It allows the administrator to assign channels on a per-device or per-interface basis.",
+        "C": "It segregates devices from different manufacturers onto different channels.",
+        "D": "It analyzes client load and background noise and dynamically assigns a channel."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.20",
+      "type": "single",
+      "question": "What does a switch use to build its MAC address table?",
+      "question_images": [],
+      "options": {
+        "A": "VTP",
+        "B": "DTP",
+        "C": "egress traffic",
+        "D": "ingress traffic"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.23",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich switch becomes the root of the spanning tree for VLAN 110?",
+      "question_images": [
+        "q5.23_img1.jpg"
+      ],
+      "options": {
+        "A": "Switch 1",
+        "B": "Switch 2",
+        "C": "Switch 3",
+        "D": "Switch 4"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.24",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1 and PC-2 must be placed in the Data VLAN and Phone-1 must be placed in the Voice VLAN. Which configuration meets these requirements?",
+      "question_images": [
+        "q5.24_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.26",
+      "type": "single",
+      "question": "How does a switch process a frame received on Fa0/1 with the destination MAC address of 0e38.7363.657b when the table is missing the address?",
+      "question_images": [],
+      "options": {
+        "A": "It floods the frame to all interfaces except Fa0/1.",
+        "B": "It forwards the frame back out of interface Fa0/1.",
+        "C": "It drops the frame immediately.",
+        "D": "It holds the frame until the MAC address timer expires and then drops the frame."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.36",
+      "type": "single",
+      "question": "If a switch port receives a new frame while it is actively transmitting a previous frame, how does it process the frames?",
+      "question_images": [],
+      "options": {
+        "A": "The previous frame is delivered, the new frame is dropped, and a retransmission request is sent.",
+        "B": "The new frame is delivered first, the previous frame is dropped, and a retransmission request is sent.",
+        "C": "The two frames are processed and delivered at the same time.",
+        "D": "The new frame is placed in a queue for transmission after the previous frame."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.39",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must configured communication between PC A and the File Server. To prevent interruption for any other  communications, which command must be configured?",
+      "question_images": [
+        "q5.39_img1.jpg",
+        "q5.39_img2.jpg"
+      ],
+      "options": {
+        "A": "Switch trunk allowed vlan 12",
+        "B": "Switchport trunk allowed vlan none",
+        "C": "Switchport trunk allowed vlan add 13",
+        "D": "Switchport trunk allowed vlan remove 10-11"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.40",
+      "type": "single",
+      "question": "Why does a switch flood a frame to all ports?",
+      "question_images": [],
+      "options": {
+        "A": "The destination MAC address of the frame is unknown",
+        "B": "The source MAC address of the frame is unknown",
+        "C": "The source and destination MAC addresses of the frame are the same",
+        "D": "The frame has zero destination MAC addresses"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.43",
+      "type": "single",
+      "question": "How is the native VLAN secured in a network?",
+      "question_images": [],
+      "options": {
+        "A": "separate from other VLANs within the administrative domain",
+        "B": "give it a value in the private VLAN range",
+        "C": "assign it as VLAN 1",
+        "D": "configure it as a different VLAN ID on each end of the link"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.44",
+      "type": "single",
+      "question": "Which command on a port enters the forwarding state immediately when a PC is connected to it?",
+      "question_images": [],
+      "options": {
+        "A": "switch(config)#spanning-tree portfast default",
+        "B": "switch(config)#spanning-tree portfast bpduguard default",
+        "C": "switch(config-if)#spanning-tree portfast trunk",
+        "D": "switch(config-if)#no spanning-tree portfast"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.46",
+      "type": "single",
+      "question": "Which switch technology establishes a network connection immediately when it is plugged in?",
+      "question_images": [],
+      "options": {
+        "A": "UplinkFast",
+        "B": "PortFast",
+        "C": "BPDU guard",
+        "D": "BackboneFast"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.3",
+      "type": "single",
+      "question": "An engineer observes high usage on the 2.4GHz channels and lower usage on the 5GHz channels. What must be configured to allow clients to preferentially use 5GHz access points?",
+      "question_images": [],
+      "options": {
+        "A": "Client Band Select",
+        "B": "OEAP Split Tunnel",
+        "C": "11ac MU-MIMO",
+        "D": "Re-Anchor Roamed Clients"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.8",
+      "type": "single",
+      "question": "An administrator must secure the WLC from receiving spoofed association requests. Which steps must be taken to configure the WLC to restrict the requests and force the user to wait 10 ms to retry an association request?",
+      "question_images": [],
+      "options": {
+        "A": "Enable Security Association Teardown Protection and set the SA Query timeout to 10",
+        "B": "Enable the Protected Management Frame service and set the Comeback timer to 10",
+        "C": "Enable 802.1x Layer 2 security and set the Comeback timer to 10",
+        "D": "Enable MAC filtering and set the SA Query timeout to 10"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.10",
+      "type": "single",
+      "question": "Which 802.11 management frame type is sent when a client roams between access points on the same SSID?",
+      "question_images": [],
+      "options": {
+        "A": "Authentication Request",
+        "B": "Probe Request",
+        "C": "Reassociation Request",
+        "D": "Association Request"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.12",
+      "type": "single",
+      "question": "Which protocol does an access point use to draw power from a connected switch?",
+      "question_images": [],
+      "options": {
+        "A": "Internet Group Management Protocol",
+        "B": "Cisco Discovery Protocol",
+        "C": "Adaptive Wireless Path Protocol",
+        "D": "Neighbor Discovery Protocol"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.14",
+      "type": "single",
+      "question": "Which command must be executed for Gi1/1 on SW1 to passively become a trunk port if Gi1/1 on SW2 is configured in desirable or trunk mode?",
+      "question_images": [
+        "q6.14_img1.jpg"
+      ],
+      "options": {
+        "A": "switchport mode trunk",
+        "B": "switchport mode dot1-tunnel",
+        "C": "switchport mode dynamic auto",
+        "D": "switchport mode dynamic desirable"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.15",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which configuration accomplishes this task?",
+      "question_images": [
+        "q6.15_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.17",
+      "type": "single",
+      "question": "What is a role of access points in an enterprise network?",
+      "question_images": [],
+      "options": {
+        "A": "connect wireless devices to a wired network",
+        "B": "support secure user logins to devices or the network",
+        "C": "integrate with SNMP in preventing DDoS attacks",
+        "D": "serve as a first line of defense in an enterprise network"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.19",
+      "type": "single",
+      "question": "Refer to the exhibit.\nOnly four switches are participating in the VLAN spanning-tree process.\nBranch-1: priority 614440\nBranch-2: priority 39082416\nBranch-3: priority 0\nBranch-4: root primary\nWhich switch becomes the permanent root bridge for VLAN 5?",
+      "question_images": [
+        "q6.19_img1.jpg"
+      ],
+      "options": {
+        "A": "Branch-1",
+        "B": "Branch-2",
+        "C": "Branch-3",
+        "D": "Branch-4"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.20",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe entire contents of the MAC address table are shown. Sales-4 sends a data frame to Sales-1. What does the switch do as it receives the frame from Sales-4?",
+      "question_images": [
+        "q6.20_img1.jpg",
+        "q6.20_img2.jpg"
+      ],
+      "options": {
+        "A": "Map the Layer 2 MAC address to the Layer 3 IP address and forward the frame",
+        "B": "Insert the source MAC address and port into the forwarding table and forward the frame to Sales-1",
+        "C": "Perform a lookup in the MAC address table and discard the frame due to a missing entry",
+        "D": "Flood the frame out of all ports except on the port where Sales-1 is connected"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.22",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn administrator must turn off the Cisco Discovery Protocol on the port configured with last usable address in the 10.0.0.0/30 subnet. Which command set meets the requirement?",
+      "question_images": [
+        "q6.22_img1.jpg"
+      ],
+      "options": {
+        "A": "interface gi0/1\nno cdp enable",
+        "B": "interface gi0/1\nclear cdp table",
+        "C": "interface gi0/0\nno cdp run",
+        "D": "interface gi0/0\nno cdp advertise-v2"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.24",
+      "type": "single",
+      "question": "What occurs when overlapping Wi-Fi channels are implemented?",
+      "question_images": [],
+      "options": {
+        "A": "The wireless network becomes vulnerable to unauthorized access",
+        "B": "Wireless devices are unable to distinguish between different SSIDs",
+        "C": "Network communications are open to eavesdropping",
+        "D": "Users experience poor wireless network performance"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.26",
+      "type": "single",
+      "question": "An engineer needs to add an old switch back into a network. To prevent the switch from corrupting the VLAN database which action must be taken?",
+      "question_images": [],
+      "options": {
+        "A": "Add the switch in the VTP domain with a lower revision number",
+        "B": "Add the switch in the VTP domain with a higher revision number",
+        "C": "Add the switch with DTP set to dynamic desirable",
+        "D": "Add the switch with DTP set to desirable"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.27",
+      "type": "single",
+      "question": "Which WLC port connects to a switch to pass normal access-point traffic?",
+      "question_images": [],
+      "options": {
+        "A": "distribution system",
+        "B": "service",
+        "C": "redundancy",
+        "D": "console"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.31",
+      "type": "single",
+      "question": "Refer to the exhibit.\nHow must router A be configured so that it only sends Cisco Discovery Protocol Information to router C?",
+      "question_images": [
+        "q6.31_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.9",
+      "type": "single",
+      "question": "When a switch receives a frame for a known destination MAC address, how is the frame handed?",
+      "question_images": [],
+      "options": {
+        "A": "flooded to all ports except the one from which it originated",
+        "B": "broadcast to all ports",
+        "C": "forwarded to the first available port",
+        "D": "sent to the port identified for the known MAC address"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.13",
+      "type": "single",
+      "question": "After installing a new Cisco ISE server, which task must the engineer perform on the Cisco WLC to connect wireless clients on a specific VLAN based on their credentials?",
+      "question_images": [],
+      "options": {
+        "A": "Enable the Authorized MIC APs against auth-list or AAA.",
+        "B": "Enable the allow AAA Override",
+        "C": "Disable the LAG Mode or Next Reboot.",
+        "D": "Enable the Event Driven RRM."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.23",
+      "type": "single",
+      "question": "What is the benefit of configuring PortFast on an interface?",
+      "question_images": [],
+      "options": {
+        "A": "After the cable is connected, the interface uses the fastest speed setting available for that cable type",
+        "B": "The frames entering the interface are marked with higher priority and then processed faster by a switch",
+        "C": "After the cable is connected, the interface is available faster to send and receive user data",
+        "D": "Real-time voice and video frames entering the interface are processed faster"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.28",
+      "type": "single",
+      "question": "How are the switches in a spine-and-leaf topology interconnected?",
+      "question_images": [],
+      "options": {
+        "A": "Each leaf switch is connected to two spine switches, making a loop.",
+        "B": "Each leaf switch is connected to a central leaf switch, then uplinked to a core spine switch.",
+        "C": "Each leaf switch is connected to each spine switch.",
+        "D": "Each leaf switch is connected to one of the spine switches."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.42",
+      "type": "single",
+      "question": "What must be considered when using 802.11a?",
+      "question_images": [],
+      "options": {
+        "A": "It is compatible with 802.11g and 802.11-compliant wireless devices",
+        "B": "It is chosen over 802.11b/g when a lower-cost solution is necessary",
+        "C": "It is susceptible to interference from 2.4 GHz devices such as microwave ovens.",
+        "D": "It is used in place of 802.11b/g when many nonoverlapping channels are required"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.44",
+      "type": "single",
+      "question": "An engineer configures interface Gi1/0 on the company PE router to connect to an ISP.\nNeighbor discovery is disabled.\ninterface Gi1/0\ndescription HQ_DC3392-9383\nduplex full\nspeed 100\nnegotiation auto\nlldp transmit\nlldp receive\nWhich action is necessary to complete the configuration if the ISP uses third-party network devices?",
+      "question_images": [],
+      "options": {
+        "A": "Enable LLDP globally",
+        "B": "Disable autonegotiation",
+        "C": "Disable Cisco Discovery Protocol on the interface",
+        "D": "Enable LLDP-MED on the ISP device"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.47",
+      "type": "multi",
+      "question": "What are two benefits of using the PortFast feature? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Enabled interfaces are automatically placed in listening state",
+        "B": "Enabled interfaces wait 50 seconds before they move to the forwarding state",
+        "C": "Enabled interfaces never generate topology change notifications.",
+        "D": "Enabled interfaces that move to the learning state generate switch topology change notifications",
+        "E": "Enabled interfaces come up and move to the forwarding state immediately"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.48",
+      "type": "single",
+      "question": "A network administrator is asked to configure VLANs 2, 3 and 4 for a new implementation. Some ports must be assigned to the new VLANs with unused remaining. Which action should be taken for the unused ports?",
+      "question_images": [],
+      "options": {
+        "A": "configure port in the native VLAN",
+        "B": "configure ports in a black hole VLAN",
+        "C": "configure in a nondefault native VLAN",
+        "D": "configure ports as access ports"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.4",
+      "type": "single",
+      "question": "Which mode must be set for APs to communicate to a Wireless LAN Controller using the Control and Provisioning of Wireless Access Points (CAPWAP) protocol?",
+      "question_images": [],
+      "options": {
+        "A": "bridge",
+        "B": "route",
+        "C": "autonomous",
+        "D": "lightweight"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.5",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich change to the configuration on Switch2 allows the two switches to establish an EtherChannel?",
+      "question_images": [
+        "q8.5_img1.jpg"
+      ],
+      "options": {
+        "A": "Change the protocol to EtherChannel mode on",
+        "B": "Change the LACP mode to active",
+        "C": "Change the LACP mode to desirable",
+        "D": "Change the protocol to PAgP and use auto mode"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.6",
+      "type": "single",
+      "question": "Where does wireless authentication happen?",
+      "question_images": [],
+      "options": {
+        "A": "SSID",
+        "B": "radio",
+        "C": "band",
+        "D": "Layer 2"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.7",
+      "type": "single",
+      "question": "What is the path for traffic sent from one user workstation to another workstation on a separate switch in a three-layer architecture model?",
+      "question_images": [],
+      "options": {
+        "A": "access – core – distribution – access",
+        "B": "access – distribution – distribution – access",
+        "C": "access – core – access",
+        "D": "access -distribution – core – distribution – access"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.9",
+      "type": "single",
+      "question": "What is the purpose of an SSID?",
+      "question_images": [],
+      "options": {
+        "A": "It provides network security",
+        "B": "It differentiates traffic entering access points",
+        "C": "It identities an individual access point on a WLAN",
+        "D": "It identifies a WLAN"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.10",
+      "type": "multi",
+      "question": "What are two characteristics of an SSID? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "It can be hidden or broadcast in a WLAN",
+        "B": "It uniquely identifies an access point in a WLAN",
+        "C": "It uniquely identifies a client in a WLAN",
+        "D": "It is at most 32 characters long",
+        "E": "It provides secured access to a WLAN"
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.13",
+      "type": "single",
+      "question": "Which port type supports the spanning-tree portfast command without additional configuration?",
+      "question_images": [],
+      "options": {
+        "A": "access ports",
+        "B": "Layer 3 main interfaces",
+        "C": "Layer 3 subinterfaces",
+        "D": "trunk ports"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.17",
+      "type": "single",
+      "question": "What prevents a workstation from receiving a DHCP address?",
+      "question_images": [],
+      "options": {
+        "A": "DTP",
+        "B": "STP",
+        "C": "VTP",
+        "D": "802.10"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.23",
+      "type": "single",
+      "question": "Refer to the exhibit.\nBetween which zones do wireless users expect to experience intermittent connectivity?",
+      "question_images": [
+        "q8.23_img1.jpg"
+      ],
+      "options": {
+        "A": "between zones 1 and 2",
+        "B": "between zones 2 and 5",
+        "C": "between zones 3 and 4",
+        "D": "between zones 3 and 6"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.29",
+      "type": "single",
+      "question": "Which 802.11 frame type is indicated by a probe response after a client sends a probe request?",
+      "question_images": [],
+      "options": {
+        "A": "action",
+        "B": "management",
+        "C": "control",
+        "D": "data"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.30",
+      "type": "single",
+      "question": "What is recommended for the wireless infrastructure design of an organization?",
+      "question_images": [],
+      "options": {
+        "A": "group access points together to increase throughput on a given channel",
+        "B": "configure the first three access points are configured to use channels 1, 6, and 11",
+        "C": "include a least two access points on nonoverlapping channels to support load balancing",
+        "D": "assign physically adjacent access points to the same Wi-Fi channel"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.31",
+      "type": "single",
+      "question": "Refer to the exhibit.\nFor security reasons, automatic neighbor discovery must be disabled on the R5 Gi0/1 interface.\nThese tasks must be completed:\n* Disable all neighbor discovery methods on R5 interface Gi0/1.\n* Permit neighbor discovery on R5 interface Gi0/2.\n* Verify there are no dynamically learned neighbors on R5 interface Gi0/1.\n* Display the IP address of R6’s interface Gi0/2.\nWhich configuration must be used?",
+      "question_images": [
+        "q8.31_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.49",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn administrator must connect SW_1 and the printer to the network. SW_2 requires DTP to be used for the connection to SW_1. The printer is configured as an access port with VLAN 5. Which set of commands completes the connectivity?",
+      "question_images": [
+        "q8.49_img1.jpg"
+      ],
+      "options": {
+        "A": "switchport mode trunk\nswitchport trunk pruning vlan add 5",
+        "B": "switchport mode dynamic desirable \nswitchport trunk allowed vlan add 5",
+        "C": "switchport mode dynamic auto \nswitchport private-vlan association host 5",
+        "D": "switchport mode dynamic auto \nswitchport trunk encapsulation negotiate"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.53",
+      "type": "single",
+      "question": "Refer to the exhibit.\nHost A sent a data frame destined for host D.\nWhat does the switch do when it receives the frame from host A?",
+      "question_images": [
+        "q8.53_img1.jpg"
+      ],
+      "options": {
+        "A": "It shuts down the port Fa0/1 and places it in err-disable mode.",
+        "B": "It experiences a broadcast storm,",
+        "C": "It floods the frame out of all ports except port Fa0/1.",
+        "D": "It drops the frame from the switch CAM table."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.54",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer has started to configure replacement switch SW1. To verify part of the configuration, the engineer issued the commands as shown and noticed that the entry for PC2 is missing. Which change must be applied to SW1 so that PC1 and PC2 communicate normally?",
+      "question_images": [
+        "q8.54_img1.jpg"
+      ],
+      "options": {
+        "A": "SW1(config)#interface fa0/2 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#no switchport trunk allowed vlan 3 \nSW1 (config-if)#switchport trunk allowed vlan 2",
+        "B": "SW1(config)#interface fa0/1 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#switchport trunk native vlan 2 \nSW1(config-if)#switchport trunk allowed vlan 3",
+        "C": "SW1(config-if)#interface fa0/2 \nSW1(config-if)#no switchport mode trunk\nSW1(config-if)#no switchport trunk allowed vlan 3 \nSW1(config-if)#switchport mode access",
+        "D": "SW1(config)#interface fa0/1 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#switchport trunk allowed vlan 2"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.56",
+      "type": "multi",
+      "question": "Which two spanning-tree states are bypassed on an interface running PortFast? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "forwarding",
+        "B": "blocking",
+        "C": "disabled",
+        "D": "learning",
+        "E": "listening"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.57",
+      "type": "single",
+      "question": "What is a requirement when configuring or removing LAG on a WLC?",
+      "question_images": [],
+      "options": {
+        "A": "The incoming and outgoing ports for traffic flow must be specified if LAG is enabled.",
+        "B": "The controller must be rebooted after enabling or reconfiguring LAG.",
+        "C": "The management interface must be reassigned if LAG is disabled.",
+        "D": "Multiple untagged interfaces on the same port must be supported."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.58",
+      "type": "single",
+      "question": "What is a requirement for nonoverlapping WI-FI channels?",
+      "question_images": [],
+      "options": {
+        "A": "different security settings",
+        "B": "different transmission speeds",
+        "C": "discontinuous frequency ranges",
+        "D": "unique SSIDs"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.60",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 and SW2 by using an industry-standard protocol, and to support full IP connectivity between all PCs?",
+      "question_images": [
+        "q8.60_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.66",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer built a new L2 LACP EtherChannel between SW1 and SW2 and executed these show commands to verify the work. Which additional task allows the two switches to establish an LACP port channel?",
+      "question_images": [
+        "q8.66_img1.jpg"
+      ],
+      "options": {
+        "A": "Change the channel-group mode on SW1 to desirable.",
+        "B": "Change the channel-group mode on SW1 to active or passive.",
+        "C": "Change the channel-group mode on SW2 to auto.",
+        "D": "Configure the interface port-channel 1 command on both switches."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.67",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must update the configuration on Switch2 so that it sends LLDP packets every minute and the information sent via LLDP is refreshed every 3 minutes. Which configuration must the engineer apply?",
+      "question_images": [
+        "q8.67_img1.jpg"
+      ],
+      "options": {
+        "A": "Switch2(config)#lldp timer 60 \nSwitch2(config)# lldp tlv-select 180",
+        "B": "Switch2(config)#lldp timer 60 \nSwitch2(config)#lldp holdtime 180",
+        "C": "Switch2(config)#lldp timer 1\nSwitch2(config)#lldp tlv-select 3",
+        "D": "Switch2(config)#lldp timer 1 \nSwitch2(config)#lldp holdtime 3"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.72",
+      "type": "single",
+      "question": "What provides centralized control of authentication and roaming in an enterprise network?",
+      "question_images": [],
+      "options": {
+        "A": "a LAN switch",
+        "B": "a firewall",
+        "C": "a lightweight access point",
+        "D": "a wireless LAN controller"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.76",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAll VLANs are present in the VLAN database. Which command sequence must be applied to complete the configuration?",
+      "question_images": [
+        "q8.76_img1.jpg"
+      ],
+      "options": {
+        "A": "interface FastEthernet0/1 \nswitchport trunk native vlan 10 \nswitchport trunk allowed vlan 10,15",
+        "B": "interface FastEthernet0/1 \nswitchport mode trunk \nswitchport trunk allowed vlan 10,15",
+        "C": "interface FastEthernet0/1 \nswitchport trunk allowed vlan add 10 \nvlan 10\nprivate-vlan isolated",
+        "D": "interface FastEthernet0/1 \nswitchport mode access \nswitchport voice vlan 10"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.1",
+      "type": "multi",
+      "question": "Refer to the exhibit.\nSwitch#show etherchannel summary\n[output omitted]\nGroup   Port-channel  Protocol   Ports\n-------+--------------+---------+---------------------\n10      Po10(SU)       LACP      Gi0/0(P)  Gi0/1(P)\n20      Po20(SU)       LACP      Gi0/2(P)  Gi0/3(P)\nWhich two commands when used together create port channel 10? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "int range g0/0-1\nchannel-group 10 mode active",
+        "B": "int range g0/0-1\nchannel-group 10 mode desirable",
+        "C": "int range g0/0-1\nchannel-group 10 mode passive",
+        "D": "int range g0/0-1 \nchannel-group 10 mode auto",
+        "E": "int range g0/0-1 \nchannel-group 10 mode on"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.12",
+      "type": "single",
+      "question": "How does Rapid PVST+ create a fast loop-free network topology?",
+      "question_images": [],
+      "options": {
+        "A": "It requires multiple links between core switches",
+        "B": "It maps multiple VLANs into the same spanning-tree instance",
+        "C": "It generates one spanning-tree instance for each VLAN",
+        "D": "It uses multiple active paths between end stations"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.19",
+      "type": "single",
+      "question": "Which interface mode must be configured to connect the lightweight APs in a centralized architecture?",
+      "question_images": [],
+      "options": {
+        "A": "WLAN dynamic",
+        "B": "management",
+        "C": "trunk",
+        "D": "access"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.23",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe link between PC1 and the switch is up, but it is performing poorly. Which interface condition is causing the performance problem?",
+      "question_images": [
+        "q9.23_img1.jpg"
+      ],
+      "options": {
+        "A": "There is a duplex mismatch on the interface",
+        "B": "There is an issue with the fiber on the switch interface",
+        "C": "There is a speed mismatch on the interface",
+        "D": "There is an interface type mismatch"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.24",
+      "type": "single",
+      "question": "What provides centralized control of authentication and roaming in an enterprise network?",
+      "question_images": [],
+      "options": {
+        "A": "a lightweight access point",
+        "B": "a firewall",
+        "C": "a wireless LAN controller",
+        "D": "a LAN switch"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.31",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is asked to insert the new VLAN into the existing trunk without modifying anything previously configured Which command accomplishes this task?",
+      "question_images": [
+        "q9.31_img1.jpg"
+      ],
+      "options": {
+        "A": "switchport trunk allowed vlan 100-104",
+        "B": "switchport trunk allowed vlan all",
+        "C": "switchport trunk allowed vlan add 104",
+        "D": "switchport trunk allowed vlan 104"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.36",
+      "type": "single",
+      "question": "What is one reason to implement LAG on a Cisco WLC?",
+      "question_images": [],
+      "options": {
+        "A": "to increase security and encrypt management frames",
+        "B": "to provide link redundancy and load balancing",
+        "C": "to allow for stateful and link-state failover",
+        "D": "to enable connected switch ports to failover and use different VLANs"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.38",
+      "type": "single",
+      "question": "Which PoE mode enables powered-device detection and guarantees power when the device is detected?",
+      "question_images": [],
+      "options": {
+        "A": "dynamic",
+        "B": "static",
+        "C": "active",
+        "D": "auto"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.39",
+      "type": "single",
+      "question": "A Cisco engineer must configure a single switch interface to meet these requirements\n* accept untagged frames and place them in VLAN 20\n* accept tagged frames in VLAN 30 when CDP detects a Cisco IP phone\nWhich command set must the engineer apply?",
+      "question_images": [],
+      "options": {
+        "A": "switchport mode access\nswitchport access vlan 20 \nswitchport voice vlan 30",
+        "B": "switchport mode trunk \nswitchport access vlan 20 \nswitchport voice vlan 30",
+        "C": "switchport mode dynamic auto \nswitchport trunk native vlan 20 \nswitchport trunk allowed vlan 30 \nswitchport voice vlan 30",
+        "D": "switchport mode dynamic desirable \nswitchport access vlan 20 \nswitchport trunk allowed vlan 30 \nswitchport voice vlan 30"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.41",
+      "type": "single",
+      "question": "Refer to the exhibit.\nUsers need to connect to the wireless network with IEEE 802.11r-compatible devices. The connection must be maintained as users travel between floors or to other areas in the building. What must be the configuration of the connection?",
+      "question_images": [
+        "q9.41_img1.jpg"
+      ],
+      "options": {
+        "A": "Select the WPA Policy option with the CCKM option",
+        "B": "Disable AES encryption",
+        "C": "Enable Fast Transition and select the FT 802.1x option",
+        "D": "Enable Fast Transition and select the FT PSK option"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.42",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is configuring an EtherChannel using LACP between Switches 1 and 2. Which configuration must be applied so that only Switch 1 sends LACP initiation packets?",
+      "question_images": [
+        "q9.42_img1.jpg"
+      ],
+      "options": {
+        "A": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode passive",
+        "B": "Switch1(config-if)#channel-group 1 mode passive\nSwitch2(config-if)#channel-group 1 mode active",
+        "C": "Switch1(config-if)#channel-group 1 mode active\nSwitch2(config-if)#channel-group 1 mode passive",
+        "D": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode active"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.43",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich switch becomes the root of a spanning tree for VLAN 20 if all links are of equal speed?",
+      "question_images": [
+        "q9.43_img1.jpg"
+      ],
+      "options": {
+        "A": "SW1",
+        "B": "SW2",
+        "C": "SW3",
+        "D": "SW4"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.47",
+      "type": "single",
+      "question": "Which value is the unique identifier that an access point uses to establish and maintain wireless connectivity to wireless network devices?",
+      "question_images": [],
+      "options": {
+        "A": "VLANID",
+        "B": "SSID",
+        "C": "RFID",
+        "D": "WLANID"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.49",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSwitch A is newly configured. All VLANs are present in the VLAN database. The IP phone and PC A on Gi0/1 must be configured for the appropriate VLANs to establish connectivity between the PCs. Which command set fulfills the requirement?",
+      "question_images": [
+        "q9.49_img1.jpg"
+      ],
+      "options": {
+        "A": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan 51",
+        "B": "SwitchA(config-if)#switchport mode access \nSwitchA(config-if)#switchport access vlan 50 \nSwitchA(config-if)#switchport voice vlan untagged",
+        "C": "SwitchA(config-if)#switchport mode trunk \nSwitchA(config-if)#switchport trunk allowed vlan add 50, 51\nSwitchA(config-if)#switchport voice vlan dot1p",
+        "D": "SwitchA(config-if)#switchport mode trunk \nSwitchA(config-if)#switchport trunk allowed vlan 50, 51 \nSwitchA(config-if)#switchport qos trust cos"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.52",
+      "type": "single",
+      "question": "Which Layer 2 switch function encapsulates packets for different VLANs so that the packets traverse the same port and maintain traffic separation between the VLANs?",
+      "question_images": [],
+      "options": {
+        "A": "VLAN numbering",
+        "B": "VLAN DSCP",
+        "C": "VLAN tagging",
+        "D": "VLAN marking"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.55",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich action must be taken so that neighboring devices rapidly discover switch Cat9300?",
+      "question_images": [
+        "q9.55_img1.jpg"
+      ],
+      "options": {
+        "A": "Enable portfast on the ports that connect to neighboring devices",
+        "B": "Configure the cdp holdtime 10 command on switch Cat9300",
+        "C": "Configure the cdp timer 10 command on the neighbors of switch Cat9300",
+        "D": "Configure the cdp timer 10 command on switch Cat9300"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.56",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSW2 is replaced due to a hardware failure. A network engineer starts to configure SW2 by copying the Fa0/1 interface configuration from SW1. Which command must be configured on the Fa0/1 interface of SW2 to enable PC1 to connect to PC2?",
+      "question_images": [
+        "q9.56_img1.jpg"
+      ],
+      "options": {
+        "A": "switchport mode trunk",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport trunk allowed remove 10",
+        "D": "switchport mode access"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.59",
+      "type": "single",
+      "question": "Which port type does a lightweight AP use to connect to the wired network when configured in FlexConnect mode with local switching and VLAN tagging?",
+      "question_images": [],
+      "options": {
+        "A": "EtherChannel",
+        "B": "access",
+        "C": "LAG",
+        "D": "trunk"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.60",
+      "type": "single",
+      "question": "An engineer is installing a new wireless printer with a static IP address on the Wi-Fi network. Which feature must be enabled and configured to prevent connection issues with the printer?",
+      "question_images": [],
+      "options": {
+        "A": "passive client",
+        "B": "static IP tunneling",
+        "C": "DHCP address assignment",
+        "D": "client exclusion"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.65",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich configuration establishes a Layer 2 LACP EtherChannel when applied to both switches?",
+      "question_images": [
+        "q9.65_img1.jpg"
+      ],
+      "options": {
+        "A": "interface range G1/1 -1/3 \nswitchport mode access \nchannel-group 1 mode passive \nno shutdown",
+        "B": "interface range G1/1 -1/3\nswitchport mode trunk \nchannel-group 1 mode desirable \nno shutdown",
+        "C": "interface range G1/1 -1/3 \nswitchport mode trunk \nchannel-group 1 mode active \nno shutdown",
+        "D": "interface range G1/1 -1/3 \nswitchport mode access\nchannel-group 1 mode on \nno shutdown"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.76",
+      "type": "single",
+      "question": "Refer to the exhibit.\nCat9K-1#show lldp entry Cat9K-2\nLocal Intf: Gi1/0/21\nChassis ID: 308b.b2b3.2880\nPort id: Gi1/0/21\nPort Description: GigabitEthernet1/0/21\nSystem Name: Cat9K-2\nManagement Addresses:\nIP: 10.6.110.2\nThe network administrator must prevent the switch Cat9K-2 IP address from being visible in LLDP without disabling the protocol. Which action must be taken must be taken to complete the task?",
+      "question_images": [],
+      "options": {
+        "A": "Configure the no lldp tlv-select-management-address command globally on Cat9K-2",
+        "B": "Configure the no lldp transmit command on interface G1/0/21 in Cat9K-1",
+        "C": "Configure the no lldp receive command on interface G1/0/21 on Cat9K-1",
+        "D": "Configure the no lldp mac-phy-cfg command globally on Cat9K-2"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.85",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe following must be considered\n+ SW1 is fully configured for all traffic\n+ The SW4 and SW9 links to SW1 have been configured\n+ The SW4 interface Gi0/1 and Gi0/0 on SW9 have been configured\n+ The remaining switches have had all VLANs added to their VLAN database\nWhich configuration establishes a successful ping from PC2 to PC7 without interruption to traffic flow between other PCs?",
+      "question_images": [
+        "q9.85_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.95",
+      "type": "single",
+      "question": "An engineer must configure neighbor discovery between the company router and an ISP.\nWhat is the next step to complete the configuration if the ISP uses a third-party router?",
+      "question_images": [],
+      "options": {
+        "A": "Disable CDP on gi0/0.",
+        "B": "Disable auto-negotiation.",
+        "C": "Enable LLDP TLVs on the ISP router.",
+        "D": "Enable LLDP globally."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.105",
+      "type": "single",
+      "question": "What is a function of MAC learning on a switch?",
+      "question_images": [],
+      "options": {
+        "A": "A static MAC address is manually added to the MAC table.",
+        "B": "MAC address learning is disabled by default on all VLANs.",
+        "C": "Frames received for a destination MAC address not listed in the address table are dropped.",
+        "D": "The MAC address table is used to populate the ARP table."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.7",
+      "type": "single",
+      "question": "Which set of 2.4 GHz nonoverlapping wireless channels is standard in the United States?",
+      "question_images": [],
+      "options": {
+        "A": "channels 2, 7, 9, and 11",
+        "B": "channels 1, 6, 11, and 14",
+        "C": "channels 2, 7, and 11",
+        "D": "channels 1, 6, and 11"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.8",
+      "type": "single",
+      "question": "Which command entered on a switch configured with Rapid-PVST+ listens and learns for a specific time period?",
+      "question_images": [],
+      "options": {
+        "A": "switch(config)#spanning-tree vlan 1 max-age 6",
+        "B": "switch(config)#spanning-tree vlan 1 hello-time 10",
+        "C": "switch(config)#spanning-tree vlan 1 priority 4096",
+        "D": "switch(config)#spanning-tree vlan 1 forward-time 20"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.10",
+      "type": "single",
+      "question": "Refer to the exhibit.\ninterface g2/0/0\nchannel-group 1 mode active\ninterface g4/0/0\nchannel-group 1 mode active\ninterface Port-channel1\nip address 203.0.113.65 255.255.255.252\n%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to down\nAn engineer is configuring a Layer 3 port-channel interface with LACP. The configuration on the first device is complete, and it is verified that both interfaces have registered the neighbor device in the CDP table. Which task on the neighbor device enables the new port channel to come up without negotiating the channel?",
+      "question_images": [],
+      "options": {
+        "A": "Bring up the neighboring interfaces using the no shutdown command.",
+        "B": "Change the EtherChannel mode on the neighboring interfaces to auto",
+        "C": "Modify the static EtherChannel configuration of the device to passive mode",
+        "D": "Configure the IP address of the neighboring device"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.20",
+      "type": "single",
+      "question": "Which access point mode relies on a centralized controller tor management, roaming, and SSID configuration?",
+      "question_images": [],
+      "options": {
+        "A": "repeater mode",
+        "B": "bridge mode",
+        "C": "lightweight mode",
+        "D": "autonomous mode"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.27",
+      "type": "single",
+      "question": "What is a function of spine-and-leaf architecture?",
+      "question_images": [],
+      "options": {
+        "A": "mitigates oversubscription by adding a layer of leaf switches",
+        "B": "limits payload size of traffic within the leaf layer",
+        "C": "offers predictable latency of the traffic path between end devices",
+        "D": "exclusively sends multicast traffic between servers that are directly connected to the spine"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.34",
+      "type": "single",
+      "question": "Refer to the exhibit.\nClients on the WLAN are required to use 802.11r. What action must be taken to meet the requirement?",
+      "question_images": [
+        "q10.34_img1.jpg"
+      ],
+      "options": {
+        "A": "Enable CCKM under Authentication Key Management",
+        "B": "Under Protected Management Frames, set the PMF option to Required",
+        "C": "Set the Fast Transition option to Enable and enable FT 802.1X under Authentication Key Management",
+        "D": "Set the Fast Transition option and the WPA gtk-randomize State to disable"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.35",
+      "type": "single",
+      "question": "When a switch receives a frame for an unknown destination MAC address, how is the frame handled?",
+      "question_images": [],
+      "options": {
+        "A": "broadcast to all ports on the switch",
+        "B": "flooded to all ports except the origination port",
+        "C": "forwarded to the first available port",
+        "D": "inspected and dropped by the switch"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.40",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouters R1, R2, and R3 use a protocol to identify their neighbors’ IP addresses, hardware platforms, and software versions. A network engineer must configure R2 to avoid sharing any neighbor information with R3, and maintain its relationship with R1. What action meets this requirement?",
+      "question_images": [
+        "q10.40_img1.jpg"
+      ],
+      "options": {
+        "A": "Configure the no lldp run command globally",
+        "B": "Configure the no lldp receive command on g0/1",
+        "C": "Configure the no cdp run command globally",
+        "D": "Configure the no cdp enable command on g0/2"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.47",
+      "type": "single",
+      "question": "What must be considered for a locally switched FlexConnect AP if the VLANs that are used by the AP and client access are different?",
+      "question_images": [],
+      "options": {
+        "A": "The APs must be connected to the switch with multiple links in LAG mode.",
+        "B": "The native VLAN must match the management VLAN of the AP.",
+        "C": "The switch port mode must be set to trunk.",
+        "D": "IEEE 802.1Q trunking must be disabled on the switch port."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.48",
+      "type": "single",
+      "question": "Which command configures the Cisco WLC to prevent a serial session with the WLC CLI from being automatically logged out?",
+      "question_images": [],
+      "options": {
+        "A": "config sessions maxsessions 0",
+        "B": "config serial timeout 9600",
+        "C": "config serial timeout 0",
+        "D": "config sessions timeout 0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.50",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn architect is managing a wireless network with APs from several branch offices connecting to the WLC in the data center. There is a new requirement for a single WLAN to process the client data traffic without sending it to the WLC. Which action must be taken to complete the request?",
+      "question_images": [
+        "q10.50_img1.jpg"
+      ],
+      "options": {
+        "A": "Enable local HTTP profiling",
+        "B": "Enable FlexConnect Local Switching",
+        "C": "Enable local DHCP Profiling",
+        "D": "Enable Disassociation Imminent"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.51",
+      "type": "single",
+      "question": "What is a function of MAC address learning?",
+      "question_images": [],
+      "options": {
+        "A": "It is disabled by default on all interfaces connected to trunks",
+        "B": "It increases security on the management VLAN",
+        "C": "It is enabled by default on all VLANs and interfaces",
+        "D": "It increases the potential for MAC address flooding"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.52",
+      "type": "single",
+      "question": "A Cisco engineer at a new branch office is configuring a wireless network with access points that connect to a controller that is based at corporate headquarters. Wireless client traffic must terminate at the branch office and access-point survivability is required in the event of a WAN outage. Which access point mode must be selected?",
+      "question_images": [],
+      "options": {
+        "A": "Lightweight with local switching disabled",
+        "B": "Local with AP fallback enabled",
+        "C": "OfficeExtend with high availability disabled",
+        "D": "FlexConnect with local switching enabled"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.53",
+      "type": "single",
+      "question": "What is an advantage of using auto mode versus static mode for power allocation when an access point is connected to a PoE switch port?",
+      "question_images": [],
+      "options": {
+        "A": "The default level is used for the access point",
+        "B": "It detects the device is a powered device",
+        "C": "All four pairs of the cable are used",
+        "D": "Power policing is enabled at the same time"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.62",
+      "type": "multi",
+      "question": "Which two functions does a WLC perform in the lightweight access-point architecture that an AP performs independently in an autonomous architecture? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "handling the association, authentication, and roaming of wireless clients",
+        "B": "encrypting and decrypting traffic that uses the WAP protocol family",
+        "C": "preventing collisions between wireless clients on the same RF channel",
+        "D": "managing RF channels, including transmission power",
+        "E": "sending and processing beacon frames"
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.64",
+      "type": "single",
+      "question": "What causes a port to be placed in the err-disabled state?",
+      "question_images": [],
+      "options": {
+        "A": "latency",
+        "B": "nothing plugged into the port",
+        "C": "shutdown command issued on the port",
+        "D": "link flapping"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.65",
+      "type": "single",
+      "question": "Which function forwards frames to ports that have a matching destination MAC address?",
+      "question_images": [],
+      "options": {
+        "A": "frame pushing",
+        "B": "frame filtering",
+        "C": "frame flooding",
+        "D": "frame switching"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.66",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given these requirements:\n+ Allow all PCs to communicate with each other at Layer 3.\n+ Configure untagged traffic to use VLAN 5.\n+ Disable VLAN 1 from being used.\nWhich configuration set meets these requirements?",
+      "question_images": [
+        "q10.66_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.67",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSW1#show ip interface brief\nInterface        IP-Address   OK? Method Status Protocol\nFastEthernet0/1  unassigned   YES manual down   down\nSW1#show interface fa0/1 status\nPort     Name  Status      Vlan   Duplex   Speed  Type\nFa0/1          notconnect  1      a-full   a-100  10/100BaseTX\nWhat is the cause of the issue?",
+      "question_images": [],
+      "options": {
+        "A": "STP",
+        "B": "shutdown command",
+        "C": "port security",
+        "D": "wrong cable type"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.70",
+      "type": "single",
+      "question": "What is a function of Layer 3 switches?",
+      "question_images": [],
+      "options": {
+        "A": "They route traffic between devices in different VLANs.",
+        "B": "They transmit broadcast traffic when operating in Layer 3 mode exclusively.",
+        "C": "They forward Ethernet frames between VLANs using only MAC addresses.",
+        "D": "They move frames between endpoints limited to IP addresses."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.77",
+      "type": "single",
+      "question": "A network administrator plans an update to the Wi-Fi networks in multiple branch offices. Each location is configured with an SSID called “Office”. The administrator wants every user who connects to the SSID at any location to have the same access level. What must be set the same on each network to meet the requirement?",
+      "question_images": [],
+      "options": {
+        "A": "radio policy",
+        "B": "security policies",
+        "C": "NAS-ID configuration",
+        "D": "profile name"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.79",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA multivendor network exists and the company is implementing VoIP over the network for the first time. Which configuration is needed to implement the neighbor discovery protocol on the interface and allow it to remain off for the remaining interfaces?",
+      "question_images": [
+        "q10.79_img1.jpg"
+      ],
+      "options": {
+        "A": "SW1(config)#no cdp enable \nSW1 (config)#interface gigabitethernet1/0/1 \nSW1(config-if)#cdp run",
+        "B": "SW1(config)#lldp enable \nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp run",
+        "C": "SW1(config)#lldp run\nSW1 (config)#interface gigabitethernet1/0/1 \nSW1(config-if)#lldp enable",
+        "D": "SW1(config)#no cdp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp transmit\nSW1(config-if)#lldp receive"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    }
+  ]
+}

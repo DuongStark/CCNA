@@ -1,0 +1,698 @@
+{
+  "count": 36,
+  "questions": [
+    {
+      "id": "1",
+      "source_id": "1",
+      "type": "single",
+      "question": "What is the difference regarding reliability and communication type between TCP and UDP?",
+      "question_images": [],
+      "options": {
+        "A": "TCP is reliable and is a connection-oriented protocol UDP is not reliable and is a connectionless\nprotocol",
+        "B": "TCP is not reliable and is a connection-oriented protocol; UDP is reliable and is a connectionless\nprotocol",
+        "C": "TCP is not reliable and is a connectionless protocol; UDP is reliable and is a connection-oriented\nprotocol",
+        "D": "TCP is reliable and is a connectionless protocol; UDP is not reliable and is a connection-oriented\nprotocol`"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "source_id": "2",
+      "type": "single",
+      "question": "How do TCP and UDP different in the way they provide reliability for delivery of packets?",
+      "question_images": [],
+      "options": {
+        "A": "TCP is a connectionless protocol that does not provide reliable delivery of data, UDP is a\nconnection-oriented protocol that uses sequencing to provide reliable delivery",
+        "B": "TCP does not guarantee delivery or error checking to ensure that there is no corruption of data UDP\nprovides message acknowledgement and retransmits data if lost",
+        "C": "TCP provides flow control to avoid overwhelming a receiver by sending too many packets at once,\nUDP sends packets to the receiver in a continuous stream without checking for sequencing",
+        "D": "TCP uses windowing to deliver packets reliably; UDP provides reliable message transfer between\nhosts by establishing a three-way handshake"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "source_id": "3",
+      "type": "single",
+      "question": "How do TCP and UDP differ in the way they guarantee packet delivery?",
+      "question_images": [],
+      "options": {
+        "A": "TCP uses checksum, acknowledgement, and retransmissions, and UDP uses checksums only.",
+        "B": "TCP uses two-dimensional parity checks, checksums, and cyclic redundancy checks and UDP uses\nretransmissions only.",
+        "C": "TCP uses checksum, parity checks, and retransmissions, and UDP uses acknowledgements only.",
+        "D": "TCP uses retransmissions, acknowledgement and parity checks and UDP uses cyclic redundancy\nchecks only."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "source_id": "4",
+      "type": "single",
+      "question": "How do TCP and UDP differ in the way that they establish a connection between two endpoints?",
+      "question_images": [],
+      "options": {
+        "A": "TCP uses synchronization packets, and UDP uses acknowledgment packets",
+        "B": "UDP uses SYN, SYN ACK and FIN bits in the frame header while TCP uses SYN, SYN ACK and ACK\nbits",
+        "C": "UDP provides reliable message transfer and TCP is a connectionless protocol",
+        "D": "TCP uses the three-way handshake and UDP does not guarantee message delivery"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "source_id": "38",
+      "type": "single",
+      "question": "What is the difference in data transmission delivery and reliability between TCP and UDP?",
+      "question_images": [],
+      "options": {
+        "A": "UDP sets up a connection between both devices before transmitting data. TCP uses the three-way\nhandshake to transmit data with a reliable connection.",
+        "B": "TCP transmits data at a higher rate and ensures packet delivery. UDP retransmits lost data to\nensure applications receive the data on the remote end.",
+        "C": "UDP is used for multicast and broadcast communication. TCP is used for unicast communication and\ntransmits data at a higher rate with error checking.",
+        "D": "TCP requires the connection to be established before transmitting data. UDP transmits data at a\nhigher rate without ensuring packet delivery."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "source_id": "81",
+      "type": "single",
+      "question": "How do TCP and UDP fit into a query-response model?",
+      "question_images": [],
+      "options": {
+        "A": "TCP avoids using sequencing, and UDP avoids using acknowledgments.",
+        "B": "TCP uses error detection for packets, and UDP uses error recovery.",
+        "C": "TCP establishes a connection prior to sending data, and UDP sends immediately.",
+        "D": "TCP encourages out-of-order packet delivery, and UDP prevents re-ordering."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "TCP uses sequencing -> Answer A is not correct.\nTCP uses error recovery while UDP uses error detection -> Answer B is not correct.\nTCP does not encourage out-of-order packet delivery. When TCP packets are received out of order,\nthey are buffered for later delivery to the application program rather than being discarded -> Answer\nD is not correct.",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "source_id": "25",
+      "type": "single",
+      "question": "Why is TCP desired over UDP for application that require extensive error checking, such as HTTPS?",
+      "question_images": [],
+      "options": {
+        "A": "UDP operates without acknowledgments, and TCP sends an acknowledgment for every packet\nreceived.",
+        "B": "UDP reliably guarantees delivery of all packets, and TCP drops packets under heavy load.",
+        "C": "UDP uses flow control mechanisms for the delivery of packets, and TCP uses congestion control for\nefficient packet delivery.",
+        "D": "UDP uses sequencing data for packets to arrive in order, and TCP offers the capability to receive\npackets in random order."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Note: The flow control mechanism tells the sender the maximum speed at which the data can be\nsent to the receiver device. One of the popular flow control mechanisms in TCP is the sliding window\nprotocol -> Answer C is not correct.\nReference: https://www.baeldung.com/cs/tcp-flow-control-vs-congestion-control\nBasic Questions",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "source_id": "1",
+      "type": "multi",
+      "question": "Which two statements about the purpose of the OSI model are accurate? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Defines the network functions that occur at each layer",
+        "B": "Facilitates an understanding of how information travels throughout a network",
+        "C": "Changes in one layer do not impact other layer",
+        "D": "Ensures reliable data delivery through its layered approach"
+      },
+      "answer": [
+        "A",
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "9",
+      "source_id": "8",
+      "type": "single",
+      "question": "What is the function of a server?",
+      "question_images": [],
+      "options": {
+        "A": "It transmits packets between hosts in the same broadcast domain",
+        "B": "It provides shared applications to end users",
+        "C": "It routes traffic between Layer 3 devices",
+        "D": "It creates security zones between trusted and untrusted networks"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "10",
+      "source_id": "10",
+      "type": "multi",
+      "question": "What are two functions of a server on a network? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "runs applications that send and retrieve data for workstations that make requests",
+        "B": "achieves redundancy by exclusively using virtual server clustering",
+        "C": "housed solely in a data center that is dedicated to a single client",
+        "D": "runs the same operating system in order to communicate with other servers",
+        "E": "handles requests from multiple workstations at the same time"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "11",
+      "source_id": "11",
+      "type": "single",
+      "question": "What is the primary function of a Layer 3 device?",
+      "question_images": [],
+      "options": {
+        "A": "to analyze traffic and drop unauthorized traffic from the Internet",
+        "B": "to transmit wireless traffic between hosts",
+        "C": "forward traffic within the same broadcast domain",
+        "D": "to pass traffic between different networks"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "12",
+      "source_id": "12",
+      "type": "single",
+      "question": "What is the same for both copper and fiber interfaces when using SFP modules?",
+      "question_images": [],
+      "options": {
+        "A": "They support an inline optical attenuator to enhance signal strength",
+        "B": "They accommodate single-mode and multi-mode in a single module",
+        "C": "They offer reliable bandwidth up to 100 Mbps in half duplex mode",
+        "D": "They provide minimal interruption to services by being hot-swappable"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "13",
+      "source_id": "18",
+      "type": "single",
+      "question": "What is the maximum bandwidth of a T1 point-to-point connection?",
+      "question_images": [],
+      "options": {
+        "A": "1.544 Mbps",
+        "B": "2.048 Mbps",
+        "C": "34.368 Mbps",
+        "D": "43.7 Mbps"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The speeds of these links are shown as below:\n+ T1: 1.544 Mbps\n+ 10BaseT: 10 Mbps\n+ 100BaseT (often referred to as FastEthernet): 100Mbps",
+      "explanation_images": []
+    },
+    {
+      "id": "14",
+      "source_id": "11",
+      "type": "single",
+      "question": "What is a similarity between OM3 and OM4 fiber optic cable?",
+      "question_images": [],
+      "options": {
+        "A": "Both have a 50 micron core diameter",
+        "B": "Both have a 9 micron core diameter",
+        "C": "Both have a 62.5 micron core diameter",
+        "D": "Both have a 100 micron core diameter"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "At present, there are four kinds of c: OM1, OM2, OM3 and OM4. The letters “OM” stand for optical\nmulti-mode. OM3 and OM4 fibers will support upcoming 40 and 100 Gb/s speeds. OM2, OM3, OM4 and\nOM5 have 50 micron core diameter.",
+      "explanation_images": []
+    },
+    {
+      "id": "15",
+      "source_id": "18",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report\nintermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent\nconnectivity issue?",
+      "question_images": [],
+      "options": {
+        "A": "Interface errors are incrementing",
+        "B": "An incorrect SFP media type was used at SiteA",
+        "C": "High usage is causing high latency",
+        "D": "The sites were connected with the wrong cable type"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The txload and rxload on both sites are 1/255 so the interfaces are not busy in transmitting and\nreceiving traffic. But the reliability on SiteA is only 166/255 which indicates input and output errors\nincrease. Reliability is calculated by this formula: reliability = number of packets / number of total\nframes.",
+      "explanation_images": []
+    },
+    {
+      "id": "16",
+      "source_id": "39",
+      "type": "single",
+      "question": "What are network endpoints?",
+      "question_images": [],
+      "options": {
+        "A": "a threat to the network if they are compromised",
+        "B": "support inter-VLAN connectivity",
+        "C": "act as routers to connect a user to the service prowler network",
+        "D": "enforce policies for campus-wide traffic going to the internet"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "A network endpoint is any device that is physically an end point on a network. Laptops, desktops,\nmobile phones, tablets, servers, and virtual environments can all be considered endpoints. Network\nendpoints may be a threat to our networks if they are compromised.",
+      "explanation_images": []
+    },
+    {
+      "id": "17",
+      "source_id": "51",
+      "type": "multi",
+      "question": "What are two similarities between UTP Cat 5e and Cat 6a cabling? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Both support runs of up to 100 meters.",
+        "B": "Both support runs of up to 55 meters.",
+        "C": "Both operate at a frequency of 500 MHz.",
+        "D": "Both support speeds of at least 1 Gigabit.",
+        "E": "Both support speeds up to 10 Gigabit."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "18",
+      "source_id": "2",
+      "type": "single",
+      "question": "What is a similarly between 1000BASE-LX and 1000BASE-T standards?",
+      "question_images": [],
+      "options": {
+        "A": "Both use the same data-link header and trailer formats",
+        "B": "Both cable types support LP connectors",
+        "C": "Both cable types support RJ-45 connectors",
+        "D": "Both support up to 550 meters between nodes"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "1000BASE-T standard only supports up to 100 meters while 1000BASE-LX is a standard which uses a\n1,270–1,355 nm laser for longer wavelength. It has a distance capability of up to 5 kilometers over a\nSingle-mode fiber -> Answer D is not correct.\n1000BASE-LX is an optical fiber Gigabit Ethernet standard so it does not support RJ-45 connectors\ndirectly -> Answer C is not correct.\n1000BASE-LX only support LC connectors so answer B is not correct.",
+      "explanation_images": []
+    },
+    {
+      "id": "19",
+      "source_id": "24",
+      "type": "single",
+      "question": "Which device permits or denies network traffic based on a set of rules?",
+      "question_images": [],
+      "options": {
+        "A": "access point",
+        "B": "switch",
+        "C": "wireless controller",
+        "D": "firewall"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "20",
+      "source_id": "26",
+      "type": "single",
+      "question": "What is a function of a Layer 3 switch?",
+      "question_images": [],
+      "options": {
+        "A": "move frames between endpoints limited to IP addresses",
+        "B": "transmit broadcast traffic when operating in Layer 3 mode exclusively",
+        "C": "forward Ethernet frames between VLANs using only MAC addresses",
+        "D": "flood broadcast traffic within a VLAN"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "21",
+      "source_id": "51",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report\nintermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent\nconnectivity issue?",
+      "question_images": [],
+      "options": {
+        "A": "An incorrect type of transceiver has been inserted into a device on the link.",
+        "B": "The wrong cable type was used to make the connection.",
+        "C": "Heavy usage is causing high latency.",
+        "D": "Physical network errors are being transmitted between the two sites."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "SR stands for Short Reach, and LR stands for Long Reach. SR supports 400metres while LR supports\n10 kilometers. In this question, SiteA is using SFP-SR so it is not suitable for 7KM distance.",
+      "explanation_images": []
+    },
+    {
+      "id": "22",
+      "source_id": "55",
+      "type": "multi",
+      "question": "Refer to the exhibit.\nWhich two commands must be configured on router R1 to enable the router to accept secure remote-\naccess connections? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "transport input telnet",
+        "B": "username cisco password 0 cisco",
+        "C": "login console",
+        "D": "ip ssh pubkey-chain",
+        "E": "crypto key generate rsa"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "Configuring the Cisco SSH Server to Perform RSA-Based User Authentication\nSUMMARY STEPS\n1. enable\n2. configure terminal\n3. hostname name\n4. ip domain-name name\n5. crypto key generate rsa\n6. ip ssh pubkey-chain\n7. username username\n8. key-string\n9. key-hash key-type key-name\n10. end\nReference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_ssh/configuration/15-e/sec-\nusr-ssh-15-e-book/sec-secure-shell-v2.html",
+      "explanation_images": []
+    },
+    {
+      "id": "23",
+      "source_id": "80",
+      "type": "multi",
+      "question": "What is a function of an endpoint on a network?",
+      "question_images": [],
+      "options": {
+        "A": "allows users to record data and transmit to a file server",
+        "B": "connects server and client devices to a network",
+        "C": "provides wireless services to users in a building",
+        "D": "forwards traffic between VLANs on a network"
+      },
+      "answer": [
+        "B",
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "24",
+      "source_id": "99",
+      "type": "single",
+      "question": "Refer to the exhibit.\nTraffic that is flowing over interface TenGigabitEthernet0/0 experiences slow transfer speeds. What is\nthe reason for the issue?",
+      "question_images": [],
+      "options": {
+        "A": "heavy traffic congestion",
+        "B": "queuing drops",
+        "C": "a speed conflict",
+        "D": "a duplex incompatibility"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "We see the collisions are very high compared to the packets output. The is usually the result of duplex\nmismatch (one is half-duplex, one end is full-duplex for example)",
+      "explanation_images": []
+    },
+    {
+      "id": "25",
+      "source_id": "105",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe link between PC1 and the switch is up, but it is performing poorly. Which interface condition is\ncausing the performance problem?",
+      "question_images": [],
+      "options": {
+        "A": "There is a duplex mismatch on the interface",
+        "B": "There is an issue with the fiber on the switch interface",
+        "C": "There is a speed mismatch on the interface",
+        "D": "There is an interface type mismatch"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "26",
+      "source_id": "114",
+      "type": "multi",
+      "question": "Refer to the exhibit.\nWhat is a reason for poor performance on the network interface?",
+      "question_images": [],
+      "options": {
+        "A": "The interface is receiving excessive broadcast traffic.",
+        "B": "The cable connection between the two devices is faulty.",
+        "C": "The interface is operating at a different speed than the connected device.",
+        "D": "The bandwidth setting of the interface is misconfigured"
+      },
+      "answer": [
+        "C",
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "27",
+      "source_id": "57",
+      "type": "single",
+      "question": "How do UTP and STP cables compare?",
+      "question_images": [],
+      "options": {
+        "A": "STP cables are cheaper to produre and easier to install and UTP cables are more expensive and\nharder to install.",
+        "B": "UTP cables are less prone to crosstalk and interference and STP cables are more prone to crosstalk\nand interference.",
+        "C": "UTP cables provide faster and more reliable data transfer rates and STP cables are slower and less\nreliable.",
+        "D": "STP cables are shielded and protect against electromagnetic interference and UTP lacks the same\nprotection against electromagnetic interference."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "UTP (Unshielded twisted pair) and STP (Shielded twisted pair) are the types of twisted pair cables\nwhich act as a transmission medium and imparts reliable connectivity of electronic equipment.\nAlthough the design and manufacture are different but both serve the same purpose.\nThe basic difference between UTP and STP is UTP (Unshielded twisted pair) is a cable with wires that\nare twisted together to reduce noise and crosstalk. On the contrary, STP (Shielded twisted pair) is a\ntwisted pair cable confined in foil or mesh shield that guards the cable against electromagnetic\ninterference.",
+      "explanation_images": []
+    },
+    {
+      "id": "28",
+      "source_id": "100",
+      "type": "single",
+      "question": "What is a function performed by a web server?",
+      "question_images": [],
+      "options": {
+        "A": "provide an application that is transmitted over HTTP",
+        "B": "send and retrieve email from client devices",
+        "C": "securely store files for FTP access",
+        "D": "authenticate and authorize a user’s identity"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "29",
+      "source_id": "106",
+      "type": "single",
+      "question": "What is the difference between 1000BASE-LX/LH and 1000BASE-ZX interfaces?",
+      "question_images": [],
+      "options": {
+        "A": "1000BASE-LX/LH interoperates with multimode and single-mode fiber, and 1000BASE-ZX needs a\nconditioning patch cable with a multimode.",
+        "B": "1000BASE-ZX is supported on links up to 1000km, and 1000BASE-LX/LH operates over links up to\n70 km.",
+        "C": "1000BASE-ZX interoperates with dual-rate 100M/1G 10Km SFP over multimode fiber, and\n1000BASE-LX/LH supports only single-rate.",
+        "D": "1000BASE-LX/LH is supported on links up to 10km, and 1000BASE-ZX operates over links up to 70\nkm."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Below lists the cabling standards mentioned above\nStandard Cabling Maximum length\n1000BASE- Twinaxial cabling 25 meters\nCX\n100BASE-FX Two strands, multimode 400 m\n1000BASE- Long-wavelength laser, MM or 10 km (SM) 3 km (MM)\nLX SM fiber\n1000BASE- Short-wavelength laser, MM 220 m with 62.5-micron fiber; 550 m with 50-\nSX fiber micron fiber\n1000BASE- Extended wavelength, SM fiber 100 km\nZX\nNote:\n+ MM: Multimode\n+ SM: Single-mode\nAlthough above list says the maximum length of 1000BASE-ZX is 100km but in practical it is usually\nfrom 70 to 80 km depending on link loss.",
+      "explanation_images": []
+    },
+    {
+      "id": "30",
+      "source_id": "41",
+      "type": "single",
+      "question": "What is a function of an endpoint?",
+      "question_images": [],
+      "options": {
+        "A": "It passes unicast communication between hosts in a network",
+        "B": "It is used directly by an individual user to access network services",
+        "C": "It provides security between trusted and untrusted sections of the network",
+        "D": "It transmits broadcast traffic between devices in the same VLAN"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "31",
+      "source_id": "64",
+      "type": "single",
+      "question": "What causes a port to be placed in the err-disabled state?",
+      "question_images": [],
+      "options": {
+        "A": "latency",
+        "B": "nothing plugged into the port",
+        "C": "shutdown command issued on the port",
+        "D": "link flapping"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Link flap means that the interface continually goes up and down in a Cisco Switch. The interface is put\ninto the errdisabled state if it flaps more than five times in 10 seconds. The common cause of link flap\nis a Layer 1 issue such as a bad cable, duplex mismatch, or bad Gigabit Interface Converter (GBIC)\ncard. Look at the console messages or the messages that were sent to the syslog server that state the\nreason for the port shutdown.\n13w0d: %PM-4-ERR_DISABLE: link-flap error detected on Fa0/28, putting Fa0/28 in err-disable state",
+      "explanation_images": []
+    },
+    {
+      "id": "32",
+      "source_id": "67",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSW1#show ip interface brief\nInterface IP-Address OK? Method Status Protocol\nFastEthernet0/1 unassigned YES manual down down\nSW1#show interface fa0/1 status\nPort Name Status Vlan Duplex Speed Type\nFa0/1 notconnect 1 a-full a-100 10/100BaseTX\nWhat is the cause of the issue?",
+      "question_images": [],
+      "options": {
+        "A": "STP",
+        "B": "shutdown command",
+        "C": "port security",
+        "D": "wrong cable type"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The “Status” of fa0/1 is “notconnect” so port security is not the issue or it would show the status of\n“err-disabled”.\n“Shutdown” command is also not the issue as it would show “Administratively down” in the “Status”\nfield of the “show ip interface brief” command.\nWith STP, even if the port is in “Block” (BLK) status but it is still in “up/up” state with the “show ip\ninterface brief” command.\nWith wrong cable type, the port is in “down/down” state, same as there is no connected cable to the\nport.",
+      "explanation_images": []
+    },
+    {
+      "id": "33",
+      "source_id": "70",
+      "type": "single",
+      "question": "What is a function of Layer 3 switches?",
+      "question_images": [],
+      "options": {
+        "A": "They route traffic between devices in different VLANs.",
+        "B": "They transmit broadcast traffic when operating in Layer 3 mode exclusively.",
+        "C": "They forward Ethernet frames between VLANs using only MAC addresses.",
+        "D": "They move frames between endpoints limited to IP addresses."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "34",
+      "source_id": "36",
+      "type": "single",
+      "question": "Which device segregates a network into separate zones that have their own security policies?",
+      "question_images": [],
+      "options": {
+        "A": "IPS",
+        "B": "firewall",
+        "C": "access point",
+        "D": "switch"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    },
+    {
+      "id": "35",
+      "source_id": "67",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter1#show interface ethernet 1\nEthernet1 is up, line protocol is up\nHardware is Lance, address is 0010.7b36.Ibe8 (bia 0010.7b36.Ibe8)\nInternet address is 10.100.48.240/24\nMTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec,\nreliability 255/255, txload 1/255, rxload 1/255 Encapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:00, output 00:00:06, output hang never\nLast clearing of \"show interface” counters never\nInput queue: 1/75/1/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: random early detection(RED)\nOutput queue :0/40 (size/max)\n5 minute input rate 1000 bits/sec, 2 packets/sec\n5 minute output rate 0 bits/sec, 0 packets/sec\n7558065 packets input, 783768942 bytes, 1 no buffer\nReceived 8280963 broadcasts, 0 runts, 0 giants, 1 throttles\n15 input errors, 14278 GRC, 0 frame, 0 overrun, 3 ignored\n0 input packets with dribble condition detected\n798092 packets output, 50280266 bytes, 0 underruns\n0 output errors, 15000 collisions, 0 interface resets\n0 babbles, 0 late collision, 179 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nAn administrator received a call from a branch office regarding poor application performance hosted at\nthe headquarters. Ethernet 1 is connected between Router1 and the LAN switch. What identifies the\nissue?",
+      "question_images": [],
+      "options": {
+        "A": "There is a duplex mismatch.",
+        "B": "The MTU is not set to the default value.",
+        "C": "The link is over utilized.",
+        "D": "The QoS policy is dropping traffic."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "This interface gets high collision (15000 collisions) so one end may be set to “Half-duplex”.",
+      "explanation_images": []
+    },
+    {
+      "id": "36",
+      "source_id": "74",
+      "type": "single",
+      "question": "Which device separates networks by security domains?",
+      "question_images": [],
+      "options": {
+        "A": "access point",
+        "B": "firewall",
+        "C": "intrusion protection system",
+        "D": "wireless controller"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": []
+    }
+  ]
+}

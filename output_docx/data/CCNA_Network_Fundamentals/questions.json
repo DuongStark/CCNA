@@ -1,0 +1,715 @@
+{
+  "count": 43,
+  "questions": [
+    {
+      "id": "5.5",
+      "type": "single",
+      "question": "In which situation is private IPv4 addressing appropriate for a new subnet on the network of an organization?",
+      "question_images": [],
+      "options": {
+        "A": "There is limited unique address space, and traffic on the new subnet will stay local within the organization.",
+        "B": "The network has multiple endpoint listeners, and it is desired to limit the number of broadcasts.",
+        "C": "Traffic on the subnet must traverse a site-to-site VPN to an outside organization.",
+        "D": "The ISP requires the new subnet to be advertised to the internet for web services."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.8",
+      "type": "single",
+      "question": "How do servers connect to the network in a virtual environment?",
+      "question_images": [],
+      "options": {
+        "A": "wireless to an access point that is physically connected to the network",
+        "B": "a cable connected to a physical switch on the network",
+        "C": "a virtual switch that links to an access point that is physically connected to the network",
+        "D": "a software switch on a hypervisor that is physically connected to the network"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.18",
+      "type": "single",
+      "question": "What is the maximum bandwidth of a T1 point-to-point connection?",
+      "question_images": [],
+      "options": {
+        "A": "1.544 Mbps",
+        "B": "2.048 Mbps",
+        "C": "34.368 Mbps",
+        "D": "43.7 Mbps"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.31",
+      "type": "single",
+      "question": "What is a characteristic of a SOHO network?",
+      "question_images": [],
+      "options": {
+        "A": "connects each switch to every other switch in the network",
+        "B": "enables multiple users to share a single broadband connection",
+        "C": "provides high throughput access for 1000 or more users",
+        "D": "includes at least three tiers of devices to provide load balancing and redundancy"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.32",
+      "type": "single",
+      "question": "Which resource is able to be shared among virtual machines deployed on the same physical server?",
+      "question_images": [],
+      "options": {
+        "A": "applications",
+        "B": "operating system",
+        "C": "VM configuration file",
+        "D": "disk"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.37",
+      "type": "single",
+      "question": "Which WAN topology provides a combination of simplicity quality, and availability?",
+      "question_images": [],
+      "options": {
+        "A": "partial mesh",
+        "B": "full mesh",
+        "C": "point-to-point",
+        "D": "hub-and-spoke"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.50",
+      "type": "single",
+      "question": "What is a characteristic of private IPv4 addressing?",
+      "question_images": [],
+      "options": {
+        "A": "used without tracking or registration",
+        "B": "issued by IANA in conjunction with an autonomous system number",
+        "C": "traverse the Internet when an outbound ACL is applied",
+        "D": "composed of up to 65,536 available addresses"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.11",
+      "type": "single",
+      "question": "What is a similarity between OM3 and OM4 fiber optic cable?",
+      "question_images": [],
+      "options": {
+        "A": "Both have a 50 micron core diameter",
+        "B": "Both have a 9 micron core diameter",
+        "C": "Both have a 62.5 micron core diameter",
+        "D": "Both have a 100 micron core diameter"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.16",
+      "type": "single",
+      "question": "What describes the operation of virtual machines?",
+      "question_images": [],
+      "options": {
+        "A": "Virtual machines are responsible for managing and allocating host hardware resources",
+        "B": "Virtual machines are operating system instances that are decoupled from server hardware",
+        "C": "Virtual machines are the physical hardware that support a virtual environment",
+        "D": "In a virtual machine environment, physical servers must run one operating system at a time"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.18",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report intermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent connectivity issue?",
+      "question_images": [],
+      "options": {
+        "A": "Interface errors are incrementing",
+        "B": "An incorrect SFP media type was used at SiteA",
+        "C": "High usage is causing high latency",
+        "D": "The sites were connected with the wrong cable type"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.21",
+      "type": "single",
+      "question": "Which technology allows for multiple operating systems to be run on a single host computer?",
+      "question_images": [],
+      "options": {
+        "A": "virtual device contexts",
+        "B": "network port ID visualization",
+        "C": "virtual routing and forwarding",
+        "D": "server virtualization"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.32",
+      "type": "single",
+      "question": "What is the function of a hub-and-spoke WAN topology?",
+      "question_images": [],
+      "options": {
+        "A": "supports application optimization",
+        "B": "provides direct connections between subscribers",
+        "C": "supports Layer 2 VPNs",
+        "D": "allows access restrictions to be implemented between subscriber sites"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.2",
+      "type": "single",
+      "question": "What is a characteristic of cloud-based network topology?",
+      "question_images": [],
+      "options": {
+        "A": "physical workstations are configured to share resources",
+        "B": "services are provided by a public, private, or hybrid deployment",
+        "C": "onsite network services are provided with physical Layer 2 and Layer 3 components",
+        "D": "wireless connections provide the sole access method to services"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.11",
+      "type": "single",
+      "question": "Why was the RFC 1918 address space defined?",
+      "question_images": [],
+      "options": {
+        "A": "preserve public IPv6 address space",
+        "B": "support the NAT protocol",
+        "C": "reduce instances of overlapping IP addresses",
+        "D": "conserve public IPv4 addressing"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.19",
+      "type": "single",
+      "question": "Which action does the router take as it forwards a packet through the network?",
+      "question_images": [],
+      "options": {
+        "A": "The router replaces the source and destination labels with the sending router interface label as a source and the next hop router label as a destination",
+        "B": "The router encapsulates the source and destination IP addresses with the sending router IP address as the source and the neighbor IP address as the destination",
+        "C": "The router encapsulates the original packet and then includes a tag that identifies the source router MAC address and transmit transparently to the destination",
+        "D": "The router replaces the original source and destination MAC addresses with the sending router MAC address as the source and neighbor MAC address as the destination"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.32",
+      "type": "single",
+      "question": "An implementer is preparing hardware for virtualization to create virtual machines on a host. What is needed to provide communication between hardware and virtual machines?",
+      "question_images": [],
+      "options": {
+        "A": "straight cable",
+        "B": "router",
+        "C": "hypervisor",
+        "D": "switch"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.33",
+      "type": "multi",
+      "question": "What are two characteristics of the distribution layer in a three-tier network architecture? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "provides a boundary between Layer 2 and Layer 3 communications",
+        "B": "designed to meet continuous, redundant uptime requirements",
+        "C": "serves as the network aggregation point",
+        "D": "physical connection point for a LAN printer",
+        "E": "is the backbone for the network topology"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.38",
+      "type": "single",
+      "question": "What is the difference in data transmission delivery and reliability between TCP and UDP?",
+      "question_images": [],
+      "options": {
+        "A": "UDP sets up a connection between both devices before transmitting data. TCP uses the three-way handshake to transmit data with a reliable connection.",
+        "B": "TCP transmits data at a higher rate and ensures packet delivery. UDP retransmits lost data to ensure applications receive the data on the remote end.",
+        "C": "UDP is used for multicast and broadcast communication. TCP is used for unicast communication and transmits data at a higher rate with error checking.",
+        "D": "TCP requires the connection to be established before transmitting data. UDP transmits data at a higher rate without ensuring packet delivery."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.39",
+      "type": "single",
+      "question": "What are network endpoints?",
+      "question_images": [],
+      "options": {
+        "A": "a threat to the network if they are compromised",
+        "B": "support inter-VLAN connectivity",
+        "C": "act as routers to connect a user to the service prowler network",
+        "D": "enforce policies for campus-wide traffic going to the internet"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.51",
+      "type": "multi",
+      "question": "What are two similarities between UTP Cat 5e and Cat 6a cabling? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Both support runs of up to 100 meters.",
+        "B": "Both support runs of up to 55 meters.",
+        "C": "Both operate at a frequency of 500 MHz.",
+        "D": "Both support speeds of at least 1 Gigabit.",
+        "E": "Both support speeds up to 10 Gigabit."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.2",
+      "type": "single",
+      "question": "What is a similarly between 1000BASE-LX and 1000BASE-T standards?",
+      "question_images": [],
+      "options": {
+        "A": "Both use the same data-link header and trailer formats",
+        "B": "Both cable types support LP connectors",
+        "C": "Both cable types support RJ-45 connectors",
+        "D": "Both support up to 550 meters between nodes"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.15",
+      "type": "multi",
+      "question": "What are two characteristics of a public cloud implementation? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "It is owned and maintained by one party, but it is shared among multiple organizations",
+        "B": "It enables an organization to fully customize how it deploys network resources",
+        "C": "It provides services that are accessed over the Internet",
+        "D": "It is a data center on the public Internet that maintains cloud services for only one company",
+        "E": "It supports network resources from a centralized third-party provider and privately-owned virtual resources"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.20",
+      "type": "single",
+      "question": "Which type of organization should use a collapsed-core architecture?",
+      "question_images": [],
+      "options": {
+        "A": "large and requires a flexible, scalable network design",
+        "B": "small and needs to reduce networking costs currently",
+        "C": "large and must minimize downtime when hardware fails",
+        "D": "small but is expected to grow dramatically in the near future"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.28",
+      "type": "single",
+      "question": "What is an appropriate use for private IPv4 addressing?",
+      "question_images": [],
+      "options": {
+        "A": "on the public-facing interface of a firewall",
+        "B": "to allow hosts inside to communicate in both directions with hosts outside the organization",
+        "C": "on internal hosts that stream data solely to external resources",
+        "D": "on hosts that communicates only with other internal hosts"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.47",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must provide configured IP addressing details to investigate a firewall rule issue. Which subnet and mask identify what is configured on the en0 interface?",
+      "question_images": [
+        "q8.47_img1.jpg"
+      ],
+      "options": {
+        "A": "10.8.0.0/16",
+        "B": "10.8.64.0/18",
+        "C": "10.8.128.0/19",
+        "D": "10.8.138.0/24"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.51",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report intermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent connectivity issue?",
+      "question_images": [
+        "q8.51_img1.jpg"
+      ],
+      "options": {
+        "A": "An incorrect type of transceiver has been inserted into a device on the link.",
+        "B": "The wrong cable type was used to make the connection.",
+        "C": "Heavy usage is causing high latency.",
+        "D": "Physical network errors are being transmitted between the two sites."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.71",
+      "type": "single",
+      "question": "What is a characteristic or private IPv4 addressing?",
+      "question_images": [],
+      "options": {
+        "A": "composed of up to 65,536 available addresses",
+        "B": "issued by IANA in conjunction with an autonomous system number",
+        "C": "used without tracking or registration",
+        "D": "traverse the Internet when an outbound ACL is applied"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.80",
+      "type": "single",
+      "question": "What is a function of an endpoint on a network?",
+      "question_images": [],
+      "options": {
+        "A": "allows users to record data and transmit to a file server",
+        "B": "connects server and client devices to a network",
+        "C": "provides wireless services to users in a building",
+        "D": "forwards traffic between VLANs on a network"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.17",
+      "type": "single",
+      "question": "Refer to the exhibit.\nTraffic that is flowing over interface TenGigabitEthernet0/0 experiences slow transfer speeds. What is the reason for the issue?",
+      "question_images": [
+        "q9.17_img1.jpg"
+      ],
+      "options": {
+        "A": "heavy traffic congestion",
+        "B": "queuing drops",
+        "C": "a speed conflict",
+        "D": "a duplex incompatibility"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.32",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhat is a reason for poor performance on the network interface?",
+      "question_images": [
+        "q9.32_img1.jpg"
+      ],
+      "options": {
+        "A": "The interface is receiving excessive broadcast traffic.",
+        "B": "The cable connection between the two devices is faulty.",
+        "C": "The interface is operating at a different speed than the connected device.",
+        "D": "The bandwidth setting of the interface is misconfigured"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.57",
+      "type": "single",
+      "question": "How do UTP and STP cables compare?",
+      "question_images": [],
+      "options": {
+        "A": "STP cables are cheaper to produre and easier to install and UTP cables are more expensive and harder to install.",
+        "B": "UTP cables are less prone to crosstalk and interference and STP cables are more prone to crosstalk and interference.",
+        "C": "UTP cables provide faster and more reliable data transfer rates and STP cables are slower and less reliable.",
+        "D": "STP cables are shielded and protect against electromagnetic interference and UTP lacks the same protection against electromagnetic interference."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.77",
+      "type": "single",
+      "question": "Which WAN topology has the highest degree of reliability?",
+      "question_images": [],
+      "options": {
+        "A": "router-on-a-stick",
+        "B": "Point-to-point",
+        "C": "hub-and-spoke",
+        "D": "full mesh"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.93",
+      "type": "single",
+      "question": "What is a benefit for external users who consume public cloud resources?",
+      "question_images": [],
+      "options": {
+        "A": "implemented over a dedicated WAN",
+        "B": "located in the same data center as the users",
+        "C": "all hosted on physical servers",
+        "D": "accessed over the Internet"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.97",
+      "type": "single",
+      "question": "When should an engineer implement a collapsed-core architecture?",
+      "question_images": [],
+      "options": {
+        "A": "for large networks that are connected to multiple remote sites",
+        "B": "the access and distribution layers must be on the same device",
+        "C": "only when using VSS technology",
+        "D": "for small networks with minimal need for growth"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.106",
+      "type": "single",
+      "question": "What is the difference between 1000BASE-LX/LH and 1000BASE-ZX interfaces?",
+      "question_images": [],
+      "options": {
+        "A": "1000BASE-LX/LH interoperates with multimode and single-mode fiber, and 1000BASE-ZX needs a conditioning patch cable with a multimode.",
+        "B": "1000BASE-ZX is supported on links up to 1000km, and 1000BASE-LX/LH operates over links up to 70 km.",
+        "C": "1000BASE-ZX interoperates with dual-rate 100M/1G 10Km SFP over multimode fiber, and 1000BASE-LX/LH supports only single-rate.",
+        "D": "1000BASE-LX/LH is supported on links up to 10km, and 1000BASE-ZX operates over links up to 70 km."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.108",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhat is expected when PC_A sends data to PC_B after their initial communication?",
+      "question_images": [
+        "q9.108_img1.jpg"
+      ],
+      "options": {
+        "A": "The source and destination MAC addresses remain the same",
+        "B": "The switch rewrites the source and destination MAC addresses with its own",
+        "C": "The source MAC address is changed",
+        "D": "The destination MAC address is replaced with ffff.ffff.ffff"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.3",
+      "type": "single",
+      "question": "What is the collapsed layer in collapsed core architectures?",
+      "question_images": [],
+      "options": {
+        "A": "core and WAN",
+        "B": "access and WAN",
+        "C": "distribution and access",
+        "D": "core and distribution"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.18",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe given Windows PC is requesting the IP address of the host at www.cisco.com. To which IP address is the request sent?",
+      "question_images": [
+        "q10.18_img1.jpg"
+      ],
+      "options": {
+        "A": "192.168.1.226",
+        "B": "192.168.1.253",
+        "C": "192.168.1.100",
+        "D": "192.168.1.254"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.41",
+      "type": "single",
+      "question": "What is a function of an endpoint?",
+      "question_images": [],
+      "options": {
+        "A": "It passes unicast communication between hosts in a network",
+        "B": "It is used directly by an individual user to access network services",
+        "C": "It provides security between trusted and untrusted sections of the network",
+        "D": "It transmits broadcast traffic between devices in the same VLAN"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.45",
+      "type": "single",
+      "question": "In a cloud-computing environment, what is rapid elasticity?",
+      "question_images": [],
+      "options": {
+        "A": "automatic adjustment of capacity based on need",
+        "B": "control and monitoring of resource consumption by the tenant",
+        "C": "pooling resources in a multitenant model based on need",
+        "D": "self-service of computing resources by the tenant"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.69",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must configure the link with these requirements:\n• Consume as few IP addresses as possible.\n• Leave at least two additional useable IP addresses for future growth.\nWhich set of configurations must be applied?",
+      "question_images": [
+        "q10.69_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config-if)#ip address 10.10.10.1 255.255.255.248 \nR2(config-if)#ip address 10.10.10.4 255.255.255.248",
+        "B": "R1(config-if)#ip address 10.10.10.1 255.255.255.240 \nR2(config-if)#ip address 10.10.10.12 255.255.255.240",
+        "C": "R1 (config-if)#ip address 10.10.10.1 255.255.255.252 \nR2(config-if)#ip address 10.10.10.2 255.255.255.252",
+        "D": "R1 (config-if)#ip address 10.10.10.1 255.255.255.0 \nR2(config-if)#ip address 10.10.10.5 255.255.255.0"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.81",
+      "type": "single",
+      "question": "How do TCP and UDP fit into a query-response model?",
+      "question_images": [],
+      "options": {
+        "A": "TCP avoids using sequencing, and UDP avoids using acknowledgments.",
+        "B": "TCP uses error detection for packets, and UDP uses error recovery.",
+        "C": "TCP establishes a connection prior to sending data, and UDP sends immediately.",
+        "D": "TCP encourages out-of-order packet delivery, and UDP prevents re-ordering."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.86",
+      "type": "multi",
+      "question": "What are two reasons to implement IPv4 private addressing on a network? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "to expand the routing table on the router",
+        "B": "to facilitate renumbering when merging networks",
+        "C": "to enable internal applications to treat the private IPv4 addresses as unique",
+        "D": "to conserve global unique IPv4 addresses",
+        "E": "to provide protection from external denial-of-service attacks"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": []
+    }
+  ]
+}

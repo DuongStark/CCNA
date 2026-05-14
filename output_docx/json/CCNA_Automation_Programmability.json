@@ -1,0 +1,699 @@
+{
+  "count": 42,
+  "questions": [
+    {
+      "id": "5.9",
+      "type": "single",
+      "question": "Which CRUD operation corresponds to the HTTP GET method?",
+      "question_images": [],
+      "options": {
+        "A": "read",
+        "B": "update",
+        "C": "create",
+        "D": "delete"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.10",
+      "type": "single",
+      "question": "With REST API, which standard HTTP header tells a server which media type is expected by the client?",
+      "question_images": [],
+      "options": {
+        "A": "Accept-Encoding: gzip, deflate",
+        "B": "Accept-Patch: text/example; charset=utf-8",
+        "C": "Content-Type: application/json; charset=utf-8",
+        "D": "Accept: application/json"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.21",
+      "type": "single",
+      "question": "Which network plane is centralized and manages routing decisions?",
+      "question_images": [],
+      "options": {
+        "A": "policy plane",
+        "B": "control plane",
+        "C": "management plane",
+        "D": "data plane"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.34",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAfter running the code in the exhibit, which step reduces the amount of data that the NETCONF server returns to the NETCONF client, to only the interface’s configuration?",
+      "question_images": [
+        "q5.34_img1.jpg"
+      ],
+      "options": {
+        "A": "Use the xml library to parse the data returned by the NETCONF server for the interface’s configuration.",
+        "B": "Create an XML filter as a string and pass it to get_config() method as an argument.",
+        "C": "Create a JSON filter as a string and pass it to the get_config() method as an argument.",
+        "D": "Use the JSON library to parse the data returned by the NETCONF server for the interface’s configuration."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.35",
+      "type": "multi",
+      "question": "What are two functions of an SDN controller? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "coordinating VTNs",
+        "B": "Layer 2 forwarding",
+        "C": "tracking hosts",
+        "D": "managing the topology",
+        "E": "protecting against DDoS attacks"
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.45",
+      "type": "single",
+      "question": "What is the purpose of a southbound API in a control based networking architecture?",
+      "question_images": [],
+      "options": {
+        "A": "facilities communication between the controller and the applications",
+        "B": "integrates a controller with other automation and orchestration tools",
+        "C": "allows application developers to interact with the network",
+        "D": "facilities communication between the controller and the networking hardware"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.48",
+      "type": "single",
+      "question": "Which technology is appropriate for communication between an SDN controller and applications running over the network?",
+      "question_images": [],
+      "options": {
+        "A": "OpenFlow",
+        "B": "Southbound API",
+        "C": "NETCONF",
+        "D": "REST API"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.51",
+      "type": "single",
+      "question": "Which network action occurs within the data plane?",
+      "question_images": [],
+      "options": {
+        "A": "compare the destination IP address to the IP routing table",
+        "B": "make a configuration change from an incoming NETCONF RPC",
+        "C": "run routing protocols (OSPF, EIGRP, RIP, BGP)",
+        "D": "reply to an incoming ICMP echo request"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.1",
+      "type": "multi",
+      "question": "What are two improvements provided by automation for network management in an SDN environment? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Artificial intelligence identifies and prevents potential design failures",
+        "B": "Data collection and analysis tools establish a baseline for the network",
+        "C": "New devices are onboarded with minimal effort",
+        "D": "Machine learning minimizes the overall error rate when automating troubleshooting processes",
+        "E": "Proprietary Cisco APIs leverage multiple network management tools"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.5",
+      "type": "single",
+      "question": "Which networking function occurs on the data plane?",
+      "question_images": [],
+      "options": {
+        "A": "facilitates spanning-tree elections",
+        "B": "processing inbound SSH management traffic",
+        "C": "forwarding remote client/server traffic",
+        "D": "sending and receiving OSPF Hello packets"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.6",
+      "type": "single",
+      "question": "What does an SDN controller use as a communication protocol to relay forwarding changes to a southbound API?",
+      "question_images": [],
+      "options": {
+        "A": "XML",
+        "B": "Java",
+        "C": "REST",
+        "D": "OpenFlow"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.25",
+      "type": "single",
+      "question": "Which JSON data type is an unordered set of attribute-value pairs?",
+      "question_images": [],
+      "options": {
+        "A": "array",
+        "B": "string",
+        "C": "object",
+        "D": "Boolean"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.4",
+      "type": "single",
+      "question": "Which HTTP status code is returned after a successful REST API request?",
+      "question_images": [],
+      "options": {
+        "A": "200",
+        "B": "301",
+        "C": "404",
+        "D": "500"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.8",
+      "type": "single",
+      "question": "What is the function of a controller in controller-based networking?",
+      "question_images": [],
+      "options": {
+        "A": "It is a pair of core routers that maintain all routing decisions for a campus",
+        "B": "It centralizes the data plane for the network",
+        "C": "It is the card on a core router that maintains all routing decisions for a campus",
+        "D": "It serves as the centralized management point of an SDN architecture"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.16",
+      "type": "single",
+      "question": "What is a function of the Cisco DNA Center Overall Health Dashboard?",
+      "question_images": [],
+      "options": {
+        "A": "It summarizes daily and weekly CPU usage for servers and workstations in the network.",
+        "B": "It provides detailed activity logging for the 10 devices and users on the network.",
+        "C": "It summarizes the operational status of each wireless device on the network.",
+        "D": "It provides a summary of the top 10 global issues."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.18",
+      "type": "single",
+      "question": "Where is the interface between the control plane and data plane within the software-defined architecture?",
+      "question_images": [],
+      "options": {
+        "A": "application layer and the management layer",
+        "B": "application layer and the infrastructure layer",
+        "C": "control layer and the application layer",
+        "D": "control layer and the infrastructure layer"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.27",
+      "type": "multi",
+      "question": "Which two components are needed to create an Ansible script that configures a VLAN on a switch? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "task",
+        "B": "cookbook",
+        "C": "recipe",
+        "D": "model",
+        "E": "playbook"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.29",
+      "type": "single",
+      "question": "In software-defined architecture, which place handles switching for traffic through a Cisco router?",
+      "question_images": [],
+      "options": {
+        "A": "Data",
+        "B": "Control",
+        "C": "Management",
+        "D": "Application"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.37",
+      "type": "multi",
+      "question": "Which two primary drivers support the need for network automation? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Increasing reliance on self-diagnostic and self-healing",
+        "B": "Eliminating training needs",
+        "C": "Policy-derived provisioning of resources",
+        "D": "Reducing hardware footprint",
+        "E": "Providing a single entry point for resource provisioning"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.46",
+      "type": "multi",
+      "question": "Which two events occur automatically when a device is added to Cisco DNA Center? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "The device is assigned to the Global site.",
+        "B": "The device is placed into the Unmanaged state.",
+        "C": "The device is placed into the Provisioned state.",
+        "D": "The device is placed into the Managed state.",
+        "E": "The device is assigned to the Local site."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.50",
+      "type": "single",
+      "question": "Which plane is centralized by an SDN controller?",
+      "question_images": [],
+      "options": {
+        "A": "data plane",
+        "B": "management plane",
+        "C": "control plane",
+        "D": "services plane"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.1",
+      "type": "single",
+      "question": "Which communication interaction takes place when a southbound API is used?",
+      "question_images": [],
+      "options": {
+        "A": "between the SDN controller and PCs on the network",
+        "B": "between the SDN controller and switches and routers on the network",
+        "C": "between the SDN controller and services and applications on the network",
+        "D": "between network applications and switches and routers on the network"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.32",
+      "type": "single",
+      "question": "Which type of API allows SDN controllers to dynamically make changes to the network?",
+      "question_images": [],
+      "options": {
+        "A": "northbound API",
+        "B": "southbound API",
+        "C": "SOAP API",
+        "D": "REST API"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.63",
+      "type": "single",
+      "question": "What is the function of the controller in a software-defined network?",
+      "question_images": [],
+      "options": {
+        "A": "forwarding packets",
+        "B": "making routing decisions",
+        "C": "multicast replication at the hardware level",
+        "D": "fragmenting and reassembling packets"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.9",
+      "type": "single",
+      "question": "Which action is taken by the data plane within a network device?",
+      "question_images": [],
+      "options": {
+        "A": "looks up an egress interface in the forwarding information base",
+        "B": "constructs a routing table based on a routing protocol",
+        "C": "provides CLI access to the network device",
+        "D": "forwards traffic to the next hop"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.20",
+      "type": "multi",
+      "question": "Which two network actions occur within the data plane? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Add or remove an 802.1Q trunking header.",
+        "B": "Make a configuration change from an incoming NETCONF RP",
+        "C": "Run routing protocols.",
+        "D": "Reply to an incoming ICMP echo request.",
+        "E": "Match the destination MAC address to the MAC address table."
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.53",
+      "type": "single",
+      "question": "What is an expected outcome when network management automation is deployed?",
+      "question_images": [],
+      "options": {
+        "A": "A distributed management plane must be used.",
+        "B": "Software upgrades are performed from a central controller",
+        "C": "Complexity increases when new device configurations are added",
+        "D": "Custom applications are needed to configure network devices"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.68",
+      "type": "single",
+      "question": "What is the role of disaggregation in controller-based networking?",
+      "question_images": [],
+      "options": {
+        "A": "It divides the control-plane and data-plane functions.",
+        "B": "It summarizes the routes between the core and distribution layers of the network topology.",
+        "C": "It enables a network topology to quickly adjust from a ring network to a star network",
+        "D": "It streamlines traffic handling by assigning individual devices to perform either Layer 2 or Layer 3 functions."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.69",
+      "type": "single",
+      "question": "Which REST method updates an object in the Cisco DNA Center Intent API?",
+      "question_images": [],
+      "options": {
+        "A": "CHANGE",
+        "B": "UPDATE",
+        "C": "POST",
+        "D": "PUT"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.73",
+      "type": "single",
+      "question": "What is the function of “off-the-shelf” switches in a controller-based network?",
+      "question_images": [],
+      "options": {
+        "A": "Forwarding packets",
+        "B": "Making routing decision",
+        "C": "Providing a central view of the deployed network",
+        "D": "Setting packet-handling policies"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.81",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich type of configuration is represented in the output?",
+      "question_images": [
+        "q9.81_img1.jpg"
+      ],
+      "options": {
+        "A": "Chef",
+        "B": "JSON",
+        "C": "Ansible",
+        "D": "Puppet"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.84",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhat is represented by “R1” and “SW1” within the JSON output?",
+      "question_images": [
+        "q9.84_img1.jpg"
+      ],
+      "options": {
+        "A": "array",
+        "B": "object",
+        "C": "value",
+        "D": "key"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.94",
+      "type": "single",
+      "question": "In an SDN architecture, which function of a network node is centralized on a controller?",
+      "question_images": [],
+      "options": {
+        "A": "provides protocol access for remote access devices",
+        "B": "discards a message due filtering",
+        "C": "creates the IP routing table",
+        "D": "makes a routing decision"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.96",
+      "type": "single",
+      "question": "Which SDN plane forwards user-generated traffic?",
+      "question_images": [],
+      "options": {
+        "A": "policy plane",
+        "B": "management plane",
+        "C": "data plane",
+        "D": "control plane"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.15",
+      "type": "single",
+      "question": "What is the purpose of the Cisco DNA Center controller?",
+      "question_images": [],
+      "options": {
+        "A": "to securely manage and deploy network devices",
+        "B": "to scan a network and generate a layer 2 network diagram",
+        "C": "to provide Layer 3 services to autonomous access points",
+        "D": "to secure physical access to a data center"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.23",
+      "type": "multi",
+      "question": "Which two REST API status-code classes represent errors? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "1XX",
+        "B": "2XX",
+        "C": "3XX",
+        "D": "4XX",
+        "E": "5XX"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.28",
+      "type": "single",
+      "question": "What differentiates device management enabled by Cisco DNA Center from traditional campus device management?",
+      "question_images": [],
+      "options": {
+        "A": "CLI-oriented device",
+        "B": "centralized",
+        "C": "per-device",
+        "D": "device-by-device hands-on"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.37",
+      "type": "single",
+      "question": "Refer to the exhibit.\nHow many objects are present in the given JSON-encoded data?",
+      "question_images": [
+        "q10.37_img1.jpg"
+      ],
+      "options": {
+        "A": "one",
+        "B": "four",
+        "C": "seven",
+        "D": "nine"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.75",
+      "type": "single",
+      "question": "Refer to the exhibit.\n{\n\"myCar\": {\n\"name\": \"thunder\",\n\"wheels\": [\"good\", \"good\", \"pressureLow\", \"warning\"],\n\"gasLight\": false\n},\n\"oldCar\": {\n\"name\": \"sleepy\",\n\"wheels\": [\"pressureLow\", \"pressureLow\", \"pressureLow\", \"pressureLow\"],\n\"color\": \"rust\"\n\"gasLight\": true\n},\n\"newCar\": {\n\"name\": \"lightning\",\n\"wheels\": [\"pressureLow\", \"good\", \"pressureLow\", \"good\"],\n\"color\": \"blue\"\n\"gasLight\": true\n}\n}\nIn which structure does the word “warning” directly reside?",
+      "question_images": [],
+      "options": {
+        "A": "array",
+        "B": "object",
+        "C": "Boolean",
+        "D": "string"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.80",
+      "type": "single",
+      "question": "A network architect is considering whether to implement Cisco DNA Center to deploy devices on a new network. The organization is focused on reducing the time it currently takes to deploy devices in a traditional campus design. For which reason would Cisco DNA Center be more appropriate than traditional management options?",
+      "question_images": [],
+      "options": {
+        "A": "Cisco DNA Center provides zero-touch provisioning to third-party devices.",
+        "B": "Cisco DNA Center supports deployment with a single pane of glass.",
+        "C": "Cisco DNA Center minimizes the level of syslog output when reporting on Cisco devices.",
+        "D": "Cisco DNA Center reduces the need for analytics on third-party access points and devices."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.83",
+      "type": "single",
+      "question": "Which interface type enables an application running on a client to send data over an IP network to a server?",
+      "question_images": [],
+      "options": {
+        "A": "southbound interface",
+        "B": "application programming interface",
+        "C": "northbound interface",
+        "D": "Representational State Transfer application programming interface"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.88",
+      "type": "single",
+      "question": "Which script paradigm does Puppet use?",
+      "question_images": [],
+      "options": {
+        "A": "manifests and modules",
+        "B": "strings and marionettes",
+        "C": "recipes and cookbooks",
+        "D": "playbooks and roles"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    }
+  ]
+}

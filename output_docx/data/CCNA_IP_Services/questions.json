@@ -1,0 +1,734 @@
+{
+  "count": 44,
+  "questions": [
+    {
+      "id": "5.1",
+      "type": "multi",
+      "question": "Which two QoS tools are used to guarantee minimum bandwidth to certain traffic? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "FIFO",
+        "B": "CBWFQ",
+        "C": "LLC",
+        "D": "WFQ",
+        "E": "RSVP"
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.14",
+      "type": "single",
+      "question": "A network administrator must enable DHCP services between two sites. What must be configured for the router to pass DHCPDISCOVER messages on to the server?",
+      "question_images": [],
+      "options": {
+        "A": "a DHCP Relay Agent",
+        "B": "DHCP Binding",
+        "C": "a DHCP Pool",
+        "D": "DHCP Snooping"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.22",
+      "type": "single",
+      "question": "What does a router do when configured with the default DNS lookup settings, and a URL is entered on the CLI?",
+      "question_images": [],
+      "options": {
+        "A": "initiates a ping request to the URL",
+        "B": "prompts the user to specify the desired IP address",
+        "C": "continuously attempts to resolve the URL until the command is cancelled",
+        "D": "sends a broadcast message in an attempt to resolve the URL"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.25",
+      "type": "single",
+      "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate all addresses in VLAN 200 while allowing devices on VLAN 100 to use their own IP addresses?",
+      "question_images": [
+        "q5.25_img1.jpg"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.28",
+      "type": "single",
+      "question": "Which protocol does an IPv4 host use to obtain a dynamically assigned IP address?",
+      "question_images": [],
+      "options": {
+        "A": "ARP",
+        "B": "DNS",
+        "C": "CDP",
+        "D": "DHCP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.30",
+      "type": "single",
+      "question": "Which condition must be met before an NMS handles an SNMP trap from an agent?",
+      "question_images": [],
+      "options": {
+        "A": "The NMS must be configured on the same router as the SNMP agent",
+        "B": "The NMS must receive a trap and an inform message from the SNMP agent within a configured interval",
+        "C": "The NMS software must be loaded with the MIB associated with the trap",
+        "D": "The NMS must receive the same trap from two different SNMP agents to verify that it is reliable"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.38",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe ntp server 192.168.0.3 command has been configured on Router1 to make it an NTP client of router 2. Which command must be configured on Router2 so that it operates in server-only mode and relies only on its internal clock?",
+      "question_images": [
+        "q5.38_img1.jpg"
+      ],
+      "options": {
+        "A": "Router2(config)#ntp passive",
+        "B": "Router2(config)#ntp master 4",
+        "C": "Router2(config)#ntp server 172.17.0.1",
+        "D": "Router2(config)#ntp server 192.168.0.2"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "5.41",
+      "type": "single",
+      "question": "When DHCP is configured on a router, which command must be entered so the default gateway is automatically distributed?",
+      "question_images": [],
+      "options": {
+        "A": "default-router",
+        "B": "default-gateway",
+        "C": "ip helper-address",
+        "D": "dns-server"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.13",
+      "type": "single",
+      "question": "When deploying syslog, which severity level logs informational message?",
+      "question_images": [],
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "4",
+        "D": "6"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.23",
+      "type": "multi",
+      "question": "Which two QoS tools provides congestion management? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "FRTS",
+        "B": "CAR",
+        "C": "PQ",
+        "D": "PBR",
+        "E": "CBWFQ"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "6.28",
+      "type": "single",
+      "question": "An engineering team asks an implementer to configure syslog for warning conditions and error conditions. Which command does the implementer configure to achieve the desired result?",
+      "question_images": [],
+      "options": {
+        "A": "logging trap 2",
+        "B": "logging trap 3",
+        "C": "logging trap 4",
+        "D": "logging trap 5"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.1",
+      "type": "single",
+      "question": "Which level of severity must be set to get informational syslogs?",
+      "question_images": [],
+      "options": {
+        "A": "alert",
+        "B": "critical",
+        "C": "notice",
+        "D": "debug"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.3",
+      "type": "single",
+      "question": "A network analyst is tasked with configured the date and time on a router using EXEC mode. The date must be set to 12:00am. Which command should be used?",
+      "question_images": [],
+      "options": {
+        "A": "Clock timezone",
+        "B": "Clock summer-time-recurring",
+        "C": "Clock summer-time date",
+        "D": "Clock set"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.17",
+      "type": "single",
+      "question": "Which protocol requires authentication to transfer a backup configuration file from a router to a remote server?",
+      "question_images": [],
+      "options": {
+        "A": "TFTP",
+        "B": "FTP",
+        "C": "DTP",
+        "D": "SMTP"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.31",
+      "type": "single",
+      "question": "When a client and server are not on the same physical network, which device is used to forward requests and replies between client and server for DHCP?",
+      "question_images": [],
+      "options": {
+        "A": "DHCP relay agent",
+        "B": "DHCP server",
+        "C": "DHCPDISCOVER",
+        "D": "DHCPOFFER"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.34",
+      "type": "single",
+      "question": "Which QoS tool can you use to optimize voice traffic on a network that is primarily intended for data traffic?",
+      "question_images": [],
+      "options": {
+        "A": "WRED",
+        "B": "FIFO",
+        "C": "PQ",
+        "D": "WFQ"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.35",
+      "type": "single",
+      "question": "On workstations running Microsoft Windows, which protocol provides the default gateway for the device?",
+      "question_images": [],
+      "options": {
+        "A": "STP",
+        "B": "DNS",
+        "C": "SNMP",
+        "D": "DHCP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "7.45",
+      "type": "single",
+      "question": "How does QoS optimize voice traffic?",
+      "question_images": [],
+      "options": {
+        "A": "reducing bandwidth usage",
+        "B": "by reducing packet loss",
+        "C": "by differentiating voice and video traffic",
+        "D": "by increasing jitter"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.11",
+      "type": "single",
+      "question": "In QoS, which prioritization method is appropriate for interactive voice and video?",
+      "question_images": [],
+      "options": {
+        "A": "expedited forwarding",
+        "B": "traffic policing",
+        "C": "round-robin scheduling",
+        "D": "low-latency queuing"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.12",
+      "type": "single",
+      "question": "An engineer is configuring data and voice services to pass through the same port. The designated switch interface fastethernet0/1 must transmit packets using the same priority for data when they are received from the access port of the IP phone. Which configuration must be used?",
+      "question_images": [],
+      "options": {
+        "A": "interface fastethernet0/1\nswitchport priority extend cos 7",
+        "B": "interface fastethernet0/1\nswitchport voice vlan untagged",
+        "C": "interface fastethernet0/1\nswitchport voice vlan dot1p",
+        "D": "interface fastethernet0/1\nswitchport priority extend trust"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.14",
+      "type": "single",
+      "question": "What is a syslog facility?",
+      "question_images": [],
+      "options": {
+        "A": "host that is configured for the system to send log messages",
+        "B": "password that authenticates a Network Management System to receive log messages",
+        "C": "group of log messages associated with the configured severity level",
+        "D": "set of values that represent the processes that can generate a log message"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.18",
+      "type": "single",
+      "question": "What is a capability of FTP in network management operations?",
+      "question_images": [],
+      "options": {
+        "A": "uses separate control and data connections to move files between server and client",
+        "B": "devices are directly connected and use UDP to pass file information",
+        "C": "encrypts data before sending between data resources",
+        "D": "offers proprietary support at the session layer when transferring data"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.33",
+      "type": "single",
+      "question": "What is a DNS lookup operation?",
+      "question_images": [],
+      "options": {
+        "A": "serves requests over destination port 53",
+        "B": "DNS server pings the destination to verify that it is available",
+        "C": "DNS server forwards the client to an alternate IP address when the primary IP is down",
+        "D": "responds to a request for IP address to domain name resolution to the DNS server"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.36",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe DHCP server and clients are connected to the same switch. What is the next step to complete the DHCP configuration to allow clients on VLAN 1 to receive addresses from the DHCP server?",
+      "question_images": [
+        "q8.36_img1.jpg"
+      ],
+      "options": {
+        "A": "Configure the ip dhcp snooping trust command on the interface that is connected to the DHCP server",
+        "B": "Configure the ip dhcp relay information option command on the interface that is connected to the DHCP server",
+        "C": "Configure the ip dhcp relay information option command on the interface that is connected to the DHCP client",
+        "D": "Configure the ip dhcp snooping trust command on the interface that is connected to the DHCP client"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.42",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich plan must be implemented to ensure optimal QoS marking practices on this network?",
+      "question_images": [
+        "q8.42_img1.jpg"
+      ],
+      "options": {
+        "A": "As traffic enters from the access layer on SW1 and SW2, trust all traffic markings",
+        "B": "Trust the IP phone markings on SW1 and mark traffic entering SW2 at SW2",
+        "C": "As traffic traverses MLS1 remark the traffic, but trust all markings at the access layer",
+        "D": "Remark traffic as it traverses R1 and trust all markings at the access layer"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.44",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich configuration enables DHCP addressing for hosts connected to interface FastEthernet0/1 on router R4?",
+      "question_images": [],
+      "options": {
+        "A": "interface FastEthernet0/1\nip helper-address 10.0.1.1\n!\naccess-list 100 permit tcp host 10.0.1.1 eq 67 host 10.148.2.1",
+        "B": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n!\naccess-list 100 permit host 10.0.1.1 host 10.148.2.1 eq bootps",
+        "C": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1",
+        "D": "interface FastEthernet0/1 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.74",
+      "type": "single",
+      "question": "Refer to the exhibit.\nHow should the configuration be updated to allow PC1 and PC2 access to the Internet?",
+      "question_images": [
+        "q8.74_img1.jpg"
+      ],
+      "options": {
+        "A": "Modify the configured number of the second access list",
+        "B": "Remove the overload keyword from the ip nat inside source command",
+        "C": "Add either the ip nat {inside|outside} command under both interfaces",
+        "D": "Change the ip nat inside source command to use interface GtgabitEthernet0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "8.79",
+      "type": "single",
+      "question": "What is the purpose of the ip address dhcp command?",
+      "question_images": [],
+      "options": {
+        "A": "to configure an interface as a DHCP server",
+        "B": "to configure an interface as a DHCP relay",
+        "C": "to configure an interface as a DHCP helper",
+        "D": "to configure an interface as a DHCP client"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.10",
+      "type": "single",
+      "question": "R1 as an NTP server must have:\n* NTP authentication enabled\n* NTP packets sourced from Interface loopback 0\n* NTP stratum 2\n* NTP packets only permitted to client IP 209.165.200.225\nHow should R1 be configured?",
+      "question_images": [],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.26",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is configuring a new router on the network and applied this configuration. Which additional configuration allows the PC to obtain its IP address from a DHCP server?",
+      "question_images": [
+        "q9.26_img1.jpg"
+      ],
+      "options": {
+        "A": "Configure the ip dhcp relay information command under interface Gi0/1",
+        "B": "Configure the ip dhcp smart-relay command globally on the router",
+        "C": "Configure the ip helper-address 172.16.2.2 command under interface Gi0/0",
+        "D": "Configure the ip address dhcp command under interface Gi0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.34",
+      "type": "single",
+      "question": "Which QoS per-hop behavior changes the value of the ToS field in the IPv4 packet header?",
+      "question_images": [],
+      "options": {
+        "A": "shaping",
+        "B": "marking",
+        "C": "policing",
+        "D": "classification"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.44",
+      "type": "single",
+      "question": "Refer to the exhibit.\nUsers on existing VLAN 100 can reach sites on the Internet. Which action must the administrator take to establish connectivity to the Internet for users in VLAN 200?",
+      "question_images": [
+        "q9.44_img1.jpg"
+      ],
+      "options": {
+        "A": "Define a NAT pool on the router.",
+        "B": "Update the NAT_INSIDE_RANGES ACL",
+        "C": "Configure the ip nat outside command on another interface for VLAN 200",
+        "D": "Configure static NAT translations for VLAN 200"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.50",
+      "type": "single",
+      "question": "Which QoS traffic handling technique retains excess packets in a queue and reschedules these packets for later transmission when the configured maximum bandwidth has been surpassed?",
+      "question_images": [],
+      "options": {
+        "A": "traffic shaping",
+        "B": "traffic policing",
+        "C": "weighted random early detection",
+        "D": "traffic prioritization"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.67",
+      "type": "single",
+      "question": "Which QoS queuing method discards or marks packets that exceed the desired bit rate of traffic flow?",
+      "question_images": [],
+      "options": {
+        "A": "shaping",
+        "B": "policing",
+        "C": "CBWFQ",
+        "D": "LLQ"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.82",
+      "type": "single",
+      "question": "How does TFTP operate in a network?",
+      "question_images": [],
+      "options": {
+        "A": "relies on the well-known TCP port 20 to transmit data",
+        "B": "requires two separate connections for control and data traffic",
+        "C": "uses block numbers to identify and mitigate data-transfer errors",
+        "D": "provides secure data transfer"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.86",
+      "type": "single",
+      "question": "An engineer is configuring switch SW1 to act as an NTP server when all upstream NTP server connectivity fails. Which configuration must be used?",
+      "question_images": [],
+      "options": {
+        "A": "SW1# config t\nSW1(config)#ntp server 192.168.1.1\nSW1(config)#ntp access-group server accesslist1",
+        "B": "SW1# config t\nSW1(config)3 ntp peer 192.168.1.1\nSW1(config)#ntp access-group peer accesslist1",
+        "C": "SW1# config t\nSW1(config)#ntp backup\nSW1(config)#ntp server 192.168.1.1",
+        "D": "SW1# config t\nSW1(config)#ntp master\nSW1(config)#ntp server 192.168.1.1"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "9.100",
+      "type": "single",
+      "question": "What is a function performed by a web server?",
+      "question_images": [],
+      "options": {
+        "A": "provide an application that is transmitted over HTTP",
+        "B": "send and retrieve email from client devices",
+        "C": "securely store files for FTP access",
+        "D": "authenticate and authorize a user’s identity"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.19",
+      "type": "single",
+      "question": "What is a feature of TFTP?",
+      "question_images": [],
+      "options": {
+        "A": "provides secure data transfer",
+        "B": "relies on the well-known TCP port 20 to transmit data",
+        "C": "uses two separate connections for control and data traffic",
+        "D": "offers anonymous user login ability"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.21",
+      "type": "single",
+      "question": "Which command creates a static NAT binding for a PC address of 10.1.1.1 to the public routable address 209.165.200.225 assigned to the PC?",
+      "question_images": [],
+      "options": {
+        "A": "R1(config)#ip nat outside source static 209.165.200.225 10.1.1.1",
+        "B": "R1(config)#ip nat inside source static 209.165.200.225 10.1.1.1",
+        "C": "R1(config)#ip nat outside source static 10.1.1.1 209.165.200.225",
+        "D": "R1(config)#ip nat inside source static 10.1.1.1 209.165.200.225"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.33",
+      "type": "single",
+      "question": "Which command implies the use of SNMPv3?",
+      "question_images": [],
+      "options": {
+        "A": "snmp-server community",
+        "B": "snmp-server host",
+        "C": "snmp-server enable traps",
+        "D": "snmp-server user"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.43",
+      "type": "multi",
+      "question": "What are two features of the DHCP relay agent? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "minimizes the necessary number of DHCP servers",
+        "B": "assigns DNS locally and then forwards request to DHCP server",
+        "C": "is configured under the Layer 3 interface of a router on the client subnet",
+        "D": "allows only MAC-to-IP reservations to determine the local subnet of a client",
+        "E": "permits one IP helper command under an individual Layer 3 interface"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.72",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich router or router group are NTP clients?",
+      "question_images": [
+        "q10.72_img1.jpg"
+      ],
+      "options": {
+        "A": "R1, R2, and R3",
+        "B": "R1",
+        "C": "R2 and R3 \nD R1, R3, and R4"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.78",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich command set configures ROUTER-1 to allow Internet access for users on the 192.168.1.0/24 subnet while using 209.165.202.129 for Port Address Translation?",
+      "question_images": [
+        "q10.78_img1.jpg"
+      ],
+      "options": {
+        "A": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload",
+        "B": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "C": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "D": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": []
+    },
+    {
+      "id": "10.92",
+      "type": "multi",
+      "question": "Which two actions are taken as the result of traffic policing? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "bursting",
+        "B": "fragmentation",
+        "C": "dropping",
+        "D": "remarking",
+        "E": "buffering"
+      },
+      "answer": [
+        "C",
+        "D"
+      ],
+      "answer_images": []
+    }
+  ]
+}
