@@ -1,0 +1,82 @@
+.wrapper {
+  margin: var(--space-md) 0;
+}
+
+.imageButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: box-shadow 150ms ease;
+}
+
+.imageButton:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.image {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  background: var(--color-surface-alt);
+}
+
+.fallback {
+  padding: var(--space-md);
+  color: var(--color-text-subtle);
+  font-size: var(--fs-body-sm);
+  background: var(--color-surface-alt);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-lg);
+  cursor: zoom-out;
+  animation: fadeIn 150ms ease;
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
