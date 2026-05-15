@@ -97,8 +97,6 @@ export default function QuizScreen({
     .map((f) => getImagePath(sourceId, question._topic || topicId, f))
     .filter(Boolean);
 
-  const hasImages = questionImages.length > 0;
-
   const renderExplanation = (refTarget) =>
     isRevealed ? (
       <section
@@ -130,42 +128,6 @@ export default function QuizScreen({
 
   return (
     <div className={styles.layout}>
-      <aside className={styles.leftSidebar}>
-        {questionImages.length > 0 && (
-          <div className={styles.sidebarImages}>
-            <span className={styles.sidebarLabel}>Hình minh họa</span>
-            {questionImages.map((src, i) => (
-              <ExhibitImage key={src} src={src} alt={`Question exhibit ${i + 1}`} />
-            ))}
-          </div>
-        )}
-        {isRevealed && (
-          <section
-            className={`${styles.explanation} ${wasCorrect ? styles.explanationCorrect : styles.explanationWrong}`}
-            aria-live="polite"
-          >
-            <div className={styles.explanationHeader}>
-              <span className={styles.explanationStatus}>
-                {wasCorrect ? <IconCheck /> : <IconX />}
-                <span>{wasCorrect ? 'Đúng' : 'Sai'}</span>
-              </span>
-              <span className={styles.explanationAnswer}>
-                Đáp án: <strong>{[...correctSet].sort().join('')}</strong>
-              </span>
-            </div>
-            {question.explanation && (
-              <p className={styles.explanationText}>{question.explanation}</p>
-            )}
-            {explanationImages.map((src, i) => (
-              <ExhibitImage
-                key={src}
-                src={src}
-                alt={`Explanation image ${i + 1}`}
-              />
-            ))}
-          </section>
-        )}
-      </aside>
       {navOpen && (
         <>
           <div
@@ -236,6 +198,10 @@ export default function QuizScreen({
 
           <QuestionBody text={question.question} />
 
+          {questionImages.map((src, i) => (
+            <ExhibitImage key={src} src={src} alt={`Question exhibit ${i + 1}`} />
+          ))}
+
           {question.question_vi && (
             <div className={styles.translateBlock}>
               <button
@@ -253,12 +219,6 @@ export default function QuizScreen({
               </div>
             </div>
           )}
-
-          {questionImages.map((src, i) => (
-            <div key={src} className={styles.inCardImages}>
-              <ExhibitImage src={src} alt={`Question exhibit ${i + 1}`} />
-            </div>
-          ))}
 
           <div className={styles.options}>
             {optionEntries.map(([letter, text]) => {
@@ -283,6 +243,7 @@ export default function QuizScreen({
             })}
           </div>
 
+          {renderExplanation(explanationRef)}
         </article>
 
         <footer className={styles.actions}>
