@@ -109,6 +109,8 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
           id: currentQuestion.id,
           uid: currentQuestion._uid || currentQuestion.id,
           question: currentQuestion.question,
+          options: currentQuestion.options,
+          explanation: currentQuestion.explanation,
           userAnswer: userNorm,
           correctAnswer: correctNorm,
         },

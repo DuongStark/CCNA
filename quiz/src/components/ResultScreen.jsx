@@ -38,24 +38,46 @@ export default function ResultScreen({
         </h2>
         {hasWrong ? (
           <ul className={styles.wrongList}>
-            {wrongAnswers.map((w) => (
-              <li key={w.id} className={styles.wrongItem}>
-                <span className={styles.questionId}>#{w.id}</span>
-                <p className={styles.questionText}>{w.question}</p>
-                <div className={styles.answerRow}>
-                  <span>
-                    <span className={styles.answerLabel}>Bạn chọn:</span>
-                    <span className={styles.userAnswer}>
-                      {w.userAnswer || '—'}
+            {wrongAnswers.map((w) => {
+              const correctLetters = (w.correctAnswer || '').split('').filter(Boolean);
+              const explanationExcerpt =
+                w.explanation && w.explanation.length > 120
+                  ? w.explanation.slice(0, 120).trimEnd() + '…'
+                  : w.explanation;
+              return (
+                <li key={w.id} className={styles.wrongItem}>
+                  <span className={styles.questionId}>#{w.id}</span>
+                  <p className={styles.questionText}>{w.question}</p>
+                  <div className={styles.answerRow}>
+                    <span>
+                      <span className={styles.answerLabel}>Bạn chọn:</span>
+                      <span className={styles.userAnswer}>
+                        {w.userAnswer || '—'}
+                      </span>
                     </span>
-                  </span>
-                  <span>
-                    <span className={styles.answerLabel}>Đáp án đúng:</span>
-                    <span className={styles.correctAnswer}>{w.correctAnswer}</span>
-                  </span>
-                </div>
-              </li>
-            ))}
+                    <span>
+                      <span className={styles.answerLabel}>Đáp án đúng:</span>
+                      <span className={styles.correctAnswer}>{w.correctAnswer}</span>
+                    </span>
+                  </div>
+                  {w.options && correctLetters.length > 0 && (
+                    <ul className={styles.correctOptions}>
+                      {correctLetters.map((letter) =>
+                        w.options[letter] ? (
+                          <li key={letter} className={styles.correctOptionItem}>
+                            <span className={styles.correctOptionLetter}>{letter}:</span>{' '}
+                            {w.options[letter]}
+                          </li>
+                        ) : null
+                      )}
+                    </ul>
+                  )}
+                  {explanationExcerpt && (
+                    <p className={styles.explanationExcerpt}>{explanationExcerpt}</p>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         ) : (
           <div className={styles.empty}>

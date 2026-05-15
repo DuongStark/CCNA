@@ -12,6 +12,8 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   transition:
     background-color 150ms ease,
     border-color 150ms ease,
@@ -21,6 +23,10 @@
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
+}
+
+.card:focus-visible {
+  outline-color: var(--color-primary);
 }
 
 .card:hover:not(:disabled) {
@@ -150,7 +156,7 @@
 }
 
 .viBlockOpen {
-  max-height: 200px;
+  max-height: none;
   opacity: 1;
   padding-top: 6px;
   border-top-color: var(--color-border);

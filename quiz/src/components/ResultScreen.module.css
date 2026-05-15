@@ -133,6 +133,39 @@
   font-family: var(--font-mono);
 }
 
+.correctOptions {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-xs) var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--color-correct-bg);
+  border-left: 3px solid var(--color-correct-border);
+  border-radius: var(--radius-sm);
+}
+
+.correctOptionItem {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.correctOptionLetter {
+  color: var(--color-correct);
+  font-weight: 600;
+}
+
+.explanationExcerpt {
+  font-size: 0.8125rem;
+  color: var(--color-text-subtle);
+  line-height: 1.5;
+  font-style: italic;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;

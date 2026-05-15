@@ -91,8 +91,6 @@ function QuizContainer({ session, initialProgress, onExit, onFinish }) {
       selectedAnswer={quiz.selectedAnswer}
       isRevealed={quiz.isRevealed}
       isMultiple={quiz.isMultiple}
-      score={quiz.score}
-      streak={quiz.streak}
       results={quiz.results}
       onSelect={quiz.selectAnswer}
       onConfirm={quiz.confirmAnswer}

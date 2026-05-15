@@ -3,7 +3,6 @@ import ProgressBar from './ProgressBar';
 import OptionCard from './OptionCard';
 import ExhibitImage from './ExhibitImage';
 import QuestionNav from './QuestionNav';
-import QuizStats from './QuizStats';
 import { getImagePath } from '../utils/dataLoader';
 import styles from './QuizScreen.module.css';
 
@@ -105,8 +104,6 @@ export default function QuizScreen({
   selectedAnswer,
   isRevealed,
   isMultiple,
-  score,
-  streak,
   results,
   onSelect,
   onConfirm,
@@ -166,16 +163,6 @@ export default function QuizScreen({
 
   return (
     <div className={styles.layout}>
-      <aside className={styles.leftSidebar}>
-        <QuizStats
-          score={score}
-          streak={streak}
-          total={total}
-          currentIndex={index}
-          results={results}
-        />
-      </aside>
-
       {navOpen && (
         <>
           <div
@@ -184,6 +171,14 @@ export default function QuizScreen({
             aria-hidden="true"
           />
           <div className={styles.drawer} role="dialog" aria-label="Question navigator">
+            <button
+              type="button"
+              className={styles.drawerClose}
+              onClick={() => setNavOpen(false)}
+              aria-label="Đóng"
+            >
+              ✕
+            </button>
             <QuestionNav
               total={total}
               currentIndex={index}
@@ -196,27 +191,23 @@ export default function QuizScreen({
 
       <div className={styles.screen}>
         <header className={styles.topBar}>
-          <button
-            type="button"
-            className={styles.navToggle}
-            onClick={() => setNavOpen((v) => !v)}
-            aria-label="Toggle question navigator"
-            aria-expanded={navOpen}
-          >
-            ≡
-          </button>
-          <button type="button" className={styles.exitButton} onClick={onExit}>
-            ← Exit
-          </button>
+          <div className={styles.topBarLeft}>
+            <button
+              type="button"
+              className={styles.navToggle}
+              onClick={() => setNavOpen((v) => !v)}
+              aria-label="Toggle question navigator"
+              aria-expanded={navOpen}
+            >
+              ≡
+            </button>
+            <button type="button" className={styles.exitButton} onClick={onExit}>
+              ← Thoát
+            </button>
+          </div>
           <div className={styles.meta}>
             <span className={styles.counter}>
               {index + 1} <span className={styles.counterDim}>/ {total}</span>
-            </span>
-            <span
-              className={`${styles.streak} ${streak > 0 ? styles.streakActive : ''}`}
-              aria-label={`Streak: ${streak}`}
-            >
-              <span aria-hidden="true">★</span> {streak}
             </span>
           </div>
         </header>
@@ -232,7 +223,12 @@ export default function QuizScreen({
 
           {isMultiple && (
             <div className={styles.multipleBanner} role="note">
-              <span aria-hidden="true">☑</span> Chọn TẤT CẢ đáp án đúng
+              <span aria-hidden="true">☑</span> Chọn {correctSet.size} đáp án đúng
+              {!isRevealed && (
+                <span className={styles.multipleCounter}>
+                  Đã chọn: {selectedSet.size}/{correctSet.size}
+                </span>
+              )}
             </div>
           )}
 
@@ -287,10 +283,10 @@ export default function QuizScreen({
             >
               <div className={styles.explanationHeader}>
                 <span className={styles.explanationStatus}>
-                  {wasCorrect ? '✓ Correct' : '✕ Incorrect'}
+                  {wasCorrect ? '✓ Đúng' : '✕ Sai'}
                 </span>
                 <span className={styles.explanationAnswer}>
-                  Answer: <strong>{[...correctSet].sort().join('')}</strong>
+                  Đáp án: <strong>{[...correctSet].sort().join('')}</strong>
                 </span>
               </div>
               {question.explanation && (
@@ -315,10 +311,7 @@ export default function QuizScreen({
               onClick={onConfirm}
               disabled={!canConfirm}
             >
-              Confirm
-              <span className={styles.kbdHint}>
-                <kbd>Space</kbd>
-              </span>
+              Xác nhận
             </button>
           ) : (
             <button
@@ -327,15 +320,12 @@ export default function QuizScreen({
               onClick={onNext}
               autoFocus
             >
-              {index + 1 >= total ? 'Finish 🎉' : 'Next question'}
-              <span className={styles.kbdHint}>
-                <kbd>Space</kbd>
-              </span>
+              {index + 1 >= total ? 'Hoàn thành 🎉' : 'Câu tiếp theo'}
             </button>
           )}
           <span className={styles.shortcutHint}>
             {!isRevealed && selectedSet.size === 0 && (
-              <><kbd>A</kbd>–<kbd>{String.fromCharCode(64 + Math.max(optionEntries.length, 4))}</kbd> để chọn</>
+              <><kbd>A</kbd>–<kbd>{String.fromCharCode(64 + optionEntries.length)}</kbd> để chọn</>
             )}
             {!isRevealed && selectedSet.size > 0 && (
               <><kbd>Space</kbd> để xác nhận</>
