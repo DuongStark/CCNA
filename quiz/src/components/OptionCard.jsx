@@ -1,71 +1,6 @@
 import styles from './OptionCard.module.css';
-
-const CLI_PROMPT_RE = /^(?:[\w.-]+(?:\([\w-]*\))?[>#]\s*|Router[\w(>#]|Switch[\w(>#]|R\d+[\w(>#]|SW\d+[\w(>#])/;
-const CLI_KEYWORD_RE = /^(?:interface\s|ip\s|no\s|router\s|switch\s|enable\b|configure\s|line\s|access-list\s|vlan\s|hostname\s|description\s|switchport\s|spanning-tree\s|encapsulation\s|show\s|debug\s|copy\s|exit\b|end\b)/i;
-const PROSE_RE = /^(?:which|what|how|why|where|when|who|select|choose|an |a |the |this |that |these |if |given |based |refer |drag |place |match |\w.*\?$)/i;
-
-function looksLikeCli(line) {
-  const trimmed = line.trim();
-  if (!trimmed) return false;
-  if (CLI_PROMPT_RE.test(trimmed)) return true;
-  if (CLI_KEYWORD_RE.test(trimmed)) return true;
-  return false;
-}
-
-function splitIntoSegments(text) {
-  if (!text) return [];
-  const lines = text.split('\n');
-  const segments = [];
-  let buffer = [];
-  let bufferKind = null;
-  let inCliBlock = false;
-
-  const flush = () => {
-    if (!buffer.length) return;
-    if (bufferKind === 'cli') {
-      while (buffer.length && !buffer[buffer.length - 1].trim()) buffer.pop();
-    }
-    if (buffer.length) segments.push({ kind: bufferKind, text: buffer.join('\n') });
-    buffer = [];
-  };
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    // Once inside a CLI block, stay until we hit a clear prose line
-    if (inCliBlock) {
-      const isClearProse = PROSE_RE.test(trimmed) && !looksLikeCli(line) && trimmed.length > 20;
-      if (isClearProse) {
-        inCliBlock = false;
-        flush();
-        bufferKind = 'prose';
-        buffer.push(line);
-      } else {
-        buffer.push(line);
-      }
-      continue;
-    }
-
-    // Detect start of CLI block via prompt (e.g. SiteA#, Router>)
-    if (CLI_PROMPT_RE.test(trimmed)) {
-      inCliBlock = true;
-      flush();
-      bufferKind = 'cli';
-      buffer.push(line);
-      continue;
-    }
-
-    // Normal line-by-line detection
-    const kind = looksLikeCli(line) ? 'cli' : 'prose';
-    if (kind !== bufferKind) {
-      flush();
-      bufferKind = kind;
-    }
-    buffer.push(line);
-  }
-  flush();
-  return segments;
-}
+import { looksLikeCli, splitIntoSegments } from '../utils/cliUtils';
+import { IconCheck, IconX } from '../icons';
 
 export default function OptionCard({
   letter,
@@ -113,7 +48,7 @@ export default function OptionCard({
           className={`${styles.checkbox} ${selected ? styles.checkboxChecked : ''} ${revealed && isCorrect ? styles.checkboxCorrect : ''} ${revealed && isIncorrect ? styles.checkboxIncorrect : ''}`}
           aria-hidden="true"
         >
-          {(selected || (revealed && isCorrect)) ? '✓' : ''}
+          {(selected || (revealed && isCorrect)) && <IconCheck />}
         </span>
       ) : (
         <span className={styles.badge} aria-hidden="true">
@@ -138,18 +73,18 @@ export default function OptionCard({
         )}
         {showViBlock && (
           <span className={viClasses.join(' ')} aria-hidden={!showVi}>
-            {textVi}
+            <span className={styles.viInner}>{textVi}</span>
           </span>
         )}
       </span>
       {revealed && isCorrect && (
         <span className={styles.icon} aria-hidden="true">
-          ✓
+          <IconCheck />
         </span>
       )}
       {revealed && isIncorrect && (
         <span className={styles.icon} aria-hidden="true">
-          ✕
+          <IconX />
         </span>
       )}
     </button>

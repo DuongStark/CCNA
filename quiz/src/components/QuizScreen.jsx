@@ -4,76 +4,9 @@ import OptionCard from './OptionCard';
 import ExhibitImage from './ExhibitImage';
 import QuestionNav from './QuestionNav';
 import { getImagePath } from '../utils/dataLoader';
+import { splitIntoSegments } from '../utils/cliUtils';
+import { IconCheck, IconX, IconMenu, IconClose, IconCheckbox, IconArrowLeft } from '../icons';
 import styles from './QuizScreen.module.css';
-
-const CLI_PROMPT_RE = /^[\w.-]+(?:\([\w-]*\))?[>#]\s*/;  // hostname# or hostname(mode)#
-const CLI_OUTPUT_RE = /^(?:gigabitethernet|fastethernet|serial|vlan|loopback|tunnel|port-channel|hardware is|mtu \d|bw \d|encapsulation|arp type|last input|output queue|five minute|packets input|packets output|received \d|\d+ input|\d+ output|input errors|output errors|\s{2,}|\!|building config|current config|version \d|boot|interface |ip |no |router |spanning|switchport|access-list|vlan |hostname |description |line |crypto |aaa |snmp |ntp |logging |end$|!$)/i;
-
-function looksLikeCli(line) {
-  const trimmed = line.trim();
-  if (!trimmed) return false;
-  return CLI_PROMPT_RE.test(trimmed) || CLI_OUTPUT_RE.test(trimmed);
-}
-
-// A line is clearly prose (question text) if it's a full sentence ending with ? or .
-// or starts with common question words
-const PROSE_RE = /^(?:which|what|how|why|where|when|who|select|choose|an |a |the |this |that |these |if |given |based |refer |drag |place |match |\w.*\?$)/i;
-
-function splitIntoSegments(text) {
-  if (!text) return [];
-  const lines = text.split('\n');
-  const segments = [];
-  let buffer = [];
-  let bufferKind = null;
-  let inCliBlock = false;
-
-  const flush = () => {
-    if (!buffer.length) return;
-    // trim trailing blank lines from code blocks
-    if (bufferKind === 'cli') {
-      while (buffer.length && !buffer[buffer.length - 1].trim()) buffer.pop();
-    }
-    if (buffer.length) segments.push({ kind: bufferKind, text: buffer.join('\n') });
-    buffer = [];
-  };
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    // Once inside a CLI block, stay in it unless we hit a clear prose line
-    if (inCliBlock) {
-      const isClearProse = PROSE_RE.test(trimmed) && !looksLikeCli(line) && trimmed.length > 20;
-      if (isClearProse) {
-        inCliBlock = false;
-        flush();
-        bufferKind = 'prose';
-        buffer.push(line);
-      } else {
-        buffer.push(line);
-      }
-      continue;
-    }
-
-    // Detect start of CLI block
-    if (CLI_PROMPT_RE.test(trimmed)) {
-      inCliBlock = true;
-      flush();
-      bufferKind = 'cli';
-      buffer.push(line);
-      continue;
-    }
-
-    // Normal prose/cli detection
-    const kind = looksLikeCli(line) ? 'cli' : 'prose';
-    if (kind !== bufferKind) {
-      flush();
-      bufferKind = kind;
-    }
-    buffer.push(line);
-  }
-  flush();
-  return segments;
-}
 
 function QuestionBody({ text }) {
   const segments = useMemo(() => splitIntoSegments(text), [text]);
@@ -164,10 +97,6 @@ export default function QuizScreen({
     .map((f) => getImagePath(sourceId, question._topic || topicId, f))
     .filter(Boolean);
 
-  const hasCliOption = optionEntries.some(([, text]) =>
-    typeof text === "string" && text.includes("\n") && looksLikeCli(text.split("\n")[0])
-  );
-
   return (
     <div className={styles.layout}>
       {navOpen && (
@@ -184,7 +113,7 @@ export default function QuizScreen({
               onClick={() => setNavOpen(false)}
               aria-label="Đóng"
             >
-              ✕
+              <IconClose />
             </button>
             <QuestionNav
               total={total}
@@ -206,10 +135,11 @@ export default function QuizScreen({
               aria-label="Toggle question navigator"
               aria-expanded={navOpen}
             >
-              ≡
+              <IconMenu />
             </button>
             <button type="button" className={styles.exitButton} onClick={onExit}>
-              ← Thoát
+              <IconArrowLeft />
+              <span>Thoát</span>
             </button>
           </div>
           <div className={styles.meta}>
@@ -224,20 +154,20 @@ export default function QuizScreen({
         <article key={question._uid || question.id} className={styles.card}>
           <div className={styles.questionHeader}>
             <span className={styles.questionId}>#{question.id}</span>
+            {isMultiple && (
+              <span className={styles.multipleBanner} role="note">
+                <IconCheckbox />
+                <span>Chọn {correctSet.size} đáp án</span>
+                {!isRevealed && (
+                  <span className={styles.multipleCounter}>
+                    {selectedSet.size}/{correctSet.size}
+                  </span>
+                )}
+              </span>
+            )}
           </div>
 
           <QuestionBody text={question.question} />
-
-          {isMultiple && (
-            <div className={styles.multipleBanner} role="note">
-              <span aria-hidden="true">☑</span> Chọn {correctSet.size} đáp án đúng
-              {!isRevealed && (
-                <span className={styles.multipleCounter}>
-                  Đã chọn: {selectedSet.size}/{correctSet.size}
-                </span>
-              )}
-            </div>
-          )}
 
           {question.question_vi && (
             <div className={styles.translateBlock}>
@@ -261,7 +191,7 @@ export default function QuizScreen({
             <ExhibitImage key={src} src={src} alt={`Question exhibit ${i + 1}`} />
           ))}
 
-          <div className={`${styles.options}${hasCliOption ? " " + styles.optionsFull : ""}`}>
+          <div className={styles.options}>
             {optionEntries.map(([letter, text]) => {
               const isSelected = selectedSet.has(letter);
               const isCorrect = isRevealed && correctSet.has(letter);
@@ -292,7 +222,8 @@ export default function QuizScreen({
             >
               <div className={styles.explanationHeader}>
                 <span className={styles.explanationStatus}>
-                  {wasCorrect ? '✓ Đúng' : '✕ Sai'}
+                  {wasCorrect ? <IconCheck /> : <IconX />}
+                  <span>{wasCorrect ? 'Đúng' : 'Sai'}</span>
                 </span>
                 <span className={styles.explanationAnswer}>
                   Đáp án: <strong>{[...correctSet].sort().join('')}</strong>
@@ -329,7 +260,7 @@ export default function QuizScreen({
               onClick={onNext}
               autoFocus
             >
-              {index + 1 >= total ? 'Hoàn thành 🎉' : 'Câu tiếp theo'}
+              {index + 1 >= total ? 'Hoàn thành' : 'Câu tiếp theo'}
             </button>
           )}
           <span className={styles.shortcutHint}>
