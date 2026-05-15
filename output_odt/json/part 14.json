@@ -1613,30 +1613,20 @@
     },
     {
       "id": "14.76",
-      "type": "single",
-      "question": "Refer to the exhibit.\nSW_1#show vlan\nVLAN Name Status Ports\n1 default active Et0/2,Et1/0,Et1/0,Et1/3\n5 MGMT Vlan active Et1/1\n6 Server Vlan active\n72 Data Vlan active Et0/0\n1002 fddi-default act/unsup\n1003 token-ring-default act/unsup\n1004 fddinet-default act/unsup\n1005 trnet-default act/unsup\nVoIP is being implemented in the network using VLAN ID 73 and named “VoIP”. Each user needs a Cisco IP phone at their desk. Switchport e0/0 has been configured as an access port in the data VLAN. Cisco Discovery Protocol is enabled globally. Which command sequence completed the configuration?\nOption A\nvlan 73name VoIPe0/0switchport trunk allowed vlan 72,73switchport voice vlan 73\nOption B\nvlan 73name VoIPe0/0switchport mode trunkchannel-group 73 mode active\nOption C\nvlan 73name VoIPe0/0switchport voice vlan 73\nOption D\nvlan73name VoIPe0/0switchport voice vlan dot1p",
-      "question_images": [
-        "q14.76_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nSW_1#show vlan\nVLAN Name Status Ports\n1 default active Et0/2,Et1/0,Et1/0,Et1/3\n5 MGMT Vlan active Et1/1\n6 Server Vlan active\n72 Data Vlan active Et0/0\n1002 fddi-default act/unsup\n1003 token-ring-default act/unsup\n1004 fddinet-default act/unsup\n1005 trnet-default act/unsup\nVoIP is being implemented in the network using VLAN ID 73 and named “VoIP”. Each user needs a Cisco IP phone at their desk. Switchport e0/0 has been configured as an access port in the data VLAN. Cisco Discovery Protocol is enabled globally. Which command sequence completed the configuration?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "vlan 73name VoIPe0/0switchport trunk allowed vlan 72,73switchport voice vlan 73",
+        "B": "vlan 73name VoIPe0/0switchport mode trunkchannel-group 73 mode active",
+        "C": "vlan 73name VoIPe0/0switchport voice vlan 73",
+        "D": "vlan73name VoIPe0/0switchport voice vlan dot1p"
       },
-      "answer": [
-        "C"
-      ],
+      "answer": "C",
       "answer_images": [],
-      "explanation": "The voice VLAN feature enables access ports to carry IP voice traffic from an IP phone.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nSW_1#show vlan\nVLAN Name Status Ports\n1 default active Et0/2,Et1/0,Et1/0,Et1/3\n5 MGMT Vlan active Et1/1\n6 Server Vlan active\n72 Data Vlan active Et0/0\n1002 fddi-default act/unsup\n1003 token-ring-default act/unsup\n1004 fddinet-default act/unsup\n1005 trnet-default act/unsup\nVoIP đang được triển khai trong mạng sử dụng VLAN ID 73 và đặt tên là \"VoIP\". Mỗi người dùng cần một điện thoại IP Cisco tại bàn làm việc. Switchport e0/0 đã được cấu hình là cổng access trong VLAN dữ liệu. Cisco Discovery Protocol được bật toàn cục. Chuỗi lệnh nào hoàn thành cấu hình?\nOption A\nvlan 73name VoIPe0/0switchport trunk allowed vlan 72,73switchport voice vlan 73\nOption B\nvlan 73name VoIPe0/0switchport mode trunkchannel-group 73 mode active\nOption C\nvlan 73name VoIPe0/0switchport voice vlan 73\nOption D\nvlan73name VoIPe0/0switchport voice vlan dot1p",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. VLAN Tên Trạng thái Cổng 1 default active Et0/2,Et1/0,Et1/0,Et1/3 5 MGMT Vlan active Et1/1 6 Server Vlan active 72 Data Vlan active Et0/0 1002 fddi-default act/unsup 1003 token-ring-default act/unsup 1004 fddinet-default act/unsup 1005 trnet-default act/unsup VoIP đang được triển khai trong mạng sử dụng VLAN ID 73 và được đặt tên là \"VoIP\". Mỗi người dùng cần một điện thoại IP Cisco tại bàn làm việc của họ. Cổng switchport e0/0 đã được cấu hình là cổng access trong VLAN dữ liệu. Cisco Discovery Protocol được bật toàn cục. Chuỗi lệnh nào đã hoàn tất cấu hình?",
+      "options_vi": {}
     },
     {
       "id": "14.77",
@@ -1979,58 +1969,37 @@
     },
     {
       "id": "14.94",
-      "type": "single",
-      "question": "Refer to the exhibit.\nThe engineer configured the VLANs on the new AccSw2 switch. A router on-a-stick is connected to both switches. How must the ports be configured on AccSw2 to establish full connectivity between the two switches and for Server1?\nOption A\ninterface GigabitEthernet1/3switchport mode accessswitchport access vlan 10!interface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 2,10\nOption B\ninterface GigabitEthernet1/3switchport mode accessswitchport access vlan 10!interface GigabitEthernet1/24switchport mode trunk\nOption C\ninterface GigabitEthernet1/1switchport mode accessswitchport access vlan 11!interface GigabitEthernet1/24switchport mode trunk\nOption D\ninterface GigabitEthernet1/1switchport access vlan 11!interface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 10,11",
-      "question_images": [
-        "q14.94_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nThe engineer configured the VLANs on the new AccSw2 switch. A router on-a-stick is connected to both switches. How must the ports be configured on AccSw2 to establish full connectivity between the two switches and for Server1?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "interface GigabitEthernet1/3switchport mode accessswitchport access vlan 10\n!\ninterface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 2,10",
+        "B": "interface GigabitEthernet1/3switchport mode accessswitchport access vlan 10\n!\ninterface GigabitEthernet1/24switchport mode trunk",
+        "C": "interface GigabitEthernet1/1switchport mode accessswitchport access vlan 11\n!\ninterface GigabitEthernet1/24switchport mode trunk",
+        "D": "interface GigabitEthernet1/1switchport access vlan 11\n!\ninterface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 10,11"
       },
-      "answer": [
-        "B"
-      ],
+      "answer": "B",
       "answer_images": [],
-      "explanation": null,
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nKỹ sư đã cấu hình các VLAN trên switch AccSw2 mới. Một router on-a-stick được kết nối đến cả hai switch. Các cổng trên AccSw2 phải được cấu hình như thế nào để thiết lập kết nối đầy đủ giữa hai switch và cho Server1?\nOption A\ninterface GigabitEthernet1/3switchport mode accessswitchport access vlan 10!interface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 2,10\nOption B\ninterface GigabitEthernet1/3switchport mode accessswitchport access vlan 10!interface GigabitEthernet1/24switchport mode trunk\nOption C\ninterface GigabitEthernet1/1switchport mode accessswitchport access vlan 11!interface GigabitEthernet1/24switchport mode trunk\nOption D\ninterface GigabitEthernet1/1switchport access vlan 11!interface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 10,11",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Kỹ sư đã cấu hình các VLAN trên switch AccSw2 mới. Một router on-a-stick được kết nối với cả hai switch. Các cổng trên AccSw2 phải được cấu hình như thế nào để thiết lập kết nối đầy đủ giữa hai switch và cho Server1?",
+      "options_vi": {}
     },
     {
       "id": "14.95",
-      "type": "multi",
-      "question": "A network administrator is evaluating network security in the aftermath of an attempted ARP spoofing attack. If Port-channel1 is the uplink interface of the access-layer switch toward the distribution-layer switch, which two configurations must the administrator configure on the access-layer switch to provide adequate protection? (Choose two)\nOption A\nip dhcp snooping!interface Port-channel1switchport port-security maximum 1switchport port-security\nOption B\nip dhcp snooping vlan 1-4094ip dhcp snooping!interface Port-channel1ip dhcp snooping trust\nOption C\nip dhcp snooping vlan 1-4094!interface Port-channel1switchport protectedswitchport port-security maximum 1\nOption D\nip arp inspection trust!interface Port-channel1switchport port-security maximum 4094switchport port-securityip verify source mac-check\nOption E\nip arp inspection vlan 1-4094!interface Port-channel1ip arp inspection trust",
+      "question": "A network administrator is evaluating network security in the aftermath of an attempted ARP spoofing attack. If Port-channel1 is the uplink interface of the access-layer switch toward the distribution-layer switch, which two configurations must the administrator configure on the access-layer switch to provide adequate protection? (Choose two)",
       "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D",
-        "E": "E."
+        "A": "ip dhcp snooping\n!\ninterface Port-channel1switchport port-security maximum 1switchport port-security",
+        "B": "ip dhcp snooping vlan 1-4094\nip dhcp snooping\n!\ninterface Port-channel1\nip dhcp snooping trust",
+        "C": "ip dhcp snooping vlan 1-4094\n!\ninterface Port-channel1switchport protectedswitchport port-security maximum 1",
+        "D": "ip arp inspection trust\n!\ninterface Port-channel1switchport port-security maximum 4094switchport port-security\nip verify source mac-check\nOption E\nip arp inspection vlan 1-4094\n!\ninterface Port-channel1\nip arp inspection trust"
       },
-      "answer": [
-        "B",
-        "E"
-      ],
+      "answer": "B",
       "answer_images": [],
-      "explanation": "We need to configure the uplink (Po1) to the distribution switch in “trust” state.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Một quản trị viên mạng đang đánh giá bảo mật mạng sau một cuộc tấn công ARP spoofing. Nếu Port-channel1 là interface uplink của switch lớp truy cập (access-layer) hướng đến switch lớp phân phối (distribution-layer), hai cấu hình nào quản trị viên phải cấu hình trên switch lớp truy cập để cung cấp bảo vệ đầy đủ? (Chọn hai)\nOption A\nip dhcp snooping!interface Port-channel1switchport port-security maximum 1switchport port-security\nOption B\nip dhcp snooping vlan 1-4094ip dhcp snooping!interface Port-channel1ip dhcp snooping trust\nOption C\nip dhcp snooping vlan 1-4094!interface Port-channel1switchport protectedswitchport port-security maximum 1\nOption D\nip arp inspection trust!interface Port-channel1switchport port-security maximum 4094switchport port-securityip verify source mac-check\nOption E\nip arp inspection vlan 1-4094!interface Port-channel1ip arp inspection trust",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D",
-        "E": "E."
-      }
+      "question_vi": "Một quản trị viên mạng đang đánh giá bảo mật mạng sau một cuộc tấn công ARP spoofing. Nếu Port-channel1 là giao diện uplink của switch tầng truy cập hướng đến switch tầng phân phối, thì quản trị viên phải cấu hình hai tùy chọn nào trên switch tầng truy cập để cung cấp khả năng bảo vệ đầy đủ? (Chọn hai)",
+      "options_vi": {}
     },
     {
       "id": "14.96",
@@ -2194,30 +2163,20 @@
     },
     {
       "id": "14.102",
-      "type": "single",
-      "question": "Refer to the exhibit.\nWhich configuration enables SW2 to establish an LACP EtherChannel?\nOption A\nSW2(config)#interface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode desirableSW2(config-if)#interface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode desirable\nOption B\nSW2(config)#interface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode activeSW2(config-if)#interface gigabitEthernet0/2SW2(config-if)#channel-group 1 mode active\nOption C\nSW2(config)#interface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode onSW2(config-if)#interface glgabitEthernet0/2SW2(config-if)#channel-group 1 mode on\nOption D\nSW2(config interface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode autoSW2(config-if)#interface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode auto",
-      "question_images": [
-        "q14.102_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nWhich configuration enables SW2 to establish an LACP EtherChannel?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "SW2(config)#\ninterface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode desirableSW2(config-if)#\ninterface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode desirable",
+        "B": "SW2(config)#\ninterface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode activeSW2(config-if)#\ninterface gigabitEthernet0/2SW2(config-if)#channel-group 1 mode active",
+        "C": "SW2(config)#\ninterface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode onSW2(config-if)#\ninterface glgabitEthernet0/2SW2(config-if)#channel-group 1 mode on",
+        "D": "SW2(config \ninterface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode autoSW2(config-if)#\ninterface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode auto"
       },
-      "answer": [
-        "B"
-      ],
+      "answer": "B",
       "answer_images": [],
-      "explanation": "The Etherchannel group numbers are only locally significant and can be different on two ends.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào cho phép SW2 thiết lập LACP EtherChannel?\nOption A\nSW2(config)#interface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode desirableSW2(config-if)#interface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode desirable\nOption B\nSW2(config)#interface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode activeSW2(config-if)#interface gigabitEthernet0/2SW2(config-if)#channel-group 1 mode active\nOption C\nSW2(config)#interface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode onSW2(config-if)#interface glgabitEthernet0/2SW2(config-if)#channel-group 1 mode on\nOption D\nSW2(config interface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode autoSW2(config-if)#interface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode auto",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Cấu hình nào cho phép SW2 thiết lập EtherChannel LACP?",
+      "options_vi": {}
     },
     {
       "id": "14.103",

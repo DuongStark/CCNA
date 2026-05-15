@@ -1,5 +1,5 @@
 {
-  "count": 70,
+  "count": 66,
   "questions": [
     {
       "id": "5.3",
@@ -70,31 +70,6 @@
         "B": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq scp",
         "C": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq telnet",
         "D": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq https"
-      }
-    },
-    {
-      "id": "5.29",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAn access list is required to permit traffic from any host on interface G0/0 and deny traffic from interface Gi0/1. Which access list must be applied?",
-      "question_images": [
-        "q5.29_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "A"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nMột access list được yêu cầu để cho phép lưu lượng từ bất kỳ máy chủ nào trên giao diện G0/0 và từ chối lưu lượng từ giao diện Gi0/1. Access list nào phải được áp dụng?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -187,29 +162,6 @@
         "B": "sinh trắc học (biometrics)",
         "C": "kiểm soát truy cập dựa trên vai trò (role-based access control)",
         "D": "xác thực đa yếu tố (multifactor authentication)"
-      }
-    },
-    {
-      "id": "6.2",
-      "type": "single",
-      "question": "A network administrator must to configure SSH for remote access to router R1. The requirement is to use a public and private key pair to encrypt management traffic to and from the connecting client. Which configuration, when applied, meets the requirements?",
-      "question_images": [],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "B"
-      ],
-      "answer_images": [],
-      "question_vi": "Một quản trị viên mạng cần cấu hình SSH để truy cập từ xa đến router R1. Yêu cầu là sử dụng cặp khóa công khai và khóa riêng tư để mã hóa lưu lượng quản lý đến và đi từ máy khách kết nối. Cấu hình nào, khi được áp dụng, đáp ứng các yêu cầu?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -686,29 +638,6 @@
         "B": "Telnet",
         "C": "SSH",
         "D": "HTTPS"
-      }
-    },
-    {
-      "id": "8.77",
-      "type": "single",
-      "question": "A Cisco engineer is configuring a factory-default router with these three passwords:\n* The user EXEC password for console access is p4ssw0rd1.\n* The user EXEC password for Telnet access is s3cr3t2.\n* The password for privileged EXEC mode is priv4t3p4ss.\nWhich command sequence must the engineer configure?",
-      "question_images": [],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "A"
-      ],
-      "answer_images": [],
-      "question_vi": "Một kỹ sư Cisco đang cấu hình một router mặc định từ nhà máy với ba mật khẩu sau:\n* Mật khẩu user EXEC cho truy cập console là p4ssw0rd1.\n* Mật khẩu user EXEC cho truy cập Telnet là s3cr3t2.\n* Mật khẩu cho chế độ privileged EXEC là priv4t3p4ss.\nChuỗi lệnh nào kỹ sư phải cấu hình?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -1327,29 +1256,6 @@
         "B": "Là khi một lỗ hổng mạng mới được phát hiện trước khi có bản vá.",
         "C": "Là khi thủ phạm chèn mình vào cuộc hội thoại giữa hai bên và chặn bắt hoặc thay đổi dữ liệu.",
         "D": "Là khi mạng bị bão hòa bởi lưu lượng độc hại làm quá tải tài nguyên và băng thông."
-      }
-    },
-    {
-      "id": "10.32",
-      "type": "single",
-      "question": "After a recent security breach and a RADIUS failure, an engineer must secure the console port of each enterprise router with a local username and password. Which configuration must the engineer apply to accomplish this task?",
-      "question_images": [],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "B"
-      ],
-      "answer_images": [],
-      "question_vi": "Sau một sự cố bảo mật gần đây và lỗi RADIUS, kỹ sư phải bảo mật cổng console của mỗi router doanh nghiệp bằng tên người dùng và mật khẩu cục bộ. Cấu hình nào kỹ sư phải áp dụng để hoàn thành nhiệm vụ này?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {

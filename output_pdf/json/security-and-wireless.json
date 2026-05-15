@@ -122,7 +122,9 @@
       ],
       "answer_images": [],
       "explanation": "We tested it with IOS v15.2 and this is the result:\nWe can see the “Maximum MAC Addresses” is 1 so this port will be put in the err-disabled state if\nit learns more than one MAC address.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_2_img_0.jpeg"
+      ],
       "question_vi": "Hành vi mặc định của port-security trên một trunk link là gì?",
       "options_vi": {
         "A": "Nó gây ra vòng lặp mạng (network loop) khi xảy ra vi phạm.",
@@ -136,7 +138,9 @@
       "source_id": "42",
       "type": "multi",
       "question": "Refer to the exhibit.\nA network engineer started to configure port security on a new switch. These requirements must\nbe met:\n– MAC addresses must be learned dynamically.\n– Log messages must be generated without disabling the interface when unwanted traffic is seen.\nWhich two commands must be configured to complete this task? (Choose two)",
-      "question_images": [],
+      "question_images": [
+        "page_3_img_1.jpeg"
+      ],
       "options": {
         "A": "SW(config-if)#switchport port-security mac-address 0010.7B84.45E6",
         "B": "SW(config-if)#switchport port-security maximum 2",
@@ -165,7 +169,9 @@
       "source_id": "59",
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer must configure the interface that connects to PC1 and secure it in a way that only PC1\nis allowed to use the port. No VLAN tagging can be used except for a voice VLAN. Which command\nsequence must be entered to configure the switch?",
-      "question_images": [],
+      "question_images": [
+        "page_4_img_2.jpeg"
+      ],
       "options": {
         "A": "SW1(config-if)#switchport mode nonegotiate\nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security maximum 1",
         "B": "SW1(config-if)#switchport mode access\nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800",
@@ -203,7 +209,9 @@
       ],
       "answer_images": [],
       "explanation": "We tested the port-security configuration under Web-IOU with IOSv15.2 but there is no “vlan\nvoice” keyword:\nBut in this Cisco link, we can find such command:\nDevice(config-if)# switchport port-security mac-address 0000.0000.0004 vlan voice\nSo we believe answer D is the best choice.\nAccess-list Questions",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_5_img_3.jpeg"
+      ],
       "question_vi": "Một kỹ sư đang cấu hình một switch port kết nối với điện thoại VoIP. Lệnh nào kỹ sư phải cấu hình để bật port security với MAC address được gán thủ công là abcd.abcd.abcd trên voice VLAN 4?",
       "options_vi": {
         "A": "switchport port-security mac-address abcd.abcd.abcd",
@@ -217,7 +225,9 @@
       "source_id": "2",
       "type": "multi",
       "question": "Refer to the exhibit. An extended ACL has been configured and applied to router R2. The\nconfiguration failed to work as intended. Which two changes stop outbound traffic on TCP ports 25\nand 80 to 10.0.20.0/26 from the 10.0.10.0/26 subnet while still allowing all other traffic? (Choose\ntwo)\nR2#config t\nR2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq smtp\nR2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq www\nR2(config)#int gi0/2\nR2(config-if)#ip access-group 101 in",
-      "question_images": [],
+      "question_images": [
+        "page_6_img_5.jpeg"
+      ],
       "options": {
         "A": "Add a “permit ip any any” statement to the beginning of ACL 101 for allowed traffic",
         "B": "Add a “permit ip any any” statement at the end of ACL 101 for allowed traffic",
@@ -274,8 +284,10 @@
       "id": "11",
       "source_id": "24",
       "type": "single",
-      "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate all addresses in\nVLAN 200 while allowing devices on VLAN 100 to use their own IP addresses?\nOption A Option B\nRouter1(config)#access-list 99 permit Router1(config)#access-list 99 permit\n209.165.201.2 0.0.0.0 209.165.201.2 255.255.255.255\nRouter1(config)#ip nat inside source list 99 Router1(config)#ip nat inside source list 99\ninterface gi1/0/0 overload interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200 Router1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside Router1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0 Router1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside Router1(config)#ip nat outside\nOption C Option D\nRouter1(config)#access-list 99 permit Router1(config)#access-list 99 permit\n192.168.100.0 0.0.0.255 192.168.100.32 0.0.0.31\nRouter1(config)#ip nat inside source list 99 Router1(config)#ip nat inside source list 99\ninterface gi1/0/0 overload interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200 Router1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside Router1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0 Router1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside Router1(config)#ip nat outside",
-      "question_images": [],
+      "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate all addresses in\nVLAN 200 while allowing devices on VLAN 100 to use their own IP addresses?",
+      "question_images": [
+        "options_q11.png"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -290,10 +302,10 @@
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nCấu hình nào trên router cấu hình PAT để dịch tất cả địa chỉ trong VLAN 200 trong khi cho phép các thiết bị trên VLAN 100 sử dụng địa chỉ IP của chính chúng?\nOption A Option B\nRouter1(config)#access-list 99 permit Router1(config)#access-list 99 permit\n209.165.201.2 0.0.0.0 209.165.201.2 255.255.255.255\nRouter1(config)#ip nat inside source list 99 Router1(config)#ip nat inside source list 99\ninterface gi1/0/0 overload interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200 Router1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside Router1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0 Router1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside Router1(config)#ip nat outside\nOption C Option D\nRouter1(config)#access-list 99 permit Router1(config)#access-list 99 permit\n192.168.100.0 0.0.0.255 192.168.100.32 0.0.0.31\nRouter1(config)#ip nat inside source list 99 Router1(config)#ip nat inside source list 99\ninterface gi1/0/0 overload interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200 Router1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside Router1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0 Router1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside Router1(config)#ip nat outside",
       "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
       }
     },
     {
@@ -301,7 +313,9 @@
       "source_id": "4",
       "type": "single",
       "question": "Refer to the exhibit. What configuration on R1 denies SSH access from PC-1 to any R1 interface\nand allows all other traffic?",
-      "question_images": [],
+      "question_images": [
+        "page_8_img_7.jpeg"
+      ],
       "options": {
         "A": "access-list 100 deny tcp host 172.16.1.33 any eq 22\naccess-list 100 permit ip any any\nline vty 0 15\naccess-class 100 in",
         "B": "access-list 100 deny tcp host 172.16.1.33 any eq 22\naccess-list 100 permit ip any any\ninterface GigabitEthernet0/0\nip access-group 100 in",
@@ -327,7 +341,9 @@
       "source_id": "5",
       "type": "single",
       "question": "Refer to the exhibit. An administrator configures the following ACL in order to prevent devices on\nthe 192.168.1.0 subnet from accessing the server at 10.1.1.5:\naccess-list 100 deny ip 192.168.1.0 0.0.0.255 host 10.1.1.5\naccess-list 100 permit ip any any\nWhere should the administrator place this ACL for the most efficient use of network resources?",
-      "question_images": [],
+      "question_images": [
+        "page_9_img_8.jpeg"
+      ],
       "options": {
         "A": "inbound on router A Fa0/0",
         "B": "outbound on router B Fa0/0",
@@ -353,7 +369,9 @@
       "source_id": "6",
       "type": "multi",
       "question": "Refer to the exhibit. Which two configurations would be used to create and apply a standard\naccess list on R1, so that only the 10.0.70.0/25 network devices are allowed to access the internal\ndatabase server? (Choose two)",
-      "question_images": [],
+      "question_images": [
+        "page_10_img_9.jpeg"
+      ],
       "options": {
         "A": "R1(config)# interface GigabitEthernet0/0\nR1(config-if)# ip access-group 5 out",
         "B": "R1(config)# access-list 5 permit 10.0.54.0 0.0.1.255",
@@ -408,7 +426,9 @@
       "source_id": "13",
       "type": "single",
       "question": "Refer to the exhibit. A network administrator has been tasked with securing VTY access to a\nrouter. Which access-list entry accomplishes this task?",
-      "question_images": [],
+      "question_images": [
+        "page_11_img_10.jpeg"
+      ],
       "options": {
         "A": "access-list 101 permit tcp 10.1.10.0 0.0.0.255 172.16.10.0 0.0.0.255 eq ssh",
         "B": "access-list 101 permit tcp 10.11.0.0 0.0.0.255 172.16.10.0 0.0.0.255 eq scp",
@@ -433,8 +453,10 @@
       "id": "17",
       "source_id": "28",
       "type": "single",
-      "question": "Refer to the exhibit.\nOption A Option B\nip access-list standard 99 ip access-list standard 99\npermit 10.100.100.0 permit 10.100.100.0\n0.0.0.255 0.0.0.255\ndeny 192.168.0.0 deny 192.168.0.0\n0.0.255.255 0.255.255.255\nOption C Option D\nip access-list standard 100 ip access-list standard 199\npermit 10.100.100.0 permit 10.100.100.0\n0.0.0.255 0.0.0.255\ndeny 192.168.0.0 deny 192.168.0.0\n0.255.255.255 0.0.255.255\nAn access list is required to permit traffic from any host on interface G0/0 and deny traffic from\ninterface Gi0/1. Which access list must be applied?",
-      "question_images": [],
+      "question": "Refer to the exhibit.",
+      "question_images": [
+        "options_q17.png"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -449,10 +471,10 @@
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nOption A Option B\nip access-list standard 99 ip access-list standard 99\npermit 10.100.100.0 permit 10.100.100.0\n0.0.0.255 0.0.0.255\ndeny 192.168.0.0 deny 192.168.0.0\n0.0.255.255 0.255.255.255\nOption C Option D\nip access-list standard 100 ip access-list standard 199\npermit 10.100.100.0 permit 10.100.100.0\n0.0.0.255 0.0.0.255\ndeny 192.168.0.0 deny 192.168.0.0\n0.255.255.255 0.0.255.255\nMột access list được yêu cầu để cho phép traffic từ bất kỳ host nào trên interface G0/0 và từ chối traffic từ interface Gi0/1. Access list nào phải được áp dụng?",
       "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
       }
     },
     {
@@ -460,7 +482,9 @@
       "source_id": "34",
       "type": "single",
       "question": "Refer to the exhibit.\nAn access list is created to deny Telnet access from host PC-1 to RTR-1 and allow access from all\nother hosts. A Telnet attempt from PC-2 gives this message:”% Connection refused by remote\nhost”.\nWithout allowing Telnet access from PC-1, which action must be taken to permit the traffic?",
-      "question_images": [],
+      "question_images": [
+        "page_13_img_12.jpeg"
+      ],
       "options": {
         "A": "Add the access-list 10 permit any command to the configuration",
         "B": "Remove the access-class 10 in command from line vty 0 4.",
@@ -886,7 +910,9 @@
       ],
       "answer_images": [],
       "explanation": "Badge reader is a small, inexpensive reader connected to the USB port of any PC, which can read\nthe information encoded on a badge (barcode, microchip or RFID, magnetic stripe) and restore it\non any computer software. An example of badge reader is shown below:\nThe purpose of access control is to grant entrance to a building or office only to those who are\nauthorized to be there.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_20_img_14.jpeg"
+      ],
       "question_vi": "Yếu tố chương trình bảo mật nào liên quan đến việc lắp đặt đầu đọc thẻ (badge reader) trên cửa trung tâm dữ liệu để cho phép nhân viên ra vào dựa trên vai trò công việc của họ?",
       "options_vi": {
         "A": "Kiểm soát truy cập vật lý (physical access control)",
@@ -900,7 +926,9 @@
       "source_id": "2",
       "type": "single",
       "question": "A network administrator must to configure SSH for remote access to router R1. The requirement is\nto use a public and private key pair to encrypt management traffic to and from the connecting\nclient. Which configuration, when applied, meets the requirements?\nA.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate ec keysize 1024\nB.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate rsa modulus 1024\nC.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate ec keysize 2048\nD.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key encrypt rsa name myKey",
-      "question_images": [],
+      "question_images": [
+        "options_q35.png"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -915,10 +943,10 @@
       "explanation_images": [],
       "question_vi": "Một quản trị viên mạng phải cấu hình SSH để remote access đến router R1. Yêu cầu là sử dụng cặp khóa public và private để mã hóa management traffic đến và từ client kết nối. Cấu hình nào đáp ứng yêu cầu?\nA.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate ec keysize 1024\nB.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate rsa modulus 1024\nC.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate ec keysize 2048\nD.\nR1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key encrypt rsa name myKey",
       "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
       }
     },
     {
@@ -964,7 +992,9 @@
       ],
       "answer_images": [],
       "explanation": "VLAN Hopping: By altering the VLAN ID on packets encapsulated for trunking, an attacking\ndevice can send or receive packets on various VLANs, bypassing Layer 3 security measures. VLAN\nhopping can be accomplished by switch spoofing or double tagging.\na. Switch spoofing:\nThe attacker can connect an unauthorized Cisco switch to a Company switch port. The\nunauthorized switch can send DTP frames and form a trunk with the Company Switch. If the\nattacker can establish a trunk link to the Company switch, it receives traffic to all VLANs through\nthe trunk because all VLANs are allowed on a trunk by default.\n(Instead of using a Cisco Switch, the attacker can use a software to create and send DTP frames).\nTo mitigate this type of attack, we can disable DTP.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_21_img_15.jpeg"
+      ],
       "question_vi": "Các cuộc tấn công VLAN hopping được giảm thiểu như thế nào?",
       "options_vi": {
         "A": "Cấu hình thủ công các trunk port và tắt DTP",
@@ -1204,7 +1234,9 @@
       ],
       "answer_images": [],
       "explanation": "A site-to-site VPN allows offices in multiple fixed locations to establish secure connections with\neach other over a public network such as the Internet. A site-to-site VPN means that two sites\ncreate a VPN tunnel by encrypting and sending data between two devices. One set of rules for\ncreating a site-to-site VPN is defined by IPsec.\nIn the topology above, Remote Campus sites can connect to the Main Campus through site-to-site\nVPNs.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_25_img_17.jpeg"
+      ],
       "question_vi": "Khi sử dụng site-to-site VPN, giao thức nào chịu trách nhiệm truyền tải dữ liệu người dùng?",
       "options_vi": {
         "A": "IKEv2",
@@ -1525,7 +1557,9 @@
       ],
       "answer_images": [],
       "explanation": "VLAN Hopping: By altering the VLAN ID on packets encapsulated for trunking, an attacking\ndevice can send or receive packets on various VLANs, bypassing Layer 3 security measures. VLAN\nhopping can be accomplished by switch spoofing or double tagging. One of a popular type of VLAN\nHopping is\nDouble-Tagging attack:\nIn this attack, the attacking computer generates frames with two 802.1Q tags. The first tag\nmatches the native VLAN of the trunk port (VLAN 10 in this case), and the second matches the\nVLAN of a host it wants to attack (VLAN 20).\nWhen the packet from the attacker reaches Switch A, Switch A only sees the first VLAN 10 and it\nmatches with its native VLAN 10 so this VLAN tag is removed. Switch A forwards the frame out all\nlinks with the same native VLAN 10. Switch B receives the frame with an tag of VLAN 20 so it\nremoves this tag and forwards out to the Victim computer.\nNote: This attack only works if the trunk (between two switches) has the same native VLAN as the\nattacker. In other words, this attack is only successful if the attacker belongs to the native VLAN of\nthe trunk link. Another important point is, this attack is strictly one way as it is impossible to\nencapsulate the return packet.\nTo mitigate this type of attack, we can use VLAN access control lists (VACLs, which applies to all\ntraffic within a VLAN. We can use VACL to drop attacker traffic to specific victims/servers); or\nimplement Private VLANs; or keep the native VLAN of all trunk ports different from user VLANs.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_37_img_22.jpeg"
+      ],
       "question_vi": "Biện pháp nào bảo vệ mạng khỏi tấn công VLAN hopping?",
       "options_vi": {
         "A": "Đổi native VLAN sang một VLAN ID không sử dụng",
@@ -1645,8 +1679,10 @@
       "id": "63",
       "source_id": "77",
       "type": "single",
-      "question": "A Cisco engineer is configuring a factory-default router with these three passwords:\n* The user EXEC password for console access is p4ssw0rd1.\n* The user EXEC password for Telnet access is s3cr3t2.\n* The password for privileged EXEC mode is priv4t3p4ss.\nWhich command sequence must the engineer configure?\nOption A Option B\nenable secret priv4t3p4ss enable secret privilege 15\n! priv4t3p4ss\nline con 0 !\npassword p4ssw0rd1 line con 0\nlogin password p4ssw0rdi\n! login\nline vty 0 15 !\npassword s3cr3t2 line vty 0 15\nlogin password s3cr3t2\nlogin\nOption C Option D\nenable secret priv413p4ss enable secret priv4t3p4ss\n! !\nline con 0 line con 0\npassword login p4ssw0rd1 password p4ssw0rd1\n! !\nline vty 0 15 line vty 0 15\npassword login s3cr3t2 password s3cr3t2\nlogin",
-      "question_images": [],
+      "question": "A Cisco engineer is configuring a factory-default router with these three passwords:\n* The user EXEC password for console access is p4ssw0rd1.\n* The user EXEC password for Telnet access is s3cr3t2.\n* The password for privileged EXEC mode is priv4t3p4ss.\nWhich command sequence must the engineer configure?",
+      "question_images": [
+        "options_q63.png"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -1661,10 +1697,10 @@
       "explanation_images": [],
       "question_vi": "Một kỹ sư Cisco đang cấu hình một router mặc định nhà máy với ba mật khẩu sau:\n* Mật khẩu user EXEC cho truy cập console là p4ssw0rd1.\n* Mật khẩu user EXEC cho truy cập Telnet là s3cr3t2.\n* Mật khẩu cho privileged EXEC mode là priv4t3p4ss.\nChuỗi lệnh nào kỹ sư phải cấu hình?\nOption A Option B\nenable secret priv4t3p4ss enable secret privilege 15\n! priv4t3p4ss\nline con 0 !\npassword p4ssw0rd1 line con 0\nlogin password p4ssw0rdi\n! login\nline vty 0 15 !\npassword s3cr3t2 line vty 0 15\nlogin password s3cr3t2\nlogin\nOption C Option D\nenable secret priv413p4ss enable secret priv4t3p4ss\n! !\nline con 0 line con 0\npassword login p4ssw0rd1 password p4ssw0rd1\n! !\nline vty 0 15 line vty 0 15\npassword login s3cr3t2 password s3cr3t2\nlogin",
       "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
       }
     },
     {
@@ -1724,7 +1760,9 @@
       "source_id": "90",
       "type": "multi",
       "question": "Refer to the exhibit.\nWhich two commands must be added to update the configuration of router R1 so that it accepts\nonly encrypted connections? (Choose two)",
-      "question_images": [],
+      "question_images": [
+        "page_33_img_20.jpeg"
+      ],
       "options": {
         "A": "username CNAC secret R!41!4319115@",
         "B": "crypto key generate rsa 1024",
@@ -1832,7 +1870,9 @@
       "source_id": "122",
       "type": "single",
       "question": "Refer to the exhibit.\nWhich minimum configuration items are needed to enable Secure Shell version 2 access to R15?",
-      "question_images": [],
+      "question_images": [
+        "page_35_img_21.jpeg"
+      ],
       "options": {
         "A": "Router(config)#hostname R15\nR15(config)#crypto key generate rsa general-keys modulus 1024\nR15(config-line)#line vty 0 15\nR15(config-line)# transport input ssh\nR15(config)#ip ssh source-interface Fa0/0\nR15(config)#ip ssh stricthostkeycheck",
         "B": "Router(config)#ip domain-name cisco.com\nRouter(config)#crypto key generate rsa general-keys modulus 1024\nRouter(config)#ip ssh version 2\nRouter(config-line)#line vty 0 15\nRouter(config-line)# transport input all\nRouter(config)#ip ssh logging events",
@@ -2033,7 +2073,9 @@
       ],
       "answer_images": [],
       "explanation": "VLAN Hopping: By altering the VLAN ID on packets encapsulated for trunking, an attacking\ndevice can send or receive packets on various VLANs, bypassing Layer 3 security measures. VLAN\nhopping can be accomplished by switch spoofing or double tagging. One of a popular type of VLAN\nHopping is\nDouble-Tagging attack:\nIn this attack, the attacking computer generates frames with two 802.1Q tags. The first tag\nmatches the native VLAN of the trunk port (VLAN 10 in this case), and the second matches the\nVLAN of a host it wants to attack (VLAN 20).\nWhen the packet from the attacker reaches Switch A, Switch A only sees the first VLAN 10 and it\nmatches with its native VLAN 10 so this VLAN tag is removed. Switch A forwards the frame out all\nlinks with the same native VLAN 10. Switch B receives the frame with an tag of VLAN 20 so it\nremoves this tag and forwards out to the Victim computer.\nNote: This attack only works if the trunk (between two switches) has the same native VLAN as the\nattacker. In other words, this attack is only successful if the attacker belongs to the native VLAN of\nthe trunk link. Another important point is, this attack is strictly one way as it is impossible to\nencapsulate the return packet.\nTo mitigate this type of attack, we can use VLAN access control lists (VACLs, which applies to all\ntraffic within a VLAN. We can use VACL to drop attacker traffic to specific victims/servers); or\nimplement Private VLANs; or keep the native VLAN of all trunk ports different from user VLANs.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_37_img_22.jpeg"
+      ],
       "question_vi": "Biện pháp nào bảo vệ mạng khỏi tấn công VLAN hopping?",
       "options_vi": {
         "A": "Triển khai port security trên các VLAN hướng internet.",
@@ -2286,8 +2328,10 @@
       "id": "87",
       "source_id": "69",
       "type": "single",
-      "question": "Refer to the exhibit.\nLocal access for R4 must be established and these requirements must be met:\n– Only Telnet access is allowed.\n– The enable password must be stored securely.\n– The enable password must be applied in plain text\n– Full access to R4 must be permitted upon successful login\nWhich configuration script meets the requirements?\nOption A Option B\n! conf t\nconf t !\n! username test1 password\nusername test1 password testpass1\ntestpass1 enable secret level 15 0 Test123\nenable password level 1 7 !\nTest123 line vty 0 15\n! login local\nline vty 0 15 transport input telnet\naccounting exec default\ntransport input all\nOption C Option D\n! !\nconfig t config t\n! !\nusername test1 password username test1 password\ntestpass1 testpass1\nenable secret level 1 0 Test123 enable password level 15 0\n! Test123\nline vty 0 15 !\nlogin authentication line vty 0 15\npassword Test123 password Test123\ntransport input telnet transport input all",
-      "question_images": [],
+      "question": "Refer to the exhibit.\nLocal access for R4 must be established and these requirements must be met:\n– Only Telnet access is allowed.\n– The enable password must be stored securely.\n– The enable password must be applied in plain text\n– Full access to R4 must be permitted upon successful login\nWhich configuration script meets the requirements?",
+      "question_images": [
+        "options_q87.png"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -2302,10 +2346,10 @@
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nPhải thiết lập quyền truy cập cục bộ cho R4 và các yêu cầu sau phải được đáp ứng:\n– Chỉ cho phép truy cập Telnet.\n– Mật khẩu enable phải được lưu trữ an toàn.\n– Mật khẩu enable phải được áp dụng dưới dạng plain text.\n– Phải cho phép toàn quyền truy cập R4 sau khi đăng nhập thành công.\nScript cấu hình nào đáp ứng các yêu cầu?\nOption A Option B\n! conf t\nconf t !\n! username test1 password\nusername test1 password testpass1\ntestpass1 enable secret level 15 0 Test123\nenable password level 1 7 !\nTest123 line vty 0 15\n! login local\nline vty 0 15 transport input telnet\naccounting exec default\ntransport input all\nOption C Option D\n! !\nconfig t config t\n! !\nusername test1 password username test1 password\ntestpass1 testpass1\nenable secret level 1 0 Test123 enable password level 15 0\n! Test123\nline vty 0 15 !\nlogin authentication line vty 0 15\npassword Test123 password Test123\ntransport input telnet transport input all",
       "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
       }
     },
     {
@@ -2443,7 +2487,9 @@
       "source_id": "36",
       "type": "single",
       "question": "Refer to the exhibit.\nThe DHCP server and clients are connected to the same switch. What is the next step to complete\nthe DHCP configuration to allow clients on VLAN 1 to receive addresses from the DHCP server?",
-      "question_images": [],
+      "question_images": [
+        "page_44_img_25.jpeg"
+      ],
       "options": {
         "A": "Configure the ip dhcp snooping trust command on the interface that is connected to the\nDHCP server",
         "B": "Configure the ip dhcp relay information option command on the interface that is connected\nto the DHCP server",
@@ -2481,7 +2527,11 @@
       ],
       "answer_images": [],
       "explanation": "Dynamic ARP inspection is an ingress security feature; it does not perform any egress checking.\nWireless Questions\nJanuary 10th, 2021Go to comments\nPremium Member: You can test your knowledge with these questions first via this link (via\nHTML).\nNote: If you are not sure about Wireless, please read our Wireless tutorial.\nQuick Wireless Summary\nWLAN Modes:\nWLAN has two basic modes of operation:\n* Ad-hoc mode: In this mode devices send data directly to each other without an AP.\n* Infrastructure mode: Connect to a wired LAN, supports two modes (service sets):\n+ Basic Service Set (BSS): uses only a single AP to create a WLAN\n+ Extended Service Set (ESS): uses more than one AP to create a WLAN, allows roaming\nin a larger area than a single AP. Usually there is an overlapped area between two APs to\nsupport roaming. The overlapped area should be more than 10% (from 10% to 15%) to\nallow users moving between two APs without losing their connections (called roaming).\nThe two adjacent APs should use non-overlapping channels to avoid interference. The\nmost popular non-overlapping channels are channels 1, 6 and 11 (will be explained later).\nRoaming: The ability to use a wireless device and be able to move from one access point’s\nrange to another without losing the connection.\nCisco Access Points (APs) can operate in one of two modes: autonomous or lightweight\n+ Autonomous: self-sufficient and standalone. Used for small wireless networks.\n+ Lightweight: A Cisco lightweight AP (LAP) has to join a Wireless LAN Controller\n(WLC) to function. LAP and WLC communicate with each other via a logical pair of\nCAPWAP tunnels.\n– Control and Provisioning for Wireless Access Point (CAPWAP) is an IETF standard\nprotocol which enables a WLC to manage multiple APs. CAPWAP is similar to LWAPP\nexcept the following differences:\n+ CAPWAP uses Datagram Transport Layer Security (DTLS) for authentication and\nencryption to protect traffic between APs and controllers. LWAPP uses AES.\n+ CAPWAP has a dynamic maximum transmission unit (MTU) discovery mechanism.\n+ CAPWAP runs on UDP ports 5246 (control messages) and 5247 (data messages)\nSignal to Noise Ratio (SNR) is defined as the ratio of the transmitted power from the AP\nto the ambient (noise floor) energy present. To calculate the SNR value, we add the Signal\nValue to the Noise Value to get the SNR ratio. A positive value of the SNR ratio is always\nbetter.\nThe 2.4 GHz band is subdivided into multiple channels each allotted 22 MHz bandwidth\nand separated from the next channel by 5 MHz.\n-> A best practice for 802.11b/g/n WLANs requiring multiple APs is to use non-\noverlapping channels such as 1, 6, and 11.\nTypes of external antennas:\n+ Omnidirectional: Provide 360-degree coverage. Ideal in houses and office areas\n+ Directional: Focus the radio signal in a specific direction. Examples are the Yagi and\nparabolic dish\n+ Multiple Input Multiple Output (MIMO) – Uses multiple antennas (up to eight) to\nincrease bandwidth",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_46_img_26.jpeg",
+        "page_46_img_27.jpeg",
+        "page_47_img_28.png"
+      ],
       "question_vi": "Tham khảo hình minh họa.\nip arp inspection vlan 5-10\ninterface fastethernet0/1\nswitchport mode access\nswitchport access vlan 5\nTác dụng của cấu hình này là gì?",
       "options_vi": {
         "A": "Traffic egress chỉ được cho qua nếu đích là DHCP server.",
@@ -2663,7 +2713,9 @@
       ],
       "answer_images": [],
       "explanation": "We can see in this picture we have to type 64 hexadecimal characters (256 bit) for the WPA2\npassphrase so we can deduce the encryption is AES-256, not AES-128.\nReference: https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-\nwlan/67134-wpa2-config.html",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_50_img_29.png"
+      ],
       "question_vi": "Loại mã hóa wireless nào được sử dụng cho WPA2 ở chế độ pre-shared key?",
       "options_vi": {
         "A": "TKIP với RC4",
@@ -2929,7 +2981,9 @@
       ],
       "answer_images": [],
       "explanation": "In the 2.4 GHz band, 1, 6, and 11 are the only non-overlapping channels.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_53_img_30.png"
+      ],
       "question_vi": "Sử dụng direct sequence spread spectrum, ba kênh 2.4 GHz nào được sử dụng để hạn chế xung đột?",
       "options_vi": {
         "A": "1, 5, 10",
@@ -3033,7 +3087,9 @@
       ],
       "answer_images": [],
       "explanation": "In the 2.4 GHz band, 1, 6, and 11 are the only non-overlapping channels so they should be chosen\nwhile installing APs.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_55_img_31.png"
+      ],
       "question_vi": "Cách tiếp cận nào được khuyến nghị để tránh tắc nghẽn cùng kênh khi lắp đặt các access point sử dụng tần số 2.4 GHz?",
       "options_vi": {
         "A": "Các kênh không chồng lấp khác nhau",
@@ -3215,7 +3271,9 @@
       ],
       "answer_images": [],
       "explanation": "Comeback timer specifies the time which an associated client must wait before the association can\nbe tried again when first denied with a status code 30.\nSA query timeout specifies the amount of time the WLC waits for a response from the client for the\nquery process.\nReference: https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-\nwlan/212576-configure-802-11w-management-frame-prote.html\nNote: We can use either 802.1x or PSK as the authentication key management method so answer\nC is not correct.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_57_img_32.jpeg"
+      ],
       "question_vi": "Quản trị viên phải bảo mật WLC khỏi nhận các yêu cầu association giả mạo. Các bước nào phải thực hiện để cấu hình WLC hạn chế các yêu cầu và buộc người dùng chờ 10 ms trước khi thử lại yêu cầu association?",
       "options_vi": {
         "A": "Bật Security Association Teardown Protection và đặt SA Query timeout thành 10",
@@ -3536,7 +3594,9 @@
       ],
       "answer_images": [],
       "explanation": "The SSID is a unique identifier that wireless networking devices use to establish and maintain\nwireless connectivity. The SSID can consist of up to 32 alphanumeric, case-sensitive, characters.\nWe can hide a SSID by choosing “Disabled” in the Basic Wireless Settings/Wireless/SSID Broadcast\nsection.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_61_img_33.jpeg"
+      ],
       "question_vi": "Hai đặc điểm nào của SSID? (Chọn hai)",
       "options_vi": {
         "A": "Nó có thể được ẩn hoặc broadcast trong WLAN",
@@ -3551,7 +3611,9 @@
       "source_id": "23",
       "type": "single",
       "question": "Refer to the exhibit.\nBetween which zones do wireless users expect to experience intermittent connectivity?",
-      "question_images": [],
+      "question_images": [
+        "page_62_img_34.jpeg"
+      ],
       "options": {
         "A": "between zones 1 and 2",
         "B": "between zones 2 and 5",
@@ -3563,7 +3625,9 @@
       ],
       "answer_images": [],
       "explanation": "The 2.4 GHz band is subdivided into multiple channels each allotted 22 MHz bandwidth and\nseparated from the next channel by 5 MHz.\n-> A best practice for 802.11b/g/n WLANs requiring multiple APs is to use non-overlapping\nchannels such as 1, 6, and 11.\nIf you use channels that overlap, RF interference can occur.\nReference: https://www.cisco.com/c/en/us/support/docs/wireless/aironet-340-series/8117-\nconnectivity.html\nIf other Wi-Fi sources such as neighboring wireless access points are using the same wireless\nchannel, this may cause intermittent connectivity issues.\nReference: https://arris.secure.force.com/consumers/articles/General_FAQs/SBG8300-\nTroubleshooting-Intermittent-Wi-Fi-Connections/?l=en_US&fs=RelatedArticle\nIn this question, both Zone 3 & Zone 4 use Channel 11 so interference can occur.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_62_img_35.png"
+      ],
       "question_vi": "Tham khảo hình minh họa.\nGiữa các vùng nào người dùng wireless có thể gặp kết nối không ổn định?",
       "options_vi": {
         "A": "Giữa vùng 1 và 2",
@@ -3577,7 +3641,9 @@
       "source_id": "23",
       "type": "single",
       "question": "Refer to the exhibit.\nBetween which zones do wireless users expect to experience intermittent connectivity?",
-      "question_images": [],
+      "question_images": [
+        "page_62_img_34.jpeg"
+      ],
       "options": {
         "A": "between zones 1 and 2",
         "B": "between zones 2 and 5",
@@ -3589,7 +3655,9 @@
       ],
       "answer_images": [],
       "explanation": "The 2.4 GHz band is subdivided into multiple channels each allotted 22 MHz bandwidth and\nseparated from the next channel by 5 MHz.\n-> A best practice for 802.11b/g/n WLANs requiring multiple APs is to use non-overlapping\nchannels such as 1, 6, and 11.\nIf you use channels that overlap, RF interference can occur.\nReference: https://www.cisco.com/c/en/us/support/docs/wireless/aironet-340-series/8117-\nconnectivity.html\nIf other Wi-Fi sources such as neighboring wireless access points are using the same wireless\nchannel, this may cause intermittent connectivity issues.\nReference: https://arris.secure.force.com/consumers/articles/General_FAQs/SBG8300-\nTroubleshooting-Intermittent-Wi-Fi-Connections/?l=en_US&fs=RelatedArticle\nIn this question, both Zone 3 & Zone 4 use Channel 11 so interference can occur.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_62_img_35.png"
+      ],
       "question_vi": "Tham khảo hình minh họa.\nGiữa các vùng nào người dùng wireless có thể gặp kết nối không ổn định?",
       "options_vi": {
         "A": "Giữa vùng 1 và 2",
@@ -3641,7 +3709,9 @@
       ],
       "answer_images": [],
       "explanation": "The 2.4 GHz band is subdivided into multiple channels each allotted 22 MHz bandwidth and\nseparated from the next channel by 5 MHz.\n-> A best practice for 802.11b/g/n WLANs requiring multiple APs is to use non-overlapping\nchannels such as 1, 6, and 11.\nIf you use channels that overlap, RF interference can occur.\nReference: https://www.cisco.com/c/en/us/support/docs/wireless/aironet-340-series/8117-\nconnectivity.html",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_65_img_38.png"
+      ],
       "question_vi": "Điều gì được khuyến nghị cho thiết kế hạ tầng wireless của một tổ chức?",
       "options_vi": {
         "A": "Nhóm các access point lại với nhau để tăng throughput trên một kênh nhất định",
@@ -3719,7 +3789,9 @@
       ],
       "answer_images": [],
       "explanation": "Each channel on the 2.4 GHz spectrum is 20 MHz wide. The channel centers are separated by 5\nMHz, and the entire spectrum is only 100 MHz wide. This means the 11 channels have to squeeze\ninto the 100 MHz available, and in the end, overlap. Channels 1, 6, and 11, however, are far\nenough from each other on the 2.4GHz band that they have sufficient space between their channel\ncenters and do not overlap.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_66_img_39.png"
+      ],
       "question_vi": "Yêu cầu nào cho các kênh Wi-Fi không chồng lấp?",
       "options_vi": {
         "A": "Cài đặt bảo mật khác nhau",
@@ -3864,7 +3936,9 @@
       "source_id": "123",
       "type": "multi",
       "question": "Refer to the exhibit.\nUsers need to connect to the wireless network with IEEE 802.11r-compatible devices. The\nconnection must be maintained as users travel between floors or to other areas in the building.\nWhat must be the configuration of the connection?",
-      "question_images": [],
+      "question_images": [
+        "page_68_img_40.jpeg"
+      ],
       "options": {
         "A": "Select the WPA Policy option with the CCKM option",
         "B": "Disable AES encryption",
@@ -3969,7 +4043,9 @@
       "source_id": "62",
       "type": "single",
       "question": "Refer to the exhibit. What must be configured to enable 802.11w on the WLAN?",
-      "question_images": [],
+      "question_images": [
+        "page_70_img_41.jpeg"
+      ],
       "options": {
         "A": "Set PMF to Required",
         "B": "Enable MAC Filtering",
@@ -3995,7 +4071,9 @@
       "source_id": "66",
       "type": "multi",
       "question": "Refer to the exhibit.\nA network engineer configures the Cisco WLC to authenticate local wireless clients against a\nRADIUS server. Which task must be performed to complete the process?",
-      "question_images": [],
+      "question_images": [
+        "page_71_img_42.jpeg"
+      ],
       "options": {
         "A": "Change the Server Status to Disabled",
         "B": "Select Enable next to Management",
@@ -4156,7 +4234,9 @@
       "source_id": "34",
       "type": "single",
       "question": "Refer to the exhibit.\nClients on the WLAN are required to use 802.11r. What action must be taken to meet the\nrequirement?",
-      "question_images": [],
+      "question_images": [
+        "page_74_img_43.jpeg"
+      ],
       "options": {
         "A": "Enable CCKM under Authentication Key Management",
         "B": "Under Protected Management Frames, set the PMF option to Required",
@@ -4234,7 +4314,9 @@
       "source_id": "50",
       "type": "single",
       "question": "Refer to the exhibit.\nAn architect is managing a wireless network with APs from several branch offices connecting to the\nWLC in the data center. There is a new requirement for a single WLAN to process the client data\ntraffic without sending it to the WLC. Which action must be taken to complete the request?",
-      "question_images": [],
+      "question_images": [
+        "page_76_img_44.jpeg"
+      ],
       "options": {
         "A": "Enable local HTTP profiling",
         "B": "Enable FlexConnect Local Switching",
@@ -4312,7 +4394,9 @@
       "source_id": "57",
       "type": "single",
       "question": "Refer to the exhibit.\nWireless LAN access must be set up to force all clients from the NA WLAN to authenticate against\nthe local database. The WLAN is configured for local EAP authentication. The time that users\naccess the network must not be limited. Which action completes this configuration?",
-      "question_images": [],
+      "question_images": [
+        "page_78_img_45.jpeg"
+      ],
       "options": {
         "A": "Check the Guest User Role check box",
         "B": "Clear the Lifetime (seconds) value",
@@ -4393,7 +4477,9 @@
       "source_id": "87",
       "type": "multi",
       "question": "Refer to the exhibit.\nA guest WLAN must be created that prompts the client for a username and password on the local\nweb page of the WLC. Which two actions must be performed on the Layer 2 tab before enabling\nthe Authentication option on the Layer 3 tab? (Choose two)",
-      "question_images": [],
+      "question_images": [
+        "page_80_img_46.jpeg"
+      ],
       "options": {
         "A": "Uncheck the MAC Filtering option check box.",
         "B": "Set the Security Type option to Personal.",
@@ -4659,7 +4745,9 @@
       "source_id": "54",
       "type": "single",
       "question": "Refer to the exhibit.\nA network engineer is configuring a WLAN to connect with the 172.16.10.0/24 network on VLAN\n20. The engineer wants to limit the number of devices that connect to the WLAN on the USERWL\nSSID to 125. Which configuration must the engineer perform on the WLC?",
-      "question_images": [],
+      "question_images": [
+        "page_83_img_47.jpeg"
+      ],
       "options": {
         "A": "In the WLAN configuration, set the Maximum Allowed Clients value to 125.",
         "B": "In the Advanced configuration, set the DTIM value to 125.",
@@ -4671,7 +4759,9 @@
       ],
       "answer_images": [],
       "explanation": "In the example below, we can limit the number of clients that can access in a WLAN to 50 with the\n“Maximum Allowed Clients” field:\nReference: https://www.cisco.com/c/en/us/support/docs/wireless/4400-series-wireless-lan-\ncontrollers/113303-restrict-wlan-clients-00.html\nNote: DTIM stands for Delivery traffic indication map or message. It is basically an additional\nmessage added after the normal beacon broadcast by your router or access point.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_84_img_48.jpeg"
+      ],
       "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng đang cấu hình WLAN để kết nối với mạng 172.16.10.0/24 trên VLAN 20. Kỹ sư muốn giới hạn số lượng thiết bị kết nối với WLAN trên SSID USERWL là 125. Cấu hình nào kỹ sư phải thực hiện trên WLC?",
       "options_vi": {
         "A": "Trong cấu hình WLAN, đặt giá trị Maximum Allowed Clients thành 125.",

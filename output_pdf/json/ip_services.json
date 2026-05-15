@@ -58,9 +58,7 @@
       "source_id": "2",
       "type": "single",
       "question": "Refer to the exhibit. An engineer configured NAT translations and has verified that the configuration is\ncorrect. Which IP address is the source IP?\nR1#show ip nat translations\nPro Inside global Inside local Outside local Outside global\ntcp 172.23.104.3:43268 10.4.4.4:43268 172.23.103.10:23 172.23.103.10:23\ntcp 172.23.104.4:45507 10.4.4.5:45507 172.23.103.10:80 172.23.103.10:80",
-      "question_images": [
-        "page_1_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "10.4.4.4",
         "B": "10.4.4.5",
@@ -72,7 +70,9 @@
       ],
       "answer_images": [],
       "explanation": "Maybe this question wanted to ask “which IP address is the source IP at the receiving side?” as there\nare two correct answers for inside local IP address (10.4.4.4 & 10.4.4.5) so they cannot be the correct\nanswer.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_2_img_0.jpeg"
+      ],
       "question_vi": "Tham khảo hình minh họa. Một kỹ sư đã cấu hình các bản dịch NAT và đã xác minh rằng cấu hình là chính xác. Địa chỉ IP nào là IP nguồn?\nR1#show ip nat translations\nPro Inside global Inside local Outside local Outside global\ntcp 172.23.104.3:43268 10.4.4.4:43268 172.23.103.10:23 172.23.103.10:23\ntcp 172.23.104.4:45507 10.4.4.5:45507 172.23.103.10:80 172.23.103.10:80",
       "options_vi": {
         "A": "10.4.4.4",
@@ -143,8 +143,7 @@
       "type": "single",
       "question": "Refer to the exhibit. Router R1 is configured with static NAT. Addressing on the router and the web\nserver are correctly configured, but there is no connectivity between the web server and users on the\nInternet. What is a possible reason for this lack of connectivity?\nR1(config)# ip nat inside source static 192.168.11.254 209.165.200.1\nR1(config)#interface FastEthernet0/0\nR1(config-if)#ip nat inside\nR1(config-if)#interface Serial0/0/1\nR1(config-if)#ip nat outside",
       "question_images": [
-        "page_2_img_0.jpeg",
-        "page_2_img_1.jpeg"
+        "page_3_img_2.jpeg"
       ],
       "options": {
         "A": "The router NAT configuration has an incorrect inside local address",
@@ -170,12 +169,15 @@
       "id": "7",
       "source_id": "6",
       "type": "single",
-      "question": "An engineer is configuring NAT to translate the source subnet of 10.10.0.0/24 to any of three\naddresses 192.168.3.1, 192.168.3.2, 192.168.3.3. Which configuration should be used?\nOption A: Option B: Option C:\nenable enable enable\nconfigure terminal configure terminal configure terminal\nip nat pool mypool ip nat pool mypool ip nat pool mypool\n192.168.3.1 192.168.3.3 192.168.3.1 192.168.3.3 192.168.3.1 192.168.3.3\nprefix-length 30 prefix-length 30 prefix-length 30\nroute-map permit 10.10.0.0 access-list 1 permit access-list 1 permit\n255.255.255.0 10.10.0.0 0.0.0.255 10.10.0.0 0.0.0.255\nip nat outside destination list ip nat outside destination list ip nat inside source list 1\n1 pool mypool 1 pool mypool pool mypool\ninterface g1/1 interface g1/1 interface g1/1\nip nat inside ip nat inside ip nat inside\ninterface g1/2 interface g1/2 interface g1/2\nip nat outside ip nat outside ip nat outside",
-      "question_images": [],
+      "question": "An engineer is configuring NAT to translate the source subnet of 10.10.0.0/24 to any of three\naddresses 192.168.3.1, 192.168.3.2, 192.168.3.3. Which configuration should be used?",
+      "question_images": [
+        "options_q7.png"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
-        "C": "Option C"
+        "C": "Option C",
+        "D": "Option D"
       },
       "answer": [
         "C"
@@ -185,9 +187,10 @@
       "explanation_images": [],
       "question_vi": "Một kỹ sư đang cấu hình NAT để dịch mạng nguồn 10.10.0.0/24 sang bất kỳ địa chỉ nào trong ba địa chỉ 192.168.3.1, 192.168.3.2, 192.168.3.3. Cấu hình nào nên được sử dụng?\nOption A: Option B: Option C:\nenable enable enable\nconfigure terminal configure terminal configure terminal\nip nat pool mypool ip nat pool mypool ip nat pool mypool\n192.168.3.1 192.168.3.3 192.168.3.1 192.168.3.3 192.168.3.1 192.168.3.3\nprefix-length 30 prefix-length 30 prefix-length 30\nroute-map permit 10.10.0.0 access-list 1 permit access-list 1 permit\n255.255.255.0 10.10.0.0 0.0.0.255 10.10.0.0 0.0.0.255\nip nat outside destination list ip nat outside destination list ip nat inside source list 1\n1 pool mypool 1 pool mypool pool mypool\ninterface g1/1 interface g1/1 interface g1/1\nip nat inside ip nat inside ip nat inside\ninterface g1/2 interface g1/2 interface g1/2\nip nat outside ip nat outside ip nat outside",
       "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C"
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
       }
     },
     {
@@ -222,8 +225,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nHow should the configuration be updated to allow PC1 and PC2 access to the Internet?",
       "question_images": [
-        "page_4_img_0.jpeg",
-        "page_4_img_1.jpeg"
+        "page_5_img_3.jpeg"
       ],
       "options": {
         "A": "Modify the configured number of the second access list",
@@ -251,8 +253,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nRouter1(config)#interface GigabitEthernet0/0\nRouter1(config-if)#ip address 209.165.200.225 255.255.255.224\nRouter1(config-if)#ip nat outside\nRouter1(config)#interface GigabitEthernet0/1\nRouter1(config-if)#ip nat inside\nRouter1(config)#interface GigabitEthernet0/1.100\nRouter1(config-if)#encapsulation dot1Q 100\nRouter1(config-if)#ip address 10.10.10.1 255.255.255.0\nRouter1(config)#interface GigabitEthernet0/1.200\nRouter1(config-if)#encapsulation dot1Q 200\nRouter1(config-if)#ip address 10.10.20.1 255.255.255.0\nRouter1(config)#ip access-list standard NAT_INSIDE_RANGES\nRouter1(config-std-nacl)#permit 10.10.10.0 0.0.0.255\nRouter1(config)#ip nat inside source list NAT_INSIDE_RANGES interface GigabitEthernet0/0\noverload\nUsers on existing VLAN 100 can reach sites on the Internet. Which action must the administrator take\nto establish connectivity to the Internet for users in VLAN 200?",
       "question_images": [
-        "page_4_img_0.jpeg",
-        "page_4_img_1.jpeg"
+        "page_5_img_4.jpeg"
       ],
       "options": {
         "A": "Define a NAT pool on the router.",
@@ -306,7 +307,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich command set configures ROUTER-1 to allow Internet access for users on the 192.168.1.0/24\nsubnet while using 209.165.202.129 for Port Address Translation?",
       "question_images": [
-        "page_6_img_0.jpeg"
+        "page_7_img_5.jpeg"
       ],
       "options": {
         "A": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 0.0.0.255\nip nat inside source list 10 pool CCNA overload",
@@ -333,9 +334,7 @@
       "source_id": "42",
       "type": "single",
       "question": "Refer to the exhibit.\nCPE1# show protocols e0/1\nEthernet0/1 is up, line protocol is up\nInternet address is 10.0.12.2/24\nCPE1#show ip access-list LAN\nStandard IF access list LAN\n10 permit 10.0.12.0, wildcard bits 0.0.0.255\nCPE1# show ip nat translations\nCPE1# show ip net statistics\nTotal active translations: 0 (0 static, 0 dynamic, 0 extended)\nPeak translations: 0\nOutside interfaces:\nInside interfaces:\nEthernet0/1\nHits: 0 Misses: 0\nCEF Translated packets: 0, CEF Funted packets: 0\nExpired translations: 0\nDynamic mappings:\n-- Inside Source\n[Id: 1] access-list LAN pool NATPOOL refcount 0\npool NATPOOL: netmask 255.255.255.0\nstart 198.51.100.11 end 198.51.100.20\ntype generic, total addresses 10, allocated 0 (0%), misses 0\nTotal doors: 0\nAppl doors: 0\nNormal doors: 0\nQueued Packets: 0\nWhat is the next step to complete the implementation for the partial NAT configuration shown?",
-      "question_images": [
-        "page_6_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Reconfigure the static NAT entries that overlap the NAT pool",
         "B": "Configure the NAT outside interface",
@@ -446,7 +445,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nThe ntp server 192.168.0.3 command has been configured on Router1 to make it an NTP client of\nrouter 2. Which command must be configured on Router2 so that it operates in server-only mode and\nrelies only on its internal clock?",
       "question_images": [
-        "page_9_img_0.jpeg"
+        "page_10_img_6.jpeg"
       ],
       "options": {
         "A": "Router2(config)#ntp passive",
@@ -498,8 +497,10 @@
       "id": "19",
       "source_id": "92",
       "type": "single",
-      "question": "R1 as an NTP server must have:\n* NTP authentication enabled\n* NTP packets sourced from Interface loopback 0\n* NTP stratum 2\n* NTP packets only permitted to client IP 209.165.200.225\nHow should R1 be configured?\nOption A Option B\nntp authenticate ntp authenticate\nntp authentication-key 2 sha1 CISCO123 ntp authentication-key 2 md5 CISCO123\nntp source Loopback0 ntp source Loopback0\nntp access-group server-only 10 ntp access-group server-only 10\nntp master 2 ntp stratum 2\n! !\naccess-list 10 permit udp host 209.165.200.225 access-list 10 permit udp host 209.165.200.225\nany eq 123 any eq 123\nOption C Option D\nntp authenticate ntp authenticate\nntp authentication-key 2 md5 CISCO123 ntp authentication-key 2 md5 CISCO123\nntp interface Loopback0 ntp source Loopback0\nntp access-group server-only 10 ntp access-group server-only 10\nntp stratum 2 ntp master 2\n! !\naccess-list 10 permit 209.165.200.225 access-list 10 permit 209.165.200.225",
-      "question_images": [],
+      "question": "R1 as an NTP server must have:\n* NTP authentication enabled\n* NTP packets sourced from Interface loopback 0\n* NTP stratum 2\n* NTP packets only permitted to client IP 209.165.200.225\nHow should R1 be configured?",
+      "question_images": [
+        "options_q19.png"
+      ],
       "options": {
         "A": "Option A",
         "B": "Option B",
@@ -514,10 +515,10 @@
       "explanation_images": [],
       "question_vi": "R1 với vai trò máy chủ NTP phải có:\n* Xác thực NTP được bật\n* Các gói NTP được gửi từ Interface loopback 0\n* NTP stratum 2\n* Các gói NTP chỉ được phép đến client IP 209.165.200.225\nR1 nên được cấu hình như thế nào?\nOption A Option B\nntp authenticate ntp authenticate\nntp authentication-key 2 sha1 CISCO123 ntp authentication-key 2 md5 CISCO123\nntp source Loopback0 ntp source Loopback0\nntp access-group server-only 10 ntp access-group server-only 10\nntp master 2 ntp stratum 2\n! !\naccess-list 10 permit udp host 209.165.200.225 access-list 10 permit udp host 209.165.200.225\nany eq 123 any eq 123\nOption C Option D\nntp authenticate ntp authenticate\nntp authentication-key 2 md5 CISCO123 ntp authentication-key 2 md5 CISCO123\nntp interface Loopback0 ntp source Loopback0\nntp access-group server-only 10 ntp access-group server-only 10\nntp stratum 2 ntp master 2\n! !\naccess-list 10 permit 209.165.200.225 access-list 10 permit 209.165.200.225",
       "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
       }
     },
     {
@@ -552,7 +553,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich router or router group are NTP clients?",
       "question_images": [
-        "page_12_img_0.jpeg"
+        "page_13_img_7.jpeg"
       ],
       "options": {
         "A": "R1, R2, and R3",
@@ -564,7 +565,9 @@
       ],
       "answer_images": [],
       "explanation": "To configure the NTP client on a Cisco device we use the ntp server {ip-address} command in global\nconfiguration.\nSyslog Questions\nJanuary 15th, 2021Go to comments\nPremium Member: You can test your knowledge with these questions first via this link (via HTML).\nNote: If you are not sure about Syslog, please read our Syslog tutorial.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_14_img_8.png"
+      ],
       "question_vi": "Tham khảo hình minh họa.\nRouter hoặc nhóm router nào là NTP client?",
       "options_vi": {
         "A": "R1, R2, và R3",
@@ -820,9 +823,13 @@
       "answer": [
         "D"
       ],
-      "answer_images": [],
+      "answer_images": [
+        "page_18_img_9.png"
+      ],
       "explanation": "Below is an example of the “show standby” command:\nWe can see the current HSRP priority of this device, which is 90 and the configured HSRP priority too\n(which is 90, too).",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_19_img_10.jpeg"
+      ],
       "question_vi": "Bạn nên nhập lệnh nào để xác minh priority của một router trong một nhóm HSRP?",
       "options_vi": {
         "A": "show hsrp",
@@ -1289,7 +1296,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nThe given Windows PC is requesting the IP address of the host at www.cisco.com. To which IP address\nis the request sent?",
       "question_images": [
-        "page_25_img_0.jpeg"
+        "page_26_img_11.jpeg"
       ],
       "options": {
         "A": "19e.168.1.226",
@@ -1302,7 +1309,9 @@
       ],
       "answer_images": [],
       "explanation": "From the output we see the line “DHCP Server …: 192.168.1.254” so this is the IP address the request\nis sent. Notice that the “Default Gateway” IP address is in the same subnet of DHCP Server so the PC\ncan directly send request to the DHCP Server.\nQoS Questions\nJanuary 10th, 2021Go to comments\nQoS quick summary:\n1. Network factors:\n+ Bandwidth: the speed of the link (or the capacity available on the link), usually measured\nin bits per second (bps)\n+ Delay (or latency): how long a packet takes to get from the sender to the receiver. The\nmore the delay, the slower the network. Delay is usually measured in milliseconds (ms)\n+ Jitter: A measure of the variation in delay between packets. For example, one packet need\n50ms to reach B from A while another packet takes 40ms then the jitter is 10ms\n+ Loss: When packets travels to the destination, some of them may get lost.\n2. QoS Models:\n+ Best Effort: No QoS policies applied\n+ Integrated Services (IntServ): Resource Reservation Protocol (RSVP) is used to reserve\nbandwidth\n+ Differentiated Services (DiffServ): Packets are classified and marked individually; policy\ndecisions are made independently by each node in a path.\n3. QoS Markings:\n+ IP Precedence: The first three bits of the IP ToS field (8 traffic classes)\n+ Differentiated Service Code Point (DSCP): The first six bits of the IP ToS are used to\nprovide granular classification\n4. QoS terms:\n+ Tail drop: When the queue is full, the packet is dropped. This is the default behavior.\n+ Policing: is used to control the rate of traffic flowing across an interface. During a\nbandwidth exceed (crossed the maximum configured rate), the excess traffic is generally\ndropped or remarked. The result of traffic policing is an output rate that appears as a saw-\ntooth with crests and troughs. Traffic policing can be applied to inbound and outbound\ninterfaces. Unlike traffic shaping, QoS policing avoids delays due to queuing. Policing is\nconfigured in bytes.\n+ Shaping: retains excess packets in a queue and then schedules the excess for later\ntransmission over increments of time. When traffic reaches the maximum configured rate,\nadditional packets are queued instead of being dropped to proceed later. Traffic shaping is\napplicable only on outbound interfaces as buffering and queuing happens only on outbound\ninterfaces. Shaping is configured in bits per second.\nThe primary reasons you would use traffic shaping are to control access to available\nbandwidth, to ensure that traffic conforms to the policies established for it, and to regulate the\nflow of traffic in order to avoid congestion that can occur when the sent traffic exceeds the\naccess speed of its remote, target interface.\n+ Marking: allows you to mark (set or change) a value (attribute) for the traffic belonging to\na specific class\n5. Congestion Management (types of queuing): uses the marking on each packet to\ndetermine which queue to place packets in\nFirst-in, first-out (FIFO): FIFO entails no concept of priority or classes of traffic. With\nFIFO, transmission of packets out the interface occurs in the order the packets arrive, which\nmeans no QoS\nPriority Queuing (PQ): schedules traffic such that the higher-priority queues “always” get\nserviced first\nCustom Queuing (CQ): provide specific traffic guaranteed bandwidth at a potential\ncongestion point, assuring the traffic a fixed portion of available bandwidth and leaving the\nremaining bandwidth to other traffic.\nWeighted fair queueing (WFQ): allocates bandwidths to flows based on the weight. In\naddition, to allocate bandwidths fairly to flows, WFQ schedules packets in bits (not bytes).\nThis prevents long packets from preempting bandwidths of short packets and reduces the\ndelay and jitter when both short and long packets wait to be forwarded.\nClass-based weighted fair queueing (CBWFQ) extends the standard WFQ functionality to\nprovide support for user-defined traffic classes. For CBWFQ, you define traffic classes based\non match criteria including protocols, access control lists (ACLs), and input interfaces.\nPackets satisfying the match criteria for a class constitute the traffic for that class. A queue is\nreserved for each class, and traffic belonging to a class is directed to the queue for that class.\nOnce a class has been defined according to its match criteria, you can assign it characteristics.\nTo characterize a class, you assign it bandwidth, weight, and maximum packet limit. The\nbandwidth assigned to a class is the guaranteed bandwidth delivered to the class during\ncongestion.\nThe Resource Reservation Protocol (RSVP) protocol allows applications to reserve\nbandwidth for their data flows. It is used by a host, on the behalf of an application data flow,\nto request a specific amount of bandwidth from the network. RSVP is also used by the routers\nto forward bandwidth reservation requests.\nPremium Member: You can test your knowledge with these questions first via this link (via HTML).",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_28_img_12.jpeg"
+      ],
       "question_vi": "Tham khảo hình minh họa.\nPC Windows đã cho đang yêu cầu địa chỉ IP của host tại www.cisco.com. Yêu cầu được gửi đến địa chỉ IP nào?",
       "options_vi": {
         "A": "19e.168.1.226",
@@ -1438,7 +1447,9 @@
       ],
       "answer_images": [],
       "explanation": "The following diagram illustrates the key difference between traffic policing and traffic shaping. Traffic\npolicing propagates bursts. When the traffic rate reaches the configured maximum rate (or committed\ninformation rate), excess traffic is dropped (or remarked). The result is an output rate that appears as\na saw-tooth with crests and troughs. In contrast to policing, traffic shaping retains excess packets\nin a queue and then schedules the excess for later transmission over increments of time. The\nresult of traffic shaping is a smoothed packet output rate.\nNote: Committed information rate (CIR): The minimum guaranteed data transfer rate agreed to by\nthe routing device.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_31_img_13.jpeg"
+      ],
       "question_vi": "Traffic shaping làm gì để giảm tắc nghẽn trong mạng?",
       "options_vi": {
         "A": "đệm (buffer) và xếp hàng đợi (queue) các gói",
@@ -1572,7 +1583,9 @@
       "answer": [
         "C"
       ],
-      "answer_images": [],
+      "answer_images": [
+        "page_33_img_14.png"
+      ],
       "explanation": "With Priority Queueing (PQ), traffic is classified into high, medium, normal, and low priority queues.\nThe high priority traffic is serviced first, then medium priority traffic, followed by normal and low\npriority traffic. -> Therefore we can assign higher priority for voice traffic.\nAlso with PQ, higher priority traffic can starve the lower priority queues of bandwidth. No bandwidth\nguarantees are possible -> It is still good because this network is mostly used for data traffic so voice\ntraffic amount is small.\nWith First In First Out (FIFO) or Weighted Fair Queueing (WFQ), there is no priority servicing so they\nare not suitable here.\nReference: https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/qos_solutions/QoSVoIP/QoSVo\nIP.html\nWeighted Random Early Detection (WRED) is just a congestion avoidance mechanism. WRED\nmeasures the size of the queues depending on the Precedence value and starts dropping packets\nwhen the queue is between the minimum threshold and the maximum threshold -> It does not have\npriority servicing either.",
       "explanation_images": [],
       "question_vi": "Công cụ QoS nào bạn có thể sử dụng để tối ưu hóa lưu lượng thoại (voice traffic) trên mạng chủ yếu dành cho lưu lượng dữ liệu?",
@@ -1652,7 +1665,9 @@
       ],
       "answer_images": [],
       "explanation": "The command “switchport priority extend cos 7” sets the IP phone port to override the priority\nreceived from the PC or the attached device (7 is the highest priority).\nThe command “switchport priority extend trust” tells the Cisco IP Phone to trust the CoS value of the\nconnected PC without remark all packets sent form PC to CoS 0, by default.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_34_img_15.jpeg"
+      ],
       "question_vi": "Một kỹ sư đang cấu hình dịch vụ dữ liệu và thoại để truyền qua cùng một cổng. Giao diện switch được chỉ định fastethernet0/1 phải truyền các gói tin sử dụng cùng mức ưu tiên cho dữ liệu khi chúng được nhận từ cổng truy cập của điện thoại IP. Cấu hình nào phải được sử dụng?",
       "options_vi": {
         "A": "interface fastethernet0/1\nswitchport priority extend cos 7",
@@ -1730,7 +1745,9 @@
       ],
       "answer_images": [],
       "explanation": "Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed\n(crossed the maximum configured rate), the excess traffic is generally dropped or remarked.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_35_img_16.png"
+      ],
       "question_vi": "Phương pháp xếp hàng QoS nào loại bỏ hoặc đánh dấu các gói tin vượt quá tốc độ bit mong muốn của luồng lưu lượng?",
       "options_vi": {
         "A": "shaping",
@@ -1758,7 +1775,9 @@
       ],
       "answer_images": [],
       "explanation": "Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed\n(crossed the maximum configured rate), the excess traffic is generally dropped or remarked. The\nresult of traffic policing is an output rate that appears as a saw-tooth with crests and troughs. Traffic\npolicing can be applied to inbound and outbound interfaces. Unlike traffic shaping, QoS policing avoids\ndelays due to queuing. Policing is configured in bytes.\nQoS Traffic Shaping do not support Marking or Remarking again. This is done only with Traffic\nPolicing.\nReference: https://ipcisco.com/lesson/policing-and-shaping/\nNote: In policing, remarking the packets that exceed the CIR is an alternative to simply dropping\nthem.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_36_img_17.jpeg"
+      ],
       "question_vi": "Hai hành động nào là kết quả của traffic policing? (Chọn hai)",
       "options_vi": {
         "A": "bursting",
@@ -1837,7 +1856,9 @@
       ],
       "answer_images": [],
       "explanation": "The term Per-Hop Behaviour (PHB) refers to how a node will treat traffic having the same\nDifferentiated Services Code Point (DSCP) values.\nAssured Forwarding has four standard classes from AF1 to AF4. It is important to note that the class\nnumber does not determine priority. Each class is treated independently and placed into different\nqueues.\nEach AF class has its own IP Precedence with three drop probabilities, low, medium, and high.\nReference: https://www.routeprotocol.com/dscp-per-hop-behaviour-assured-forwarding/\nDHCP Questions\nJanuary 7th, 2021Go to comments\nPremium Member: You can test your knowledge with these questions first via this link (via HTML).",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_38_img_18.png"
+      ],
       "question_vi": "Hành vi chuyển tiếp per-hop DSCP nào được chia thành các lớp con dựa trên xác suất loại bỏ?",
       "options_vi": {
         "A": "class-selector",
@@ -1862,7 +1883,9 @@
       "answer": [
         "D"
       ],
-      "answer_images": [],
+      "answer_images": [
+        "page_39_img_19.png"
+      ],
       "explanation": null,
       "explanation_images": [],
       "question_vi": "Lệnh Cisco IOS nào sẽ cho biết giao diện GigabitEthernet 0/0 được cấu hình qua DHCP?",
@@ -1935,7 +1958,7 @@
       "type": "multi",
       "question": "Refer to the exhibit. An engineer deploys a topology in which R1 obtains its IP configuration from\nDHCP. If the switch and DHCP server configurations are complete and correct. Which two sets of\ncommands must be configured on R1 and R2 to complete the task? (Choose two)",
       "question_images": [
-        "page_39_img_0.jpeg"
+        "page_40_img_21.jpeg"
       ],
       "options": {
         "A": "R1 (config)# interface fa0/0\nR1 (config-if)# ip helper-address 198.51.100.100",
@@ -2188,7 +2211,9 @@
       ],
       "answer_images": [],
       "explanation": "If the DHCP Server is not on the same subnet with the DHCP Client, we need to configure the router\non the DHCP client side to act as a DHCP Relay Agent so that it can forward DHCP messages between\nthe DHCP Client & DHCP Server. To make a router a DHCP Relay Agent, simply put the “ip helper-\naddress <IP-address-of-DHCP-Server>” command under the interface that receives the DHCP\nmessages from the DHCP Client.\nAs we know, router does not forward broadcast packets (it drops them instead) so DHCP messages\nlike DHCPDISCOVER message will be dropped. But with the “ip helper-address …” command, the\nrouter will accept that broadcast message and cover it into a unicast packet and forward it to the\nDHCP Server. The destination IP address of the unicast packet is taken from the “ip helper-address …”\ncommand.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_45_img_23.jpeg"
+      ],
       "question_vi": "Khi client và server không nằm trên cùng một mạng vật lý, thiết bị nào được sử dụng để chuyển tiếp các yêu cầu và phản hồi giữa client và server cho DHCP?",
       "options_vi": {
         "A": "DHCP relay agent",
@@ -2255,7 +2280,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer is configuring a new router on the network and applied this configuration. Which\nadditional configuration allows the PC to obtain its IP address from a DHCP server?",
       "question_images": [
-        "page_45_img_0.jpeg"
+        "page_46_img_24.jpeg"
       ],
       "options": {
         "A": "Configure the ip dhcp relay information command under interface Gi0/1",
@@ -2296,7 +2321,10 @@
       ],
       "answer_images": [],
       "explanation": "With the DHCP relay agent, we can configure DHCP servers in different subnet of the DHCP client.\nOtherwise we have to place one DHCP server in the same subnet of DHCP clients -> Answer A is\ncorrect.\nNote: We can configure more than one ip helper command under one Layer 3 interface:\nTo make a router a DHCP Relay Agent, simply put the “ip helper-address <IP-address-of-DHCP-\nServer>” command under the interface that receives the DHCP messages from the DHCP Client ->\nAnswer C is correct.\nMiscellaneous Questions",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_47_img_25.jpeg",
+        "page_47_img_26.jpeg"
+      ],
       "question_vi": "Hai tính năng của DHCP relay agent là gì? (Chọn hai)",
       "options_vi": {
         "A": "giảm thiểu số lượng DHCP server cần thiết",
@@ -2429,7 +2457,9 @@
       ],
       "answer_images": [],
       "explanation": "The two main elements of an optical fiber are its core and cladding. The “core”, or the axial part of the\noptical fiber made of silica glass, is the light transmission area of the fiber. It may sometimes be\ntreated with a “doping” element to change its refractive index and therefore the velocity of light down\nthe fiber.\nThe “cladding” is the layer completely surrounding the core.\nReference: https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-\nmodules/white_paper_c11-463661.html",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_49_img_27.jpeg"
+      ],
       "question_vi": "Hai điểm khác biệt giữa cáp quang và cáp đồng là gì? (Chọn hai)",
       "options_vi": {
         "A": "Ánh sáng được truyền qua lõi của sợi quang",

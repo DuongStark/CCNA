@@ -1,5 +1,5 @@
 {
-  "count": 44,
+  "count": 42,
   "questions": [
     {
       "id": "5.1",
@@ -71,31 +71,6 @@
         "B": "nhắc người dùng chỉ định địa chỉ IP mong muốn",
         "C": "liên tục cố gắng phân giải URL cho đến khi lệnh bị hủy",
         "D": "gửi một thông điệp broadcast để cố gắng phân giải URL"
-      }
-    },
-    {
-      "id": "5.25",
-      "type": "single",
-      "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate all addresses in VLAN 200 while allowing devices on VLAN 100 to use their own IP addresses?",
-      "question_images": [
-        "q5.25_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "D"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào phải được áp dụng cho router để cấu hình PAT nhằm dịch tất cả các địa chỉ trong VLAN 200 trong khi cho phép các thiết bị trên VLAN 100 sử dụng địa chỉ IP của chính chúng?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -659,29 +634,6 @@
         "B": "để cấu hình một giao diện làm DHCP relay",
         "C": "để cấu hình một giao diện làm DHCP helper",
         "D": "để cấu hình một giao diện làm máy khách DHCP (DHCP client)"
-      }
-    },
-    {
-      "id": "9.10",
-      "type": "single",
-      "question": "R1 as an NTP server must have:\n* NTP authentication enabled\n* NTP packets sourced from Interface loopback 0\n* NTP stratum 2\n* NTP packets only permitted to client IP 209.165.200.225\nHow should R1 be configured?",
-      "question_images": [],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "D"
-      ],
-      "answer_images": [],
-      "question_vi": "R1 làm máy chủ NTP (NTP server) phải có:\n* Xác thực NTP được bật\n* Các gói NTP có nguồn từ Interface loopback 0\n* NTP stratum 2\n* Các gói NTP chỉ được phép đến IP máy khách 209.165.200.225\nR1 nên được cấu hình như thế nào?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {

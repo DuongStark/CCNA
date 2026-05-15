@@ -434,30 +434,20 @@
     },
     {
       "id": "12.22",
-      "type": "single",
-      "question": "Refer to the exhibit.\nR1#\n!\ninterface Loopback0\nip address 10.1.1.1 255.255.255.255\n!\ninterface FastEthernet0/0\nip address 10.139.91.1 255.255.255.252\nip virtual—reassembly in\n!\ninterface FastEthernet1/0\nip address 172.16.29.1 255.255.255.0\nip virtual-reassembly in\n!\nrouter eigrp 100\nnetwork 10.1.1.1 0.0.0.0\nnetwork 10.139.91.0 0.0.0.3\n!\n--output suppressed--\nAn engineer must translate the PC1 IP address to 10.199.77.100 and permit PC1 to ping the loopback 0 interface on router R2. Which configuration must be used?\nOption A\nR1#!interface FastEthernet0/0ip nat outside!interface FastEthernet1/0ip nat inside!ip nat inside source static 172.16.29.78 10.199.77.100\nR2ip route 10.199.77.100 255.255.255.255 10.139.91.1\nOption B\nR1#!interface FastEthernet0/0ip nat inside!interface FastEthernet1/0 ip nat outside!ip nat inside source static 10.199.77.100 172.16.29.78\nR2ip route 10.199.77.100 255.255.255.255 10.139.91.1\nOption C\nR1#!interface FastEthernet0/0ip nat outside!interface FastEthernet1/0ip nat inside!ip nat inside source static 172.16.29.78 10.199.77.100\nR2ip route 172.16.29.78 255.255.255.255 10.139.91.1\nOption D\nR1#!interface FastEthernet0/0ip nat outside!interface FastEthernet1/0ip nat inside!ip nat inside source static 172.16.29.78 10.199.77.100\nR2ip route 172.16.29.78 255.255.255.255 10.139.91.1",
-      "question_images": [
-        "q12.22_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nR1#\n!\ninterface Loopback0\nip address 10.1.1.1 255.255.255.255\n!\ninterface FastEthernet0/0\nip address 10.139.91.1 255.255.255.252\nip virtual—reassembly in\n!\ninterface FastEthernet1/0\nip address 172.16.29.1 255.255.255.0\nip virtual-reassembly in\n!\nrouter eigrp 100\nnetwork 10.1.1.1 0.0.0.0\nnetwork 10.139.91.0 0.0.0.3\n!\n--output suppressed--\nAn engineer must translate the PC1 IP address to 10.199.77.100 and permit PC1 to ping the loopback 0 interface on router R2. Which configuration must be used?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "R1#\n!\ninterface FastEthernet0/0\nip nat outside\n!\ninterface FastEthernet1/0\nip nat inside\n!\nip nat inside source static 172.16.29.78 10.199.77.100\nR2\nip route 10.199.77.100 255.255.255.255 10.139.91.1",
+        "B": "R1#\n!\ninterface FastEthernet0/0\nip nat inside\n!\ninterface FastEthernet1/0 \nip nat outside\n!\nip nat inside source static 10.199.77.100 172.16.29.78\nR2\nip route 10.199.77.100 255.255.255.255 10.139.91.1",
+        "C": "R1#\n!\ninterface FastEthernet0/0\nip nat outside\n!\ninterface FastEthernet1/0\nip nat inside\n!\nip nat inside source static 172.16.29.78 10.199.77.100\nR2\nip route 172.16.29.78 255.255.255.255 10.139.91.1",
+        "D": "R1#\n!\ninterface FastEthernet0/0\nip nat outside\n!\ninterface FastEthernet1/0\nip nat inside\n!\nip nat inside source static 172.16.29.78 10.199.77.100\nR2\nip route 172.16.29.78 255.255.255.255 10.139.91.1"
       },
-      "answer": [
-        "A"
-      ],
+      "answer": "A",
       "answer_images": [],
-      "explanation": "PC1 can ping the loopback 0 interface on R2 so R2 must know how to route to 10.199.77.100. In this question R2 uses a static route so it should be:\nR2:ip route 10.199.77.100 255.255.255.255 10.139.91.1 -> Only Option A and Option B are correct.Interface F1/0 on R1 must be “ip nat inside” and F0/0 must be “ip nat outside” -> Only Option A is correct.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nR1#\n!\ninterface Loopback0\nip address 10.1.1.1 255.255.255.255\n!\ninterface FastEthernet0/0\nip address 10.139.91.1 255.255.255.252\nip virtual-reassembly in\n!\ninterface FastEthernet1/0\nip address 172.16.29.1 255.255.255.0\nip virtual-reassembly in\n!\nrouter eigrp 100\nnetwork 10.1.1.1 0.0.0.0\nnetwork 10.139.91.0 0.0.0.3\n!\n--output suppressed--\nMột kỹ sư cần dịch địa chỉ IP của PC1 thành 10.199.77.100 và cho phép PC1 ping giao diện loopback 0 trên router R2. Cấu hình nào phải được sử dụng?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. network 10.1.1.1 0.0.0.0 network 10.139.91.0 0.0.0.3 Một kỹ sư phải dịch địa chỉ IP của PC1 thành 10.199.77.100 và cho phép PC1 ping giao diện loopback 0 trên router R2. Cấu hình nào phải được sử dụng?",
+      "options_vi": {}
     },
     {
       "id": "12.24",
@@ -1131,30 +1121,20 @@
     },
     {
       "id": "12.53",
-      "type": "single",
-      "question": "Refer to the exhibit.\nEach router must be configured with the last usable IP address in the subnet. Which configuration fulfills this requirement?\nOption A\nR7#interface FastEthernet1/0ip address 10.88.31.126 255.255.255.192\nR8#interface FastEthernet0/0ip address 10.19.63.95 255.255.255.192\nR9#interface FastEthernet1/1ip address 10.23.98.159 255.255.255.248\nOption B\nR7#interface FastEthernet1/0ip address 10.88.31.126 255.255.255.240\nR8#interface FastEthernet0/0ip address 10.19.63.94 255.255.255.192\nR9#interface FastEthernet1/1ip address 10.23.98.158 255.255.255.248\nOption C\nR7#interface FastEthernet1/0ip address 10.88.31.127 255.255.255.240\nR8#interface FastEthernet0/0ip address 10.19.63.95 255.255.255.192\nR9#interface FastEthernet1/1ip address 10.23.98.159 255.255.255.248\nOption D\nR7#interface FastEthernet1/0ip address 10.88.31.127 255.255.255.192\nR8#interface FastEthernet0/0ip address 10.19.63.95 255.255.255.240\nR9#interface FastEthernet1/1ip address 10.23.98.159 255.255.255.224",
-      "question_images": [
-        "q12.53_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nEach router must be configured with the last usable IP address in the subnet. Which configuration fulfills this requirement?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "R7#\ninterface FastEthernet1/0\nip address 10.88.31.126 255.255.255.192\nR8#\ninterface FastEthernet0/0\nip address 10.19.63.95 255.255.255.192\nR9#\ninterface FastEthernet1/1\nip address 10.23.98.159 255.255.255.248",
+        "B": "R7#\ninterface FastEthernet1/0\nip address 10.88.31.126 255.255.255.240\nR8#\ninterface FastEthernet0/0\nip address 10.19.63.94 255.255.255.192\nR9#\ninterface FastEthernet1/1\nip address 10.23.98.158 255.255.255.248",
+        "C": "R7#\ninterface FastEthernet1/0\nip address 10.88.31.127 255.255.255.240\nR8#\ninterface FastEthernet0/0\nip address 10.19.63.95 255.255.255.192\nR9#\ninterface FastEthernet1/1\nip address 10.23.98.159 255.255.255.248",
+        "D": "R7#\ninterface FastEthernet1/0\nip address 10.88.31.127 255.255.255.192\nR8#\ninterface FastEthernet0/0\nip address 10.19.63.95 255.255.255.240\nR9#\ninterface FastEthernet1/1\nip address 10.23.98.159 255.255.255.224"
       },
-      "answer": [
-        "B"
-      ],
+      "answer": "B",
       "answer_images": [],
-      "explanation": "On R7 subnet 10.88.31.64/26Increment: 64Network address: 10.88.31.64Broadcast address: 10.88.31.127-> Last usable IP address: 10.88.31.126\nOn R8 subnet 10.19.63.80/28Increment: 16Network address: 10.19.63.80Broadcast address: 10.19.63.95-> Last usable IP address: 10.19.63.94\nOn R9 subnet 10.23.98.128/27Increment: 32Network address: 10.23.98.128Broadcast address: 10.23.98.159-> Last usable IP address: 10.23.98.158\nIn this question only Option B has correct last usable IP addresses but their subnet masks are not correct. For example on R7 the subnet mask should be /26 = 255.255.255.192 (not 255.255.255.240 like in Option B). Maybe they are typos but it is still the best choice.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nMỗi router phải được cấu hình với địa chỉ IP khả dụng cuối cùng trong mạng con (subnet). Cấu hình nào đáp ứng yêu cầu này?\nOption A\nR7#interface FastEthernet1/0ip address 10.88.31.126 255.255.255.192\nR8#interface FastEthernet0/0ip address 10.19.63.95 255.255.255.192\nR9#interface FastEthernet1/1ip address 10.23.98.159 255.255.255.248\nOption B\nR7#interface FastEthernet1/0ip address 10.88.31.126 255.255.255.240\nR8#interface FastEthernet0/0ip address 10.19.63.94 255.255.255.192\nR9#interface FastEthernet1/1ip address 10.23.98.158 255.255.255.248\nOption C\nR7#interface FastEthernet1/0ip address 10.88.31.127 255.255.255.240\nR8#interface FastEthernet0/0ip address 10.19.63.95 255.255.255.192\nR9#interface FastEthernet1/1ip address 10.23.98.159 255.255.255.248\nOption D\nR7#interface FastEthernet1/0ip address 10.88.31.127 255.255.255.192\nR8#interface FastEthernet0/0ip address 10.19.63.95 255.255.255.240\nR9#interface FastEthernet1/1ip address 10.23.98.159 255.255.255.224",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Mỗi router phải được cấu hình với địa chỉ IP có thể sử dụng cuối cùng trong subnet. Cấu hình nào đáp ứng yêu cầu này?",
+      "options_vi": {}
     },
     {
       "id": "12.54",
@@ -1340,28 +1320,20 @@
     },
     {
       "id": "12.61",
-      "type": "single",
-      "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 45, Wait 15, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?\nOption A\nR2(config)#interface g0/0/0R2(config-if)#ip ospf hello-interval 10\nOption B\nR2(config)#router ospf 1R2(config-router)#router-id 192.168.1.2\nOption C\nR2(config)#router ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2\nOption D\nR2(config)#interface g0/0/0R2(config-if)#ip ospf dead-interval 40",
+      "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 45, Wait 15, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?",
       "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf hello-interval 10",
+        "B": "R2(config)#\nrouter ospf 1R2(config-router)#router-id 192.168.1.2",
+        "C": "R2(config)#\nrouter ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2",
+        "D": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf dead-interval 40"
       },
-      "answer": [
-        "D"
-      ],
+      "answer": "D",
       "answer_images": [],
-      "explanation": "In order to become OSPF neighbor, the following values must be matched on both routers:\n+ Area ID+ Authentication+ Hello and Dead Intervals+ Stub area Flag+ MTU Size\nIn this question we see the Dead intervals are mismatched so we must correct it on one end.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 45, Wait 15, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nKỹ sư mạng đang cấu hình router R2 làm router thay thế trên mạng. Sau khi áp dụng cấu hình ban đầu, phát hiện rằng R2 không hiển thị R1 là neighbor. Cấu hình nào phải được áp dụng cho R2 để hoàn tất cấu hình OSPF và cho phép thiết lập quan hệ neighbor với R1?\nOption A\nR2(config)#interface g0/0/0R2(config-if)#ip ospf hello-interval 10\nOption B\nR2(config)#router ospf 1R2(config-router)#router-id 192.168.1.2\nOption C\nR2(config)#router ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2\nOption D\nR2(config)#interface g0/0/0R2(config-if)#ip ospf dead-interval 40",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. GigabitEthernet0/0/0 đang hoạt động, giao thức đường truyền đang hoạt động Địa chỉ Internet là 192.168.1.2/24, Vùng 0 ID Tiến trình 1, ID Router 192.168.1.2, Loại Mạng POINT-TO-POINT, Chi phí: 1 Độ trễ truyền là 1 giây, Trạng thái POINT-TO-POINT, Khoảng thời gian bộ định thời được cấu hình, Hello 15, Dead 40, Wait 40, Retransmit 5 Hello tiếp theo sau 00:00:08 Chỉ mục 1/1, độ dài hàng đợi flood 0 Tiếp theo 0x0(0)/0x0(0) Độ dài quét flood lần cuối là 1, tối đa là 1 Thời gian quét flood lần cuối là 0 mili giây, tối đa là 0 mili giây Chặn hello cho 0 láng giềng GigabitEthernet0/0/0 đang hoạt động, giao thức đường truyền đang hoạt động Địa chỉ Internet là 192.168.1.1/24, Vùng 0 ID Tiến trình 1, ID Router 10.1.1.1, Loại Mạng POINT-TO-POINT, Chi phí: 1 Độ trễ truyền là 1 giây, Trạng thái POINT-TO-POINT, Khoảng thời gian bộ định thời được cấu hình, Hello 15, Dead 45, Wait 15, Retransmit 5 Hello tiếp theo sau 00:00:11 Chỉ mục 1/1, độ dài hàng đợi flood 0 Tiếp theo 0x0(0)/0x0(0) Độ dài quét flood lần cuối là 1, tối đa là 1 Thời gian quét flood lần cuối là 0 mili giây, tối đa là 0 mili giây Chặn hello cho 0 láng giềng Kỹ sư mạng đang cấu hình router R2 như một router thay thế trên mạng. Sau khi cấu hình ban đầu được áp dụng, người ta xác định rằng R2 không hiển thị R1 là láng giềng. Cấu hình nào phải được áp dụng cho R2 để hoàn tất cấu hình OSPF và cho phép nó thiết lập quan hệ láng giềng với R1?",
+      "options_vi": {}
     },
     {
       "id": "12.62",
@@ -2028,28 +2000,20 @@
     },
     {
       "id": "12.91",
-      "type": "single",
-      "question": "An engineer is configuring SSH version 2 exclusively on the R1 router. What is the minimum configuration required to permit remote management using the cryptographic protocol?\nOption A\nhostname R1\nip domain name cisco\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input all\nlogin local\nOption B\nhostname R1\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input all\nlogin local\nOption C\nhostname R1\nservice password-encryption\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input ssh\nlogin local\nOption D\nhostname R1\nip domain name cisco\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input ssh\nlogin local",
+      "question": "An engineer is configuring SSH version 2 exclusively on the R1 router. What is the minimum configuration required to permit remote management using the cryptographic protocol?",
       "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "hostname R1\nip domain name cisco\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input all\nlogin local",
+        "B": "hostname R1\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input all\nlogin local",
+        "C": "hostname R1\nservice password-encryption\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input ssh\nlogin local",
+        "D": "hostname R1\nip domain name cisco\ncrypto key generate rsa general-keys modulus 1024"
       },
-      "answer": [
-        "D"
-      ],
+      "answer": "",
       "answer_images": [],
-      "explanation": "This question said “configuring SSH version 2 exclusively” so only SSHv2 should be configured to remote access to this router -> We must use the command “transport input ssh”, not “transport input all” (which includes Telnet) -> Only Option C and Option D are correct.\nWe must create a domain-name too for SSH to work with the command “ip domain-name …” -> Only Option D is correct.\nNote: There is a typo in this question in the command “ip domain name …”. It should be “ip domain-name …” instead.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Một kỹ sư đang cấu hình SSH phiên bản 2 độc quyền trên router R1. Cấu hình tối thiểu cần thiết để cho phép quản lý từ xa sử dụng giao thức mã hóa là gì?\nOption A\nhostname R1\nip domain name cisco\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input all\nlogin local\nOption B\nhostname R1\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input all\nlogin local\nOption C\nhostname R1\nservice password-encryption\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input ssh\nlogin local\nOption D\nhostname R1\nip domain name cisco\ncrypto key generate rsa general-keys modulus 1024\nusername cisco privilege 15 password 0 cisco123\nip ssh version 2\nline vty 0 15\ntransport input ssh\nlogin local",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      }
+      "question_vi": "Một kỹ sư đang cấu hình SSH phiên bản 2 độc quyền trên router R1. Cấu hình tối thiểu nào là cần thiết để cho phép quản lý từ xa bằng giao thức mã hóa này?",
+      "options_vi": {}
     },
     {
       "id": "12.93",
@@ -2178,28 +2142,20 @@
     },
     {
       "id": "12.98",
-      "type": "single",
-      "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?\nOption A\nR2(config)#interface g0/0/0R2(config-if)#ip ospf hello-interval 10\nOption B\nR2(config)#router ospf 1R2(config-router)#router-id 192.168.1.1\nOption C\nR2(config)#router ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2\nOption D\nR2(config)#interface g0/0/0R2(config-if)#ip ospf dead-interval 45",
+      "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?",
       "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf hello-interval 10",
+        "B": "R2(config)#\nrouter ospf 1R2(config-router)#router-id 192.168.1.1",
+        "C": "R2(config)#\nrouter ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2",
+        "D": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf dead-interval 45"
       },
-      "answer": [
-        "A"
-      ],
+      "answer": "A",
       "answer_images": [],
-      "explanation": "In order to become OSPF neighbor, the following values must be matched on both routers:\n+ Area ID+ Authentication+ Hello and Dead Intervals+ Stub area Flag+ MTU Size\nIn this question we see the Hello intervals are mismatched (“10” seconds on R1 and “15” seconds on R2) so we must correct it on one end.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nKỹ sư mạng đang cấu hình router R2 làm router thay thế trên mạng. Sau khi cấu hình ban đầu được áp dụng, người ta xác định rằng R2 không hiển thị R1 là neighbor. Cấu hình nào phải được áp dụng cho R2 để hoàn thành cấu hình OSPF và cho phép nó thiết lập mối quan hệ neighbor với R1?\nOption A\nR2(config)#interface g0/0/0R2(config-if)#ip ospf hello-interval 10\nOption B\nR2(config)#router ospf 1R2(config-router)#router-id 192.168.1.1\nOption C\nR2(config)#router ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2\nOption D\nR2(config)#interface g0/0/0R2(config-if)#ip ospf dead-interval 45",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. GigabitEthernet0/0/0 đang hoạt động, giao thức đường truyền đang hoạt động Địa chỉ Internet là 192.168.1.2/24, Vùng 0 ID Tiến trình 1, ID Router 192.168.1.2, Loại Mạng POINT-TO-POINT, Chi phí: 1 Độ trễ truyền là 1 giây, Trạng thái POINT-TO-POINT, Khoảng thời gian bộ định thời được cấu hình, Hello 10, Dead 40, Wait 40, Retransmit 5 Hello tiếp theo sau 00:00:08 Chỉ mục 1/1, độ dài hàng đợi flood là 0 Tiếp theo 0x0(0)/0x0(0) Độ dài quét flood lần cuối là 1, tối đa là 1 Thời gian quét flood lần cuối là 0 mili giây, tối đa là 0 mili giây Chặn hello cho 0 láng giềng GigabitEthernet0/0/0 đang hoạt động, giao thức đường truyền đang hoạt động Địa chỉ Internet là 192.168.1.1/24, Vùng 0 ID Tiến trình 1, ID Router 10.1.1.1, Loại Mạng POINT-TO-POINT, Chi phí: 1 Độ trễ truyền là 1 giây, Trạng thái POINT-TO-POINT, Khoảng thời gian bộ định thời được cấu hình, Hello 15, Dead 40, Wait 40, Retransmit 5 Hello tiếp theo sau 00:00:11 Chỉ mục 1/1, độ dài hàng đợi flood là 0 Tiếp theo 0x0(0)/0x0(0) Độ dài quét flood lần cuối là 1, tối đa là 1 Thời gian quét flood lần cuối là 0 mili giây, tối đa là 0 mili giây Chặn hello cho 0 láng giềng Kỹ sư mạng đang cấu hình router R2 như một router thay thế trên mạng. Sau khi cấu hình ban đầu được áp dụng, người ta xác định rằng R2 không hiển thị R1 là láng giềng. Cấu hình nào phải được áp dụng cho R2 để hoàn tất cấu hình OSPF và cho phép nó thiết lập quan hệ láng giềng với R1?",
+      "options_vi": {}
     },
     {
       "id": "12.99",

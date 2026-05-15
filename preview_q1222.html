@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview Q12.22</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; padding: 24px; }
+  .card { background: #1a1f2e; border: 1px solid #2d3748; border-radius: 12px; padding: 24px; max-width: 900px; margin: 0 auto; }
+  .q-id { display: inline-block; background: #1e3a5f; color: #60a5fa; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; }
+  .q-text { font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 16px; }
+  pre.code { background: #0d1117; border: 1px solid #2d3748; border-radius: 6px; padding: 12px; font-family: 'Consolas', monospace; font-size: 12px; color: #a3e635; overflow-x: auto; white-space: pre; margin: 8px 0; line-height: 1.6; }
+  .options { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .option { background: #0f1117; border: 1px solid #2d3748; border-radius: 8px; padding: 12px; }
+  .option.correct { border-color: #4ade80; }
+  .opt-label { font-size: 12px; font-weight: 600; color: #ffd700; margin-bottom: 6px; }
+  .option.correct .opt-label { color: #4ade80; }
+  .answer { margin-top: 16px; font-size: 13px; color: #4ade80; }
+</style>
+</head>
+<body>
+<div class="card" id="card">Loading...</div>
+<script>
+fetch('output_odt/json/Part 12.json')
+  .then(r => r.json())
+  .then(d => {
+    const q = d.questions.find(q => q.id === '12.22');
+    if (!q) { document.getElementById('card').textContent = 'Not found'; return; }
+
+    function formatText(text) {
+      if (!text) return '';
+      const lines = text.split('\n');
+      const codePattern = /^(\s{2,}|[A-Z0-9_-]+[#>$]|interface |router |ip |show |no |!|\*|--)/;
+      let result = [], textBuf = [], codeBuf = [];
+      const flushText = () => { if (textBuf.length) { result.push(`<span>${textBuf.join(' ').trim()}</span>`); textBuf = []; } };
+      const flushCode = () => { if (codeBuf.length) { result.push(`<pre class="code">${codeBuf.join('\n')}</pre>`); codeBuf = []; } };
+      for (const line of lines) {
+        if (codePattern.test(line) || line.trim() === '!') { flushText(); codeBuf.push(line); }
+        else if (line.trim() === '') { if (codeBuf.length) codeBuf.push(''); }
+        else { flushCode(); textBuf.push(line); }
+      }
+      flushText(); flushCode();
+      return result.join('');
+    }
+
+    const optHtml = Object.entries(q.options).map(([k, v]) => `
+      <div class="option ${q.answer === k ? 'correct' : ''}">
+        <div class="opt-label">Option ${k} ${q.answer === k ? '✓' : ''}</div>
+        ${formatText(v)}
+      </div>`).join('');
+
+    document.getElementById('card').innerHTML = `
+      <div class="q-id">#${q.id}</div>
+      <div class="q-text">${formatText(q.question)}</div>
+      <div class="options">${optHtml}</div>
+      <div class="answer">Answer: ${q.answer}</div>
+    `;
+  });
+</script>
+</body>
+</html>

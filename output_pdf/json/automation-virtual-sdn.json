@@ -44,7 +44,9 @@
       ],
       "answer_images": [],
       "explanation": "Spine-leaf architecture is typically deployed as two layers: spines (such as an aggregation layer),\nand leaves (such as an access layer). Spine-leaf topologies provide high-bandwidth, low-latency,\nnonblocking server-to-server connectivity.\nLeaf (aggregation) switches are what provide devices access to the fabric (the network of spine\nand leaf switches) and are typically deployed at the top of the rack. Generally, devices connect to\nthe leaf switches. Devices can include servers, Layer 4-7 services (firewalls and load balancers),\nand WAN or Internet routers. Leaf switches do not connect to other leaf switches. In spine-and-\nleaf architecture, every leaf should connect to every spine in a full mesh.\nSpine (aggregation) switches are used to connect to all leaf switches and are typically deployed at\nthe end or middle of the row. Spine switches do not connect to other spine switches.\nReference: https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-\nswitches/guide-c07-733228.html",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_2_img_0.jpeg"
+      ],
       "question_vi": "Kiến trúc spine-and-leaf cho phép khả năng mở rộng trong mạng bằng cách nào khi cần thêm các cổng truy cập?",
       "options_vi": {
         "A": "Có thể thêm một spine switch và một leaf switch với các kết nối dự phòng giữa chúng",
@@ -263,7 +265,9 @@
       ],
       "answer_images": [],
       "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to\nscale the network design.\nHowever, many small enterprise networks do not grow significantly larger over time. Therefore, a\ntwo-tier hierarchical design where the core and distribution layers are collapsed into one layer is\noften more practical. A “collapsed core” is when the distribution layer and core layer\nfunctions are implemented by a single device. The primary motivation for the collapsed core\ndesign is reducing network cost, while maintaining most of the benefits of the three-tier\nhierarchical model.\nReference: https://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=4\nA collapsed core network is shown below. The collapsed core network may be deployed with\nredundant core/distribution router, or consolidated core/distribution router.\nDeploying a collapsed core network results in the distribution layer and core layer functions being\nimplemented in a single device. The collapsed core/distribution device must provide the following:\n+ High speed physical and logical paths connecting to the network\n+ Layer-2 aggregation and demarcation point\n+ Define routing and network access policies -> Answer C is correct\n+ Intelligent network services—QoS, Network virtualization, etc.\nReference: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Small_Enterprise_Design_\nProfile/SEDP/chap2.html",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_6_img_2.jpeg"
+      ],
       "question_vi": "Chức năng nào được thực hiện bởi tầng collapsed core trong kiến trúc hai tầng?",
       "options_vi": {
         "A": "áp dụng các chính sách bảo mật",
@@ -342,7 +346,9 @@
       ],
       "answer_images": [],
       "explanation": "With Leaf-Spine, the network uses Layer 3 routing so STP is no longer required. Spine-leaf\narchitectures rely on protocols such as Equal-Cost Multipath (ECPM) routing to load balance traffic\nacross all available paths while still preventing network loops. This allows all connections to be\nutilized at the same time while still remaining stable and avoiding loops within the network.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_7_img_3.jpeg"
+      ],
       "question_vi": "Các switch trong kiến trúc spine-and-leaf được kết nối với nhau như thế nào?",
       "options_vi": {
         "A": "Mỗi leaf switch được kết nối với hai spine switch, tạo thành một vòng lặp.",
@@ -527,7 +533,9 @@
       ],
       "answer_images": [],
       "explanation": "Full-mesh is a network topology in which there is a direct link between all pairs of nodes. Below is\nan example of full-mesh topology.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_9_img_4.jpeg"
+      ],
       "question_vi": "Kiến trúc WAN nào có mức độ tin cậy cao nhất?",
       "options_vi": {
         "A": "router-on-a-stick",
@@ -605,7 +613,10 @@
       ],
       "answer_images": [],
       "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to\nscale the network design. Most small enterprise campus’ do not grow significantly larger over time,\nand most small enterprise campus are small enough to be well served by a two-tier hierarchical\ndesign, where the core and distribution layers are collapsed into one layer. The primary motivation\nfor the collapsed core design is reducing network cost, while maintaining most of the benefits of\nthe three-tier hierarchical model.\nReference: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Small_Enterprise_Design_\nProfile/SEDP/chap2.html\nCloud & Virtualization Questions\nPremium Member: You can test your knowledge with these questions first via this link (via\nHTML).\nCloud Summary\nThree cloud supporting services cloud providers0 provide to customer:\n+ SaaS (Software as a Service): SaaS uses the web to deliver applications that are\nmanaged by a third-party vendor and whose interface is accessed on the clients’ side.\nMost SaaS applications can be run directly from a web browser without any downloads or\ninstallations required, although some require plugins.\n+ PaaS (Platform as a Service): are used for applications, and other development, while\nproviding cloud components to software. What developers gain with PaaS is a framework\nthey can build upon to develop or customize applications. PaaS makes the development,\ntesting, and deployment of applications quick, simple, and cost-effective. With this\ntechnology, enterprise operations, or a third-party provider, can manage OSes,\nvirtualization, servers, storage, networking, and the PaaS software itself. Developers,\nhowever, manage the applications. PaaS provides everything except applications.\n+ IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and\nmanaging remote datacenter infrastructures, such as compute (virtualized or bare metal),\nstorage, networking, and networking services (e.g. firewalls). Instead of having to\npurchase hardware outright, users can purchase IaaS based on consumption, similar to\nelectricity or other utility billing.\nVirtualization Summary\nA major advantage of virtualization is overall reduced cost (less equipment is required,\nless energy is consumed, less space is required).\nThere are two types of hypervisors: type 1 and type 2.\nIn type 1 hypervisor (or native hypervisor), the hypervisor is installed directly on the\nphysical server (so it is called “bare metal” approach). Then instances of an operating\nsystem (OS) are installed on the hypervisor. Type 1 hypervisor has direct access to the\nhardware resources. Therefore it is more efficient than hosted architectures. Some\nexamples of type 1 hypervisor are VMware vSphere/ESXi, Oracle VM Server, KVM and\nMicrosoft Hyper-V. Type 1 hypervior is usually used on enterprise servers and data center\nnetworking devices.\nIn contrast to type 1 hypervisor, a type 2 hypervisor (or hosted hypervisor) runs on top of\nan operating system and not the physical hardware directly. A big advantage of Type 2\nhypervisors is that management console software is not required. Examples of type 2\nhypervisors are VMware Workstation (which can run on Windows, Mac and Linux) or\nMicrosoft Virtual PC (only runs on Windows).",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_11_img_5.jpeg",
+        "page_12_img_6.jpeg"
+      ],
       "question_vi": "Đặc điểm của kiến trúc mạng collapsed-core là gì?",
       "options_vi": {
         "A": "Nó cho phép tầng core và distribution hoạt động như một tầng kết hợp duy nhất.",
@@ -657,7 +668,9 @@
       ],
       "answer_images": [],
       "explanation": "Below are the 3 cloud supporting services cloud providers provide to customer:\n+ SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed by a\nthird-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can\nbe run directly from a web browser without any downloads or installations required, although some\nrequire plugins.\n+ PaaS (Platform as a Service): are used for applications, and other development, while providing\ncloud components to software. What developers gain with PaaS is a framework they can build\nupon to develop or customize applications. PaaS makes the development, testing, and deployment\nof applications quick, simple, and cost-effective. With this technology, enterprise operations, or a\nthird-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS\nsoftware itself. Developers, however, manage the applications.\n+ IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing\nremote datacenter infrastructures, such as compute (virtualized or bare metal), storage,\nnetworking, and networking services (e.g. firewalls). Instead of having to purchase hardware\noutright, users can purchase IaaS based on consumption, similar to electricity or other utility\nbilling.\nIn\ngeneral, IaaS provides hardware so that an organization can install their own operating system.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_13_img_7.jpeg"
+      ],
       "question_vi": "Một tổ chức đã quyết định bắt đầu sử dụng các dịch vụ được cung cấp trên đám mây. Dịch vụ đám mây nào cho phép tổ chức cài đặt hệ điều hành riêng trên máy ảo?",
       "options_vi": {
         "A": "platform-as-a-service",
@@ -790,7 +803,9 @@
       ],
       "answer_images": [],
       "explanation": "Three cloud supporting services cloud providers provide to customer:\n+ SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed by a\nthird-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can\nbe run directly from a web browser without any downloads or installations required, although some\nrequire plugins.\n+ PaaS (Platform as a Service): are used for applications, and other development, while providing\ncloud components to software. What developers gain with PaaS is a framework they can build\nupon to develop or customize applications. PaaS makes the development, testing, and deployment\nof applications quick, simple, and cost-effective. With this technology, enterprise operations, or a\nthird-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS\nsoftware itself. Developers, however, manage the applications. PaaS provides everything except\napplications.\n+ IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing\nremote datacenter infrastructures, such as compute (virtualized or bare metal), storage,\nnetworking, and networking services (e.g. firewalls). Instead of having to purchase hardware\noutright, users can purchase IaaS based on consumption, similar to electricity or other utility\nbilling.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_15_img_8.jpeg"
+      ],
       "question_vi": "Một quản lý yêu cầu kỹ sư mạng tư vấn mô hình dịch vụ đám mây nào được sử dụng để nhân viên không phải lãng phí thời gian cài đặt, quản lý và cập nhật phần mềm chỉ được sử dụng thỉnh thoảng. Kỹ sư khuyến nghị mô hình dịch vụ đám mây nào?",
       "options_vi": {
         "A": "infrastructure-as-a-service",
@@ -814,7 +829,9 @@
       "answer": [
         "D"
       ],
-      "answer_images": [],
+      "answer_images": [
+        "page_15_img_9.png"
+      ],
       "explanation": null,
       "explanation_images": [],
       "question_vi": "Các server kết nối với mạng như thế nào trong môi trường ảo?",
@@ -944,7 +961,9 @@
       "answer": [
         "C"
       ],
-      "answer_images": [],
+      "answer_images": [
+        "page_17_img_10.png"
+      ],
       "explanation": null,
       "explanation_images": [],
       "question_vi": "Một người triển khai đang chuẩn bị phần cứng cho ảo hóa để tạo máy ảo trên một host. Cần gì để cung cấp giao tiếp giữa phần cứng và máy ảo?",
@@ -1053,7 +1072,10 @@
         "D",
         "E"
       ],
-      "answer_images": [],
+      "answer_images": [
+        "page_19_img_11.jpeg",
+        "page_19_img_12.jpeg"
+      ],
       "explanation": "SDN Questions\nPremium Member: You can test your knowledge with these questions first via this link (via\nHTML).\nSDN Quick Summary\nEverything that networking devices do can be categorized into three planes: Data Plane, Control Plane and\nManagement Plane.\n+ Data Plane: responsible for the switching of packets through the router. In short, it includes any action\nafter receiving data (processing, encapsulating/decapsulating, matching destination MAC & IP addresses,\nforwarding, QoS, filtering with access-list)\n+ Control Plane: responsible for maintaining sessions and exchanging protocol information with other\nnetwork devices. It consists of dynamic IP routing protocols (OSPF, EIGRP, BGP…), the RIB, routing updates,\nin addition to other protocols such as STP, ARP, ICMP, PIM, IGMP, LACP…\n+ Management Plane: is used to manage a device through its connection to the network. Examples of\nprotocols processed in the management plane include Simple Network Management Protocol (SNMP),\nTelnet, File Transfer Protocol (FTP), Secure FTP, and Secure Shell (SSH). These management protocols are\nused for monitoring and for command-line interface (CLI) access\nMost traditional devices use a distributed architecture, in which each control plane is\nresided in a networking device. Therefore they need to communicate with each other via\nmessages to work correctly.\nIn constrast to distributed architecture, centralized (or controller-based) architectures\ncentralizes the control of networking devices into one device, called SDN controller.\nAs we took the control planes off networking devices but not data planes so we need a\nway to communicate with them. So we put a southbound interface (SBI) at the bottom of\nSDN controller for this task. An SBI communicates with the devices via an application\nprogramming interface (API).\nNow, in turn, the networking administrators and SDN applications want to control the\ncontroller! So the controller need a northbound interface (NBI) to communicate with us.\nThe NBI applications included various network services, including network virtualization,\ndynamic virtual network provisioning, firewall monitoring, user identity management and\naccess policy control.\n– REST (Representational State Transfer) describes a type of API that allows applications\nto sit on different hosts, using HTTP messages to transfer data over the API.\nThree SDN controllers which are mentioned in CCNA:\n+ OpenDaylight Controller: an OpenFlow-based SDN\n+ Cisco Application Centric Infrastructure (ACI)\n+ Cisco APIC Enterprise Module (APIC-EM)",
       "explanation_images": [],
       "question_vi": "Hai đặc điểm nào đại diện cho máy ảo (VM)? (Chọn hai)",
@@ -1160,7 +1182,9 @@
       ],
       "answer_images": [],
       "explanation": "The Southbound API is used to communicate with network devices.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_21_img_14.jpeg"
+      ],
       "question_vi": "API nào được sử dụng trong kiến trúc dựa trên bộ điều khiển để tương tác với các thiết bị biên (edge devices)?",
       "options_vi": {
         "A": "overlay",
@@ -1244,7 +1268,9 @@
       ],
       "answer_images": [],
       "explanation": "Most traditional devices use a distributed architecture, in which each control plane is resided in a\nnetworking device. Therefore they need to communicate with each other via messages to work\ncorrectly.\nIn contrast to distributed architecture, centralized (or controller-based) architectures centralizes\nthe control of networking devices into one device, called SDN controller -> Answer D is correct.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_22_img_15.jpeg"
+      ],
       "question_vi": "Phát biểu nào so sánh đúng giữa mạng truyền thống và mạng dựa trên bộ điều khiển?",
       "options_vi": {
         "A": "Chỉ mạng truyền thống cung cấp mặt phẳng điều khiển (control plane) tập trung",
@@ -1351,7 +1377,9 @@
       ],
       "answer_images": [],
       "explanation": "The Open Networking Foundation identifies three main parts of the Software-defined networking\n(SDN): Application layer; Control layer and Infrastructure layer. SDN separates a router’s control\nplane from the data (forwarding) plane. The control plane makes routing decisions. The data plane\nforwards data (packets) through the router. With SDN routing, decisions are made remotely\ninstead of on each individual router.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_24_img_16.png"
+      ],
       "question_vi": "Trong kiến trúc được định nghĩa bằng phần mềm (software defined architectures), mặt phẳng nào được phân tán và chịu trách nhiệm chuyển tiếp lưu lượng?",
       "options_vi": {
         "A": "management plane",
@@ -1455,7 +1483,9 @@
       ],
       "answer_images": [],
       "explanation": "Maybe we should understand this question “What are the layers inside control plane and data\nplane within the software-defined architecture?” However, this question is still not clear.\nThe Open Networking Foundation identifies three main parts of the Software-defined networking\n(SDN): Application layer; Control layer and Infrastructure layer. SDN separates a router’s control\nplane from the data (forwarding) plane. The control plane makes routing decisions. The data plane\nforwards data (packets) through the router. With SDN routing, decisions are made remotely\ninstead of on each individual router.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_26_img_17.png"
+      ],
       "question_vi": "Giao diện giữa mặt phẳng điều khiển (control plane) và mặt phẳng dữ liệu (data plane) nằm ở đâu trong kiến trúc được định nghĩa bằng phần mềm?",
       "options_vi": {
         "A": "lớp ứng dụng (application layer) và lớp quản lý (management layer)",
@@ -1825,7 +1855,9 @@
       ],
       "answer_images": [],
       "explanation": "Now, in turn, the networking administrators and SDN applications want to control the controller!\nSo the controller need a northbound interface (NBI) to communicate with us. The NBI\napplications included various network services, including network virtualization, dynamic virtual\nnetwork provisioning, firewall monitoring, user identity management and access policy control.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_30_img_18.jpeg"
+      ],
       "question_vi": "Chức năng của API hướng bắc (northbound API) là gì?",
       "options_vi": {
         "A": "Nó nâng cấp phần mềm và khôi phục tệp.",
@@ -2062,7 +2094,9 @@
       ],
       "answer_images": [],
       "explanation": "The bottom of Cisco DNA Center Overall Health Dashboard displays the top 10 issues, if any, that\nmust be addressed.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_33_img_19.jpeg"
+      ],
       "question_vi": "Chức năng của Bảng điều khiển Sức khỏe Tổng thể (Overall Health Dashboard) của Cisco DNA Center là gì?",
       "options_vi": {
         "A": "Nó tóm tắt mức sử dụng CPU hàng ngày và hàng tuần cho các máy chủ và máy trạm trong mạng.",
@@ -2195,7 +2229,9 @@
       ],
       "answer_images": [],
       "explanation": "Dynamic Multipoint VPN (DMVPN) is a solution of Cisco. DMVPN provides the following advantages:\n+ Provides full meshed connectivity with simple Hub-and-Spoke topology. The spokes can\ncommunicate between each other without going through Hub\n+ Only one static public IP address is required on Hub. Spokes can use dynamic (unknown) public\nIP addresses\n+ The configuration is simple even in large network. No additional configuration is required on Hub\nwhen new Spokes are added.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_35_img_20.jpeg"
+      ],
       "question_vi": "Loại VPN nào sử dụng cấu hình hub-and-spoke để thiết lập mô hình full mesh?",
       "options_vi": {
         "A": "GRE over IPsec",
@@ -2530,9 +2566,7 @@
       "source_id": "9",
       "type": "single",
       "question": "Refer to the exhibit.\ncisco_ospf_vrf {\"R1 default\":\nensure => 'present',\nauto_cost => '100',\n}\nWhich type of configuration is represented in the output?",
-      "question_images": [
-        "page_40_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "Puppet",
         "B": "JSON",
@@ -2596,7 +2630,9 @@
       ],
       "answer_images": [],
       "explanation": "TCP port 22 is SSH, which is used by Ansible when communicating with the managed nodes.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_41_img_21.jpeg"
+      ],
       "question_vi": "Cơ chế quản lý cấu hình nào sử dụng cổng TCP 22 theo mặc định khi giao tiếp với các node được quản lý?",
       "options_vi": {
         "A": "Ansible",
@@ -2648,7 +2684,9 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": [],
+      "explanation_images": [
+        "page_42_img_22.png"
+      ],
       "question_vi": "Với REST API, header HTTP tiêu chuẩn nào cho server biết loại phương tiện (media type) nào được client mong đợi?",
       "options_vi": {
         "A": "Accept-Encoding: gzip, deflate",
@@ -2715,7 +2753,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAfter running the code in the exhibit, which step reduces the amount of data that the NETCONF\nserver returns to the NETCONF client, to only the interface’s configuration?",
       "question_images": [
-        "page_42_img_0.jpeg"
+        "page_43_img_23.jpeg"
       ],
       "options": {
         "A": "Use the xml library to parse the data returned by the NETCONF server for the interface’s\nconfiguration.",
@@ -2841,7 +2879,9 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": [],
+      "explanation_images": [
+        "page_44_img_24.png"
+      ],
       "question_vi": "Phương thức REST nào cập nhật một đối tượng trong Cisco DNA Center Intent API?",
       "options_vi": {
         "A": "CHANGE",
@@ -2856,7 +2896,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich type of configuration is represented in the output?",
       "question_images": [
-        "page_40_img_0.jpeg"
+        "page_44_img_25.jpeg"
       ],
       "options": {
         "A": "Chef",
@@ -2869,7 +2909,9 @@
       ],
       "answer_images": [],
       "explanation": "Puppet resource declarations have the following syntax:\nWhere:\n<TYPE>: is one of the numerous resource types, e.g., file\n<TITLE>: A arbitrary unique resource identifier across all resources of the same type (across all\nresources applied to a particular system)\n<ATTRIBUTE>: Resource type-specific parameters",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_44_img_26.jpeg"
+      ],
       "question_vi": "Tham khảo hình minh họa.\nLoại cấu hình nào được thể hiện trong đầu ra?",
       "options_vi": {
         "A": "Chef",
@@ -2884,7 +2926,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhat is represented by “R1” and “SW1” within the JSON output?",
       "question_images": [
-        "page_44_img_0.jpeg"
+        "page_45_img_27.jpeg"
       ],
       "options": {
         "A": "array",
@@ -2941,7 +2983,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nHow many objects are present in the given JSON-encoded data?",
       "question_images": [
-        "page_45_img_0.jpeg"
+        "page_46_img_28.jpeg"
       ],
       "options": {
         "A": "one",
@@ -2968,9 +3010,7 @@
       "source_id": "75",
       "type": "single",
       "question": "Refer to the exhibit.\n{\n\"myCar\": {\n\"name\": \"thunder\",\n\"wheels\": [\"good\", \"good\", \"pressureLow\", \"warning\"],\n\"gasLight\": false\n},\n\"oldCar\": {\n\"name\": \"sleepy\",\n\"wheels\": [\"pressureLow\", \"pressureLow\", \"pressureLow\",\n\"pressureLow\"],\n\"color\": \"rust\"\n\"gasLight\": true\n},\n\"newCar\": {\n\"name\": \"lightning\",\n\"wheels\": [\"pressureLow\", \"good\", \"pressureLow\", \"good\"],\n\"color\": \"blue\"\n\"gasLight\": true\n}\n}\nIn which structure does the word “warning” directly reside?",
-      "question_images": [
-        "page_45_img_0.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "array",
         "B": "object",
@@ -3034,7 +3074,9 @@
       ],
       "answer_images": [],
       "explanation": "Puppet Master Components\nManifests\nManifest is the most important component in a Puppet Master so we will mention about it first.\nManifest is just the file where the all Puppet scripts for configuring Puppet clients are written (in\nRuby code). Manifest filenames use “.pp” (means Puppet policy) extension.\nBased on the Facts received from Factor, Master compiles manifests into catalogs (which will be\ndiscussed later), then sends them to the client.\nModule\nModule also plays an important part in a Puppet Master. Module is a collection of manifests and\nother related data files organized in a predefined way to facilitate sharing and reusing. Modules tie\nmanifests, templates, and files into a single unit.\nModule = Manifests + Data (Templates, Files)\nModules have a specific directory path which is usually “/etc/puppet/manifests/”. They are useful\nfor organizing our Puppet code, because they allow to split code into multiple manifests. It is\nconsidered best practice to use modules to organize all of our Puppet manifests.\nFor more information about Puppet, please read our Puppet tutorial.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_48_img_29.jpeg"
+      ],
       "question_vi": "Puppet sử dụng mô hình script nào?",
       "options_vi": {
         "A": "manifests and modules",
@@ -3049,8 +3091,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nHow many JSON objects are presented?",
       "question_images": [
-        "page_47_img_0.jpeg",
-        "page_47_img_1.jpeg"
+        "page_48_img_30.jpeg"
       ],
       "options": {
         "A": "1",
@@ -3077,10 +3118,7 @@
       "source_id": "66",
       "type": "single",
       "question": "Refer to the exhibit.\n{\n\"Test_Questions\" : [\n\"Automation\",\n\"Configuration\",\n],\n\"Test_Exam_Level\" : [\n\"CCNA\",\n\"CCNP\",\n],\n\"Test_Response\" : [\n\"Correct\",\n\"Incorrect\",\n]\n}\nHow many arrays are present in the JSON data?",
-      "question_images": [
-        "page_47_img_0.jpeg",
-        "page_47_img_1.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "one",
         "B": "three",

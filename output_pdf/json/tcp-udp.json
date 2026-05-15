@@ -96,7 +96,9 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": [],
+      "explanation_images": [
+        "page_2_img_0.png"
+      ],
       "question_vi": "TCP và UDP khác nhau như thế nào trong cách thiết lập kết nối giữa hai điểm cuối?",
       "options_vi": {
         "A": "TCP sử dụng các gói đồng bộ (synchronization packets), còn UDP sử dụng các gói xác nhận (acknowledgment packets)",
@@ -374,9 +376,7 @@
       "source_id": "18",
       "type": "single",
       "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report\nintermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent\nconnectivity issue?",
-      "question_images": [
-        "page_5_img_0.png"
-      ],
+      "question_images": [],
       "options": {
         "A": "Interface errors are incrementing",
         "B": "An incorrect SFP media type was used at SiteA",
@@ -442,7 +442,9 @@
       ],
       "answer_images": [],
       "explanation": null,
-      "explanation_images": [],
+      "explanation_images": [
+        "page_6_img_1.png"
+      ],
       "question_vi": "Hai điểm tương đồng giữa cáp UTP Cat 5e và Cat 6a là gì? (Chọn hai)",
       "options_vi": {
         "A": "Cả hai đều hỗ trợ chiều dài tối đa 100 mét.",
@@ -535,9 +537,7 @@
       "source_id": "51",
       "type": "single",
       "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report\nintermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent\nconnectivity issue?",
-      "question_images": [
-        "page_5_img_0.png"
-      ],
+      "question_images": [],
       "options": {
         "A": "An incorrect type of transceiver has been inserted into a device on the link.",
         "B": "The wrong cable type was used to make the connection.",
@@ -564,7 +564,7 @@
       "type": "multi",
       "question": "Refer to the exhibit.\nWhich two commands must be configured on router R1 to enable the router to accept secure remote-\naccess connections? (Choose two)",
       "question_images": [
-        "page_7_img_0.jpeg"
+        "page_8_img_3.jpeg"
       ],
       "options": {
         "A": "transport input telnet",
@@ -622,7 +622,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nTraffic that is flowing over interface TenGigabitEthernet0/0 experiences slow transfer speeds. What is\nthe reason for the issue?",
       "question_images": [
-        "page_9_img_0.jpeg"
+        "page_10_img_4.jpeg"
       ],
       "options": {
         "A": "heavy traffic congestion",
@@ -650,7 +650,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nThe link between PC1 and the switch is up, but it is performing poorly. Which interface condition is\ncausing the performance problem?",
       "question_images": [
-        "page_10_img_0.jpeg"
+        "page_11_img_5.jpeg"
       ],
       "options": {
         "A": "There is a duplex mismatch on the interface",
@@ -678,7 +678,7 @@
       "type": "multi",
       "question": "Refer to the exhibit.\nWhat is a reason for poor performance on the network interface?",
       "question_images": [
-        "page_11_img_0.jpeg"
+        "page_12_img_6.jpeg"
       ],
       "options": {
         "A": "The interface is receiving excessive broadcast traffic.",
@@ -718,7 +718,10 @@
       ],
       "answer_images": [],
       "explanation": "UTP (Unshielded twisted pair) and STP (Shielded twisted pair) are the types of twisted pair cables\nwhich act as a transmission medium and imparts reliable connectivity of electronic equipment.\nAlthough the design and manufacture are different but both serve the same purpose.\nThe basic difference between UTP and STP is UTP (Unshielded twisted pair) is a cable with wires that\nare twisted together to reduce noise and crosstalk. On the contrary, STP (Shielded twisted pair) is a\ntwisted pair cable confined in foil or mesh shield that guards the cable against electromagnetic\ninterference.",
-      "explanation_images": [],
+      "explanation_images": [
+        "page_13_img_7.png",
+        "page_13_img_8.jpeg"
+      ],
       "question_vi": "Cáp UTP và STP so sánh như thế nào?",
       "options_vi": {
         "A": "Cáp STP rẻ hơn để sản xuất và dễ lắp đặt hơn, còn cáp UTP đắt hơn và khó lắp đặt hơn.",
@@ -836,10 +839,7 @@
       "source_id": "67",
       "type": "single",
       "question": "Refer to the exhibit.\nSW1#show ip interface brief\nInterface IP-Address OK? Method Status Protocol\nFastEthernet0/1 unassigned YES manual down down\nSW1#show interface fa0/1 status\nPort Name Status Vlan Duplex Speed Type\nFa0/1 notconnect 1 a-full a-100 10/100BaseTX\nWhat is the cause of the issue?",
-      "question_images": [
-        "page_12_img_0.png",
-        "page_12_img_1.jpeg"
-      ],
+      "question_images": [],
       "options": {
         "A": "STP",
         "B": "shutdown command",

@@ -1,5 +1,5 @@
 {
-  "count": 63,
+  "count": 59,
   "questions": [
     {
       "id": "5.27",
@@ -193,31 +193,6 @@
       }
     },
     {
-      "id": "7.52",
-      "type": "single",
-      "question": "Refer to the exhibit.\nR3#show ip ospf neighbor\nNeighbor ID  Pri   State          Dead Time  Address        Interface\n1.1.1.1        1   2WAY/DROTHER   00:00:35   172.16.10.1    GigabitEthernet0/0\n2.2.2.2        1   2WAY/DROTHER   00:00:35   172.16.10.2    GigabitEthernet0/0\n4.4.4.4        1   FULL/BDR       00:00:35   172.16.10.4    GigabitEthernet0/0\n5.5.5.5        1   FULL/DR        00:00:35   172.16.10.5    GigabitEthernet0/0\nR5 is the current DR on the network, and R4 is the BDR. Their interfaces are flapping, so a network engineer wants the OSPF network to elect a different DR and BDR. Which set of configurations must the engineer implement?",
-      "question_images": [
-        "q7.52_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "C"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nR3#show ip ospf neighbor\nNeighbor ID  Pri   State          Dead Time  Address        Interface\n1.1.1.1        1   2WAY/DROTHER   00:00:35   172.16.10.1    GigabitEthernet0/0\n2.2.2.2        1   2WAY/DROTHER   00:00:35   172.16.10.2    GigabitEthernet0/0\n4.4.4.4        1   FULL/BDR       00:00:35   172.16.10.4    GigabitEthernet0/0\n5.5.5.5        1   FULL/DR        00:00:35   172.16.10.5    GigabitEthernet0/0\nR5 là DR hiện tại trên mạng, và R4 là BDR. Các interface của chúng đang flapping, vì vậy kỹ sư mạng muốn mạng OSPF bầu chọn DR và BDR khác. Bộ cấu hình nào kỹ sư phải triển khai?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      }
-    },
-    {
       "id": "7.53",
       "type": "single",
       "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route\nGateway of last resort is 192.168.30.10 to network 0.0.0.0\n192.168.30.0/29 is subnetted, 2 subnets\nC       192.168.30.0 is directly connected, FastEthernet0/0\nC       192.168.30.8 is directly connected, Serial0/0.1\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nO IA    192.168.10.32/28 [110/193] via 192.168.30.10, 00:11:34, Serial0/0.1\nO IA    192.168.10.0/27 [110/192] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.20.0/30 is subnetted, 1 subnets\nO IA    192.168.20.0 [110/128] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.50.0/32 is subnetted, 1 subnets\nC       192.168.50.1 is directly connected, Loopback0\nO*IA 0.0.0.0/0 [110/84] via 192.168.30.10, 00:11:21, Serial0/0.1\nWhat is the metric of the route to the 192.168.10.33/28 subnet?",
@@ -369,29 +344,6 @@
       }
     },
     {
-      "id": "8.45",
-      "type": "single",
-      "question": "Refer to the exhibit.\nWhich configuration allows routers R14 and R86 to form an OSPFv2 adjacency while acting as a central point for exchanging OSPF information between routers?",
-      "question_images": [],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "B"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào cho phép router R14 và R86 thiết lập quan hệ láng giềng (adjacency) OSPFv2 trong khi đóng vai trò là điểm trung tâm để trao đổi thông tin OSPF giữa các router?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      }
-    },
-    {
       "id": "8.48",
       "type": "multi",
       "question": "A network engineer must configure two new subnets using the address block 10.70.128.0/19 to meet these requirements:\n* The first subnet must support 24 hosts.\n* The second subnet must support 472 hosts\n* Both subnets must use the longest subnet mask possible from the address block\nWhich two configurations must be used to configure the new subnets and meet a requirement to use the first available address in each subnet for the router interfaces? (Choose two)",
@@ -465,31 +417,6 @@
         "B": "Cấu hình các giao diện của router A với giá trị OSPF priority cao nhất trong area.",
         "C": "Cấu hình router A với OSPF router ID cố định",
         "D": "Cấu hình router B và router C làm OSPF neighbor của router A."
-      }
-    },
-    {
-      "id": "8.64",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAn IP subnet must be configured on each router that provides enough addresses for the number of assigned hosts and anticipates no more than 10% growth for new hosts. Which configuration script must be used?",
-      "question_images": [
-        "q8.64_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "C"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nMột IP subnet phải được cấu hình trên mỗi router cung cấp đủ địa chỉ cho số lượng host được gán và dự phòng không quá 10% tăng trưởng cho các host mới. Script cấu hình nào phải được sử dụng?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -933,31 +860,6 @@
         "B": "R1(config)#interface FastEthernet0/0\nR1(config-if)#ip ospf priority 200\nR1#clear ip ospf process",
         "C": "R3(config)#interface FastEthernet0/1\nR3(config-if)#ip ospf priority 200\nR3#clear ip ospf process",
         "D": "R2(config)#interface FastEthernet0/2\nR2(config-if)#ip ospf priority 1\nR2#clear ip ospf process"
-      }
-    },
-    {
-      "id": "9.87",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAn OSPF neighbor relationship must be configured using these guidelines:\n– R1 is only permitted to establish a neighbor with R2.\n– R1 will never participate in DR elections.\n– R1 will use a router-id of 10.1.1.1.\nWhich configuration must be used?",
-      "question_images": [
-        "q9.87_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "B"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nMối quan hệ láng giềng OSPF (OSPF neighbor relationship) phải được cấu hình theo các hướng dẫn sau:\n– R1 chỉ được phép thiết lập quan hệ láng giềng với R2.\n– R1 sẽ không bao giờ tham gia bầu chọn DR.\n– R1 sẽ sử dụng router-id là 10.1.1.1.\nCấu hình nào phải được sử dụng?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {

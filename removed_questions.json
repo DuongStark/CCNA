@@ -1,0 +1,254 @@
+{
+  "routing": [
+    {
+      "id": "14",
+      "question": "Refer to the exhibit.\nAn IP subnet must be configured on each router that provides enough addresses "
+    },
+    {
+      "id": "104",
+      "question": "Refer to the exhibit.\nR3#show ip ospf neighbor\nNeighbor ID Pri State Dead Time Address Interface\n1.1"
+    },
+    {
+      "id": "122",
+      "question": "Refer to the exhibit.\nWhich configuration allows routers R14 and R16 to form an OSPFv2 adjacency whi"
+    },
+    {
+      "id": "130",
+      "question": "Refer to the exhibit.\nAn OSPF neighbor relationship must be configured using these guidelines:\n– R1 "
+    },
+    {
+      "id": "135",
+      "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is "
+    }
+  ],
+  "ip_services": [
+    {
+      "id": "7",
+      "question": "An engineer is configuring NAT to translate the source subnet of 10.10.0.0/24 to any of three\naddres"
+    },
+    {
+      "id": "19",
+      "question": "R1 as an NTP server must have:\n* NTP authentication enabled\n* NTP packets sourced from Interface loo"
+    }
+  ],
+  "security-and-wireless": [
+    {
+      "id": "11",
+      "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate"
+    },
+    {
+      "id": "17",
+      "question": "Refer to the exhibit.\nOption A Option B\nip access-list standard 99 ip access-list standard 99\npermit"
+    },
+    {
+      "id": "35",
+      "question": "A network administrator must to configure SSH for remote access to router R1. The requirement is\nto "
+    },
+    {
+      "id": "63",
+      "question": "A Cisco engineer is configuring a factory-default router with these three passwords:\n* The user EXEC"
+    },
+    {
+      "id": "87",
+      "question": "Refer to the exhibit.\nLocal access for R4 must be established and these requirements must be met:\n– "
+    }
+  ],
+  "layer2_technologies": [
+    {
+      "id": "35",
+      "question": "Refer to the exhibit.\nHow must router A be configured so that it only sends Cisco Discovery Protocol"
+    },
+    {
+      "id": "37",
+      "question": "Refer to the exhibit.\nFor security reasons, automatic neighbor discovery must be disabled on the R5 "
+    },
+    {
+      "id": "59",
+      "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1"
+    },
+    {
+      "id": "63",
+      "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data tr"
+    },
+    {
+      "id": "73",
+      "question": "Refer to the exhibit.\nThe following must be considered\n+ SW1 is fully configured for all traffic\n+ T"
+    },
+    {
+      "id": "74",
+      "question": "Refer to the exhibit.\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given thes"
+    },
+    {
+      "id": "75",
+      "question": "Refer to the exhibit.\nAn engineer is configuring a new Cisco switch NewSW, to replace SW2. The detai"
+    },
+    {
+      "id": "112",
+      "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 an"
+    }
+  ],
+  "docx": {
+    "CCNA_IP_Connectivity": [
+      {
+        "id": "7.52",
+        "question": "Refer to the exhibit.\nR3#show ip ospf neighbor\nNeighbor ID  Pri   State          Dead Time  Address "
+      },
+      {
+        "id": "8.45",
+        "question": "Refer to the exhibit.\nWhich configuration allows routers R14 and R86 to form an OSPFv2 adjacency whi"
+      },
+      {
+        "id": "8.64",
+        "question": "Refer to the exhibit.\nAn IP subnet must be configured on each router that provides enough addresses "
+      },
+      {
+        "id": "9.87",
+        "question": "Refer to the exhibit.\nAn OSPF neighbor relationship must be configured using these guidelines:\n– R1 "
+      }
+    ],
+    "CCNA_IP_Services": [
+      {
+        "id": "5.25",
+        "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate"
+      },
+      {
+        "id": "9.10",
+        "question": "R1 as an NTP server must have:\n* NTP authentication enabled\n* NTP packets sourced from Interface loo"
+      }
+    ],
+    "CCNA_Network_Access": [
+      {
+        "id": "5.24",
+        "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1"
+      },
+      {
+        "id": "6.15",
+        "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data tr"
+      },
+      {
+        "id": "6.31",
+        "question": "Refer to the exhibit.\nHow must router A be configured so that it only sends Cisco Discovery Protocol"
+      },
+      {
+        "id": "8.31",
+        "question": "Refer to the exhibit.\nFor security reasons, automatic neighbor discovery must be disabled on the R5 "
+      },
+      {
+        "id": "8.60",
+        "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 an"
+      },
+      {
+        "id": "9.85",
+        "question": "Refer to the exhibit.\nThe following must be considered\n+ SW1 is fully configured for all traffic\n+ T"
+      },
+      {
+        "id": "10.66",
+        "question": "Refer to the exhibit.\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given thes"
+      }
+    ],
+    "CCNA_Security_Fundamentals": [
+      {
+        "id": "5.29",
+        "question": "Refer to the exhibit.\nAn access list is required to permit traffic from any host on interface G0/0 a"
+      },
+      {
+        "id": "6.2",
+        "question": "A network administrator must to configure SSH for remote access to router R1. The requirement is to "
+      },
+      {
+        "id": "8.77",
+        "question": "A Cisco engineer is configuring a factory-default router with these three passwords:\n* The user EXEC"
+      },
+      {
+        "id": "10.32",
+        "question": "After a recent security breach and a RADIUS failure, an engineer must secure the console port of eac"
+      }
+    ]
+  },
+  "odt": {
+    "Part 12": [
+      {
+        "id": "12.22",
+        "question": "Refer to the exhibit.\nR1#\n!\ninterface Loopback0\nip address 10.1.1.1 255.255.255.255\n!\ninterface Fast"
+      },
+      {
+        "id": "12.53",
+        "question": "Refer to the exhibit.\nEach router must be configured with the last usable IP address in the subnet. "
+      },
+      {
+        "id": "12.61",
+        "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is "
+      },
+      {
+        "id": "12.91",
+        "question": "An engineer is configuring SSH version 2 exclusively on the R1 router. What is the minimum configura"
+      },
+      {
+        "id": "12.98",
+        "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is "
+      }
+    ],
+    "Part 13": [
+      {
+        "id": "13.30",
+        "question": "Refer to the exhibit.\nAll interfaces are configured with duplex auto and ip ospf network broadcast. "
+      },
+      {
+        "id": "13.70",
+        "question": "A network engineer must configure an access list on a new Cisco IOS router. The access list must den"
+      },
+      {
+        "id": "13.82",
+        "question": "Refer to the exhibit.\nWhich set of commands must be applied to the two switches to configure an LACP"
+      },
+      {
+        "id": "13.85",
+        "question": "Refer to the exhibit.\nConnections must be blocked from PC2 to the file server while still allowing P"
+      },
+      {
+        "id": "13.91",
+        "question": "Refer to the exhibit.\nAn engineer configures interface fa0/1 on SW1 and SW2 to pass traffic from two"
+      }
+    ],
+    "part 14": [
+      {
+        "id": "14.76",
+        "question": "Refer to the exhibit.\nSW_1#show vlan\nVLAN Name Status Ports\n1 default active Et0/2,Et1/0,Et1/0,Et1/3"
+      },
+      {
+        "id": "14.94",
+        "question": "Refer to the exhibit.\nThe engineer configured the VLANs on the new AccSw2 switch. A router on-a-stic"
+      },
+      {
+        "id": "14.95",
+        "question": "A network administrator is evaluating network security in the aftermath of an attempted ARP spoofing"
+      },
+      {
+        "id": "14.102",
+        "question": "Refer to the exhibit.\nWhich configuration enables SW2 to establish an LACP EtherChannel?\nOption A\nSW"
+      }
+    ],
+    "part 15": [
+      {
+        "id": "15.6",
+        "question": "Refer to the exhibit.\nAll routers in the network are configured correctly, and the expected routes a"
+      },
+      {
+        "id": "15.9",
+        "question": "Refer to the exhibit.\nNetwork services must be enabled on interface Gi1/0/34. Which configuration me"
+      },
+      {
+        "id": "15.17",
+        "question": "Refer to the exhibit.\nSW1#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nSW1(co"
+      },
+      {
+        "id": "15.45",
+        "question": "Refer to the exhibit.\nCPE# show ip access-list Services\nExtended IP access list Services\n10 permit t"
+      },
+      {
+        "id": "15.98",
+        "question": "Refer to the exhibit.\nWhich settings must be verified on workstation 1 to establish IP connectivity "
+      }
+    ]
+  }
+}

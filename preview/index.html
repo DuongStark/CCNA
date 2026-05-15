@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CCNA Preview</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0f1117; color: #e2e8f0; font-family: 'Segoe UI', sans-serif; min-height: 100vh; }
+
+    header {
+      background: #1a1d27;
+      border-bottom: 1px solid #2d3148;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 { font-size: 18px; font-weight: 600; color: #a78bfa; flex-shrink: 0; }
+    .stats { font-size: 13px; color: #64748b; margin-left: auto; }
+    .stats span { margin-left: 12px; }
+    .stats .has-img { color: #34d399; }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 12px 24px;
+      background: #13151f;
+      border-bottom: 1px solid #1e2235;
+    }
+    select, input {
+      background: #1e2235;
+      border: 1px solid #2d3148;
+      color: #e2e8f0;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+    }
+    select:focus, input:focus { border-color: #a78bfa; }
+    input { width: 280px; }
+
+    .filter-btn {
+      padding: 7px 14px;
+      border-radius: 6px;
+      border: 1px solid #2d3148;
+      background: #1e2235;
+      color: #94a3b8;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn.active { background: #a78bfa22; border-color: #a78bfa; color: #a78bfa; }
+
+    .count-badge {
+      font-size: 12px;
+      color: #64748b;
+      padding: 7px 0;
+      padding-left: 4px;
+    }
+
+    main { padding: 24px; max-width: 1000px; margin: 0 auto; }
+
+    .question-card {
+      background: #1a1d27;
+      border: 1px solid #2d3148;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    .question-card:hover { border-color: #3d4268; }
+
+    .card-header {
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      border-bottom: 1px solid #2d3148;
+    }
+    .q-num {
+      background: #a78bfa22;
+      color: #a78bfa;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .q-text { font-size: 14px; line-height: 1.6; color: #cbd5e1; }
+    .q-text-vi { font-size: 13px; color: #64748b; margin-top: 4px; }
+
+    .card-images {
+      padding: 14px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .img-group { display: flex; flex-direction: column; gap: 6px; }
+    .img-label {
+      font-size: 11px;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .img-label.answer { color: #f59e0b88; }
+    .img-label.explanation { color: #6366f188; }
+
+    .card-images img {
+      max-width: 480px;
+      max-height: 320px;
+      border-radius: 6px;
+      border: 1px solid #2d3148;
+      cursor: pointer;
+      transition: transform 0.15s;
+      background: #0f1117;
+    }
+    .card-images img:hover { transform: scale(1.02); border-color: #a78bfa; }
+
+    .no-image {
+      font-size: 13px;
+      color: #334155;
+      padding: 14px 18px;
+      font-style: italic;
+    }
+
+    .card-options {
+      padding: 10px 18px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .option {
+      font-size: 13px;
+      color: #94a3b8;
+      padding: 6px 10px;
+      border-radius: 5px;
+      background: #13151f;
+      border: 1px solid #1e2235;
+    }
+    .option.correct {
+      background: #064e3b22;
+      border-color: #34d39944;
+      color: #34d399;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000000cc;
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
+    #lightbox-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .empty { text-align: center; color: #334155; padding: 60px 0; font-size: 15px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CCNA Preview</h1>
+  <div class="stats">
+    <span id="stat-total">Loading...</span>
+    <span class="has-img" id="stat-img"></span>
+  </div>
+</header>
+
+<div class="controls">
+  <select id="topic-select"><option value="">All topics</option></select>
+  <button class="filter-btn active" data-filter="all">Tất cả</button>
+  <button class="filter-btn" data-filter="has-image">Có ảnh</button>
+  <button class="filter-btn" data-filter="no-image">Không ảnh</button>
+  <input type="text" id="search" placeholder="Tìm câu hỏi..." />
+  <span class="count-badge" id="count-badge"></span>
+</div>
+
+<main id="main"></main>
+
+<div id="lightbox">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+const TOPICS = [
+  'routing', 'ip_services', 'security-and-wireless',
+  'tcp-udp', 'automation-virtual-sdn', 'layer2_technologies'
+];
+const BASE = '';
+
+let allQuestions = [];
+let currentFilter = 'all';
+let currentTopic = '';
+let searchQuery = '';
+
+async function loadAll() {
+  const sel = document.getElementById('topic-select');
+  for (const t of TOPICS) {
+    const opt = document.createElement('option');
+    opt.value = t; opt.textContent = t;
+    sel.appendChild(opt);
+  }
+
+  for (const topic of TOPICS) {
+    try {
+      const res = await fetch(`${BASE}/output_pdf/json/${topic}.json`);
+      const data = await res.json();
+      const qs = data.questions || data;
+      qs.forEach(q => { q._topic = topic; });
+      allQuestions.push(...qs);
+    } catch(e) {
+      console.warn('Failed to load', topic, e);
+    }
+  }
+
+  const total = allQuestions.length;
+  const withImg = allQuestions.filter(q => q.question_images?.length).length;
+  document.getElementById('stat-total').textContent = `${total} câu`;
+  document.getElementById('stat-img').textContent = `${withImg} có ảnh`;
+
+  render();
+}
+
+function getImagePath(topic, filename) {
+  return `${BASE}/output_pdf/images/${topic}/${filename}`;
+}
+
+function render() {
+  let qs = allQuestions;
+
+  if (currentTopic) qs = qs.filter(q => q._topic === currentTopic);
+  if (currentFilter === 'has-image') qs = qs.filter(q => q.question_images?.length);
+  if (currentFilter === 'no-image') qs = qs.filter(q => !q.question_images?.length);
+  if (searchQuery) {
+    const s = searchQuery.toLowerCase();
+    qs = qs.filter(q =>
+      q.question?.toLowerCase().includes(s) ||
+      q.question_vi?.toLowerCase().includes(s)
+    );
+  }
+
+  document.getElementById('count-badge').textContent = `${qs.length} câu`;
+
+  const main = document.getElementById('main');
+  if (!qs.length) {
+    main.innerHTML = '<div class="empty">Không có câu nào</div>';
+    return;
+  }
+
+  main.innerHTML = qs.map((q, i) => {
+    const hasQImg = q.question_images?.length;
+    const hasAImg = q.answer_images?.length;
+    const hasEImg = q.explanation_images?.length;
+
+    const qImgs = hasQImg ? q.question_images.map(f =>
+      `<img src="${getImagePath(q._topic, f)}" alt="${f}" title="${f}" onclick="openLightbox(this.src)" />`
+    ).join('') : '';
+
+    const aImgs = hasAImg ? q.answer_images.map(f =>
+      `<img src="${getImagePath(q._topic, f)}" alt="${f}" title="${f}" onclick="openLightbox(this.src)" />`
+    ).join('') : '';
+
+    const eImgs = hasEImg ? q.explanation_images.map(f =>
+      `<img src="${getImagePath(q._topic, f)}" alt="${f}" title="${f}" onclick="openLightbox(this.src)" />`
+    ).join('') : '';
+
+    const imagesSection = (hasQImg || hasAImg || hasEImg) ? `
+      <div class="card-images">
+        ${hasQImg ? `<div class="img-group"><div class="img-label">Question</div>${qImgs}</div>` : ''}
+        ${hasAImg ? `<div class="img-group"><div class="img-label answer">Answer</div>${aImgs}</div>` : ''}
+        ${hasEImg ? `<div class="img-group"><div class="img-label explanation">Explanation</div>${eImgs}</div>` : ''}
+      </div>` : `<div class="no-image">Không có ảnh</div>`;
+
+    const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+    const rawOptions = q.options || [];
+    const optionsArr = Array.isArray(rawOptions) ? rawOptions : Object.values(rawOptions);
+    const options = optionsArr.map((opt, idx) => {
+      const letter = String.fromCharCode(65 + idx);
+      const isCorrect = answers.includes(letter) || answers.includes(String(idx));
+      return `<div class="option ${isCorrect ? 'correct' : ''}">${letter}. ${opt}</div>`;
+    }).join('');
+
+    return `
+      <div class="question-card">
+        <div class="card-header">
+          <span class="q-num">${q._topic} #${q.id}</span>
+          <div>
+            <div class="q-text">${q.question}</div>
+            ${q.question_vi ? `<div class="q-text-vi">${q.question_vi}</div>` : ''}
+          </div>
+        </div>
+        ${imagesSection}
+        ${options ? `<div class="card-options">${options}</div>` : ''}
+      </div>`;
+  }).join('');
+}
+
+// Controls
+document.getElementById('topic-select').addEventListener('change', e => {
+  currentTopic = e.target.value;
+  render();
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+let searchTimer;
+document.getElementById('search').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    searchQuery = e.target.value.trim();
+    render();
+  }, 300);
+});
+
+// Lightbox
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+document.getElementById('lightbox-close').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('open');
+});
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+});
+
+loadAll();
+</script>
+</body>
+</html>

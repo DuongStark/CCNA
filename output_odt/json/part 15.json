@@ -133,30 +133,20 @@
     },
     {
       "id": "15.6",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAll routers in the network are configured correctly, and the expected routes are being exchanged among the routers. Which set of routes are learned from neighbors and installed on router 2?\nOption A\n10.40.1.0/3010.139.2.0/3010.12.191.0/3010.129.9.0/25\nOption B\n10.129.9.0/2310.139.2.0/3010.129.9.0/2510.22.1.0/24\nOption C\n10.129.9.0/2310.40.1.0/3010.12.191.0/3010.129.9.0/25\nOption D\n10.129.9.0/2310.139.2.0/3010.12.191.0/3010.129.9.0/25",
-      "question_images": [
-        "q15.6_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nAll routers in the network are configured correctly, and the expected routes are being exchanged among the routers. Which set of routes are learned from neighbors and installed on router 2?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "10.40.1.0/3010.139.2.0/3010.12.191.0/3010.129.9.0/25",
+        "B": "10.129.9.0/2310.139.2.0/3010.129.9.0/2510.22.1.0/24",
+        "C": "10.129.9.0/2310.40.1.0/3010.12.191.0/3010.129.9.0/25",
+        "D": "10.129.9.0/2310.139.2.0/3010.12.191.0/3010.129.9.0/25"
       },
-      "answer": [
-        "D"
-      ],
+      "answer": "D",
       "answer_images": [],
-      "explanation": "This question asks “Which set of routes are learned from neighbors” so only EIGRP routes are advertised and learned from the neighbors. Routes 10.40.1.0/30 and 10.22.1.0/24 are learned from local so they are not correct.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nTất cả các router trong mạng được cấu hình đúng và các tuyến đường dự kiến đang được trao đổi giữa các router. Tập hợp tuyến đường nào được học từ các neighbor và cài đặt trên router 2?\nOption A\n10.40.1.0/30\n10.139.2.0/30\n10.12.191.0/30\n10.129.9.0/25\nOption B\n10.129.9.0/23\n10.139.2.0/30\n10.129.9.0/25\n10.22.1.0/24\nOption C\n10.129.9.0/23\n10.40.1.0/30\n10.12.191.0/30\n10.129.9.0/25\nOption D\n10.129.9.0/23\n10.139.2.0/30\n10.12.191.0/30\n10.129.9.0/25",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Tất cả các router trong mạng được cấu hình đúng và các route dự kiến đang được trao đổi giữa các router. Tập hợp route nào được học từ các router láng giềng và được cài đặt trên router 2?",
+      "options_vi": {}
     },
     {
       "id": "15.7",
@@ -212,30 +202,20 @@
     },
     {
       "id": "15.9",
-      "type": "single",
-      "question": "Refer to the exhibit.\nNetwork services must be enabled on interface Gi1/0/34. Which configuration meets the needs for this implementation?\nOption A\ninterface Gi1/0/34switchport mode trunkswitchport trunk allowed vlan 400, 4041switchport voice vlan 4041\nOption B\ninterface Gi1/0/34switchport mode accessswitchport access vlan 4041switchport voice vlan 400\nOption C\ninterface Gi1/0/34switchport mode trunkswitchport trunk allowed native vlan 400switchport voice vlan 4041\nOption D\ninterface Gi1/0/34switchport mode accessswitchport access vlan 400switchport voice vlan 4041",
-      "question_images": [
-        "q15.9_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nNetwork services must be enabled on interface Gi1/0/34. Which configuration meets the needs for this implementation?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "interface Gi1/0/34switchport mode trunkswitchport trunk allowed vlan 400, 4041switchport voice vlan 4041",
+        "B": "interface Gi1/0/34switchport mode accessswitchport access vlan 4041switchport voice vlan 400",
+        "C": "interface Gi1/0/34switchport mode trunkswitchport trunk allowed native vlan 400switchport voice vlan 4041",
+        "D": "interface Gi1/0/34switchport mode accessswitchport access vlan 400switchport voice vlan 4041"
       },
-      "answer": [
-        "D"
-      ],
+      "answer": "D",
       "answer_images": [],
-      "explanation": "The voice VLAN feature enables access ports to carry IP voice traffic from an IP phone. You can configure a voice VLAN with the “switchport voice vlan …” command under interface mode.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCác dịch vụ mạng phải được bật trên giao diện Gi1/0/34. Cấu hình nào đáp ứng yêu cầu cho việc triển khai này?\nOption A\ninterface Gi1/0/34\nswitchport mode trunk\nswitchport trunk allowed vlan 400, 4041\nswitchport voice vlan 4041\nOption B\ninterface Gi1/0/34\nswitchport mode access\nswitchport access vlan 4041\nswitchport voice vlan 400\nOption C\ninterface Gi1/0/34\nswitchport mode trunk\nswitchport trunk allowed native vlan 400\nswitchport voice vlan 4041\nOption D\ninterface Gi1/0/34\nswitchport mode access\nswitchport access vlan 400\nswitchport voice vlan 4041",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Các dịch vụ mạng phải được bật trên giao diện Gi1/0/34. Cấu hình nào đáp ứng yêu cầu cho việc triển khai này?",
+      "options_vi": {}
     },
     {
       "id": "15.10",
@@ -423,28 +403,20 @@
     },
     {
       "id": "15.17",
-      "type": "single",
-      "question": "Refer to the exhibit.\nSW1#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nSW1(config)#enable password test!2E\nSW1(config)#line con 0\nSW1(config-line)#password Labtest32!\nSH1(config-line)#exit\nSW1(config)#\nA network engineer started to change default settings on SW1 to allow remote access and has entered the following in the configuration mode:\nSW1#(config)#line vty 0 15SW1#(config-line)#password Labtest32!\nWhich set of commands are needed to allow only SSH access and hide passwords in the running configuration?\nOption A\nSW1(config-line)#login localSW1(config-line)#exitSW1(config)#enable secret test!2E\nOption B\nSW1(config-line)#transport input sshSW1(config-line)#exitSW1(config)#service password-encryption\nOption C\nSW1(config-line)#login localSW1(config-line)#exit\nOption D\nSW1(config-line)#exitSW1(config)#aaa new-model",
+      "question": "Refer to the exhibit.\nSW1#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nSW1(config)#enable password test!2E\nSW1(config)#line con 0\nSW1(config-line)#password Labtest32!\nSH1(config-line)#exit\nSW1(config)#\nA network engineer started to change default settings on SW1 to allow remote access and has entered the following in the configuration mode:\nSW1#(config)#line vty 0 15SW1#(config-line)#password Labtest32!\nWhich set of commands are needed to allow only SSH access and hide passwords in the running configuration?",
       "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "SW1(config-line)#login localSW1(config-line)#exitSW1(config)#enable secret test\n!2E",
+        "B": "SW1(config-line)#transport input sshSW1(config-line)#exitSW1(config)#service password-encryption",
+        "C": "SW1(config-line)#login localSW1(config-line)#exit",
+        "D": "SW1(config-line)#exitSW1(config)#aaa new-model"
       },
-      "answer": [
-        "B"
-      ],
+      "answer": "B",
       "answer_images": [],
-      "explanation": null,
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nSW1#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nSW1(config)#enable password test!2E\nSW1(config)#line con 0\nSW1(config-line)#password Labtest32!\nSH1(config-line)#exit\nSW1(config)#\nMột kỹ sư mạng bắt đầu thay đổi cài đặt mặc định trên SW1 để cho phép truy cập từ xa và đã nhập các lệnh sau trong chế độ cấu hình:\nSW1#(config)#line vty 0 15\nSW1#(config-line)#password Labtest32!\nTập lệnh nào cần thiết để chỉ cho phép truy cập SSH và ẩn mật khẩu trong cấu hình đang chạy?\nOption A\nSW1(config-line)#login local\nSW1(config-line)#exit\nSW1(config)#enable secret test!2E\nOption B\nSW1(config-line)#transport input ssh\nSW1(config-line)#exit\nSW1(config)#service password-encryption\nOption C\nSW1(config-line)#login local\nSW1(config-line)#exit\nOption D\nSW1(config-line)#exit\nSW1(config)#aaa new-model",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Nhập các lệnh cấu hình, mỗi lệnh một dòng. Kết thúc bằng CNTL/Z. SW1(config)#enable password test!2E SW1(config)#line con 0 SW1(config-line)#password Labtest32! SH1(config-line)#exit SW1(config)# Một kỹ sư mạng bắt đầu thay đổi các cài đặt mặc định trên SW1 để cho phép truy cập từ xa và đã nhập các lệnh sau trong chế độ cấu hình: Tập hợp lệnh nào cần thiết để chỉ cho phép truy cập SSH và ẩn mật khẩu trong cấu hình đang chạy?",
+      "options_vi": {}
     },
     {
       "id": "15.18",
@@ -1156,28 +1128,20 @@
     },
     {
       "id": "15.45",
-      "type": "single",
-      "question": "Refer to the exhibit.\nCPE# show ip access-list Services\nExtended IP access list Services\n10 permit tcp 10.0.0.0 0.255.255.255 any eq www\n20 permit tcp 10.0.0.0 0.255.255.255 any eq 443\n30 permit udp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\n40 deny ip any any log\nThis ACL is configured to allow client access only to HTTP, HTTPS, and DNS services via UDP. The new administrator wants to add TCP access to the DNS service. Which configuration updates the ACL efficiently?\nOption A\nip access-list extended Services\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\nOption B\nno ip access-list extended Services\nip access-list extended Services\n30 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\nOption C\nno ip access-list extended Services\nip access-list extended Services\npermit udp 10.0.0.0 0.255.255.255 any eq 53\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\ndeny ip any any log\nOption D\nip access-list extended Services\n35 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
+      "question": "Refer to the exhibit.\nCPE# show ip access-list Services\nExtended IP access list Services\n10 permit tcp 10.0.0.0 0.255.255.255 any eq www\n20 permit tcp 10.0.0.0 0.255.255.255 any eq 443\n30 permit udp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\n40 deny ip any any log\nThis ACL is configured to allow client access only to HTTP, HTTPS, and DNS services via UDP. The new administrator wants to add TCP access to the DNS service. Which configuration updates the ACL efficiently?",
       "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "ip access-list extended Services\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
+        "B": "no \nip access-list extended Services\nip access-list extended Services\n30 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
+        "C": "no \nip access-list extended Services\nip access-list extended Services\npermit udp 10.0.0.0 0.255.255.255 any eq 53\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\ndeny \nip any any log",
+        "D": "ip access-list extended Services\n35 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain"
       },
-      "answer": [
-        "D"
-      ],
+      "answer": "",
       "answer_images": [],
-      "explanation": "If we remove the ACL with “no ip access-list extended Services”, all configs will be lost. We should use a higher sequence number (mean smaller value) than 40 to write the new rule above the “40 deny ip any any log” statement.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCPE# show ip access-list Services\nExtended IP access list Services\n10 permit tcp 10.0.0.0 0.255.255.255 any eq www\n20 permit tcp 10.0.0.0 0.255.255.255 any eq 443\n30 permit udp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\n40 deny ip any any log\nACL này được cấu hình để chỉ cho phép client truy cập các dịch vụ HTTP, HTTPS và DNS qua UDP. Quản trị viên mới muốn thêm quyền truy cập TCP đến dịch vụ DNS. Cấu hình nào cập nhật ACL một cách hiệu quả?\nOption A\nip access-list extended Services\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\nOption B\nno ip access-list extended Services\nip access-list extended Services\n30 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\nOption C\nno ip access-list extended Services\nip access-list extended Services\npermit udp 10.0.0.0 0.255.255.255 any eq 53\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\ndeny ip any any log\nOption D\nip access-list extended Services\n35 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Danh sách kiểm soát truy cập IP mở rộng Services 10 permit tcp 10.0.0.0 0.255.255.255 any eq www 20 permit tcp 10.0.0.0 0.255.255.255 any eq 443 30 permit udp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain 40 deny ip any any log ACL này được cấu hình để chỉ cho phép máy khách truy cập các dịch vụ HTTP, HTTPS và DNS qua UDP. Quản trị viên mới muốn bổ sung quyền truy cập TCP vào dịch vụ DNS. Cấu hình nào cập nhật ACL một cách hiệu quả?",
+      "options_vi": {}
     },
     {
       "id": "15.46",
@@ -2140,32 +2104,20 @@
     },
     {
       "id": "15.98",
-      "type": "single",
-      "question": "Refer to the exhibit.\nWhich settings must be verified on workstation 1 to establish IP connectivity to server 1 using the server’s fully qualified domain name?\nOption A\nIP address: 10.0.63.80Subnet mask: 255.255.255.224Default gateway: 10.0.71.0DHCP server: 10.0.63.8\nOption B\nIP address: 10.0.71.16Subnet mask: 255.255.255.224Default gateway: 10.0.71.1DNS server: 10.0.63.5\nOption C\nIP address: 10.0.63.80Subnet mask: 255.255.255.0Default gateway: 10.0.71.1DNS server: 10.0.63.5\nOption D\nIP address: 10.0.71.16Subnet mask: 255.255.255.0Default gateway: 10.0.71.0DHCP server: 10.0.63.8",
-      "question_images": [
-        "q15.98_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nWhich settings must be verified on workstation 1 to establish IP connectivity to server 1 using the server’s fully qualified domain name?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "IP address: 10.0.63.80Subnet mask: 255.255.255.224Default gateway: 10.0.71.0DHCP server: 10.0.63.8",
+        "B": "IP address: 10.0.71.16Subnet mask: 255.255.255.224Default gateway: 10.0.71.1DNS server: 10.0.63.5",
+        "C": "IP address: 10.0.63.80Subnet mask: 255.255.255.0Default gateway: 10.0.71.1DNS server: 10.0.63.5",
+        "D": "IP address: 10.0.71.16Subnet mask: 255.255.255.0Default gateway: 10.0.71.0DHCP server: 10.0.63.8"
       },
-      "answer": [
-        "B"
-      ],
+      "answer": "B",
       "answer_images": [],
-      "explanation": "Workstation1 belongs to VLAN 71 so its IP address should be 10.0.71.x and the subnet mask should be /27 (255.255.255.224). Moreover, if Workstation 1 wants to connect to server 1 using the server’s fully qualified domain name then its DNS server must be correctly set to 10.0.63.5 as shown in the exhibit.\nQuestion 15.99 (repeated)\nRefer to the exhibit. Which path is used by the router for Internet traffic?\nR1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets\nB209.165.200.224 [20/0] via 10.10.12.2, 00:10:34\n10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks\nC10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC10.10.11.0/30 is directly connected, FastEthernet2/0\nC10.10.13.0/30 [110/2] via 10.10.10.1, 00:03:34, GigabitEthernet0/0\nC10.10.12.0/30 is directly connected, GigabitEthernet0/1\nS*0.0.0.0/0 [1/0] via 10.10.11.2\nSwitch1#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC10.10.10.0/28 is directly connected, FastEthernet0/1\nC10.10.13.0/24 is directly connected, VLAN20\nA. 209.165.200.0/27B. 10.10.10.0/28C. 0.0.0.0/0D. 10.10.13.0/24",
-      "explanation_images": [
-        "q15.98_img2.jpg"
-      ],
-      "question_vi": "Tham khảo hình minh họa.\nCài đặt nào phải được xác minh trên workstation 1 để thiết lập kết nối IP đến server 1 bằng tên miền đầy đủ (fully qualified domain name) của server?\nOption A\nIP address: 10.0.63.80\nSubnet mask: 255.255.255.224\nDefault gateway: 10.0.71.0\nDHCP server: 10.0.63.8\nOption B\nIP address: 10.0.71.16\nSubnet mask: 255.255.255.224\nDefault gateway: 10.0.71.1\nDNS server: 10.0.63.5\nOption C\nIP address: 10.0.63.80\nSubnet mask: 255.255.255.0\nDefault gateway: 10.0.71.1\nDNS server: 10.0.63.5\nOption D\nIP address: 10.0.71.16\nSubnet mask: 255.255.255.0\nDefault gateway: 10.0.71.0\nDHCP server: 10.0.63.8",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "explanation": "",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Những cài đặt nào cần được xác minh trên máy trạm 1 để thiết lập kết nối IP tới máy chủ 1 bằng tên miền đầy đủ của máy chủ?",
+      "options_vi": {}
     },
     {
       "id": "15.114",

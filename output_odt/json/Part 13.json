@@ -465,30 +465,20 @@
     },
     {
       "id": "13.30",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAll interfaces are configured with duplex auto and ip ospf network broadcast. Which configuration allows routers R14 and R86 to form an OSPFv2 adjacency and act as a central point for exchanging OSPF information between routers?\nOption A\nR14#interface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf priority 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#interface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip mtu 1500\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nOption B\nR14#interface Loopback0ip ospf 10 area 0\ninterface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf priority 255ip ospf 10 area 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.14\nR86#interface Loopback0ip ospf 10 area 0\ninterface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip ospf 10 area 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.86\nOption C\nR14#interface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf priority 255ip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#interface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nOption D\nR14#interface Loopback0ip ospf 10 area 0\ninterface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf 10 area 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#interface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0",
-      "question_images": [
-        "q13.30_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nAll interfaces are configured with duplex auto and ip ospf network broadcast. Which configuration allows routers R14 and R86 to form an OSPFv2 adjacency and act as a central point for exchanging OSPF information between routers?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "R14#\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1500\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0",
+        "B": "R14#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 255\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14\nR86#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.86",
+        "C": "R14#\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 255\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0",
+        "D": "R14#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0"
       },
-      "answer": [
-        "B"
-      ],
+      "answer": "",
       "answer_images": [],
-      "explanation": "In Option C and Option D, the MTUs of two Fa0/0 interfaces are mismatched so they cannot form OSPF adjacency -> Option C and Option D are not correct.\nIn Option B, R14 Fa0/0 interface is configured with OSPF priority 255 so surely it would become DR -> This is the best answer.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nTất cả các interface được cấu hình với duplex auto và ip ospf network broadcast. Cấu hình nào cho phép router R14 và R86 hình thành quan hệ lân cận OSPFv2 (adjacency) và hoạt động như điểm trung tâm để trao đổi thông tin OSPF giữa các router?\nOption A\nR14#interface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf priority 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#interface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip mtu 1500\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nOption B\nR14#interface Loopback0ip ospf 10 area 0\ninterface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf priority 255ip ospf 10 area 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.14\nR86#interface Loopback0ip ospf 10 area 0\ninterface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip ospf 10 area 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.86\nOption C\nR14#interface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf priority 255ip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#interface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nOption D\nR14#interface Loopback0ip ospf 10 area 0\ninterface FastEthernet0/0ip address 10.73.65.65 255.255.255.252ip ospf 10 area 0ip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#interface FastEthernet0/0ip address 10.73.65.66 255.255.255.252ip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Tất cả các giao diện được cấu hình với duplex auto và ip ospf network broadcast. Cấu hình nào cho phép các router R14 và R86 hình thành quan hệ kề OSPFv2 và đóng vai trò là điểm trung tâm để trao đổi thông tin OSPF giữa các router?",
+      "options_vi": {}
     },
     {
       "id": "13.32",
@@ -1252,28 +1242,20 @@
     },
     {
       "id": "13.70",
-      "type": "single",
-      "question": "A network engineer must configure an access list on a new Cisco IOS router. The access list must deny HTTP traffic to network 10.125.128.32/27 from the 192.168.240.0/20 network, but it must allow the 192.168.240.0/20 network to reach the rest of the 10.0.0.0/8 network. Which configuration must the engineer apply?\nOption A\nip access-list extended deny_outbound\n10 deny tcp 10.125.128.32 255.255.255.224 192.168.240.0 255.255.240.0 eq 443\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit ip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0\nOption B\nip access-list extended deny_outbound\n10 permit ip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit ip any any\nOption C\nip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n20 permit ip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255\n30 deny ip any any log\nOption D\nip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 any eq 80\n20 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n30 permit ip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255",
+      "question": "A network engineer must configure an access list on a new Cisco IOS router. The access list must deny HTTP traffic to network 10.125.128.32/27 from the 192.168.240.0/20 network, but it must allow the 192.168.240.0/20 network to reach the rest of the 10.0.0.0/8 network. Which configuration must the engineer apply?",
       "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "ip access-list extended deny_outbound\n10 deny tcp 10.125.128.32 255.255.255.224 192.168.240.0 255.255.240.0 eq 443\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit \nip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0",
+        "B": "ip access-list extended deny_outbound\n10 permit \nip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit \nip any any",
+        "C": "ip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n20 permit \nip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255\n30 deny \nip any any log",
+        "D": "ip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 any eq 80\n20 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n30 permit \nip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255"
       },
-      "answer": [
-        "C"
-      ],
+      "answer": "",
       "answer_images": [],
-      "explanation": "This question only asks to deny HTTP traffic so the port must be “eq 80”, not 443 (for HTTPS) -> Only Option C and Option D are correct. But Option D denies all HTTP traffic from 192.168.24.0/20 with the first statement “10 deny tcp 192.168.240.0 0.0.15.255 any eq 80 ” so it is not correct.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Một kỹ sư mạng phải cấu hình access list trên router Cisco IOS mới. Access list phải từ chối lưu lượng HTTP đến mạng 10.125.128.32/27 từ mạng 192.168.240.0/20, nhưng phải cho phép mạng 192.168.240.0/20 đến được phần còn lại của mạng 10.0.0.0/8. Kỹ sư phải áp dụng cấu hình nào?\nOption A\nip access-list extended deny_outbound\n10 deny tcp 10.125.128.32 255.255.255.224 192.168.240.0 255.255.240.0 eq 443\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit ip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0\nOption B\nip access-list extended deny_outbound\n10 permit ip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit ip any any\nOption C\nip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n20 permit ip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255\n30 deny ip any any log\nOption D\nip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 any eq 80\n20 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n30 permit ip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Một kỹ sư mạng phải cấu hình danh sách truy cập trên một router Cisco IOS mới. Danh sách truy cập phải từ chối lưu lượng HTTP đến mạng 10.125.128.32/27 từ mạng 192.168.240.0/20, nhưng phải cho phép mạng 192.168.240.0/20 truy cập đến phần còn lại của mạng 10.0.0.0/8. Kỹ sư phải áp dụng cấu hình nào?",
+      "options_vi": {}
     },
     {
       "id": "13.71",
@@ -1505,30 +1487,20 @@
     },
     {
       "id": "13.82",
-      "type": "single",
-      "question": "Refer to the exhibit.\nWhich set of commands must be applied to the two switches to configure an LACP Layer 2 EtherChannel?\nOption A\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode desirableSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive\nOption B\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode onSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive\nOption C\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode activeSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive\nOption D\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode autoSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
-      "question_images": [
-        "q13.82_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nWhich set of commands must be applied to the two switches to configure an LACP Layer 2 EtherChannel?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode desirableSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
+        "B": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode onSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
+        "C": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode activeSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
+        "D": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode autoSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive"
       },
-      "answer": [
-        "C"
-      ],
+      "answer": "C",
       "answer_images": [],
-      "explanation": null,
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nBộ lệnh nào phải được áp dụng cho hai switch để cấu hình LACP Layer 2 EtherChannel?\nOption A\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode desirableSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive\nOption B\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode onSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive\nOption C\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode activeSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive\nOption D\nSW1(config)#interface range f0/13 -14SW1(config-if-range)#channel-group 1 mode autoSW2(config)#interface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Bộ lệnh nào phải được áp dụng cho hai switch để cấu hình EtherChannel Lớp 2 theo giao thức LACP?",
+      "options_vi": {}
     },
     {
       "id": "13.83",
@@ -1585,30 +1557,20 @@
     },
     {
       "id": "13.85",
-      "type": "single",
-      "question": "Refer to the exhibit.\nConnections must be blocked from PC2 to the file server while still allowing PC2 to connect to other network hosts and devices. Which configuration must be used to complete the task?\nOption A\nR1(config)#access-list 1 permit 192.168.2.10R1(config)#access-list 1 deny anyR1(config)#interface g0/1R1(config-if)#ip access-group 1 out\nOption B\nR2(config)#access-list 1 deny 192.168.2.10R2(config)#access-list 1 permit anyR2(config)#interface g0/1R2(config-if)#ip access-group 1 out\nOption C\nR2(config)#access-list 1 permit 192.168.2.10R2(config)#access-list 1 deny 192.168.2.0 0.0.0.255R2(config)#interface g0/1R2(config)#ip access-group 1 in\nOption D\nR1(config)#access-list 1 deny 192.168.2.10R1(config)#access-list 1 permit 192.168.2.0 0.0.0.255R1(config)#interface g0/0R1(config-if)#ip access-group 1 in",
-      "question_images": [
-        "q13.85_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nConnections must be blocked from PC2 to the file server while still allowing PC2 to connect to other network hosts and devices. Which configuration must be used to complete the task?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "R1(config)#access-list 1 permit 192.168.2.10R1(config)#access-list 1 deny anyR1(config)#\ninterface g0/1R1(config-if)#\nip access-group 1 out",
+        "B": "R2(config)#access-list 1 deny 192.168.2.10R2(config)#access-list 1 permit anyR2(config)#\ninterface g0/1R2(config-if)#\nip access-group 1 out",
+        "C": "R2(config)#access-list 1 permit 192.168.2.10R2(config)#access-list 1 deny 192.168.2.0 0.0.0.255R2(config)#\ninterface g0/1R2(config)#\nip access-group 1 in",
+        "D": "R1(config)#access-list 1 deny 192.168.2.10R1(config)#access-list 1 permit 192.168.2.0 0.0.0.255R1(config)#\ninterface g0/0R1(config-if)#\nip access-group 1 in"
       },
-      "answer": [
-        "B"
-      ],
+      "answer": "B",
       "answer_images": [],
-      "explanation": "Block connection from R2 to Server -> “deny 192.168.2.10” and we should apply to R2 which is closest to the Server so that it does not affect other devices.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCác kết nối từ PC2 đến file server phải bị chặn trong khi vẫn cho phép PC2 kết nối đến các host và thiết bị mạng khác. Cấu hình nào phải được sử dụng để hoàn thành nhiệm vụ này?\nOption A\nR1(config)#access-list 1 permit 192.168.2.10R1(config)#access-list 1 deny anyR1(config)#interface g0/1R1(config-if)#ip access-group 1 out\nOption B\nR2(config)#access-list 1 deny 192.168.2.10R2(config)#access-list 1 permit anyR2(config)#interface g0/1R2(config-if)#ip access-group 1 out\nOption C\nR2(config)#access-list 1 permit 192.168.2.10R2(config)#access-list 1 deny 192.168.2.0 0.0.0.255R2(config)#interface g0/1R2(config)#ip access-group 1 in\nOption D\nR1(config)#access-list 1 deny 192.168.2.10R1(config)#access-list 1 permit 192.168.2.0 0.0.0.255R1(config)#interface g0/0R1(config-if)#ip access-group 1 in",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Các kết nối từ PC2 đến máy chủ tệp phải bị chặn trong khi vẫn cho phép PC2 kết nối với các máy chủ và thiết bị mạng khác. Cấu hình nào phải được sử dụng để hoàn thành nhiệm vụ này?",
+      "options_vi": {}
     },
     {
       "id": "13.86",
@@ -1739,30 +1701,20 @@
     },
     {
       "id": "13.91",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAn engineer configures interface fa0/1 on SW1 and SW2 to pass traffic from two different VLANs. For security reasons, company policy requires the native VLAN to be set to a nondefault value. Which configuration meets this requirement?\nOption A\nSwitch(config-if)#switchport mode dynamicSwitch(config-if}#switchport accessvlan 100,105Switch(config-if)#switchport trunk native vlan 1\nOption B\nSwitch(config-if)#switchport mode accessSwitch(config-if)#switchport trunkencapsulation dot1qSwitch(config-if)#switchport access vlan 100.105Switch(config-if)#switchport trunk native vlan 3\nOption C\nSwitch(config-if)#switchport mode trunkSwitch(config-if)# switch port trunk encapsulation islSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config-if)#s witch port trunk native vlan 1\nOption D\nSwitch(config-if)#switchport mode trunkSwitch(config-if)#switchport trunk encapsulation dot1qSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config if)#switchport trunk native vlan 3",
-      "question_images": [
-        "q13.91_img1.jpg"
-      ],
+      "question": "Refer to the exhibit.\nAn engineer configures interface fa0/1 on SW1 and SW2 to pass traffic from two different VLANs. For security reasons, company policy requires the native VLAN to be set to a nondefault value. Which configuration meets this requirement?",
+      "question_images": [],
       "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
+        "A": "Switch(config-if)#switchport mode dynamicSwitch(config-if}#switchport accessvlan 100,105Switch(config-if)#switchport trunk native vlan 1",
+        "B": "Switch(config-if)#switchport mode accessSwitch(config-if)#switchport trunkencapsulation dot1qSwitch(config-if)#switchport access vlan 100.105Switch(config-if)#switchport trunk native vlan 3",
+        "C": "Switch(config-if)#switchport mode trunkSwitch(config-if)# switch port trunk encapsulation islSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config-if)#s witch port trunk native vlan 1",
+        "D": "Switch(config-if)#switchport mode trunkSwitch(config-if)#switchport trunk encapsulation dot1qSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config if)#switchport trunk native vlan 3"
       },
-      "answer": [
-        "D"
-      ],
+      "answer": "D",
       "answer_images": [],
-      "explanation": "The default value of native VLAN is 1 so we have to use another number for non-default value. Also there are two different VLANs so we have to set both ends to mode trunk.",
+      "explanation": "",
       "explanation_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư cấu hình giao diện fa0/1 trên SW1 và SW2 để truyền lưu lượng từ hai VLAN khác nhau. Vì lý do bảo mật, chính sách công ty yêu cầu native VLAN phải được đặt thành giá trị không mặc định. Cấu hình nào đáp ứng yêu cầu này?\nOption A\nSwitch(config-if)#switchport mode dynamicSwitch(config-if}#switchport accessvlan 100,105Switch(config-if)#switchport trunk native vlan 1\nOption B\nSwitch(config-if)#switchport mode accessSwitch(config-if)#switchport trunkencapsulation dot1qSwitch(config-if)#switchport access vlan 100.105Switch(config-if)#switchport trunk native vlan 3\nOption C\nSwitch(config-if)#switchport mode trunkSwitch(config-if)# switch port trunk encapsulation islSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config-if)#s witch port trunk native vlan 1\nOption D\nSwitch(config-if)#switchport mode trunkSwitch(config-if)#switchport trunk encapsulation dot1qSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config if)#switchport trunk native vlan 3",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "D."
-      }
+      "question_vi": "Tham khảo hình minh họa. Một kỹ sư cấu hình cổng fa0/1 trên SW1 và SW2 để truyền lưu lượng từ hai VLAN khác nhau. Vì lý do bảo mật, chính sách công ty yêu cầu VLAN gốc (native VLAN) phải được đặt thành giá trị không mặc định. Cấu hình nào đáp ứng yêu cầu này?",
+      "options_vi": {}
     },
     {
       "id": "13.92",

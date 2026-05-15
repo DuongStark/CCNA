@@ -1,5 +1,5 @@
 {
-  "count": 109,
+  "count": 102,
   "questions": [
     {
       "id": "5.4",
@@ -236,31 +236,6 @@
         "B": "Switch 2",
         "C": "Switch 3",
         "D": "Switch 4"
-      }
-    },
-    {
-      "id": "5.24",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1 and PC-2 must be placed in the Data VLAN and Phone-1 must be placed in the Voice VLAN. Which configuration meets these requirements?",
-      "question_images": [
-        "q5.24_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "C"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nQuản trị viên cần cấu hình các giao diện Gi1/1 và Gi1/3 trên switch SW11. PC-1 và PC-2 phải được đặt trong Data VLAN và Phone-1 phải được đặt trong Voice VLAN. Cấu hình nào đáp ứng các yêu cầu này?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -545,31 +520,6 @@
       }
     },
     {
-      "id": "6.15",
-      "type": "single",
-      "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which configuration accomplishes this task?",
-      "question_images": [
-        "q6.15_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "A"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư cần cấu hình GigabitEthernet1/1 để hỗ trợ lưu lượng thoại (voice) và dữ liệu (data). Cấu hình nào hoàn thành nhiệm vụ này?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      }
-    },
-    {
       "id": "6.17",
       "type": "single",
       "question": "What is a role of access points in an enterprise network?",
@@ -735,31 +685,6 @@
         "B": "service",
         "C": "redundancy",
         "D": "console"
-      }
-    },
-    {
-      "id": "6.31",
-      "type": "single",
-      "question": "Refer to the exhibit.\nHow must router A be configured so that it only sends Cisco Discovery Protocol Information to router C?",
-      "question_images": [
-        "q6.31_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "D"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nRouter A phải được cấu hình như thế nào để chỉ gửi thông tin Cisco Discovery Protocol đến router C?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -1210,31 +1135,6 @@
       }
     },
     {
-      "id": "8.31",
-      "type": "single",
-      "question": "Refer to the exhibit.\nFor security reasons, automatic neighbor discovery must be disabled on the R5 Gi0/1 interface.\nThese tasks must be completed:\n* Disable all neighbor discovery methods on R5 interface Gi0/1.\n* Permit neighbor discovery on R5 interface Gi0/2.\n* Verify there are no dynamically learned neighbors on R5 interface Gi0/1.\n* Display the IP address of R6’s interface Gi0/2.\nWhich configuration must be used?",
-      "question_images": [
-        "q8.31_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "C"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nVì lý do bảo mật, tính năng tự động khám phá láng giềng (automatic neighbor discovery) phải được tắt trên giao diện Gi0/1 của R5.\nCác tác vụ sau phải được hoàn thành:\n* Tắt tất cả các phương thức khám phá láng giềng trên giao diện Gi0/1 của R5.\n* Cho phép khám phá láng giềng trên giao diện Gi0/2 của R5.\n* Xác minh không có láng giềng nào được học động (dynamically learned) trên giao diện Gi0/1 của R5.\n* Hiển thị địa chỉ IP của giao diện Gi0/2 của R6.\nCấu hình nào phải được sử dụng?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      }
-    },
-    {
       "id": "8.49",
       "type": "single",
       "question": "Refer to the exhibit.\nAn administrator must connect SW_1 and the printer to the network. SW_2 requires DTP to be used for the connection to SW_1. The printer is configured as an access port with VLAN 5. Which set of commands completes the connectivity?",
@@ -1379,31 +1279,6 @@
         "B": "tốc độ truyền khác nhau",
         "C": "dải tần số không liên tục (discontinuous frequency range)",
         "D": "các SSID duy nhất"
-      }
-    },
-    {
-      "id": "8.60",
-      "type": "single",
-      "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 and SW2 by using an industry-standard protocol, and to support full IP connectivity between all PCs?",
-      "question_images": [
-        "q8.60_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "C"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào cho phép EtherChannel hình thành động giữa SW1 và SW2 bằng cách sử dụng giao thức tiêu chuẩn công nghiệp, và hỗ trợ kết nối IP đầy đủ giữa tất cả các PC?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
@@ -2009,31 +1884,6 @@
       }
     },
     {
-      "id": "9.85",
-      "type": "single",
-      "question": "Refer to the exhibit.\nThe following must be considered\n+ SW1 is fully configured for all traffic\n+ The SW4 and SW9 links to SW1 have been configured\n+ The SW4 interface Gi0/1 and Gi0/0 on SW9 have been configured\n+ The remaining switches have had all VLANs added to their VLAN database\nWhich configuration establishes a successful ping from PC2 to PC7 without interruption to traffic flow between other PCs?",
-      "question_images": [
-        "q9.85_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "A"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCác điều kiện sau phải được xem xét:\n+ SW1 đã được cấu hình đầy đủ cho tất cả lưu lượng\n+ Các liên kết của SW4 và SW9 đến SW1 đã được cấu hình\n+ Giao diện Gi0/1 của SW4 và Gi0/0 của SW9 đã được cấu hình\n+ Các switch còn lại đã có tất cả các VLAN được thêm vào cơ sở dữ liệu VLAN\nCấu hình nào thiết lập ping thành công từ PC2 đến PC7 mà không gián đoạn luồng lưu lượng giữa các PC khác?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      }
-    },
-    {
       "id": "9.95",
       "type": "single",
       "question": "An engineer must configure neighbor discovery between the company router and an ISP.\nWhat is the next step to complete the configuration if the ISP uses a third-party router?",
@@ -2477,31 +2327,6 @@
         "B": "Frame filtering",
         "C": "Frame flooding",
         "D": "Frame switching"
-      }
-    },
-    {
-      "id": "10.66",
-      "type": "single",
-      "question": "Refer to the exhibit.\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given these requirements:\n+ Allow all PCs to communicate with each other at Layer 3.\n+ Configure untagged traffic to use VLAN 5.\n+ Disable VLAN 1 from being used.\nWhich configuration set meets these requirements?",
-      "question_images": [
-        "q10.66_img1.jpg"
-      ],
-      "options": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
-      },
-      "answer": [
-        "D"
-      ],
-      "answer_images": [],
-      "question_vi": "Tham khảo hình minh họa.\nCác cổng Gi0/0 của SW1 và SW2 đã được cấu hình trước. Một kỹ sư được đưa ra các yêu cầu sau:\n+ Cho phép tất cả các PC giao tiếp với nhau ở Layer 3.\n+ Cấu hình lưu lượng không được gắn thẻ (untagged) sử dụng VLAN 5.\n+ Vô hiệu hóa VLAN 1 khỏi việc sử dụng.\nBộ cấu hình nào đáp ứng các yêu cầu này?",
-      "options_vi": {
-        "A": "Option A",
-        "B": "Option B",
-        "C": "Option C",
-        "D": "Option D"
       }
     },
     {
