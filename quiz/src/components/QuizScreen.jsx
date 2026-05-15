@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import ProgressBar from './ProgressBar';
 import OptionCard from './OptionCard';
 import ExhibitImage from './ExhibitImage';
@@ -115,6 +115,7 @@ export default function QuizScreen({
 }) {
   const [showVi, setShowVi] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
+  const explanationRef = useRef(null);
   const [prevId, setPrevId] = useState(question?._uid || question?.id || null);
   const currentId = question?._uid || question?.id || null;
   if (prevId !== currentId) {
@@ -130,6 +131,12 @@ export default function QuizScreen({
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [navOpen]);
+
+  useEffect(() => {
+    if (isRevealed && explanationRef.current) {
+      explanationRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [isRevealed]);
 
   const handleJump = (i) => {
     onJump?.(i);
@@ -278,6 +285,7 @@ export default function QuizScreen({
 
           {isRevealed && (
             <section
+              ref={explanationRef}
               className={`${styles.explanation} ${wasCorrect ? styles.explanationCorrect : styles.explanationWrong}`}
               aria-live="polite"
             >
