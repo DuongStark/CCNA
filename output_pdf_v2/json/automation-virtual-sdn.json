@@ -1,0 +1,1836 @@
+{
+  "count": 114,
+  "questions": [
+    {
+      "id": "5",
+      "question": "In which way does a spine and-leaf architecture allow for scalability in a network when additional \naccess ports are required? \nA. A spine switch and a leaf switch can be added with redundant connections between them \nB. A spine switch can be added with at least 40 GB uplinks \nC. A leaf switch can be added with a single connection to a core spine switch \nD. A leaf switch can be added with connections to every spine switch",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Spine-leaf architecture is typically deployed as two layers: spines (such as an aggregation layer), \nand leaves (such as an access layer). Spine-leaf topologies provide high-bandwidth, low-latency, \nnonblocking server-to-server connectivity.\nLeaf (aggregation) switches are what provide devices access to the fabric (the network of spine \nand leaf switches) and are typically deployed at the top of the rack. Generally, devices connect to \nthe leaf switches. Devices can include servers, Layer 4-7 services (firewalls and load balancers), \nand WAN or Internet routers. Leaf switches do not connect to other leaf switches. In spine-and-\nleaf architecture, every leaf should connect to every spine in a full mesh.\nSpine (aggregation) switches are used to connect to all leaf switches and are typically deployed at \nthe end or middle of the row. Spine switches do not connect to other spine switches.\nReference: https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-\nswitches/guide-c07-733228.html",
+      "explanation_images": [
+        "page_2_img_0.jpeg"
+      ]
+    },
+    {
+      "id": "1",
+      "question": "What is a characteristic of spine-and-leaf architecture? \nA. Each device is separated by the same number of hops \nB. It provides variable latency \nC. It provides greater predictability on STP blocked ports \nD. Each link between leaf switches allows for higher bandwidth",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Spine-leaf architecture is typically deployed as two layers: spines (such as an aggregation layer), \nand leaves (such as an access layer). Spine-leaf topologies provide high-bandwidth, low-\nlatency (-> Answer B is not correct), nonblocking server-to-server connectivity.\nWith a spine-and-leaf architecture, no matter which leaf switch to which a server is connected, its \ntraffic always has to cross the same number of devices to get to another server (unless \nthe other server is located on the same leaf) (-> Answer A is correct) . This approach keeps \nlatency at a predictable level because a payload only has to hop to a spine switch and another leaf \nswitch to reach its destination.\nReference: https://www.cisco.com/c/en/us/products/collateral/switches/nexus-7000-series-\nswitches/white-paper-c11-737022.html\nWith Leaf-Spine, the network uses Layer 3 routing so STP is no longer required. (-> Answer C is \nnot correct). Spine-leaf architectures rely on protocols such as Equal-Cost Multipath (ECPM) \nrouting to load balance traffic across all available paths while still preventing network loops. This \nallows all connections to be utilized at the same time while still remaining stable and avoiding \nloops within the network.",
+      "explanation_images": [
+        "page_3_img_1.jpeg"
+      ]
+    },
+    {
+      "id": "2",
+      "question": "What are two descriptions of three-tier network topologies? (Choose two) \nA. The core and distribution layers perform the same functions \nB. The access layer manages routing between devices in different domains \nC. The network core is designed to maintain continuous connectivity when devices fail \nD. The core layer maintains wired connections for each host \nE. The distribution layer runs Layer 2 and Layer 3 technologies",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "What is the name of the layer in the Cisco borderless switched network design that is considered \nto be the backbone used for high-speed connectivity and fault isolation? \nA. data link \nB. access \nC. core \nD. network \nE. network access",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The key layers are access, distribution, and core. The core layer is the network backbone that \nhierarchically connects several layers of the network design, providing for connectivity between \nend devices, computing and data storage services located within the data center and other areas, \nand services within the network.",
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "question": "A company needs to interconnect several branch offices across a metropolitan area. The network \nengineer is seeking a solution that provides high-speed converged traffic, including voice, video,\nand data on the same network infrastructure. The company also wants easy integration to their \nexisting LAN infrastructure in their office locations. Which technology should be recommended? \nA. VSAT \nB. ISDN \nC. Frame Relay \nD. Ethernet WAN",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Ethernet WAN offer the ability of using Ethernet over long-distance links.",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "Which two WAN architecture options help a business scalability and reliability for the network? \n(Choose two) \nA. dynamic routing \nB. static routing \nC. dual-homed branches \nD. single-homed branches \nE. asychronous routing",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Dual-homed branches (branches connects to two ISPs or one ISP with two connections) increases \nreliability for the network.\nDynamic routing automatically use backup routes in the case of main routes fail which increases \nreliability. The configuration is remain unchanged or change a little when we expand the network \nthus increasing the scalability.\nNote: A scalable network can expand quickly to support new users and applications without \nimpacting the performance of the service being delivered to existing users",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "Which WAN access technology is preferred for a small office / home office architecture? \nA. broadband cable access \nB. frame-relay packet switching \nC. dedicated point-to-point leased line \nD. Integrated Services Digital Network switching",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "9",
+      "question": "Which two functions are performed by the core layer in a three-tier architecture? (Choose two) \nA. Provide direct connectivity for end user devices \nB. Police traffic that is sent to the edge of the network \nC. Provide uninterrupted forwarding service \nD. Inspect packets for malicious activity \nE. Ensure timely data transfer between layers (Highspeed switching)",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "Considerations at the core layer include \n+ Providing high-speed switching (i.e., fast transport) \n+ Providing reliability and fault tolerance \n+ Scaling by using faster, and not more, equipment \n+ Avoiding CPU-intensive packet manipulation caused by security, inspection, quality of service \n(QoS) classification, or other processes\nReference: https://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=4",
+      "explanation_images": []
+    },
+    {
+      "id": "10",
+      "question": "Which function is performed by the collapsed core layer in a two-tier architecture? \nA. applying security policies` \nB. marking interesting traffic for data polices (qoS) \nC. enforcing routing policies \nD. attaching users to the edge of the network",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to \nscale the network design. \nHowever, many small enterprise networks do not grow significantly larger over time. Therefore, a \ntwo-tier hierarchical design where the core and distribution layers are collapsed into one layer is \noften more practical. A “collapsed core” is when the distribution layer and core layer \nfunctions are implemented by a single device. The primary motivation for the collapsed core \ndesign is reducing network cost, while maintaining most of the benefits of the three-tier \nhierarchical model.\nReference: https://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=4\nA collapsed core network is shown below. The collapsed core network may be deployed with \nredundant core/distribution router, or consolidated core/distribution router.\nDeploying a collapsed core network results in the distribution layer and core layer functions being \nimplemented in a single device. The collapsed core/distribution device must provide the following: \n+ High speed physical and logical paths connecting to the network \n+ Layer-2 aggregation and demarcation point \n+ Define routing and network access policies -> Answer C is correct \n+ Intelligent network services—QoS, Network virtualization, etc.\nReference: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Small_Enterprise_Design_\nProfile/SEDP/chap2.html",
+      "explanation_images": [
+        "page_6_img_2.jpeg"
+      ]
+    },
+    {
+      "id": "37",
+      "question": "Which WAN topology provides a combination of simplicity quality, and availability?",
+      "question_images": [],
+      "options": {
+        "A": "partial mesh",
+        "B": "full mesh",
+        "C": "point-to-point",
+        "D": "hub-and-spoke"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Advantages/Disadvantages of Leased Lines\nAdvantages\nSimplicity: Point-to-point communication links require minimal expertise to install and maintain.\nQuality: Point-to-point communication links usually offer high service quality, if they have \nadequate bandwidth. The dedicated capacity removes latency or jitter between the endpoints.\nAvailability: Constant availability is essential for some applications, such as e-commerce. Point-to-\npoint communication links provide permanent, dedicated capacity, which is required for VoIP or \nVideo over IP.\nDisadvantages\nCost: Point-to-point links are generally the most expensive type of WAN access. The cost of \nleased-line solutions can become significant when they are used to connect many sites over \nincreasing distances. In addition, each endpoint requires an interface on the router, which \nincreases equipment costs.\nLimited flexibility: WAN traffic is often variable, and leased lines have a fixed capacity, so the \nbandwidth of the line seldom matches the need exactly. Any change to the leased line generally \nrequires a site visit by ISP personnel to adjust capacity.\nReference: https://www.ciscopress.com/articles/article.asp?p=2832405&seqNum=5",
+      "explanation_images": []
+    },
+    {
+      "id": "51",
+      "question": "Which network action occurs within the data plane?",
+      "question_images": [],
+      "options": {
+        "A": "compare the destination IP address to the IP routing table",
+        "B": "make a configuration change from an incoming NETCONF RPC",
+        "C": "run routing protocols (OSPF, EIGRP, RIP, BGP)",
+        "D": "reply to an incoming ICMP echo request"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "28",
+      "question": "How are the switches in a spine-and-leaf topology interconnected?",
+      "question_images": [],
+      "options": {
+        "A": "Each leaf switch is connected to two spine switches, making a loop.",
+        "B": "Each leaf switch is connected to a central leaf switch, then uplinked to a core spine switch.",
+        "C": "Each leaf switch is connected to each spine switch.",
+        "D": "Each leaf switch is connected to one of the spine switches."
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "With Leaf-Spine, the network uses Layer 3 routing so STP is no longer required. Spine-leaf \narchitectures rely on protocols such as Equal-Cost Multipath (ECPM) routing to load balance traffic \nacross all available paths while still preventing network loops. This allows all connections to be \nutilized at the same time while still remaining stable and avoiding loops within the network.",
+      "explanation_images": [
+        "page_7_img_3.jpeg"
+      ]
+    },
+    {
+      "id": "33",
+      "question": "What are two characteristics of the distribution layer in a three-tier network architecture? (Choose \ntwo)",
+      "question_images": [],
+      "options": {
+        "A": "provides a boundary between Layer 2 and Layer 3 communications",
+        "B": "designed to meet continuous, redundant uptime requirements (Core)",
+        "C": "serves as the network aggregation point",
+        "D": "physical connection point for a LAN printer (Access)",
+        "E": "is the backbone for the network topology (Core)"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "A typical enterprise hierarchical LAN campus network design includes the following three layers: \n+ Access layer: Provides workgroup/user access to the network \n+ Distribution layer: Provides policy-based connectivity and controls the boundary between the \naccess and core layers \n+ Core layer: Provides fast transport between distribution switches within the enterprise campus\nReference: https://www.ciscopress.com/articles/article.asp?p=2202410&seqNum=4\nThe Distribution layer acts as an aggregation point for all the Access layer devices.",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "What is the path for traffic sent from one user workstation to another workstation on a separate \nswitch block in a three-layer architecture model?",
+      "question_images": [],
+      "options": {
+        "A": "access – core – distribution – access",
+        "B": "access – distribution – distribution – access",
+        "C": "access – core – access",
+        "D": "access -distribution – core – distribution – access"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "20",
+      "question": "Which type of organization should use a collapsed-core architecture?",
+      "question_images": [],
+      "options": {
+        "A": "large and requires a flexible, scalable network design",
+        "B": "small and needs to reduce networking costs currently",
+        "C": "large and must minimize downtime when hardware fails",
+        "D": "small but is expected to grow dramatically in the near future"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to \nscale the network design. Most small enterprise campus’ do not grow significantly larger over time, \nand most small enterprise campus are small enough to be well served by a two-tier hierarchical \ndesign, where the core and distribution layers are collapsed into one layer. The primary motivation \nfor the collapsed core design is reducing network cost, while maintaining most of the benefits of \nthe three-tier hierarchical model.\nReference: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Small_Enterprise_Design_\nProfile/SEDP/chap2.html",
+      "explanation_images": []
+    },
+    {
+      "id": "20",
+      "question": "Which network plane is centralized and manages routing decisions?",
+      "question_images": [],
+      "options": {
+        "A": "policy plane",
+        "B": "control plane",
+        "C": "management plane",
+        "D": "data plane"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "Which networking function occurs on the data plane?",
+      "question_images": [],
+      "options": {
+        "A": "facilitates spanning-tree elections",
+        "B": "processing inbound SSH management traffic",
+        "C": "forwarding remote client/server traffic",
+        "D": "sending and receiving OSPF Hello packets"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "32",
+      "question": "What is the function of a hub-and-spoke WAN topology?",
+      "question_images": [],
+      "options": {
+        "A": "supports application optimization",
+        "B": "provides direct connections between subscribers",
+        "C": "supports Layer 2 VPNs",
+        "D": "allows access restrictions to be implemented between subscriber sites"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "77",
+      "question": "Which WAN topology has the highest degree of reliability?",
+      "question_images": [],
+      "options": {
+        "A": "router-on-a-stick",
+        "B": "Point-to-point",
+        "C": "hub-and-spoke",
+        "D": "full mesh"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Full-mesh is a network topology in which there is a direct link between all pairs of nodes. Below is \nan example of full-mesh topology.",
+      "explanation_images": [
+        "page_9_img_4.jpeg"
+      ]
+    },
+    {
+      "id": "97",
+      "question": "When should an engineer implement a collapsed-core architecture?",
+      "question_images": [],
+      "options": {
+        "A": "for large networks that are connected to multiple remote sites",
+        "B": "the access and distribution layers must be on the same device",
+        "C": "only when using VSS technology",
+        "D": "for small networks with minimal need for growth"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to \nscale the network design. Most small enterprise campus’ do not grow significantly larger over time, \nand most small enterprise campus are small enough to be well served by a two-tier hierarchical \ndesign, where the core and distribution layers are collapsed into one layer. The primary motivation \nfor the collapsed core design is reducing network cost, while maintaining most of the benefits of \nthe three-tier hierarchical model.\nReference: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Small_Enterprise_Design_\nProfile/SEDP/chap2.html",
+      "explanation_images": []
+    },
+    {
+      "id": "27",
+      "question": "What is a function of spine-and-leaf architecture?",
+      "question_images": [],
+      "options": {
+        "A": "mitigates oversubscription by adding a layer of leaf switches",
+        "B": "limits payload size of traffic within the leaf layer",
+        "C": "offers predictable latency of the traffic path between end devices",
+        "D": "exclusively sends multicast traffic between servers that are directly connected to the spine"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "A spine-leaf architecture aids this by ensuring traffic is always the same number of hops from its \nnext destination, so latency is lower and predictable.\nReference: https://www.arubanetworks.com/faq/what-is-spine-leaf-architecture/",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "What is a characteristics of a collapsed-core network topology?",
+      "question_images": [],
+      "options": {
+        "A": "It allows the core and distribution layers to run as a single combined layer.",
+        "B": "It enables the core and access layers to connect to one logical distribution device over an \nEtherChannel.",
+        "C": "It enables all workstations in a SOHO environment to connect on a single switch with internet \naccess.",
+        "D": "It allows wireless devices to connect directly to the core layer, which enables faster data \ntransmission."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to \nscale the network design. Most small enterprise campus’ do not grow significantly larger over time, \nand most small enterprise campus are small enough to be well served by a two-tier hierarchical \ndesign, where the core and distribution layers are collapsed into one layer. The primary motivation \nfor the collapsed core design is reducing network cost, while maintaining most of the benefits of \nthe three-tier hierarchical model.\nReference: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Small_Enterprise_Design_\nProfile/SEDP/chap2.html\nCloud & Virtualization Questions\nPremium Member: You can test your knowledge with these questions first via this link (via \nHTML).\nCloud Summary\nThree cloud supporting services cloud providers0 provide to customer:\n+ SaaS (Software as a Service): SaaS uses the web to deliver applications that are \nmanaged by a third-party vendor and whose interface is accessed on the clients’ side. \nMost SaaS applications can be run directly from a web browser without any downloads or \ninstallations required, although some require plugins. \n+ PaaS (Platform as a Service): are used for applications, and other development, while \nproviding cloud components to software. What developers gain with PaaS is a framework \nthey can build upon to develop or customize applications. PaaS makes the development, \ntesting, and deployment of applications quick, simple, and cost-effective. With this \ntechnology, enterprise operations, or a third-party provider, can manage OSes, \nvirtualization, servers, storage, networking, and the PaaS software itself. Developers, \nhowever, manage the applications. PaaS provides everything except applications. \n+ IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and \nmanaging remote datacenter infrastructures, such as compute (virtualized or bare metal), \nstorage, networking, and networking services (e.g. firewalls). Instead of having to \npurchase hardware outright, users can purchase IaaS based on consumption, similar to \nelectricity or other utility billing.\nVirtualization Summary\nA major advantage of virtualization is overall reduced cost (less equipment is required, \nless energy is consumed, less space is required).\nThere are two types of hypervisors: type 1 and type 2.\nIn type 1 hypervisor (or native hypervisor), the hypervisor is installed directly on the \nphysical server (so it is called “bare metal” approach). Then instances of an operating \nsystem (OS) are installed on the hypervisor. Type 1 hypervisor has direct access to the \nhardware resources. Therefore it is more efficient than hosted architectures. Some \nexamples of type 1 hypervisor are VMware vSphere/ESXi, Oracle VM Server, KVM and \nMicrosoft Hyper-V. Type 1 hypervior is usually used on enterprise servers and data center \nnetworking devices.\nIn contrast to type 1 hypervisor, a type 2 hypervisor (or hosted hypervisor) runs on top of \nan operating system and not the physical hardware directly. A big advantage of Type 2\nhypervisors is that management console software is not required. Examples of type 2 \nhypervisors are VMware Workstation (which can run on Windows, Mac and Linux) or \nMicrosoft Virtual PC (only runs on Windows).",
+      "explanation_images": [
+        "page_11_img_5.jpeg",
+        "page_12_img_6.jpeg"
+      ]
+    },
+    {
+      "id": "1",
+      "question": "Which statement identifies the functionality of virtual machines? \nA. Virtualized servers run most efficiently when they are physically connected to a switch that is \nseparate from the hypervisor \nB. The hypervisor can virtualize physical components including CPU, memory, and storage \nC. Each hypervisor can support a single virtual machine and a single software switch \nD. The hypervisor communicates on Layer 3 without the need for additional resources",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "An organization has decided to start using cloud-provided services. Which cloud service allows the \norganization to install its own operating system on a virtual machine? \nA. platform-as-a-service \nB. software-as-a-service \nC. network-as-a-service \nD. infrastructure-as-a-service",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Below are the 3 cloud supporting services cloud providers provide to customer:\n+ SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed by a \nthird-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can \nbe run directly from a web browser without any downloads or installations required, although some \nrequire plugins. \n+ PaaS (Platform as a Service): are used for applications, and other development, while providing \ncloud components to software. What developers gain with PaaS is a framework they can build \nupon to develop or customize applications. PaaS makes the development, testing, and deployment \nof applications quick, simple, and cost-effective. With this technology, enterprise operations, or a \nthird-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS \nsoftware itself. Developers, however, manage the applications. \n+ IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing\nremote datacenter infrastructures, such as compute (virtualized or bare metal), storage, \nnetworking, and networking services (e.g. firewalls). Instead of having to purchase hardware \noutright, users can purchase IaaS based on consumption, similar to electricity or other utility \nbilling.\nIn \ngeneral, IaaS provides hardware so that an organization can install their own operating system.",
+      "explanation_images": [
+        "page_13_img_7.jpeg"
+      ]
+    },
+    {
+      "id": "3",
+      "question": "Anycompany has decided to reduce its environmental footprint by reducing energy costs, moving \nto a smaller facility, and promoting telecommuting. What service or technology would support this \nrequirement? \nA. Cisco ACI \nB. cloud services \nC. APIC-EM \nD. data center",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "What are two fundamentals of virtualization? (Choose two) \nA. The environment must be configured with one hypervisor that serves solely as a network \nmanager to monitor SNMP traffic \nB. It allows logical network devices to move traffic between virtual machines and the rest of the \nphysical network \nC. It allows multiple operating systems and applications to run independently on one physical \nserver \nD. It allows a physical router to directly connect NICs from each virtual machine into the network \nE. It requires that some servers, virtual machines and network gear reside on the Internet",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "What role does a hypervisor provide for each virtual machine in server virtualization? \nA. control and distribution of physical resources \nB. software-as-a-service \nC. services as a hardware controller \nD. infrastructure-as-a-service",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Each virtual machine has its own set of virtual hardware (RAM, CPU, NIC) upon which an operating \nsystem and fully configured applications are loaded. The operating system sees a consistent, \nnormalized set of hardware regardless of the actual physical hardware components.",
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "question": "Which cloud service model does the engineer recommend? \nA. infrastructure-as-a-service \nB. platform-as-a-service \nC. business process as service to support different types of service \nD. software-as-a-service",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Maybe this question is missing some information but software-as-a-service (SaaS) helps save a lot \nof time to install OS, softwares for running a business.",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "A manager asks a network engineer to advise which cloud service models are used so employees \ndo not have to waste their time installing, managing, and updating software which is only used \noccasionally. Which cloud service model does the engineer recommend? \nA. infrastructure-as-a-service \nB. software-as-a-service \nC. platform-as-a-service \nD. business process as service to support different types of service",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Three cloud supporting services cloud providers provide to customer:\n+ SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed by a \nthird-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can \nbe run directly from a web browser without any downloads or installations required, although some \nrequire plugins. \n+ PaaS (Platform as a Service): are used for applications, and other development, while providing \ncloud components to software. What developers gain with PaaS is a framework they can build \nupon to develop or customize applications. PaaS makes the development, testing, and deployment \nof applications quick, simple, and cost-effective. With this technology, enterprise operations, or a \nthird-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS \nsoftware itself. Developers, however, manage the applications. PaaS provides everything except \napplications. \n+ IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing \nremote datacenter infrastructures, such as compute (virtualized or bare metal), storage, \nnetworking, and networking services (e.g. firewalls). Instead of having to purchase hardware \noutright, users can purchase IaaS based on consumption, similar to electricity or other utility \nbilling.",
+      "explanation_images": [
+        "page_15_img_8.jpeg"
+      ]
+    },
+    {
+      "id": "8",
+      "question": "How do servers connect to the network in a virtual environment?",
+      "question_images": [],
+      "options": {
+        "A": "wireless to an access point that is physically connected to the network",
+        "B": "a cable connected to a physical switch on the network",
+        "C": "a virtual switch that links to an access point that is physically connected to the network",
+        "D": "a software switch on a hypervisor that is physically connected to the network"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [
+        "page_15_img_9.png"
+      ],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "32",
+      "question": "Which resource is able to be shared among virtual machines deployed on the same physical \nserver?",
+      "question_images": [],
+      "options": {
+        "A": "applications",
+        "B": "operating system",
+        "C": "VM configuration file",
+        "D": "disk"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "16",
+      "question": "What describes the operation of virtual machines?",
+      "question_images": [],
+      "options": {
+        "A": "Virtual machines are responsible for managing and allocating host hardware resources",
+        "B": "Virtual machines are operating system instances that are decoupled from server hardware",
+        "C": "Virtual machines are the physical hardware that support a virtual environment",
+        "D": "In a virtual machine environment, physical servers must run one operating system at a time"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "21",
+      "question": "Which technology allows for multiple operating systems to be run on a single host computer?",
+      "question_images": [],
+      "options": {
+        "A": "virtual device contexts",
+        "B": "network port ID visualization",
+        "C": "virtual routing and forwarding",
+        "D": "server virtualization"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "What is a characteristic of cloud-based network topology?",
+      "question_images": [],
+      "options": {
+        "A": "physical workstations are configured to share resources",
+        "B": "services are provided by a public, private, or hybrid deployment",
+        "C": "onsite network services are provided with physical Layer 2 and Layer 3 components",
+        "D": "wireless connections provide the sole access method to services"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "In private cloud, the resources are dedicated to an organization without sharing with anyone else -\n> Answer A is not correct.\nNowadays, onsite network services (network devices in a cloud) can be run in a virtualization \nenvironment -> Answer C is not correct.\nWe can access the services via both cable or wireless connections -> Answer D is not correct.\nCloud computing can be categorized into three general types: \n+ Public cloud is cloud computing that’s delivered via the internet and shared across \norganizations. \n+ Private cloud is cloud computing that is dedicated solely to your organization. \n+ Hybrid cloud is any environment that uses both public and private clouds.",
+      "explanation_images": []
+    },
+    {
+      "id": "32",
+      "question": "An implementer is preparing hardware for virtualization to create virtual machines on a host. What \nis needed to provide communication between hardware and virtual machines?",
+      "question_images": [],
+      "options": {
+        "A": "straight cable",
+        "B": "router",
+        "C": "hypervisor",
+        "D": "switch"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [
+        "page_17_img_10.png"
+      ],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "15",
+      "question": "What are two characteristics of a public cloud implementation? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "It is owned and maintained by one party, but it is shared among multiple organizations",
+        "B": "It enables an organization to fully customize how it deploys network resources",
+        "C": "It provides services that are accessed over the Internet",
+        "D": "It is a data center on the public Internet that maintains cloud services for only one company",
+        "E": "It supports network resources from a centralized third-party provider and privately-owned \nvirtual resources"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Public clouds are managed by a third-party cloud provider. Public cloud computing resources are \nshared among multiple customers, unlike private clouds.",
+      "explanation_images": []
+    },
+    {
+      "id": "93",
+      "question": "What is a benefit for external users who consume public cloud resources?",
+      "question_images": [],
+      "options": {
+        "A": "implemented over a dedicated WAN",
+        "B": "located in the same data center as the users",
+        "C": "all hosted on physical servers",
+        "D": "accessed over the Internet"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "45",
+      "question": "In a cloud-computing environment, what is rapid elasticity?",
+      "question_images": [],
+      "options": {
+        "A": "automatic adjustment of capacity based on need",
+        "B": "control and monitoring of resource consumption by the tenant",
+        "C": "pooling resources in a multitenant model based on need",
+        "D": "self-service of computing resources by the tenant"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Rapid elasticity allows users to automatically request additional space in the cloud or other types \nof services. Because of the setup of cloud computing services, provisioning can be seamless for the \nclient or user. The fact that providers still need to allocate and de-allocate resources is often \nirrelevant on the client or user’s side. This is a very essential aspect of cloud technology. In a \nsense, cloud computing resources appear to be infinite or automatically available. That’s much \ndifferent from older systems, where the limits of storage or memory were immediately visible to a \nuser.\nReference: https://www.techopedia.com/definition/29526/rapid-elasticity",
+      "explanation_images": []
+    },
+    {
+      "id": "75",
+      "question": "Which two characteristics are representative of virtual machines (VMs)? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "A VM on a hypervisor is automatically interconnected to other VMs.",
+        "B": "A VM on an individual hypervisor shares resources equally.",
+        "C": "Each VMs operating system depends on its hypervisor.",
+        "D": "Each VM runs independently of any other VM in the same hypervisor.",
+        "E": "multiple VMs operate on the same underlying hardware."
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [
+        "page_19_img_11.jpeg",
+        "page_19_img_12.jpeg"
+      ],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "What benefit does controller-based networking provide versus traditional networking? \nA. moves from a two-tier to a three-tier network architecture to provide maximum redundancy \nB. provides an added layer of security to protect from DDoS attacks \nC. allows configuration and monitoring of the network from one centralized port \nD. combines control and data plane functionality on a single device to minimize latency",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Which purpose does a northbound API serve in a controller-based networking architecture? \nA. communicates between the controller and the physical network hardware \nB. reports device errors to a controller \nC. generates statistics for network hardware and traffic \nD. facilitates communication between the controller and the applications",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "Which statement about the Cisco ACI fabric is most accurate? \nA. The APIC is able to enforce security by inserting itself into the data path. \nB. The fabric header carries the EPG from the egress to the ingress leaf switch. \nC. An APIC is a cluster of at least three APIC controllers, providing a single point of management \nwithout a single point of failure. \nD. The spine switch rewrites the EPG from ingress to egress when it performs the forwarding proxy \nfunction",
+      "question_images": [
+        "page_20_img_13.png"
+      ],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Which API is used in controller-based architectures to interact with edge devices? \nA. overlay \nB. northbound \nC. underlay \nD. southbound",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The Southbound API is used to communicate with network devices.",
+      "explanation_images": [
+        "page_21_img_14.jpeg"
+      ]
+    },
+    {
+      "id": "3",
+      "question": "What are two characteristics of a controller-based network? (Choose two) \nA. The administrator can make configuration updates from the CLI \nB. It uses northbound and southbound APIs to communicate between architectural layers \nC. It moves the control plane to a central point \nD. It decentralizes the control plane, which allows each device to make its own forwarding \ndecisions \nE. It uses Telnet to report system issues.",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "What are two southbound APIs? (Choose two) \nA. Thrift \nB. NETCONF \nC. Open Flow \nD. DSC \nE. CORBA",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "OpenFlow is a well-known southbound API. OpenFlow defines the way the SDN Controller should \ninteract with the forwarding plane to make adjustments to the network, so it can better adapt to \nchanging business requirements.\nThe Network Configuration Protocol (NetConf) uses Extensible Markup Language (XML) to install, \nmanipulate and delete configuration to network devices.\nOther southbound APIs are: \n+ onePK: a Cisco proprietary SBI to inspect or modify the network element configuration without \nhardware upgrades. \n+ OpFlex: an open-standard, distributed control system. It send “summary policy” to network \nelements.",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "Which statement correctly compares traditional networks and controller-based networks? \nA. Only traditional networks offer a centralized control plane \nB. Only traditional networks natively support centralized management \nC. Traditional and controller-based networks abstract policies from device configurations \nD. Only controller-based networks decouple the control plane and the data plane",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Most traditional devices use a distributed architecture, in which each control plane is resided in a \nnetworking device. Therefore they need to communicate with each other via messages to work \ncorrectly.\nIn contrast to distributed architecture, centralized (or controller-based) architectures centralizes \nthe control of networking devices into one device, called SDN controller -> Answer D is correct.",
+      "explanation_images": [
+        "page_22_img_15.jpeg"
+      ]
+    },
+    {
+      "id": "6",
+      "question": "What software defined architecture plane assists network devices with making packet forwarding \ndecisions by providing Layer 2 reachability and Layer 3 routing information? \nA. data plane \nB. control plane",
+      "question_images": [],
+      "options": {
+        "C": "policy plane",
+        "D": "management plane"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Control Plane Function \nIn its simplest form, the control plane provides layer-2 MAC reachability and layer-3 routing \ninformation to network devices that require this information to make packet forwarding decisions. \nIn the case of firewalls, the control plane would include stateful flow information for inspection. \nControl plane functionality can implemented as follows:\n+ Distributed – Conventional routers and switches operate using distributed protocols for control, \ni.e. where each device makes its own decisions about what to do, and communicate relevant \ninformation to other devices for input into their decision making process. For example, the \nSpanning Tree Protocol (STP), Fabric Path, and routing protocols such as IS-IS and BGP provide \ndistributed control of packet forwarding functionality to networking devices.\n+ Centralized – In this case, a centralized controller provides the necessary information for a \nnetwork element to make a decision. For example, these controller(s) instruct networking devices \non where to forward packets by explicitly programming their MAC and FIBs.\nReference: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Data_Center/VMDC/SDN/\nSDN.html",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "What are two benefits of controller-based networking compared to traditional networking? (Choose \ntwo) \nA. controller-based increases network bandwidth usage, while traditional lightens the load on the \nnetwork. \nB. controller-based reduces network configuration complexity, while traditional increases the \npotential for errors \nC. controller-based inflates software costs, while traditional decreases individual licensing costs \nD. controller-based allows for fewer network failure, while traditional increases failure rates \nE. controller-based provides centralization of key IT functions. While traditional requires distributes \nmanagement function",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "50",
+      "question": "Which plane is centralized by an SDN controller?",
+      "question_images": [],
+      "options": {
+        "A": "data plane",
+        "B": "management plane",
+        "C": "control plane",
+        "D": "services plane"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "In software defined architectures, which plane is distributed and responsible for traffic forwarding? \nA. management plane \nB. control plane \nC. data plane \nD. policy plane",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The Open Networking Foundation identifies three main parts of the Software-defined networking \n(SDN): Application layer; Control layer and Infrastructure layer. SDN separates a router’s control \nplane from the data (forwarding) plane. The control plane makes routing decisions. The data plane \nforwards data (packets) through the router. With SDN routing, decisions are made remotely \ninstead of on each individual router.",
+      "explanation_images": [
+        "page_24_img_16.png"
+      ]
+    },
+    {
+      "id": "45",
+      "question": "What is the purpose of a southbound API in a control based networking architecture?",
+      "question_images": [],
+      "options": {
+        "A": "facilities communication between the controller and the applications",
+        "B": "integrates a controller with other automation and orchestration tools",
+        "C": "allows application developers to interact with the network",
+        "D": "facilities communication between the controller and the networking hardware"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "48",
+      "question": "Which technology is appropriate for communication between an SDN controller and applications \nrunning over the network?",
+      "question_images": [],
+      "options": {
+        "A": "OpenFlow",
+        "B": "Southbound API",
+        "C": "NETCONF",
+        "D": "REST API"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Software-defined northbound application program interfaces (SDN northbound APIs) are usually \nSDN RESTful APIs used to communicate between the SDN Controller and the services and \napplications running over the network.\nNote: OpenFlow and NETCONF are Southbound APIs used for most SDN implementations.",
+      "explanation_images": []
+    },
+    {
+      "id": "29",
+      "question": "In software-defined architecture, which plane handles switching for traffic through a Cisco router?",
+      "question_images": [],
+      "options": {
+        "A": "Data",
+        "B": "Control",
+        "C": "Management",
+        "D": "Application"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "18",
+      "question": "Where is the interface between the control plane and data plane within the software-defined \narchitecture?",
+      "question_images": [],
+      "options": {
+        "A": "application layer and the management layer",
+        "B": "application layer and the infrastructure layer",
+        "C": "control layer and the application layer",
+        "D": "control layer and the infrastructure layer"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Maybe we should understand this question “What are the layers inside control plane and data \nplane within the software-defined architecture?” However, this question is still not clear.\nThe Open Networking Foundation identifies three main parts of the Software-defined networking \n(SDN): Application layer; Control layer and Infrastructure layer. SDN separates a router’s control \nplane from the data (forwarding) plane. The control plane makes routing decisions. The data plane \nforwards data (packets) through the router. With SDN routing, decisions are made remotely \ninstead of on each individual router.",
+      "explanation_images": [
+        "page_26_img_17.png"
+      ]
+    },
+    {
+      "id": "1",
+      "question": "Which communication interaction takes place when a southbound API is used?",
+      "question_images": [],
+      "options": {
+        "A": "between the SDN controller and PCs on the network",
+        "B": "between the SDN controller and switches and routers on the network",
+        "C": "between the SDN controller and services and applications on the network",
+        "D": "between network applications and switches and routers on the network"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "35",
+      "question": "What are two functions of an SDN controller? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "coordinating VTNs",
+        "B": "Layer 2 forwarding",
+        "C": "tracking hosts",
+        "D": "managing the topology",
+        "E": "protecting against DDoS attacks"
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Software-defined networking (SDN) and network function virtualization (NFV) have emerged as \nthe most promising candidates for improving network function and protocol programmability and \ndynamic adjustment of network resources. On the one hand, SDN is responsible for providing an \nabstraction of network resources through well-defined application programming interfaces. This \nabstraction enables SDN to perform network virtualization, that is, to slice the physical \ninfrastructure and create multiple coexisting application-specific virtual tenant networks (VTNs) \nwith specific quality-of-service and service-levelagreement requirements, independent of the \nunderlying optical transport technology and network protocols.\nReference: https://ieeexplore.ieee.org/abstract/document/7331131",
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "question": "What does an SDN controller use as a communication protocol to relay forwarding changes to a \nsouthbound API?",
+      "question_images": [],
+      "options": {
+        "A": "XML",
+        "B": "Java",
+        "C": "REST",
+        "D": "OpenFlow"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "OpenFlow and NETCONF are Southbound APIs used for most SDN implementations.\nNote: SDN northbound APIs are usually RESTful APIs used to communicate between the SDN \nController and the services and applications running over the network.",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "What is the function of a controller in controller-based networking?",
+      "question_images": [],
+      "options": {
+        "A": "It is a pair of core routers that maintain all routing decisions for a campus",
+        "B": "It centralizes the data plane for the network",
+        "C": "It is the card on a core router that maintains all routing decisions for a campus",
+        "D": "It serves as the centralized management point of an SDN architecture"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "In constrast to distributed architecture, centralized (or controller-based) architectures centralizes \nthe control of networking devices into one device, called SDN controller.",
+      "explanation_images": []
+    },
+    {
+      "id": "32",
+      "question": "Which type of API allows SDN controllers to dynamically make changes to the network?",
+      "question_images": [],
+      "options": {
+        "A": "northbound API",
+        "B": "southbound API",
+        "C": "SOAP API",
+        "D": "REST API"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "63",
+      "question": "What is the function of the controller in a software-defined network?",
+      "question_images": [],
+      "options": {
+        "A": "forwarding packets",
+        "B": "making routing decisions",
+        "C": "multicast replication at the hardware level",
+        "D": "fragmenting and reassembling packets"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "91",
+      "question": "Which action is taken by the data plane within a network device?",
+      "question_images": [],
+      "options": {
+        "A": "looks up an egress interface in the forwarding information base",
+        "B": "constructs a routing table based on a routing protocol",
+        "C": "provides CLI access to the network device",
+        "D": "forwards traffic to the next hop"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "102",
+      "question": "Which two network actions occur within the data plane? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Add or remove an 802.1Q trunking header.",
+        "B": "Make a configuration change from an incoming NETCONF RPC.",
+        "C": "Run routing protocols.",
+        "D": "Reply to an incoming ICMP echo request.",
+        "E": "Match the destination MAC address to the MAC address table."
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "For perspective, the following list details some of the more common actions that a networking \ndevice does that fit into the data plane: \n+ De-encapsulating and re-encapsulating a packet in a data-link frame (routers, Layer 3 switches) \n+ Adding or removing an 802.1Q trunking header (routers and switches) \n+ Matching an Ethernet frame’s destination Media Access Control (MAC) address to the \nMAC address table (Layer 2 switches) \n+ Matching an IP packet’s destination IP address to the IP routing table (routers, Layer 3 switches) \n+ Encrypting the data and adding a new IP header (for virtual private network [VPN] processing) \n+ Changing the source or destination IP address (for Network Address Translation [NAT] \nprocessing) \n+ Discarding a message due to a filter (access control lists [ACLs], port security)\nReference: https://www.ciscopress.com/articles/article.asp?p=2995354&seqNum=2",
+      "explanation_images": []
+    },
+    {
+      "id": "135",
+      "question": "What is an expected outcome when network management automation is deployed?",
+      "question_images": [],
+      "options": {
+        "A": "A distributed management plane must be used.",
+        "B": "Software upgrades are performed from a central controller",
+        "C": "Complexity increases when new device configurations are added",
+        "D": "Custom applications are needed to configure network devices"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "68",
+      "question": "What is the role of disaggregation in controller-based networking?",
+      "question_images": [],
+      "options": {
+        "A": "It divides the control-plane and data-plane functions.",
+        "B": "It summarizes the routes between the core and distribution layers of the network topology.",
+        "C": "It enables a network topology to quickly adjust from a ring network to a star network",
+        "D": "It streamlines traffic handling by assigning individual devices to perform either Layer 2 or Layer \n3 functions."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Taken literally, “network disaggregation” means to separate the network into its component parts.",
+      "explanation_images": []
+    },
+    {
+      "id": "73",
+      "question": "What is the function of “off-the-shelf” switches in a controller-based network?",
+      "question_images": [],
+      "options": {
+        "A": "Forwarding packets",
+        "B": "Making routing decision",
+        "C": "Providing a central view of the deployed network",
+        "D": "Setting packet-handling policies"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "In SDN’s purest form, the controller has all the intelligence: Switches are dumb, commercial off-\nthe-shelf (COTS) devices that are managed by the controllers.\nTherefore we can deduce “off-the-shelf” switches are only used to forward packets.",
+      "explanation_images": []
+    },
+    {
+      "id": "94",
+      "question": "In an SDN architecture, which function of a network node is centralized on a controller?",
+      "question_images": [],
+      "options": {
+        "A": "provides protocol access for remote access devices",
+        "B": "discards a message due filtering",
+        "C": "creates the IP routing table",
+        "D": "makes a routing decision"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The Open Networking Foundation identifies three main parts of the Software-defined networking \n(SDN): Application layer; Control layer and Infrastructure layer. SDN separates a router’s control \nplane from the data (forwarding) plane. The control plane makes routing decisions. The data plane \nforwards data (packets) through the router. With SDN routing, decisions are made remotely \ninstead of on each individual router.",
+      "explanation_images": []
+    },
+    {
+      "id": "96",
+      "question": "Which SDN plane forwards user-generated traffic?",
+      "question_images": [],
+      "options": {
+        "A": "policy plane",
+        "B": "management plane",
+        "C": "data plane",
+        "D": "control plane"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "What is the function of northbound API?",
+      "question_images": [],
+      "options": {
+        "A": "It upgrades software and restores files.",
+        "B": "It relies on global provisioning and configuration.",
+        "C": "It supports distributed processing for configuration.",
+        "D": "It provides a path between an SDN controller and network applications."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Now, in turn, the networking administrators and SDN applications want to control the controller! \nSo the controller need a northbound interface (NBI) to communicate with us. The NBI\napplications included various network services, including network virtualization, dynamic virtual \nnetwork provisioning, firewall monitoring, user identity management and access policy control.",
+      "explanation_images": [
+        "page_30_img_18.jpeg"
+      ]
+    },
+    {
+      "id": "10",
+      "question": "Which interface enables communication between a program on the controller and a program on \nthe networking devices?",
+      "question_images": [],
+      "options": {
+        "A": "northbound interface",
+        "B": "software virtual interface",
+        "C": "southbound interface",
+        "D": "tunnel interface"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "We use Southbound API to communicate between the Controllers and Network Elements.",
+      "explanation_images": []
+    },
+    {
+      "id": "55",
+      "question": "Why would a network administrator choose to implement automation in a network environment?",
+      "question_images": [],
+      "options": {
+        "A": "to centralize device information storage",
+        "B": "to simplify the process of maintaining a consistent configuration state across all devices",
+        "C": "to deploy the management plane separately from the rest of the network",
+        "D": "to implement centralized user account management"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "73",
+      "question": "What is a reason why an administrator would choose to implement an automated network \nmanagement approach?",
+      "question_images": [],
+      "options": {
+        "A": "Reduce inconsistencies in the network configuration.",
+        "B": "Increase recurrent management costs.",
+        "C": "Enable “box by box” configuration and deployment.",
+        "D": "Decipher simple password policies."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Cisco DNA Center offers 360-degree extensibility through four distinct types of platform \ncapabilities:\n+ Intent-based APIs leverage the controller and enable business and IT applications to deliver \nintent to the network and to reap network analytics and insights for IT and business innovation. \n+ Process adapters, built on integration APIs, allow integration with other IT and network \nsystems to streamline IT operations and processes. \n+ Domain adapters, built on integration APIs, allow integration with other infrastructure domains \nsuch as data center, WAN, and security to deliver a consistent intent-based infrastructure across \nthe entire IT environment. \n+ SDKs allow management to be extended to third-party vendor’s network devices to offer \nsupport for diverse environments.\nReference: https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-\ncenter/nb-06-dna-cent-platf-aag-cte-en.html",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "What makes Cisco DNA Center different from traditional network management applications and \ntheir management of networks? \nA. It only supports auto-discovery of network elements in a green field deployment. \nB. It modular design allows someone to implement different versions to meet the specific needs of \nan organization \nC. It abstracts policy from the actual device configuration \nD. It does not support high availability of management functions when operating in cluster mode",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "How does Cisco DNA Center gather data from the network? \nA. Network devices use different services like SNMP, syslog, and streaming telemetry to send data \nto the controller \nB. Devices establish an iPsec tunnel to exchange data with the controller \nC. Devices use the call-home protocol to periodically send data to the controller \nD. The Cisco CU Analyzer tool gathers data from each licensed network device and streams it to \nthe controller",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "How do traditional campus device management and Cisco DNA Center device management differ \nin regards to deployment? \nA. Cisco DNA Center device management can deploy a network more quickly than traditional \ncampus device management \nB. Traditional campus device management allows a network to scale more quickly than with Cisco \nDNA Center device management \nC. Cisco DNA Center device management can be implemented at a lower cost than most traditional \ncampus device management options \nD. Traditional campus device management schemes can typically deploy patches and updates \nmore quickly than Cisco DNA Center device management",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "What is an advantage of Cisco DNA Center versus traditional campus device management? \nA. It supports numerous extensibility options including cross-domain adapters and third-party \nSDKs \nB. It supports high availability for management functions when operating in cluster mode \nC. It enables easy autodiscovery of network elements m a brownfield deployment \nD. It is designed primarily to provide network assurance",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "16",
+      "question": "What is a function of the Cisco DNA Center Overall Health Dashboard?",
+      "question_images": [],
+      "options": {
+        "A": "It summarizes daily and weekly CPU usage for servers and workstations in the network.",
+        "B": "It provides detailed activity logging for the 10 devices and users on the network.",
+        "C": "It summarizes the operational status of each wireless device on the network.",
+        "D": "It provides a summary of the top 10 global issues."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The bottom of Cisco DNA Center Overall Health Dashboard displays the top 10 issues, if any, that \nmust be addressed.",
+      "explanation_images": [
+        "page_33_img_19.jpeg"
+      ]
+    },
+    {
+      "id": "46",
+      "question": "Which two events occur automatically when a device is added to Cisco DNA Center? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "The device is assigned to the Global site.",
+        "B": "The device is placed into the Unmanaged state.",
+        "C": "The device is placed into the Provisioned state.",
+        "D": "The device is placed into the Managed state.",
+        "E": "The device is assigned to the Local site."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Device in Global Site: When you successfully add, import, or discover a device, Cisco DNA Center \nplaces the device in the Managed state and assigns it to the Global site by default. Even if you \nhave defined SNMP server, Syslog server, and NetFlow collector settings for the Global site, Cisco \nDNA Center does not change these settings on the device.\nReference: https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-\nautomation-and-management/dna-center/2-1-\n2/admin_guide/b_cisco_dna_center_admin_guide_2_1_2/b_cisco_dna_center_admin_guide_2_1_\n1_chapter_010.html\n=======================",
+      "explanation_images": []
+    },
+    {
+      "id": "15",
+      "question": "What is the purpose of the Cisco DNA Center controller?",
+      "question_images": [],
+      "options": {
+        "A": "to securely manage and deploy network devices",
+        "B": "to scan a network and generate a layer 2 network diagram",
+        "C": "to provide Layer 3 services to autonomous access points",
+        "D": "to secure physical access to a data center"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "28",
+      "question": "What differentiates device management enabled by Cisco DNA Center from traditional campus \ndevice management?",
+      "question_images": [],
+      "options": {
+        "A": "CLI-oriented device",
+        "B": "centralized",
+        "C": "per-device",
+        "D": "device-by-device hands-on"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "80",
+      "question": "A network architect is considering whether to implement Cisco DNA Center to deploy devices on a \nnew network. The organization is focused on reducing the time it currently takes to deploy devices \nin a traditional campus design. For which reason would Cisco DNA Center be more appropriate \nthan traditional management options?",
+      "question_images": [],
+      "options": {
+        "A": "Cisco DNA Center provides zero-touch provisioning to third-party devices.",
+        "B": "Cisco DNA Center supports deployment with a single pane of glass.",
+        "C": "Cisco DNA Center minimizes the level of syslog output when reporting on Cisco devices.",
+        "D": "Cisco DNA Center reduces the need for analytics on third-party access points and devices."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "DNA Center can be the “controller” or single pane of glass for deploying and managing on-\npremises Cisco networks including routing, switching, Software Defined Wireless Area Network \n(SD-WAN), and security devices like Cisco Identity Services Engine (ISE) and Firepower.\nVPN Questions\nPremium Member: You can test your knowledge with these questions first via this link (via \nHTML).",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "Which type of VPN uses a hub-and-spoke configuration to establish a full mesh topology? \nA. GRE over IPsec \nB. dynamic multipoint VPN \nC. MPLS VPN \nD. IPsec virtual tunnel interface",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Dynamic Multipoint VPN (DMVPN) is a solution of Cisco. DMVPN provides the following advantages:\n+ Provides full meshed connectivity with simple Hub-and-Spoke topology. The spokes can \ncommunicate between each other without going through Hub \n+ Only one static public IP address is required on Hub. Spokes can use dynamic (unknown) public \nIP addresses \n+ The configuration is simple even in large network. No additional configuration is required on Hub \nwhen new Spokes are added.",
+      "explanation_images": [
+        "page_35_img_20.jpeg"
+      ]
+    },
+    {
+      "id": "2",
+      "question": "What mechanism carries multicast traffic between remote sites and supports encryption? \nA. ISATAP \nB. GRE over IPsec \nC. IPsec over ISATAP \nD. GRE",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "What is a function of a remote access VPN? \nA. used cryptographic tunneling to protect the privacy of data for multiple users simultaneously \nB. allows the users to access company internal network resources through a secure tunnel \nC. used exclusively when a user is connected to a company’s internal network \nD. establishes a secure tunnel between two branch sites",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "20",
+      "question": "When a site-to-site VPN is configured, which IPsec mode provides encapsulation and encryption of \nthe entire original IP packet?",
+      "question_images": [],
+      "options": {
+        "A": "IPsec tunnel mode with AH",
+        "B": "IPsec transport mode with AH",
+        "C": "IPsec tunnel mode with ESP",
+        "D": "IPsec transport mode with ESP"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "IPSec can be configured to operate in two different modes, Tunnel (default) and Transport mode. \nTransport mode encapsulation retains the original IP header. With tunnel mode, the entire original \nIP packet is protected by IPSec -> In this question we must choose tunnel mode.\nThe AH protocol provides a mechanism for authentication only. The ESP protocol provides \ndata confidentiality (encryption) and authentication (data integrity, data origin authentication, and \nreplay protection) -> We must use ESP.\nReference: https://www.ibm.com/docs/en/zos/2.4.0?topic=ipsec-ah-esp-protocols",
+      "explanation_images": []
+    },
+    {
+      "id": "16",
+      "question": "Which type of traffic is sent with pure IPsec?",
+      "question_images": [],
+      "options": {
+        "A": "broadcast packets from a switch that is attempting to locate a MAC address at one of several \nremote sites",
+        "B": "multicast traffic from a server at one site to hosts at another location",
+        "C": "spanning-tree updates between switches that are at two different sites",
+        "D": "unicast messages from a host at a remote site to a server at headquarters"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Pure IPSec configuration (no GRE tunnel) does not support multicast or broadcast traffic. \nSpanning-tree updates use multicast too. -> Answer A, answer B and answer C are not correct.",
+      "explanation_images": []
+    },
+    {
+      "id": "65",
+      "question": "Which two VPN technologies are recommended by Cisco for multiple branch offices and large-scale \ndeployments? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "IPsec remote access",
+        "B": "site-to-site VPN",
+        "C": "clientless VPN",
+        "D": "GETVPN",
+        "E": "DMVPN"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Cisco DMVPN can be deployed in conjunction with Cisco IOS Firewall and Cisco IOS IPS, as well as \nquality of service (QoS), IP Multicast, split tunneling, and routing-based failover \nmechanisms. Large-scale, highly available Cisco DMVPN deployments are made possible by load \nbalancing multiple Cisco DMVPN hubs.\nReference: https://www.cisco.com/c/en/us/products/collateral/security/dynamic-multipoint-vpn-\ndmvpn/data_sheet_c78-468520.html\nGet VPNs provide large scale, connectionless, tunnel free transmission protection taking advantage \nof existing routing infrastructure and can be used with MPLS, IP, Frame relay and ATM networks.\nReference: https://ipwithease.com/flexvpn-vs-getvpn/\nNote:\nSite-to-Site VPN is a simple VPN that connects a central site and a remote site, or a hub and \nspoke VPN that connects a central site with multiple remote sites -> It is not suitable for large-\nscale deployments.\nWith clientless VPN, a tunnel is established from a web browser on the remote user’s device to \nthe outside interface of the VPN gateway’s SSL component -> It is not suitable for large-scale \ndeployments.\nIPSec remote access is used to connect remote-access clients, such as a PC or small office, \nhome office (SOHO) device.\nAutomation Questions \nQuestion 1\nWhich output displays a JSON data representation? \nA. \n{ \n“response”,{ \n“taskId”,{}; \n“url”,”string” \n}; \n“version”, “string” \n}\nB. \n{ \n“response”:{ \n“taskId”,{}; \n“url”,”string” \n}; \n“version”; “string” \n}\nC. \n{ \n“response”- { \n“taskId”- {}; \n“url”-“string” \n}, \n“version”-“string” \n}\nD. \n{ \n“response”:{ \n“taskId”:{}, \n“url”:”string” \n}, \n“version”: “string” \n}\nJSON data is written as name/value pairs. \nA name/value pair consists of a field name (in double quotes), followed by a colon, followed by a \nvalue: \n“name”:”Mark”\nJSON can use arrays. Array values must be of type string, number, object, array, boolean or null. \nFor example: \n{ \n“name”:”John”, \n“age”:30, \n“cars”:[ “Ford”, “BMW”, “Fiat” ] \n}\nJSON can have empty object like “taskId”:{}",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Which option best describes an API? \nA. communication often uses either Java scripting, Python, XML, or simple HTTP \nB. an architectural style (versus a protocol) for designing applications \nC. a stateless client-server model \nD. request a certain type of data by specifying the URL path that models the data",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "Which option about JSON is true? \nA. uses predefined tags or angle brackets (<>) to delimit markup text \nB. used to describe structured data that includes arrays \nC. used for storing information \nD. similar to HTML, it is more verbose than XML",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "JSON data is written as name/value pairs. \nA name/value pair consists of a field name (in double quotes), followed by a colon, followed by a \nvalue: \n“name”:”Mark”\nJSON can use arrays. Array values must be of type string, number, object, array, boolean or null.. \nFor example: \n{ \n“name”:”John”, \n“age”:30, \n“cars”:[ “Ford”, “BMW”, “Fiat” ] \n}",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Which of the following is the JSON encoding of a dictionary or hash? \nA. {“key”: “value”} \nB. [“key”, “value”] \nC. {“key”, “value”} \nD. (“key”: “value”)",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "Which two encoding methods are supported by REST APIs? (Choose two) \nA. YAML \nB. JSON \nC. EBCDIC \nD. SGML \nE. XML",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "The Application Policy Infrastructure Controller (APIC) REST API is a programmatic interface that \nuses REST architecture. The API accepts and returns HTTP (not enabled by default) or HTTPS \nmessages that contain JavaScript Object Notation (JSON) or Extensible Markup Language (XML) \ndocuments.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/2-\nx/rest_cfg/2_1_x/b_Cisco_APIC_REST_API_Configuration_Guide/b_Cisco_APIC_REST_API_Configu\nration_Guide_chapter_01.html",
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "question": "What are two benefits of network automation? (Choose two) \nA. reduced operational costs \nB. reduced hardware footprint \nC. faster changes with more reliable results \nD. fewer network failures \nE. increased network security",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "Which type of API would be used to allow authorized salespeople of an organization access to \ninternal sales data from their mobile devices? \nA. partner \nB. open \nC. public \nD. private",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "There are three types of API: \n+ Open APIs (Public APIs) – These APIs are publicly available and can be used with no \nrestrictions. Because these APIs are public, many API providers require the user to get a free key, \nor token, prior to using the API. This is to help control the number of API requests they receive \nand process. \n+ Internal (Private APIs) – These are APIs that are used by an organization or company to \naccess data and services for internal use only. An example of an internal API is allowing authorized \nsalespeople access to internal sales data on their mobile devices. \n+ Partner APIs – These are APIs that are used between a company and its business partners or \ncontractors to facilitate business between them. The business partner must have a license or other \nform of permission to use the API. A travel service using an airline’s API is an example of a partner \nAPI.",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "What is a characteristic of the REST API?",
+      "question_images": [],
+      "options": {
+        "A": "evolved into what became SOAP",
+        "B": "used for exchanging XML structured information over HTTP or SMTP",
+        "C": "considered slow, complex, and rigid",
+        "D": "most widely used API for web services"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "REST API is an API that works on top of the HTTP protocol. It defines a set of functions developers \ncan use to perform requests and receive responses via \nHTTP protocol such as GET and POST. REST APIs are the most popular API used for web services \nnowadays.",
+      "explanation_images": []
+    },
+    {
+      "id": "9",
+      "question": "Refer to the exhibit.\ncisco_ospf_vrf {\"R1 default\":\nensure => 'present',\nauto_cost => '100',\n}\nWhich type of configuration is represented in the output?",
+      "question_images": [],
+      "options": {
+        "A": "Puppet",
+        "B": "JSON",
+        "C": "Chef",
+        "D": "Ansible"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "10",
+      "question": "Which CRUD operation modifies an existing table or view? \nA. read \nB. replace \nC. create \nD. update",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "CRUD is short for CREATE, READ, UPDATE and DELETE operations. Only UPDATE operation \nmodifies an existing table or view.",
+      "explanation_images": []
+    },
+    {
+      "id": "11",
+      "question": "Which configuration management mechanism uses TCP port 22 by default when communicating \nwith managed nodes? \nA. Ansible \nB. Python",
+      "question_images": [],
+      "options": {
+        "C": "Puppet",
+        "D": "Chef"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "TCP port 22 is SSH, which is used by Ansible when communicating with the managed nodes.",
+      "explanation_images": [
+        "page_41_img_21.jpeg"
+      ]
+    },
+    {
+      "id": "9",
+      "question": "Which CRUD operation corresponds to the HTTP GET method?",
+      "question_images": [],
+      "options": {
+        "A": "read",
+        "B": "update",
+        "C": "create",
+        "D": "delete"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "CRUD is short for CREATE, READ, UPDATE and DELETE operations. “GET” request is used to get a \nresource from a server. If you perform a “GET” request, the server looks for the data you \nrequested and sends it back to you. In other words, a “GET” request performs a “READ” operation.",
+      "explanation_images": []
+    },
+    {
+      "id": "10",
+      "question": "With REST API, which standard HTTP header tells a server which media type is expected by the \nclient?",
+      "question_images": [],
+      "options": {
+        "A": "Accept-Encoding: gzip, deflate",
+        "B": "Accept-Patch: text/example; charset=utf-8",
+        "C": "Content-Type: application/json; charset=utf-8",
+        "D": "Accept: application/json"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": [
+        "page_42_img_22.png"
+      ]
+    },
+    {
+      "id": "25",
+      "question": "Which JSON data type is an unordered set of attribute-value pairs?",
+      "question_images": [],
+      "options": {
+        "A": "array",
+        "B": "string",
+        "C": "object",
+        "D": "Boolean"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "An object is an unordered collection of zero or more name/value pairs. For example \n{“name”:”John”}. Objects are denoted by curly brackets, which means that the order is not \nguaranteed. For example, if you send a request {“name”:”9tut”,”preferredColor”:”Blue”}, it is not \nalways guaranteed that the receiver receives them in the same order.\nNote: In contrast to object, an array is an ordered sequence of zero or more values. For example \n[“a”,”b”,”c”]. Arrays use square brackets to denote arrays. Order is guaranteed in JSON arrays.",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Which HTTP status code is returned after a successful REST API request?",
+      "question_images": [],
+      "options": {
+        "A": "200",
+        "B": "301",
+        "C": "404",
+        "D": "500"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "HTTP defines these standard status codes that can be used to convey the results of a client’s \nrequest. The status codes are divided into the five categories.\n1xx: Informational – Communicates transfer protocol-level information. \n2xx: Success – Indicates that the client’s request was accepted successfully. \n3xx: Redirection – Indicates that the client must take some additional action in order to complete \ntheir request. \n4xx: Client Error – This category of error status codes points the finger at clients. \n5xx: Server Error – The server takes responsibility for these error status codes.",
+      "explanation_images": []
+    },
+    {
+      "id": "34",
+      "question": "Refer to the exhibit.\nAfter running the code in the exhibit, which step reduces the amount of data that the NETCONF \nserver returns to the NETCONF client, to only the interface’s configuration?",
+      "question_images": [
+        "page_43_img_23.jpeg"
+      ],
+      "options": {
+        "A": "Use the xml library to parse the data returned by the NETCONF server for the interface’s \nconfiguration.",
+        "B": "Create an XML filter as a string and pass it to get_config() method as an argument.",
+        "C": "Create a JSON filter as a string and pass it to the get_config() method as an argument.",
+        "D": "Use the JSON library to parse the data returned by the NETCONF server for the interface’s \nconfiguration."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "In the exhibit above, we are getting the running config of the device then we can use JSON library \nto filter the data later.",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "What are two improvements provided by automation for network management in an SDN \nenvironment? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Artificial intelligence identifies and prevents potential design failures",
+        "B": "Data collection and analysis tools establish a baseline for the network",
+        "C": "New devices are onboarded with minimal effort",
+        "D": "Machine learning minimizes the overall error rate when automating troubleshooting processes",
+        "E": "Proprietary Cisco APIs leverage multiple network management tools"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "27",
+      "question": "Which two components are needed to create an Ansible script that configures a VLAN on a switch? \n(Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "task",
+        "B": "cookbook",
+        "C": "recipe",
+        "D": "model",
+        "E": "playbook"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "37",
+      "question": "Which two primary drivers support the need for network automation? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Increasing reliance on self-diagnostic and self-healing",
+        "B": "Eliminating training needs",
+        "C": "Policy-derived provisioning of resources",
+        "D": "Reducing hardware footprint",
+        "E": "Providing a ship entry point for resource provisioning"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "69",
+      "question": "Which REST method updates an object in the Cisco DNA Center Intent API?",
+      "question_images": [],
+      "options": {
+        "A": "CHANGE",
+        "B": "UPDATE",
+        "C": "POST",
+        "D": "PUT"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": [
+        "page_44_img_24.png"
+      ]
+    },
+    {
+      "id": "81",
+      "question": "Refer to the exhibit.\nWhich type of configuration is represented in the output?",
+      "question_images": [
+        "page_44_img_25.jpeg"
+      ],
+      "options": {
+        "A": "Chef",
+        "B": "JSON",
+        "C": "Ansibte",
+        "D": "Puppet"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Puppet resource declarations have the following syntax:\nWhere: \n<TYPE>: is one of the numerous resource types, e.g., file \n<TITLE>: A arbitrary unique resource identifier across all resources of the same type (across all \nresources applied to a particular system) \n<ATTRIBUTE>: Resource type-specific parameters",
+      "explanation_images": [
+        "page_44_img_26.jpeg"
+      ]
+    },
+    {
+      "id": "84",
+      "question": "Refer to the exhibit.\nWhat is represented by “R1” and “SW1” within the JSON output?",
+      "question_images": [
+        "page_45_img_27.jpeg"
+      ],
+      "options": {
+        "A": "array",
+        "B": "object",
+        "C": "value",
+        "D": "key"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "In this JSON output, “Routers” and “Switches” are keys while “R1”, “R2”, “R3”, “SW1”, “SW2”, \n“SW3” are values.",
+      "explanation_images": []
+    },
+    {
+      "id": "23",
+      "question": "Which two REST API status-code classes represent errors? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "1XX",
+        "B": "2XX",
+        "C": "3XX",
+        "D": "4XX",
+        "E": "5XX"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "HTTP defines these standard status codes that can be used to convey the results of a client’s \nrequest. The status codes are divided into five categories. \n1xx: Informational – Communicates transfer protocol-level information. \n2xx: Success – Indicates that the client’s request was accepted successfully. \n3xx: Redirection – Indicates that the client must take some additional action in order to complete \ntheir request. \n4xx: Client Error – This category of error status codes points the finger at clients. \n5xx: Server Error – The server takes responsibility for these error status codes.",
+      "explanation_images": []
+    },
+    {
+      "id": "37",
+      "question": "Refer to the exhibit.\nHow many objects are present in the given JSON-encoded data?",
+      "question_images": [
+        "page_46_img_28.jpeg"
+      ],
+      "options": {
+        "A": "one",
+        "B": "four",
+        "C": "seven",
+        "D": "nine"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Objects are enclosed in braces “{}” so we only need to count the number of “}” to specify how \nmany objects in the JSON-encoded data. And there are 9 closing brackets “{” so there are 9 \nobjects.",
+      "explanation_images": []
+    },
+    {
+      "id": "75",
+      "question": "Refer to the exhibit.\n{\n\"myCar\": {\n\"name\": \"thunder\",\n\"wheels\": [\"good\", \"good\", \"pressureLow\", \"warning\"],\n\"gasLight\": false\n},\n\"oldCar\": {\n\"name\": \"sleepy\",\n\"wheels\": [\"pressureLow\", \"pressureLow\", \"pressureLow\", \n\"pressureLow\"],\n\"color\": \"rust\"\n\"gasLight\": true\n},\n\"newCar\": {\n\"name\": \"lightning\",\n\"wheels\": [\"pressureLow\", \"good\", \"pressureLow\", \"good\"],\n\"color\": \"blue\"\n\"gasLight\": true\n}\n}\nIn which structure does the word “warning” directly reside?",
+      "question_images": [],
+      "options": {
+        "A": "array",
+        "B": "object",
+        "C": "Boolean",
+        "D": "string"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "83",
+      "question": "Which interface type enables an application running on a client to send data over an IP network to \na server?",
+      "question_images": [],
+      "options": {
+        "A": "southbound interface",
+        "B": "application programming interface",
+        "C": "northbound interface",
+        "D": "Representational State Transfer application programming interface"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "In this question the answer “application programming interface” is better than the choice \n“Representational State Transfer application programming interface” as the latter is used for web \nservices (HTTP/HTTPS) only.\nNote: REpresentational State Transfer (REST) requires that a client make a request to the server \nin order to retrieve or modify data on the server. A request generally consists of: \n+ an HTTP verb, which defines what kind of operation to perform \n+ a header, which allows the client to pass along information about the request \n+ a path to a resource \n+ an optional message body containing data",
+      "explanation_images": []
+    },
+    {
+      "id": "88",
+      "question": "Which script paradigm does Puppet use?",
+      "question_images": [],
+      "options": {
+        "A": "manifests and modules",
+        "B": "strings and marionettes",
+        "C": "recipes and cookbooks",
+        "D": "playbooks and roles"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Puppet Master Components\nManifests\nManifest is the most important component in a Puppet Master so we will mention about it first. \nManifest is just the file where the all Puppet scripts for configuring Puppet clients are written (in \nRuby code). Manifest filenames use “.pp” (means Puppet policy) extension.\nBased on the Facts received from Factor, Master compiles manifests into catalogs (which will be \ndiscussed later), then sends them to the client.\nModule\nModule also plays an important part in a Puppet Master. Module is a collection of manifests and \nother related data files organized in a predefined way to facilitate sharing and reusing. Modules tie \nmanifests, templates, and files into a single unit.\nModule = Manifests + Data (Templates, Files)\nModules have a specific directory path which is usually “/etc/puppet/manifests/”. They are useful \nfor organizing our Puppet code, because they allow to split code into multiple manifests. It is \nconsidered best practice to use modules to organize all of our Puppet manifests.\nFor more information about Puppet, please read our Puppet tutorial.",
+      "explanation_images": [
+        "page_48_img_29.jpeg"
+      ]
+    },
+    {
+      "id": "29",
+      "question": "Refer to the exhibit.\nHow many JSON objects are presented?",
+      "question_images": [
+        "page_48_img_30.jpeg"
+      ],
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "A JSON object contains zero, one, or more key-value pairs, also called properties. The object is \nsurrounded by curly braces {}  so there is only one object in this question.",
+      "explanation_images": []
+    },
+    {
+      "id": "66",
+      "question": "Refer to the exhibit.\n{\n\"Test_Questions\" : [\n\"Automation\",\n\"Configuration\",\n],\n\"Test_Exam_Level\" : [\n\"CCNA\",\n\"CCNP\",\n],\n\"Test_Response\" : [\n\"Correct\",\n\"Incorrect\",\n]\n}\nHow many arrays are present in the JSON data?",
+      "question_images": [],
+      "options": {
+        "A": "one",
+        "B": "three",
+        "C": "six",
+        "D": "nine"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The JSON array is surrounded by square brackets [ ]. In this question there are three square \nbrackets in total.",
+      "explanation_images": []
+    }
+  ]
+}

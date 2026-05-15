@@ -1,0 +1,1637 @@
+{
+  "count": 102,
+  "questions": [
+    {
+      "id": "1",
+      "question": "Which statement about the nature of NAT overload is true? \nA. applies a one-to-many relationship to internal IP addresses \nB. applies a one-to-one relationship to internal IP addresses (static nat) \nC. applies a many-to-many relationship to internal IP addresses (dynamic nat – NAT Pool) \nD. can be configured only on Gigabit interface",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Refer to the exhibit. An engineer configured NAT translations and has verified that the configuration is \ncorrect. Which IP address is the source IP?\nR1#show ip nat translations\nPro  Inside global      Inside local    Outside local     Outside global\ntcp  172.23.104.3:43268 10.4.4.4:43268  172.23.103.10:23  172.23.103.10:23\ntcp  172.23.104.4:45507 10.4.4.5:45507  172.23.103.10:80  172.23.103.10:80",
+      "question_images": [],
+      "options": {
+        "A": "10.4.4.4",
+        "B": "10.4.4.5",
+        "C": "172.23.103.10",
+        "D": "172.23.104.4"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Maybe this question wanted to ask “which IP address is the source IP at the receiving side?” as there \nare two correct answers for inside local IP address (10.4.4.4 & 10.4.4.5) so they cannot be the correct \nanswer.",
+      "explanation_images": [
+        "page_2_img_0.jpeg"
+      ]
+    },
+    {
+      "id": "3",
+      "question": "Which keyword in a NAT configuration enables the use of one outside IP address for multiple inside \nhosts? \nA. source \nB. static \nC. pool \nD. overload",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "By adding the keyword “overload” at the end of a NAT statement, NAT becomes PAT (Port Address \nTranslation). This is also a kind of dynamic NAT that maps multiple private IP addresses to a single \npublic IP address (many-to-one) by using different ports. Static NAT and Dynamic NAT both require a \none-to-one mapping from the inside local to the inside global address. By using PAT, you can have \nthousands of users connect to the Internet using only one real global IP address. PAT is the \ntechnology that helps us not run out of public IP address on the Internet. This is the most popular \ntype of NAT.\nAn example of using “overload” keyword is shown below:\nR1(config)# ip nat inside source list 1 interface ethernet1 overload",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Which type of address is the public IP address of a NAT device? \nA. outside global \nB. outside local \nC. inside global \nD. inside local \nE. outside public \nF. inside public",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "NAT use four types of addresses:\n* Inside local address – The IP address assigned to a host on the inside network. The address is \nusually not an IP address assigned by the Internet Network Information Center (InterNIC) or service \nprovider. This address is likely to be an RFC 1918 private address. \n* Inside global address – A legitimate IP address assigned by the InterNIC or service provider that \nrepresents one or more inside local IP addresses to the outside world.\n* Outside local address – The IP address of an outside host as it is known to the hosts on the inside \nnetwork. \n* Outside global address – The IP address assigned to a host on the outside network. The owner of \nthe host assigns this address.",
+      "explanation_images": [
+        "page_3_img_1.jpeg"
+      ]
+    },
+    {
+      "id": "5",
+      "question": "Refer to the exhibit. Router R1 is configured with static NAT. Addressing on the router and the web \nserver are correctly configured, but there is no connectivity between the web server and users on the \nInternet. What is a possible reason for this lack of connectivity?\nR1(config)# ip nat inside source static 192.168.11.254 209.165.200.1 \nR1(config)#interface FastEthernet0/0 \nR1(config-if)#ip nat inside \nR1(config-if)#interface Serial0/0/1 \nR1(config-if)#ip nat outside",
+      "question_images": [
+        "page_3_img_2.jpeg"
+      ],
+      "options": {
+        "A": "The router NAT configuration has an incorrect inside local address",
+        "B": "The inside global address is incorrect",
+        "C": "The NAT configuration on interface S0/0/1 is incorrect.",
+        "D": "Interface Fa0/0 should be configured with the command ip nat outside"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The “ip nat inside” command was wrongly configured with inside local address of 192.168.11.254 \nwhile it should be 192.168.11.11, which is the IP address of the web server.",
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "question": "An engineer is configuring NAT to translate the source subnet of 10.10.0.0/24 to any of three \naddresses 192.168.3.1, 192.168.3.2, 192.168.3.3. Which configuration should be used?\nOption A: \nenable \nconfigure terminal \nip nat pool mypool \n192.168.3.1 192.168.3.3 \nprefix-length 30 \nroute-map permit 10.10.0.0 \n255.255.255.0 \nip nat outside destination list \n1 pool mypool \ninterface g1/1 \nip nat inside \ninterface g1/2 \nip nat outside\nOption B: \nenable \nconfigure terminal \nip nat pool mypool \n192.168.3.1 192.168.3.3 \nprefix-length 30 \naccess-list 1 permit \n10.10.0.0 0.0.0.255 \nip nat outside destination list \n1 pool mypool \ninterface g1/1 \nip nat inside \ninterface g1/2 \nip nat outside\nOption C: \nenable \nconfigure terminal \nip nat pool mypool \n192.168.3.1 192.168.3.3 \nprefix-length 30 \naccess-list 1 permit \n10.10.0.0 0.0.0.255 \nip nat inside source list 1 \npool mypool \ninterface g1/1 \nip nat inside \ninterface g1/2 \nip nat outside",
+      "question_images": [],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The command “ip nat inside source list 1 pool mypool” (notice the keyword “inside”, not “outside”).\nThis command translates all source addresses that pass access list 1, which means a source address \nfrom 10.10.0.0/24, into an address from the pool named mypool (the pool contains addresses from \n192.168.3.1 to 192.168.3.3).",
+      "explanation_images": []
+    },
+    {
+      "id": "11",
+      "question": "Why was the RFC 1918 address space defined?",
+      "question_images": [],
+      "options": {
+        "A": "preserve public IPv6 address space",
+        "B": "support the NAT protocol",
+        "C": "reduce instances of overlapping IP addresses",
+        "D": "conserve public IPv4 addressing"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The RFC 1918 is Address Allocation for Private Internets, which reserves IP addresses for private and \ninternal use. These addresses can be used for networks that do not need to connect to the Internet.",
+      "explanation_images": []
+    },
+    {
+      "id": "74",
+      "question": "Refer to the exhibit.\nHow should the configuration be updated to allow PC1 and PC2 access to the Internet?",
+      "question_images": [
+        "page_5_img_3.jpeg"
+      ],
+      "options": {
+        "A": "Modify the configured number of the second access list",
+        "B": "Remove the overload keyword from the ip nat inside source command",
+        "C": "Add either the ip nat {inside|outside} command under both interfaces",
+        "D": "Change the ip nat inside source command to use interface GtgabitEthernet0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "126",
+      "question": "Refer to the exhibit.\nRouter1(config)#interface GigabitEthernet0/0 \nRouter1(config-if)#ip address 209.165.200.225 255.255.255.224 \nRouter1(config-if)#ip nat outside\nRouter1(config)#interface GigabitEthernet0/1 \nRouter1(config-if)#ip nat inside\nRouter1(config)#interface GigabitEthernet0/1.100\nRouter1(config-if)#encapsulation dot1Q 100 \nRouter1(config-if)#ip address 10.10.10.1 255.255.255.0\nRouter1(config)#interface GigabitEthernet0/1.200 \nRouter1(config-if)#encapsulation dot1Q 200 \nRouter1(config-if)#ip address 10.10.20.1 255.255.255.0\nRouter1(config)#ip access-list standard NAT_INSIDE_RANGES \nRouter1(config-std-nacl)#permit 10.10.10.0 0.0.0.255 \nRouter1(config)#ip nat inside source list NAT_INSIDE_RANGES interface GigabitEthernet0/0 \noverload\nUsers on existing VLAN 100 can reach sites on the Internet. Which action must the administrator take \nto establish connectivity to the Internet for users in VLAN 200?",
+      "question_images": [
+        "page_5_img_4.jpeg"
+      ],
+      "options": {
+        "A": "Define a NAT pool on the router.",
+        "B": "Update the NAT INSIDF RANGFS ACL",
+        "C": "Configure the ip nat outside command on another interface for VLAN 200",
+        "D": "Configure static NAT translations for VLAN 200"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "We need to add the “permit 10.10.20.0 0.0.0.255” command to the ACL.",
+      "explanation_images": []
+    },
+    {
+      "id": "21",
+      "question": "Which command creates a static NAT binding for a PC address of 10.1.1.1 to the public routable \naddress 209.165.200.225 assigned to the PC?",
+      "question_images": [],
+      "options": {
+        "A": "R1(config)#ip nat outside source static 209.165.200.225 10.1.1.1",
+        "B": "R1(config)#ip nat inside source static 209.165.200.225 10.1.1.1",
+        "C": "R1(config)#ip nat outside source static 10.1.1.1 209.165.200.225",
+        "D": "R1(config)#ip nat inside source static 10.1.1.1 209.165.200.225"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "78",
+      "question": "Refer to the exhibit.\nWhich command set configures ROUTER-1 to allow Internet access for users on the 192.168.1.0/24 \nsubnet while using 209.165.202.129 for Port Address Translation?",
+      "question_images": [
+        "page_7_img_5.jpeg"
+      ],
+      "options": {
+        "A": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload",
+        "B": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "C": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "D": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "By providing only one IP address in the pool CCNA, we are sure that IP address will be used for \nInternet with PAT.",
+      "explanation_images": []
+    },
+    {
+      "id": "42",
+      "question": "Refer to the exhibit.\nCPE1# show protocols e0/1\nEthernet0/1 is up, line protocol is up\nInternet address is 10.0.12.2/24\nCPE1#show ip access-list LAN\nStandard IF access list LAN\n10 permit 10.0.12.0, wildcard bits 0.0.0.255\nCPE1# show ip nat translations\nCPE1# show ip net statistics\nTotal active translations: 0 (0 static, 0 dynamic, 0 extended)\nPeak translations: 0\nOutside interfaces:\nInside interfaces:\nEthernet0/1\nHits: 0 Misses: 0\nCEF Translated packets: 0, CEF Funted packets: 0\nExpired translations: 0\nDynamic mappings:\n-- Inside Source\n[Id: 1] access-list LAN pool NATPOOL refcount 0\npool NATPOOL: netmask 255.255.255.0\nstart 198.51.100.11 end 198.51.100.20\ntype generic, total addresses 10, allocated 0 (0%), misses 0\nTotal doors: 0\nAppl doors: 0\nNormal doors: 0\nQueued Packets: 0\nWhat is the next step to complete the implementation for the partial NAT configuration shown?",
+      "question_images": [],
+      "options": {
+        "A": "Reconfigure the static NAT entries that overlap the NAT pool",
+        "B": "Configure the NAT outside interface",
+        "C": "Modify the access list for the internal network on e0/1",
+        "D": "Apply the ACL to the pool configuration"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "We see the line “Outside interfaces: ” is still empty which means we have not configured an outside \ninterface yet.\nNTP Questionss\nJanuary 16th, 2021Go to comments \nPremium Member: You can test your knowledge with these questions first via this link (via HTML).\nQuick review of NTP\nNtp server <ip> (NTP Client)\nNTP master <stratum> (đóng vai trò như 1 ntp server cho các thiết bị khác đồng bộ thời \ngian tới).\n– NTP is designed to synchronize the time on a network. NTP runs over the User Datagram \nProtocol (UDP), using port 123 as both the source and destination. \n– An Authoritative NTP Server can distribute time even when it is not synchronized to an \nexisting time server. To configure a Cisco device as an Authoritative NTP Server, use the ntp \nmaster [stratum] command. \n– To configure the local device to use a remote NTP clock source, use the command ntp \nserver <IP address>. For example: Router(config)#ntp server 192.168.1.1 \n– The ntp authenticate command is used to enable the NTP authentication feature (NTP \nauthentication is disabled by default). \n– The ntp trusted-key command specifies one or more keys that a time source must provide \nin its NTP packets in order for the device to synchronize to it. This command provides \nprotection against accidentally synchronizing the device to a time source that is not trusted. \n– The ntp authentication-key defines the authentication keys. The device does not \nsynchronize to a time source unless the source has one of these authentication keys and the \nkey number is specified by the ntp trusted-key number command. \n– Two most popular commands to display time sources statistics: show ntp status and show \nntp associations",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "Which command should you enter to configure a device as an NTP server? \nA. ntp server \nB. ntp peer \nC. ntp authenticate \nD. ntp master",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "To configure a Cisco device as an Authoritative NTP Server, use the ntp master [stratum] command.\nTo configure a Cisco device as a NTP client, use the command ntp server <IP address>. For \nexample: Router(config)#ntp server 192.168.1.1. This command will instruct the router to query \n192.168.1.1 for the time.",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Which two pieces of information can you determine from the output of the show ntp \nstatus command? (Choose two) \nA. whether the NTP peer is statically configured \nB. the IP address of the peer to which the clock is synchronized \nC. the configured NTP servers \nD. whether the clock is synchronized \nE. the NTP version number of the peer",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Below is the output of the “show ntp status” command. From this output we learn that R1 has a \nstratum of 10 and it is getting clock from 10.1.2.1.\nR1#show ntp status\nClock is synchronized, stratum 10, reference is 10.1.2.1\nnominal freq is 250.0000 Hz, actual freq is 249.9987 Hz, precision is 2**18\nreference time is D5E492E9.98ACB4CF (13:00:25.596 CST Wed Sep 18 2013)\nclock offset is 15.4356 msec, root delay is 52.17 msec\nroot dispersion is 67.61 msec, peer dispersion is 28.12 msec",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "Which two tasks must be performed to configure NTP to a trusted server in client mode on a single \nnetwork device? (Choose two) \nA. Enable NTP authentication \nB. Verify the time zone \nC. Disable NTP broadcasts \nD. Specify the IP address of the NTP server \nE. Set the NTP server private key",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "To configure authentication, perform this task in privileged mode:\nStep 1: Configure an authentication key pair for NTP and specify whether the key will be trusted or \nuntrusted. \nStep 2: Set the IP address of the NTP server and the public key. \nStep 3: Enable NTP client mode. \nStep 4: Enable NTP authentication. \nStep 5: Verify the NTP configuration.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4000/8-\n2glx/configuration/guide/ntp.html\nNote: A trusted NTP server may or may not require a secret key so it is not a “must” in this question.",
+      "explanation_images": []
+    },
+    {
+      "id": "38",
+      "question": "Refer to the exhibit.\nThe ntp server 192.168.0.3 command has been configured on Router1 to make it an NTP client of \nrouter 2. Which command must be configured on Router2 so that it operates in server-only mode and \nrelies only on its internal clock?",
+      "question_images": [
+        "page_10_img_6.jpeg"
+      ],
+      "options": {
+        "A": "Router2(config)#ntp passive",
+        "B": "Router2(config)#ntp master 4",
+        "C": "Router2(config)#ntp server 172.17.0.1",
+        "D": "Router2(config)#ntp server 192.168.0.2"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "An Authoritative NTP Server can distribute time even when it is not synchronized to an existing time \nserver. To configure a Cisco device as an Authoritative NTP Server, use the ntp master [stratum] \ncommand.",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "A network analyst is tasked with configured the date and time on a router using EXEC mode. The date \nmust be set to 12:00am. Which command should be used?",
+      "question_images": [],
+      "options": {
+        "A": "Clock timezone",
+        "B": "Clock summer-time-recurring",
+        "C": "Clock summer-time date",
+        "D": "Clock set"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "In this example, the clock time is set to 12:00 am with the clock date of January 1, 2020.\nR1#clock set 12:00:00 jan 1 2020",
+      "explanation_images": []
+    },
+    {
+      "id": "92",
+      "question": "R1 as an NTP server must have: \n* NTP authentication enabled \n* NTP packets sourced from Interface loopback 0 \n* NTP stratum 2 \n* NTP packets only permitted to client IP 209.165.200.225\nHow should R1 be configured?\nOption A\nOption B\nntp authenticate \nntp authentication-key 2 sha1 CISCO123 \nntp source Loopback0 \nntp access-group server-only 10 \nntp master 2 \n! \naccess-list 10 permit udp host 209.165.200.225 \nany eq 123\nntp authenticate \nntp authentication-key 2 md5 CISCO123 \nntp source Loopback0 \nntp access-group server-only 10 \nntp stratum 2 \n! \naccess-list 10 permit udp host 209.165.200.225 \nany eq 123\nOption C\nOption D\nntp authenticate \nntp authentication-key 2 md5 CISCO123 \nntp interface Loopback0 \nntp access-group server-only 10 \nntp stratum 2 \n! \naccess-list 10 permit 209.165.200.225\nntp authenticate \nntp authentication-key 2 md5 CISCO123 \nntp source Loopback0 \nntp access-group server-only 10 \nntp master 2 \n! \naccess-list 10 permit 209.165.200.225",
+      "question_images": [],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "To configure a Cisco device as an Authoritative NTP Server, use the ntp master [stratum] command -\n> Only Option A and Option D are correct. \nACL 10 is a standard ACL so we cannot configure protocol (UDP in this case) for the ACL. We can only \nconfigure source IP address -> Option D is correct.",
+      "explanation_images": []
+    },
+    {
+      "id": "86",
+      "question": "An engineer is configuring switch SW1 to act as an NTP server when all upstream NTP server \nconnectivity fails. Which configuration must be used?",
+      "question_images": [],
+      "options": {
+        "A": "SW1# config t \nSW1(config)#ntp server 192.168.1.1 \nSW1(config)#ntp access-group server accesslist1",
+        "B": "SW1# config t \nSW1(config)3 ntp peer 192.168.1.1 \nSW1(config)#ntp access-group peer accesslist1",
+        "C": "SW1# config t \nSW1(config)#ntp backup \nSW1(config)#ntp server 192.168.1.1",
+        "D": "SW1# config t \nSW1(config)#ntp master \nSW1(config)#ntp server 192.168.1.1"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "72",
+      "question": "Refer to the exhibit.\nWhich router or router group are NTP clients?",
+      "question_images": [
+        "page_13_img_7.jpeg"
+      ],
+      "options": {
+        "A": "R1, R2, and R3",
+        "B": "R1",
+        "C": "R2 and R3 \nD R1, R3, and R4"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "To configure the NTP client on a Cisco device we use the ntp server {ip-address} command in global \nconfiguration.\nSyslog Questions\nJanuary 15th, 2021Go to comments \nPremium Member: You can test your knowledge with these questions first via this link (via HTML).\nNote: If you are not sure about Syslog, please read our Syslog tutorial.",
+      "explanation_images": [
+        "page_14_img_8.png"
+      ]
+    },
+    {
+      "id": "1",
+      "question": "Loging trap “severity level” – logging trap 5 (từ 0-5)\nLogging trap warning  (log ra từ 0-4)\nWhat will happen if you configure the logging trap debug (logging trap 7) command on a router? \n \nDefault: 0-6 \n \nA. It causes the router to send messages with lower severity levels to the syslog server \nB. It causes the router to send all messages with the severity levels Warning, Error, Critical, and \nEmergency to the syslog server \nC. It causes the router to send all messages to the syslog server \nD. It causes the router to stop sending all messages to the syslog server",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "If a notice-level messaging is sent to a syslog server, which event has occurred? \nA. A network device has restarted \nB. An ARP Inspection has failed \nC. A routing instance has flapped \nD A debug operation is running.",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Usually no action is required when a route flaps so it generates the notification syslog level message \n(level 5).",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "What event has occurred if a router sends a notice level message to a syslog server? \nA. A TCP connection has been torn down \nB. An ICMP connection has been built \nC. An interface line has changed status \nD. A certificate has expired",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "If you used to configure a Cisco device then maybe you saw this notice level message:\n%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to \ndown\nNumber 5 in the above message represents for the Notification Level (Normal, but significant, \nconditions exist).",
+      "explanation_images": []
+    },
+    {
+      "id": "13",
+      "question": "When deploying syslog, which severity level logs informational message?",
+      "question_images": [],
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "4",
+        "D": "6"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "28",
+      "question": "An engineering team asks an implementer to configure syslog for warning conditions and error \nconditions. Which command does the implementer configure to achieve the desired result?",
+      "question_images": [],
+      "options": {
+        "A": "logging trap 2",
+        "B": "logging trap 3",
+        "C": "logging trap 4",
+        "D": "logging trap 5"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Syslog levels are listed below\nLevel \nKeyword \nDescription\n0 \nemergencies \nSystem is unusable\n1 \nalerts \nImmediate action is needed\n2 \ncritical \nCritical conditions exist\n3 \nerrors \nError conditions exist\n4 \nwarnings \nWarning conditions exist\n5 \nnotification \nNormal, but significant, conditions exist\n6 \ninformational \nInformational messages\n7 \ndebugging \nDebugging messages\nThe highest level is level 0 (emergencies). The lowest level is level 7. If we configure syslog level 4 \nthen it will send all the syslog messages from level 0 to 4.",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "Which level of severity must be set to get informational syslogs?",
+      "question_images": [],
+      "options": {
+        "A": "alert",
+        "B": "critical",
+        "C": "notice",
+        "D": "debug"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The Syslog levels are:\nLevel \nKeyword \nDescription\n0 \nemergencies \nSystem is unusable\n1 \nalerts \nImmediate action is needed\n2 \ncritical \nCritical conditions exist\n3 \nerrors \nError conditions exist\n4 \nwarnings \nWarning conditions exist\n5 \nnotification \nNormal, but significant, conditions exist\n6 \ninformational \nInformational messages\n7 \ndebugging \nDebugging messages\nIf you specify a level, that level and all the higher levels will be displayed. Therefore in order to \nreceive informational syslog we must set to level 6 or level 7.",
+      "explanation_images": []
+    },
+    {
+      "id": "14",
+      "question": "What is a syslog facility?",
+      "question_images": [],
+      "options": {
+        "A": "host that is configured for the system to send log messages",
+        "B": "password that authenticates a Network Management System to receive log messages",
+        "C": "group of log messages associated with the configured severity level",
+        "D": "set of values that represent the processes that can generate a log message"
+      },
+      "answer": [
+        "C",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Facility levels and syslog levels are different. The purpose of using the facilities is to organize the \nsyslog messages received on the Syslog server from different sources. The default syslog facility \nsetting is local7.\nReference: https://www.oreilly.com/library/view/cisco-ios-cookbook/0596527225/ch18s08.html",
+      "explanation_images": []
+    },
+    {
+      "id": "9",
+      "question": "What is the purpose of configuring different levels of syslog for different devices on the network?",
+      "question_images": [],
+      "options": {
+        "A": "to rate-limit messages for different severity levels from each device",
+        "B": "to set the severity of syslog messages from each device",
+        "C": "to identify the source from which each syslog message originated",
+        "D": "to control the number of syslog messages from different devices that are stored locally"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "Which command must you enter to guarantee that an HSRP router with higher priority becomes the \nHSRP primary router after it is reloaded? \nA. standby 10 preempt \nB. standby 10 version 1 \nC. standby 10 priority 150 \nD. standby 10 version 2",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The “preempt” command enables the HSRP router with the highest priority to immediately become the \nactive router.",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Which command should you enter to verify the priority of a router in an HSRP group? \nA. show hsrp \nB. show sessions \nC. show interfaces \nD. show standby",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [
+        "page_18_img_9.png"
+      ],
+      "explanation": "Below is an example of the “show standby” command:\nWe can see the current HSRP priority of this device, which is 90 and the configured HSRP priority too \n(which is 90, too).",
+      "explanation_images": [
+        "page_19_img_10.jpeg"
+      ]
+    },
+    {
+      "id": "3",
+      "question": "Which MAC address is recognized as a VRRP (là 1 giao thức giống hệt HSRP ở phiên bản chuẩn mở còn \nHSRP là chuẩn riêng của Cisco) virtual address? \n \nA. 0000.5E00.010a \nB. 0005.3711.0975 \nC. 0000.0C07.AC99 \nD. 0007.C070.AB01",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "With VRRP, the virtual router’s MAC address is 0000.5E00.01xx , in which xx is the VRRP group",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Which two outcomes are predictable behaviors for HSRP? (Choose two) \nA. The two routers share a virtual IP address that is used as the default gateway for devices on the \nLAN \nB. The two routers negotiate one router as the active router and the other as the standby router \nC. Each router has a different IP address both routers act as the default gateway on the LAN, and \ntraffic is load balanced between them \nD. The two routers synchronize configurations to provide consistent packet forwarding \nE. The two routed share the same IP address, and default gateway traffic is load-balanced between \nthem",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "How does HSRP provide first hop redundancy?",
+      "question_images": [],
+      "options": {
+        "A": "It load-balances traffic by assigning the same metric value to more than one route to the same \ndestination in the IP routing table",
+        "B": "It load-balances Layer 2 traffic along the path by flooding traffic out all interfaces configured with \nthe same VLAN",
+        "C": "It forwards multiple packets to the same destination over different routed links and data path",
+        "D": "It uses a shared virtual MAC and a virtual IP address to a group of routers that serve as the default \ngateway for hosts on a LAN"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "question": "What is the primary purpose of a First Hop Redundancy Protocol? (Tên gọi chung của các giao thức \nHSRP, VRRP, GLBP – Dự phòng cho DFGW)  \n \nA. It allows directly connected neighbors to share configuration information \nB. It allows a router to use bridge priorities to create multiple loop-free paths to a single destination \nC. It reduces routing failures by allowing Layer 3 load balancing between OSPF neighbors that have \nthe same link metric \nD. It reduces routing failures by allowing more than one router to represent itself, as the default \ngateway of a network",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "When the active router in an HSRP group fails, what router assumes the role and forwards packets? \nA. listening \nB. backup \nC. forwarding \nD. standby",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Standby router is backup when active router fails by monitoring periodic hellos sent by the active \nrouter (multicast to 224.0.0.2, UDP port 1985) to detect a failure of the active router.",
+      "explanation_images": []
+    },
+    {
+      "id": "26",
+      "question": "What is a benefit of VRRP?",
+      "question_images": [],
+      "options": {
+        "A": "It provides traffic load balancing to destinations that are more than two hops from the source.",
+        "B": "It provides the default gateway redundancy on a LAN using two or more routers.",
+        "C": "It allows neighbors to share routing table information between each other.",
+        "D": "It prevents loops in a Layer 2 LAN by forwarding all traffic to a root bridge, which then makes the \nfinal forwarding decision."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "9",
+      "question": "What is the benefit of using FHRP?",
+      "question_images": [],
+      "options": {
+        "A": "balancing traffic across multiple gateways in proportion to their loads",
+        "B": "reduced management overhead on network routers",
+        "C": "reduced ARP traffic on the network",
+        "D": "higher degree of availability"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "12",
+      "question": "What is the purpose of using First Hop Redundancy Protocol in a specific subnet?",
+      "question_images": [],
+      "options": {
+        "A": "forwards multicast hello messages between routers",
+        "B": "sends the default route to the hosts on a network",
+        "C": "filter traffic based on destination IP addressing",
+        "D": "ensures a loop-free physical topology"
+      },
+      "answer": [
+        "D",
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "What are two benefits of FHRPs? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "They prevent loops in the Layer 2 network.",
+        "B": "They allow encrypted traffic.",
+        "C": "They are able to bundle multiple ports to increase bandwidth",
+        "D": "They enable automatic failover of the default gateway.",
+        "E": "They allow multiple devices to serve as a single virtual gateway for clients in the network"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "23",
+      "question": "Which type of address is shared by routers in a HSRP implementation and used by hosts on the subnet \nas their default gateway address?",
+      "question_images": [],
+      "options": {
+        "A": "multicast address",
+        "B": "loopback IP address",
+        "C": "virtual IP address",
+        "D": "broadcast address"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "56",
+      "question": "When deploying a new network that includes both Cisco and third-party network devices, which \nredundancy protocol avoids the interruption of network traffic if the default gateway router fails?",
+      "question_images": [],
+      "options": {
+        "A": "FHRP",
+        "B": "VRRP",
+        "C": "HSRP",
+        "D": "GLBP"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Only VRRP is an open standard protocol.\nDNS Questions\nJanuary 10th, 2021Go to comments \nPremium Member: You can test your knowledge with these questions first via this link (via HTML).",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "What are two roles of Domain Name Services (DNS)? (Choose two) \nA. enables applications to identify resources by name instead of IP address \nB. allows a single host name to be shared across more than one IP address \nC. improves security by protecting IP addresses under Fully Qualified Domain Names (FQDNs) \nD. builds a flat structure of DNS names for more efficient IP operations \nE. encrypts network traffic as it travels across a WAN by default",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "An example of DNS is described below:\nWhen you attempt to go to a domain name such as 9tut.com, your browser will instruct your \ncomputer to do a DNS lookup on that domain name. This DNS lookup will query a DNS resolver (for \nexample Google at 8.8.8.8). Once the resolver responds, the computer will usually choose the first IP \nin the response and use that for the connection. In the case of multiple IP addresses, the DNS server \nwill respond with multiple IP addresses and the first IP will usually be used for the request. Due to \nhow most DNS resolvers work, the order of IP addresses usually changes for each request.",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Which command must be present in a Cisco Device configuration to enable the device to resolve an \nFQDN? \nA. ip host \nB. ip name-server \nC. ip domain-lookup \nD. ip domain-name",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "FQDN stands for Fully Qualified Domain Name. The FQDN represents the absolute address of the \ninternet presence. “Fully qualified” refers to the unique identification that guarantees that all of the \ndomain levels are specified. The FQDN contains the host name and domain, including the top level \ndomain, and can be uniquely assigned to an IP address. For example:\nR1.9tut.com.\nThe command “ip domain-lookup” enables DNS-based host name-to-address translation. This \ncommand is enabled by default.",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "What facilitates a Telnet connection between devices by entering the device name? \nA. SNMP \nB. DNS lookup",
+      "question_images": [],
+      "options": {
+        "C": "syslog",
+        "D": "NTP"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Your router can be configured to use DNS lookups if we wish to use the ping or traceroute commands \nwith a host name rather than an IP address. For example:\nR1(config)#ip domain-lookup\nR1(config)#ip name-server 10.10.10.1\nThen we can Telnet or ping to it:\nRouter# ping www.cisco.com\nTranslating \"www.cisco.com\"...domain server (10.10.10.1) [OK]\nType escape sequence to abort.\nSending 5, 100-byte ICMP Echos to 198.133.219.25, timeout is 2 seconds:\n!!!!!\nReference: https://www.cisco.com/c/en/us/support/docs/ip/domain-name-system-dns/24182-\nreversedns.html\nNote: In the above example, 10.10.10.1 is not the IP address of www.cisco.com. This IP address is \njust the DNS Name Server to resolve “www.cisco.com” to the public IP address “198.133.219.25”.\nNote:\nBy default, any single word entered on an IOS device that is not recognized as a valid command is \ntreated as a hostname to which you want to telnet. The device will try to translate that word to an IP \naddress in a process that can last about a minute. \nConsider the following example:\nR1#test\nTranslating \"test\"...domain server (255.255.255.255)\n% Unknown command or computer name, or unable to find computer address\nIn the output above we typed an unrecognized command “test”. The router entered the DNS \nresolution process which lasted about a minute. This can be annoying and this is why this feature is \noften turned off, especially in the lab environments. \nIf you don’t need to have a DNS server configured for your router, you can use the “no ip domain-\nlookup” command to disable the DNS translation process:\nR1(config)#no ip domain-lookup\nNow, if I mistype a command, the router will not perform a DNS resolution process:\nR1#test\nTranslating \"test\"\n% Unknown command or computer name, or unable to find computer address\nR1#",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "How does a router behave when configured with the default DNS lookup settings, and a URL is entered \non the CLI? \n \nA. prompts the user to specify the desired IP address. \nB. initiates a ping request to the URL. \nC. continuously attempts to resolve the URL until the command is cancelled. \nD. attempts to query a DNS server on the network.",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "By default, domain lookup function is enabled on the router so it treats every unrecognized command \nas a hostname, attempts to make a telnet connection to that which, in turn, attempts to resolve a \nhostname to IP address by querying the DNS server. \nHere is a typical sample. \nR1#xyz \nTranslating “xyz”…domain server (255.255.255.255) \nTranslating “xyz”…domain server (255.255.255.255) (255.255.255.255) \nTranslating “xyz”…domain server (255.255.255.255) \n% Unknown command or computer name, or unable to find computer address\nNote: In order to save some time we can disable DNS lookup by the “no ip domain lookup” global \ncommand.",
+      "explanation_images": []
+    },
+    {
+      "id": "21",
+      "question": "What does a router do when configured with the default DNS lookup settings, and a URL is entered on \nthe CLI?",
+      "question_images": [],
+      "options": {
+        "A": "initiates a ping request to the URL",
+        "B": "prompts the user to specify the desired IP address",
+        "C": "continuously attempts to resolve the URL until the command is cancelled",
+        "D": "sends a broadcast message in an attempt to resolve the URL"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "With default DNS lookup settings, the router will sends broadcast message to resolve an URL. \nConsider the following example:\nR1#test\nTranslating \"test\"...domain server (255.255.255.255)\n% Unknown command or computer name, or unable to find computer address\nIn the output above we typed an unrecognized command “test”. The router entered the DNS \nresolution process which lasted about a minute.\nThe switch with lowest Bridge Priority would become the root bridge for that VLAN. In this case Switch \n2 has the lowest Bridge Priority of 24586 so it will become the root bridge.",
+      "explanation_images": []
+    },
+    {
+      "id": "33",
+      "question": "What is a DNS lookup operation?",
+      "question_images": [],
+      "options": {
+        "A": "serves requests over destination port 53",
+        "B": "DNS server pings the destination to verify that it is available",
+        "C": "DNS server forwards the client to an alternate IP address when the primary IP is down",
+        "D": "responds to a request for IP address to domain name resolution to the DNS server"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "An example of DNS is described below: \nWhen you attempt to go to a domain name such as 9tut.com, your browser will instruct your \ncomputer to do a DNS lookup on that domain name. This DNS lookup will query a DNS resolver (for \nexample Google at 8.8.8.8). Once the resolver responds, the computer will usually choose the first IP \nin the response and use that for the connection.\nThe most frequently used port for DNS is UDP 53 but as time progresses, DNS will reply on TCP Port \n53 more heavily.",
+      "explanation_images": []
+    },
+    {
+      "id": "18",
+      "question": "Refer to the exhibit.\nThe given Windows PC is requesting the IP address of the host at www.cisco.com. To which IP address \nis the request sent?",
+      "question_images": [
+        "page_26_img_11.jpeg"
+      ],
+      "options": {
+        "A": "19e.168.1.226",
+        "B": "192.168.1.253",
+        "C": "192.168.1.100",
+        "D": "192.168.1.254"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "From the output we see the line “DHCP Server …: 192.168.1.254” so this is the IP address the request \nis sent. Notice that the “Default Gateway” IP address is in the same subnet of DHCP Server so the PC \ncan directly send request to the DHCP Server.\nQoS Questions\nJanuary 10th, 2021Go to comments\nQoS quick summary:\n1. Network factors: \n+ Bandwidth: the speed of the link (or the capacity available on the link), usually measured \nin bits per second (bps) \n+ Delay (or latency): how long a packet takes to get from the sender to the receiver. The \nmore the delay, the slower the network. Delay is usually measured in milliseconds (ms) \n+ Jitter: A measure of the variation in delay between packets. For example, one packet need \n50ms to reach B from A while another packet takes 40ms then the jitter is 10ms \n+ Loss: When packets travels to the destination, some of them may get lost.\n2. QoS Models: \n+ Best Effort: No QoS policies applied \n+ Integrated Services (IntServ): Resource Reservation Protocol (RSVP) is used to reserve \nbandwidth \n+ Differentiated Services (DiffServ): Packets are classified and marked individually; policy \ndecisions are made independently by each node in a path.\n3. QoS Markings: \n+ IP Precedence: The first three bits of the IP ToS field (8 traffic classes) \n+ Differentiated Service Code Point (DSCP): The first six bits of the IP ToS are used to \nprovide granular classification\n4. QoS terms: \n+ Tail drop: When the queue is full, the packet is dropped. This is the default behavior. \n+ Policing: is used to control the rate of traffic flowing across an interface. During a \nbandwidth exceed (crossed the maximum configured rate), the excess traffic is generally \ndropped or remarked. The result of traffic policing is an output rate that appears as a saw-\ntooth with crests and troughs. Traffic policing can be applied to inbound and outbound \ninterfaces. Unlike traffic shaping, QoS policing avoids delays due to queuing. Policing is \nconfigured in bytes. \n+ Shaping: retains excess packets in a queue and then schedules the excess for later \ntransmission over increments of time. When traffic reaches the maximum configured rate, \nadditional packets are queued instead of being dropped to proceed later. Traffic shaping is \napplicable only on outbound interfaces as buffering and queuing happens only on outbound \ninterfaces. Shaping is configured in bits per second.\nThe primary reasons you would use traffic shaping are to control access to available \nbandwidth, to ensure that traffic conforms to the policies established for it, and to regulate the \nflow of traffic in order to avoid congestion that can occur when the sent traffic exceeds the \naccess speed of its remote, target interface. \n+ Marking: allows you to mark (set or change) a value (attribute) for the traffic belonging to \na specific class\n5. Congestion Management (types of queuing): uses the marking on each packet to \ndetermine which queue to place packets in\nFirst-in, first-out (FIFO): FIFO entails no concept of priority or classes of traffic. With \nFIFO, transmission of packets out the interface occurs in the order the packets arrive, which \nmeans no QoS \nPriority Queuing (PQ): schedules traffic such that the higher-priority queues “always” get \nserviced first \nCustom Queuing (CQ): provide specific traffic guaranteed bandwidth at a potential \ncongestion point, assuring the traffic a fixed portion of available bandwidth and leaving the \nremaining bandwidth to other traffic. \nWeighted fair queueing (WFQ): allocates bandwidths to flows based on the weight. In \naddition, to allocate bandwidths fairly to flows, WFQ schedules packets in bits (not bytes). \nThis prevents long packets from preempting bandwidths of short packets and reduces the \ndelay and jitter when both short and long packets wait to be forwarded.\nClass-based weighted fair queueing (CBWFQ) extends the standard WFQ functionality to \nprovide support for user-defined traffic classes. For CBWFQ, you define traffic classes based \non match criteria including protocols, access control lists (ACLs), and input interfaces. \nPackets satisfying the match criteria for a class constitute the traffic for that class. A queue is \nreserved for each class, and traffic belonging to a class is directed to the queue for that class. \nOnce a class has been defined according to its match criteria, you can assign it characteristics. \nTo characterize a class, you assign it bandwidth, weight, and maximum packet limit. The \nbandwidth assigned to a class is the guaranteed bandwidth delivered to the class during \ncongestion.\nThe Resource Reservation Protocol (RSVP) protocol allows applications to reserve \nbandwidth for their data flows. It is used by a host, on the behalf of an application data flow, \nto request a specific amount of bandwidth from the network. RSVP is also used by the routers \nto forward bandwidth reservation requests.\nPremium Member: You can test your knowledge with these questions first via this link (via HTML).",
+      "explanation_images": [
+        "page_28_img_12.jpeg"
+      ]
+    },
+    {
+      "id": "1",
+      "question": "Which feature or protocol determines whether the QoS on the network is sufficient to support IP \nservices? \nA. LLDP \nB. CDP \nC. IP SLA \nD. EEM",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "IP SLA allows an IT professional to collect information about network performance in real time. \nTherefore it helps determine whether the QoS on the network is sufficient for IP services or not.\nCisco IOS Embedded Event Manager (EEM) is a powerful and flexible subsystem that provides real-\ntime network event detection and onboard automation. It gives you the ability to adapt the behavior \nof your network devices to align with your business needs.",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Which two actions are performed by the Weighted Random Early Detection mechanism? (Choose two) \nA. It drops lower-priority packets before it drops higher-priority packets \nB. It can identify different flows with a high level of granularity \nC. It guarantees the delivery of high-priority packets \nD. It can mitigate congestion by preventing the queue from filling up \nE. It supports protocol discovery",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Weighted Random Early Detection (WRED) is just a congestion avoidance mechanism. WRED drops \npackets selectively based on IP precedence. Edge routers assign IP precedences to packets as they \nenter the network. When a packet arrives, the following events occur:\n1. The average queue size is calculated. \n2. If the average is less than the minimum queue threshold, the arriving packet is queued. \n3. If the average is between the minimum queue threshold for that type of traffic and the maximum \nthreshold for the interface, the packet is either dropped or queued, depending on the packet drop \nprobability for that type of traffic. \n4. If the average queue size is greater than the maximum threshold, the packet is dropped.\nWRED reduces the chances of tail drop (when the queue is full, the packet is dropped) by selectively \ndropping packets when the output interface begins to show signs of congestion (thus it can mitigate \ncongestion by preventing the queue from filling up). By dropping some packets early rather than \nwaiting until the queue is full, WRED avoids dropping large numbers of packets at once and minimizes \nthe chances of global synchronization. Thus, WRED allows the transmission line to be used fully at all \ntimes.\nWRED generally drops packets selectively based on IP precedence. Packets with a higher IP \nprecedence are less likely to be dropped than packets with a lower precedence. Thus, the higher the \npriority of a packet, the higher the probability that the packet will be delivered (-> answer A is \ncorrect).\nReference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/qos_conavd/configuration/15-mt/qos-\nconavd-15-mt-book/qos-conavd-cfg-wred.html",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "Which two QoS tools can provide congestion management? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "CBWFQ",
+        "B": "FRTS",
+        "C": "CAR",
+        "D": "PQ",
+        "E": "PBR (policy based routing)"
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "This module discusses the types of queueing and queueing-related features (such as bandwidth \nmanagement) which constitute the congestion management QoS features:\nClass-based WFQ (CBWFQ): extends the standard WFQ functionality to provide support for user-\ndefined traffic classes. For CBWFQ, you define traffic classes based on match criteria including \nprotocols, access control lists (ACLs), and input interfaces. Packets satisfying the match criteria for a \nclass constitute the traffic for that class.\nPriority queueing (PQ): With PQ, packets belonging to one priority class of traffic are sent before all \nlower priority traffic to ensure timely delivery of those packets.\nReference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/qos_conmgt/configuration/xe-3s/qos-\nconmgt-xe-3s-book/qos-conmgt-oview.html\nNote: Committed Access Rate (CAR) is only used for bandwidth limitation by dropping excessive \ntraffic.",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Which option is the main function of congestion management?",
+      "question_images": [],
+      "options": {
+        "A": "discarding excess traffic",
+        "B": "queuing traffic based on priority",
+        "C": "classifying traffic",
+        "D": "providing long-term storage of buffered data"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "What does traffic shaping do to reduce congestion in a network?",
+      "question_images": [],
+      "options": {
+        "A": "buffers and queues packets",
+        "B": "buffers without queuing packets",
+        "C": "queues without buffering packets",
+        "D": "drops packets"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The following diagram illustrates the key difference between traffic policing and traffic shaping. Traffic \npolicing propagates bursts. When the traffic rate reaches the configured maximum rate (or committed \ninformation rate), excess traffic is dropped (or remarked). The result is an output rate that appears as \na saw-tooth with crests and troughs. In contrast to policing, traffic shaping retains excess packets \nin a queue and then schedules the excess for later transmission over increments of time. The \nresult of traffic shaping is a smoothed packet output rate.\nNote: Committed information rate (CIR): The minimum guaranteed data transfer rate agreed to by \nthe routing device.",
+      "explanation_images": [
+        "page_31_img_13.jpeg"
+      ]
+    },
+    {
+      "id": "6",
+      "question": "Which feature can you implement to reserve bandwidth for VoIP calls across the call path?",
+      "question_images": [],
+      "options": {
+        "A": "round robin",
+        "B": "CBWFQ",
+        "C": "PQ",
+        "D": "RSVP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The Resource Reservation Protocol (RSVP) protocol allows applications to reserve bandwidth for their \ndata flows. It is used by a host, on the behalf of an application data flow, to request a specific amount \nof bandwidth from the network. RSVP is also used by the routers to forward bandwidth reservation \nrequests.",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "What is the purpose of traffic shaping?",
+      "question_images": [],
+      "options": {
+        "A": "be a marking mechanism that identifies different flows",
+        "B": "to limit the bandwidth that a flow can use to",
+        "C": "to provide fair queuing for buffered flows",
+        "D": "to mitigate delays over slow links"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The primary reasons you would use traffic shaping are to control access to available \nbandwidth, to ensure that traffic conforms to the policies established for it, and to regulate the flow \nof traffic in order to avoid congestion that can occur when the sent traffic exceeds the access speed of \nits remote, target interface.",
+      "explanation_images": []
+    },
+    {
+      "id": "1",
+      "question": "Which two QoS tools are used to guarantee minimum bandwidth to certain traffic? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "FIFO (no QOS)",
+        "B": "CBWFQ",
+        "C": "LLC",
+        "D": "WFQ",
+        "E": "RSVP"
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "First-in, first-out (FIFO): FIFO entails no concept of priority or classes of traffic. With FIFO, \ntransmission of packets out the interface occurs in the order the packets arrive, which means no QoS\nWeighted fair queueing (WFQ): offers dynamic, fair queuing that divides bandwidth across queues \nof traffic based on weights. In standard WFQ, packets are classified into flows according to one of four \ncriteria: the source Internet Protocol address (IP address), the destination IP address, the source \nTransmission Control Protocol (TCP) or User Datagram Protocol (UDP) port, or the destination TCP or \nUDP port.\nClass-based weighted fair queueing (CBWFQ) extends the standard WFQ functionality to provide \nsupport for user-defined traffic classes. For CBWFQ, you define traffic classes based on match criteria \nincluding protocols, access control lists (ACLs), and input interfaces. Packets satisfying the match \ncriteria for a class constitute the traffic for that class. A queue is reserved for each class, and traffic \nbelonging to a class is directed to the queue for that class. \nOnce a class has been defined according to its match criteria, you can assign it characteristics. To \ncharacterize a class, you assign it bandwidth, weight, and maximum packet limit. The bandwidth \nassigned to a class is the guaranteed bandwidth delivered to the class during congestion.\nThe Resource Reservation Protocol (RSVP) protocol allows applications to reserve bandwidth for \ntheir data flows. It is used by a host, on the behalf of an application data flow, to request a specific \namount of bandwidth from the network. RSVP is also used by the routers to forward bandwidth \nreservation requests.",
+      "explanation_images": []
+    },
+    {
+      "id": "23",
+      "question": "Which two QoS tools provides congestion management? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "FRTS",
+        "B": "CAR",
+        "C": "PQ",
+        "D": "PBR",
+        "E": "CBWFQ"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "34",
+      "question": "Which QoS tool can you use to optimize voice traffic on a network that is primarily intended for data \ntraffic?",
+      "question_images": [],
+      "options": {
+        "A": "WRED",
+        "B": "FIFO",
+        "C": "PQ",
+        "D": "WFQ"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [
+        "page_33_img_14.png"
+      ],
+      "explanation": "With Priority Queueing (PQ), traffic is classified into high, medium, normal, and low priority queues. \nThe high priority traffic is serviced first, then medium priority traffic, followed by normal and low \npriority traffic. -> Therefore we can assign higher priority for voice traffic.\nAlso with PQ, higher priority traffic can starve the lower priority queues of bandwidth. No bandwidth \nguarantees are possible -> It is still good because this network is mostly used for data traffic so voice \ntraffic amount is small.\nWith First In First Out (FIFO) or Weighted Fair Queueing (WFQ), there is no priority servicing so they \nare not suitable here.\nReference: https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/qos_solutions/QoSVoIP/QoSVo\nIP.html\nWeighted Random Early Detection (WRED) is just a congestion avoidance mechanism. WRED \nmeasures the size of the queues depending on the Precedence value and starts dropping packets \nwhen the queue is between the minimum threshold and the maximum threshold -> It does not have \npriority servicing either.",
+      "explanation_images": []
+    },
+    {
+      "id": "45",
+      "question": "How does QoS optimize voice traffic?",
+      "question_images": [],
+      "options": {
+        "A": "reducing bandwidth usage",
+        "B": "by reducing packet loss",
+        "C": "by differentiating voice and video traffic",
+        "D": "by increasing jitter"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "With Priority Queueing (PQ) in QoS, traffic is classified into high, medium, normal, and low priority \nqueues. The high priority traffic is serviced first, then medium priority traffic, followed by normal and \nlow priority traffic. -> Therefore we can assign higher priority for voice traffic.",
+      "explanation_images": []
+    },
+    {
+      "id": "11",
+      "question": "In QoS, which prioritization method is appropriate for interactive voice and video?",
+      "question_images": [],
+      "options": {
+        "A": "expedited forwarding",
+        "B": "traffic policing",
+        "C": "round-robin scheduling",
+        "D": "low-latency queuing"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The Expedited Forwarding (EF) model is used to provide resources to latency (delay) sensitive real-\ntime, interactive traffic.",
+      "explanation_images": []
+    },
+    {
+      "id": "12",
+      "question": "An engineer is configuring data and voice services to pass through the same port. The designated \nswitch interface fastethernet0/1 must transmit packets using the same priority for data when they are \nreceived from the access port of the IP phone. Which configuration must be used?",
+      "question_images": [],
+      "options": {
+        "A": "interface fastethernet0/1 \nswitchport priority extend cos 7",
+        "B": "interface fastethernet0/1 \nswitchport voice vlan untagged",
+        "C": "interface fastethernet0/1 \nswitchport voice vlan dot1p",
+        "D": "interface fastethernet0/1 \nswitchport priority extend trust"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The command “switchport priority extend cos 7” sets the IP phone port to override the priority \nreceived from the PC or the attached device (7 is the highest priority).\nThe command “switchport priority extend trust” tells the Cisco IP Phone to trust the CoS value of the \nconnected PC without remark all packets sent form PC to CoS 0, by default.",
+      "explanation_images": [
+        "page_34_img_15.jpeg"
+      ]
+    },
+    {
+      "id": "116",
+      "question": "Which QoS per-hop behavior changes the value of the ToS field in the IPv4 packet header?",
+      "question_images": [],
+      "options": {
+        "A": "shaping",
+        "B": "marking",
+        "C": "policing",
+        "D": "classification"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "132",
+      "question": "Which QoS traffic handling technique retains excess packets in a queue and reschedules these packets \nfor later transmission when the configured maximum bandwidth has been surpassed?",
+      "question_images": [],
+      "options": {
+        "A": "traffic shaping",
+        "B": "traffic policing",
+        "C": "weighted random early detection",
+        "D": "traffic prioritization"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "+ Shaping: retains excess packets in a queue and then schedules the excess for later transmission \nover increments of time. When traffic reaches the maximum configured rate, additional packets are \nqueued instead of being dropped to proceed later. Traffic shaping is applicable only on outbound \ninterfaces as buffering and queuing happens only on outbound interfaces. Shaping is configured in bits \nper second.",
+      "explanation_images": []
+    },
+    {
+      "id": "67",
+      "question": "Which QoS queuing method discards or marks packets that exceed the desired bit rate of traffic flow?",
+      "question_images": [],
+      "options": {
+        "A": "shaping",
+        "B": "policing",
+        "C": "CBWFQ",
+        "D": "LLQ"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed \n(crossed the maximum configured rate), the excess traffic is generally dropped or remarked.",
+      "explanation_images": [
+        "page_35_img_16.png"
+      ]
+    },
+    {
+      "id": "92",
+      "question": "Which two actions are taken as the result of traffic policing? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "bursting",
+        "B": "fragmentation",
+        "C": "dropping",
+        "D": "remarking",
+        "E": "buffering"
+      },
+      "answer": [
+        "C",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed \n(crossed the maximum configured rate), the excess traffic is generally dropped or remarked. The \nresult of traffic policing is an output rate that appears as a saw-tooth with crests and troughs. Traffic \npolicing can be applied to inbound and outbound interfaces. Unlike traffic shaping, QoS policing avoids \ndelays due to queuing. Policing is configured in bytes.\nQoS Traffic Shaping do not support Marking or Remarking again. This is done only with Traffic \nPolicing.\nReference: https://ipcisco.com/lesson/policing-and-shaping/\nNote: In policing, remarking the packets that exceed the CIR is an alternative to simply dropping \nthem.",
+      "explanation_images": [
+        "page_36_img_17.jpeg"
+      ]
+    },
+    {
+      "id": "4",
+      "question": "What is a purpose of traffic shaping?",
+      "question_images": [],
+      "options": {
+        "A": "It enables dynamic flow identification.",
+        "B": "It enables policy-based routing.",
+        "C": "It provides best-effort service.",
+        "D": "It limits bandwidth usage."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "+ Shaping: retains excess packets in a queue and then schedules the excess for later transmission \nover increments of time. When traffic reaches the maximum configured rate, additional packets are \nqueued instead of being dropped to proceed later. Traffic shaping is applicable only on outbound \ninterfaces as buffering and queuing happens only on outbound interfaces. Shaping is configured in bits \nper second.\nBest Effort Service means a service on a shared network in which the network does not provide any \nguarantee that data is delivered or that delivery meets any quality of service, meaning that the \nservices obtain unspecified variable bit rate, latency and packet loss, depending on the current traffic \nload -> Traffic shaping does not drop packets so it does not offer best effort service -> Answer C is \nnot correct.\nThe primary reasons you would use traffic shaping are to control access to available \nbandwidth, to ensure that traffic conforms to the policies established for it, and to regulate the flow \nof traffic in order to avoid congestion that can occur when the sent traffic exceeds the access speed of \nits remote, target interface -> Answer D is correct.",
+      "explanation_images": []
+    },
+    {
+      "id": "52",
+      "question": "Which QoS feature drops traffic that exceeds the committed access rate?",
+      "question_images": [],
+      "options": {
+        "A": "weighted fair queuing",
+        "B": "FIFO",
+        "C": "shaping",
+        "D": "policing"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Policing: is used to control the rate of traffic flowing across an interface. During a bandwidth exceed \n(crossed the maximum configured rate), the excess traffic is generally dropped or remarked.",
+      "explanation_images": []
+    },
+    {
+      "id": "79",
+      "question": "Which DSCP per-hop forwarding behavior is divided into subclasses based on drop probability?",
+      "question_images": [],
+      "options": {
+        "A": "class-selector",
+        "B": "assured",
+        "C": "expedited",
+        "D": "default"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The term Per-Hop Behaviour (PHB) refers to how a node will treat traffic having the same \nDifferentiated Services Code Point (DSCP) values.\nAssured Forwarding has four standard classes from AF1 to AF4. It is important to note that the class \nnumber does not determine priority. Each class is treated independently and placed into different \nqueues.\nEach AF class has its own IP Precedence with three drop probabilities, low, medium, and high.\nReference: https://www.routeprotocol.com/dscp-per-hop-behaviour-assured-forwarding/\nDHCP Questions\nJanuary 7th, 2021Go to comments \nPremium Member: You can test your knowledge with these questions first via this link (via HTML).",
+      "explanation_images": [
+        "page_38_img_18.png"
+      ]
+    },
+    {
+      "id": "1",
+      "question": "Which Cisco IOS command will indicate that interface GigabitEthernet 0/0 is configured via DHCP? \nA. show ip interface GigabitEthernet 0/0 dhcp \nB. show interface GigabitEthernet 0/0 \nC. show ip interface dhcp \nD. show ip interface GigabitEthernet 0/0 \nE. show ip interface GigabitEthernet 0/0 brief",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [
+        "page_39_img_19.png"
+      ],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "Which command enables a router to become a DHCP client? \nA. ip address dhcp \nB. ip helper-address \nC. ip dhcp pool \nD. ip dhcp client",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [
+        "page_39_img_20.png"
+      ],
+      "explanation": "If we want to get an IP address from the DHCP server on a Cisco device, we can use the command “ip \naddress dhcp”.\nNote: The command “ip helper-address” enables a router to become a DHCP Relay Agent.",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "What are two roles of the Dynamic Host Configuration Protocol (DHCP)? (Choose two) \nA. The DHCP server offers the ability to exclude specific IP addresses from a pool of IP addresses \nB. The DHCP client can request up to four DNS server addresses \nC. The DHCP server assigns IP addresses without requiring the client to renew them \nD. The DHCP server leases client IP addresses dynamically \nE. The DHCP client maintains a pool of IP addresses it can assign",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Refer to the exhibit. An engineer deploys a topology in which R1 obtains its IP configuration from \nDHCP. If the switch and DHCP server configurations are complete and correct. Which two sets of \ncommands must be configured on R1 and R2 to complete the task? (Choose two)",
+      "question_images": [
+        "page_40_img_21.jpeg"
+      ],
+      "options": {
+        "A": "R1 (config)# interface fa0/0 \nR1 (config-if)# ip helper-address 198.51.100.100",
+        "B": "R2(config)# interface gi0/0 \nR2(config-if)# ip helper-address 198.51.100.100",
+        "C": "R1 (config)# interface fa0/0 \nR1 (config-if)# ip address dhcp \nR1 (config-if)# no shutdown",
+        "D": "R2(config)# interface gi0/0 \nR2(config-if)# ip address dhcp",
+        "E": "R1 (config)# interface fa0/0 \nR1 (config-if)# ip helper-address 192.0.2.2"
+      },
+      "answer": [
+        "B",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "6",
+      "question": "Which type of information resides on a DHCP server? \nA. a list of the available IP addresses in a pool \nB. a list of public IP addresses and their corresponding names \nC. usernames and passwords for the end users in a domain \nD. a list of statically assigned MAC addresses",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "What is a DHCP client? \nA. a host that is configured to request an IP address automatically \nB. a router that statically assigns IP addresses to hosts \nC. a server that dynamically assigns IP addresses to hosts \nD. a workstation that requests a domain name associated with its IP address",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "Where does the configuration reside when a helper address is configured to support DHCP? \nA. on the switch trunk interface. \nB. on the router closest to the client. \nC. on the router closest to the server. \nD. on every router along the path.",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "9",
+      "question": "When implementing a router as a DHCP server, which two features must be configured? (Choose two) \nA. relay agent information \nB. database agent \nC. address pool \nD. smart-relay \nE. manual bindings",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "The following example shows how to configure a DHCP Server on a Cisco router:\nConfiguration \nDescription\nRouter(config)#ip dhcp \npool CLIENTS\nCreate a DHCP Pool named CLIENTS\nRouter(dhcp-\nconfig)#network 10.1.1.0 \n/24\nSpecifies the subnet and mask of the DHCP address pool\nRouter(dhcp-\nconfig)#default-router \n10.1.1.1\nSet the default gateway of the DHCP Clients\nRouter(dhcp-config)#dns-\nserver 10.1.1.1\nConfigure a Domain Name Server (DNS)\nRouter(dhcp-\nconfig)#domain-name \n9tut.com\nConfigure a domain-name\nRouter(dhcp-config)#lease \n0 12\nDuration of the lease (the time during which a client computer \ncan use an assigned IP address). The syntax is \n“lease {days[hours] [minutes] | infinite}”. In this case the lease \nis 12 hours. The default is a one-day lease.\nBefore the lease expires, the client typically needs to renew its \naddress lease assignment with the server\nRouter(dhcp-config)#exit\nRouter(config)# ip dhcp \nexcluded-address 10.1.1.1 \n10.1.1.10\nThe IP range that a DHCP Server should not assign to DHCP \nClients. Notice this command is configured under global \nconfiguration mode\nManual bindings are IP addresses that have been manually mapped to the MAC addresses of \nhosts that are found in the DHCP database.\nAll DHCP clients send a client identifier (DHCP option 61) in the DHCP packet. To configure manual \nbindings, you must enter the client-identifier DHCP pool configuration command with the \nappropriate hexadecimal values identifying the DHCP client. For example:\nip dhcp pool SERVER \nhost 172.16.200.100 255.255.255.0 \nclient-identifier 01aa.bbcc.0003.00 \ndefault-router 172.16.200.1 \n!\nTherefore two requirements for DHCP binding is the IP address and the hardware address (MAC \naddress) of the client. Notice that in the above example “aabb.cc00.0300” is the MAC address of the \nclient while prefix “01” represents the Ethernet media type.\nNote: In fact, this question should ask “When implementing a router as a DHCP server, which one of \nthese features must be configured?”. Because we only need to configure either an “address pool” or \n“manual binding”.",
+      "explanation_images": []
+    },
+    {
+      "id": "10",
+      "question": "Which command must you enter to configure a DHCP relay? \nA. ip helper-address \nB. ip address dhcp \nC. ip dhcp relay \nD. ip dhcp pool",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "If the DHCP Server is not on the same subnet with the DHCP Client, we need to configure the router \non the DHCP client side to act as a DHCP Relay Agent so that it can forward DHCP messages between \nthe DHCP Client & DHCP Server. To make a router a DHCP Relay Agent, simply put the “ip helper-\naddress <IP-address-of-DHCP-Server>” command under the interface that receives the DHCP \nmessages from the DHCP Client.\nAs we know, router does not forward broadcast packets (it drops them instead) so DHCP messages \nlike DHCPDISCOVER message will be dropped. But with the “ip helper-address …” command, the \nrouter will accept that broadcast message and cover it into a unicast packet and forward it to the \nDHCP Server. The destination IP address of the unicast packet is taken from the “ip helper-address …” \ncommand.",
+      "explanation_images": [
+        "page_43_img_22.jpeg"
+      ]
+    },
+    {
+      "id": "14",
+      "question": "A network administrator must enable DHCP services between two sites. What must be configured for \nthe router to pass DHCPDISCOVER messages on to the server?",
+      "question_images": [],
+      "options": {
+        "A": "a DHCP Relay Agent",
+        "B": "DHCP Binding",
+        "C": "a DHCP Pool",
+        "D": "DHCP Snooping"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "If the DHCP Server is not on the same subnet with the DHCP Client, we need to configure the router \non the DHCP client side to act as a DHCP Relay Agent so that it can forward DHCP messages between \nthe DHCP Client & DHCP Server. To make a router a DHCP Relay Agent, simply put the “ip helper-\naddress <IP-address-of-DHCP-Server>” command under the interface that receives the DHCP \nmessages from the DHCP Client.\nAs we know, router does not forward broadcast packets (it drops them instead) so DHCP messages \nlike DHCPDISCOVER message will be dropped. But with the “ip helper-address …” command, the \nrouter will accept that broadcast message and cover it into a unicast packet and forward it to the \nDHCP Server. The destination IP address of the unicast packet is taken from the “ip helper-address …” \ncommand.",
+      "explanation_images": []
+    },
+    {
+      "id": "27",
+      "question": "Which protocol does an IPv4 host use to obtain a dynamically assigned IP address?",
+      "question_images": [],
+      "options": {
+        "A": "ARP",
+        "B": "DNS",
+        "C": "CDP",
+        "D": "DHCP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "41",
+      "question": "When DHCP is configured on a router, which command must be entered so the default gateway is \nautomatically distributed?",
+      "question_images": [],
+      "options": {
+        "A": "default-router",
+        "B": "default-gateway",
+        "C": "ip helper-address",
+        "D": "dns-server"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The following example shows how to configure a DHCP Server on a Cisco router:\nConfiguration \nDescription\nRouter(config)#ip dhcp pool \nCLIENTS\nCreate a DHCP Pool named CLIENTS\nRouter(dhcp-\nconfig)#network 10.1.1.0 \n/24\nSpecifies the subnet and mask of the DHCP address pool\nRouter(dhcp-\nconfig)#default-\nrouter 10.1.1.1\nSet the default gateway of the DHCP Clients\nRouter(dhcp-config)#dns-\nserver 10.1.1.1\nConfigure a Domain Name Server (DNS)\nRouter(dhcp-\nconfig)#domain-name \n9tut.com\nConfigure a domain-name\nRouter(dhcp-config)#lease \n0 12\nDuration of the lease (the time during which a client computer can \nuse an assigned IP address). The syntax is “lease {days[hours] \n[minutes] | infinite}”. In this case the lease is 12 hours. The \ndefault is a one-day lease. \nBefore the lease expires, the client typically needs to renew its \naddress lease assignment with the server\nRouter(dhcp-config)#exit\nRouter(config)# ip dhcp \nexcluded-address 10.1.1.1 \n10.1.1.10\nThe IP range that a DHCP Server should not assign to DHCP \nClients. Notice this command is configured under global \nconfiguration mode",
+      "explanation_images": []
+    },
+    {
+      "id": "31",
+      "question": "When a client and server are not on the same physical network, which device is used to forward \nrequests and replies between client and server for DHCP?",
+      "question_images": [],
+      "options": {
+        "A": "DHCP relay agent",
+        "B": "DHCP server",
+        "C": "DHCPDISCOVER",
+        "D": "DHCPOFFER"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "If the DHCP Server is not on the same subnet with the DHCP Client, we need to configure the router \non the DHCP client side to act as a DHCP Relay Agent so that it can forward DHCP messages between \nthe DHCP Client & DHCP Server. To make a router a DHCP Relay Agent, simply put the “ip helper-\naddress <IP-address-of-DHCP-Server>” command under the interface that receives the DHCP \nmessages from the DHCP Client.\nAs we know, router does not forward broadcast packets (it drops them instead) so DHCP messages \nlike DHCPDISCOVER message will be dropped. But with the “ip helper-address …” command, the \nrouter will accept that broadcast message and cover it into a unicast packet and forward it to the \nDHCP Server. The destination IP address of the unicast packet is taken from the “ip helper-address …” \ncommand.",
+      "explanation_images": [
+        "page_45_img_23.jpeg"
+      ]
+    },
+    {
+      "id": "35",
+      "question": "On workstations running Microsoft Windows, which protocol provides the default gateway for the \ndevice?",
+      "question_images": [],
+      "options": {
+        "A": "STP",
+        "B": "DNS",
+        "C": "SNMP",
+        "D": "DHCP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "79",
+      "question": "What is the purpose of the ip address dhcp command?",
+      "question_images": [],
+      "options": {
+        "A": "to configure an interface as a DHCP server",
+        "B": "to configure an interface as a DHCP relay",
+        "C": "to configure an interface as a DHCP helper",
+        "D": "to configure an interface as a DHCP client"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Use the ip address dhcp command to obtain IP address information for the configured interface.",
+      "explanation_images": []
+    },
+    {
+      "id": "108",
+      "question": "Refer to the exhibit.\nAn engineer is configuring a new router on the network and applied this configuration. Which \nadditional configuration allows the PC to obtain its IP address from a DHCP server?",
+      "question_images": [
+        "page_46_img_24.jpeg"
+      ],
+      "options": {
+        "A": "Configure the ip dhcp relay information command under interface Gi0/1",
+        "B": "Configure the ip dhcp smart-relay command globally on the router",
+        "C": "Configure the ip helper-address 172.16.2.2 command under interface Gi0/0",
+        "D": "Configure the ip address dhcp command under interface Gi0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "43",
+      "question": "What are two features of the DHCP relay agent? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "minimizes the necessary number of DHCP servers",
+        "B": "assigns DNS locally and then forwards request to DHCP server",
+        "C": "is configured under the Layer 3 interface of a router on the client subnet",
+        "D": "allows only MAC-to-IP reservations to determine the local subnet of a client",
+        "E": "permits one IP helper command under an individual Layer 3 interface"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "With the DHCP relay agent, we can configure DHCP servers in different subnet of the DHCP client. \nOtherwise we have to place one DHCP server in the same subnet of DHCP clients -> Answer A is \ncorrect.\nNote: We can configure more than one ip helper command under one Layer 3 interface:\nTo make a router a DHCP Relay Agent, simply put the “ip helper-address <IP-address-of-DHCP-\nServer>” command under the interface that receives the DHCP messages from the DHCP Client -> \nAnswer C is correct.\nMiscellaneous Questions",
+      "explanation_images": [
+        "page_47_img_25.jpeg",
+        "page_47_img_26.jpeg"
+      ]
+    },
+    {
+      "id": "1",
+      "question": "Which command can you enter to allow Telnet to be supported in addition to SSH? \nA. transport input telnet ssh \nB. transport input telnet \nC. no transport input telnet \nD. privilege level 15",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "2",
+      "question": "A network engineer must back up 20 network router configurations globally within a customer \nenvironment. Which protocol allows the engineer to perform this function using the copy function? \nA. COP \nB. SNMP \nC. SMTP \nD. ARP",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "SNMP is an application-layer protocol that provides a message format for communication between \nSNMP managers and agents. SNMP provides a standardized framework and a common language used \nfor the monitoring and management of devices in a network. \nThe SNMP framework has three parts: \n+ An SNMP manager \n+ An SNMP agent \n+ A Management Information Base (MIB)\nThe Management Information Base (MIB) is a virtual information storage area for network \nmanagement information, which consists of collections of managed objects.\nWith SNMP, the network administrator can send commands to multiple routers to do the backup.",
+      "explanation_images": []
+    },
+    {
+      "id": "3",
+      "question": "A Cisco IP phone receive untagged data traffic from an attached PC. Which action is taken by the \nphone? \nA. It allows the traffic to pass through unchanged \nB. It drops the traffic \nC. It tags the traffic with the default VLAN \nD. It tags the traffic with the native VLAN",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Untagged traffic from the device attached to the Cisco IP Phone passes through the phone unchanged, \nregardless of the trust state of the access port on the phone.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/12-\n2_40_se/configuration/guide/scg/swvoip.pdf",
+      "explanation_images": []
+    },
+    {
+      "id": "4",
+      "question": "Which function does an SNMP agent perform? \nA. It sends information about MIB variables in response to requests from the NMS \nB. It coordinates user authentication between a network device and a TACACS+ or RADIUS server \nC. It requests information from remote network nodes about catastrophic system events. \nD. It manages routing between Layer 3 devices in a network",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "5",
+      "question": "What are two differences between optical-fiber cabling and copper cabling? (Choose two) \nA. Light is transmitted through the core of the fiber \nB. A BNC connector is used for fiber connections \nC. The glass core component is encased in a cladding \nD. Fiber connects to physical interfaces using RJ-45 connections \nE. The data can pass through the cladding",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The two main elements of an optical fiber are its core and cladding. The “core”, or the axial part of the \noptical fiber made of silica glass, is the light transmission area of the fiber. It may sometimes be \ntreated with a “doping” element to change its refractive index and therefore the velocity of light down \nthe fiber.\nThe “cladding” is the layer completely surrounding the core.\nReference: https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-\nmodules/white_paper_c11-463661.html",
+      "explanation_images": [
+        "page_49_img_27.jpeg"
+      ]
+    },
+    {
+      "id": "6",
+      "question": "A device detects two stations transmitting frames at the same time. This condition occurs after the \nfirst 64 bytes of the frame is received interface counter increments? \nA. collision \nB. runt \nC. CRC \nD. late collision",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "A late collision is defined as any collision that occurs after the first 512 bits (or 64th byte) of the frame \nhave been transmitted. The usual possible causes are full-duplex/half-duplex mismatch, exceeded \nEthernet cable length limits, or defective hardware such as incorrect cabling, non-compliant number of \nhubs in the network, or a bad NIC.\nLate collisions should never occur in a properly designed Ethernet network. They usually occur when \nEthernet cables are too long or when there are too many repeaters in the network.\nReference: https://www.cisco.com/en/US/docs/internetworking/troubleshooting/guide/tr1904.html",
+      "explanation_images": []
+    },
+    {
+      "id": "7",
+      "question": "Which technology must be implemented to configure network device monitoring with the highest \nsecurity? \nA. SNMPv3 \nB. IP SLA \nC. NetFlow \nD. syslog",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "8",
+      "question": "A network analyst is tasked with configuring the date and time on a router using EXEC mode.The date \nmust be set to January 1,2020 and the time must be set to 12:00 am.what command should be used? \nA. clock summer-time date \nB. clock set \nC. clock timezone \nD. clock summer-time recurring",
+      "question_images": [],
+      "options": {},
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "In this example, the clock time is set to 12:00 am with the clock date of January 1,2020.\nR1#clock set 12:00:00 jan 1 2020",
+      "explanation_images": []
+    },
+    {
+      "id": "29",
+      "question": "Which condition must be met before an NMS handles an SNMP trap from an agent?",
+      "question_images": [],
+      "options": {
+        "A": "The NMS must be configured on the same router as the SNMP agent",
+        "B": "The NMS must receive a trap and an inform message from the SNMP agent within a configured \ninterval",
+        "C": "The NMS software must be loaded with the MIB associated with the trap",
+        "D": "The NMS must receive the same trap from two different SNMP agents to verify that it is reliable"
+      },
+      "answer": [
+        "C",
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "",
+      "explanation_images": []
+    },
+    {
+      "id": "33",
+      "question": "Which global command encrypt all passwords in the running configuration?",
+      "question_images": [],
+      "options": {
+        "A": "enable secret",
+        "B": "enable password-encryption",
+        "C": "service password-encryption",
+        "D": "password-encrypt"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The service password-encryption command will encrypt all current and future passwords so any \npassword existed in the configuration will be encrypted.",
+      "explanation_images": []
+    },
+    {
+      "id": "17",
+      "question": "Which protocol requires authentication to transfer a backup configuration file from a router to a \nremote server?",
+      "question_images": [],
+      "options": {
+        "A": "TFTP",
+        "B": "FTP",
+        "C": "DTP",
+        "D": "SMTP"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The FTP protocol requires a client to send a remote username and password on each FTP request to a \nserver.When you copy a configuration file from the router to a server using FTP, the Cisco IOS \nsoftware sends the first valid username it encounters in the following list:\n1. The username specified in the copy privileged EXEC command,if a username is specified. \n2. The username set by the ip ftp username global configuration command, if the command is \nconfigured. \n3. Anonymous.\nReference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sys-image-mgmt/configuration/xe-16-\n7/sysimgmgmt-xe-16-7-book/sysimgmgmt-ftp.pdf",
+      "explanation_images": []
+    },
+    {
+      "id": "18",
+      "question": "What is a capability of FTP in network management operations?",
+      "question_images": [],
+      "options": {
+        "A": "uses separate control and data connections to move files between server and client",
+        "B": "devices are directly connected and use UDP to pass file information",
+        "C": "encrypts data before sending between data resources",
+        "D": "offers proprietary support at the session layer when transferring data"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "There are actually two ports associated with FTP: TCP 20 and 21. FTP creates a virtual connection over \nTCP port 21 for control information, and then it creates a separate TCP connection on port 20 for data \ntransfers.\nReference: Cisco Secure Internet Security Solutions Book",
+      "explanation_images": []
+    },
+    {
+      "id": "33",
+      "question": "Which command implies the use of SNMPv3?",
+      "question_images": [],
+      "options": {
+        "A": "snmp-server community",
+        "B": "snmp-server host",
+        "C": "snmp-server enable traps",
+        "D": "snmp-server user"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Only SNMPv3 requires to add a SNMP user to a group to work.\nNote: “community” string is the password which is used in SNMPv1 & v2. “snmp-server host” \ncommand can be used by both SNMPv2 & v3.",
+      "explanation_images": []
+    },
+    {
+      "id": "17",
+      "question": "Which two features introduced in SNMPv2 provides the ability to retrieve large amounts of data in one \nrequest? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Get",
+        "B": "GetNext",
+        "C": "Set",
+        "D": "GetBulk",
+        "E": "Inform"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "The two additional messages are added in SNMP2 (compared to SNMPv1)\nGetBulkRequest The GetBulkRequest message enables an SNMP manager to access large chunks of \ndata. GetBulkRequest allows an agent to respond with as much information as will fit in the response \nPDU. Agents that cannot provide values for all variables in a list will send partial information.\nInformRequest The InformRequest message allows NMS stations to share trap information. (Traps \nare issued by SNMP agents when a device change occurs.) InformRequest messages are generally \nused between NMS stations, not between NMS stations and agents.",
+      "explanation_images": []
+    },
+    {
+      "id": "82",
+      "question": "How does TFTP operate in a network?",
+      "question_images": [],
+      "options": {
+        "A": "relies on the well-known TCP port 20 to transmit data",
+        "B": "requires two separate connections for control and data traffic",
+        "C": "uses block numbers to identify and mitigate data-transfer errors",
+        "D": "provides secure data transfer"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "TFTP is a simple protocol for transferring files, implemented on top of the UDP/IP protocols using well-\nknown port number 69.\nEach file block has an identification number so that ACK messages from target devices can correctly \nreport back to sending devices if a block is received successfully.\nReference: https://www.ipswitch.com/blog/what-is-tftp-trivial-file-transfer-protocol",
+      "explanation_images": []
+    },
+    {
+      "id": "19",
+      "question": "What is a feature of TFTP?",
+      "question_images": [],
+      "options": {
+        "A": "provides secure data transfer",
+        "B": "relies on the well-known TCP port 20 to transmit data",
+        "C": "uses two separate connections for control and data traffic",
+        "D": "offers anonymous user login ability"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "TFTP is a simple protocol for transferring files, implemented on top of the UDP/IP protocols using well-\nknown port number 69 -> Answer A and answer B are not correct.\nTFTP has no session control -> Answer C is not correct.",
+      "explanation_images": []
+    },
+    {
+      "id": "40",
+      "question": "Which is a fact related to FTP?",
+      "question_images": [],
+      "options": {
+        "A": "It uses block numbers to identify and mitigate data-transfer errors",
+        "B": "It always operates without user authentication",
+        "C": "It relies on the well-known UDP port 69.",
+        "D": "It uses two separate connections for control and data traffic"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "FTP communicates using two TCP connections. Control traffic is exchanged over TCP/21, and data \ntransmission is performed over TCP/20.",
+      "explanation_images": []
+    }
+  ]
+}
