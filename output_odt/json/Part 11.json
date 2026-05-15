@@ -1082,7 +1082,7 @@
     },
     {
       "id": "11.43",
-      "type": "multiple",
+      "type": "single",
       "question": "Refer to the exhibit.\nA network administrator configures the CPE to provide internet access to the company headquarters. Traffic must be load-balanced via ISP1 and ISP2 to ensure redundancy. Which two command sets must be configured on the CPE router? (Choose two)",
       "question_images": [
         "q11.43_img1.jpg"

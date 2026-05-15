@@ -2015,7 +2015,7 @@
         "C": "ip dhcp snooping vlan 1-4094\n!\ninterface Port-channel1switchport protectedswitchport port-security maximum 1",
         "D": "ip arp inspection trust\n!\ninterface Port-channel1switchport port-security maximum 4094switchport port-security\nip verify source mac-check\nOption E\nip arp inspection vlan 1-4094\n!\ninterface Port-channel1\nip arp inspection trust"
       },
-      "type": "multiple"
+      "type": "single"
     },
     {
       "id": "14.96",
