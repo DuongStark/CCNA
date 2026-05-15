@@ -21,12 +21,12 @@ const SOURCES = {
     label: 'DOCX',
     description: 'CCNA DOCX bank — grouped by exam domain.',
     topics: [
-      { id: 'CCNA_Network_Fundamentals', label: 'Network Fundamentals', file: 'CCNA_Network_Fundamentals.json', count: 43 },
-      { id: 'CCNA_Network_Access', label: 'Network Access', file: 'CCNA_Network_Access.json', count: 102 },
-      { id: 'CCNA_IP_Connectivity', label: 'IP Connectivity', file: 'CCNA_IP_Connectivity.json', count: 59 },
-      { id: 'CCNA_IP_Services', label: 'IP Services', file: 'CCNA_IP_Services.json', count: 42 },
-      { id: 'CCNA_Security_Fundamentals', label: 'Security Fundamentals', file: 'CCNA_Security_Fundamentals.json', count: 66 },
-      { id: 'CCNA_Automation_Programmability', label: 'Automation & Programmability', file: 'CCNA_Automation_Programmability.json', count: 42 },
+      { id: 'CCNA_Network_Fundamentals', label: 'Network Fundamentals', file: 'CCNA_Network_Fundamentals.json', imageFolder: 'CCNA_Network_Fundamentals', count: 43 },
+      { id: 'CCNA_Network_Access', label: 'Network Access', file: 'CCNA_Network_Access.json', imageFolder: 'CCNA_Network_Access', count: 102 },
+      { id: 'CCNA_IP_Connectivity', label: 'IP Connectivity', file: 'CCNA_IP_Connectivity.json', imageFolder: 'CCNA_IP_Connectivity', count: 59 },
+      { id: 'CCNA_IP_Services', label: 'IP Services', file: 'CCNA_IP_Services.json', imageFolder: 'CCNA_IP_Services', count: 42 },
+      { id: 'CCNA_Security_Fundamentals', label: 'Security Fundamentals', file: 'CCNA_Security_Fundamentals.json', imageFolder: 'CCNA_Security_Fundamentals', count: 66 },
+      { id: 'CCNA_Automation_Programmability', label: 'Automation & Programmability', file: 'CCNA_Automation_Programmability.json', imageFolder: 'CCNA_Automation_Programmability', count: 42 },
     ],
   },
   odt: {

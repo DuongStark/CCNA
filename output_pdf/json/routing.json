@@ -2813,8 +2813,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nR3#show ip ospf neighbor\nNeighbor ID Pri State Dead Time Address Interface\n1.1.1.1 1 2WAY/DROTHER 00:00:35 172.16.10.1 GigabitEthernet0/0\n2.2.2.2 1 2WAY/DROTHER 00:00:35 172.16.10.2 GigabitEthernet0/0\n4.4.4.4 1 FULL/BDR 00:00:35 172.16.10.4 GigabitEthernet0/0\n5.5.5.5 1 FULL/DR 00:00:35 172.16.10.5 GigabitEthernet0/0\nR5 is the current DR on the network, and R4 is the BDR. Their interfaces are flapping, so a\nnetwork engineer wants the OSPF network to elect a different DR and BDR. Which set of\nconfigurations must the engineer implement?",
       "question_images": [
-        "page_77_img_0.png",
-        "page_77_img_1.jpeg",
+        "page_78_img_69.jpeg",
         "options_q104.png"
       ],
       "options": {
@@ -3317,8 +3316,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich configuration allows routers R14 and R16 to form an OSPFv2 adjacency while acting as a\ncentral point for exchanging OSPF information between routers?",
       "question_images": [
-        "page_91_img_0.jpeg",
-        "page_91_img_1.jpeg",
+        "page_92_img_83.jpeg",
         "options_q122.png"
       ],
       "options": {
@@ -3542,11 +3540,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn OSPF neighbor relationship must be configured using these guidelines:\n– R1 is only permitted to establish a neighbor with R2.\n– R1 will never participate in DR elections.\n– R1 will use a router-id of 10.1.1.1.\nWhich configuration must be used?",
       "question_images": [
-        "page_98_img_0.jpeg",
-        "page_98_img_1.jpeg",
-        "page_98_img_2.jpeg",
-        "page_98_img_3.jpeg",
-        "page_98_img_4.jpeg",
+        "page_99_img_89.jpeg",
         "options_q130.png"
       ],
       "options": {
@@ -3681,7 +3675,6 @@
       "type": "single",
       "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 20, Wait 20, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the\ninitial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which\nconfiguration must be applied to R2 to complete the OSPF configuration and enable it to establish\nthe neighbor relationship with R1?",
       "question_images": [
-        "page_100_img_0.jpeg",
         "options_q135.png"
       ],
       "options": {

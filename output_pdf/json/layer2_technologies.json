@@ -941,7 +941,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nHow must router A be configured so that it only sends Cisco Discovery Protocol Information to\nrouter C?",
       "question_images": [
-        "page_18_img_0.jpeg",
+        "page_19_img_17.jpeg",
         "options_q35.png"
       ],
       "options": {
@@ -997,7 +997,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nFor security reasons, automatic neighbor discovery must be disabled on the R5 Gi0/1 interface.\nThese tasks must be completed:\n* Disable all neighbor discovery methods on R5 interface Gi0/1.\n* Permit neighbor discovery on R5 interface Gi0/2.\n* Verify there are no dynamically learned neighbors on R5 interface Gi0/1.\n* Display the IP address of R6’s interface Gi0/2.\nWhich configuration must be used?",
       "question_images": [
-        "page_19_img_0.jpeg",
+        "page_20_img_18.jpeg",
         "options_q37.png"
       ],
       "options": {
@@ -1601,7 +1601,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1 and PC-2 must\nbe placed in the Data VLAN and Phone-1 must be placed in the Voice VLAN. Which configuration\nmeets these requirements?",
       "question_images": [
-        "page_35_img_0.jpeg",
+        "page_36_img_35.jpeg",
         "options_q59.png"
       ],
       "options": {
@@ -1715,8 +1715,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which\nconfiguration accomplishes this task?",
       "question_images": [
-        "page_38_img_0.png",
-        "page_38_img_1.jpeg",
+        "page_39_img_40.jpeg",
         "options_q63.png"
       ],
       "options": {
@@ -1995,7 +1994,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nThe following must be considered\n+ SW1 is fully configured for all traffic\n+ The SW4 and SW9 links to SW1 have been configured\n+ The SW4 interface Gi0/1 and Gi0/0 on SW9 have been configured\n+ The remaining switches have had all VLANs added to their VLAN database\nWhich configuration establishes a successful ping from PC2 to PC7 without interruption to traffic\nflow between other PCs?",
       "question_images": [
-        "page_46_img_0.jpeg",
+        "page_47_img_49.jpeg",
         "options_q73.png"
       ],
       "options": {
@@ -2024,7 +2023,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given these requirements:\n+ Allow all PCs to communicate with each other at Layer 3.\n+ Configure untagged traffic to use VLAN 5.\n+ Disable VLAN 1 from being used.\nWhich configuration set meets these requirements?",
       "question_images": [
-        "page_47_img_0.jpeg",
+        "page_48_img_50.jpeg",
         "options_q74.png"
       ],
       "options": {
@@ -2053,7 +2052,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nAn engineer is configuring a new Cisco switch NewSW, to replace SW2. The details have been\nprovided:\n* Switches SW1 and SW2 are third-party devices without support for trunk ports\n* The existing connections must be maintained between PC1 PC2 and PC3\n* Allow the switch to pass traffic from future VLAN 10. Which configuration must be applied?",
       "question_images": [
-        "page_49_img_0.jpeg",
+        "page_50_img_51.jpeg",
         "options_q75.png"
       ],
       "options": {
@@ -3063,7 +3062,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 and SW2 by using\nan industry-standard protocol, and to support full IP connectivity between all PCs?",
       "question_images": [
-        "page_68_img_0.jpeg",
+        "page_69_img_67.jpeg",
         "options_q112.png"
       ],
       "options": {

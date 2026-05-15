@@ -286,6 +286,7 @@
       "type": "single",
       "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate all addresses in\nVLAN 200 while allowing devices on VLAN 100 to use their own IP addresses?",
       "question_images": [
+        "page_7_img_6.jpeg",
         "options_q11.png"
       ],
       "options": {
@@ -453,8 +454,9 @@
       "id": "17",
       "source_id": "28",
       "type": "single",
-      "question": "Refer to the exhibit.",
+      "question": "Refer to the exhibit. An access list is required to permit traffic from any host on interface G0/0 and deny traffic from interface Gi0/1. Which access list must be applied?",
       "question_images": [
+        "page_12_img_11.jpeg",
         "options_q17.png"
       ],
       "options": {
@@ -2330,6 +2332,7 @@
       "type": "single",
       "question": "Refer to the exhibit.\nLocal access for R4 must be established and these requirements must be met:\n– Only Telnet access is allowed.\n– The enable password must be stored securely.\n– The enable password must be applied in plain text\n– Full access to R4 must be permitted upon successful login\nWhich configuration script meets the requirements?",
       "question_images": [
+        "page_41_img_23.jpeg",
         "options_q87.png"
       ],
       "options": {
