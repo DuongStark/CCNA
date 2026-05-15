@@ -61,7 +61,10 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
   }
 
   const currentQuestion = orderedQuestions[currentIndex] || null;
-  const isMultiple = currentQuestion?.type === 'multiple';
+  const isMultiple =
+    currentQuestion?.type === 'multiple' ||
+    (Array.isArray(currentQuestion?.answer) && currentQuestion.answer.length > 1) ||
+    (typeof currentQuestion?.answer === 'string' && currentQuestion.answer.length > 1);
 
   const selectAnswer = useCallback(
     (key) => {

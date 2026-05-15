@@ -76,6 +76,7 @@ export default function OptionCard({
   revealed = false,
   isCorrect = false,
   isIncorrect = false,
+  isMultiple = false,
   onSelect,
   disabled = false,
 }) {
@@ -107,9 +108,18 @@ export default function OptionCard({
       disabled={disabled || revealed}
       aria-pressed={selected}
     >
-      <span className={styles.badge} aria-hidden="true">
-        {letter}
-      </span>
+      {isMultiple ? (
+        <span
+          className={`${styles.checkbox} ${selected ? styles.checkboxChecked : ''} ${revealed && isCorrect ? styles.checkboxCorrect : ''} ${revealed && isIncorrect ? styles.checkboxIncorrect : ''}`}
+          aria-hidden="true"
+        >
+          {(selected || (revealed && isCorrect)) ? '✓' : ''}
+        </span>
+      ) : (
+        <span className={styles.badge} aria-hidden="true">
+          {letter}
+        </span>
+      )}
       <span className={styles.body}>
         {segments.length === 0 ? (
           <span className={styles.text}>{text}</span>

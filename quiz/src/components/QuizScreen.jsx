@@ -277,6 +277,7 @@ export default function QuizScreen({
                   revealed={isRevealed}
                   isCorrect={isCorrect}
                   isIncorrect={isIncorrect}
+                  isMultiple={isMultiple}
                   onSelect={onSelect}
                 />
               );
