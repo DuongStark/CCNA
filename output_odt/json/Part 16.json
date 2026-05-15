@@ -80,7 +80,7 @@
     },
     {
       "id": "16.4",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two behaviors of a point-to-point WAN topology? (Choose two)",
       "question_images": [],
       "options": {
@@ -410,7 +410,7 @@
     },
     {
       "id": "16.17",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two principles must be considered when using per-hop behavior in QoS? (Choose two)",
       "question_images": [],
       "options": {
@@ -667,7 +667,7 @@
     },
     {
       "id": "16.32",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two HTTP verbs does a REST-based API call to create a resource? (Choose two)",
       "question_images": [],
       "options": {
@@ -1594,7 +1594,7 @@
     },
     {
       "id": "16.69",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two features are provided by Ansible in network automation? (Choose two)",
       "question_images": [],
       "options": {

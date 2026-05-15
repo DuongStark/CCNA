@@ -97,7 +97,7 @@
     },
     {
       "id": "5.35",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two functions of an SDN controller? (Choose two)",
       "question_images": [],
       "options": {
@@ -192,7 +192,7 @@
     },
     {
       "id": "6.1",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two improvements provided by automation for network management in an SDN environment? (Choose two)",
       "question_images": [],
       "options": {
@@ -379,7 +379,7 @@
     },
     {
       "id": "7.27",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two components are needed to create an Ansible script that configures a VLAN on a switch? (Choose two)",
       "question_images": [],
       "options": {
@@ -428,7 +428,7 @@
     },
     {
       "id": "7.37",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two primary drivers support the need for network automation? (Choose two)",
       "question_images": [],
       "options": {
@@ -454,7 +454,7 @@
     },
     {
       "id": "7.46",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two events occur automatically when a device is added to Cisco DNA Center? (Choose two)",
       "question_images": [],
       "options": {
@@ -595,7 +595,7 @@
     },
     {
       "id": "9.20",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two network actions occur within the data plane? (Choose two)",
       "question_images": [],
       "options": {
@@ -832,7 +832,7 @@
     },
     {
       "id": "10.23",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two REST API status-code classes represent errors? (Choose two)",
       "question_images": [],
       "options": {

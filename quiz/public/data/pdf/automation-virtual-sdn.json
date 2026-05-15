@@ -84,7 +84,7 @@
     {
       "id": "4",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two descriptions of three-tier network topologies? (Choose two)",
       "question_images": [],
       "options": {
@@ -167,7 +167,7 @@
     {
       "id": "7",
       "source_id": "7",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two WAN architecture options help a business scalability and reliability for the network?\n(Choose two)",
       "question_images": [],
       "options": {
@@ -222,7 +222,7 @@
     {
       "id": "9",
       "source_id": "9",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two functions are performed by the core layer in a three-tier architecture? (Choose two)",
       "question_images": [],
       "options": {
@@ -360,7 +360,7 @@
     {
       "id": "14",
       "source_id": "33",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of the distribution layer in a three-tier network architecture? (Choose\ntwo)",
       "question_images": [],
       "options": {
@@ -708,7 +708,7 @@
     {
       "id": "27",
       "source_id": "4",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two fundamentals of virtualization? (Choose two)",
       "question_images": [],
       "options": {
@@ -977,7 +977,7 @@
     {
       "id": "37",
       "source_id": "15",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of a public cloud implementation? (Choose two)",
       "question_images": [],
       "options": {
@@ -1058,7 +1058,7 @@
     {
       "id": "40",
       "source_id": "75",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two characteristics are representative of virtual machines (VMs)? (Choose two)",
       "question_images": [],
       "options": {
@@ -1196,7 +1196,7 @@
     {
       "id": "45",
       "source_id": "3",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of a controller-based network? (Choose two)",
       "question_images": [],
       "options": {
@@ -1225,7 +1225,7 @@
     {
       "id": "46",
       "source_id": "4",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two southbound APIs? (Choose two)",
       "question_images": [],
       "options": {
@@ -1308,7 +1308,7 @@
     {
       "id": "49",
       "source_id": "7",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits of controller-based networking compared to traditional networking? (Choose\ntwo)",
       "question_images": [],
       "options": {
@@ -1523,7 +1523,7 @@
     {
       "id": "57",
       "source_id": "35",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two functions of an SDN controller? (Choose two)",
       "question_images": [],
       "options": {
@@ -1682,7 +1682,7 @@
     {
       "id": "63",
       "source_id": "102",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two network actions occur within the data plane? (Choose two)",
       "question_images": [],
       "options": {
@@ -1947,7 +1947,7 @@
     {
       "id": "73",
       "source_id": "1",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two capacities of Cisco DNA Center make it more extensible? (Choose two)",
       "question_images": [],
       "options": {
@@ -2108,7 +2108,7 @@
     {
       "id": "79",
       "source_id": "46",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two events occur automatically when a device is added to Cisco DNA Center? (Choose two)",
       "question_images": [],
       "options": {
@@ -2347,7 +2347,7 @@
     {
       "id": "88",
       "source_id": "65",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two VPN technologies are recommended by Cisco for multiple branch offices and large-scale\ndeployments? (Choose two)",
       "question_images": [],
       "options": {
@@ -2454,7 +2454,7 @@
     {
       "id": "92",
       "source_id": "5",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two encoding methods are supported by REST APIs? (Choose two)",
       "question_images": [],
       "options": {
@@ -2483,7 +2483,7 @@
     {
       "id": "93",
       "source_id": "6",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits of network automation? (Choose two)",
       "question_images": [],
       "options": {
@@ -2778,7 +2778,7 @@
     {
       "id": "104",
       "source_id": "1",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two improvements provided by automation for network management in an SDN\nenvironment? (Choose two)",
       "question_images": [],
       "options": {
@@ -2807,7 +2807,7 @@
     {
       "id": "105",
       "source_id": "27",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two components are needed to create an Ansible script that configures a VLAN on a switch?\n(Choose two)",
       "question_images": [],
       "options": {
@@ -2836,7 +2836,7 @@
     {
       "id": "106",
       "source_id": "37",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two primary drivers support the need for network automation? (Choose two)",
       "question_images": [],
       "options": {
@@ -2951,7 +2951,7 @@
     {
       "id": "110",
       "source_id": "23",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two REST API status-code classes represent errors? (Choose two)",
       "question_images": [],
       "options": {

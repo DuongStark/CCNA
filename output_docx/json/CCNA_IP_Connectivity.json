@@ -168,7 +168,7 @@
     },
     {
       "id": "7.36",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two prefixes are included in this routing table entry? (Choose two)",
       "question_images": [],
       "options": {
@@ -219,7 +219,7 @@
     },
     {
       "id": "8.8",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits of FHRPs? (Choose two)",
       "question_images": [],
       "options": {
@@ -345,7 +345,7 @@
     },
     {
       "id": "8.48",
-      "type": "multi",
+      "type": "multiple",
       "question": "A network engineer must configure two new subnets using the address block 10.70.128.0/19 to meet these requirements:\n* The first subnet must support 24 hosts.\n* The second subnet must support 472 hosts\n* Both subnets must use the longest subnet mask possible from the address block\nWhich two configurations must be used to configure the new subnets and meet a requirement to use the first available address in each subnet for the router interfaces? (Choose two)",
       "question_images": [],
       "options": {
@@ -515,7 +515,7 @@
     },
     {
       "id": "9.4",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two configurations must the engineer apply on this network so that R1 becomes the DR? (Choose two)",
       "question_images": [
         "q9.4_img1.jpg"

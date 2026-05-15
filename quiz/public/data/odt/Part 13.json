@@ -80,7 +80,7 @@
     },
     {
       "id": "13.7",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two HTTP methods are suitable for actions performed by REST-based APIs? (Choose two)",
       "question_images": [],
       "options": {
@@ -208,7 +208,7 @@
     },
     {
       "id": "13.16",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two disadvantages of a full-mesh topology? (Choose two)",
       "question_images": [],
       "options": {
@@ -1221,7 +1221,7 @@
     },
     {
       "id": "13.69",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two purposes of HSRP? (Choose two)",
       "question_images": [],
       "options": {
@@ -1348,7 +1348,7 @@
     },
     {
       "id": "13.75",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons to implement DHCP in a network? (Choose two)",
       "question_images": [],
       "options": {
@@ -1523,7 +1523,7 @@
     },
     {
       "id": "13.83",
-      "type": "multi",
+      "type": "multiple",
       "question": "An administrator is configuring a Cisco Catalyst switch so that it will accept management connections only from hosts in the 203.0.113.0/24 network. Other traffic passing through the switch must transit without interruption. Which two configurations must the engineer apply to the router? (Choose two)",
       "question_images": [],
       "options": {
@@ -1797,7 +1797,7 @@
     },
     {
       "id": "13.94",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nAn administrator is configuring a new WLAN for a wireless network that has these requirements– Dual-band clients that connect to the WLAN must be directed to the 5-GHz spectrum– Wireless clients on this WLAN must be able to apply VLAN settings on the returned RADIUS attributes\nWhich two actions meet these requirements? (Choose two)",
       "question_images": [
         "q13.94_img1.jpg"

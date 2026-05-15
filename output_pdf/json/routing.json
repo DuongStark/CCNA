@@ -324,7 +324,7 @@
     {
       "id": "13",
       "source_id": "48",
-      "type": "multi",
+      "type": "multiple",
       "question": "A network engineer must configure two new subnets using the address block 10.70.128.0/19 to\nmeet these requirements:\n* The first subnet must support 24 hosts.\n* The second subnet must support 472 hosts\n* Both subnets must use the longest subnet mask possible from the address block\nWhich two configurations must be used to configure the new subnets and meet a requirement to\nuse the first available address in each subnet for the router interfaces? (Choose two)",
       "question_images": [],
       "options": {
@@ -464,7 +464,7 @@
     {
       "id": "18",
       "source_id": "86",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons to implement IPv4 private addressing on a network? (Choose two)",
       "question_images": [],
       "options": {
@@ -759,7 +759,7 @@
     {
       "id": "29",
       "source_id": "3",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which of the following dynamic routing protocols are Distance Vector routing protocols? (Choose\ntwo)",
       "question_images": [
         "page_14_img_10.png"
@@ -1282,7 +1282,7 @@
     {
       "id": "48",
       "source_id": "8",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons for an engineer to configure a floating static route? (Choose two)",
       "question_images": [],
       "options": {
@@ -1421,7 +1421,7 @@
     {
       "id": "53",
       "source_id": "36",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nR2#show ip route\nC 192.68.1.0/26 is directly connected, FastEthernet0/1\nWhich two prefixes are included in this routing table entry? (Choose two)",
       "question_images": [],
       "options": {
@@ -2514,7 +2514,7 @@
     {
       "id": "93",
       "source_id": "57",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA network administrator configures the CPE to provide internet access to the company\nheadquarters. Traffic must be load-balanced via ISP1 and ISP2 to ensure redundancy. Which two\ncommand sets must be configured on the CPE router? (Choose two)",
       "question_images": [
         "page_55_img_51.jpeg"
@@ -3116,7 +3116,7 @@
     {
       "id": "115",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two minimum parameters must be configured on an active interface to enable OSPFv2 to\noperate? (Choose two)",
       "question_images": [],
       "options": {
@@ -3285,7 +3285,7 @@
     {
       "id": "121",
       "source_id": "8",
-      "type": "multi",
+      "type": "multiple",
       "question": "An engineer must configure an OSPF neighbor relationship between router R1 and R3. The\nauthentication configuration has been configured and the connecting interfaces are in the same\n192.168.1.0/30 subnet. What are the next two steps to complete the configuration? (Choose two)",
       "question_images": [],
       "options": {
@@ -3424,7 +3424,7 @@
     {
       "id": "126",
       "source_id": "86",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two configurations must the engineer apply on this network so that R1 becomes the DR?\n(Choose two)",
       "question_images": [
         "page_96_img_85.jpeg"
@@ -3733,7 +3733,7 @@
     {
       "id": "137",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two actions influence the EIGRP route selection process? (Choose two)",
       "question_images": [],
       "options": {

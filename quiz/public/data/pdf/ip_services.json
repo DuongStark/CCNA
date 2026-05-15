@@ -384,7 +384,7 @@
     {
       "id": "15",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two pieces of information can you determine from the output of the show ntp\nstatus command? (Choose two)",
       "question_images": [],
       "options": {
@@ -413,7 +413,7 @@
     {
       "id": "16",
       "source_id": "3",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two tasks must be performed to configure NTP to a trusted server in client mode on a single\nnetwork device? (Choose two)",
       "question_images": [],
       "options": {
@@ -871,7 +871,7 @@
     {
       "id": "33",
       "source_id": "4",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two outcomes are predictable behaviors for HSRP? (Choose two)",
       "question_images": [],
       "options": {
@@ -1057,7 +1057,7 @@
     {
       "id": "40",
       "source_id": "8",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits of FHRPs? (Choose two)",
       "question_images": [],
       "options": {
@@ -1138,7 +1138,7 @@
     {
       "id": "43",
       "source_id": "1",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two roles of Domain Name Services (DNS)? (Choose two)",
       "question_images": [],
       "options": {
@@ -1353,7 +1353,7 @@
     {
       "id": "51",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two actions are performed by the Weighted Random Early Detection mechanism? (Choose two)",
       "question_images": [],
       "options": {
@@ -1382,7 +1382,7 @@
     {
       "id": "52",
       "source_id": "3",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two QoS tools can provide congestion management? (Choose two)",
       "question_images": [],
       "options": {
@@ -1517,7 +1517,7 @@
     {
       "id": "57",
       "source_id": "1",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two QoS tools are used to guarantee minimum bandwidth to certain traffic? (Choose two)",
       "question_images": [],
       "options": {
@@ -1546,7 +1546,7 @@
     {
       "id": "58",
       "source_id": "23",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two QoS tools provides congestion management? (Choose two)",
       "question_images": [],
       "options": {
@@ -1763,7 +1763,7 @@
     {
       "id": "66",
       "source_id": "92",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two actions are taken as the result of traffic policing? (Choose two)",
       "question_images": [],
       "options": {
@@ -1930,7 +1930,7 @@
     {
       "id": "72",
       "source_id": "3",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two roles of the Dynamic Host Configuration Protocol (DHCP)? (Choose two)",
       "question_images": [],
       "options": {
@@ -1959,7 +1959,7 @@
     {
       "id": "73",
       "source_id": "4",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit. An engineer deploys a topology in which R1 obtains its IP configuration from\nDHCP. If the switch and DHCP server configurations are complete and correct. Which two sets of\ncommands must be configured on R1 and R2 to complete the task? (Choose two)",
       "question_images": [
         "page_40_img_21.jpeg"
@@ -2068,7 +2068,7 @@
     {
       "id": "77",
       "source_id": "9",
-      "type": "multi",
+      "type": "multiple",
       "question": "When implementing a router as a DHCP server, which two features must be configured? (Choose two)",
       "question_images": [],
       "options": {
@@ -2309,7 +2309,7 @@
     {
       "id": "86",
       "source_id": "43",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two features of the DHCP relay agent? (Choose two)",
       "question_images": [],
       "options": {
@@ -2445,7 +2445,7 @@
     {
       "id": "91",
       "source_id": "5",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two differences between optical-fiber cabling and copper cabling? (Choose two)",
       "question_images": [],
       "options": {
@@ -2685,7 +2685,7 @@
     {
       "id": "100",
       "source_id": "17",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two features introduced in SNMPv2 provides the ability to retrieve large amounts of data in one\nrequest? (Choose two)",
       "question_images": [],
       "options": {

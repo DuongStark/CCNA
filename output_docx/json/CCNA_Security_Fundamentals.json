@@ -189,7 +189,7 @@
     },
     {
       "id": "6.30",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two protocols are supported on service-port interfaces? (Choose two)",
       "question_images": [],
       "options": {
@@ -307,7 +307,7 @@
     },
     {
       "id": "7.30",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two protocols must be disabled to increase security for management connections to a Wireless LAN Controller? (Choose two)",
       "question_images": [],
       "options": {
@@ -496,7 +496,7 @@
     },
     {
       "id": "8.37",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two components comprise part of a PKI? (Choose two)",
       "question_images": [],
       "options": {
@@ -545,7 +545,7 @@
     },
     {
       "id": "8.55",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two commands must be configured on router R1 to enable the router to accept secure remote-access connections? (Choose two)",
       "question_images": [
         "q8.55_img1.jpg"
@@ -688,7 +688,7 @@
     },
     {
       "id": "9.8",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two commands must be added to update the configuration of router R1 so that it accepts only encrypted connections? (Choose two)",
       "question_images": [],
       "options": {
@@ -996,7 +996,7 @@
     },
     {
       "id": "9.74",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two practices are recommended for an acceptable security posture in a network? (Choose two)",
       "question_images": [],
       "options": {
@@ -1022,7 +1022,7 @@
     },
     {
       "id": "9.75",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhat are the two steps an engineer must take to provide the highest encryption and authentication using domain credentials from LDAP? (Choose two)",
       "question_images": [
         "q9.75_img1.jpg"
@@ -1119,7 +1119,7 @@
     },
     {
       "id": "9.102",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two wireless security standards use Counter Mode Cipher Block Chaining Message Authentication Code Protocol for encryption and data integrity? (Choose two)",
       "question_images": [],
       "options": {
@@ -1283,7 +1283,7 @@
     },
     {
       "id": "10.38",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two examples of multifactor authentication? (Choose two)",
       "question_images": [],
       "options": {
@@ -1309,7 +1309,7 @@
     },
     {
       "id": "10.42",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA network engineer started to configure port security on a new switch. These requirements must be met:\n– MAC addresses must be learned dynamically.\n– Log messages must be generated without disabling the interface when unwanted traffic is seen.\nWhich two commands must be configured to complete this task? (Choose two)",
       "question_images": [
         "q10.42_img1.jpg"
@@ -1410,7 +1410,7 @@
     },
     {
       "id": "10.73",
-      "type": "multi",
+      "type": "multiple",
       "question": "A network engineer is replacing the switches that belong to a managed-services client with new Cisco Catalyst switches. The new switches will be configured for updated security standards, including replacing Telnet services with encrypted connections and doubling the modulus size from 1024. Which two commands must the engineer configure on the new switches? (Choose two)",
       "question_images": [],
       "options": {
@@ -1459,7 +1459,7 @@
     },
     {
       "id": "10.87",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA guest WLAN must be created that prompts the client for a username and password on the local web page of the WLC. Which two actions must be performed on the Layer 2 tab before enabling the Authentication option on the Layer 3 tab? (Choose two)",
       "question_images": [
         "q10.87_img1.jpg"

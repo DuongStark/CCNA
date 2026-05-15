@@ -136,7 +136,7 @@
     {
       "id": "6",
       "source_id": "42",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA network engineer started to configure port security on a new switch. These requirements must\nbe met:\n– MAC addresses must be learned dynamically.\n– Log messages must be generated without disabling the interface when unwanted traffic is seen.\nWhich two commands must be configured to complete this task? (Choose two)",
       "question_images": [
         "page_3_img_1.jpeg"
@@ -223,7 +223,7 @@
     {
       "id": "9",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit. An extended ACL has been configured and applied to router R2. The\nconfiguration failed to work as intended. Which two changes stop outbound traffic on TCP ports 25\nand 80 to 10.0.20.0/26 from the 10.0.10.0/26 subnet while still allowing all other traffic? (Choose\ntwo)\nR2#config t\nR2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq smtp\nR2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq www\nR2(config)#int gi0/2\nR2(config-if)#ip access-group 101 in",
       "question_images": [
         "page_6_img_5.jpeg"
@@ -254,7 +254,7 @@
     {
       "id": "10",
       "source_id": "3",
-      "type": "multi",
+      "type": "multiple",
       "question": "While examining excessive traffic on the network, it is noted that all incoming packets on an\ninterface appear to be allowed even though an IPv4 ACL is applied to the interface. Which two\nmisconfigurations cause this behavior? (Choose two)",
       "question_images": [],
       "options": {
@@ -367,7 +367,7 @@
     {
       "id": "14",
       "source_id": "6",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit. Which two configurations would be used to create and apply a standard\naccess list on R1, so that only the 10.0.70.0/25 network devices are allowed to access the internal\ndatabase server? (Choose two)",
       "question_images": [
         "page_10_img_9.jpeg"
@@ -1136,7 +1136,7 @@
     {
       "id": "43",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "An engineer is asked to protect unused ports that are configured in the default VLAN on a switch.\nWhich two steps will fulfill the request? (Choose two)",
       "question_images": [],
       "options": {
@@ -1191,7 +1191,7 @@
     {
       "id": "45",
       "source_id": "4",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two must be met before SSH can operate normally on a Cisco IOS switch? (Choose two)",
       "question_images": [],
       "options": {
@@ -1352,7 +1352,7 @@
     {
       "id": "51",
       "source_id": "10",
-      "type": "multi",
+      "type": "multiple",
       "question": "In which two ways does a password manager reduce the chance of a hacker stealing a user’s\npassword? (Choose two)",
       "question_images": [],
       "options": {
@@ -1381,7 +1381,7 @@
     {
       "id": "52",
       "source_id": "11",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two purposes of launching a reconnaissance attack on a network? (Choose two)",
       "question_images": [],
       "options": {
@@ -1514,7 +1514,7 @@
     {
       "id": "57",
       "source_id": "6",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two recommendations for protecting network ports from being exploited when located in\nan office space outside of an IT closet? (Choose two)",
       "question_images": [],
       "options": {
@@ -1597,7 +1597,7 @@
     {
       "id": "60",
       "source_id": "37",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two components comprise part of a PKI? (Choose two)",
       "question_images": [],
       "options": {
@@ -1758,7 +1758,7 @@
     {
       "id": "66",
       "source_id": "90",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two commands must be added to update the configuration of router R1 so that it accepts\nonly encrypted connections? (Choose two)",
       "question_images": [
         "page_33_img_20.jpeg"
@@ -2001,7 +2001,7 @@
     {
       "id": "75",
       "source_id": "74",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two practices are recommended for an acceptable security posture in a network? (Choose\ntwo)",
       "question_images": [],
       "options": {
@@ -2030,7 +2030,7 @@
     {
       "id": "76",
       "source_id": "75",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\n<exhibit missing>\nWhat are the two steps an engineer must take to provide the highest encryption and\nauthentication using domain credentials from LDAP? (Choose two)",
       "question_images": [],
       "options": {
@@ -2139,7 +2139,7 @@
     {
       "id": "80",
       "source_id": "38",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two examples of multifactor authentication? (Choose two)",
       "question_images": [],
       "options": {
@@ -2194,7 +2194,7 @@
     {
       "id": "82",
       "source_id": "73",
-      "type": "multi",
+      "type": "multiple",
       "question": "A network engineer is replacing the switches that belong to a managed-services client with new\nCisco Catalyst switches. The new switches will be configured for updated security standards,\nincluding replacing Telnet services with encrypted connections and doubling the modulus size from\n1024. Which two commands must the engineer configure on the new switches? (Choose two)",
       "question_images": [],
       "options": {
@@ -2727,7 +2727,7 @@
     {
       "id": "102",
       "source_id": "8",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two values or settings must be entered when configuring a new WLAN in the Cisco Wireless\nLAN Controller GUI? (Choose two)",
       "question_images": [],
       "options": {
@@ -2808,7 +2808,7 @@
     {
       "id": "105",
       "source_id": "11",
-      "type": "multi",
+      "type": "multiple",
       "question": "When configuring a WLAN with WPA2 PSK in the Cisco Wireless LAN Controller GUI, which two\nformats are available to select? (Choose two)",
       "question_images": [],
       "options": {
@@ -3363,7 +3363,7 @@
     {
       "id": "126",
       "source_id": "30",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two protocols are supported on service-port interfaces? (Choose two)",
       "question_images": [],
       "options": {
@@ -3392,7 +3392,7 @@
     {
       "id": "127",
       "source_id": "30",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two protocols must be disabled to increase security for management connections to a\nWireless LAN Controller? (Choose two)",
       "question_images": [],
       "options": {
@@ -3578,7 +3578,7 @@
     {
       "id": "134",
       "source_id": "10",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of an SSID? (Choose two)",
       "question_images": [],
       "options": {
@@ -4124,7 +4124,7 @@
     {
       "id": "154",
       "source_id": "102",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two wireless security standards use Counter Mode Cipher Block Chaining Message\nAuthentication Code Protocol for encryption and data integrity? (Choose two)",
       "question_images": [],
       "options": {
@@ -4420,7 +4420,7 @@
     {
       "id": "165",
       "source_id": "62",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two functions does a WLC perform in the lightweight access-point architecture that an AP\nperforms independently in an autonomous architecture? (Choose two)",
       "question_images": [],
       "options": {
@@ -4475,7 +4475,7 @@
     {
       "id": "167",
       "source_id": "87",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA guest WLAN must be created that prompts the client for a username and password on the local\nweb page of the WLC. Which two actions must be performed on the Layer 2 tab before enabling\nthe Authentication option on the Layer 3 tab? (Choose two)",
       "question_images": [
         "page_80_img_46.jpeg"
@@ -4714,7 +4714,7 @@
     {
       "id": "176",
       "source_id": "41",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two protocols are used by an administrator for authentication and configuration on access\npoints? (Choose two)",
       "question_images": [],
       "options": {
@@ -4851,7 +4851,7 @@
     {
       "id": "181",
       "source_id": "82",
-      "type": "multi",
+      "type": "multiple",
       "question": "SIP-based Call Admission Control must be configured in the Cisco WLC GUI. SIP call-snooping\nports are configured. Which two actions must be completed next? (Choose two)",
       "question_images": [],
       "options": {

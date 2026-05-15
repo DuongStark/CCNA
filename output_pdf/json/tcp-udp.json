@@ -188,7 +188,7 @@
     {
       "id": "8",
       "source_id": "1",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two statements about the purpose of the OSI model are accurate? (Choose two)",
       "question_images": [],
       "options": {
@@ -241,7 +241,7 @@
     {
       "id": "10",
       "source_id": "10",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two functions of a server on a network? (Choose two)",
       "question_images": [],
       "options": {
@@ -426,7 +426,7 @@
     {
       "id": "17",
       "source_id": "51",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two similarities between UTP Cat 5e and Cat 6a cabling? (Choose two)",
       "question_images": [],
       "options": {
@@ -561,7 +561,7 @@
     {
       "id": "22",
       "source_id": "55",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two commands must be configured on router R1 to enable the router to accept secure remote-\naccess connections? (Choose two)",
       "question_images": [
         "page_8_img_3.jpeg"

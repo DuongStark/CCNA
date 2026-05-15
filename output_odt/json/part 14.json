@@ -134,7 +134,7 @@
     },
     {
       "id": "14.6",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two values or settings must be entered when configuring a new WLAN in the Cisco Wireless LAN Controller GUI? (Choose two)",
       "question_images": [],
       "options": {
@@ -543,7 +543,7 @@
     },
     {
       "id": "14.27",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two capabilities provided by VRRP within a LAN network? (Choose two)",
       "question_images": [],
       "options": {
@@ -1329,7 +1329,7 @@
     },
     {
       "id": "14.64",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two tasks support the physical access control element of a security program? (Choose two)",
       "question_images": [],
       "options": {
@@ -1739,7 +1739,7 @@
     },
     {
       "id": "14.82",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two functions of DHCP servers? (Choose two)",
       "question_images": [],
       "options": {
@@ -1921,7 +1921,7 @@
     },
     {
       "id": "14.92",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits for using private IPv4 addressing? (Choose two)",
       "question_images": [],
       "options": {
@@ -2014,7 +2014,8 @@
         "B": "ip dhcp snooping vlan 1-4094\nip dhcp snooping\n!\ninterface Port-channel1\nip dhcp snooping trust",
         "C": "ip dhcp snooping vlan 1-4094\n!\ninterface Port-channel1switchport protectedswitchport port-security maximum 1",
         "D": "ip arp inspection trust\n!\ninterface Port-channel1switchport port-security maximum 4094switchport port-security\nip verify source mac-check\nOption E\nip arp inspection vlan 1-4094\n!\ninterface Port-channel1\nip arp inspection trust"
-      }
+      },
+      "type": "multiple"
     },
     {
       "id": "14.96",
@@ -2043,7 +2044,7 @@
     },
     {
       "id": "14.97",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two functions of a firewall within an enterprise? (Choose two)",
       "question_images": [],
       "options": {
@@ -2125,7 +2126,7 @@
     },
     {
       "id": "14.100",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two host addresses are reserved for private use within an enterprise network? (Choose two)",
       "question_images": [],
       "options": {
@@ -2250,7 +2251,7 @@
     },
     {
       "id": "14.105",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two statements distinguish authentication from accounting? (Choose two)",
       "question_images": [],
       "options": {

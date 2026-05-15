@@ -309,7 +309,7 @@
     },
     {
       "id": "11.13",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two features introduced in SNMPv2 provide the ability to retrieve large amounts of data in one request? (Choose two)",
       "question_images": [],
       "options": {
@@ -464,7 +464,7 @@
     },
     {
       "id": "11.19",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons a switch experiences frame flooding? (Choose two)",
       "question_images": [],
       "options": {
@@ -825,7 +825,7 @@
     },
     {
       "id": "11.33",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two protocols are used by an administrator for authentication and configuration on access points? (Choose two)",
       "question_images": [],
       "options": {
@@ -1082,7 +1082,7 @@
     },
     {
       "id": "11.43",
-      "type": "single",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA network administrator configures the CPE to provide internet access to the company headquarters. Traffic must be load-balanced via ISP1 and ISP2 to ensure redundancy. Which two command sets must be configured on the CPE router? (Choose two)",
       "question_images": [
         "q11.43_img1.jpg"
@@ -1238,7 +1238,7 @@
     },
     {
       "id": "11.49",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two VPN technologies are recommended by Cisco for multiple branch offices and large-scale deployments? (Choose two)",
       "question_images": [],
       "options": {
@@ -1466,7 +1466,7 @@
     },
     {
       "id": "11.58",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two characteristics are representative of virtual machines (VMs)? (Choose two)",
       "question_images": [],
       "options": {

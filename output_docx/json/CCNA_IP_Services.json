@@ -3,7 +3,7 @@
   "questions": [
     {
       "id": "5.1",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two QoS tools are used to guarantee minimum bandwidth to certain traffic? (Choose two)",
       "question_images": [],
       "options": {
@@ -192,7 +192,7 @@
     },
     {
       "id": "6.23",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two QoS tools provides congestion management? (Choose two)",
       "question_images": [],
       "options": {
@@ -895,7 +895,7 @@
     },
     {
       "id": "10.43",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two features of the DHCP relay agent? (Choose two)",
       "question_images": [],
       "options": {
@@ -971,7 +971,7 @@
     },
     {
       "id": "10.92",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two actions are taken as the result of traffic policing? (Choose two)",
       "question_images": [],
       "options": {

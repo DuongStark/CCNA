@@ -371,7 +371,7 @@
     },
     {
       "id": "7.33",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of the distribution layer in a three-tier network architecture? (Choose two)",
       "question_images": [],
       "options": {
@@ -443,7 +443,7 @@
     },
     {
       "id": "7.51",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two similarities between UTP Cat 5e and Cat 6a cabling? (Choose two)",
       "question_images": [],
       "options": {
@@ -492,7 +492,7 @@
     },
     {
       "id": "8.15",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of a public cloud implementation? (Choose two)",
       "question_images": [],
       "options": {
@@ -992,7 +992,7 @@
     },
     {
       "id": "10.86",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons to implement IPv4 private addressing on a network? (Choose two)",
       "question_images": [],
       "options": {

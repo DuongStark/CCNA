@@ -132,7 +132,7 @@
     },
     {
       "id": "12.9",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two protocols within the IPsec suite? (Choose two)",
       "question_images": [],
       "options": {
@@ -160,7 +160,7 @@
     },
     {
       "id": "12.11",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits of private IPv4 addressing? (Choose two)",
       "question_images": [],
       "options": {
@@ -269,7 +269,7 @@
     },
     {
       "id": "12.15",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nSW1#show run\nBuilding configuration...\n!\nhostname SW1\n!\nip domain-name test\n!\nusername CCNA privilege 1 password 0 ciscol23\n!\ninterface FastEthernet0/1\nswitchport access vlan 10\n!\ninterface Vlan10\nip address 192.168.1.2 255.255.255.0\n!\nline vty 0 4\nlogin local\ntransport input telnet\nline vty 5 15\nlogin local\ntransport input telnet\nSW1#show crypto key mypubkey rsa\n% Key pair was generated at: 0:1:23 UTC Mar 1 2021\nKey name: SW1.test\nAn engineer is updating the management access configuration of switch SW1 to allow secured, encrypted remote configuration. Which two commands or command sequences must the engineer apply to the switch? (Choose two)",
       "question_images": [],
       "options": {
@@ -300,7 +300,7 @@
     },
     {
       "id": "12.16",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two values does router R1 use to identify valid routes for the R3 loopback address 1.1.1.3/32? (Choose two)",
       "question_images": [
         "q12.16_img1.jpg"
@@ -481,7 +481,7 @@
     },
     {
       "id": "12.25",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two server types support domain name to IP address resolution? (Choose two)",
       "question_images": [],
       "options": {
@@ -509,7 +509,7 @@
     },
     {
       "id": "12.26",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nThe router R1 is in the process of being configured. Routers R2 and R3 are configured correctly for the new environment. Which two commands must be configured on R1 for PC1 to communicate to all PCs on the 10.10.10.0/24 network? (Choose two)",
       "question_images": [
         "q12.26_img1.jpg"
@@ -564,7 +564,7 @@
     },
     {
       "id": "12.28",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two northbound APIs are found in a software-defined network? (Choose two)",
       "question_images": [],
       "options": {
@@ -1098,7 +1098,7 @@
     },
     {
       "id": "12.52",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two differences between WPA2 and WPA3 wireless security? (Choose two)",
       "question_images": [],
       "options": {
@@ -1175,7 +1175,7 @@
     },
     {
       "id": "12.55",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two transport layer protocols carry syslog messages? (Choose two)",
       "question_images": [],
       "options": {
@@ -1379,7 +1379,7 @@
     },
     {
       "id": "12.65",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nhostname CPE\nservice password-encryption\nip domain name ccna.cisco.com\nip name-server 198.51.100.210\ncrypto key generate rsa modulus 1024\nusername admin privilege 15 secret S0m3s3cr3t\nline vty 0 4\ntransport input ssh\nlogin local\nAn engineer executed the script and added commands that were not necessary for SSH and now must remove the commands. Which two commands must be executed to correct the configuration? (Choose two)",
       "question_images": [],
       "options": {
@@ -1432,7 +1432,7 @@
     },
     {
       "id": "12.68",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two port types used by a Cisco WLC for out-of-band management? (Choose two)",
       "question_images": [],
       "options": {
@@ -1487,7 +1487,7 @@
     },
     {
       "id": "12.71",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two facts that differentiate optical-fiber cabling from copper cabling? (Choose two)",
       "question_images": [],
       "options": {
@@ -1565,7 +1565,7 @@
     },
     {
       "id": "12.74",
-      "type": "multi",
+      "type": "multiple",
       "question": "Under the CRUD model, which two HTTP methods support the UPDATE operation? (Choose two)",
       "question_images": [],
       "options": {
@@ -1593,7 +1593,7 @@
     },
     {
       "id": "12.75",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two advantages of implementing a controller-based architecture instead of a traditional network architecture? (Choose two)",
       "question_images": [],
       "options": {
@@ -1698,7 +1698,7 @@
     },
     {
       "id": "12.79",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA network engineer configures the CCNA WLAN so that clients must reauthenticate hourly and to limit the number of simultaneous connections to the WLAN to 10. Which two actions complete this configuration? (Choose two)",
       "question_images": [
         "q12.79_img1.jpg"
@@ -1955,7 +1955,7 @@
     },
     {
       "id": "12.89",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA Cisco engineer creates a new WLAN called lantest. Which two actions must be performed so that only high-speed 2.4-Ghz clients connect? (Choose two)",
       "question_images": [
         "q12.89_img1.jpg"
@@ -1985,7 +1985,7 @@
     },
     {
       "id": "12.90",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nWhich two values does router R1 use to determine the best path to reach destinations in network 1.0.0.0/8? (Choose two)",
       "question_images": [
         "q12.90_img1.jpg"
@@ -2186,7 +2186,7 @@
     },
     {
       "id": "12.99",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of a small office / home office connection environment? (Choose two)",
       "question_images": [],
       "options": {

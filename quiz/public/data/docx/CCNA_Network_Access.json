@@ -26,7 +26,7 @@
     },
     {
       "id": "5.6",
-      "type": "multi",
+      "type": "multiple",
       "question": "Aside from discarding, which two states does the switch port transition through while using RSTP (802.1w)? (Choose two)",
       "question_images": [],
       "options": {
@@ -827,7 +827,7 @@
     },
     {
       "id": "7.47",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits of using the PortFast feature? (Choose two)",
       "question_images": [],
       "options": {
@@ -993,7 +993,7 @@
     },
     {
       "id": "8.10",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two characteristics of an SSID? (Choose two)",
       "question_images": [],
       "options": {
@@ -1211,7 +1211,7 @@
     },
     {
       "id": "8.56",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two spanning-tree states are bypassed on an interface running PortFast? (Choose two)",
       "question_images": [],
       "options": {
@@ -1381,7 +1381,7 @@
     },
     {
       "id": "9.1",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nSwitch#show etherchannel summary\n[output omitted]\nGroup   Port-channel  Protocol   Ports\n-------+--------------+---------+---------------------\n10      Po10(SU)       LACP      Gi0/0(P)  Gi0/1(P)\n20      Po20(SU)       LACP      Gi0/2(P)  Gi0/3(P)\nWhich two commands when used together create port channel 10? (Choose two)",
       "question_images": [],
       "options": {
@@ -2259,7 +2259,7 @@
     },
     {
       "id": "10.62",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two functions does a WLC perform in the lightweight access-point architecture that an AP performs independently in an autonomous architecture? (Choose two)",
       "question_images": [],
       "options": {

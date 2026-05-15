@@ -3,7 +3,7 @@
   "questions": [
     {
       "id": "15.1",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nA network engineer is configuring a WLAN to use a WPA2 PSK and allow only specific clients to join. Which two actions must be taken to complete the process? (Choose two)",
       "question_images": [
         "q15.1_img1.jpg"
@@ -283,7 +283,7 @@
     },
     {
       "id": "15.12",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nAn engineer is creating a secure preshared key based SSID using WPA2 for a wireless network running on 2.4 GHz and 5 GHz. Which two tasks must the engineer perform to complete the process? (Choose two)",
       "question_images": [
         "q15.12_img1.jpg"
@@ -695,7 +695,7 @@
     },
     {
       "id": "15.28",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nAn engineer is using the Cisco WLC GUI to configure a WLAN for WPA2 encryption with AES and preshared key Cisc0123456. After the engineer selectsthe WPA + WPA2 option from the Layer 2 Security drop-down list, which two tasks must they perform to complete the process? (Choose two)",
       "question_images": [
         "q15.28_img1.jpg"
@@ -882,7 +882,7 @@
     },
     {
       "id": "15.35",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are the two main capabilities of tunnel mode in IPsec site-to-site VPNs ? (Choose two.)",
       "question_images": [],
       "options": {
@@ -1194,7 +1194,7 @@
     },
     {
       "id": "15.47",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons to configure PortFast on a switch port attached to an end host? (Choose two)",
       "question_images": [],
       "options": {
@@ -1430,7 +1430,7 @@
     },
     {
       "id": "15.58",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nCompany A wants to use a RADIUS server to service all user and device authentication attempts with a more secure and granular authentication approach. Not all client devices support dot1x authentication. Which two configuration changes must be made to accomplish the task? (Choose two)",
       "question_images": [
         "q15.58_img1.jpg"
@@ -1460,7 +1460,7 @@
     },
     {
       "id": "15.59",
-      "type": "multi",
+      "type": "multiple",
       "question": "A network architect planning a new Wi-Fi network must decide between autonomous, cloud-based, and split MAC architectures. Which two facts should the architect consider? (Choose two)",
       "question_images": [],
       "options": {

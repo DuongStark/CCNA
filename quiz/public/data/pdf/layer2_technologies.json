@@ -36,7 +36,7 @@
     {
       "id": "2",
       "source_id": "6",
-      "type": "multi",
+      "type": "multiple",
       "question": "A frame that enters a switch fails the Frame Check Sequence. Which two interface counters are\nincremented? (Choose two)",
       "question_images": [],
       "options": {
@@ -65,7 +65,7 @@
     {
       "id": "3",
       "source_id": "7",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons that cause late collisions to increment on an Ethernet interface? (Choose\ntwo)",
       "question_images": [],
       "options": {
@@ -94,7 +94,7 @@
     {
       "id": "4",
       "source_id": "2",
-      "type": "multi",
+      "type": "multiple",
       "question": "The SW1 interface g0/1 is in the down/down state. Which two configurations are valid reasons for\nthe interface conditions? (Choose two)",
       "question_images": [],
       "options": {
@@ -123,7 +123,7 @@
     {
       "id": "5",
       "source_id": "3",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two functions of a Layer 2 switch? (Choose two)",
       "question_images": [],
       "options": {
@@ -581,7 +581,7 @@
     {
       "id": "22",
       "source_id": "24",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two reasons a switch experiences frame flooding? (Choose two)",
       "question_images": [],
       "options": {
@@ -2237,7 +2237,7 @@
     {
       "id": "82",
       "source_id": "5",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit. What two conclusions should be made about this configuration? (Choose two)",
       "question_images": [
         "page_53_img_53.jpeg"
@@ -2482,7 +2482,7 @@
     {
       "id": "91",
       "source_id": "6",
-      "type": "multi",
+      "type": "multiple",
       "question": "Aside from discarding, which two states does the switch port transition through while using RSTP\n(802.1w)? (Choose two)",
       "question_images": [],
       "options": {
@@ -2647,7 +2647,7 @@
     {
       "id": "97",
       "source_id": "47",
-      "type": "multi",
+      "type": "multiple",
       "question": "What are two benefits of using the PortFast feature? (Choose two)",
       "question_images": [],
       "options": {
@@ -2754,7 +2754,7 @@
     {
       "id": "101",
       "source_id": "56",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two spanning-tree states are bypassed on an interface running PortFast? (Choose two)",
       "question_images": [],
       "options": {
@@ -2866,7 +2866,7 @@
     {
       "id": "105",
       "source_id": "1",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two statements about EtherChannel technology are true? (Choose two)",
       "question_images": [],
       "options": {
@@ -2949,7 +2949,7 @@
     {
       "id": "108",
       "source_id": "5",
-      "type": "multi",
+      "type": "multiple",
       "question": "Which two command sequences must you configure on a switch to establish a Layer 3\nEtherChannel with an open-standard protocol? (Choose two)",
       "question_images": [],
       "options": {
@@ -3117,7 +3117,7 @@
     {
       "id": "114",
       "source_id": "83",
-      "type": "multi",
+      "type": "multiple",
       "question": "Refer to the exhibit.\nSwitch#show etherchannel summary\n[output omitted]\nGroup Port-channel Protocol Ports\n-------+--------------+---------+---------------------\n10 Po10(SU) LACP Gi0/0(P) Gi0/1(P)\n20 Po20(SU) LACP Gi0/2(P) Gi0/3(P)\nWhich two commands when used together create port channel 10? (Choose two)",
       "question_images": [],
       "options": {
