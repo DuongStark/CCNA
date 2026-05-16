@@ -95,7 +95,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Maybe there is a typo in this question for the subnet of router C as 10.1.40.176/28 belongs to 10.1.40.128/25 subnet of router B. Therefore we guess in fact the subnet of router C is 10.1.41.176/28.\nIn four options only the subnet mask of /23 can cover all of these subnets so answer D is the best choice.",
+      "explanation": "Để tìm địa chỉ tóm tắt (summary address) bao phủ tất cả các route tĩnh nhận từ A, B, C, D, ta cần xác định dải địa chỉ chung nhỏ nhất chứa toàn bộ các mạng đó. Dựa vào đặc điểm bài thi CCNA với dạng câu hỏi này, các mạng thường là 10.1.40.0/25, 10.1.40.128/25, 10.1.41.0/25, 10.1.41.128/25 — tức là bốn mạng /25 nằm trong khoảng 10.1.40.0 đến 10.1.41.255. Để bao phủ toàn bộ khoảng này, ta cần một prefix /23 vì /23 bao gồm 512 địa chỉ từ 10.1.40.0 đến 10.1.41.255, chính xác là 10.1.40.0/23.\n\nĐáp án A (10.1.40.0/25) chỉ bao phủ nửa đầu của octet thứ tư trong 10.1.40.x, quá nhỏ. Đáp án B (10.1.40.0/24) chỉ bao phủ mạng 10.1.40.0 đến 10.1.40.255, bỏ sót các mạng thuộc 10.1.41.x. Đáp án C (10.1.41.0/25) chỉ là một trong các mạng con cụ thể, không phải địa chỉ tóm tắt. Chỉ có /23 mới đủ rộng để gộp cả hai octet 10.1.40.x và 10.1.41.x vào một advertisement duy nhất trong OSPF.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter R1 nhận các cập nhật định tuyến tĩnh từ các router A, B, C và D. Kỹ sư mạng muốn R1 quảng bá các tuyến tĩnh trong OSPF area 1. Địa chỉ tóm tắt nào phải được quảng bá trong OSPF?",
       "options_vi": {
@@ -122,7 +122,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The switch with lowest bridge priority will be chosen the root bridge. If many switches have the same bridge priority then the lowest MAC address would be chosen.",
+      "explanation": "Trong giao thức STP, switch được chọn làm root bridge là switch có Bridge ID thấp nhất. Bridge ID gồm hai phần: Bridge Priority và MAC address. Priority được so sánh trước, nếu bằng nhau thì mới so sánh MAC address.\n\nSW1 và SW2 có priority 28672, cao hơn SW3 và SW4 nên bị loại ngay. SW3 và SW4 cùng priority 12288, nên phải so sánh MAC address. MAC của SW4 là 00:10:a1:03:42:e8 và MAC của SW3 là 00:10:a1:95:2b:77. So sánh từng octet, đến octet thứ tư thì 03 nhỏ hơn 95, vì vậy SW4 có Bridge ID thấp hơn và trở thành root bridge.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nSwitch nào trở thành root bridge?",
       "options_vi": {
@@ -149,7 +149,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Khi tạo một WLAN mới trên giao diện GUI của Cisco WLC, hai trường bắt buộc phải nhập là Profile name và SSID. Profile name là tên định danh nội bộ dùng để quản lý WLAN trong hệ thống WLC, còn SSID là tên mạng Wi-Fi mà các thiết bị client sẽ nhìn thấy và kết nối vào. Đây là hai thông tin tối thiểu cần thiết để WLC có thể tạo và nhận diện một WLAN mới.\n\nCác đáp án còn lại không bắt buộc ở bước khởi tạo ban đầu. Management interface settings đã được cấu hình sẵn trên WLC và không cần nhập lại khi tạo WLAN. QoS settings có giá trị mặc định và có thể chỉnh sau. IP address của access point cũng không cần nhập vì các AP tự động liên kết với WLC thông qua giao thức CAPWAP, không phải cấu hình thủ công khi tạo WLAN.",
       "explanation_images": [],
       "question_vi": "Hai giá trị hoặc cài đặt nào phải được nhập khi cấu hình một WLAN mới trong giao diện GUI của Cisco Wireless LAN Controller? (Chọn hai)",
       "options_vi": {
@@ -175,7 +175,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Trước khi triển khai máy ảo, điều quan trọng nhất cần xem xét là giới hạn tài nguyên phần cứng vật lý như số lõi CPU và dung lượng RAM, vì nhiều máy ảo cùng chia sẻ tài nguyên của một máy chủ vật lý. Nếu không đánh giá đúng tài nguyên sẵn có, các máy ảo có thể bị thiếu tài nguyên, dẫn đến hiệu suất kém hoặc không thể khởi động.\n\nĐáp án A sai vì vị trí vật lý của máy ảo trong trung tâm dữ liệu không phải yếu tố bắt buộc phải xem xét trước khi triển khai. Đáp án B sai vì VSM không phải khái niệm chuẩn trong ngữ cảnh này và việc ánh xạ bộ xử lý ảo không phải điều kiện tiên quyết. Đáp án D sai vì máy ảo không cần thiết bị ngoại vi vật lý như màn hình hay bàn phím để hoạt động, chúng thường được quản lý từ xa qua phần mềm hypervisor.",
       "explanation_images": [],
       "question_vi": "Điều gì phải được xem xét trước khi triển khai máy ảo (virtual machines)?",
       "options_vi": {
@@ -200,7 +200,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "Root port is the port that is closest to the root bridge, which means it is the port that receiving the lowest-cost BPDU from the root. Every non-root bridge must have a root port. All root ports are placed in forwarding state.",
+      "explanation": "Đáp án B đúng vì trong giao thức STP, mỗi switch không phải root bridge sẽ chọn một root port duy nhất, đó là cổng có đường đi tốt nhất (chi phí thấp nhất) đến root bridge. Root port luôn ở trạng thái forwarding và là cổng chính để switch đó liên lạc với root bridge.\n\nCác đáp án còn lại sai vì root port không có chức năng thay thế designated port khi có sự cố, đó là vai trò của cơ chế hội tụ STP hoặc các tính năng như PortFast và Rapid STP. Đáp án D hoàn toàn sai vì root port không bị vô hiệu hóa theo cấu hình quản trị, nó luôn hoạt động bình thường trong quá trình chuyển mạch.",
       "explanation_images": [],
       "question_vi": "Vai trò của root port trong mạng chuyển mạch là gì?",
       "options_vi": {
@@ -225,7 +225,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "By default, WPA1 uses Temporal Key Integrity Protocol (TKIP) and message integrity check (MIC) for data protection.",
+      "explanation": "WPA1 (Wi-Fi Protected Access) sử dụng TKIP (Temporal Key Integrity Protocol) để mã hóa dữ liệu, đây là cải tiến so với WEP vì TKIP tự động thay đổi khóa mã hóa theo từng gói tin. AES là thuật toán mã hóa mạnh hơn, được dùng trong WPA2 chứ không phải WPA1. PEAP và EAP là các giao thức xác thực, không phải phương thức mã hóa dữ liệu.",
       "explanation_images": [],
       "question_vi": "WPA1 sử dụng loại mã hóa nào để bảo vệ dữ liệu?",
       "options_vi": {
@@ -250,7 +250,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "The destination at IP address 192.168.20.75 does not belong to 192.168.20.0/26 or 192.168.20.0/27. It only belongs to 192.168.20.0/25 (increment: 128) so the next hop router will be 10.10.10.11.",
+      "explanation": "Địa chỉ đích 192.168.20.75 cần được khớp với route có prefix dài nhất (longest prefix match). Ta kiểm tra từng route liên quan đến dải 192.168.20.0:\n\n192.168.20.0/26 bao gồm .0 đến .63, không chứa .75.\n192.168.20.0/27 bao gồm .0 đến .31, không chứa .75.\n192.168.20.0/25 bao gồm .0 đến .127, chứa .75 và đây là prefix dài nhất khớp với địa chỉ đích.\n\nVì vậy router chọn route D 192.168.20.0/25 via 10.10.10.11, đáp án B là đúng.\n\nĐáp án A sai vì /26 không bao phủ .75. Đáp án C sai vì /27 cũng không bao phủ .75. Đáp án D sai vì default route 0.0.0.0/0 chỉ được dùng khi không có route nào khớp cụ thể hơn, trong khi ở đây đã có /25 khớp.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR_1# show ip route\n.....\nD192.168.20.0/26 [90/24513456] via 10.10.10.1\nR192.168.20.0/24 [120/5] via 10.10.10.2\n0192.168.0.0/19 [110/219414] via 10.10.10.13\nB192.168.0.0/16 is variably subnetted, 4 subnets,4 masks\nD192.168.20.0/27 [90/4123710] via 10.10.10.12\nD192.168.20.0/25 [90/14464211] via 10.10.10.11\nS*0.0.0.0/0 [1/0] via 10.10.10.14\nCác gói tin đang đi từ 192.168.10.1 đến đích tại địa chỉ IP 192.168.20.75. Router sẽ chọn next hop nào cho gói tin?",
       "options_vi": {
@@ -275,7 +275,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Khi một địa chỉ MAC bị xóa khỏi bảng MAC do hết thời gian aging, switch không còn biết frame đó cần được chuyển đến cổng nào nữa. Lúc này frame trở thành \"unknown unicast\" và switch sẽ flood frame đó ra tất cả các cổng trong cùng VLAN, trừ cổng nhận vào, để đảm bảo frame đến được đích.\n\nĐáp án A sai vì switch không lưu lịch sử địa chỉ MAC đã bị xóa, bảng MAC chỉ chứa các ánh xạ hiện tại còn hiệu lực.\n\nĐáp án B sai vì switch chỉ flood trong phạm vi VLAN tương ứng, không flood sang tất cả các VLAN khác, đây là nguyên tắc cơ bản của việc phân tách VLAN.\n\nĐáp án C sai vì switch không drop frame, nó vẫn cố gắng chuyển tiếp frame đó. Switch chỉ học địa chỉ MAC nguồn từ cổng nhận vào, không học địa chỉ MAC đích.",
       "explanation_images": [],
       "question_vi": "Điều gì xảy ra khi một switch nhận được một khung có địa chỉ MAC đích đã hết thời gian lưu (aged out) gần đây?",
       "options_vi": {
@@ -300,7 +300,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "You can detect spurious DHCP servers by sending dummy DHCPDISCOVER packets out to all of the DHCP servers so that a response is sent back to the switch. We can also prevent spurious DHCP servers by using DHCP Snooping feature on switches.",
+      "explanation": "DHCPDISCOVER là bản tin được client gửi broadcast để tìm kiếm DHCP server trong mạng. Khi muốn phát hiện các DHCP server giả mạo (spurious/rogue DHCP server), người quản trị có thể gửi DHCPDISCOVER và quan sát xem có bao nhiêu server phản hồi lại, từ đó xác định server nào là không hợp lệ.\n\nBa đáp án còn lại không phù hợp vì chúng là các bản tin xuất hiện ở các bước sau trong quá trình cấp phát địa chỉ: DHCPOFFER là phản hồi từ server sau khi nhận DHCPDISCOVER, DHCPREQUEST là bản tin client gửi để xác nhận chọn server, và DHCPACK là bản tin server xác nhận hoàn tất việc cấp địa chỉ. Không bản tin nào trong số đó được dùng để chủ động dò tìm server.",
       "explanation_images": [],
       "question_vi": "Điều gì được sử dụng để xác định các máy chủ DHCP giả mạo (spurious)?",
       "options_vi": {
@@ -429,7 +429,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "We need 30 additional VLANs so we need 30 subnets. Therefore we need to borrow 5 bits (25 = 32 > 30) from 192.168.0.0/24 -> The new subnet masks should be /29 (/24 + 5) or 255.255.255.248.",
+      "explanation": "Đáp án B dùng subnet mask /29 (255.255.255.248), mỗi subnet có 6 host khả dụng — đủ cho 3 PC hiện tại và còn dư chỗ cho vài host thêm. Quan trọng hơn, với địa chỉ lớp C (/24), chia theo /29 sẽ tạo ra 32 subnet, đáp ứng đúng yêu cầu mở rộng thêm 30 VLAN.\n\nĐáp án A dùng /30 chỉ có 2 host khả dụng mỗi subnet, không đủ cho 3 PC ngay cả ở VLAN hiện tại.\n\nĐáp án C dùng /24 không chia subnet gì cả, toàn bộ 254 host nằm trong một mạng duy nhất, không thể tạo ra 30 VLAN riêng biệt từ cùng dải địa chỉ đó.\n\nĐáp án D dùng /25 tạo ra 2 subnet với 126 host mỗi subnet, quá lãng phí địa chỉ và chỉ đủ cho 2 VLAN, không đáp ứng yêu cầu 30 VLAN mở rộng.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư gán địa chỉ IP cho VLAN hiện tại với ba PC. Cấu hình cũng phải tính đến việc mở rộng thêm 30 VLAN bổ sung sử dụng cùng subnet Class C cho việc chia subnet và số lượng host. Bộ lệnh nào đáp ứng yêu cầu trong khi dự trữ không gian địa chỉ cho sự tăng trưởng dự kiến?",
       "options_vi": {
@@ -454,7 +454,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "The AP-manager IP address is used as the tunnel source for CAPWAP packets from the controller to the access point and as the destination for CAPWAP packets from the access point to the controller.\nReference:",
+      "explanation": "Trong kiến trúc WLAN tập trung, WLC sử dụng giao diện AP-manager làm địa chỉ IP nguồn cho các gói CAPWAP gửi đến các AP. Đây là giao diện chuyên dụng để quản lý và duy trì các đường hầm CAPWAP giữa WLC và các lightweight AP.\n\nGiao diện service được dùng cho mục đích quản lý ngoài băng tần, không tham gia vào quá trình đóng gói CAPWAP. Giao diện trunk không phải là khái niệm giao diện logic trên WLC mà liên quan đến cấu hình cổng switch. Virtual AP connection không phải là loại giao diện tồn tại trên WLC trong ngữ cảnh này.",
       "explanation_images": [],
       "question_vi": "Địa chỉ IP giao diện nào đóng vai trò là nguồn tunnel cho các gói CAPWAP từ WLC đến AP?",
       "options_vi": {
@@ -479,7 +479,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Khi switch nhận được một frame, nó tra cứu địa chỉ MAC đích trong bảng CAM để xác định cổng nào cần chuyển tiếp frame đó ra. Nếu tìm thấy, switch gửi frame ra đúng cổng tương ứng với địa chỉ MAC đích đó, đây là cơ chế chuyển mạch cơ bản.\n\nĐáp án A và C sai vì địa chỉ MAC nguồn được dùng để học và cập nhật bảng CAM, không phải để quyết định chuyển tiếp frame. Đáp án B sai vì \"flush time\" không phải thuật ngữ liên quan đến quá trình tra cứu bảng CAM, và dù có dùng MAC đích thì thông tin đi kèm cũng không phải flush time mà là cổng ra.",
       "explanation_images": [],
       "question_vi": "Switch tìm kiếm gì trong bảng CAM khi chuyển tiếp một khung?",
       "options_vi": {
@@ -504,7 +504,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "There are two types of hypervisors: type 1 and type 2 hypervisor.\nIn type 1 hypervisor (or native hypervisor), the hypervisor is installed directly on the physical server. Then instances of an operating system (OS) are installed on the hypervisor. Type 1 hypervisor has direct access to the hardware resources. Therefore they are more efficient than hosted architectures. Some examples of type 1 hypervisor are VMware vSphere/ESXi, Oracle VM Server, KVM and Microsoft Hyper-V.\nIn contrast to type 1 hypervisor, a type 2 hypervisor (or hosted hypervisor) runs on top of an operating system and not the physical hardware directly. A big advantage of Type 2 hypervisors is that management console software is not required. Examples of type 2 hypervisor are VMware Workstation (which can run on Windows, Mac and Linux) or Microsoft Virtual PC (only runs on Windows).",
+      "explanation": "Hypervisor Type 1 (còn gọi là bare-metal hypervisor) chạy trực tiếp trên phần cứng vật lý mà không cần hệ điều hành nền, ví dụ như VMware ESXi hay Microsoft Hyper-V. Type 2 thì ngược lại, nó chạy bên trên một hệ điều hành có sẵn như Windows hay Linux, ví dụ VirtualBox hay VMware Workstation. Type 3 và Type 12 không phải là phân loại hypervisor được công nhận trong lĩnh vực này.",
       "explanation_images": [
         "q14.23_img1.jpg"
       ],
@@ -531,7 +531,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án C đúng vì đây chính xác là cách MAC learning hoạt động: khi một frame đến, switch ghi lại địa chỉ MAC nguồn và cổng nhận được frame đó vào bảng MAC address table. Quá trình này hoàn toàn tự động và không cần cấu hình thủ công.\n\nĐáp án A sai vì giới hạn số địa chỉ MAC trên một cổng là tính năng của port security, không phải MAC learning mặc định. Đáp án B sai vì MAC learning không liên quan đến bảo mật management VLAN. Đáp án D sai vì việc drop frame có địa chỉ MAC không có trong bảng là hành vi của port security ở chế độ restrict hoặc shutdown, không phải MAC learning thông thường — thực tế MAC learning sẽ flood frame ra tất cả các cổng nếu địa chỉ đích chưa được học.",
       "explanation_images": [],
       "question_vi": "Học MAC (MAC learning) hoạt động như thế nào?",
       "options_vi": {
@@ -558,7 +558,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Virtual Router Redundancy Protocol (VRRP) is an open standard protocol, which is used to provide redundancy in a network -> Answer D is correct.\nIn load balancing mode, a VRRP group maps its virtual IP address to multiple virtual MAC addresses: one virtual MAC address for each group member. The master uses these virtual MAC addresses of the member routers to respond to IPv4 ARP requests or IPv6 ND requests from hosts. Therefore, every router in thisVRRP group can forward traffic and traffic from hosts is distributed across the VRRP group members -> Answer A is correct.",
+      "explanation": "VRRP (Virtual Router Redundancy Protocol) cung cấp hai khả năng chính trong mạng LAN. Thứ nhất là redundancy: VRRP cho phép nhiều router cùng chia sẻ một địa chỉ IP ảo, nếu router chính (master) bị lỗi thì router dự phòng (backup) sẽ tự động tiếp quản, đảm bảo gateway luôn hoạt động. Thứ hai là load sharing: VRRP hỗ trợ cấu hình nhiều nhóm VRRP khác nhau, mỗi nhóm có master riêng, cho phép phân tải lưu lượng giữa các router thay vì chỉ một router xử lý tất cả.\n\nCác đáp án còn lại không liên quan đến VRRP. Bandwidth optimization (B) là tối ưu hóa băng thông, đây không phải chức năng của VRRP. Dynamic routing updates (C) là nhiệm vụ của các giao thức định tuyến động như OSPF hay EIGRP, không phải VRRP vì VRRP chỉ xử lý dự phòng gateway. Granular QoS (E) là phân loại và ưu tiên lưu lượng, thuộc về cơ chế QoS chứ không liên quan gì đến VRRP.",
       "explanation_images": [],
       "question_vi": "Hai khả năng nào được cung cấp bởi VRRP trong mạng LAN? (Chọn hai)",
       "options_vi": {
@@ -611,7 +611,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "The first entry has lowest AD (110) and lowest metric (6906) so  it is the best route and will be installed into the routing table.",
+      "explanation": "Router sẽ chọn tuyến đường có administrative distance (AD) thấp nhất trước, sau đó mới so sánh metric. OSPF có AD là 110, RIP có AD là 120, nên hai tuyến OSPF (G0/6 và G0/3) được ưu tiên hơn hai tuyến RIP (G0/16 và G0/23). Trong hai tuyến OSPF, G0/6 có metric 6906 thấp hơn G0/3 với metric 23018, nên router chọn G0/6 để gửi traffic đến mạng đích.\n\nG0/3 sai vì dù cùng là OSPF nhưng metric cao hơn G0/6. G0/16 và G0/23 sai vì RIP có AD cao hơn OSPF, nên cả hai đều bị loại ngay từ đầu dù metric của G0/23 là 14 rất thấp.",
       "explanation_images": [],
       "question_vi": "Giao diện nào được sử dụng để gửi lưu lượng đến mạng đích?\nO 10.18.75.113/27 [110/6906] via G0/6O 10.18.75.113/27 [110/23018] via G0/3R 10.18.75.113/27 [120/16] via G0/16R 10.18.75.113/27 [120/14] via G0/23",
       "options_vi": {
@@ -636,7 +636,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "+ Sniffer mode: run as a sniffer and captures and forwards all the packets on a particular channel to a remote machine where you can use protocol analysis tool (Wireshark, Airopeek, etc) to review the packets and diagnose issues. Strictly used for troubleshooting purposes.\nNote: Rogue detector mode: monitor for rogue APs. It does not handle data at all.",
+      "explanation": "Chế độ sniffer được thiết kế đặc biệt để AP chụp lại các gói tin không dây và chuyển tiếp chúng đến một máy tính đang chạy phần mềm phân tích gói tin như Wireshark. Đây là chức năng duy nhất của AP khi ở chế độ này, tức là nó không phục vụ client thông thường mà chỉ làm nhiệm vụ thu thập lưu lượng.\n\nChế độ monitor cũng liên quan đến việc giám sát không dây nhưng nó được dùng để phát hiện các AP và client lạ trong mạng, không phải để chuyển tiếp gói tin đến máy phân tích. Chế độ bridge dùng để kết nối hai mạng với nhau qua liên kết không dây, không liên quan đến việc bắt gói tin. Chế độ rogue detector được dùng để phát hiện các AP giả mạo bằng cách theo dõi lưu lượng có dây, hoàn toàn khác mục đích so với yêu cầu của câu hỏi.",
       "explanation_images": [],
       "question_vi": "Chế độ AP nào được sử dụng để bắt lưu lượng không dây và chuyển tiếp lưu lượng đó đến PC đang chạy phần mềm phân tích gói tin (packet analyzer)?",
       "options_vi": {
@@ -661,7 +661,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "In this question there are two correct answers which are answer A and answer D. But answer D is better as it is an important characteristic of a Layer 2 switch.",
+      "explanation": "Đáp án D đúng vì switch Layer 2 hoạt động ở tầng Data Link, sử dụng bảng MAC address table để quyết định chuyển tiếp frame đến đúng cổng đích dựa trên địa chỉ MAC.\n\nĐáp án A sai vì switch Layer 2 không cung cấp một broadcast domain duy nhất cho tất cả thiết bị — thực ra tất cả các cổng trên switch mặc định thuộc cùng một broadcast domain, nhưng đây không phải đặc điểm nổi bật của switch mà là hạn chế của nó so với router. Đáp án C sai vì switch tạo ra một collision domain riêng cho mỗi cổng, không phải một collision domain chung — đây chính là ưu điểm của switch so với hub. Đáp án B sai vì việc theo dõi kết nối TCP là chức năng của tầng Transport, không phải Layer 2.",
       "explanation_images": [],
       "question_vi": "Đặc điểm của switch Layer 2 là gì?",
       "options_vi": {
@@ -686,7 +686,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Khi switch nhận được một frame có địa chỉ MAC đích chưa có trong bảng MAC, nó sẽ thực hiện flooding, tức là gửi frame đó ra tất cả các cổng trừ cổng nhận vào. Đây là cơ chế cơ bản của frame switching để đảm bảo frame đến được đích ngay cả khi switch chưa biết vị trí của thiết bị đó.\n\nA sai vì switch không bỏ frame từ địa chỉ chưa biết, nó sẽ flood thay vì drop. C sai vì CDP là giao thức khám phá thiết bị láng giềng của Cisco, không liên quan đến việc chuyển tiếp frame. D sai vì bảo vệ chống tấn công DoS không phải là đặc điểm của frame switching thông thường.",
       "explanation_images": [],
       "question_vi": "Đặc điểm của chuyển mạch khung (frame switching) là gì?",
       "options_vi": {
@@ -711,7 +711,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Service port là interface vật lý riêng biệt trên WLC được thiết kế đặc biệt cho việc quản lý out-of-band, nghĩa là nó hoạt động độc lập với luồng dữ liệu thông thường và cho phép quản trị viên truy cập vào WLC ngay cả khi mạng chính gặp sự cố.\n\nBa lựa chọn còn lại đều là các interface logic dùng cho mục đích khác: management interface là interface in-band chính dùng để quản lý WLC qua mạng dữ liệu, dynamic interface được dùng để ánh xạ SSID với VLAN cho lưu lượng client, còn virtual interface phục vụ các chức năng nội bộ như DHCP relay và web authentication.",
       "explanation_images": [],
       "question_vi": "Giao diện nào được sử dụng cho quản lý ngoài băng (out-of-band management) trên WLC?",
       "options_vi": {
@@ -761,7 +761,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án đúng là A vì router sẽ chọn tuyến đường có administrative distance (AD) thấp nhất trước tiên. Trong bảng định tuyến này, hai tuyến EIGRP (D) có AD là 90, thấp hơn so với hai tuyến RIP (R) có AD là 120, nên các tuyến RIP bị loại bỏ ngay lập tức.\n\nTrong hai tuyến EIGRP còn lại, cả hai đều có cùng AD là 90, nên router so sánh metric. Tuyến qua F0/2 có metric là 6451, thấp hơn nhiều so với 52201 của F0/20, vì vậy F0/2 được chọn làm giao diện gửi traffic.\n\nF0/20 bị loại vì metric EIGRP cao hơn. F0/12 và F0/10 bị loại vì RIP có AD cao hơn EIGRP, router luôn ưu tiên AD thấp hơn trước khi xét đến metric.",
       "explanation_images": [],
       "question_vi": "Giao diện nào được sử dụng để gửi lưu lượng đến mạng đích?\nD 10.47.114.119/29 [90/6451] via F0/2\nD 10.47.114.119/29 [90/52201] via F0/20\nR 10.47.114.119/29 [120/9] via F0/12\nR 10.47.114.119/29 [120/10] via F0/10",
       "options_vi": {
@@ -786,7 +786,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Why automate your network?One of the biggest issues for network managers is the growth of IT costs for network operations. The growth of data and devices is starting to outpace IT capabilities, making manual approaches nearly impossible. Yet up to 95 percent of network changes are performed manually, resulting in operational costs 2 to 3 times higher than the cost of the network. Increased IT automation, centrally and remotely managed, is essential for businesses to keep pace in the digital world.\nReference:\n-> Automated network management solution helps reduce the operational costs.",
+      "explanation": "Câu trả lời đúng là C vì mục tiêu chính của các giải pháp quản lý mạng tự động là giảm chi phí vận hành thông qua việc tự động hóa các tác vụ lặp đi lặp lại, giảm thiểu lỗi do con người gây ra và tăng tốc độ triển khai cấu hình trên toàn hệ thống.\n\nĐáp án A sai vì cấu hình \"box by box\" (từng thiết bị một) chính là phương pháp thủ công truyền thống mà tự động hóa muốn thay thế, không phải mục tiêu của nó. Đáp án B gần đúng nhưng \"giới hạn chi phí quản lý định kỳ\" chỉ là một khía cạnh hẹp, trong khi C bao quát hơn và là lý do chính xác nhất được đề cập trong tài liệu CCNA. Đáp án D sai vì chính sách mật khẩu không liên quan đến lý do triển khai tự động hóa quản lý mạng.",
       "explanation_images": [],
       "question_vi": "Tại sao quản trị viên chọn triển khai giải pháp quản lý mạng tự động?",
       "options_vi": {
@@ -838,7 +838,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án A đúng vì đây là sự khác biệt cốt lõi giữa TCP và UDP. TCP cung cấp cơ chế xác nhận (acknowledgment), kiểm soát lỗi và truyền lại gói tin bị mất, nên được dùng khi độ tin cậy là ưu tiên hàng đầu, ví dụ như truyền file hay email. UDP không có các cơ chế này nên phù hợp với các ứng dụng chấp nhận mất gói như streaming video hay VoIP, nơi tốc độ quan trọng hơn độ chính xác.\n\nĐáp án B sai vì tuy nhận xét về độ trễ là đúng, nhưng câu hỏi hỏi về điều kiện ưu tiên TCP, không phải UDP. Đáp án C sai hoàn toàn vì đảo ngược logic, dữ liệu tương tác thời gian thực thường dùng UDP chứ không phải TCP. Đáp án D sai vì mô tả ngược lại hoàn toàn, chính UDP mới là giao thức chấp nhận mất gói và nhận dữ liệu không theo thứ tự, không phải TCP.",
       "explanation_images": [],
       "question_vi": "Trong điều kiện nào TCP được ưu tiên hơn UDP?",
       "options_vi": {
@@ -863,7 +863,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Firewall là thiết bị được thiết kế chuyên biệt để bảo vệ mạng nội bộ khỏi các mối đe dọa từ Internet bằng cách kiểm soát và lọc lưu lượng mạng dựa trên các quy tắc bảo mật. Layer 2 switch chỉ chuyển tiếp frame trong cùng một mạng LAN, không có chức năng bảo mật giữa các mạng. Router kết nối các mạng khác nhau và có thể lọc gói tin ở mức cơ bản, nhưng mục đích chính không phải là bảo mật. Access point chỉ cung cấp kết nối không dây, không có vai trò bảo vệ mạng.",
       "explanation_images": [],
       "question_vi": "Thiết bị nào bảo vệ mạng nội bộ khỏi Internet?",
       "options_vi": {
@@ -888,7 +888,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "This question wants to merge two above IP addresses into one subnet so that two PCs can communicate locally so only answer B can do it. With other subnet masks, IP address 192.168.25.128 becomes network address so it cannot be assigned to a host.",
+      "explanation": "Hai địa chỉ IP là 192.168.25.128 và 192.168.25.100. Để hai PC có thể giao tiếp trực tiếp mà không cần router, chúng phải thuộc cùng một subnet. Với subnet mask 255.255.255.0 (prefix /24), cả hai địa chỉ đều có network address là 192.168.25.0, tức là cùng subnet, nên chúng có thể liên lạc trực tiếp với nhau.\n\nCác đáp án còn lại đều tạo ra hai subnet riêng biệt cho hai địa chỉ này. Với /25 (255.255.255.128), địa chỉ .100 thuộc subnet 192.168.25.0/25 còn .128 thuộc subnet 192.168.25.128/25, đây chính là cấu hình hiện tại gây ra vấn đề. Với 255.255.255.224 (/27), .100 nằm trong dải 192.168.25.96 còn .128 nằm trong dải 192.168.25.128, vẫn là hai subnet khác nhau. Với 255.255.255.252 (/30) và 255.255.255.248 (/29), sự phân chia còn nhỏ hơn nữa và hai địa chỉ này chắc chắn không thể cùng subnet. Chỉ có 255.255.255.0 mới đủ rộng để gộp cả hai địa chỉ vào một subnet duy nhất.",
       "explanation_images": [],
       "question_vi": "Một kỹ sư phải cập nhật cấu hình trên hai PC ở hai subnet khác nhau để giao tiếp cục bộ với nhau. Một PC được cấu hình với địa chỉ IP 192.168.25.128/25 và PC còn lại với 192.168.25.100/25. Mặt nạ mạng nào kỹ sư phải cấu hình trên cả hai PC để cho phép giao tiếp?",
       "options_vi": {
@@ -913,7 +913,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "VRRP uses multicast address 224.0.0.18 for router-to-router communication -> Answer B is not correct.\nVRRP is IETF RFC 3768 standard -> Answer C is not correct.\nVRRP does not use dynamic IP address assignment. We can configure any virtual IP address -> Answer A is not correct.",
+      "explanation": "VRRP (Virtual Router Redundancy Protocol) là một giao thức dự phòng cổng mặc định (First Hop Redundancy Protocol), cho phép hai hoặc nhiều router cùng chia sẻ một địa chỉ IP ảo và hoạt động như một cổng mặc định duy nhất cho các thiết bị trong mạng. Đây là chức năng cốt lõi của VRRP, được định nghĩa trong RFC 5798.\n\nĐáp án A sai vì VRRP không liên quan đến việc cấp phát địa chỉ IP động, đó là chức năng của DHCP. Đáp án B sai vì địa chỉ multicast 224.0.0.102 là của GLBP, không phải VRRP (VRRP dùng 224.0.0.18). Đáp án C sai vì VRRP là giao thức mở, chuẩn quốc tế, không phải độc quyền của Cisco, còn giao thức độc quyền của Cisco là HSRP.",
       "explanation_images": [],
       "question_vi": "VRRP là loại giao thức nào?",
       "options_vi": {
@@ -938,7 +938,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The RFC 1918 is Address Allocation for Private Internets, which reserves IP addresses for private and internal use. These addresses can be used for networks that do not need to connect to the Internet.\nRFC 1918 addresses are used to conserve IPv4 addresses from depletion by reserving ranges of IPv4 addresses for the devices which are inside a private network so answer D is the best choice (and it is better than answer A).",
+      "explanation": "Đáp án D đúng vì địa chỉ RFC 1918 (như 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) là các địa chỉ IP riêng tư, không thể định tuyến trên internet. Chúng được dùng trong mạng nội bộ kết hợp với NAT để chuyển đổi sang địa chỉ công cộng khi cần truy cập internet, giúp tiết kiệm không gian địa chỉ IPv4 công cộng vốn đang cạn kiệt.\n\nĐáp án A sai vì mục đích chính của RFC 1918 không phải là bảo mật mà là bảo tồn địa chỉ IPv4. Đáp án B sai vì ISP không định tuyến các địa chỉ riêng tư này trên internet, đó chính là lý do chúng được gọi là \"non-routable\". Đáp án C sai vì địa chỉ RFC 1918 bắt buộc phải được chuyển đổi qua NAT trước khi ra internet, không thể dùng trực tiếp mà không qua quá trình chuyển đổi.",
       "explanation_images": [],
       "question_vi": "Địa chỉ IP RFC 1918 được sử dụng như thế nào trong mạng?",
       "options_vi": {
@@ -1013,7 +1013,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Khi router nhận một gói tin, nó luôn chọn route có prefix dài nhất (longest prefix match) khớp với địa chỉ đích.\n\nĐịa chỉ 10.56.0.62 cần được so sánh với tất cả các route trong bảng:\n\n10.56.0.0/17 bao phủ 10.56.0.0 đến 10.56.127.255, địa chỉ 10.56.0.62 nằm trong dải này.\n10.56.0.0/24 bao phủ 10.56.0.0 đến 10.56.0.255, địa chỉ 10.56.0.62 cũng nằm trong dải này.\n10.56.0.0/26 bao phủ 10.56.0.0 đến 10.56.0.63, địa chỉ 10.56.0.62 cũng nằm trong dải này.\n\nCả ba route đều khớp, nhưng /26 có prefix dài nhất (cụ thể nhất), nên router chọn Vlan58. Đây là nguyên tắc longest prefix match: route càng cụ thể thì được ưu tiên hơn, bất kể metric hay loại route.\n\nVlan59 (/17) và Vlan60 (/24) đều khớp nhưng kém cụ thể hơn /26 nên bị loại. Null0 (/16) cũng kém cụ thể hơn và thường dùng để chặn traffic, không phải forward.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR1#\nGateway of last resort is 10.56.0.1 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 10.56.0.1\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.56.0.0/16 is directly connected, Null0\nC 10.56.0.0/26 is directly connected, Vlan58\nC 10.56.0.0/17 is directly connected, Vlan59\nC 10.56.0.0/24 is directly connected, Vlan60\nKhi router R1 nhận một gói tin có địa chỉ IP đích 10.56.0.62, nó định tuyến gói tin qua giao diện nào?",
       "options_vi": {
@@ -1040,7 +1040,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The router with highest OSPF priority will be elected as the DR when all devices boot up simultaneously.",
+      "explanation": "Trong OSPF, quá trình bầu chọn DR (Designated Router) dựa trên hai tiêu chí theo thứ tự ưu tiên: router có OSPF priority cao nhất sẽ được bầu làm DR, nếu priority bằng nhau thì router có Router ID cao nhất sẽ thắng. Vì đề bài nói tất cả cấu hình dùng giá trị mặc định, priority của tất cả các router đều bằng nhau (mặc định là 1), nên tiêu chí quyết định là Router ID.\n\nRouter ID trong OSPF được chọn theo thứ tự: địa chỉ được cấu hình thủ công bằng lệnh router-id, nếu không có thì lấy địa chỉ IP cao nhất trên các loopback interface, nếu không có loopback thì lấy địa chỉ IP cao nhất trên các interface đang active. Dựa vào sơ đồ, R4 có địa chỉ IP cao nhất (thường là địa chỉ loopback hoặc interface cao nhất trong exhibit), nên R4 được bầu làm DR.\n\nR1, R2, R3 sai vì Router ID của chúng thấp hơn R4, do đó thua trong quá trình bầu chọn khi priority bằng nhau.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng đang xác minh các cài đặt trên một mạng OSPF mới. Tất cả cấu hình OSPF sử dụng giá trị mặc định trừ khi có chỉ định khác. Router nào kỹ sư mong đợi sẽ được bầu làm DR khi tất cả thiết bị khởi động đồng thời?",
       "options_vi": {
@@ -1090,7 +1090,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "JSON syntax structure:+ uses curly braces {} to hold objects",
+      "explanation": "Dữ liệu JSON được hiển thị là một object vì nó được bao bởi dấu ngoặc nhọn {} và chứa một cặp key-value, trong đó key là \"interfaces\" và value là một mảng các chuỗi. Đây là cấu trúc đặc trưng của JSON object.\n\nA sai vì string là một giá trị văn bản đơn lẻ được bao bởi dấu ngoặc kép, không phải toàn bộ cấu trúc này. B sai vì sequence (hay array) được bao bởi dấu ngoặc vuông [], phần danh sách interfaces bên trong mới là array, không phải toàn bộ cấu trúc. D sai vì Boolean chỉ có hai giá trị là true hoặc false.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\n{\n\"interfaces\":[\"ethernet0/3\", \"ethernet0/4\", \"ethernet0/5\"]\n}\nLoại dữ liệu JSON nào được hiển thị?",
       "options_vi": {
@@ -1115,7 +1115,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "The default MAC address age timeout is 300 seconds.",
+      "explanation": "Đáp án đúng là B vì thời gian mặc định của MAC address table aging timer trên switch Cisco là 300 giây. Sau khoảng thời gian này mà không nhận được frame nào từ thiết bị đó, switch sẽ xóa entry tương ứng khỏi bảng MAC. Các đáp án A, C, D đều là các giá trị không đúng với cấu hình mặc định này.",
       "explanation_images": [],
       "question_vi": "Theo mặc định, switch sẽ tiếp tục lưu địa chỉ MAC của máy trạm trong bao lâu sau khi máy trạm ngừng gửi lưu lượng?",
       "options_vi": {
@@ -1167,7 +1167,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The AAA Override feature on a Wireless LAN Controller (WLC) is used to override the default authentication, authorization, and accounting (AAA) settings for specific WLANs (Wireless LANs).\nTypically, WLANs are configured with default AAA settings on the WLC. These settings define how clients are authenticated, authorized, and accounted for when they connect to the WLAN. With the AAA Override feature, you can override these default settings for specific WLANs. This allows you to tailor the authentication, authorization, and accounting behavior for each WLAN independently. By using AAA Override, you can apply customized AAA policies to specific WLANs based on their requirements. For example, you might want to enforce stricter authentication methods or assign different authorization roles for users connecting to a guest WLAN compared to an employee WLAN.\nNote: The WLC also needs the IP address of the AAA server so that it can communicate with AAA server.",
+      "explanation": "Khi cấu hình RADIUS server trên Wireless LAN Controller (WLC), bạn cần chỉ định địa chỉ IP của RADIUS server để WLC biết nơi gửi yêu cầu xác thực, và phải bật AAA Override để cho phép WLC áp dụng các chính sách AAA như VLAN assignment hoặc QoS dựa trên thông tin trả về từ RADIUS server. Đây là hai thành phần bắt buộc trong quá trình tích hợp RADIUS với WLC.\n\nĐáp án A sai vì Client Exclusion là tính năng chặn client vi phạm, còn SSH là giao thức quản lý thiết bị, cả hai đều không liên quan đến cấu hình RADIUS. Đáp án B sai vì Network Access Control State và SSH cũng không phải các tham số cần thiết khi thêm RADIUS server vào WLC. Đáp án C sai vì 802.1x là phương thức xác thực ở lớp client, không phải thứ cần cấu hình trực tiếp trên WLC khi khai báo RADIUS server, và WLC nhận diện RADIUS server qua địa chỉ IP chứ không phải MAC address.",
       "explanation_images": [],
       "question_vi": "Những lựa chọn nào phải được sử dụng trên WLC khi triển khai máy chủ RADIUS cho xác thực không dây?",
       "options_vi": {
@@ -1192,7 +1192,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án B đúng vì hub hoạt động ở tầng vật lý (Layer 1) và không có khả năng học hay lưu trữ địa chỉ MAC, nên nó luôn phát tín hiệu ra tất cả các cổng bất kể địa chỉ đích là gì. Ngược lại, switch hoạt động ở tầng liên kết dữ liệu (Layer 2), duy trì bảng MAC để ánh xạ địa chỉ MAC với cổng tương ứng, do đó khi địa chỉ đích đã được học, switch chỉ chuyển tiếp frame đến đúng cổng đó.\n\nĐáp án A sai vì FIB (Forwarding Information Base) là khái niệm thuộc về router hoặc Layer 3, không liên quan đến hub hay switch Layer 2. Đáp án C sai vì hub không có bảng MAC và switch không dùng bảng định tuyến (routing table) để chuyển tiếp frame ở Layer 2. Đáp án D mô tả ngược hoàn toàn, đó chính xác là cách switch hoạt động chứ không phải hub.",
       "explanation_images": [],
       "question_vi": "Hub xử lý một frame đến địa chỉ MAC đích đã biết khác với switch như thế nào?",
       "options_vi": {
@@ -1217,7 +1217,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "A group of access points connected to the same WLAN are known as an Extended Service Set (ESS). Within an ESS, a client can associate with any one of many access points that use the same Extended service set identifier (ESSID). It allows users to roam about an office without losing wireless connection.",
+      "explanation": "ESSID (Extended Service Set Identifier) là tên mạng Wi-Fi được chia sẻ chung giữa nhiều access point trong cùng một hệ thống mạng không dây. Nhờ đó, các thiết bị client có thể di chuyển giữa các access point khác nhau mà vẫn kết nối vào cùng một mạng logic, đây chính là nền tảng của mô hình ESS (Extended Service Set).\n\nĐáp án A sai vì ESSID không cung cấp bất kỳ cơ chế bảo mật nào, nó chỉ là định danh tên mạng. Đáp án B sai vì các tính năng roaming nhanh như 802.11r, 802.11k, 802.11v là các giao thức riêng biệt, không liên quan đến chức năng của ESSID. Đáp án C sai vì địa chỉ MAC của access point là BSSID, không phải ESSID.",
       "explanation_images": [],
       "question_vi": "Mục đích của ESSID là gì?",
       "options_vi": {
@@ -1292,7 +1292,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Without the MDI-X auto detection feature, we have to use correct cable type to connect two devices. Two devices of the same type (like router to router, switch to switch) always use the crossover cable.",
+      "explanation": "Cáp crossover được thiết kế để kết nối hai thiết bị cùng loại (như switch với switch, hoặc PC với PC) bằng cách hoán đổi chân truyền và nhận. Cụ thể, nó kết nối chân 1 với chân 3 và chân 2 với chân 6, đúng với yêu cầu đề bài. Khi tính năng Auto MDI-X không có sẵn, thiết bị không thể tự động điều chỉnh, nên phải dùng cáp crossover để đảm bảo tín hiệu được truyền đúng chiều.\n\nCáp straight-through dùng để kết nối hai thiết bị khác loại (như PC với switch) và không hoán đổi chân, nên không phù hợp ở đây. Cáp console dùng để kết nối máy tính với cổng console của thiết bị mạng nhằm mục đích cấu hình, không dùng cho kết nối mạng thông thường. Cáp rollover cũng là loại cáp quản lý tương tự console, không liên quan đến kết nối dữ liệu giữa các thiết bị mạng.",
       "explanation_images": [],
       "question_vi": "Loại cáp nào phải được sử dụng khi kết nối hai thiết bị cùng loại với các tiêu chí sau?\n– Yêu cầu chân 1 đến 3 và 2 đến 6.\n– Auto detection MDI-X không khả dụng.",
       "options_vi": {
@@ -1317,7 +1317,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án D đúng vì khi switch không tìm thấy địa chỉ MAC đích trong bảng MAC, nó sẽ gửi frame đó ra tất cả các cổng trong cùng VLAN (trừ cổng nhận vào) — đây chính xác là hành vi được gọi là frame flooding (tràn frame).\n\nĐáp án A sai vì MAC address aging là quá trình switch tự động xóa các địa chỉ MAC khỏi bảng sau một khoảng thời gian không hoạt động, không liên quan đến việc gửi frame ra nhiều cổng. Đáp án B sai vì MAC address table chỉ là bảng lưu trữ ánh xạ giữa địa chỉ MAC và cổng, không mô tả hành động gửi frame. Đáp án C sai vì Spanning Tree Protocol là giao thức ngăn chặn vòng lặp trong mạng, hoàn toàn không liên quan đến cơ chế xử lý địa chỉ MAC chưa biết.",
       "explanation_images": [],
       "question_vi": "PC1 cố gắng gửi lưu lượng đến PC2 mới được cài đặt. Địa chỉ MAC của PC2 không có trong bảng địa chỉ MAC của switch, vì vậy switch gửi gói tin đến tất cả các cổng trong cùng VLAN. Khái niệm chuyển mạch nào mô tả điều này?",
       "options_vi": {
@@ -1344,7 +1344,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Physical access control: Infrastructure locations, such as network closets and data centers, should remain securely locked. Badge access to sensitive locations is a scalable solution, offering an audit trail of identities and timestamps when access is granted. Administrators can control access on a granular basis and quickly remove access when an employee is dismissed.\nPhysical access control can take a number of forms, but the basic idea is to create barriers to prevent unauthorized people from entering a physical space.\nReference:",
+      "explanation": "Kiểm soát truy cập vật lý (physical access control) liên quan đến các biện pháp bảo vệ không gian thực tế, ngăn chặn người không được phép tiếp cận các khu vực nhạy cảm. Hệ thống camera giám sát (A) theo dõi và ghi lại hoạt động tại các địa điểm quan trọng, còn thẻ truy cập (C) kiểm soát trực tiếp ai được phép vào các khu vực đó — cả hai đều là biện pháp vật lý rõ ràng.\n\nCác đáp án còn lại (B, D, E) đều thuộc về đào tạo nhận thức bảo mật (security awareness training) hoặc chính sách, tức là tác động đến hành vi con người thông qua giáo dục chứ không phải kiểm soát môi trường vật lý.",
       "explanation_images": [
         "q14.64_img1.jpg"
       ],
@@ -1372,7 +1372,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Output queue đang có 50 gói chờ xử lý (50/300) và tổng output drops là 100, đây là dấu hiệu rõ ràng của tình trạng queuing — hàng đợi đầu ra bị tắc nghẽn do router không xử lý kịp lưu lượng ra.\n\nCác đáp án còn lại không phù hợp vì: broadcast storm sẽ thể hiện qua số lượng broadcast cực lớn và input rate cao, nhưng ở đây broadcast chỉ có 267 và input rate là 0; bad NIC thường gây ra CRC errors, runts, giants hoặc input errors, nhưng tất cả đều bằng 0; duplex mismatch thường dẫn đến late collisions và FCS errors, cũng không xuất hiện trong output này.",
       "explanation_images": [],
       "question_vi": "Tình trạng giao diện nào đang xảy ra trong output này?\nR9# show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: atlanta_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nfull-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters 00:00:18\nInput queue: 175/300/0/0 (size/max/drops/flushes); Total output drops: 100\nQueueing strategy: fifo\nOutput queue: 50/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out",
       "options_vi": {
@@ -1397,7 +1397,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "User awareness programs are designed to make employees aware of potential security threats and risks so it is the best answer for this question. Most of phishing attacks are done online so we cannot use physical access control.",
+      "explanation": "Phishing là hình thức tấn công khai thác yếu tố con người, không phải lỗ hổng kỹ thuật, vì vậy giải pháp hiệu quả nhất là đào tạo nhận thức cho người dùng để họ biết cách nhận diện và tránh các email hoặc liên kết đáng ngờ. Khi nhân viên hiểu được dấu hiệu của phishing, họ sẽ không dễ bị lừa dù kẻ tấn công dùng thủ thuật nào.\n\nCác đáp án còn lại không giải quyết đúng vấn đề: vá lỗi hệ thống email giúp bảo vệ hạ tầng nhưng không ngăn người dùng tự nhấp vào liên kết độc hại; tường lửa phần mềm kiểm soát lưu lượng mạng nhưng không chặn được hành vi người dùng bị lừa; kiểm soát truy cập vật lý bảo vệ không gian thực tế và không liên quan đến tấn công qua email.",
       "explanation_images": [],
       "question_vi": "Đội ngũ bảo mật mạng nhận thấy ngày càng nhiều nhân viên trở thành nạn nhân của các cuộc tấn công lừa đảo (phishing). Chương trình bảo mật nào nên được triển khai để giảm thiểu vấn đề này?",
       "options_vi": {
@@ -1422,7 +1422,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "IPsec hoạt động bằng cách thiết lập các Security Association (SA) giữa các thiết bị ngang hàng, đây là nền tảng cốt lõi của giao thức này. SA là một tập hợp các thỏa thuận về thuật toán mã hóa, xác thực và các tham số bảo mật khác mà hai bên đồng ý sử dụng để bảo vệ lưu lượng mạng. Chính cơ chế SA này cho phép IPsec cung cấp tính bảo mật, toàn vẹn dữ liệu và xác thực nguồn gốc cho các ứng dụng trong tổ chức.\n\nĐáp án A và D sai vì IPsec không phụ thuộc vào TFTP hay FTP, đây là các giao thức truyền file riêng biệt và không phải thành phần của IPsec. Đáp án B sai vì GRE là giao thức đường hầm độc lập, không phải một phần của IPsec, mặc dù đôi khi GRE và IPsec được kết hợp sử dụng cùng nhau nhưng chúng là hai công nghệ khác nhau.",
       "explanation_images": [],
       "question_vi": "IPsec cung cấp mạng an toàn cho các ứng dụng trong một tổ chức như thế nào?",
       "options_vi": {
@@ -1447,7 +1447,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Multi-factor authentication, or MFA, protects your applications by using a second source of validation before granting access to users. Common examples of multi-factor authentication include personal devices, such as a phone or token, or geographic or network locations.\nReference:\nMFA compose of 2 identification\n*Something you have*Something you are*Something you know",
+      "explanation": "Xác thực đa yếu tố (MFA) yêu cầu kết hợp ít nhất hai yếu tố thuộc các loại khác nhau: something you know (điều bạn biết), something you have (thứ bạn có), và something you are (đặc điểm sinh học của bạn).\n\nĐáp án A đúng vì PIN là yếu tố \"something you know\" còn chứng chỉ RSA là yếu tố \"something you have\" — hai loại khác nhau, đáp ứng đúng định nghĩa MFA.\n\nĐáp án B và C sai vì cả mật khẩu lẫn PIN đều thuộc cùng một loại \"something you know\", tức là chỉ có một yếu tố dù dùng hai thứ khác nhau.\n\nĐáp án D sai vì vân tay và nhận diện khuôn mặt đều thuộc loại \"something you are\" — cũng chỉ là một yếu tố duy nhất.",
       "explanation_images": [],
       "question_vi": "Công ty đã quyết định yêu cầu xác thực đa yếu tố (multifactor authentication) cho tất cả hệ thống. Bộ tham số nào đáp ứng yêu cầu?",
       "options_vi": {
@@ -1472,7 +1472,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án A đúng vì một trong những lý do chính để triển khai tự động hóa mạng là giảm thiểu lỗi do con người gây ra. Khi quản trị viên thực hiện thay đổi cấu hình thủ công trên nhiều thiết bị, khả năng xảy ra sai sót và không nhất quán giữa các thiết bị là rất cao, đặc biệt trong môi trường doanh nghiệp lớn.\n\nĐáp án B sai vì tự động hóa mạng không bị giới hạn ở thiết bị ảo, nó áp dụng được cho cả thiết bị vật lý lẫn ảo hóa. Đáp án C sai vì tự động hóa thực tế giúp giảm chi phí vận hành, không tăng, do tiết kiệm thời gian và nhân lực. Đáp án D sai vì khả năng mở rộng quy mô chính là một ưu điểm của tự động hóa, không phải hạn chế, hệ thống tự động xử lý thay đổi trên diện rộng nhanh hơn và hiệu quả hơn nhiều so với thủ công.",
       "explanation_images": [],
       "question_vi": "Quản trị viên mạng nên cân nhắc điều gì khi quyết định triển khai tự động hóa (automation)?",
       "options_vi": {
@@ -1497,7 +1497,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "TFTP (Trivial File Transfer Protocol) là một giao thức truyền file đơn giản, thường được dùng để tải cấu hình hoặc hệ điều hành cho các thiết bị không có bộ nhớ lưu trữ cục bộ, chẳng hạn như router hoặc switch khi khởi động qua mạng. Đây là trường hợp sử dụng điển hình nhất của TFTP trong môi trường mạng.\n\nCác đáp án còn lại đều sai vì TFTP không có cơ chế bảo mật, không mã hóa dữ liệu, và không hỗ trợ xác thực. Đó là lý do B, C, D đều không đúng — những tính năng đó thuộc về các giao thức khác như SFTP, SCP hoặc FTPS.",
       "explanation_images": [],
       "question_vi": "TFTP cung cấp khả năng gì?",
       "options_vi": {
@@ -1547,7 +1547,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Kết nối console được sử dụng để quản lý thiết bị mạng trực tiếp qua cổng vật lý mà không cần địa chỉ IP hay số quay số, đây là phương thức truy cập out-of-band phổ biến nhất khi thiết bị chưa được cấu hình. Kỹ sư dùng cáp console (thường là cáp rollover) kết nối từ máy tính vào cổng console của AP hoặc switch/router để truy cập CLI ngay từ đầu.\n\nCác đáp án còn lại sai vì: AUX là cổng phụ thường dùng cho kết nối modem dial-up, tức là cần số quay số. Ethernet yêu cầu địa chỉ IP đã được cấu hình sẵn để kết nối quản lý. VIY không phải là loại kết nối hợp lệ trong ngữ cảnh này.",
       "explanation_images": [],
       "question_vi": "Loại kết nối nào được sử dụng khi kỹ sư kết nối đến AP mà không có địa chỉ IP hoặc số quay số được cấu hình để quản lý thiết bị?",
       "options_vi": {
@@ -1574,7 +1574,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Web Authentication or Web Auth is a layer 3 security method that allow client to pass DHCP & DNS traffic only until they have passed some form of authentication.\nWhen you enable Authentication option (as shown in the above screen capture), a guest client has to enter a username & password to gain access to the guest network.\nReference:",
+      "explanation": "Đây là câu hỏi về cấu hình WLC (Wireless LAN Controller) liên quan đến Web Authentication ở Layer 3.\n\nĐáp án C đúng vì khi bật Web Policy với Authentication ở cấu hình Layer 3 Security trên WLAN, WLC sẽ chuyển client vào trạng thái \"webauth_reqd\" sau khi kết nối. Ở trạng thái này, WLC chỉ cho phép lưu lượng DHCP và DNS đi qua để client có thể lấy địa chỉ IP và phân giải tên miền cho trang đăng nhập, trong khi toàn bộ lưu lượng khác bị chặn cho đến khi người dùng xác thực thành công qua web portal. Đây chính xác là hành vi mà đề bài yêu cầu.\n\nĐáp án A sai vì 802.1X là cơ chế xác thực ở Layer 2, không liên quan đến việc lọc lưu lượng DHCP/DNS theo kiểu web captive portal.\n\nĐáp án B sai vì MAC filtering là phương thức xác thực dựa trên địa chỉ MAC, không tạo ra trạng thái chặn lưu lượng chỉ cho phép DHCP và DNS như mô tả.\n\nĐáp án D sai vì AAA Server configuration là nơi khai báo thông tin máy chủ xác thực, không phải nơi bật tính năng Web Authentication cho WLAN. Tính năng này phải được bật trực tiếp trong phần Layer 3 Security của WLAN.",
       "explanation_images": [
         "q14.74_img2.jpg"
       ],
@@ -1601,7 +1601,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Each SSID is mapped to one VLAN so in this question we only need one VLAN so we can assign the wired port in access mode.",
+      "explanation": "Đáp án C đúng vì trong chế độ autonomous, AP hoạt động độc lập và chỉ phục vụ một SSID duy nhất, nghĩa là tất cả traffic (dữ liệu client và quản lý) đều thuộc về một VLAN duy nhất. Khi chỉ có một VLAN, cổng switch kết nối với AP chỉ cần là access port, gán cố định vào VLAN đó mà không cần đánh tag 802.1Q.\n\nTrunk port (B) dùng khi cần truyền nhiều VLAN qua một đường kết nối, thường gặp ở AP chế độ lightweight với nhiều SSID. LAG (D) là kỹ thuật gộp nhiều cổng vật lý để tăng băng thông, không liên quan đến loại traffic hay VLAN. Default port (A) không phải thuật ngữ chuẩn trong ngữ cảnh này và không mô tả chức năng cụ thể nào.",
       "explanation_images": [],
       "question_vi": "Loại cổng có dây nào được yêu cầu khi AP cung cấp một SSID duy nhất, truyền dữ liệu khách hàng và lưu lượng quản lý, và ở chế độ autonomous?",
       "options_vi": {
@@ -1623,7 +1623,7 @@
       },
       "answer": "C",
       "answer_images": [],
-      "explanation": "",
+      "explanation": "Đáp án C đúng vì để triển khai VoIP trên một cổng access đã được gán vào data VLAN, ta chỉ cần tạo VLAN 73 với tên \"VoIP\", sau đó vào interface e0/0 và dùng lệnh \"switchport voice vlan 73\". Khi cổng đã ở chế độ access, lệnh này tự động cho phép switch gắn thẻ 802.1Q cho traffic thoại trên VLAN 73 trong khi traffic dữ liệu vẫn đi trên VLAN 72 không gắn thẻ, đây là cơ chế hoạt động chuẩn của Cisco khi kết hợp data VLAN và voice VLAN trên cùng một cổng access.\n\nĐáp án A sai vì lệnh \"switchport trunk allowed vlan 72,73\" chỉ dùng khi cổng ở chế độ trunk, còn e0/0 đã được cấu hình là access port nên không cần và không phù hợp.\n\nĐáp án B sai vì \"switchport mode trunk\" sẽ thay đổi chế độ cổng thành trunk, mâu thuẫn với yêu cầu đề bài là cổng access, và \"channel-group 73 mode active\" là lệnh dùng cho EtherChannel, hoàn toàn không liên quan đến VoIP.\n\nĐáp án D sai vì \"switchport voice vlan dot1p\" không gán traffic thoại vào VLAN 73 mà thay vào đó đánh dấu traffic thoại bằng CoS priority trên native VLAN, không đáp ứng yêu cầu sử dụng VLAN ID 73 cho VoIP.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa. VLAN Tên Trạng thái Cổng 1 default active Et0/2,Et1/0,Et1/0,Et1/3 5 MGMT Vlan active Et1/1 6 Server Vlan active 72 Data Vlan active Et0/0 1002 fddi-default act/unsup 1003 token-ring-default act/unsup 1004 fddinet-default act/unsup 1005 trnet-default act/unsup VoIP đang được triển khai trong mạng sử dụng VLAN ID 73 và được đặt tên là \"VoIP\". Mỗi người dùng cần một điện thoại IP Cisco tại bàn làm việc của họ. Cổng switchport e0/0 đã được cấu hình là cổng access trong VLAN dữ liệu. Cisco Discovery Protocol được bật toàn cục. Chuỗi lệnh nào đã hoàn tất cấu hình?",
       "options_vi": {
@@ -1650,7 +1650,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The destination IP address 10.227.151.255 belongs to 10.224.0.0/11 (increment: 32) and it is the longest prefix match so it will be routed via 10.224.4.5 which is router D.",
+      "explanation": "Để định tuyến đến 10.227.151.255, router Y phải tìm entry khớp dài nhất (longest prefix match) trong bảng định tuyến. Địa chỉ đích 10.227.151.255 thuộc dải 10.0.0.0/8 (static, via 10.224.4.2) và cũng thuộc 10.128.0.0/9 (static, via 10.224.4.3). Prefix /9 dài hơn /8 nên router Y chọn tuyến 10.128.0.0/9 via 10.224.4.3, tương ứng với router D.\n\nCác đáp án còn lại sai vì: router A (10.224.4.2) là next-hop của tuyến 10.0.0.0/8 với prefix /8 ngắn hơn, nên bị loại. Router B và router C tương ứng với các tuyến BGP như 10.224.0.0/11, 10.224.0.0/15, 10.226.34.0/24 — không có tuyến nào trong số đó bao phủ địa chỉ 10.227.151.255.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter-Y#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override, p - overrides from PfR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted\nS 10.0.0.0/8 [1/0] via 10.224.4.2\nB 10.127.151.192/27 [20/0] via 10.224.4.3, 1w6d\nS 10.128.0.0/9 [1/0] via 10.224.4.3\nB 10.224.0.0/11 [20/0] via 10.224.4.5, 5d18h\nB 10.224.0.0/15 [20/0] via 10.224.4.4, 5d18h\nC 10.223.4.0/24 is directly connected, GigabitEthernet0/1\nC 10.224.4.0/24 is directly connected, GigabitEthernet0/0\nB 10.226.34.0/24 [20/0] via 10.224.4.5, 5d18h\nPC A đang giao tiếp với một thiết bị khác tại địa chỉ IP 10.227.151.255. Router Y định tuyến lưu lượng qua router nào?",
       "options_vi": {
@@ -1702,7 +1702,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "SW1 đang dùng \"channel-group 1 mode active\", tức là sử dụng giao thức LACP. Để thiết lập EtherChannel qua LACP, ít nhất một đầu phải ở mode active, và đầu còn lại có thể là active hoặc passive. SW2 dùng mode active cũng hoàn toàn hợp lệ vì LACP cho phép cả hai đầu cùng active.\n\nCác đáp án sai: \"desirable\" và \"auto\" là các mode của giao thức PAgP, không phải LACP, nên không thể thiết lập kênh với một đầu đang chạy LACP. \"on\" buộc EtherChannel không dùng giao thức đàm phán nào cả, và khi một đầu dùng \"on\" còn đầu kia dùng LACP (active), kênh sẽ không hình thành được.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nconfigure terminal\ninterface range GigabitEthernet 0/1-2\nswitchport mode trunk\nchannel-group 1 mode active\nSW2\nconfigure terminal\ninterface range GigabitEthernet 0/1-2\nswitchport mode trunk\ninterface Port-channel1\nswitchport mode trunk\nMột LACP EtherChannel giữa hai switch kết nối trực tiếp đang trong quá trình cấu hình. Lệnh nào phải được cấu hình trên các interface Gi0/1-2 của switch SW2 để thiết lập kênh đến SW1?",
       "options_vi": {
@@ -1727,7 +1727,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Lệnh ipconfig /all hiển thị đầy đủ thông tin cấu hình mạng trên Windows, bao gồm địa chỉ IP, subnet mask, default gateway và địa chỉ DNS server — đúng với yêu cầu của kỹ thuật viên.\n\nLệnh show interface là lệnh dùng trên thiết bị Cisco IOS, không dùng được trên máy tính Windows. Lệnh netstat -r hiển thị bảng định tuyến, không cung cấp thông tin DNS. Lệnh ifconfig -a dùng trên hệ điều hành Linux/Unix, không phải Windows.",
       "explanation_images": [],
       "question_vi": "Một kỹ thuật viên hỗ trợ tại chỗ cần xác minh thông tin địa chỉ IP và máy chủ DNS trên máy tính Windows của người dùng. Lệnh nào kỹ thuật viên phải nhập tại dấu nhắc lệnh (command prompt) trên máy tính của người dùng?",
       "options_vi": {
@@ -1754,7 +1754,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "Benefits of DHCP\nCentralized IP Address Management: DHCP centralizes the management of IP address allocation and configuration parameters for switches. Administrators can configure and control IP address assignment policies, lease durations, and other network parameters from a central DHCP server, ensuring consistency and simplifying network administration for switches.\nReference:",
+      "explanation": "DHCP server có hai chức năng chính là quản lý IP tập trung (A) và cấp phát cấu hình IP động cho các host trong mạng (E). Quản lý tập trung giúp admin kiểm soát toàn bộ việc phân bổ địa chỉ IP từ một điểm duy nhất thay vì cấu hình thủ công từng thiết bị, còn cấp phát IP động là bản chất cốt lõi của giao thức DHCP.\n\nB sai vì DHCPDISCOVER là tin nhắn do client gửi ra khi nó cần xin địa chỉ IP, không phải server. C sai vì server phản hồi bằng DHCPOFFER, sau đó client mới gửi DHCPREQUEST, và server xác nhận bằng DHCPACK, không phải server phản hồi DHCPOFFER request. D sai vì DHCP server không có cơ chế kỹ thuật nào ngăn người dùng tự gán IP tĩnh cho thiết bị của họ, đây không phải chức năng của DHCP.",
       "explanation_images": [],
       "question_vi": "Hai chức năng của máy chủ DHCP là gì? (Chọn hai)",
       "options_vi": {
@@ -1780,7 +1780,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "From SNMPv2c, two new messages were added: INFORM and GETBULK.\nINFORM: An disadvantage of TRAP message is unreliable. SNMP communicates via UDP so it is unreliable because when the SNMP Agents send TRAP message to the SNMP Manager it cannot know if its messages arrive to the SNMP Manager. To amend this problem, a new type of message, called INFORM, was introduced from SNMPv2. With INFORM message, the SNMP Manager can now acknowledge that the message has been received at its end with an SNMP response protocol data unit (PDU). If the sender never receives a response, the INFORM can be sent again. Thus, INFORMs are more likely to reach their intended destination.",
+      "explanation": "Inform là loại thông điệp SNMP được gửi từ một SNMP manager này đến một SNMP manager khác (hoặc từ agent đến manager trong SNMPv3), và nó yêu cầu bên nhận phải gửi lại thông điệp xác nhận (acknowledgment). Đây là điểm khác biệt quan trọng so với Trap, vì nếu không nhận được xác nhận, bên gửi sẽ gửi lại thông điệp, đảm bảo độ tin cậy.\n\nTrap thì ngược lại, là loại thông điệp không đáng tin cậy vì agent gửi đi mà không cần xác nhận từ manager, nên nếu bị mất thì không có cơ chế gửi lại. Get và Set là các thông điệp do manager khởi tạo để lấy hoặc thay đổi thông tin trên agent, không liên quan đến cơ chế xác nhận như Inform.",
       "explanation_images": [],
       "question_vi": "Loại thông điệp SNMP nào là đáng tin cậy và đi trước phản hồi xác nhận (acknowledgment) từ SNMP manager?",
       "options_vi": {
@@ -1805,7 +1805,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Before an access point joins a controller, it sends out a discovery request. From the discovery response that it receives, the access point can tell the number of AP-manager interfaces on the controller and the number of access points on each AP-manager interface. The access point generally joins the AP-manager with the least number of access points. In this way, the access point load is dynamically distributed across the multiple AP-manager interfaces.\nReference:",
+      "explanation": "Đáp án D đúng vì khi một WLC có nhiều AP-Manager interface, AP sẽ chọn interface nào đang quản lý ít AP nhất để thực hiện join request, nhằm phân phối tải đều giữa các interface. Đây là cơ chế load balancing tích hợp sẵn trong quá trình AP join trên WLC.\n\nĐáp án A sai vì không có cơ chế nào khiến discovery response vô hiệu hóa cổng WLAN, đây là mô tả hoàn toàn không có thực. Đáp án B sai vì join request không thất bại khi có nhiều AP-Manager, WLC xử lý việc này tự động mà không cần cấu hình tĩnh. Đáp án C sai vì tiêu chí lựa chọn không phải là interface nào phản hồi trước, mà là interface nào đang có ít AP nhất.",
       "explanation_images": [],
       "question_vi": "Khi có nhiều hơn một interface AP-Manager được cung cấp trên bộ điều khiển mạng không dây (wireless LAN controller), yêu cầu được AP xử lý như thế nào?",
       "options_vi": {
@@ -1830,7 +1830,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Wireless controller (WLC) là thiết bị quản lý tập trung các access point (AP) trong mạng Wi-Fi, và một trong những chức năng chính của nó là quản lý nhiễu sóng (interference) trong môi trường mạng dày đặc bằng cách điều chỉnh kênh tần số và công suất phát của từng AP tự động.\n\nĐáp án A sai vì việc cấp địa chỉ IP là nhiệm vụ của DHCP server, không phải WLC. Đáp án C sai vì định tuyến Layer 3 giữa các thiết bị có dây và không dây là chức năng của router hoặc Layer 3 switch, không phải WLC. Đáp án D sai vì việc ngăn chặn mối đe dọa từ internet thuộc về firewall hoặc các giải pháp bảo mật mạng biên, không liên quan đến WLC.",
       "explanation_images": [],
       "question_vi": "Dịch vụ nào được cung cấp bởi bộ điều khiển không dây (wireless controller)?",
       "options_vi": {
@@ -1857,7 +1857,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "We need to add a floating static route in this case so this route must have the AD greater than the AD of EIGRP (90) to the next-hop of 10.0.0.6 (R2) for 10.0.2.0/29 (with subnet mask of 255.255.255.248).",
+      "explanation": "Đáp án D đúng vì lệnh static route cần ba thành phần chính xác: địa chỉ mạng đích, subnet mask đúng, và next-hop hop hợp lệ, kèm theo administrative distance cao hơn tuyến chính để đóng vai trò tuyến dự phòng (floating static route). Mạng LAN trên R2 là 10.0.2.0/29 tương ứng với subnet mask 255.255.255.248, next-hop 10.0.0.6 là địa chỉ hợp lệ trên liên kết dự phòng, và AD là 91 cao hơn AD mặc định của static route (1) nên tuyến này chỉ được dùng khi tuyến chính không còn hoạt động.\n\nĐáp án A sai vì subnet mask 256.255.255.248 không hợp lệ, không tồn tại giá trị octet nào vượt quá 255, ngoài ra next-hop là null0 sẽ loại bỏ gói tin thay vì chuyển tiếp chúng.\n\nĐáp án B sai vì subnet mask 255.255.255.240 tương ứng với /28, không khớp với mạng đích /29 của LAN trên R2, dẫn đến route không đến đúng mạng cần thiết.\n\nĐáp án C sai vì cũng dùng subnet mask sai 255.255.255.240, đồng thời next-hop 10.0.0.7 không phải địa chỉ hợp lệ của router R2 trên liên kết dự phòng.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột tuyến đường phụ được yêu cầu trên router R1 để truyền lưu lượng đến mạng LAN trên R2 nếu liên kết chính bị lỗi. Lệnh nào phải được nhập để cấu hình router?",
       "options_vi": {
@@ -1882,7 +1882,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đây là một câu hỏi về cú pháp JSON trong ngữ cảnh cấu hình thiết bị Cisco.\n\nJSON yêu cầu mọi dấu ngoặc nhọn mở phải có dấu ngoặc nhọn đóng tương ứng. Trong đoạn output trên, có một dấu { ở đầu để mở object JSON nhưng không có dấu } ở cuối để đóng lại, khiến cấu trúc JSON bị thiếu và không thể được phân tích cú pháp hay thực thi đúng cách.\n\nCác đáp án sai vì: A sai vì dấu [ đã có ở đầu mảng \"Cisco Devices\" rồi. C sai vì chuỗi \"Cisco Devices\" đã được bao quanh bởi dấu nháy kép đúng cách. D sai vì dấu ! là ký tự chú thích trong IOS CLI, không liên quan gì đến cú pháp JSON.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\n{\n\"Cisco Devices\": [\n{\n\"name\":\"ASA - Security Device\",\n\"name\":\"Cisco 1100 ASR Router\",\n\"name\":\"Cisco 6800 Switch\"\n}\n]\nĐầu ra này thiếu gì để có thể được thực thi?",
       "options_vi": {
@@ -1909,7 +1909,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án B đúng vì LACP có hai chế độ: active (chủ động gửi gói LACP để khởi tạo đàm phán) và passive (chỉ phản hồi khi nhận được gói LACP, không tự khởi tạo). Yêu cầu đề bài là cấu hình interface \"phản hồi nhưng không khởi tạo đàm phán\", đúng với định nghĩa của chế độ passive.\n\nCác đáp án còn lại sai vì: desirable và auto là các chế độ của PAgP, không phải LACP, nên không dùng được trong ngữ cảnh này. Đáp án D (active) là chế độ LACP nhưng ngược lại, nó chủ động khởi tạo đàm phán thay vì chỉ phản hồi.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nLACP EtherChannel đã được cấu hình, và thay đổi cuối cùng là sửa đổi các interface trên SwitchA để phản hồi các gói nhận được, nhưng không khởi tạo đàm phán. Lệnh interface range gigabitethernet0/0/0-15 đã được nhập. Cấu hình nào phải được thực hiện tiếp theo?",
       "options_vi": {
@@ -1936,7 +1936,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Địa chỉ IPv4 riêng tư (private) được định nghĩa trong RFC 1918 với các dải như 10.0.0.0/8, 172.16.0.0/12, và 192.168.0.0/16. Vì các địa chỉ này có thể được tái sử dụng trong nhiều mạng nội bộ khác nhau mà không cần đăng ký với IANA, chúng giúp giảm áp lực thiếu hụt địa chỉ IPv4 công cộng — đây là lý do B đúng. Ngoài ra, các thiết bị dùng địa chỉ private không thể truy cập trực tiếp từ Internet vì router trên Internet sẽ không định tuyến các địa chỉ này, tạo ra một lớp bảo vệ tự nhiên trước các mối đe dọa từ bên ngoài — đây là lý do C đúng.\n\nCác đáp án còn lại sai vì: A sai vì địa chỉ private không liên quan đến dự phòng hay khả năng chịu lỗi. D sai vì địa chỉ private bản thân nó không cung cấp kết nối Internet — cần có NAT để làm điều đó, và NAT là cơ chế riêng biệt. E sai tương tự như D, các thiết bị IoT dùng địa chỉ private cũng cần NAT để ra Internet, không phải do địa chỉ private tự cung cấp khả năng đó.",
       "explanation_images": [],
       "question_vi": "Hai lợi ích của việc sử dụng địa chỉ IPv4 riêng (private) là gì? (Chọn hai)",
       "options_vi": {
@@ -1984,7 +1984,7 @@
       },
       "answer": "B",
       "answer_images": [],
-      "explanation": "",
+      "explanation": "Đáp án B đúng vì Server1 kết nối vào cổng GigabitEthernet1/3 và thuộc VLAN 10, nên cổng đó phải được cấu hình ở chế độ access với VLAN 10. Cổng GigabitEthernet1/24 là uplink kết nối giữa hai switch, phải ở chế độ trunk để truyền tất cả các VLAN cần thiết — khi không chỉ định lệnh \"switchport trunk allowed vlan\", mặc định trunk sẽ cho phép tất cả VLAN đi qua, đảm bảo kết nối đầy đủ.\n\nĐáp án A sai vì lệnh \"switchport trunk allowed vlan 2,10\" giới hạn trunk chỉ cho phép VLAN 2 và 10, có thể chặn các VLAN khác cần thiết cho kết nối đầy đủ giữa hai switch và router on-a-stick.\n\nĐáp án C sai vì cấu hình cổng access trên GigabitEthernet1/1 thay vì GigabitEthernet1/3, không khớp với cổng mà Server1 thực sự kết nối vào theo sơ đồ.\n\nĐáp án D sai vì thiếu lệnh \"switchport mode access\" trên cổng của Server1, đồng thời lệnh \"switchport trunk allowed vlan 10,11\" cũng giới hạn trunk không cần thiết tương tự như đáp án A.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa. Kỹ sư đã cấu hình các VLAN trên switch AccSw2 mới. Một router on-a-stick được kết nối với cả hai switch. Các cổng trên AccSw2 phải được cấu hình như thế nào để thiết lập kết nối đầy đủ giữa hai switch và cho Server1?",
       "options_vi": {
@@ -2006,7 +2006,7 @@
       },
       "answer": "B",
       "answer_images": [],
-      "explanation": "",
+      "explanation": "Đây là câu hỏi phức tạp liên quan đến Dynamic ARP Inspection (DAI) và DHCP Snooping, vì vậy cần giải thích chi tiết hơn.\n\nĐáp án đúng là B và E.\n\nĐể chống ARP spoofing, Cisco sử dụng Dynamic ARP Inspection (DAI). Tuy nhiên DAI phụ thuộc vào bảng DHCP Snooping binding để xác minh tính hợp lệ của các gói ARP, vì vậy cả hai tính năng phải được bật đồng thời. Đáp án B cấu hình DHCP Snooping đúng cách: bật trên tất cả VLAN, bật globally, và đánh dấu Port-channel1 là trusted vì đây là uplink lên distribution switch, tránh việc switch lọc nhầm lưu lượng hợp lệ từ phía trên. Đáp án E cấu hình DAI đúng cách: bật DAI trên tất cả VLAN và đánh dấu Port-channel1 là trusted vì uplink không cần bị kiểm tra ARP, nếu không sẽ gây gián đoạn kết nối.\n\nĐáp án A sai vì chỉ bật ip dhcp snooping mà không chỉ định VLAN cụ thể, đồng thời dùng port-security trên uplink là không phù hợp và không liên quan đến việc chống ARP spoofing.\n\nĐáp án C sai vì thiếu lệnh ip dhcp snooping để bật tính năng globally, và switchport protected chỉ ngăn giao tiếp giữa các port trong cùng switch, không liên quan đến ARP spoofing.\n\nĐáp án D sai vì lệnh ip arp inspection trust phải được đặt dưới interface chứ không phải ở global config, và ip verify source mac-check là lệnh không hợp lệ trong ngữ cảnh này.",
       "explanation_images": [],
       "question_vi": "Một quản trị viên mạng đang đánh giá bảo mật mạng sau một cuộc tấn công ARP spoofing. Nếu Port-channel1 là giao diện uplink của switch tầng truy cập hướng đến switch tầng phân phối, thì quản trị viên phải cấu hình hai tùy chọn nào trên switch tầng truy cập để cung cấp khả năng bảo vệ đầy đủ? (Chọn hai)",
       "options_vi": {
@@ -2032,7 +2032,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "From the Maximum Number of Sessions drop-down list, choose the number of simultaneous Telnet or SSH sessions allowed. The valid range is 0 to 5 sessions (inclusive), and the default value is 5 sessions.\nReference:",
+      "explanation": "Cisco WLC hỗ trợ tối đa 5 phiên Telnet đồng thời, đây là giới hạn cố định được thiết kế sẵn trong hệ thống. Các đáp án 3, 6 và 15 đều không phải con số chính xác mà Cisco quy định cho giới hạn này.",
       "explanation_images": [],
       "question_vi": "Số lượng phiên Telnet đồng thời tối đa mà Cisco WLC hỗ trợ là bao nhiêu?",
       "options_vi": {
@@ -2059,7 +2059,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đây là câu hỏi về chức năng của tường lửa (firewall) trong môi trường doanh nghiệp.\n\nB đúng vì một trong những chức năng cốt lõi của firewall là lọc lưu lượng dựa trên URL, cho phép quản trị viên kiểm soát các trang web hoặc dịch vụ mà người dùng có thể truy cập. Đây là tính năng phổ biến trên các firewall thế hệ mới (NGFW) như Cisco ASA hay Firepower.\n\nC đúng vì firewall doanh nghiệp hỗ trợ làm endpoint cho VPN truy cập từ xa (remote access VPN) trong chế độ multiple context, tức là một thiết bị vật lý có thể hoạt động như nhiều firewall ảo độc lập, mỗi context có thể xử lý kết nối VPN riêng.\n\nA sai vì site-to-site VPN trong chế độ standalone là chức năng có thể thực hiện được, nhưng đây không phải chức năng đặc trưng hay nổi bật của firewall trong doanh nghiệp theo cách câu hỏi đề cập, và thực tế Cisco ASA trong transparent mode hoặc multiple context mode có giới hạn với site-to-site VPN.\n\nD sai vì cung cấp dịch vụ Layer 2 giữa các host là chức năng của switch, không phải firewall. Firewall hoạt động chủ yếu ở Layer 3 trở lên.\n\nE sai vì kết nối thiết bị không dây là chức năng của access point hoặc wireless LAN controller, không liên quan đến firewall.",
       "explanation_images": [],
       "question_vi": "Hai chức năng của tường lửa (firewall) trong doanh nghiệp là gì? (Chọn hai)",
       "options_vi": {
@@ -2085,7 +2085,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Any changes made to your infrastructure code must pass through the Chef server in order to be applied to nodes. Prior to accepting or pushing changes, the Chef server authenticates all communication via its REST API using public key encryption.\nChef client periodically pulls Chef server to see if there are any changes in cookbooks or settings. If there are changes then Chef server sends the latest configuration information to Chef client. Chef client applies these changes to nodes.",
+      "explanation": "Đáp án A đúng vì Chef hoạt động theo mô hình pull-based: agent được cài trên thiết bị (gọi là Chef Client) sẽ định kỳ tự kết nối đến Chef Infra Server, tải về cookbook chứa các cấu hình cần thiết, rồi tự áp dụng cấu hình đó lên thiết bị. Toàn bộ quá trình do agent chủ động khởi tạo, không phải do server điều khiển.\n\nĐáp án B sai vì Chef không dùng mô hình push — server không chủ động đẩy cấu hình xuống thiết bị.\n\nĐáp án C sai vì server cũng không gửi cảnh báo hay thông báo cho thiết bị biết khi nào cần cập nhật; agent tự quyết định thời điểm kiểm tra theo lịch định sẵn.\n\nĐáp án D sai vì mô tả một kiểu lai không đúng với cách Chef hoạt động — agent query server rồi server push lại là sai; thực tế agent tự pull toàn bộ, server chỉ phản hồi dữ liệu cookbook chứ không push cấu hình.",
       "explanation_images": [
         "q14.98_img1.jpg"
       ],
@@ -2167,7 +2167,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Cisco WLC khuyến nghị sử dụng chế độ cân bằng tải source-destination IP address vì WLC thường xử lý lưu lượng từ nhiều client không dây với các địa chỉ IP khác nhau, và việc băm cả IP nguồn lẫn IP đích giúp phân phối lưu lượng đều hơn trên các uplink. Đây là chế độ mặc định được Cisco đề xuất khi kết nối WLC với switch thông qua EtherChannel hoặc LAG.\n\nCác đáp án còn lại không tối ưu vì: source-destination MAC address có thể gây mất cân bằng khi nhiều client đi qua cùng một gateway (MAC đích giống nhau), destination IP address chỉ dựa trên một chiều nên dễ bị lệch tải, và destination MAC address cũng gặp vấn đề tương tự khi lưu lượng hướng ra ngoài đều có cùng MAC của default gateway.",
       "explanation_images": [],
       "question_vi": "Chế độ cân bằng tải (load-balancing) switch được khuyến nghị cho Cisco WLC là gì?",
       "options_vi": {
@@ -2189,7 +2189,7 @@
       },
       "answer": "B",
       "answer_images": [],
-      "explanation": "",
+      "explanation": "Đáp án B đúng vì LACP (IEEE 802.3ad) yêu cầu sử dụng mode \"active\" hoặc \"passive\". Mode \"active\" nghĩa là switch chủ động gửi gói tin LACP để thương lượng EtherChannel, và cả hai interface đều được gán vào cùng channel-group 1, đảm bảo chúng hoạt động như một bundle duy nhất.\n\nĐáp án A sai vì \"desirable\" là mode của PAgP (giao thức độc quyền của Cisco), không phải LACP.\n\nĐáp án C sai vì mode \"on\" ép buộc EtherChannel mà không dùng giao thức thương lượng nào cả, tức là không phải LACP.\n\nĐáp án D sai vì \"auto\" cũng là mode của PAgP, không liên quan đến LACP. Ngoài ra, nếu cả hai đầu đều dùng \"auto\" thì EtherChannel cũng không hình thành được vì không bên nào chủ động khởi tạo.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa. Cấu hình nào cho phép SW2 thiết lập EtherChannel LACP?",
       "options_vi": {
@@ -2214,7 +2214,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "FTP communicates using two TCP connections. Control traffic is exchanged over TCP port 21, and data transmission is performed over TCP port 20.",
+      "explanation": "FTP (File Transfer Protocol) hoạt động bằng cách sử dụng hai kết nối TCP riêng biệt: một kết nối điều khiển trên cổng 21 để gửi lệnh và nhận phản hồi, và một kết nối dữ liệu trên cổng 20 để truyền file thực sự. Đây là đặc điểm thiết kế cốt lõi phân biệt FTP với các giao thức truyền file khác.\n\nCác đáp án còn lại sai vì: A mô tả TFTP, không phải FTP — TFTP mới dùng UDP cổng 69. B mô tả cơ chế của TFTP, vốn dùng block number để theo dõi và xác nhận từng khối dữ liệu. D sai vì FTP thường yêu cầu xác thực người dùng bằng username và password, mặc dù có hỗ trợ chế độ anonymous FTP trong một số trường hợp.",
       "explanation_images": [],
       "question_vi": "Chức năng của FTP là gì?",
       "options_vi": {
@@ -2266,7 +2266,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đây là câu hỏi về sự khác biệt giữa authentication (xác thực) và accounting (ghi nhận hoạt động) trong mô hình AAA (Authentication, Authorization, Accounting).\n\nAuthentication là quá trình xác minh danh tính người dùng bằng cách yêu cầu thông tin đăng nhập như tên người dùng và mật khẩu, sau đó trả về kết quả chấp nhận hoặc từ chối. Đây là bước duy nhất trong AAA thực hiện việc \"thách thức\" người dùng và kiểm tra xem họ là ai, nên đáp án A và C đều đúng.\n\nĐáp án B sai vì kiểm tra hoạt động người dùng (user-activity audits) là chức năng của accounting, không phải authentication. Đáp án D sai vì ghi lại thời gian kết nối của người dùng cũng là nhiệm vụ của accounting. Đáp án E sai vì cung cấp thông tin để tính phí người dùng (billing) cũng thuộc về accounting, vì accounting mới là thành phần thu thập dữ liệu sử dụng tài nguyên phục vụ mục đích đó.",
       "explanation_images": [],
       "question_vi": "Hai phát biểu nào phân biệt xác thực (authentication) với kế toán (accounting)? (Chọn hai)",
       "options_vi": {
@@ -2292,7 +2292,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "REST API sử dụng các phương thức HTTP chuẩn, và bộ phương thức đầy đủ bao gồm GET để lấy dữ liệu, PUT để cập nhật tài nguyên hiện có, POST để tạo tài nguyên mới, và DELETE để xóa tài nguyên. Đây là bốn phương thức cốt lõi được định nghĩa trong tiêu chuẩn HTTP và được REST API hỗ trợ rộng rãi.\n\nCác đáp án A, B, C đều sai vì chúng chứa các phương thức không tồn tại trong giao thức HTTP như ERASE, CHANGE, và MOD. Không có phương thức HTTP nào mang tên đó cả, đây là những tên giả được đặt ra để đánh lừa trong câu hỏi thi.",
       "explanation_images": [],
       "question_vi": "Tập hợp phương thức nào được hỗ trợ với REST API?",
       "options_vi": {

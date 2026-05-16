@@ -22,7 +22,8 @@
         "B": "Cisco vPC",
         "C": "LLDP",
         "D": "LACP"
-      }
+      },
+      "explanation": "LACP (Link Aggregation Control Protocol) là giao thức chuẩn IEEE 802.3ad dùng để gộp nhiều cổng vật lý thành một liên kết logic, còn gọi là EtherChannel hoặc port-channel. Khi cả hai phía được cấu hình ở chế độ \"active\", chúng sẽ chủ động gửi các gói LACP để thương lượng và thiết lập liên kết tổng hợp, đây chính xác là hành vi được mô tả trong câu hỏi. Chế độ active-active là cấu hình hợp lệ duy nhất của LACP có thể thương lượng liên kết layer 2 giữa hai switch.\n\n802.1q là chuẩn trunking để mang nhiều VLAN qua một liên kết, không phải để gộp cổng. Cisco vPC là công nghệ ảo hóa port-channel của Cisco dùng trong môi trường data center, không liên quan đến thương lượng LACP thông thường giữa hai switch. LLDP là giao thức khám phá lớp liên kết, chỉ dùng để trao đổi thông tin về thiết bị láng giềng, không có chức năng gộp cổng."
     },
     {
       "id": "5.6",
@@ -48,7 +49,8 @@
         "C": "forwarding",
         "D": "learning",
         "E": "speaking"
-      }
+      },
+      "explanation": "RSTP (802.1w) đơn giản hóa các trạng thái cổng so với STP truyền thống, chỉ giữ lại ba trạng thái chính là discarding, learning và forwarding. Trạng thái learning cho phép cổng bắt đầu học địa chỉ MAC vào bảng CAM nhưng chưa chuyển tiếp lưu lượng người dùng, còn forwarding là trạng thái hoạt động đầy đủ khi cổng vừa học MAC vừa chuyển tiếp dữ liệu bình thường.\n\nCác đáp án sai vì listening và blocking là trạng thái thuộc STP cổ điển (802.1D), không tồn tại trong RSTP — RSTP gộp cả blocking, listening và disabled vào một trạng thái duy nhất là discarding. Speaking hoàn toàn không phải trạng thái trong bất kỳ phiên bản STP nào."
     },
     {
       "id": "5.7",
@@ -71,7 +73,8 @@
         "B": "hỗ trợ kiến trúc độc lập hoặc dựa trên bộ điều khiển",
         "C": "tập trung hóa việc quản lý các điểm truy cập (access points) trong mạng doanh nghiệp",
         "D": "cung cấp đăng nhập người dùng an toàn cho các thiết bị trên mạng"
-      }
+      },
+      "explanation": "Đáp án C đúng vì chức năng chính của wireless controller là quản lý tập trung các access point trong mạng doanh nghiệp, bao gồm cấu hình, giám sát và cập nhật firmware cho tất cả AP từ một điểm duy nhất.\n\nĐáp án A sai vì vai trò \"tuyến phòng thủ đầu tiên\" thuộc về firewall, không phải wireless controller. Đáp án B sai vì đây là đặc điểm mô tả của bản thân các access point, không phải controller. Đáp án D sai vì chức năng xác thực người dùng thuộc về AAA server hoặc RADIUS server, không phải wireless controller."
     },
     {
       "id": "5.12",
@@ -94,7 +97,8 @@
         "B": "wireless access point",
         "C": "RADIUS server",
         "D": "wireless LAN controller"
-      }
+      },
+      "explanation": "Trong mô hình mạng không dây sử dụng lightweight access point (LAP), toàn bộ quá trình xử lý và điều phối lưu lượng, bao gồm cả các yêu cầu xác thực người dùng, đều được quản lý tập trung bởi wireless LAN controller (WLC). LAP không tự xử lý xác thực mà chuyển tiếp mọi thứ về WLC thông qua giao thức CAPWAP, và chính WLC sẽ quyết định chuyển tiếp yêu cầu xác thực đó đến máy chủ xác thực phù hợp.\n\nTACACS+ và RADIUS đều là giao thức xác thực AAA, nhưng chúng là máy chủ nhận yêu cầu từ WLC chứ không phải thiết bị điều khiển việc chuyển tiếp yêu cầu đó. Wireless access point ở chế độ lightweight không có khả năng tự điều khiển quá trình này vì nó đã nhường quyền kiểm soát hoàn toàn cho WLC."
     },
     {
       "id": "5.15",
@@ -119,7 +123,8 @@
         "B": "Được flood ra mọi cổng ngoại trừ G0/0",
         "C": "Hủy bỏ frame",
         "D": "Chuyển tiếp ra giao diện G0/2 duy nhất"
-      }
+      },
+      "explanation": "Khi S1 nhận được một ARP request từ PC1 qua cổng G0/0, đây là lần đầu tiên PC1 gửi gói tin nên bảng MAC của S1 chưa có địa chỉ MAC đích. Vì ARP request là broadcast (địa chỉ đích FF:FF:FF:FF:FF:FF), switch sẽ flood frame này ra tất cả các cổng đang hoạt động, ngoại trừ cổng mà frame đó đến, tức là G0/0. Đây là hành vi mặc định của switch khi xử lý broadcast hoặc frame có địa chỉ MAC đích chưa có trong bảng MAC.\n\nĐáp án A và D sai vì switch chỉ forward unicast frame ra một cổng duy nhất khi đã biết địa chỉ MAC đích, còn ARP request là broadcast nên không thể chỉ gửi ra một cổng. Đáp án C sai vì switch không bao giờ tự ý drop một broadcast frame hợp lệ."
     },
     {
       "id": "5.16",
@@ -142,7 +147,8 @@
         "B": "Cổng chuyển thành root port",
         "C": "Cổng chuyển ngay lập tức sang trạng thái STP forwarding",
         "D": "Cổng chuyển sang trạng thái error-disable"
-      }
+      },
+      "explanation": "Câu hỏi này liên quan đến tính năng BPDU Guard trong STP. Khi một cổng được cấu hình PortFast và BPDU Guard, nếu cổng đó nhận được một BPDU, hệ thống sẽ coi đây là dấu hiệu có thiết bị switch không được phép kết nối vào mạng. Để bảo vệ topology STP, switch sẽ lập tức đưa cổng đó vào trạng thái error-disable, tức là tắt hoàn toàn cổng đó cho đến khi quản trị viên can thiệp thủ công hoặc cấu hình errdisable recovery.\n\nĐáp án A sai vì BPDU Guard không đơn giản chuyển cổng sang trạng thái blocking mà tắt hẳn cổng đó. Đáp án B sai vì root port là vai trò STP bình thường, không liên quan đến tình huống này. Đáp án C sai vì PortFast cho phép chuyển thẳng sang forwarding khi cổng khởi động, nhưng khi nhận BPDU thì BPDU Guard sẽ kích hoạt và cổng bị error-disable chứ không forwarding."
     },
     {
       "id": "5.17",
@@ -165,7 +171,8 @@
         "B": "switchport trunk native vlan 10",
         "C": "switchport mode trunk",
         "D": "switchport trunk encapsulation dot1q"
-      }
+      },
+      "explanation": "Đáp án B đúng vì lệnh \"switchport trunk native vlan 10\" xác định VLAN native trên đường trunk, và lưu lượng thuộc VLAN native sẽ được truyền qua trunk mà không gắn thẻ (untagged). Đây chính xác là yêu cầu đề bài đặt ra.\n\nĐáp án A sai vì lệnh đó chỉ cho phép VLAN 10 đi qua trunk, không liên quan đến việc gắn thẻ hay không gắn thẻ. Đáp án C sai vì nó chỉ bật chế độ trunk trên cổng, không cấu hình VLAN nào là untagged. Đáp án D sai vì lệnh đó chỉ định phương thức đóng gói là 802.1Q, không ảnh hưởng đến VLAN nào được truyền không gắn thẻ."
     },
     {
       "id": "5.19",
@@ -188,7 +195,8 @@
         "B": "Cho phép quản trị viên gán kênh theo từng thiết bị hoặc từng giao diện",
         "C": "Phân tách các thiết bị từ các nhà sản xuất khác nhau vào các kênh khác nhau",
         "D": "Phân tích tải máy khách và nhiễu nền, sau đó gán kênh một cách động"
-      }
+      },
+      "explanation": "Đáp án D đúng vì trong mạng Cisco Unified Wireless, bộ điều khiển không dây (WLC) sử dụng tính năng Radio Resource Management (RRM) để tự động phân tích tải của các client và nhiễu nền, từ đó động phân bổ kênh phù hợp cho từng access point nhằm giảm thiểu hiện tượng chồng lấn kênh. Đây là cơ chế tự động hóa trung tâm, không cần quản trị viên can thiệp thủ công.\n\nĐáp án A sai vì việc tự động chuyển đổi giữa 2.4 GHz và 5 GHz trên các AP lân cận không phải là cơ chế xử lý chồng lấn kênh trong Cisco Unified Wireless. Đáp án B mô tả cấu hình kênh thủ công theo từng thiết bị hoặc interface, đây là cách tiếp cận của mạng không dây độc lập (autonomous), không phải unified. Đáp án C hoàn toàn sai vì hệ thống không phân tách thiết bị theo nhà sản xuất, đó không phải tiêu chí để phân bổ kênh trong bất kỳ kiến trúc Wi-Fi nào."
     },
     {
       "id": "5.20",
@@ -211,7 +219,8 @@
         "B": "DTP",
         "C": "lưu lượng đi ra (egress traffic)",
         "D": "lưu lượng đi vào (ingress traffic)"
-      }
+      },
+      "explanation": "Switch xây dựng bảng MAC address bằng cách quan sát traffic đến (ingress traffic) trên từng cổng. Khi một frame đi vào cổng nào đó, switch đọc địa chỉ MAC nguồn của frame đó và ghi vào bảng MAC kèm theo số cổng tương ứng.\n\nVTP là giao thức đồng bộ thông tin VLAN giữa các switch, không liên quan đến bảng MAC. DTP dùng để thương lượng chế độ trunk giữa các cổng, cũng không liên quan. Egress traffic là traffic đi ra khỏi cổng, switch không học MAC từ chiều này vì nó chỉ cần biết frame đến từ đâu, không phải đi đến đâu."
     },
     {
       "id": "5.23",
@@ -236,7 +245,8 @@
         "B": "Switch 2",
         "C": "Switch 3",
         "D": "Switch 4"
-      }
+      },
+      "explanation": "Để xác định root bridge trong STP, switch nào có Bridge ID thấp nhất sẽ được bầu làm root. Bridge ID gồm hai phần: priority và MAC address. Switch có priority thấp hơn sẽ thắng; nếu priority bằng nhau thì so sánh MAC address, MAC nào nhỏ hơn sẽ thắng.\n\nVì đây là câu hỏi có hình minh họa mà tôi không thể xem trực tiếp, nhưng dựa vào đáp án đúng là Switch 2, có thể suy ra rằng Switch 2 có Bridge ID thấp nhất cho VLAN 110, hoặc là do priority được cấu hình thấp hơn các switch còn lại, hoặc nếu priority bằng nhau thì MAC address của Switch 2 nhỏ hơn.\n\nCác switch còn lại (Switch 1, 3, 4) đều có Bridge ID cao hơn Switch 2 cho VLAN 110, nên chúng trở thành non-root bridge và phải thực hiện quá trình bầu chọn root port để xác định đường đi tốt nhất về phía root."
     },
     {
       "id": "5.26",
@@ -259,7 +269,8 @@
         "B": "Chuyển tiếp frame ngược ra giao diện Fa0/1.",
         "C": "Hủy bỏ frame ngay lập tức.",
         "D": "Giữ frame cho đến khi bộ đếm thời gian địa chỉ MAC hết hạn rồi hủy bỏ frame."
-      }
+      },
+      "explanation": "Đây là hành vi cơ bản của switch khi gặp địa chỉ MAC đích chưa có trong bảng MAC (MAC address table). Khi switch nhận một frame nhưng không tìm thấy địa chỉ MAC đích trong bảng, nó sẽ thực hiện flooding — tức là gửi frame đó ra tất cả các cổng đang hoạt động, ngoại trừ cổng mà frame đó đến (Fa0/1), để tránh tạo ra vòng lặp. Đây gọi là \"unknown unicast flooding\" và là cách switch học địa chỉ MAC của các thiết bị trong mạng.\n\nĐáp án B sai vì switch không bao giờ gửi frame ngược lại ra chính cổng nhận vào — điều đó vô nghĩa và sẽ gây lỗi mạng. Đáp án C sai vì switch chỉ drop frame khi địa chỉ MAC nguồn và đích cùng nằm trên một cổng, hoặc khi có cơ chế bảo mật như port security can thiệp, không phải khi đơn giản là không tìm thấy địa chỉ đích. Đáp án D sai vì switch không có cơ chế giữ frame lại chờ timer — đó không phải cách hoạt động của switch layer 2."
     },
     {
       "id": "5.36",
@@ -282,7 +293,8 @@
         "B": "Frame mới được gửi đi trước, frame trước bị hủy, và yêu cầu truyền lại được gửi.",
         "C": "Hai frame được xử lý và gửi đi cùng lúc.",
         "D": "Frame mới được đặt vào hàng đợi để truyền sau frame trước đó."
-      }
+      },
+      "explanation": "Đáp án D đúng vì switch sử dụng bộ đệm (buffer/queue) để lưu trữ các frame đến trong khi cổng đang bận truyền frame trước đó. Sau khi frame hiện tại được gửi xong, switch sẽ lấy frame tiếp theo từ hàng đợi và truyền đi theo thứ tự. Đây là cơ chế hoạt động cơ bản của store-and-forward switching, giúp tránh mất dữ liệu khi có nhiều frame cần xử lý cùng lúc.\n\nĐáp án A và B sai vì switch không tự động drop frame hay gửi yêu cầu truyền lại — đó là nhiệm vụ của các giao thức tầng trên như TCP, không phải switch layer 2. Đáp án C sai vì một cổng vật lý chỉ có thể truyền một frame tại một thời điểm, không thể xử lý hai frame đồng thời trên cùng một đường truyền."
     },
     {
       "id": "5.39",
@@ -308,7 +320,8 @@
         "B": "Switchport trunk allowed vlan none",
         "C": "Switchport trunk allowed vlan add 13",
         "D": "Switchport trunk allowed vlan remove 10-11"
-      }
+      },
+      "explanation": "Câu hỏi này yêu cầu thêm VLAN 13 vào danh sách VLAN được phép trên đường trunk mà không làm ảnh hưởng đến các VLAN đang hoạt động khác. Lệnh \"switchport trunk allowed vlan add 13\" thực hiện đúng điều đó, nó chỉ bổ sung VLAN 13 vào danh sách hiện có mà không xóa bất kỳ VLAN nào đang được phép.\n\nĐáp án A sai vì \"switch trunk allowed vlan 12\" không phải cú pháp hợp lệ và thiếu từ khóa \"port\", ngoài ra nếu dùng \"switchport trunk allowed vlan 12\" thì lệnh này sẽ thay thế toàn bộ danh sách VLAN hiện tại bằng chỉ VLAN 12, gây gián đoạn các VLAN khác.\n\nĐáp án B sai vì lệnh này xóa tất cả VLAN khỏi đường trunk, làm gián đoạn toàn bộ các kết nối đang hoạt động.\n\nĐáp án D sai vì lệnh này xóa VLAN 10 và 11 khỏi đường trunk, gây gián đoạn các kết nối đang sử dụng hai VLAN đó, trái với yêu cầu không làm ảnh hưởng đến các kết nối khác."
     },
     {
       "id": "5.40",
@@ -331,7 +344,8 @@
         "B": "Địa chỉ MAC nguồn của frame không xác định",
         "C": "Địa chỉ MAC nguồn và đích của frame giống nhau",
         "D": "Frame có địa chỉ MAC đích bằng không"
-      }
+      },
+      "explanation": "Đáp án A đúng vì switch duy trì một bảng MAC (CAM table) để biết cổng nào kết nối với địa chỉ MAC nào. Khi switch nhận một frame mà địa chỉ MAC đích chưa có trong bảng, nó không biết phải chuyển frame đó ra cổng nào, nên sẽ flood frame đó ra tất cả các cổng trừ cổng nhận vào, để đảm bảo frame đến được đích.\n\nĐáp án B sai vì địa chỉ MAC nguồn không xác định cổng đầu ra, mà chỉ được dùng để switch học và cập nhật bảng MAC. Đáp án C sai vì đây là tình huống không bình thường và không phải lý do switch flood. Đáp án D sai vì một frame hợp lệ luôn có địa chỉ MAC đích, và frame có địa chỉ đích bằng 0 là không hợp lệ trong thực tế."
     },
     {
       "id": "5.43",
@@ -354,7 +368,8 @@
         "B": "gán cho nó một giá trị trong phạm vi VLAN riêng tư (private VLAN)",
         "C": "cấu hình nó là VLAN 1",
         "D": "cấu hình nó với một VLAN ID khác nhau ở mỗi đầu của liên kết"
-      }
+      },
+      "explanation": "Đáp án A đúng vì cách bảo mật native VLAN là tách biệt nó khỏi các VLAN khác trong miền quản trị, tức là không dùng native VLAN cho lưu lượng người dùng thông thường. Điều này ngăn chặn các cuộc tấn công VLAN hopping, trong đó kẻ tấn công có thể lợi dụng native VLAN để nhảy sang các VLAN khác.\n\nĐáp án B sai vì private VLAN là một khái niệm riêng biệt, không liên quan đến việc bảo mật native VLAN. Đáp án C sai vì VLAN 1 là native VLAN mặc định và thực tế đây là điều cần tránh vì nó là mục tiêu tấn công phổ biến, thực hành tốt là đổi native VLAN sang một VLAN khác không dùng cho dữ liệu. Đáp án D sai vì native VLAN phải được cấu hình cùng một giá trị trên cả hai đầu của trunk link, nếu khác nhau sẽ gây ra lỗi không khớp native VLAN chứ không phải là biện pháp bảo mật."
     },
     {
       "id": "5.44",
@@ -377,7 +392,8 @@
         "B": "switch(config)#spanning-tree portfast bpduguard default",
         "C": "switch(config-if)#spanning-tree portfast trunk",
         "D": "switch(config-if)#no spanning-tree portfast"
-      }
+      },
+      "explanation": "Lệnh \"spanning-tree portfast default\" được nhập ở chế độ cấu hình toàn cục (global config) và có tác dụng bật PortFast trên tất cả các cổng access của switch, giúp các cổng đó bỏ qua các trạng thái Listening và Learning của STP, chuyển thẳng sang Forwarding ngay khi thiết bị như PC được kết nối vào.\n\nĐáp án B cũng là lệnh global config nhưng chỉ bật BPDU Guard mặc định, không phải PortFast, nên không giải quyết yêu cầu của câu hỏi. Đáp án C dùng từ khóa \"trunk\" thay vì không có từ khóa, lệnh này áp dụng PortFast cho cổng trunk, không phải cổng access nối PC, và đây không phải cách dùng thông thường. Đáp án D là lệnh tắt PortFast trên một cổng cụ thể, hoàn toàn ngược lại với mục tiêu cần đạt."
     },
     {
       "id": "5.46",
@@ -400,7 +416,8 @@
         "B": "PortFast",
         "C": "BPDU guard",
         "D": "BackboneFast"
-      }
+      },
+      "explanation": "PortFast là tính năng cho phép một cổng switch chuyển ngay lập tức sang trạng thái forwarding mà không cần trải qua các giai đoạn STP thông thường (listening, learning), giúp thiết bị kết nối vào mạng ngay khi cắm vào. Tính năng này được thiết kế cho các cổng kết nối với thiết bị đầu cuối như máy tính hoặc máy chủ, không phải switch khác.\n\nUplinkFast giúp tăng tốc quá trình chuyển đổi sang đường dự phòng khi đường uplink chính bị lỗi, không liên quan đến việc kết nối ngay lập tức khi cắm vào. BPDU guard là tính năng bảo mật, tự động tắt cổng nếu nhận được BPDU, không phải công nghệ tăng tốc kết nối. BackboneFast giúp rút ngắn thời gian hội tụ STP khi phát hiện lỗi gián tiếp trong mạng, cũng không liên quan đến việc kết nối tức thì khi cắm thiết bị."
     },
     {
       "id": "6.3",
@@ -423,7 +440,8 @@
         "B": "OEAP Split Tunnel",
         "C": "11ac MU-MIMO",
         "D": "Re-Anchor Roamed Clients"
-      }
+      },
+      "explanation": "Client Band Select là tính năng cho phép bộ điều khiển không dây (WLC) ưu tiên đẩy các thiết bị client sang băng tần 5GHz thay vì 2.4GHz khi cả hai đều khả dụng. Khi được bật, AP sẽ trì hoãn phản hồi các yêu cầu kết nối trên băng 2.4GHz, khuyến khích client chuyển sang 5GHz vốn ít tắc nghẽn hơn và có băng thông cao hơn. Đây chính xác là giải pháp cho tình huống 2.4GHz quá tải trong khi 5GHz còn nhiều dung lượng trống.\n\nOEAP Split Tunnel liên quan đến việc phân luồng traffic trên các AP văn phòng từ xa, không liên quan đến việc chọn băng tần. 11ac MU-MIMO là công nghệ truyền dữ liệu đồng thời đến nhiều client, cải thiện hiệu suất nhưng không điều hướng client sang băng tần cụ thể. Re-Anchor Roamed Clients xử lý việc chuyển vùng giữa các WLC khác nhau, không phải lựa chọn băng tần."
     },
     {
       "id": "6.8",
@@ -446,7 +464,8 @@
         "B": "Bật dịch vụ Protected Management Frame và đặt Comeback timer thành 10",
         "C": "Bật bảo mật 802.1x Layer 2 và đặt Comeback timer thành 10",
         "D": "Bật MAC filtering và đặt SA Query timeout thành 10"
-      }
+      },
+      "explanation": "Đáp án B đúng vì Protected Management Frame (PMF) là tính năng bảo vệ các frame quản lý 802.11 khỏi bị giả mạo, bao gồm cả các yêu cầu association giả. Khi PMF được bật, WLC sẽ yêu cầu client thực hiện SA Query trước khi chấp nhận association request mới, và Comeback timer chính là tham số xác định thời gian client phải chờ (tính bằng ms) trước khi thử lại — đặt giá trị 10 tức là buộc client chờ 10 ms.\n\nĐáp án A sai vì SA Association Teardown Protection là một thành phần trong PMF nhưng không phải cách bật toàn bộ dịch vụ PMF, và SA Query timeout là thời gian chờ phản hồi truy vấn, không phải thời gian chờ retry của client.\n\nĐáp án C sai vì 802.1x là cơ chế xác thực Layer 2, không liên quan đến việc bảo vệ frame quản lý khỏi spoofed association request.\n\nĐáp án D sai vì MAC filtering chỉ lọc thiết bị theo địa chỉ MAC và hoàn toàn không có khả năng bảo vệ chống giả mạo frame quản lý, vì địa chỉ MAC dễ bị giả mạo."
     },
     {
       "id": "6.10",
@@ -469,7 +488,8 @@
         "B": "Probe Request",
         "C": "Reassociation Request",
         "D": "Association Request"
-      }
+      },
+      "explanation": "Khi một client di chuyển từ access point này sang access point khác trong cùng một SSID, nó gửi Reassociation Request thay vì Association Request thông thường. Frame này cho AP mới biết rằng client đang chuyển vùng từ một AP khác, không phải kết nối lần đầu, giúp mạng có thể chuyển trạng thái phiên nếu cần.\n\nAssociation Request chỉ dùng khi client kết nối lần đầu với một AP. Probe Request dùng để quét và tìm kiếm các mạng Wi-Fi xung quanh, không liên quan đến quá trình roaming. Authentication Request là bước xác thực xảy ra trước khi association, không phải frame đặc trưng cho roaming."
     },
     {
       "id": "6.12",
@@ -492,7 +512,8 @@
         "B": "Cisco Discovery Protocol",
         "C": "Adaptive Wireless Path Protocol",
         "D": "Neighbor Discovery Protocol"
-      }
+      },
+      "explanation": "Cisco Discovery Protocol (CDP) là giao thức độc quyền của Cisco cho phép các thiết bị Cisco khám phá và chia sẻ thông tin với nhau qua liên kết trực tiếp. Trong ngữ cảnh này, access point sử dụng CDP để thương lượng và nhận nguồn điện từ switch thông qua cơ chế Power over Ethernet (PoE), giúp switch biết thiết bị cần bao nhiêu watt để cấp điện phù hợp.\n\nBa đáp án còn lại đều không liên quan đến việc cấp nguồn. IGMP dùng để quản lý thành viên nhóm multicast. AWPP là giao thức định tuyến nội bộ dùng trong mạng mesh không dây của Cisco. NDP là giao thức trong IPv6 dùng để khám phá các thiết bị lân cận trên mạng, tương tự ARP trong IPv4."
     },
     {
       "id": "6.14",
@@ -517,7 +538,8 @@
         "B": "switchport mode dot1-tunnel",
         "C": "switchport mode dynamic auto",
         "D": "switchport mode dynamic desirable"
-      }
+      },
+      "explanation": "Lệnh \"switchport mode dynamic auto\" cấu hình cổng ở chế độ thụ động, nghĩa là cổng sẽ không chủ động gửi gói tin DTP để đàm phán trunk, nhưng sẽ đồng ý trở thành trunk nếu phía đối diện chủ động yêu cầu. Vì SW2 đang ở chế độ desirable hoặc trunk, nó sẽ chủ động gửi DTP, và SW1 với dynamic auto sẽ phản hồi và hình thành trunk thành công.\n\nĐáp án A sai vì \"switchport mode trunk\" cấu hình cổng thành trunk cố định, không phải thụ động hay phụ thuộc vào phía đối diện. Đáp án B sai vì \"dot1q-tunnel\" là chế độ dùng cho QinQ (802.1Q tunneling), không liên quan đến đàm phán trunk thông thường. Đáp án D sai vì \"dynamic desirable\" là chế độ chủ động gửi DTP để đàm phán, không phải thụ động như đề bài yêu cầu."
     },
     {
       "id": "6.17",
@@ -540,7 +562,8 @@
         "B": "hỗ trợ đăng nhập an toàn của người dùng vào thiết bị hoặc mạng",
         "C": "tích hợp với SNMP để ngăn chặn các cuộc tấn công DDoS",
         "D": "đóng vai trò là tuyến phòng thủ đầu tiên trong mạng doanh nghiệp"
-      }
+      },
+      "explanation": "Access point (AP) có vai trò chính là kết nối các thiết bị không dây (như laptop, điện thoại) vào mạng có dây, hoạt động như một cầu nối giữa hai môi trường truyền dẫn này. Đây là chức năng cốt lõi của AP trong mạng doanh nghiệp.\n\nCác đáp án còn lại sai vì: B mô tả chức năng của AAA server hoặc RADIUS, không phải AP. C không chính xác vì AP không tích hợp với SNMP để ngăn chặn DDoS, đây không phải vai trò của AP. D mô tả vai trò của firewall, không phải AP."
     },
     {
       "id": "6.19",
@@ -565,7 +588,8 @@
         "B": "Branch-2",
         "C": "Branch-3",
         "D": "Branch-4"
-      }
+      },
+      "explanation": "Branch-3 có priority là 0, đây là giá trị thấp nhất có thể trong spanning tree. Trong giao thức STP, switch nào có bridge priority thấp nhất sẽ được bầu làm root bridge. Vì 0 thấp hơn bất kỳ giá trị nào khác trong danh sách, Branch-3 luôn thắng cuộc bầu chọn và trở thành root bridge vĩnh viễn cho VLAN 5.\n\nLý do các đáp án khác sai: Branch-4 dùng lệnh \"spanning-tree vlan 5 root primary\", lệnh này chỉ tự động đặt priority xuống một mức đủ thấp hơn root hiện tại (thường là 24576 hoặc 28672), nhưng không thể thấp hơn 0 nên Branch-4 thua Branch-3. Branch-1 có priority 614440 và Branch-2 có priority 39082416, cả hai đều cao hơn nhiều so với 0 nên không thể trở thành root bridge."
     },
     {
       "id": "6.20",
@@ -591,7 +615,8 @@
         "B": "Chèn địa chỉ MAC nguồn và cổng vào bảng chuyển tiếp và chuyển tiếp khung đến Sales-1",
         "C": "Thực hiện tra cứu trong bảng địa chỉ MAC và loại bỏ khung do thiếu mục nhập",
         "D": "Flood khung ra tất cả các cổng ngoại trừ cổng mà Sales-1 được kết nối"
-      }
+      },
+      "explanation": "Đáp án B đúng vì khi switch nhận một frame, nó luôn học địa chỉ MAC nguồn bằng cách ghi địa chỉ đó cùng với cổng nhận vào bảng MAC (forwarding table). Đề bài cho biết toàn bộ nội dung bảng MAC đang hiển thị, và vì Sales-4 chưa có trong bảng, switch sẽ thêm địa chỉ MAC của Sales-4 vào. Đồng thời, vì Sales-1 đã có sẵn trong bảng MAC (đề bài ngụ ý bảng hiển thị đầy đủ và Sales-1 đã được học trước đó), switch sẽ chuyển tiếp frame trực tiếp đến đúng cổng của Sales-1 thay vì flood.\n\nĐáp án A sai vì switch hoạt động ở tầng 2, nó không ánh xạ địa chỉ MAC sang địa chỉ IP — đó là chức năng của ARP ở tầng 3. Đáp án C sai vì switch không bỏ frame khi không tìm thấy địa chỉ MAC đích trong bảng, thay vào đó nó sẽ flood frame ra tất cả các cổng. Đáp án D sai vì flood chỉ xảy ra khi địa chỉ MAC đích chưa có trong bảng, nhưng ở đây Sales-1 đã được học nên switch biết chính xác cổng cần chuyển tiếp."
     },
     {
       "id": "6.22",
@@ -616,7 +641,8 @@
         "B": "interface gi0/1\nclear cdp table",
         "C": "interface gi0/0\nno cdp run",
         "D": "interface gi0/0\nno cdp advertise-v2"
-      }
+      },
+      "explanation": "Subnet 10.0.0.0/30 có 4 địa chỉ: network 10.0.0.0, host 10.0.0.1, host 10.0.0.2, và broadcast 10.0.0.3. Địa chỉ host cuối cùng có thể dùng là 10.0.0.2, và dựa vào exhibit, địa chỉ này được cấu hình trên interface gi0/1. Lệnh \"no cdp enable\" dùng để tắt CDP trên một interface cụ thể, đây đúng là yêu cầu của bài.\n\nĐáp án B sai vì \"clear cdp table\" chỉ xóa bảng CDP neighbors, không tắt CDP trên interface. Đáp án C sai vì \"no cdp run\" tắt CDP trên toàn bộ thiết bị, không phải chỉ một cổng, và interface gi0/0 cũng không phải cổng cần cấu hình. Đáp án D sai vì \"no cdp advertise-v2\" chỉ tắt tính năng quảng bá CDPv2, không tắt hoàn toàn CDP trên cổng đó."
     },
     {
       "id": "6.24",
@@ -639,7 +665,8 @@
         "B": "Các thiết bị không dây không thể phân biệt giữa các SSID khác nhau",
         "C": "Truyền thông mạng bị mở cho việc nghe lén (eavesdropping)",
         "D": "Người dùng gặp hiệu suất mạng không dây kém"
-      }
+      },
+      "explanation": "Khi các kênh Wi-Fi bị chồng lấp nhau, các tín hiệu từ các điểm truy cập khác nhau sẽ gây nhiễu lẫn nhau, khiến các thiết bị phải truyền lại dữ liệu nhiều lần và làm giảm đáng kể thông lượng mạng. Kết quả là người dùng sẽ gặp phải tình trạng kết nối chậm, độ trễ cao và mất gói tin, tức là hiệu suất mạng kém. Đây là lý do tại sao chuẩn 802.11 khuyến nghị sử dụng các kênh không chồng lấp như 1, 6 và 11 trên băng tần 2.4 GHz.\n\nCác đáp án còn lại không liên quan đến vấn đề chồng lấp kênh. Đáp án A và C liên quan đến bảo mật mạng không dây, chẳng hạn như thiếu mã hóa hoặc xác thực yếu, chứ không phải cấu hình kênh. Đáp án B mô tả vấn đề nhận dạng SSID, điều này phụ thuộc vào cấu hình tên mạng chứ không phải sự chồng lấp kênh."
     },
     {
       "id": "6.26",
@@ -662,7 +689,8 @@
         "B": "Thêm switch vào miền VTP với revision number cao hơn",
         "C": "Thêm switch với DTP được đặt thành dynamic desirable",
         "D": "Thêm switch với DTP được đặt thành desirable"
-      }
+      },
+      "explanation": "Đáp án A đúng vì trong VTP, switch nào có revision number cao hơn sẽ được coi là có thông tin VLAN mới nhất và sẽ ghi đè VLAN database lên toàn bộ domain. Nếu switch cũ có revision number cao hơn các switch hiện tại trong domain, nó sẽ đẩy VLAN database cũ của mình ra toàn mạng, xóa các VLAN đang hoạt động và gây gián đoạn nghiêm trọng. Vì vậy, trước khi thêm switch cũ vào mạng, cần đảm bảo revision number của nó thấp hơn các switch trong domain, thường bằng cách đặt switch vào VTP domain khác rồi đổi lại, hoặc thay đổi VTP mode để reset revision number về 0.\n\nĐáp án B sai vì đây chính xác là tình huống nguy hiểm cần tránh, revision number cao hơn sẽ khiến switch cũ ghi đè VLAN database lên toàn domain. Đáp án C và D sai vì DTP liên quan đến việc thương lượng chế độ trunk giữa các cổng, không liên quan gì đến việc bảo vệ VLAN database khỏi bị ghi đè bởi VTP."
     },
     {
       "id": "6.27",
@@ -685,7 +713,8 @@
         "B": "service",
         "C": "redundancy",
         "D": "console"
-      }
+      },
+      "explanation": "Cổng distribution system (DS) trên WLC là cổng chính dùng để kết nối với switch trong mạng, cho phép lưu lượng từ các access point đi qua WLC ra ngoài mạng. Đây là cổng xử lý toàn bộ traffic thông thường của người dùng và dữ liệu quản lý CAPWAP giữa WLC và AP.\n\nCổng service dùng để quản lý out-of-band, không phải để truyền traffic AP. Cổng redundancy dùng để kết nối hai WLC với nhau nhằm đảm bảo dự phòng, không liên quan đến traffic thông thường. Cổng console chỉ dùng để truy cập CLI cục bộ, không kết nối vào switch."
     },
     {
       "id": "7.9",
@@ -708,7 +737,8 @@
         "B": "broadcast đến tất cả các cổng",
         "C": "chuyển tiếp đến cổng khả dụng đầu tiên",
         "D": "gửi đến cổng được xác định cho địa chỉ MAC đã biết"
-      }
+      },
+      "explanation": "Khi switch đã học được địa chỉ MAC đích trong bảng MAC (CAM table), nó sẽ chuyển tiếp frame trực tiếp đến cổng tương ứng với địa chỉ đó, đây là hành vi cơ bản giúp switch hoạt động hiệu quả hơn hub.\n\nĐáp án A mô tả hành vi flooding, chỉ xảy ra khi địa chỉ MAC đích chưa có trong bảng MAC (unknown unicast). Đáp án B là broadcast, áp dụng cho frame có địa chỉ đích là FF:FF:FF:FF:FF:FF, không phải unicast đã biết. Đáp án C không phản ánh cách switch hoạt động vì switch không chọn cổng theo kiểu \"cổng rảnh đầu tiên\" mà luôn dựa vào bảng MAC."
     },
     {
       "id": "7.13",
@@ -731,7 +761,8 @@
         "B": "Bật allow AAA Override",
         "C": "Tắt LAG Mode or Next Reboot.",
         "D": "Bật Event Driven RRM."
-      }
+      },
+      "explanation": "Đáp án B đúng vì tính năng AAA Override cho phép Cisco WLC chấp nhận các thuộc tính VLAN được gửi về từ máy chủ AAA (như Cisco ISE) sau khi xác thực thành công. Khi một client kết nối và cung cấp thông tin đăng nhập, ISE sẽ trả về các thuộc tính RADIUS như VLAN ID, và WLC chỉ áp dụng các thuộc tính này nếu AAA Override được bật. Nếu không bật tính năng này, WLC sẽ bỏ qua thông tin VLAN từ ISE và đặt client vào VLAN mặc định của SSID thay vì VLAN dựa trên thông tin đăng nhập.\n\nCác đáp án còn lại không liên quan đến yêu cầu này. Đáp án A liên quan đến việc xác thực chứng chỉ MIC của Access Point, không phải phân VLAN cho client. Đáp án C liên quan đến cấu hình LAG (Link Aggregation) trên cổng uplink của WLC, không ảnh hưởng đến việc gán VLAN theo thông tin đăng nhập. Đáp án D là tính năng tự động điều chỉnh tần số vô tuyến, hoàn toàn không liên quan đến xác thực hay phân VLAN."
     },
     {
       "id": "7.23",
@@ -754,7 +785,8 @@
         "B": "Các frame đi vào interface được đánh dấu với mức ưu tiên cao hơn và sau đó được switch xử lý nhanh hơn",
         "C": "Sau khi cáp được kết nối, interface sẵn sàng nhanh hơn để gửi và nhận dữ liệu người dùng",
         "D": "Các frame thoại và video thời gian thực đi vào interface được xử lý nhanh hơn"
-      }
+      },
+      "explanation": "PortFast là tính năng STP cho phép một cổng switch bỏ qua các trạng thái Listening và Learning, chuyển thẳng sang trạng thái Forwarding ngay khi cáp được kết nối. Nhờ đó, thiết bị đầu cuối như máy tính hay máy in có thể gửi và nhận dữ liệu gần như ngay lập tức thay vì phải chờ 30-50 giây theo quy trình STP thông thường. Đây chính xác là điều mà đáp án C mô tả.\n\nCác đáp án còn lại sai vì: A nhầm lẫn PortFast với tính năng tự động đàm phán tốc độ (auto-negotiation), vốn hoàn toàn độc lập với STP. B mô tả cơ chế QoS (Quality of Service) liên quan đến việc đánh dấu ưu tiên frame, không liên quan đến PortFast. D cũng là khái niệm QoS dành cho lưu lượng voice/video, không phải chức năng của PortFast."
     },
     {
       "id": "7.28",
@@ -777,7 +809,8 @@
         "B": "Mỗi leaf switch được kết nối đến một leaf switch trung tâm, sau đó uplink đến một core spine switch.",
         "C": "Mỗi leaf switch được kết nối đến mỗi spine switch.",
         "D": "Mỗi leaf switch được kết nối đến một trong các spine switch."
-      }
+      },
+      "explanation": "Trong kiến trúc spine-and-leaf, mỗi leaf switch được kết nối đến tất cả các spine switch, và mỗi spine switch được kết nối đến tất cả các leaf switch. Điều này tạo ra một mạng lưới kết nối đầy đủ (full mesh) giữa hai tầng, đảm bảo mọi luồng dữ liệu từ leaf này sang leaf khác đều đi qua đúng hai hop: leaf nguồn lên spine, rồi spine xuống leaf đích. Thiết kế này giúp phân phối tải đều, tránh tắc nghẽn và đảm bảo độ trễ có thể dự đoán được.\n\nĐáp án A sai vì mô tả kết nối tạo thành vòng lặp, điều này không đúng với spine-and-leaf và có thể gây ra vấn đề spanning tree. Đáp án B mô tả kiến trúc phân cấp ba tầng truyền thống (core-distribution-access), không phải spine-and-leaf. Đáp án D sai vì kết nối mỗi leaf chỉ đến một spine duy nhất sẽ tạo ra điểm lỗi đơn (single point of failure) và không tận dụng được ưu điểm của kiến trúc này."
     },
     {
       "id": "7.42",
@@ -800,7 +833,8 @@
         "B": "Nó được chọn thay vì 802.11b/g khi cần giải pháp chi phí thấp hơn",
         "C": "Nó dễ bị nhiễu từ các thiết bị 2.4 GHz như lò vi sóng.",
         "D": "Nó được sử dụng thay cho 802.11b/g khi cần nhiều kênh không chồng lấn"
-      }
+      },
+      "explanation": "802.11a hoạt động ở băng tần 5 GHz và cung cấp tới 23 kênh không chồng lấp, trong khi 802.11b/g chỉ có 3 kênh không chồng lấp ở băng tần 2.4 GHz. Vì vậy, 802.11a được chọn khi môi trường triển khai cần nhiều kênh độc lập, chẳng hạn như văn phòng đông đúc hoặc khu vực có mật độ thiết bị cao.\n\nA sai vì 802.11a không tương thích với 802.11b/g do dùng băng tần khác nhau, trừ khi thiết bị hỗ trợ dual-band.\n\nB sai vì 802.11a thường đắt hơn 802.11b/g, không phải giải pháp tiết kiệm chi phí.\n\nC sai vì 802.11a dùng băng tần 5 GHz nên không bị ảnh hưởng bởi nhiễu từ các thiết bị 2.4 GHz như lò vi sóng, đây là vấn đề của 802.11b/g."
     },
     {
       "id": "7.44",
@@ -823,7 +857,8 @@
         "B": "Tắt autonegotiation",
         "C": "Tắt Cisco Discovery Protocol trên interface",
         "D": "Bật LLDP-MED trên thiết bị ISP"
-      }
+      },
+      "explanation": "Trong cấu hình trên, lệnh \"lldp transmit\" và \"lldp receive\" đã được bật trên interface Gi1/0, nhưng LLDP chỉ hoạt động khi được bật ở cấp độ toàn cục (global) trước. Trên thiết bị Cisco, LLDP bị tắt theo mặc định và cần lệnh \"lldp run\" ở chế độ global configuration để kích hoạt. Vì ISP sử dụng thiết bị của hãng thứ ba (không phải Cisco), CDP sẽ không hoạt động được, nên LLDP là giao thức neighbor discovery phù hợp duy nhất ở đây.\n\nĐáp án B sai vì việc tắt autonegotiation không liên quan đến neighbor discovery. Đáp án C sai vì việc tắt CDP trên interface không giúp LLDP hoạt động nếu nó chưa được bật globally. Đáp án D sai vì LLDP-MED là phần mở rộng dành cho thiết bị đầu cuối như IP phone, không phải yêu cầu bắt buộc để LLDP cơ bản hoạt động giữa hai router."
     },
     {
       "id": "7.47",
@@ -849,7 +884,8 @@
         "C": "Các interface được bật không bao giờ tạo ra thông báo thay đổi topology.",
         "D": "Các interface được bật chuyển sang trạng thái learning sẽ tạo ra thông báo thay đổi topology của switch",
         "E": "Các interface được bật khởi động và chuyển sang trạng thái forwarding ngay lập tức"
-      }
+      },
+      "explanation": "PortFast được thiết kế cho các cổng kết nối trực tiếp với thiết bị đầu cuối như máy tính hoặc máy chủ, không phải với switch khác.\n\nĐáp án E đúng vì khi PortFast được bật, cổng bỏ qua các trạng thái listening và learning của STP, chuyển thẳng sang forwarding ngay lập tức, giúp thiết bị đầu cuối kết nối mạng nhanh hơn mà không phải chờ 30-50 giây.\n\nĐáp án C đúng vì cổng PortFast không bao giờ gửi TCN (Topology Change Notification) khi chuyển trạng thái, vì thiết bị đầu cuối thay đổi trạng thái liên tục và nếu mỗi lần đều gửi TCN thì sẽ gây ra việc flush MAC address table không cần thiết trên toàn mạng.\n\nĐáp án A sai vì PortFast không đặt cổng vào trạng thái listening mà bỏ qua hoàn toàn trạng thái đó. Đáp án B sai vì 50 giây là thời gian chờ mặc định khi không có PortFast, còn PortFast loại bỏ thời gian chờ này. Đáp án D sai vì đây là mô tả ngược lại với hành vi của PortFast, cổng PortFast không tạo ra TCN khi chuyển sang trạng thái learning."
     },
     {
       "id": "7.48",
@@ -872,7 +908,8 @@
         "B": "cấu hình các cổng trong một black hole VLAN",
         "C": "cấu hình trong một native VLAN không mặc định",
         "D": "cấu hình các cổng là access port"
-      }
+      },
+      "explanation": "Đáp án đúng là B vì các cổng không sử dụng nên được gán vào một VLAN \"black hole\" (thường là một VLAN không được định tuyến và không có thiết bị nào kết nối), nhằm ngăn chặn các mối đe dọa bảo mật như tấn công VLAN hopping hoặc truy cập trái phép vào mạng. Đây là thực hành bảo mật tốt nhất được Cisco khuyến nghị để cô lập các cổng không dùng đến.\n\nĐáp án A sai vì gán cổng vào native VLAN (thường là VLAN 1) lại làm tăng nguy cơ bảo mật, vì VLAN 1 thường mang lưu lượng quản lý và là mục tiêu của các cuộc tấn công. Đáp án C đề cập đến việc cấu hình native VLAN không mặc định, điều này liên quan đến bảo mật trunk port chứ không phải xử lý cổng không dùng. Đáp án D chỉ cấu hình cổng là access port mà không gán vào VLAN cô lập, điều này không đủ để bảo vệ mạng khỏi truy cập không mong muốn."
     },
     {
       "id": "8.4",
@@ -895,7 +932,8 @@
         "B": "route",
         "C": "autonomous",
         "D": "lightweight"
-      }
+      },
+      "explanation": "Đáp án đúng là D vì CAPWAP là giao thức được sử dụng trong kiến trúc mạng Wi-Fi tập trung, trong đó các AP hoạt động ở chế độ lightweight (còn gọi là chế độ LWAPP). Ở chế độ này, AP không tự xử lý các quyết định về roaming, bảo mật hay quản lý RF mà chuyển toàn bộ việc đó cho WLC thông qua đường hầm CAPWAP.\n\nChế độ autonomous (C) là chế độ ngược lại, trong đó AP hoạt động độc lập, tự xử lý mọi thứ mà không cần WLC, do đó không dùng CAPWAP. Các tùy chọn bridge (A) và route (B) không phải là chế độ hoạt động của AP trong ngữ cảnh này."
     },
     {
       "id": "8.5",
@@ -920,7 +958,8 @@
         "B": "Thay đổi chế độ LACP sang active",
         "C": "Thay đổi chế độ LACP sang desirable",
         "D": "Thay đổi giao thức sang PAgP và sử dụng chế độ auto"
-      }
+      },
+      "explanation": "Trong bài này, Switch1 đang dùng LACP ở chế độ active, còn Switch2 đang dùng LACP ở chế độ passive. Vấn đề là passive không tự chủ động gửi yêu cầu thương lượng LACP, nó chỉ phản hồi khi nhận được yêu cầu từ phía đối diện. Khi cả hai đầu đều ở chế độ passive, không bên nào khởi xướng, nên EtherChannel không thể hình thành. Nếu đổi Switch2 sang active, cả hai đầu đều chủ động gửi gói LACP PDU, đảm bảo kênh được thiết lập thành công.\n\nĐáp án A sai vì chế độ on không dùng giao thức thương lượng nào cả, và nếu một bên dùng on còn bên kia dùng LACP active thì hai bên không tương thích, EtherChannel vẫn không lên được. Đáp án C sai vì desirable là chế độ của PAgP, không phải LACP, nên không thể dùng lẫn lộn giữa hai giao thức khác nhau. Đáp án D sai vì PAgP auto cũng có cùng vấn đề như LACP passive, tức là không chủ động khởi xướng, và hơn nữa Switch1 đang dùng LACP nên không thể kết hợp với PAgP."
     },
     {
       "id": "8.6",
@@ -943,7 +982,8 @@
         "B": "radio",
         "C": "band",
         "D": "Layer 2"
-      }
+      },
+      "explanation": "Xác thực không dây (wireless authentication) xảy ra ở Layer 2 trong mô hình OSI, cụ thể là tầng Data Link. Đây là nơi các thiết bị trao đổi thông tin xác thực trước khi có thể truyền dữ liệu lên các tầng cao hơn.\n\nSSID chỉ là tên định danh của mạng không dây, không phải nơi xác thực diễn ra. Radio là thành phần phần cứng phát sóng tín hiệu, còn band chỉ là dải tần số (2.4 GHz hay 5 GHz) mà tín hiệu sử dụng — cả hai đều không liên quan đến quá trình xác thực."
     },
     {
       "id": "8.7",
@@ -966,7 +1006,8 @@
         "B": "access – distribution – distribution – access",
         "C": "access – core – access",
         "D": "access – distribution – core – distribution – access"
-      }
+      },
+      "explanation": "Trong mô hình kiến trúc ba lớp (access, distribution, core), lưu lượng giữa hai workstation trên các switch khác nhau nhưng cùng thuộc một khu vực mạng sẽ đi từ lớp access lên lớp distribution, sau đó sang distribution của khu vực kia rồi xuống lớp access đích. Lớp core chỉ được sử dụng khi lưu lượng cần đi giữa các khối distribution khác nhau, tức là khi khoảng cách mạng vượt qua ranh giới của một distribution block.\n\nĐáp án A sai vì đưa lưu lượng lên tận lớp core trong khi không cần thiết, core chỉ dành cho liên lạc giữa các distribution block khác nhau. Đáp án C sai vì bỏ qua hoàn toàn lớp distribution, đây không phải luồng hợp lệ trong mô hình ba lớp. Đáp án D mô tả đúng luồng khi hai workstation nằm ở các distribution block khác nhau và cần đi qua core, nhưng câu hỏi chỉ đề cập hai switch trên cùng một kiến trúc mà không nói khác block, nên B là câu trả lời phù hợp hơn cho trường hợp phổ biến nhất trong đề thi CCNA."
     },
     {
       "id": "8.9",
@@ -989,7 +1030,8 @@
         "B": "Nó phân biệt lưu lượng đi vào các access point",
         "C": "Nó nhận dạng một access point riêng lẻ trên một WLAN",
         "D": "Nó nhận dạng một WLAN"
-      }
+      },
+      "explanation": "SSID (Service Set Identifier) là tên định danh cho một mạng WLAN, giúp các thiết bị nhận biết và kết nối đúng mạng không dây mong muốn. Đây là chức năng cốt lõi của SSID, không phải bảo mật hay phân biệt thiết bị.\n\nĐáp án A sai vì SSID không cung cấp bảo mật, bảo mật mạng WLAN được thực hiện qua các cơ chế như WPA2/WPA3. Đáp án B sai vì SSID không phân biệt luồng traffic đi vào access point, đó là chức năng của các cơ chế QoS hoặc VLAN. Đáp án C gần đúng nhưng không chính xác vì SSID định danh cho toàn bộ mạng WLAN, không phải cho một access point riêng lẻ, BSSID mới là thứ định danh từng access point cụ thể."
     },
     {
       "id": "8.10",
@@ -1015,7 +1057,8 @@
         "C": "Nó nhận dạng duy nhất một client trong một WLAN",
         "D": "Nó có tối đa 32 ký tự",
         "E": "Nó cung cấp truy cập bảo mật vào một WLAN"
-      }
+      },
+      "explanation": "Đáp án đúng là A và D.\n\nA đúng vì SSID có thể được phát quảng bá (broadcast) để các thiết bị client nhìn thấy và kết nối, hoặc có thể bị ẩn đi để không hiển thị trong danh sách mạng Wi-Fi — đây là tính năng cơ bản của SSID trong quản lý WLAN.\n\nD đúng vì theo chuẩn IEEE 802.11, SSID là một chuỗi ký tự có độ dài tối đa 32 ký tự (32 octets), đây là giới hạn kỹ thuật được quy định rõ ràng.\n\nB sai vì SSID không định danh duy nhất một access point — nhiều AP có thể dùng cùng một SSID để tạo thành một mạng WLAN thống nhất (ví dụ trong roaming). Địa chỉ MAC (BSSID) mới là thứ định danh duy nhất từng AP.\n\nC sai vì SSID không định danh client, nó định danh mạng. Địa chỉ MAC của thiết bị client mới là thứ định danh từng client.\n\nE sai vì SSID không cung cấp bảo mật. Bản thân SSID chỉ là tên mạng, không có cơ chế xác thực hay mã hóa. Bảo mật được thực hiện qua WPA2/WPA3, không phải SSID."
     },
     {
       "id": "8.13",
@@ -1038,7 +1081,8 @@
         "B": "interface chính Layer 3",
         "C": "subinterface Layer 3",
         "D": "trunk port"
-      }
+      },
+      "explanation": "PortFast được thiết kế dành riêng cho các cổng access, tức là những cổng kết nối trực tiếp đến thiết bị đầu cuối như máy tính hoặc máy in, không phải kết nối đến switch khác. Khi bật PortFast trên access port, cổng sẽ bỏ qua các trạng thái Listening và Learning của Spanning Tree, chuyển thẳng sang Forwarding để giảm thời gian chờ khi thiết bị kết nối vào mạng.\n\nTrunk port (D) về mặt kỹ thuật có thể cấu hình PortFast nhưng cần thêm tham số \"trunk\" đi kèm, nên không thỏa điều kiện \"không cần cấu hình thêm\". Layer 3 main interface (B) và subinterface (C) là các routed interface, không tham gia vào Spanning Tree nên lệnh portfast không áp dụng cho chúng."
     },
     {
       "id": "8.17",
@@ -1061,7 +1105,8 @@
         "B": "STP",
         "C": "VTP",
         "D": "802.1Q"
-      }
+      },
+      "explanation": "STP (Spanning Tree Protocol) có thể ngăn máy trạm nhận địa chỉ DHCP vì khi một cổng switch đang trong trạng thái blocking hoặc đang hội tụ, nó sẽ không chuyển tiếp lưu lượng dữ liệu, bao gồm cả các gói DHCP Discover và Offer. Nếu cổng mất quá nhiều thời gian để chuyển sang trạng thái forwarding (mặc định có thể mất đến 30-50 giây với STP truyền thống), máy trạm sẽ hết thời gian chờ trước khi nhận được địa chỉ IP.\n\nDTP (Dynamic Trunking Protocol) chỉ liên quan đến việc đàm phán chế độ trunk giữa các switch, không ảnh hưởng trực tiếp đến việc nhận DHCP. VTP (VLAN Trunking Protocol) dùng để đồng bộ thông tin VLAN giữa các switch, cũng không trực tiếp chặn lưu lượng DHCP. 802.1Q là chuẩn đóng gói VLAN (câu hỏi ghi 802.10 có thể là lỗi đánh máy), và bản thân nó không ngăn máy trạm nhận DHCP."
     },
     {
       "id": "8.23",
@@ -1086,7 +1131,8 @@
         "B": "giữa vùng 2 và 5",
         "C": "giữa vùng 3 và 4",
         "D": "giữa vùng 3 và 6"
-      }
+      },
+      "explanation": "Đây là câu hỏi về vùng phủ sóng không dây (wireless coverage zones), trong đó các vùng chồng lấp nhau (overlap) đảm bảo kết nối liên tục, còn các vùng có khoảng trống (gap) giữa chúng sẽ gây mất kết nối gián đoạn.\n\nĐáp án C đúng vì giữa vùng 3 và vùng 4 có một khoảng trống trong vùng phủ sóng, tức là hai vùng này không chồng lấp đủ để duy trì kết nối liên tục. Khi người dùng di chuyển qua khu vực này, thiết bị sẽ mất tín hiệu từ AP hiện tại trước khi bắt được tín hiệu từ AP tiếp theo, dẫn đến kết nối bị gián đoạn.\n\nCác đáp án còn lại sai vì các cặp vùng đó có vùng phủ sóng chồng lấp nhau đúng cách, đảm bảo quá trình roaming diễn ra mượt mà mà không bị mất kết nối. Để tránh gián đoạn, các AP cần được bố trí sao cho vùng phủ sóng chồng lấp khoảng 10-15% giữa các ô lân cận."
     },
     {
       "id": "8.29",
@@ -1109,7 +1155,8 @@
         "B": "management",
         "C": "control",
         "D": "data"
-      }
+      },
+      "explanation": "Probe request và probe response đều thuộc loại frame quản lý (management frame) trong chuẩn 802.11. Management frame được dùng để thiết lập và duy trì kết nối giữa client và access point, bao gồm các quá trình như scanning, authentication và association. Các frame như beacon, probe request, probe response, authentication và association request đều là management frame.\n\nAction frame thực ra là một subtype nằm trong nhóm management frame, không phải một loại frame độc lập ngang hàng. Control frame có vai trò hỗ trợ việc truyền dữ liệu, ví dụ như ACK hay RTS/CTS, không liên quan đến quá trình dò tìm mạng. Data frame chỉ dùng để mang dữ liệu người dùng sau khi kết nối đã được thiết lập xong."
     },
     {
       "id": "8.30",
@@ -1132,7 +1179,8 @@
         "B": "cấu hình ba điểm truy cập (access point) đầu tiên sử dụng các kênh 1, 6 và 11",
         "C": "bao gồm ít nhất hai điểm truy cập (access point) trên các kênh không chồng lấn (nonoverlapping channel) để hỗ trợ cân bằng tải (load balancing)",
         "D": "gán các điểm truy cập (access point) liền kề vật lý vào cùng một kênh Wi-Fi"
-      }
+      },
+      "explanation": "Trong chuẩn Wi-Fi 2.4 GHz, chỉ có ba kênh không chồng lấp nhau là 1, 6 và 11. Việc cấu hình ba access point đầu tiên sử dụng ba kênh này giúp tránh nhiễu giữa các AP lân cận, đây là thực hành chuẩn được khuyến nghị trong thiết kế hạ tầng không dây.\n\nĐáp án A sai vì gom các AP lại gần nhau trên cùng một kênh sẽ gây nhiễu đồng kênh, làm giảm hiệu suất thay vì tăng throughput. Đáp án C sai vì chỉ hai AP là không đủ để triển khai load balancing hiệu quả, và cách diễn đạt này không phản ánh đúng nguyên tắc thiết kế chuẩn. Đáp án D sai vì các AP liền kề nhau mà dùng cùng kênh sẽ tranh chấp băng thông và gây nhiễu nghiêm trọng, đây là lỗi thiết kế cơ bản cần tránh."
     },
     {
       "id": "8.49",
@@ -1157,7 +1205,8 @@
         "B": "switchport mode dynamic desirable \nswitchport trunk allowed vlan add 5",
         "C": "switchport mode dynamic auto \nswitchport private-vlan association host 5",
         "D": "switchport mode dynamic auto \nswitchport trunk encapsulation negotiate"
-      }
+      },
+      "explanation": "Đáp án B đúng vì SW_2 yêu cầu sử dụng DTP để kết nối với SW_1, và \"dynamic desirable\" là chế độ chủ động gửi gói tin DTP để đàm phán trunk, đảm bảo liên kết trunk được thiết lập thành công. Lệnh \"switchport trunk allowed vlan add 5\" cần thiết để cho phép VLAN 5 đi qua trunk, vì máy in được cấu hình trên VLAN 5 ở phía SW_1.\n\nĐáp án A sai vì \"switchport mode trunk\" cấu hình cổng thành trunk tĩnh mà không dùng DTP để đàm phán, không đáp ứng yêu cầu của đề bài. Ngoài ra, \"trunk pruning vlan add 5\" là lệnh liên quan đến VTP pruning, không phải cách thêm VLAN vào danh sách cho phép trên trunk.\n\nĐáp án C sai vì \"dynamic auto\" là chế độ thụ động, chỉ chờ phía đối diện khởi tạo đàm phán DTP chứ không chủ động gửi, và nếu cả hai đầu đều là auto thì trunk sẽ không được hình thành. Lệnh \"switchport private-vlan association host 5\" thuộc về cấu hình Private VLAN, hoàn toàn không liên quan đến tình huống này.\n\nĐáp án D sai vì \"switchport trunk encapsulation negotiate\" chỉ dùng để đàm phán kiểu đóng gói trunk (802.1Q hay ISL) trên các switch hỗ trợ cả hai, không phải lệnh để thêm VLAN vào trunk, và không giải quyết được yêu cầu cho phép VLAN 5 đi qua."
     },
     {
       "id": "8.53",
@@ -1182,7 +1231,8 @@
         "B": "Nó gặp hiện tượng bão quảng bá (broadcast storm).",
         "C": "Nó phát tràn (flood) khung ra tất cả các cổng ngoại trừ cổng Fa0/1.",
         "D": "Nó loại bỏ khung khỏi bảng CAM của switch."
-      }
+      },
+      "explanation": "Khi switch nhận một frame từ host A qua cổng Fa0/1, nó sẽ tra cứu địa chỉ MAC đích trong bảng CAM. Nếu địa chỉ MAC của host D chưa có trong bảng CAM, switch không biết frame cần chuyển ra cổng nào, nên nó thực hiện flooding — tức là gửi frame ra tất cả các cổng đang hoạt động, ngoại trừ cổng mà frame đó đến (Fa0/1). Đây là hành vi mặc định của switch với unicast frame có địa chỉ đích chưa được học.\n\nĐáp án A sai vì err-disable chỉ xảy ra khi có vi phạm bảo mật như port security, không phải khi nhận frame bình thường. Đáp án B sai vì broadcast storm xảy ra do vòng lặp mạng (loop), không phải do một frame unicast đơn lẻ. Đáp án D sai vì bảng CAM lưu địa chỉ MAC nguồn để học, không phải địa chỉ đích, và switch không \"drop frame khỏi CAM table\" — đó không phải khái niệm có thật."
     },
     {
       "id": "8.54",
@@ -1207,7 +1257,8 @@
         "B": "SW1(config)#interface fa0/1 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#switchport trunk native vlan 2 \nSW1(config-if)#switchport trunk allowed vlan 3",
         "C": "SW1(config-if)#interface fa0/2 \nSW1(config-if)#no switchport mode trunk\nSW1(config-if)#no switchport trunk allowed vlan 3 \nSW1(config-if)#switchport mode access",
         "D": "SW1(config)#interface fa0/1 \nSW1(config-if)#no switchport access vlan 2 \nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#switchport trunk allowed vlan 2"
-      }
+      },
+      "explanation": "Vấn đề ở đây là cổng fa0/2 đang được cấu hình sai ở chế độ trunk trong khi PC2 là một thiết bị đầu cuối, cần kết nối qua cổng access. Khi cổng nối với PC2 ở chế độ trunk, switch sẽ không học được địa chỉ MAC của PC2 vào đúng VLAN, dẫn đến entry bị thiếu trong bảng MAC. Đáp án C sửa đúng vấn đề bằng cách xóa cấu hình trunk trên fa0/2 và chuyển về chế độ access, cho phép PC2 giao tiếp bình thường với PC1 trong cùng VLAN.\n\nĐáp án A sai vì nó vẫn giữ fa0/2 ở chế độ trunk và chỉ thay đổi VLAN được phép, không giải quyết được nguyên nhân gốc rễ. Đáp án B sai vì nó tác động lên fa0/1 thay vì fa0/2, và cấu hình native VLAN cùng trunk allowed VLAN không liên quan đến vấn đề PC2 bị thiếu. Đáp án D cũng sai vì thao tác trên fa0/1 và lệnh switchport trunk allowed vlan 2 không phù hợp với cổng access nối PC1."
     },
     {
       "id": "8.56",
@@ -1233,7 +1284,8 @@
         "C": "disabled",
         "D": "learning",
         "E": "listening"
-      }
+      },
+      "explanation": "PortFast được thiết kế cho các cổng kết nối trực tiếp với thiết bị đầu cuối như máy tính hoặc máy chủ, nơi không cần lo ngại về vòng lặp mạng. Khi PortFast được bật, cổng sẽ bỏ qua hai trạng thái listening và learning, chuyển thẳng từ blocking sang forwarding để giảm thời gian chờ khoảng 30 giây mà STP thông thường cần.\n\nTrạng thái listening là giai đoạn STP lắng nghe BPDU để xây dựng topology, còn learning là giai đoạn học địa chỉ MAC trước khi chuyển tiếp dữ liệu. PortFast bỏ qua cả hai vì thiết bị đầu cuối không tạo ra vòng lặp, nên không cần trải qua các bước kiểm tra này.\n\nCác đáp án còn lại sai vì forwarding là trạng thái đích mà PortFast hướng tới chứ không bỏ qua, blocking là trạng thái khởi đầu mà cổng vẫn trải qua dù rất ngắn, còn disabled không phải trạng thái STP mà là trạng thái cổng bị tắt hoàn toàn."
     },
     {
       "id": "8.57",
@@ -1256,7 +1308,8 @@
         "B": "Bộ điều khiển (controller) phải được khởi động lại sau khi bật hoặc cấu hình lại LAG.",
         "C": "Giao diện quản lý (management interface) phải được gán lại nếu LAG bị tắt.",
         "D": "Nhiều giao diện không gắn thẻ (untagged) trên cùng một cổng phải được hỗ trợ."
-      }
+      },
+      "explanation": "LAG (Link Aggregation Group) trên WLC yêu cầu khởi động lại bộ điều khiển sau khi bật hoặc cấu hình lại, vì đây là thay đổi ở cấp độ hệ thống ảnh hưởng đến cách WLC xử lý tất cả các cổng vật lý. Không có cơ chế áp dụng thay đổi LAG ngay lập tức mà không reboot.\n\nĐáp án A sai vì khi LAG được bật, tất cả lưu lượng được phân phối tự động qua các cổng trong nhóm, không cần chỉ định cổng vào/ra thủ công. Đáp án C sai vì management interface không bắt buộc phải gán lại khi tắt LAG, dù có thể cần điều chỉnh cấu hình cổng. Đáp án D sai vì LAG thực ra yêu cầu chỉ một untagged interface trên mỗi cổng, không phải hỗ trợ nhiều untagged interface."
     },
     {
       "id": "8.58",
@@ -1279,7 +1332,8 @@
         "B": "tốc độ truyền khác nhau",
         "C": "dải tần số không liên tục (discontinuous frequency range)",
         "D": "các SSID duy nhất"
-      }
+      },
+      "explanation": "Các kênh Wi-Fi không chồng lấp nhau yêu cầu phải sử dụng các dải tần số không liên tục, tức là các kênh phải cách nhau đủ xa về mặt tần số để tránh giao thoa. Ví dụ trong băng tần 2.4 GHz, các kênh 1, 6 và 11 được dùng phổ biến vì chúng không chồng lấp nhau về mặt tần số.\n\nCác đáp án còn lại sai vì: cài đặt bảo mật khác nhau (A) và SSID khác nhau (D) không liên quan đến việc tránh giao thoa tần số giữa các kênh. Tốc độ truyền khác nhau (B) cũng không ảnh hưởng đến việc các kênh có chồng lấp tần số hay không."
     },
     {
       "id": "8.66",
@@ -1304,7 +1358,8 @@
         "B": "Thay đổi chế độ channel-group trên SW1 thành active hoặc passive.",
         "C": "Thay đổi chế độ channel-group trên SW2 thành auto.",
         "D": "Cấu hình lệnh interface port-channel 1 trên cả hai switch."
-      }
+      },
+      "explanation": "LACP (Link Aggregation Control Protocol) là giao thức chuẩn IEEE 802.3ad, chỉ hoạt động với hai chế độ là active và passive. Trong exhibit, SW1 đang được cấu hình ở chế độ on, tức là ép buộc tạo EtherChannel mà không chạy giao thức đàm phán nào. SW2 đang ở chế độ active (LACP), nhưng vì SW1 dùng chế độ on thay vì active hoặc passive, hai switch không thể đàm phán LACP với nhau và port channel sẽ không được thiết lập. Khi đổi SW1 sang active hoặc passive, cả hai đầu đều nói cùng ngôn ngữ LACP và kênh sẽ hình thành thành công.\n\nĐáp án A sai vì desirable là chế độ của PAgP, không phải LACP. Đáp án C sai vì auto cũng là chế độ PAgP, không liên quan đến LACP. Đáp án D sai vì interface port-channel được tạo tự động khi EtherChannel được thiết lập thành công, không cần cấu hình thủ công trước."
     },
     {
       "id": "8.67",
@@ -1329,7 +1384,8 @@
         "B": "Switch2(config)#lldp timer 60 \nSwitch2(config)#lldp holdtime 180",
         "C": "Switch2(config)#lldp timer 1\nSwitch2(config)#lldp tlv-select 3",
         "D": "Switch2(config)#lldp timer 1 \nSwitch2(config)#lldp holdtime 3"
-      }
+      },
+      "explanation": "Đáp án B đúng vì lệnh \"lldp timer 60\" cấu hình switch gửi gói LLDP mỗi 60 giây (tức 1 phút), và \"lldp holdtime 180\" đặt thời gian giữ thông tin LLDP là 180 giây (3 phút) — đây chính xác là hai yêu cầu đề bài đặt ra. Holdtime là khoảng thời gian thiết bị nhận sẽ lưu giữ thông tin LLDP trước khi coi nó là hết hạn, tức là thông tin được \"làm mới\" sau 3 phút nếu không nhận được gói mới.\n\nĐáp án A sai vì \"lldp tlv-select\" dùng để chọn loại TLV (Type-Length-Value) nào được đưa vào gói LLDP, không phải để đặt thời gian giữ thông tin. Đáp án C và D sai vì đơn vị của lldp timer là giây, không phải phút, nên \"lldp timer 1\" chỉ gửi gói mỗi 1 giây thay vì 1 phút. Tương tự, \"lldp holdtime 3\" chỉ giữ thông tin trong 3 giây, không phải 3 phút."
     },
     {
       "id": "8.72",
@@ -1352,7 +1408,8 @@
         "B": "một tường lửa (firewall)",
         "C": "một điểm truy cập nhẹ (lightweight access point)",
         "D": "một bộ điều khiển mạng LAN không dây (wireless LAN controller)"
-      }
+      },
+      "explanation": "Wireless LAN Controller (WLC) là thiết bị trung tâm quản lý toàn bộ các access point trong mạng doanh nghiệp, bao gồm xác thực người dùng và xử lý roaming khi thiết bị di chuyển giữa các access point. WLC cho phép cấu hình chính sách bảo mật và roaming tập trung tại một nơi thay vì phải cấu hình từng AP riêng lẻ.\n\nLAN switch chỉ chuyển tiếp lưu lượng ở lớp 2, không có chức năng quản lý xác thực hay roaming không dây. Firewall kiểm soát lưu lượng mạng dựa trên chính sách bảo mật nhưng không quản lý các AP hay xử lý roaming. Lightweight access point là thiết bị phụ thuộc vào WLC để hoạt động, bản thân nó không cung cấp khả năng kiểm soát tập trung mà chỉ thực thi các lệnh từ WLC."
     },
     {
       "id": "8.76",
@@ -1377,7 +1434,8 @@
         "B": "interface FastEthernet0/1 \nswitchport mode trunk \nswitchport trunk allowed vlan 10,15",
         "C": "interface FastEthernet0/1 \nswitchport trunk allowed vlan add 10 \nvlan 10\nprivate-vlan isolated",
         "D": "interface FastEthernet0/1 \nswitchport mode access \nswitchport voice vlan 10"
-      }
+      },
+      "explanation": "Dựa vào exhibit, cổng FastEthernet0/1 đang được cấu hình để kết nối với một IP phone, đây là tình huống điển hình cần dùng voice VLAN. Lệnh \"switchport mode access\" đặt cổng ở chế độ access để mang data VLAN bình thường, còn \"switchport voice vlan 10\" cho phép cổng đó đồng thời truyền traffic thoại trên VLAN 10 với CoS/QoS phù hợp. Đây là cấu hình chuẩn cho cổng nối IP phone kết hợp với máy tính phía sau.\n\nĐáp án A sai vì chỉ cấu hình native VLAN và allowed VLAN trên trunk mà không thiết lập chế độ trunk, cổng sẽ không hoạt động đúng. Đáp án B cấu hình trunk với allowed VLAN 10 và 15, phù hợp cho liên kết giữa hai switch chứ không phải cho cổng nối IP phone. Đáp án C dùng private VLAN isolated, đây là tính năng hoàn toàn khác, không liên quan đến voice VLAN và không phù hợp với yêu cầu bài."
     },
     {
       "id": "9.1",
@@ -1403,7 +1461,8 @@
         "C": "int range g0/0-1\nchannel-group 10 mode passive",
         "D": "int range g0/0-1 \nchannel-group 10 mode auto",
         "E": "int range g0/0-1 \nchannel-group 10 mode on"
-      }
+      },
+      "explanation": "Từ output của lệnh show etherchannel summary, cột Protocol hiển thị LACP cho cả Po10 và Po20, nghĩa là EtherChannel được đàm phán bằng giao thức LACP (IEEE 802.3ad). LACP có hai mode hợp lệ là active (chủ động gửi gói LACP) và passive (chờ nhận gói LACP từ phía đối diện). Để EtherChannel hình thành, ít nhất một đầu phải ở mode active, vì vậy cặp active-passive hoặc active-active đều hoạt động được.\n\nĐáp án A dùng mode active và đáp án C dùng mode passive, đây là hai mode thuộc LACP, kết hợp lại thỏa mãn điều kiện để Po10 hình thành.\n\nĐáp án B (desirable) và D (auto) là các mode của giao thức PAgP (Cisco proprietary), không phải LACP, nên không thể tạo EtherChannel khi output yêu cầu LACP.\n\nĐáp án E (mode on) ép buộc tạo EtherChannel mà không dùng giao thức đàm phán nào cả, nhưng output cho thấy Protocol là LACP chứ không phải trống, nên mode on không khớp với cấu hình này."
     },
     {
       "id": "9.12",
@@ -1426,7 +1485,8 @@
         "B": "Nó ánh xạ nhiều VLAN vào cùng một phiên bản spanning-tree (spanning-tree instance)",
         "C": "Nó tạo một phiên bản spanning-tree cho mỗi VLAN",
         "D": "Nó sử dụng nhiều đường dẫn hoạt động (active path) giữa các trạm cuối (end station)"
-      }
+      },
+      "explanation": "Rapid PVST+ là viết tắt của Rapid Per-VLAN Spanning Tree Plus, trong đó \"Per-VLAN\" chính là điểm mấu chốt. Giao thức này tạo ra một spanning-tree instance riêng biệt cho mỗi VLAN, cho phép mỗi VLAN có topology không có vòng lặp độc lập, với root bridge và trạng thái cổng riêng. Nhờ đó, lưu lượng của từng VLAN có thể được tối ưu hóa riêng, đồng thời vẫn đảm bảo hội tụ nhanh nhờ cơ chế Rapid STP.\n\nĐáp án A sai vì Rapid PVST+ không yêu cầu nhiều liên kết vật lý giữa các switch lõi, đây chỉ là thiết kế tùy chọn để tăng dự phòng. Đáp án B mô tả cách hoạt động của MSTP (Multiple Spanning Tree Protocol), không phải Rapid PVST+. Đáp án D sai vì spanning tree về bản chất chặn các đường dự phòng để tránh vòng lặp, không cho phép nhiều đường active cùng lúc giữa các thiết bị đầu cuối."
     },
     {
       "id": "9.19",
@@ -1449,7 +1509,8 @@
         "B": "management",
         "C": "trunk",
         "D": "access"
-      }
+      },
+      "explanation": "Trong kiến trúc tập trung (centralized), các lightweight AP kết nối với switch thông qua một cổng access, không phải trunk. Lý do là AP chỉ cần thuộc về một VLAN duy nhất để giao tiếp với Wireless LAN Controller (WLC), và toàn bộ traffic từ client sẽ được đóng gói trong CAPWAP tunnel gửi về WLC xử lý, chứ không cần switch phân loại nhiều VLAN tại cổng đó.\n\nChế độ trunk (C) dùng khi thiết bị đầu cuối cần mang nhiều VLAN, thường áp dụng cho cổng nối giữa switch với switch hoặc switch với WLC. Management (B) là tên của một loại interface logic trên switch hoặc WLC, không phải chế độ cổng vật lý. WLAN dynamic (A) không phải khái niệm tồn tại trong cấu hình interface của switch."
     },
     {
       "id": "9.23",
@@ -1474,7 +1535,8 @@
         "B": "Có vấn đề với cáp quang (fiber) trên giao diện switch",
         "C": "Có sự không khớp tốc độ (speed mismatch) trên giao diện",
         "D": "Có sự không khớp loại giao diện (interface type mismatch)"
-      }
+      },
+      "explanation": "Để trả lời câu hỏi này, cần hiểu cách đọc thông tin từ lệnh \"show interfaces\" trên switch. Khi một cổng hiển thị trạng thái \"up/up\" nhưng lại có nhiều lỗi như late collisions, input errors hoặc CRC errors tăng liên tục, đó là dấu hiệu điển hình của duplex mismatch. Duplex mismatch xảy ra khi một đầu kết nối được cấu hình full-duplex còn đầu kia là half-duplex, khiến thiết bị half-duplex phát hiện va chạm (collision) trong khi thiết bị full-duplex vẫn tiếp tục truyền dữ liệu, dẫn đến hiệu suất kém dù đường link vẫn hoạt động.\n\nĐáp án A đúng vì các triệu chứng trong exhibit như late collisions và lỗi tăng cao là biểu hiện đặc trưng nhất của duplex mismatch, không phải lỗi vật lý hay cấu hình tốc độ.\n\nĐáp án B sai vì kết nối giữa PC và switch thường dùng cáp đồng (copper), không phải cáp quang, và nếu cáp quang bị lỗi thì đường link sẽ down hoàn toàn chứ không chỉ chậm. Đáp án C sai vì speed mismatch sẽ khiến đường link không thể lên trạng thái up được, không gây ra tình trạng hoạt động kém như mô tả. Đáp án D sai vì interface type mismatch cũng sẽ khiến link không thể kết nối được ngay từ đầu."
     },
     {
       "id": "9.24",
@@ -1497,7 +1559,8 @@
         "B": "một tường lửa (firewall)",
         "C": "một bộ điều khiển mạng LAN không dây (wireless LAN controller)",
         "D": "một switch LAN"
-      }
+      },
+      "explanation": "Wireless LAN Controller (WLC) là thiết bị trung tâm quản lý toàn bộ các access point trong mạng doanh nghiệp, bao gồm xác thực người dùng và xử lý roaming khi thiết bị di chuyển giữa các access point. WLC cho phép áp dụng chính sách bảo mật và cấu hình đồng nhất trên toàn hệ thống mà không cần cấu hình từng AP riêng lẻ.\n\nLightweight access point (A) chỉ là thiết bị đầu cuối phụ thuộc vào WLC để hoạt động, nó không tự quản lý xác thực hay roaming. Firewall (B) kiểm soát lưu lượng mạng dựa trên chính sách bảo mật, không phải thiết bị quản lý wireless. LAN switch (D) chuyển tiếp dữ liệu trong mạng có dây, không liên quan đến quản lý xác thực hay roaming không dây."
     },
     {
       "id": "9.31",
@@ -1522,7 +1585,8 @@
         "B": "switchport trunk allowed vlan all",
         "C": "switchport trunk allowed vlan add 104",
         "D": "switchport trunk allowed vlan 104"
-      }
+      },
+      "explanation": "Lệnh \"switchport trunk allowed vlan add 104\" sử dụng từ khóa \"add\" để bổ sung VLAN 104 vào danh sách VLAN đã được cho phép trên trunk, mà không xóa hay thay thế các VLAN đang tồn tại. Đây chính xác là yêu cầu của bài: chèn VLAN mới mà không thay đổi cấu hình hiện tại.\n\nĐáp án A sai vì lệnh này thay thế toàn bộ danh sách VLAN được phép bằng dải 100-104, xóa mất các VLAN đã cấu hình trước đó ngoài khoảng đó. Đáp án B sai vì \"all\" cho phép tất cả VLAN đi qua trunk, thay đổi hoàn toàn cấu hình hiện tại. Đáp án D sai vì không có từ khóa \"add\", lệnh này sẽ thay thế toàn bộ danh sách VLAN được phép chỉ còn mình VLAN 104."
     },
     {
       "id": "9.36",
@@ -1545,7 +1609,8 @@
         "B": "để cung cấp dự phòng liên kết (link redundancy) và cân bằng tải (load balancing)",
         "C": "để cho phép chuyển đổi dự phòng có trạng thái (stateful) và theo trạng thái liên kết (link-state failover)",
         "D": "để cho phép các cổng switch được kết nối chuyển đổi dự phòng và sử dụng các VLAN khác nhau"
-      }
+      },
+      "explanation": "LAG (Link Aggregation Group) trên Cisco WLC cho phép gộp nhiều cổng vật lý thành một liên kết logic duy nhất, mục đích chính là tăng băng thông và cung cấp khả năng dự phòng khi một cổng bị lỗi. Đây chính xác là định nghĩa và lý do triển khai LAG, nên đáp án B là đúng.\n\nĐáp án A sai vì LAG không liên quan đến bảo mật hay mã hóa management frame, đó là chức năng của các giao thức như MFP hoặc WPA2/WPA3. Đáp án C sai vì stateful failover và link-state failover là tính năng của các giao thức như HSRP hoặc cơ chế HA của WLC, không phải LAG. Đáp án D sai vì LAG không cho phép các cổng switch chuyển sang VLAN khác khi failover, việc phân chia VLAN được quản lý qua cấu hình trunk và interface riêng biệt."
     },
     {
       "id": "9.38",
@@ -1568,7 +1633,8 @@
         "B": "static",
         "C": "active",
         "D": "auto"
-      }
+      },
+      "explanation": "Chế độ static trong PoE cho phép switch phân bổ nguồn điện ngay lập tức cho cổng mà không cần chờ quá trình đàm phán với thiết bị được cấp nguồn (PD). Điều này đảm bảo rằng nguồn điện luôn được dự trữ sẵn cho cổng đó, ngay cả trước khi thiết bị được phát hiện, giúp đảm bảo tính ổn định cho các thiết bị quan trọng.\n\nChế độ auto là chế độ mặc định, chỉ cấp nguồn sau khi phát hiện và đàm phán với PD, không đảm bảo nguồn điện trước. Dynamic và active không phải là các chế độ PoE hợp lệ trong cấu hình Cisco, nên hai đáp án này không đúng."
     },
     {
       "id": "9.39",
@@ -1591,7 +1657,8 @@
         "B": "switchport mode trunk \nswitchport access vlan 20 \nswitchport voice vlan 30",
         "C": "switchport mode dynamic auto \nswitchport trunk native vlan 20 \nswitchport trunk allowed vlan 30 \nswitchport voice vlan 30",
         "D": "switchport mode dynamic desirable \nswitchport access vlan 20 \nswitchport trunk allowed vlan 30 \nswitchport voice vlan 30"
-      }
+      },
+      "explanation": "Đáp án A đúng vì đây là cấu hình chuẩn cho cổng kết nối đến IP phone của Cisco. Lệnh \"switchport mode access\" đặt cổng ở chế độ access, \"switchport access vlan 20\" đảm bảo các frame không được tag sẽ thuộc VLAN 20, còn \"switchport voice vlan 30\" cho phép switch tự động tag traffic thoại vào VLAN 30 khi phát hiện IP phone qua CDP. Đây chính xác là mô hình dual-VLAN trên một cổng access mà Cisco thiết kế cho điện thoại IP.\n\nĐáp án B sai vì \"switchport mode trunk\" không phù hợp ở đây, cổng trunk không dùng \"switchport access vlan\" để xử lý frame không tag theo cách này. Đáp án C và D sai vì \"dynamic auto\" và \"dynamic desirable\" là các chế độ đàm phán trunk qua DTP, không phải chế độ access, và \"switchport trunk native vlan\" hay \"trunk allowed vlan\" không phải cách cấu hình đúng cho kịch bản IP phone trên cổng access."
     },
     {
       "id": "9.41",
@@ -1616,7 +1683,8 @@
         "B": "Tắt mã hóa AES",
         "C": "Bật Fast Transition và chọn tùy chọn FT 802.1x",
         "D": "Bật Fast Transition và chọn tùy chọn FT PSK"
-      }
+      },
+      "explanation": "IEEE 802.11r định nghĩa cơ chế Fast BSS Transition (FT), cho phép thiết bị di chuyển giữa các Access Point mà không bị gián đoạn kết nối, đây chính xác là yêu cầu đặt ra trong câu hỏi. Trong môi trường doanh nghiệp có nhiều tầng và khu vực, xác thực thường được quản lý qua máy chủ RADIUS với chuẩn 802.1x, vì vậy tùy chọn FT 802.1x là phù hợp để kết hợp Fast Transition với xác thực doanh nghiệp.\n\nĐáp án A sai vì CCKM là cơ chế roaming nhanh độc quyền của Cisco, không phải chuẩn IEEE 802.11r. Đáp án B sai vì tắt AES sẽ làm giảm bảo mật và không liên quan đến yêu cầu duy trì kết nối khi di chuyển. Đáp án D sai vì FT PSK dùng cho mạng gia đình hoặc mạng nhỏ với xác thực bằng mật khẩu dùng chung, không phù hợp với môi trường doanh nghiệp nhiều tầng thường yêu cầu xác thực 802.1x qua RADIUS."
     },
     {
       "id": "9.42",
@@ -1641,7 +1709,8 @@
         "B": "Switch1(config-if)#channel-group 1 mode passive\nSwitch2(config-if)#channel-group 1 mode active",
         "C": "Switch1(config-if)#channel-group 1 mode active\nSwitch2(config-if)#channel-group 1 mode passive",
         "D": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode active"
-      }
+      },
+      "explanation": "Đáp án C đúng vì trong LACP, chế độ \"active\" là chế độ chủ động gửi gói tin LACP initiation để thương lượng EtherChannel, còn chế độ \"passive\" chỉ lắng nghe và phản hồi khi nhận được gói tin từ phía đối diện. Khi Switch 1 đặt active và Switch 2 đặt passive, chỉ Switch 1 khởi tạo quá trình đàm phán, đúng với yêu cầu đề bài. Cặp active/passive là hợp lệ vì ít nhất một bên phải ở chế độ active thì EtherChannel mới hình thành được.\n\nĐáp án A sai vì chế độ \"on\" không sử dụng giao thức LACP hay PAgP, nó ép buộc EtherChannel mà không có quá trình thương lượng, và hai đầu phải cùng dùng \"on\" thì mới hoạt động được.\n\nĐáp án B sai vì Switch 1 ở passive sẽ không chủ động gửi gói tin LACP, trong khi Switch 2 ở active mới là bên khởi tạo, ngược với yêu cầu đề bài.\n\nĐáp án D sai vì tương tự A, chế độ \"on\" không dùng LACP, và việc kết hợp \"on\" với \"active\" là không tương thích, EtherChannel sẽ không hình thành."
     },
     {
       "id": "9.43",
@@ -1666,7 +1735,8 @@
         "B": "SW2",
         "C": "SW3",
         "D": "SW4"
-      }
+      },
+      "explanation": "Để xác định root bridge trong spanning tree, switch nào có Bridge ID thấp nhất sẽ được bầu làm root. Bridge ID gồm hai phần: priority và MAC address. Nếu tất cả các switch đều dùng priority mặc định (32768 cộng với VLAN ID), thì MAC address sẽ là yếu tố quyết định, switch nào có MAC address thấp nhất sẽ thắng.\n\nTrong bài này, SW1 có MAC address thấp nhất trong số bốn switch cho VLAN 20, nên SW1 được bầu làm root bridge. SW2, SW3 và SW4 đều có MAC address cao hơn SW1, do đó chúng trở thành non-root bridge và phải tính toán đường đi tốt nhất về phía root."
     },
     {
       "id": "9.47",
@@ -1689,7 +1759,8 @@
         "B": "SSID",
         "C": "RFID",
         "D": "WLANID"
-      }
+      },
+      "explanation": "SSID (Service Set Identifier) là tên định danh duy nhất mà một access point sử dụng để xác định mạng không dây của mình, cho phép các thiết bị client nhận ra và kết nối vào đúng mạng đó. Các thiết bị không dây dò tìm SSID trong các beacon frame do AP phát ra để thiết lập và duy trì kết nối.\n\nVLAN ID là định danh dùng trong mạng có dây để phân chia các mạng LAN ảo, không liên quan đến nhận dạng mạng không dây. RFID là công nghệ nhận dạng qua sóng radio dùng cho thẻ và đầu đọc, hoàn toàn khác mục đích. WLAN ID không phải là thuật ngữ chuẩn trong giao thức Wi-Fi và không được sử dụng để định danh mạng không dây."
     },
     {
       "id": "9.49",
@@ -1714,7 +1785,8 @@
         "B": "SwitchA(config-if)#switchport mode access \nSwitchA(config-if)#switchport access vlan 50 \nSwitchA(config-if)#switchport voice vlan untagged",
         "C": "SwitchA(config-if)#switchport mode trunk \nSwitchA(config-if)#switchport trunk allowed vlan add 50, 51\nSwitchA(config-if)#switchport voice vlan dot1p",
         "D": "SwitchA(config-if)#switchport mode trunk \nSwitchA(config-if)#switchport trunk allowed vlan 50, 51 \nSwitchA(config-if)#switchport qos trust cos"
-      }
+      },
+      "explanation": "Đáp án A đúng vì đây là cấu hình chuẩn cho cổng kết nối đồng thời với IP phone và PC. Cổng được đặt ở chế độ access cho VLAN 50 (dữ liệu của PC A), đồng thời lệnh switchport voice vlan 51 kích hoạt chế độ \"voice VLAN\" — switch sẽ tự động cho phép traffic thoại được tag với VLAN 51 trong khi traffic dữ liệu vẫn đi untagged trên VLAN 50. Đây là thiết kế phổ biến khi IP phone có cổng pass-through cho PC phía sau.\n\nĐáp án B sai vì tùy chọn \"untagged\" trong lệnh switchport voice vlan untagged khiến traffic thoại đi untagged giống như traffic dữ liệu, không phân tách được hai loại traffic và không đảm bảo QoS cho thoại.\n\nĐáp án C sai vì cấu hình trunk không phù hợp cho cổng access nối với PC và IP phone thông thường. Ngoài ra, lệnh switchport voice vlan dot1p chỉ đánh dấu ưu tiên CoS ở layer 2 mà không gán VLAN riêng cho thoại, không đáp ứng yêu cầu phân tách VLAN.\n\nĐáp án D sai vì tương tự C, chế độ trunk không phù hợp ở đây, và lệnh switchport qos trust cos chỉ liên quan đến tin tưởng giá trị CoS từ thiết bị đầu cuối, không phải lệnh cấu hình voice VLAN."
     },
     {
       "id": "9.52",
@@ -1737,7 +1809,8 @@
         "B": "VLAN DSCP",
         "C": "VLAN tagging",
         "D": "VLAN marking"
-      }
+      },
+      "explanation": "VLAN tagging là cơ chế mà switch Layer 2 sử dụng để đóng gói frame với thông tin nhận dạng VLAN (theo chuẩn IEEE 802.1Q), cho phép nhiều VLAN cùng truyền qua một cổng trunk duy nhất trong khi vẫn giữ nguyên sự phân tách lưu lượng giữa các VLAN. Khi frame đi qua cổng trunk, switch chèn thêm một thẻ 4 byte vào header của frame để xác định frame đó thuộc VLAN nào, và switch nhận sẽ dựa vào thẻ này để chuyển frame đúng đến VLAN tương ứng.\n\nVLAN numbering chỉ đơn giản là việc gán số ID cho từng VLAN để phân biệt chúng, không liên quan đến việc đóng gói hay truyền tải frame qua cổng trunk. VLAN DSCP không phải là khái niệm chuẩn trong switching Layer 2, DSCP là trường thuộc QoS ở Layer 3 dùng để phân loại lưu lượng IP. VLAN marking cũng không phải thuật ngữ chính thức trong ngữ cảnh này, dù đôi khi được dùng không chính xác để chỉ quá trình tagging, nhưng đáp án chuẩn theo tài liệu Cisco vẫn là VLAN tagging."
     },
     {
       "id": "9.55",
@@ -1762,7 +1835,8 @@
         "B": "Cấu hình lệnh cdp holdtime 10 trên switch Cat9300",
         "C": "Cấu hình lệnh cdp timer 10 trên các thiết bị lân cận của switch Cat9300",
         "D": "Cấu hình lệnh cdp timer 10 trên switch Cat9300"
-      }
+      },
+      "explanation": "Câu hỏi này hỏi về cách để các thiết bị lân cận phát hiện switch Cat9300 nhanh hơn thông qua CDP.\n\nMặc định, CDP gửi advertisement mỗi 60 giây. Lệnh \"cdp timer 10\" giảm khoảng thời gian này xuống còn 10 giây, nghĩa là Cat9300 sẽ gửi CDP packet thường xuyên hơn, giúp các thiết bị lân cận phát hiện nó nhanh hơn. Vì mục tiêu là để các thiết bị khác phát hiện Cat9300, lệnh này phải được cấu hình trực tiếp trên Cat9300 — chính thiết bị đó phải gửi advertisement nhanh hơn.\n\nĐáp án A sai vì PortFast liên quan đến STP, không liên quan đến tốc độ phát hiện CDP. Đáp án B sai vì \"cdp holdtime\" chỉ kiểm soát thời gian giữ thông tin CDP trước khi xóa, không ảnh hưởng đến tần suất gửi advertisement. Đáp án C sai vì cấu hình timer trên các thiết bị lân cận chỉ làm cho Cat9300 phát hiện chúng nhanh hơn, không phải chiều ngược lại."
     },
     {
       "id": "9.56",
@@ -1787,7 +1861,8 @@
         "B": "switchport trunk native vlan 10",
         "C": "switchport trunk allowed remove 10",
         "D": "switchport mode access"
-      }
+      },
+      "explanation": "Trong sơ đồ, SW1 và SW2 là hai switch kết nối với nhau, và cổng Fa0/1 trên SW1 được cấu hình là trunk để truyền nhiều VLAN giữa hai switch. Khi sao chép cấu hình từ SW1 sang SW2, cổng Fa0/1 trên SW2 cũng cần được đặt thành trunk mode bằng lệnh switchport mode trunk, vì đây là liên kết giữa hai switch cần mang lưu lượng của nhiều VLAN, bao gồm VLAN chứa PC1 và PC2.\n\nĐáp án B sai vì switchport trunk native vlan 10 chỉ thay đổi native VLAN của trunk, không có tác dụng gì nếu cổng chưa được đặt thành trunk mode. Đáp án C sai vì switchport trunk allowed remove 10 sẽ loại bỏ VLAN 10 khỏi danh sách VLAN được phép trên trunk, điều này sẽ ngăn kết nối thay vì cho phép nó. Đáp án D sai vì switchport mode access chỉ phù hợp cho cổng kết nối với thiết bị đầu cuối như PC, không phải liên kết giữa hai switch cần truyền nhiều VLAN."
     },
     {
       "id": "9.59",
@@ -1810,7 +1885,8 @@
         "B": "access",
         "C": "LAG",
         "D": "trunk"
-      }
+      },
+      "explanation": "Khi AP nhẹ (lightweight AP) hoạt động ở chế độ FlexConnect với local switching và VLAN tagging, nó cần kết nối vào switch qua cổng trunk. Lý do là AP phải xử lý nhiều SSID ánh xạ tới nhiều VLAN khác nhau, và cổng trunk cho phép lưu lượng của nhiều VLAN đi qua trên cùng một đường vật lý bằng cách gắn thẻ (tag) 802.1Q. Nếu dùng cổng access, AP chỉ thuộc về một VLAN duy nhất và không thể thực hiện VLAN tagging cho nhiều mạng.\n\nEtherChannel và LAG đều là kỹ thuật gộp nhiều đường vật lý thành một đường logic để tăng băng thông hoặc dự phòng, không phải loại cổng dùng để phân chia VLAN. Cổng access chỉ phù hợp khi AP hoạt động ở chế độ local mode đơn giản với một VLAN duy nhất, không đáp ứng được yêu cầu của FlexConnect khi cần chuyển mạch cục bộ với nhiều VLAN."
     },
     {
       "id": "9.60",
@@ -1833,7 +1909,8 @@
         "B": "static IP tunneling",
         "C": "DHCP address assignment",
         "D": "client exclusion"
-      }
+      },
+      "explanation": "Tính năng passive client phải được bật trên wireless controller hoặc access point để hỗ trợ các thiết bị không gửi gói ARP chủ động như máy in dùng IP tĩnh. Thông thường, controller học địa chỉ IP của client thông qua các gói DHCP hoặc ARP, nhưng thiết bị dùng IP tĩnh không tham gia quá trình DHCP nên controller không biết địa chỉ IP của nó. Khi passive client được bật, controller sẽ chủ động gửi ARP request để phát hiện và duy trì thông tin về thiết bị đó, tránh bị ngắt kết nối.\n\nCác đáp án còn lại không phù hợp vì: DHCP address assignment (C) mâu thuẫn trực tiếp với yêu cầu dùng IP tĩnh. Static IP tunneling (B) không phải tính năng tồn tại trong ngữ cảnh này. Client exclusion (D) là tính năng dùng để chặn client vi phạm chính sách bảo mật, không liên quan đến vấn đề kết nối của thiết bị IP tĩnh."
     },
     {
       "id": "9.65",
@@ -1858,7 +1935,8 @@
         "B": "interface range G1/1 -1/3\nswitchport mode trunk \nchannel-group 1 mode desirable \nno shutdown",
         "C": "interface range G1/1 -1/3 \nswitchport mode trunk \nchannel-group 1 mode active \nno shutdown",
         "D": "interface range G1/1 -1/3 \nswitchport mode access\nchannel-group 1 mode on \nno shutdown"
-      }
+      },
+      "explanation": "Đáp án C đúng vì LACP (Link Aggregation Control Protocol - chuẩn IEEE 802.3ad) yêu cầu mode active hoặc passive, và khi cả hai switch đều dùng mode active thì EtherChannel sẽ được thương lượng thành công. Cấu hình trunk là cần thiết cho liên kết giữa hai switch để cho phép truyền nhiều VLAN qua EtherChannel.\n\nĐáp án A sai vì mode passive là chế độ LACP thụ động, nếu cả hai switch đều passive thì không bên nào chủ động khởi tạo thương lượng, EtherChannel sẽ không hình thành. Ngoài ra, dùng mode access cho liên kết trunk giữa hai switch là không phù hợp.\n\nĐáp án B sai vì mode desirable là chế độ của PAgP (Cisco proprietary), không phải LACP. Câu hỏi yêu cầu cấu hình LACP nên desirable không thỏa mãn điều kiện.\n\nĐáp án D sai vì mode on buộc EtherChannel hình thành mà không dùng bất kỳ giao thức thương lượng nào (không phải LACP, không phải PAgP). Đây không phải là cấu hình LACP EtherChannel."
     },
     {
       "id": "9.76",
@@ -1881,7 +1959,8 @@
         "B": "Cấu hình lệnh no lldp transmit trên giao diện G1/0/21 của Cat9K-1",
         "C": "Cấu hình lệnh no lldp receive trên giao diện G1/0/21 của Cat9K-1",
         "D": "Cấu hình lệnh no lldp mac-phy-cfg toàn cục trên Cat9K-2"
-      }
+      },
+      "explanation": "Đáp án A đúng vì lệnh \"no lldp tlv-select-management-address\" được cấu hình toàn cục trên Cat9K-2 sẽ loại bỏ TLV địa chỉ quản lý khỏi các gói LLDP mà Cat9K-2 gửi đi, tức là Cat9K-2 vẫn tham gia LLDP bình thường nhưng không còn quảng bá địa chỉ IP 10.6.110.2 nữa. Đây chính xác là yêu cầu đề bài: ẩn địa chỉ IP mà không tắt LLDP.\n\nĐáp án B sai vì \"no lldp transmit\" trên interface Gi1/0/21 của Cat9K-1 sẽ ngăn Cat9K-1 gửi thông tin LLDP của chính nó, không liên quan đến việc ẩn IP của Cat9K-2.\n\nĐáp án C sai vì \"no lldp receive\" trên interface Gi1/0/21 của Cat9K-1 chỉ ngăn Cat9K-1 nhận và xử lý gói LLDP từ Cat9K-2, nhưng Cat9K-2 vẫn tiếp tục gửi địa chỉ IP trong các gói LLDP của nó đến các thiết bị khác.\n\nĐáp án D sai vì \"no lldp mac-phy-cfg\" liên quan đến TLV thông tin MAC/PHY (tốc độ và chế độ duplex), không có tác dụng gì đến việc ẩn địa chỉ IP quản lý."
     },
     {
       "id": "9.95",
@@ -1904,7 +1983,8 @@
         "B": "Tắt auto-negotiation.",
         "C": "Bật LLDP TLVs trên router ISP.",
         "D": "Bật LLDP toàn cục."
-      }
+      },
+      "explanation": "CDP (Cisco Discovery Protocol) là giao thức độc quyền của Cisco, nên nó không hoạt động được với router của bên thứ ba. LLDP (Link Layer Discovery Protocol) là giao thức chuẩn mở IEEE 802.1AB, được hỗ trợ bởi hầu hết các thiết bị mạng từ nhiều nhà sản xuất khác nhau. Vì LLDP mặc định bị tắt trên thiết bị Cisco, bước tiếp theo cần làm là bật LLDP toàn cục bằng lệnh \"lldp run\" để router Cisco có thể khám phá và trao đổi thông tin với router ISP.\n\nĐáp án A sai vì tắt CDP không giải quyết được vấn đề tương thích với thiết bị bên thứ ba. Đáp án B sai vì auto-negotiation liên quan đến tốc độ và duplex của cổng, không liên quan đến neighbor discovery. Đáp án C sai vì kỹ sư không có quyền kiểm soát cấu hình trên router của ISP, và việc bật LLDP TLVs chỉ là bước tùy chọn sau khi LLDP đã được kích hoạt toàn cục."
     },
     {
       "id": "9.105",
@@ -1927,7 +2007,8 @@
         "B": "Việc học địa chỉ MAC bị tắt theo mặc định trên tất cả các VLAN.",
         "C": "Các frame nhận được cho địa chỉ MAC đích không có trong bảng địa chỉ sẽ bị loại bỏ.",
         "D": "Bảng địa chỉ MAC được sử dụng để điền vào bảng ARP."
-      }
+      },
+      "explanation": "Câu A đúng vì MAC learning trên switch bao gồm cả hai hình thức: học động (dynamic) khi switch tự ghi nhận địa chỉ MAC từ các frame đến, và học tĩnh (static) khi quản trị viên tự tay thêm một địa chỉ MAC vào bảng MAC. Đây là một chức năng hợp lệ của quá trình quản lý bảng MAC.\n\nCâu B sai vì MAC learning được bật mặc định trên tất cả các VLAN, không phải tắt. Câu C sai vì frame đến một địa chỉ MAC chưa có trong bảng sẽ được flood ra tất cả các cổng (trừ cổng nhận vào), không bị drop. Câu D sai vì bảng MAC và bảng ARP là hai thứ hoàn toàn độc lập, bảng MAC hoạt động ở tầng 2 còn ARP liên quan đến tầng 3, switch không dùng bảng MAC để cập nhật ARP."
     },
     {
       "id": "10.7",
@@ -1950,7 +2031,8 @@
         "B": "kênh 1, 6, 11 và 14",
         "C": "kênh 2, 7 và 11",
         "D": "kênh 1, 6 và 11"
-      }
+      },
+      "explanation": "Ở băng tần 2.4 GHz, mỗi kênh chiếm khoảng 22 MHz và các kênh cách nhau 5 MHz, nên cần cách ít nhất 5 kênh để tránh chồng lấn tần số. Tại Mỹ, ba kênh không chồng lấn chuẩn là 1, 6 và 11 vì chúng cách nhau đúng 5 kênh và nằm trong dải tần được FCC cho phép.\n\nĐáp án A sai vì các kênh 2, 7, 9, 11 không cách đều nhau và vẫn bị chồng lấn. Đáp án B sai vì kênh 14 không được phép sử dụng tại Mỹ, chỉ được dùng ở Nhật Bản. Đáp án C sai vì dùng kênh 2 thay vì kênh 1, và chỉ có ba kênh nhưng không phải bộ chuẩn được quy định cho Mỹ."
     },
     {
       "id": "10.8",
@@ -1973,7 +2055,8 @@
         "B": "switch(config)#spanning-tree vlan 1 hello-time 10",
         "C": "switch(config)#spanning-tree vlan 1 priority 4096",
         "D": "switch(config)#spanning-tree vlan 1 forward-time 20"
-      }
+      },
+      "explanation": "Đáp án D đúng vì lệnh forward-time điều chỉnh thời gian mà cổng ở trạng thái Listening và Learning trong Spanning Tree. Trong Rapid-PVST+, tham số này kiểm soát khoảng thời gian cổng lắng nghe và học địa chỉ MAC trước khi chuyển sang trạng thái Forwarding.\n\nĐáp án A sai vì max-age kiểm soát thời gian switch giữ thông tin BPDU trước khi coi nó là hết hạn, không liên quan đến trạng thái Listening/Learning. Đáp án B sai vì hello-time xác định tần suất gửi BPDU, không phải thời gian ở trạng thái lắng nghe hay học. Đáp án C sai vì priority dùng để ảnh hưởng đến quá trình bầu chọn Root Bridge, không liên quan đến thời gian chuyển trạng thái cổng."
     },
     {
       "id": "10.10",
@@ -1996,7 +2079,8 @@
         "B": "Thay đổi chế độ EtherChannel trên các giao diện lân cận thành auto",
         "C": "Sửa đổi cấu hình EtherChannel tĩnh của thiết bị sang chế độ passive",
         "D": "Cấu hình địa chỉ IP của thiết bị lân cận"
-      }
+      },
+      "explanation": "Thiết bị đầu tiên đang dùng mode \"active\" (LACP), nghĩa là nó chủ động gửi gói LACP để đàm phán. Để port-channel hoạt động mà không cần cả hai đầu đều chủ động đàm phán, thiết bị láng giềng chỉ cần đặt mode \"passive\" — passive sẽ lắng nghe và phản hồi LACP từ phía active, đủ để kênh hình thành. Đây là cặp hợp lệ duy nhất với LACP: active-active hoặc active-passive đều hoạt động, còn passive-passive thì không vì không bên nào khởi xướng.\n\nĐáp án A sai vì đề bài đã xác nhận cả hai interface đều thấy nhau qua CDP, tức là chúng đang up ở lớp vật lý, vấn đề không phải do shutdown. Đáp án B sai vì \"auto\" là mode của PAgP (giao thức EtherChannel của Cisco), không phải LACP — dùng lẫn lộn hai giao thức sẽ không thể hình thành kênh. Đáp án D sai vì địa chỉ IP được cấu hình trên interface Port-channel1 ở lớp 3, không liên quan đến việc đàm phán LACP để kênh logic đi lên."
     },
     {
       "id": "10.20",
@@ -2019,7 +2103,8 @@
         "B": "Chế độ bridge",
         "C": "Chế độ lightweight",
         "D": "Chế độ autonomous"
-      }
+      },
+      "explanation": "Lightweight mode (còn gọi là LWAPP hoặc CAPWAP mode) là chế độ mà access point hoạt động phụ thuộc hoàn toàn vào một Wireless LAN Controller (WLC) để xử lý các tác vụ quản lý như cấu hình SSID, roaming giữa các AP, và chính sách bảo mật. Trong mô hình này, AP chỉ đảm nhận phần xử lý tín hiệu vô tuyến (RF), còn toàn bộ logic điều khiển được tập trung tại WLC, giúp việc triển khai và quản lý hệ thống Wi-Fi quy mô lớn trở nên đơn giản hơn nhiều.\n\nAutonomous mode (D) là chế độ ngược lại, trong đó mỗi AP hoạt động độc lập và tự quản lý toàn bộ cấu hình mà không cần controller. Repeater mode (A) dùng để mở rộng vùng phủ sóng bằng cách tiếp nhận và phát lại tín hiệu từ AP gốc, không liên quan đến quản lý tập trung. Bridge mode (B) được dùng để kết nối hai mạng LAN với nhau qua liên kết không dây, không phải để quản lý SSID hay roaming."
     },
     {
       "id": "10.27",
@@ -2042,7 +2127,8 @@
         "B": "Giới hạn kích thước payload của lưu lượng trong lớp leaf",
         "C": "Cung cấp độ trễ có thể dự đoán được trên đường đi của lưu lượng giữa các thiết bị đầu cuối",
         "D": "Chỉ gửi lưu lượng multicast giữa các máy chủ được kết nối trực tiếp với spine"
-      }
+      },
+      "explanation": "Kiến trúc spine-and-leaf được thiết kế để mọi thiết bị đầu cuối đều cách nhau đúng hai hop (từ leaf này qua spine rồi đến leaf kia), bất kể vị trí vật lý. Điều này đảm bảo độ trễ nhất quán và có thể dự đoán được cho tất cả luồng traffic giữa các máy chủ, đây là ưu điểm cốt lõi của mô hình này so với kiến trúc ba tầng truyền thống.\n\nĐáp án A sai vì spine-and-leaf thực ra giải quyết vấn đề oversubscription bằng cách thêm các switch spine, không phải thêm leaf. Đáp án B sai vì kiến trúc này không có chức năng giới hạn kích thước payload. Đáp án D sai vì spine layer không giới hạn ở multicast traffic, nó xử lý tất cả các loại traffic giữa các leaf switch."
     },
     {
       "id": "10.34",
@@ -2067,7 +2153,8 @@
         "B": "Trong Protected Management Frames, đặt tùy chọn PMF thành Required",
         "C": "Đặt tùy chọn Fast Transition thành Enable và bật FT 802.1X trong Authentication Key Management",
         "D": "Đặt tùy chọn Fast Transition và WPA gtk-randomize State thành disable"
-      }
+      },
+      "explanation": "802.11r là chuẩn Fast BSS Transition (FT), cho phép client chuyển vùng giữa các AP nhanh hơn bằng cách giảm số bước xác thực lại. Để bật tính năng này trên Cisco WLC, bạn phải kích hoạt tùy chọn Fast Transition và chọn phương thức xác thực tương ứng trong Authentication Key Management. Vì mạng dùng 802.1X (enterprise authentication), cần bật FT 802.1X để hoàn chỉnh cấu hình 802.11r đúng chuẩn.\n\nĐáp án A sai vì CCKM (Cisco Centralized Key Management) là cơ chế roaming độc quyền của Cisco, không phải chuẩn 802.11r. Đáp án B sai vì PMF (Protected Management Frames) liên quan đến bảo vệ frame quản lý, không liên quan đến fast roaming. Đáp án D sai vì tắt Fast Transition đồng nghĩa với việc vô hiệu hóa 802.11r, hoàn toàn ngược với yêu cầu đề bài."
     },
     {
       "id": "10.35",
@@ -2090,7 +2177,8 @@
         "B": "Flood đến tất cả các cổng ngoại trừ cổng gốc",
         "C": "Chuyển tiếp đến cổng khả dụng đầu tiên",
         "D": "Được kiểm tra và loại bỏ bởi switch"
-      }
+      },
+      "explanation": "Khi switch nhận được một frame có địa chỉ MAC đích chưa có trong bảng MAC (unknown unicast), switch sẽ flood frame đó ra tất cả các cổng ngoại trừ cổng mà frame đó đến, đây là hành vi gọi là \"unknown unicast flooding\". Mục đích là để đảm bảo frame đến được thiết bị đích, sau đó switch sẽ học địa chỉ MAC nguồn của phản hồi để cập nhật bảng MAC.\n\nĐáp án A sai vì broadcast gửi ra tất cả các cổng kể cả cổng nguồn, còn flooding thì loại trừ cổng nhận vào. Đáp án C sai vì switch không chọn cổng ngẫu nhiên hay cổng đầu tiên rảnh. Đáp án D sai vì switch không drop frame chỉ vì không biết địa chỉ đích, đó là nhiệm vụ của firewall hay ACL chứ không phải hành vi mặc định của switch."
     },
     {
       "id": "10.40",
@@ -2115,7 +2203,8 @@
         "B": "Cấu hình lệnh no lldp receive trên g0/1",
         "C": "Cấu hình lệnh no cdp run trên toàn cục",
         "D": "Cấu hình lệnh no cdp enable trên g0/2"
-      }
+      },
+      "explanation": "Đáp án D đúng vì lệnh \"no cdp enable\" được áp dụng trên interface g0/2 của R2 (interface kết nối với R3), điều này sẽ tắt CDP chỉ trên cổng đó, ngăn R2 chia sẻ thông tin với R3 trong khi vẫn duy trì quan hệ CDP với R1 qua interface còn lại.\n\nĐáp án A sai vì \"no lldp run\" tắt LLDP toàn cục, nhưng giao thức đang được đề cập trong bài là CDP (dựa vào ngữ cảnh nhận diện địa chỉ IP, nền tảng phần cứng, phiên bản phần mềm của các thiết bị Cisco). Đáp án B sai vì \"no lldp receive\" liên quan đến LLDP chứ không phải CDP, và cũng chỉ tắt chức năng nhận chứ không tắt hoàn toàn việc chia sẻ thông tin. Đáp án C sai vì \"no cdp run\" tắt CDP trên toàn bộ router, khiến R2 mất luôn quan hệ với R1, vi phạm yêu cầu đề bài."
     },
     {
       "id": "10.47",
@@ -2138,7 +2227,8 @@
         "B": "VLAN native phải khớp với VLAN quản lý của AP.",
         "C": "Chế độ cổng switch phải được đặt thành trunk.",
         "D": "IEEE 802.1Q trunking phải được tắt trên cổng switch."
-      }
+      },
+      "explanation": "Trong chế độ FlexConnect với locally switched traffic, AP cần xử lý nhiều VLAN khác nhau — một VLAN cho quản lý AP và một hoặc nhiều VLAN cho client. Để AP có thể truyền lưu lượng của nhiều VLAN qua một cổng vật lý duy nhất đến switch, cổng switch đó phải được cấu hình ở chế độ trunk, cho phép các frame được gắn tag 802.1Q đi qua.\n\nĐáp án A sai vì LAG (Link Aggregation Group) liên quan đến việc gộp nhiều đường vật lý để tăng băng thông và dự phòng, không phải để xử lý nhiều VLAN.\n\nĐáp án B sai vì native VLAN không nhất thiết phải trùng với management VLAN của AP — đây không phải yêu cầu bắt buộc trong FlexConnect.\n\nĐáp án D sai hoàn toàn vì nếu tắt 802.1Q trunking, switch sẽ không thể phân biệt các VLAN khác nhau, khiến lưu lượng của nhiều VLAN không thể hoạt động đúng cách."
     },
     {
       "id": "10.48",
@@ -2161,7 +2251,8 @@
         "B": "config serial timeout 9600",
         "C": "config serial timeout 0",
         "D": "config sessions timeout 0"
-      }
+      },
+      "explanation": "Lệnh \"config serial timeout 0\" đặt thời gian chờ của phiên serial về 0, có nghĩa là phiên kết nối qua cổng console/serial sẽ không bao giờ tự động ngắt kết nối do không hoạt động. Đây là cách chuẩn trên Cisco WLC để giữ phiên CLI serial luôn duy trì.\n\nCác đáp án còn lại sai vì: \"config sessions maxsessions 0\" kiểm soát số lượng phiên tối đa chứ không liên quan đến timeout. \"config serial timeout 9600\" đặt timeout theo giây (9600 giây) thay vì vô hiệu hóa nó, và 9600 là tốc độ baud chứ không phải giá trị timeout hợp lệ trong ngữ cảnh này. \"config sessions timeout 0\" áp dụng cho các phiên quản lý chung (như Telnet/SSH), không phải riêng cho phiên serial."
     },
     {
       "id": "10.50",
@@ -2186,7 +2277,8 @@
         "B": "Bật FlexConnect Local Switching",
         "C": "Bật local DHCP Profiling",
         "D": "Bật Disassociation Imminent"
-      }
+      },
+      "explanation": "FlexConnect là chế độ hoạt động của AP cho phép xử lý traffic ngay tại chỗ mà không cần gửi về WLC. Khi bật FlexConnect Local Switching, AP sẽ chuyển mạch dữ liệu của client trực tiếp tại nhánh, giúp giảm độ trễ và tiết kiệm băng thông đường truyền về data center. Đây chính xác là yêu cầu đề bài: một WLAN xử lý traffic mà không gửi về WLC.\n\nLocal HTTP Profiling và Local DHCP Profiling là các tính năng dùng để phân loại thiết bị client dựa trên thông tin HTTP hoặc DHCP, không liên quan đến việc chuyển hướng luồng dữ liệu. Disassociation Imminent là tính năng thuộc BSS Transition Management, dùng để thông báo cho client rằng AP sắp ngắt kết nối, phục vụ mục đích load balancing hoặc roaming, hoàn toàn không liên quan đến yêu cầu switching traffic cục bộ."
     },
     {
       "id": "10.51",
@@ -2209,7 +2301,8 @@
         "B": "Nó tăng cường bảo mật trên VLAN quản lý",
         "C": "Nó được bật theo mặc định trên tất cả các VLAN và giao diện",
         "D": "Nó làm tăng khả năng bị tràn địa chỉ MAC (MAC address flooding)"
-      }
+      },
+      "explanation": "MAC address learning là tính năng mặc định được bật trên tất cả các VLAN và interface của switch, cho phép switch tự động học địa chỉ MAC nguồn từ các frame đến và lưu vào bảng MAC address table. Đây là cơ chế cơ bản giúp switch biết cách chuyển tiếp frame đến đúng cổng thay vì phải flood ra tất cả các cổng.\n\nĐáp án A sai vì MAC address learning không bị tắt trên các interface kết nối trunk, nó vẫn hoạt động bình thường trên cả access lẫn trunk port. Đáp án B sai vì MAC address learning không liên quan đến bảo mật management VLAN, đây là hai khái niệm độc lập nhau. Đáp án D sai vì MAC address learning thực ra giúp giảm MAC flooding, không phải tăng, vì khi switch đã học được địa chỉ MAC thì nó chuyển tiếp frame trực tiếp thay vì flood."
     },
     {
       "id": "10.52",
@@ -2232,7 +2325,8 @@
         "B": "Local với AP fallback được bật",
         "C": "OfficeExtend với high availability bị tắt",
         "D": "FlexConnect với local switching được bật"
-      }
+      },
+      "explanation": "Câu hỏi này yêu cầu hiểu rõ các chế độ hoạt động của access point trong môi trường Cisco Wireless LAN Controller (WLC).\n\nFlexConnect (trước đây gọi là HREAP) được thiết kế chính xác cho kịch bản này: AP đặt tại chi nhánh nhưng controller nằm ở trụ sở chính. Khi bật local switching, traffic của wireless client được chuyển mạch trực tiếp tại chi nhánh thay vì phải tunnel về controller ở trụ sở, đáp ứng yêu cầu \"traffic phải kết thúc tại chi nhánh\". Quan trọng hơn, FlexConnect có khả năng standalone mode, nghĩa là AP vẫn tiếp tục phục vụ client ngay cả khi đường WAN bị đứt, đáp ứng yêu cầu survivability.\n\nĐáp án A sai vì Lightweight với local switching bị tắt có nghĩa là toàn bộ traffic phải tunnel về controller, vi phạm yêu cầu traffic kết thúc tại chi nhánh và không có khả năng hoạt động độc lập khi mất WAN.\n\nĐáp án B sai vì chế độ Local là chế độ mặc định của AP kết nối controller, traffic vẫn được tunnel về WLC. AP fallback không phải là tính năng chuẩn giải quyết vấn đề WAN outage theo cách FlexConnect làm.\n\nĐáp án C sai vì OfficeExtend được thiết kế cho nhân viên làm việc tại nhà, dùng tunnel mã hóa về controller. Tắt high availability không giải quyết được yêu cầu local switching hay survivability khi mất WAN."
     },
     {
       "id": "10.53",
@@ -2255,7 +2349,8 @@
         "B": "Nó phát hiện thiết bị là một thiết bị được cấp nguồn (powered device)",
         "C": "Tất cả bốn đôi dây của cáp được sử dụng",
         "D": "Power policing được bật cùng lúc"
-      }
+      },
+      "explanation": "Chế độ auto cho phép switch tự động phát hiện thiết bị kết nối có phải là powered device (PD) hay không thông qua quá trình thương lượng IEEE 802.3af/at, sau đó cấp nguồn phù hợp. Đây chính là ưu điểm cốt lõi so với static mode, vì static mode cấp nguồn ngay lập tức mà không kiểm tra thiết bị đầu cuối có thực sự cần PoE hay không.\n\nĐáp án A sai vì việc dùng mức công suất mặc định là hành vi của static mode, không phải auto. Đáp án C sai vì việc sử dụng cả bốn cặp dây liên quan đến chuẩn PoE+ (802.3at) chứ không phải sự khác biệt giữa auto và static. Đáp án D sai vì power policing là tính năng riêng biệt, được cấu hình độc lập và không tự động kích hoạt khi chọn auto mode."
     },
     {
       "id": "10.62",
@@ -2281,7 +2376,8 @@
         "C": "Ngăn chặn xung đột giữa các client không dây trên cùng kênh RF",
         "D": "Quản lý các kênh RF, bao gồm công suất phát",
         "E": "Gửi và xử lý các beacon frame"
-      }
+      },
+      "explanation": "Trong kiến trúc lightweight (CAPWAP), AP chỉ xử lý các tác vụ thời gian thực ở lớp vật lý và MAC như gửi beacon, nhận gói dữ liệu, rồi chuyển tiếp tất cả lên WLC qua tunnel. WLC đảm nhận các chức năng quản lý tập trung, bao gồm xác thực và liên kết client (A) cũng như quản lý kênh RF và công suất phát (D) — đây là những việc mà AP tự làm trong kiến trúc autonomous.\n\nTại sao các đáp án khác sai:\n\nB sai vì WAP (Wireless Application Protocol) là giao thức cho thiết bị di động cũ, không liên quan đến kiến trúc WLC/AP. Mã hóa traffic trong CAPWAP là chức năng của DTLS tunnel giữa AP và WLC, không phải WAP.\n\nC sai vì việc tránh xung đột trên cùng kênh RF là cơ chế CSMA/CA, được xử lý trực tiếp tại AP ở cả hai kiến trúc — WLC không can thiệp vào quá trình này.\n\nE sai vì beacon frame là tín hiệu quảng bá liên tục để client phát hiện mạng, và AP vẫn tự gửi beacon trong kiến trúc lightweight mà không cần WLC xử lý."
     },
     {
       "id": "10.64",
@@ -2304,7 +2400,8 @@
         "B": "Không có gì được cắm vào cổng",
         "C": "Lệnh shutdown được thực thi trên cổng",
         "D": "Link flapping"
-      }
+      },
+      "explanation": "Link flapping xảy ra khi một cổng liên tục chuyển đổi giữa trạng thái up và down trong thời gian ngắn, điều này kích hoạt cơ chế bảo vệ của switch và đưa cổng vào trạng thái err-disabled để ngăn chặn sự bất ổn lan rộng trong mạng. Đây là một trong những nguyên nhân phổ biến nhất dẫn đến err-disabled, cùng với các vi phạm port security hoặc phát hiện BPDU guard.\n\nLatency (A) chỉ là độ trễ truyền tín hiệu, không liên quan đến việc vô hiệu hóa cổng. Không có gì cắm vào cổng (B) chỉ khiến cổng ở trạng thái down bình thường, không phải err-disabled. Lệnh shutdown (C) đưa cổng vào trạng thái administratively down, đây là trạng thái khác hoàn toàn so với err-disabled."
     },
     {
       "id": "10.65",
@@ -2327,7 +2424,8 @@
         "B": "Frame filtering",
         "C": "Frame flooding",
         "D": "Frame switching"
-      }
+      },
+      "explanation": "Frame switching là chức năng của switch cho phép chuyển tiếp frame đến đúng cổng có địa chỉ MAC đích khớp với bảng MAC address table. Đây là hoạt động cơ bản nhất của switch lớp 2.\n\nFrame filtering là quá trình switch quyết định không chuyển tiếp frame ra một cổng nào đó, không phải chuyển tiếp. Frame flooding là khi switch gửi frame ra tất cả các cổng trừ cổng nhận vào, dùng khi địa chỉ MAC đích chưa có trong bảng. Frame pushing không phải thuật ngữ chuẩn trong mạng máy tính."
     },
     {
       "id": "10.67",
@@ -2350,7 +2448,8 @@
         "B": "Lệnh shutdown",
         "C": "Port security",
         "D": "Sai loại cáp"
-      }
+      },
+      "explanation": "Đáp án D đúng vì output cho thấy cổng Fa0/1 ở trạng thái \"notconnect\" nhưng duplex và speed lại hiển thị là \"a-full\" và \"a-100\" thay vì \"auto\" hoàn toàn. Quan trọng hơn, khi một cổng bị shutdown thủ công, trạng thái sẽ là \"disabled\" chứ không phải \"notconnect\". Trạng thái \"notconnect\" thường xuất hiện khi cáp bị lỗi, không cắm, hoặc dùng sai loại cáp, và trong ngữ cảnh câu hỏi này, wrong cable type là nguyên nhân được chỉ định.\n\nĐáp án A sai vì STP không làm cổng rơi vào trạng thái \"notconnect\", STP chỉ đặt cổng vào các trạng thái như blocking hoặc forwarding trong khi layer 1 vẫn up. Đáp án B sai vì lệnh shutdown sẽ khiến trạng thái hiển thị là \"disabled\", không phải \"notconnect\". Đáp án C sai vì port security vi phạm sẽ hiển thị trạng thái \"err-disabled\", hoàn toàn khác với những gì thấy trong output."
     },
     {
       "id": "10.70",
@@ -2373,7 +2472,8 @@
         "B": "Chúng truyền lưu lượng broadcast khi hoạt động ở chế độ Layer 3 độc quyền.",
         "C": "Chúng chuyển tiếp frame Ethernet giữa các VLAN chỉ sử dụng địa chỉ MAC.",
         "D": "Chúng di chuyển frame giữa các điểm cuối chỉ giới hạn ở địa chỉ IP."
-      }
+      },
+      "explanation": "Đáp án A đúng vì switch Layer 3 có khả năng định tuyến (routing) dựa trên địa chỉ IP, cho phép các thiết bị thuộc các VLAN khác nhau giao tiếp với nhau mà không cần router riêng biệt.\n\nB sai vì switch Layer 3 không truyền broadcast traffic khi hoạt động ở chế độ Layer 3, thực ra nó giới hạn broadcast trong từng VLAN.\n\nC sai vì chuyển tiếp frame giữa các VLAN chỉ dựa trên MAC address là chức năng của switch Layer 2, không phải Layer 3.\n\nD sai vì switch Layer 3 không \"di chuyển frame\" dựa trên địa chỉ IP, mà nó định tuyến packet dựa trên IP, còn frame là khái niệm của Layer 2."
     },
     {
       "id": "10.77",
@@ -2396,7 +2496,8 @@
         "B": "Security policies",
         "C": "Cấu hình NAS-ID",
         "D": "Profile name"
-      }
+      },
+      "explanation": "Đáp án B đúng vì chính sách bảo mật (security policies) xác định phương thức xác thực và mức độ truy cập mà người dùng được cấp khi kết nối vào mạng. Nếu mỗi chi nhánh có cùng SSID \"Office\" nhưng chính sách bảo mật khác nhau, người dùng ở các địa điểm khác nhau sẽ nhận được mức truy cập không đồng nhất. Do đó, để đảm bảo mọi người dùng kết nối vào SSID đó đều có cùng quyền truy cập, các chính sách bảo mật phải được cấu hình giống nhau trên tất cả các mạng.\n\nA sai vì radio policy chỉ liên quan đến các thông số vật lý của sóng radio như băng tần và tốc độ, không ảnh hưởng đến mức độ truy cập của người dùng. C sai vì NAS-ID là định danh dùng để phân biệt các điểm truy cập với máy chủ RADIUS, không kiểm soát quyền truy cập của người dùng. D sai vì profile name chỉ là tên định danh cấu hình nội bộ, không quyết định mức độ truy cập mà người dùng nhận được."
     },
     {
       "id": "10.79",
@@ -2421,7 +2522,8 @@
         "B": "SW1(config)#lldp enable \nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp run",
         "C": "SW1(config)#lldp run\nSW1 (config)#interface gigabitethernet1/0/1 \nSW1(config-if)#lldp enable",
         "D": "SW1(config)#no cdp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp transmit\nSW1(config-if)#lldp receive"
-      }
+      },
+      "explanation": "Đáp án D đúng vì môi trường multivendor yêu cầu dùng LLDP (chuẩn mở IEEE 802.1AB) thay vì CDP (độc quyền của Cisco). Lệnh \"no cdp run\" tắt CDP toàn cục, sau đó vào interface cụ thể và dùng \"lldp transmit\" + \"lldp receive\" để bật LLDP chỉ trên cổng đó. LLDP mặc định tắt trên thiết bị Cisco, nên các interface còn lại sẽ không chạy LLDP — đúng yêu cầu đề bài.\n\nĐáp án A sai vì dùng CDP thay vì LLDP, mà CDP là giao thức độc quyền Cisco, không hoạt động được với thiết bị của hãng khác. Ngoài ra, \"cdp run\" không phải lệnh hợp lệ ở cấp interface.\n\nĐáp án B sai vì \"lldp enable\" và \"lldp run\" không phải cú pháp đúng của Cisco IOS — không có lệnh nào tên như vậy.\n\nĐáp án C sai vì \"lldp run\" bật LLDP toàn cục, còn \"lldp enable\" không phải lệnh hợp lệ ở cấp interface. Cú pháp đúng để bật LLDP trên interface phải là \"lldp transmit\" và \"lldp receive\" riêng biệt."
     }
   ]
 }

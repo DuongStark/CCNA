@@ -17,7 +17,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án A đúng vì TCP (Transmission Control Protocol) là giao thức hướng kết nối, nghĩa là nó thiết lập kết nối trước khi truyền dữ liệu thông qua quá trình bắt tay ba bước (three-way handshake), đồng thời đảm bảo độ tin cậy bằng cách xác nhận gói tin, phát hiện lỗi và truyền lại nếu cần. UDP (User Datagram Protocol) thì ngược lại, không thiết lập kết nối trước và không có cơ chế xác nhận, nên nhanh hơn nhưng không đáng tin cậy.\n\nCác đáp án B, C, D đều sai vì hoán đổi sai đặc tính giữa TCP và UDP. Không có giao thức nào vừa hướng kết nối vừa không tin cậy, hoặc vừa không kết nối vừa tin cậy theo cách các đáp án đó mô tả, vì hai đặc tính này gắn liền với nhau trong thiết kế của từng giao thức.",
       "explanation_images": [],
       "question_vi": "Sự khác biệt về độ tin cậy và loại giao tiếp giữa TCP và UDP là gì?",
       "options_vi": {
@@ -43,7 +43,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án C đúng vì nó mô tả chính xác sự khác biệt về cơ chế truyền dữ liệu giữa TCP và UDP. TCP sử dụng flow control (kiểm soát luồng) thông qua cơ chế windowing để đảm bảo bên nhận không bị quá tải, đồng thời có sequencing và acknowledgment để đảm bảo dữ liệu đến đúng thứ tự và đầy đủ. UDP thì ngược lại, chỉ gửi dữ liệu liên tục mà không kiểm tra thứ tự hay xác nhận nhận được, phù hợp với các ứng dụng cần tốc độ hơn độ tin cậy như streaming hay VoIP.\n\nĐáp án A sai vì mô tả ngược hoàn toàn: TCP mới là connection-oriented (hướng kết nối), còn UDP mới là connectionless (không kết nối).\n\nĐáp án B sai vì hoán đổi vai trò của hai giao thức: chính TCP mới cung cấp acknowledgment và retransmission, không phải UDP.\n\nĐáp án D sai một phần vì windowing và three-way handshake đều thuộc về TCP, không phải UDP. UDP không thiết lập kết nối và không có three-way handshake.",
       "explanation_images": [],
       "question_vi": "TCP và UDP khác nhau như thế nào trong cách cung cấp độ tin cậy cho việc phân phối gói tin?",
       "options_vi": {
@@ -69,7 +69,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án A đúng vì TCP là giao thức hướng kết nối, sử dụng checksum để kiểm tra lỗi dữ liệu, acknowledgement (ACK) để xác nhận gói tin đã đến nơi, và retransmission để gửi lại nếu không nhận được ACK. UDP thì nhẹ hơn, chỉ dùng checksum để phát hiện lỗi cơ bản nhưng không có cơ chế xác nhận hay gửi lại, nên không đảm bảo độ tin cậy như TCP.\n\nCác đáp án còn lại sai vì chúng đề cập đến \"two-dimensional parity checks\", \"parity checks\", hoặc \"cyclic redundancy checks (CRC)\" — đây là các kỹ thuật kiểm tra lỗi ở tầng Data Link hoặc Physical, không phải cơ chế được TCP hay UDP sử dụng ở tầng Transport.",
       "explanation_images": [],
       "question_vi": "TCP và UDP khác nhau như thế nào trong cách đảm bảo phân phối gói tin?",
       "options_vi": {
@@ -95,7 +95,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án D đúng vì TCP là giao thức hướng kết nối, sử dụng quá trình bắt tay ba bước (SYN, SYN-ACK, ACK) để thiết lập kết nối trước khi truyền dữ liệu, đảm bảo độ tin cậy. Ngược lại, UDP là giao thức không kết nối, không có cơ chế xác nhận hay đảm bảo gói tin đến đích, phù hợp cho các ứng dụng cần tốc độ hơn độ tin cậy như streaming hay DNS.\n\nĐáp án A sai vì UDP không dùng gói acknowledgment, đó là đặc điểm của TCP. Đáp án B hoàn toàn ngược lại thực tế, SYN và SYN-ACK là của TCP chứ không phải UDP, và FIN cũng là cờ TCP dùng để đóng kết nối. Đáp án C đảo ngược vai trò của hai giao thức, TCP mới là giao thức đảm bảo truyền tin còn UDP mới là connectionless.",
       "explanation_images": [
         "page_2_img_0.png"
       ],
@@ -123,7 +123,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án D đúng vì TCP là giao thức hướng kết nối, yêu cầu thiết lập kết nối qua quá trình bắt tay ba bước (three-way handshake) trước khi truyền dữ liệu, đồng thời đảm bảo độ tin cậy thông qua xác nhận (ACK) và truyền lại gói tin bị mất. UDP ngược lại là giao thức không kết nối, truyền dữ liệu nhanh hơn nhưng không đảm bảo gói tin đến đích, phù hợp với các ứng dụng ưu tiên tốc độ như video streaming hay VoIP.\n\nĐáp án A sai vì mô tả ngược lại, chính TCP mới dùng three-way handshake để thiết lập kết nối, không phải UDP. Đáp án B sai vì UDP không có cơ chế truyền lại dữ liệu bị mất, đó là đặc điểm của TCP. Đáp án C sai vì việc dùng cho multicast hay broadcast không phải tiêu chí phân biệt chính giữa TCP và UDP, và TCP không nhất thiết truyền nhanh hơn UDP.",
       "explanation_images": [],
       "question_vi": "Sự khác biệt trong việc phân phối và độ tin cậy truyền dữ liệu giữa TCP và UDP là gì?",
       "options_vi": {
@@ -149,7 +149,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "TCP uses sequencing -> Answer A is not correct.\nTCP uses error recovery while UDP uses error detection -> Answer B is not correct.\nTCP does not encourage out-of-order packet delivery. When TCP packets are received out of order,\nthey are buffered for later delivery to the application program rather than being discarded -> Answer\nD is not correct.",
+      "explanation": "Đáp án C đúng vì TCP là giao thức hướng kết nối, nghĩa là trước khi truyền dữ liệu, nó phải thực hiện quá trình bắt tay ba bước (three-way handshake) để thiết lập kết nối. UDP thì ngược lại, là giao thức không kết nối, nó gửi dữ liệu ngay lập tức mà không cần thiết lập kết nối trước, phù hợp với các ứng dụng cần tốc độ cao như DNS, VoIP hay streaming.\n\nĐáp án A sai vì TCP thực sự sử dụng sequencing (đánh số thứ tự gói tin), còn UDP mới là giao thức không dùng acknowledgment, không phải ngược lại. Đáp án B sai vì cả hai giao thức đều có thể dùng error detection (kiểm tra lỗi qua checksum), nhưng chỉ TCP mới có error recovery (phục hồi lỗi bằng cách truyền lại gói tin). Đáp án D sai vì TCP được thiết kế để đảm bảo gói tin đến đúng thứ tự, không khuyến khích giao hàng lộn xộn, còn UDP không có cơ chế sắp xếp lại thứ tự gói tin.",
       "explanation_images": [],
       "question_vi": "TCP và UDP phù hợp như thế nào với mô hình truy vấn-phản hồi (query-response)?",
       "options_vi": {
@@ -175,7 +175,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Note: The flow control mechanism tells the sender the maximum speed at which the data can be\nsent to the receiver device. One of the popular flow control mechanisms in TCP is the sliding window\nprotocol -> Answer C is not correct.\nReference: https://www.baeldung.com/cs/tcp-flow-control-vs-congestion-control\nBasic Questions",
+      "explanation": "Đáp án A đúng vì TCP sử dụng cơ chế acknowledgment (ACK) để xác nhận từng gói tin đã được nhận thành công, đồng thời có khả năng phát hiện và truyền lại các gói bị mất, đây chính là nền tảng của việc kiểm tra lỗi toàn diện mà HTTPS yêu cầu. UDP thì ngược lại, không có cơ chế ACK nên không đảm bảo gói tin đến đích.\n\nB sai vì mô tả ngược hoàn toàn, UDP không đảm bảo độ tin cậy còn TCP mới là giao thức đảm bảo truyền tải đáng tin cậy.\n\nC sai vì flow control và congestion control đều thuộc về TCP, không phải UDP.\n\nD sai vì sequencing là tính năng của TCP, không phải UDP, và TCP nhận gói theo thứ tự chứ không phải ngẫu nhiên.",
       "explanation_images": [],
       "question_vi": "Tại sao TCP được ưu tiên hơn UDP cho các ứng dụng yêu cầu kiểm tra lỗi chuyên sâu, chẳng hạn như HTTPS?",
       "options_vi": {
@@ -202,7 +202,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Mô hình OSI được tạo ra với hai mục đích chính: mô tả rõ chức năng mạng xảy ra ở từng tầng (đáp án A) và giúp người học hiểu cách dữ liệu di chuyển qua mạng từ đầu đến cuối (đáp án B). Đây là lý do mô hình này được gọi là mô hình tham chiếu, không phải giao thức thực tế.\n\nĐáp án C sai vì tính độc lập giữa các tầng là đặc điểm thiết kế của mô hình, không phải mục đích của nó. Đáp án D sai vì OSI chỉ là mô hình tham chiếu khái niệm, không tự đảm bảo việc truyền dữ liệu tin cậy, đó là nhiệm vụ của các giao thức cụ thể như TCP.",
       "explanation_images": [],
       "question_vi": "Hai phát biểu nào về mục đích của mô hình OSI là chính xác? (Chọn hai)",
       "options_vi": {
@@ -228,7 +228,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Server là thiết bị cung cấp dịch vụ hoặc ứng dụng dùng chung cho các người dùng cuối trong mạng, ví dụ như web server, file server, hay email server. Đây là định nghĩa cơ bản và chính xác nhất về chức năng của server.\n\nCác đáp án còn lại mô tả chức năng của các thiết bị khác: A mô tả switch (chuyển tiếp gói tin trong cùng broadcast domain), C mô tả router (định tuyến giữa các mạng Layer 3), và D mô tả firewall (tạo vùng bảo mật giữa mạng tin cậy và không tin cậy).",
       "explanation_images": [],
       "question_vi": "Chức năng của máy chủ (server) là gì?",
       "options_vi": {
@@ -256,7 +256,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án A đúng vì chức năng cốt lõi của server là chạy các ứng dụng để xử lý và cung cấp dữ liệu cho các máy trạm (workstation) gửi yêu cầu lên, đây là mô hình client-server cơ bản. Đáp án E đúng vì server được thiết kế để phục vụ nhiều máy trạm cùng lúc, khác với máy tính cá nhân thông thường chỉ phục vụ một người dùng.\n\nĐáp án B sai vì server không nhất thiết phải dùng virtual clustering để đạt redundancy, đây chỉ là một trong nhiều phương pháp. Đáp án C sai vì server không bị giới hạn trong data center dành riêng cho một khách hàng, server có thể đặt ở nhiều môi trường khác nhau bao gồm cả shared hosting. Đáp án D sai vì các server hoàn toàn có thể chạy các hệ điều hành khác nhau và vẫn giao tiếp được với nhau thông qua các giao thức mạng chuẩn.",
       "explanation_images": [],
       "question_vi": "Hai chức năng của máy chủ (server) trên mạng là gì? (Chọn hai)",
       "options_vi": {
@@ -283,7 +283,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Thiết bị Layer 3 (như router) hoạt động ở tầng Network của mô hình OSI, có chức năng chính là định tuyến và chuyển tiếp lưu lượng giữa các mạng khác nhau dựa trên địa chỉ IP. Đây chính xác là đáp án D.\n\nĐáp án A mô tả chức năng của firewall, không phải thiết bị Layer 3 thông thường. Đáp án B mô tả access point không dây. Đáp án C mô tả chức năng của switch Layer 2, vốn chuyển tiếp lưu lượng trong cùng một broadcast domain chứ không phải giữa các mạng khác nhau.",
       "explanation_images": [],
       "question_vi": "Chức năng chính của thiết bị Lớp 3 (Layer 3) là gì?",
       "options_vi": {
@@ -309,7 +309,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án D đúng vì cả module SFP đồng và quang đều hỗ trợ tính năng hot-swappable, cho phép thay thế module trong khi thiết bị vẫn đang hoạt động mà không cần tắt nguồn, giúp giảm thiểu gián đoạn dịch vụ.\n\nĐáp án A sai vì bộ suy hao quang (optical attenuator) chỉ dùng cho cáp quang, không áp dụng cho cáp đồng. Đáp án B sai vì không có module SFP đơn lẻ nào hỗ trợ cả single-mode lẫn multi-mode cùng lúc, mỗi module chỉ dành cho một loại. Đáp án C sai vì SFP thường hỗ trợ tốc độ 1 Gbps và hoạt động ở chế độ full duplex, không phải 100 Mbps half duplex.",
       "explanation_images": [],
       "question_vi": "Điều gì giống nhau giữa giao diện đồng (copper) và quang (fiber) khi sử dụng module SFP?",
       "options_vi": {
@@ -335,7 +335,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "The speeds of these links are shown as below:\n+ T1: 1.544 Mbps\n+ 10BaseT: 10 Mbps\n+ 100BaseT (often referred to as FastEthernet): 100Mbps",
+      "explanation": "T1 là chuẩn truyền dẫn số của Bắc Mỹ, hoạt động với tốc độ 1.544 Mbps, bao gồm 24 kênh DS0 mỗi kênh 64 Kbps cộng thêm overhead framing. Đáp án B là 2.048 Mbps tương ứng với chuẩn E1 của châu Âu, không phải T1. Đáp án C là 34.368 Mbps tương ứng với E3, còn D không phải là tốc độ chuẩn của bất kỳ loại kết nối WAN phổ biến nào.",
       "explanation_images": [],
       "question_vi": "Băng thông tối đa của kết nối điểm-điểm (point-to-point) T1 là bao nhiêu?",
       "options_vi": {
@@ -387,7 +387,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "The txload and rxload on both sites are 1/255 so the interfaces are not busy in transmitting and\nreceiving traffic. But the reliability on SiteA is only 166/255 which indicates input and output errors\nincrease. Reliability is calculated by this formula: reliability = number of packets / number of total\nframes.",
+      "explanation": "Nhìn vào output, chỉ số reliability của SiteA là 166/255, trong khi SiteB là 255/255. Reliability được tính dựa trên tỷ lệ lỗi trên đường truyền, và giá trị 166/255 cho thấy interface đang gặp lỗi đáng kể, dẫn đến mất gói tin và kết nối không ổn định. Đây là dấu hiệu rõ ràng nhất từ output rằng có lỗi đang tăng dần trên interface của SiteA.\n\nĐáp án B sai vì cả hai đầu đều dùng media type SFP-LR, tức là đúng loại cho single-mode fiber. Đáp án C sai vì DLY chỉ là 10 usec và không có dấu hiệu nào trong output cho thấy latency cao bất thường. Đáp án D sai vì nếu sai loại cáp thì interface sẽ không up được, nhưng cả hai interface đều đang ở trạng thái up/up.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nNgay sau khi SiteA được kết nối với SiteB qua đường cáp quang đơn mode (single-mode fiber) mới, người dùng tại SiteA báo cáo sự cố kết nối không liên tục với các ứng dụng được lưu trữ tại SiteB. Nguyên nhân của sự cố kết nối không liên tục là gì?",
       "options_vi": {
@@ -413,7 +413,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "A network endpoint is any device that is physically an end point on a network. Laptops, desktops,\nmobile phones, tablets, servers, and virtual environments can all be considered endpoints. Network\nendpoints may be a threat to our networks if they are compromised.",
+      "explanation": "Network endpoints là các thiết bị đầu cuối như máy tính, điện thoại, máy in kết nối vào mạng. Khi bị xâm phạm, chúng có thể trở thành điểm tấn công để kẻ xấu xâm nhập vào toàn bộ hệ thống mạng, vì vậy đáp án A là đúng.\n\nCác đáp án còn lại mô tả chức năng của các thành phần khác: B là vai trò của Layer 3 switch hoặc router trong môi trường VLAN, C mô tả chức năng của router, còn D là vai trò của firewall hoặc thiết bị bảo mật biên mạng.",
       "explanation_images": [],
       "question_vi": "Thiết bị đầu cuối mạng (network endpoints) là gì?",
       "options_vi": {
@@ -441,7 +441,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đây là câu hỏi so sánh đặc điểm kỹ thuật giữa hai loại cáp UTP phổ biến, cần nắm rõ thông số của từng loại.\n\nCat 5e hỗ trợ tốc độ 1 Gigabit (1000BASE-T) và Cat 6a hỗ trợ tốc độ lên đến 10 Gigabit (10GBASE-T), vì vậy cả hai đều đạt ít nhất 1 Gigabit, đáp án D đúng. Cả hai chuẩn cáp đều tuân theo tiêu chuẩn Ethernet truyền thống với chiều dài tối đa 100 mét cho một đoạn cáp, đáp án A đúng.\n\nĐáp án B sai vì giới hạn 55 mét chỉ áp dụng cho Cat 6 (không phải 6a) khi chạy 10 Gigabit trong môi trường có nhiễu cao, không phải là thông số chung của cả hai loại. Đáp án C sai vì 500 MHz là tần số hoạt động của Cat 6a, còn Cat 5e chỉ hoạt động ở 100 MHz. Đáp án E sai vì Cat 5e không hỗ trợ 10 Gigabit, chỉ Cat 6a mới đạt được tốc độ đó.",
       "explanation_images": [
         "page_6_img_1.png"
       ],
@@ -496,7 +496,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Firewall là thiết bị được thiết kế chuyên biệt để kiểm soát luồng lưu lượng mạng bằng cách áp dụng các quy tắc cho phép hoặc từ chối kết nối dựa trên địa chỉ IP, cổng, giao thức và nhiều tiêu chí khác. Đây chính xác là chức năng cốt lõi của firewall trong bảo mật mạng.\n\nBa lựa chọn còn lại không có chức năng này. Access point chỉ cung cấp kết nối không dây cho các thiết bị. Switch chuyển tiếp khung dữ liệu giữa các thiết bị trong cùng mạng LAN dựa trên địa chỉ MAC, không lọc lưu lượng theo quy tắc bảo mật. Wireless controller quản lý và điều phối các access point, không phải thiết bị lọc lưu lượng.",
       "explanation_images": [],
       "question_vi": "Thiết bị nào cho phép hoặc từ chối lưu lượng mạng dựa trên một tập hợp các quy tắc?",
       "options_vi": {
@@ -522,7 +522,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án A đúng vì switch Layer 3 có khả năng định tuyến (routing) dựa trên địa chỉ IP, cho phép chuyển tiếp lưu lượng giữa các VLAN hoặc mạng con khác nhau — đây là chức năng cốt lõi phân biệt nó với switch Layer 2 thông thường.\n\nĐáp án B sai vì switch Layer 3 không chặn broadcast; broadcast vẫn được xử lý bình thường trong phạm vi VLAN. Đáp án C sai vì chuyển tiếp giữa các VLAN dựa trên MAC address là chức năng của switch Layer 2, không phải Layer 3 — Layer 3 dùng địa chỉ IP để định tuyến liên VLAN. Đáp án D sai vì flooding broadcast trong một VLAN là hành vi của switch Layer 2, không phải chức năng đặc trưng của Layer 3.",
       "explanation_images": [],
       "question_vi": "Chức năng của switch Layer 3 là gì?",
       "options_vi": {
@@ -548,7 +548,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "SR stands for Short Reach, and LR stands for Long Reach. SR supports 400metres while LR supports\n10 kilometers. In this question, SiteA is using SFP-SR so it is not suitable for 7KM distance.",
+      "explanation": "Đáp án A đúng vì SiteA đang dùng transceiver SFP-SR (Short Range, dùng cho cáp multimode fiber) trong khi đường kết nối là single-mode fiber. SFP-SR không tương thích với single-mode fiber, dẫn đến tín hiệu quang bị suy hao hoặc không ổn định, gây ra mất kết nối ngắt quãng. SiteB dùng SFP-LR (Long Range) mới là loại đúng cho single-mode fiber, nên vấn đề nằm ở phía SiteA.\n\nĐáp án B sai vì đề bài đã xác định rõ đây là single-mode fiber, loại cáp này hoàn toàn phù hợp với kết nối điểm-điểm tốc độ cao giữa hai site. Đáp án C sai vì dù traffic khá cao (khoảng 265 Mbps trên đường 10 Gbps), mức sử dụng này chỉ chiếm khoảng 2-3% băng thông, không đủ để gây ra vấn đề nghiêm trọng. Đáp án D sai vì output của lệnh show interface không hiển thị bất kỳ lỗi vật lý nào như input errors hay CRC errors.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nNgay sau khi SiteA được kết nối với SiteB qua một đường cáp quang single-mode mới, người dùng tại SiteA báo cáo các vấn đề kết nối không liên tục với các ứng dụng được lưu trữ tại SiteB. Nguyên nhân của vấn đề kết nối không liên tục là gì?",
       "options_vi": {
@@ -578,7 +578,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "Configuring the Cisco SSH Server to Perform RSA-Based User Authentication\nSUMMARY STEPS\n1. enable\n2. configure terminal\n3. hostname name\n4. ip domain-name name\n5. crypto key generate rsa\n6. ip ssh pubkey-chain\n7. username username\n8. key-string\n9. key-hash key-type key-name\n10. end\nReference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_ssh/configuration/15-e/sec-\nusr-ssh-15-e-book/sec-secure-shell-v2.html",
+      "explanation": "Câu hỏi này hỏi về hai lệnh cần thiết để router R1 chấp nhận kết nối remote access bảo mật, tức là SSH.\n\nLệnh \"crypto key generate rsa\" là bắt buộc vì SSH sử dụng mã hóa bất đối xứng, và lệnh này tạo ra cặp khóa RSA cần thiết để thiết lập phiên SSH. Không có khóa RSA thì SSH không thể hoạt động được. Lệnh \"ip ssh pubkey-chain\" cho phép cấu hình xác thực dựa trên public key, đây là phương thức xác thực bảo mật cho SSH.\n\nLệnh A sai vì \"transport input telnet\" cho phép Telnet thay vì SSH, Telnet không mã hóa dữ liệu nên không phải kết nối bảo mật. Lệnh B sai vì \"username cisco password 0 cisco\" chỉ tạo tài khoản người dùng cục bộ, đây là bước hỗ trợ nhưng không phải lệnh kích hoạt SSH. Lệnh C sai vì \"login console\" áp dụng cho cổng console chứ không liên quan đến remote access qua SSH.\n\nTuy nhiên, cần lưu ý rằng trong thực tế và nhiều đề thi CCNA, đáp án phổ biến hơn để bật SSH thường là \"crypto key generate rsa\" kết hợp với \"transport input ssh\" trên đường VTY. Nếu đề bài xác nhận đáp án là B và E thì hãy ưu tiên theo đáp án chính thức của đề.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nHai lệnh nào phải được cấu hình trên router R1 để cho phép router chấp nhận các kết nối truy cập từ xa an toàn? (Chọn hai)",
       "options_vi": {
@@ -606,7 +606,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Endpoint là các thiết bị đầu cuối trong mạng, bao gồm cả máy chủ (server) lẫn máy khách (client) như máy tính, điện thoại, máy in. Chức năng cơ bản của chúng là kết nối vào mạng để giao tiếp, đồng thời thực hiện các tác vụ như ghi dữ liệu và truyền lên file server, nên cả B và A đều đúng.\n\nC sai vì cung cấp dịch vụ không dây là chức năng của access point, không phải endpoint. D sai vì chuyển tiếp traffic giữa các VLAN là chức năng của router hoặc Layer 3 switch.",
       "explanation_images": [],
       "question_vi": "Chức năng của một thiết bị đầu cuối (endpoint) trên mạng là gì?",
       "options_vi": {
@@ -634,7 +634,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "We see the collisions are very high compared to the packets output. The is usually the result of duplex\nmismatch (one is half-duplex, one end is full-duplex for example)",
+      "explanation": "Để trả lời câu hỏi này, cần hiểu các chỉ số trong output của lệnh \"show interfaces\" trên router/switch Cisco.\n\nDấu hiệu đặc trưng của duplex incompatibility (xung đột chế độ duplex) là số lượng lỗi CRC, input errors, và đặc biệt là \"late collisions\" tăng cao. Khi một đầu cổng được cấu hình full-duplex còn đầu kia là half-duplex, thiết bị half-duplex sẽ phát hiện collision trong khi thiết bị full-duplex vẫn tiếp tục truyền, dẫn đến late collision và làm giảm tốc độ truyền đáng kể. Đây là nguyên nhân phổ biến nhất gây ra tốc độ chậm mà không có thông báo lỗi rõ ràng về tốc độ (speed).\n\nĐáp án A sai vì tắc nghẽn lưu lượng nặng thường thể hiện qua output drops hoặc queue drops, không phải late collisions hay CRC errors. Đáp án B sai vì queuing drops sẽ xuất hiện rõ ràng trong trường \"output drops\" của output, không liên quan đến lỗi vật lý. Đáp án C sai vì xung đột tốc độ (speed mismatch) thường khiến cổng không lên được trạng thái \"up/up\" hoặc hiển thị trạng thái \"down\", chứ không gây ra tình trạng kết nối chậm trong khi cổng vẫn hoạt động bình thường.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nLưu lượng đang chạy qua interface TenGigabitEthernet0/0 gặp tốc độ truyền chậm. Nguyên nhân của vấn đề là gì?",
       "options_vi": {
@@ -662,7 +662,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Để trả lời câu hỏi này chính xác, cần xem exhibit đi kèm, nhưng dựa vào đáp án đúng là A, ta có thể suy luận rằng exhibit hiển thị output của lệnh \"show interfaces\" với các dấu hiệu đặc trưng của duplex mismatch như số lượng lớn late collisions hoặc input errors.\n\nDuplex mismatch xảy ra khi một đầu của liên kết được cấu hình full-duplex còn đầu kia là half-duplex. Khi đó, đầu half-duplex sử dụng CSMA/CD và sẽ phát hiện collision khi đầu full-duplex gửi dữ liệu đồng thời, dẫn đến late collisions tăng cao, throughput giảm mạnh dù link vẫn ở trạng thái up. Đây là lý do hiệu suất kém dù kết nối vẫn hoạt động.\n\nĐáp án B sai vì đây là kết nối giữa PC và switch, thường dùng cáp đồng chứ không phải cáp quang, và nếu cáp quang bị lỗi thì link sẽ down hoàn toàn chứ không chỉ chậm. Đáp án C sai vì speed mismatch sẽ khiến link không thể up được, không phải up nhưng chạy chậm. Đáp án D sai vì interface type mismatch cũng sẽ ngăn link lên hoàn toàn, không gây ra tình trạng hoạt động kém hiệu suất.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nĐường kết nối giữa PC1 và switch đang hoạt động, nhưng hiệu suất kém. Điều kiện interface nào đang gây ra vấn đề hiệu suất?",
       "options_vi": {
@@ -691,7 +691,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Câu hỏi này liên quan đến một exhibit (thường là output của lệnh \"show interfaces\") cho thấy các dấu hiệu hiệu suất kém trên một interface.\n\nĐáp án C đúng vì khi hai thiết bị hoạt động ở tốc độ khác nhau (speed mismatch), ví dụ một bên 100 Mbps và bên kia 1000 Mbps, interface sẽ không thể thiết lập kết nối ổn định, dẫn đến lỗi liên tục và hiệu suất rất kém. Trong output \"show interfaces\", điều này thường biểu hiện qua số lượng lớn input/output errors hoặc interface liên tục up/down.\n\nĐáp án B đúng vì cáp bị lỗi vật lý gây ra các lỗi như CRC errors, input errors, hoặc giants/runts trong output của interface. Đây là nguyên nhân phổ biến dẫn đến hiệu suất kém ở tầng Physical.\n\nĐáp án A sai vì broadcast traffic quá nhiều ảnh hưởng đến hiệu suất của toàn bộ mạng và CPU của thiết bị, nhưng không trực tiếp gây ra lỗi trên một interface cụ thể theo cách được thể hiện trong output \"show interfaces\".\n\nĐáp án D sai vì cấu hình bandwidth trên interface chỉ là một giá trị tham chiếu dùng cho các giao thức định tuyến (như OSPF, EIGRP) để tính toán metric, nó không thực sự thay đổi tốc độ truyền dữ liệu vật lý của interface, do đó không gây ra hiệu suất kém theo nghĩa vật lý.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nNguyên nhân gây hiệu suất kém trên interface mạng là gì?",
       "options_vi": {
@@ -717,7 +717,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "UTP (Unshielded twisted pair) and STP (Shielded twisted pair) are the types of twisted pair cables\nwhich act as a transmission medium and imparts reliable connectivity of electronic equipment.\nAlthough the design and manufacture are different but both serve the same purpose.\nThe basic difference between UTP and STP is UTP (Unshielded twisted pair) is a cable with wires that\nare twisted together to reduce noise and crosstalk. On the contrary, STP (Shielded twisted pair) is a\ntwisted pair cable confined in foil or mesh shield that guards the cable against electromagnetic\ninterference.",
+      "explanation": "Đáp án D đúng vì STP (Shielded Twisted Pair) có lớp vỏ bọc kim loại bao quanh các cặp dây xoắn, giúp chống lại nhiễu điện từ (EMI) và nhiễu tần số vô tuyến (RFI) hiệu quả hơn UTP (Unshielded Twisted Pair) vốn không có lớp bảo vệ này.\n\nĐáp án A sai vì thực tế ngược lại: UTP rẻ hơn và dễ lắp đặt hơn STP, do STP có cấu trúc phức tạp hơn với lớp bọc kim loại.\n\nĐáp án B sai vì UTP thực ra dễ bị nhiễu hơn STP, không phải ít bị nhiễu hơn.\n\nĐáp án C sai vì tốc độ và độ tin cậy không phụ thuộc vào việc cáp có bọc hay không, mà phụ thuộc vào category của cáp (ví dụ Cat5e, Cat6).",
       "explanation_images": [
         "page_13_img_7.png",
         "page_13_img_8.jpeg"
@@ -746,7 +746,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Web server có chức năng chính là cung cấp các ứng dụng và nội dung web được truyền tải qua giao thức HTTP (hoặc HTTPS) đến trình duyệt của người dùng, đây chính xác là mô tả của đáp án A.\n\nĐáp án B mô tả chức năng của mail server, không phải web server. Đáp án C mô tả chức năng của FTP server. Đáp án D mô tả chức năng của authentication server như RADIUS hoặc TACACS+.",
       "explanation_images": [],
       "question_vi": "Chức năng được thực hiện bởi web server là gì?",
       "options_vi": {
@@ -772,7 +772,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Below lists the cabling standards mentioned above\nStandard Cabling Maximum length\n1000BASE- Twinaxial cabling 25 meters\nCX\n100BASE-FX Two strands, multimode 400 m\n1000BASE- Long-wavelength laser, MM or 10 km (SM) 3 km (MM)\nLX SM fiber\n1000BASE- Short-wavelength laser, MM 220 m with 62.5-micron fiber; 550 m with 50-\nSX fiber micron fiber\n1000BASE- Extended wavelength, SM fiber 100 km\nZX\nNote:\n+ MM: Multimode\n+ SM: Single-mode\nAlthough above list says the maximum length of 1000BASE-ZX is 100km but in practical it is usually\nfrom 70 to 80 km depending on link loss.",
+      "explanation": "Đáp án D đúng vì đây là thông số kỹ thuật chuẩn của hai loại giao diện này. 1000BASE-LX/LH sử dụng bước sóng 1310nm và hỗ trợ khoảng cách lên đến 10km trên cáp quang đơn mode, trong khi 1000BASE-ZX sử dụng bước sóng 1550nm và có thể truyền xa hơn, lên đến 70km trên cáp quang đơn mode.\n\nĐáp án A sai vì thực tế chính 1000BASE-LX/LH mới là loại cần dùng conditioning patch cable khi kết nối với cáp multimode, không phải 1000BASE-ZX. Đáp án B sai vì không có chuẩn Gigabit Ethernet nào hỗ trợ khoảng cách lên đến 1000km, con số này hoàn toàn không chính xác. Đáp án C sai vì mô tả về dual-rate 100M/1G không liên quan đến sự khác biệt giữa hai chuẩn này và không phản ánh đúng đặc điểm kỹ thuật của chúng.",
       "explanation_images": [],
       "question_vi": "Sự khác biệt giữa interface 1000BASE-LX/LH và 1000BASE-ZX là gì?",
       "options_vi": {
@@ -798,7 +798,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án B đúng vì endpoint (thiết bị đầu cuối) là các thiết bị như máy tính, điện thoại, máy tính bảng mà người dùng trực tiếp sử dụng để truy cập các dịch vụ mạng như web, email, hay ứng dụng.\n\nĐáp án A mô tả chức năng của switch, thiết bị chuyển tiếp lưu lượng unicast giữa các host. Đáp án C mô tả chức năng của firewall, phân tách vùng mạng tin cậy và không tin cậy. Đáp án D cũng mô tả chức năng của switch, cụ thể là chuyển tiếp broadcast trong cùng một VLAN.",
       "explanation_images": [],
       "question_vi": "Chức năng của một thiết bị đầu cuối (endpoint) là gì?",
       "options_vi": {
@@ -824,7 +824,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Link flap means that the interface continually goes up and down in a Cisco Switch. The interface is put\ninto the errdisabled state if it flaps more than five times in 10 seconds. The common cause of link flap\nis a Layer 1 issue such as a bad cable, duplex mismatch, or bad Gigabit Interface Converter (GBIC)\ncard. Look at the console messages or the messages that were sent to the syslog server that state the\nreason for the port shutdown.\n13w0d: %PM-4-ERR_DISABLE: link-flap error detected on Fa0/28, putting Fa0/28 in err-disable state",
+      "explanation": "Link flapping xảy ra khi một cổng liên tục chuyển đổi giữa trạng thái up và down trong thời gian ngắn, điều này kích hoạt cơ chế bảo vệ của switch và đưa cổng vào trạng thái err-disabled để ngăn chặn sự bất ổn lan rộng trong mạng. Đây là một trong những nguyên nhân phổ biến nhất dẫn đến err-disabled, cùng với các vi phạm port security hoặc phát hiện BPDU guard.\n\nLatency (A) chỉ là độ trễ truyền tín hiệu, không liên quan đến việc vô hiệu hóa cổng. Không có thiết bị cắm vào cổng (B) chỉ khiến cổng ở trạng thái down bình thường, không phải err-disabled. Lệnh shutdown (C) đưa cổng vào trạng thái administratively down, đây là trạng thái khác hoàn toàn so với err-disabled.",
       "explanation_images": [],
       "question_vi": "Điều gì khiến một cổng (port) bị đặt vào trạng thái err-disabled?",
       "options_vi": {
@@ -876,7 +876,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Đáp án A đúng vì switch Layer 3 có khả năng định tuyến (routing) dựa trên địa chỉ IP, cho phép chuyển lưu lượng giữa các VLAN khác nhau mà không cần router riêng biệt. Đây là chức năng cốt lõi phân biệt switch Layer 3 với switch Layer 2 thông thường.\n\nĐáp án B sai vì switch Layer 3 không truyền broadcast traffic khi hoạt động ở chế độ Layer 3, thực tế nó giới hạn broadcast domain theo từng VLAN. Đáp án C sai vì chuyển frame giữa các VLAN chỉ dựa trên MAC address là chức năng của switch Layer 2, không phải Layer 3. Đáp án D sai vì switch Layer 3 không \"di chuyển frame\" dựa trên địa chỉ IP, mà là định tuyến packet dựa trên IP, còn frame là khái niệm của Layer 2.",
       "explanation_images": [],
       "question_vi": "Chức năng của switch Layer 3 là gì?",
       "options_vi": {
@@ -902,7 +902,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Firewall là thiết bị được thiết kế để phân chia mạng thành các vùng riêng biệt (ví dụ: DMZ, mạng nội bộ, mạng bên ngoài) và áp dụng chính sách bảo mật khác nhau cho từng vùng đó. Đây chính xác là chức năng cốt lõi của firewall trong kiến trúc bảo mật mạng.\n\nIPS (Intrusion Prevention System) chỉ giám sát và ngăn chặn các mối đe dọa trong luồng traffic, không phân vùng mạng. Access point là thiết bị kết nối không dây, không có chức năng phân vùng bảo mật. Switch phân chia mạng thành các VLAN nhưng mục đích chính là phân đoạn lưu lượng, không phải áp dụng chính sách bảo mật độc lập cho từng vùng như firewall.",
       "explanation_images": [],
       "question_vi": "Thiết bị nào phân tách mạng thành các vùng riêng biệt có chính sách bảo mật riêng?",
       "options_vi": {
@@ -954,7 +954,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": null,
+      "explanation": "Firewall là thiết bị được thiết kế chuyên biệt để phân tách các mạng theo miền bảo mật, ví dụ như tách mạng nội bộ (trusted) khỏi mạng bên ngoài (untrusted) bằng cách kiểm soát luồng traffic dựa trên các chính sách bảo mật. Các đáp án còn lại không đúng vì: access point chỉ cung cấp kết nối không dây, không phân tách miền bảo mật; IPS giám sát và ngăn chặn các mối đe dọa nhưng không phải thiết bị phân chia mạng theo miền; wireless controller quản lý các access point trong hệ thống Wi-Fi, không liên quan đến phân tách bảo mật.",
       "explanation_images": [],
       "question_vi": "Thiết bị nào phân tách mạng theo các miền bảo mật (security domains)?",
       "options_vi": {

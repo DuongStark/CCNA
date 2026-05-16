@@ -114,7 +114,7 @@ export default function QuizScreen({
           </span>
         </div>
         {question.explanation && (
-          <p className={styles.explanationText}>{question.explanation}</p>
+          <p className={styles.explanationText}>{question.explanation.replace(/\*\*(.*?)\*\*/g, '$1').replace(/`(.*?)`/g, '$1')}</p>
         )}
         {explanationImages.map((src, i) => (
           <ExhibitImage
