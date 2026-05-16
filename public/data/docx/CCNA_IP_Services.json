@@ -1,0 +1,1041 @@
+{
+  "count": 42,
+  "questions": [
+    {
+      "id": "5.1",
+      "type": "multiple",
+      "question": "Which two QoS tools are used to guarantee minimum bandwidth to certain traffic? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "FIFO",
+        "B": "CBWFQ",
+        "C": "LLC",
+        "D": "WFQ",
+        "E": "RSVP"
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai công cụ QoS nào được sử dụng để đảm bảo băng thông tối thiểu cho lưu lượng nhất định? (Chọn hai)",
+      "options_vi": {
+        "A": "FIFO",
+        "B": "CBWFQ",
+        "C": "LLC",
+        "D": "WFQ",
+        "E": "RSVP"
+      },
+      "explanation": "CBWFQ (Class-Based Weighted Fair Queuing) cho phép phân loại lưu lượng thành các lớp và gán băng thông tối thiểu được đảm bảo cho từng lớp, đây chính xác là cơ chế đảm bảo băng thông. WFQ (Weighted Fair Queuing) phân bổ băng thông theo trọng số cho các luồng lưu lượng khác nhau, đảm bảo các luồng có độ ưu tiên cao hơn nhận được băng thông tối thiểu tương ứng.\n\nFIFO chỉ xử lý gói tin theo thứ tự đến trước phục vụ trước, không có cơ chế đảm bảo băng thông cho bất kỳ loại lưu lượng nào. LLC (Logical Link Control) là một giao thức tầng liên kết dữ liệu, hoàn toàn không liên quan đến QoS hay quản lý băng thông. RSVP (Resource Reservation Protocol) là giao thức báo hiệu để yêu cầu đặt trước tài nguyên trên đường truyền, nhưng bản thân nó không phải là công cụ xếp hàng để đảm bảo băng thông theo cách trực tiếp như CBWFQ hay WFQ."
+    },
+    {
+      "id": "5.14",
+      "type": "single",
+      "question": "A network administrator must enable DHCP services between two sites. What must be configured for the router to pass DHCPDISCOVER messages on to the server?",
+      "question_images": [],
+      "options": {
+        "A": "a DHCP Relay Agent",
+        "B": "DHCP Binding",
+        "C": "a DHCP Pool",
+        "D": "DHCP Snooping"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Một quản trị viên mạng cần kích hoạt dịch vụ DHCP giữa hai site. Cần cấu hình gì trên router để chuyển tiếp các thông điệp DHCPDISCOVER đến server?",
+      "options_vi": {
+        "A": "một DHCP Relay Agent",
+        "B": "DHCP Binding",
+        "C": "một DHCP Pool",
+        "D": "DHCP Snooping"
+      },
+      "explanation": "Khi một client gửi DHCPDISCOVER, đây là gói tin broadcast và theo mặc định router sẽ không chuyển tiếp broadcast sang mạng khác. Để giải quyết vấn đề này, ta cấu hình DHCP Relay Agent trên router bằng lệnh ip helper-address, lệnh này sẽ chuyển đổi gói broadcast thành unicast và chuyển tiếp đến DHCP server ở site khác.\n\nDHCP Binding là bảng ghi ánh xạ địa chỉ IP với MAC address do server tạo ra, không liên quan đến việc chuyển tiếp gói tin. DHCP Pool là phạm vi địa chỉ IP được cấu hình trên server để cấp phát, cũng không có chức năng relay. DHCP Snooping là tính năng bảo mật trên switch để ngăn chặn DHCP server giả mạo, không phải cơ chế chuyển tiếp gói tin giữa các site."
+    },
+    {
+      "id": "5.22",
+      "type": "single",
+      "question": "What does a router do when configured with the default DNS lookup settings, and a URL is entered on the CLI?",
+      "question_images": [],
+      "options": {
+        "A": "initiates a ping request to the URL",
+        "B": "prompts the user to specify the desired IP address",
+        "C": "continuously attempts to resolve the URL until the command is cancelled",
+        "D": "sends a broadcast message in an attempt to resolve the URL"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Router thực hiện điều gì khi được cấu hình với cài đặt DNS lookup mặc định và một URL được nhập trên CLI?",
+      "options_vi": {
+        "A": "khởi tạo một yêu cầu ping đến URL",
+        "B": "nhắc người dùng chỉ định địa chỉ IP mong muốn",
+        "C": "liên tục cố gắng phân giải URL cho đến khi lệnh bị hủy",
+        "D": "gửi một thông điệp broadcast để cố gắng phân giải URL"
+      },
+      "explanation": "Khi router được cấu hình với cài đặt DNS lookup mặc định và người dùng nhập một URL không hợp lệ trên CLI, router sẽ cố gắng phân giải tên đó bằng cách gửi một broadcast đến địa chỉ 255.255.255.255 trên cổng UDP 53, vì nó không biết địa chỉ của DNS server. Đây là hành vi mặc định khi không có DNS server nào được cấu hình cụ thể, và quá trình này thường mất vài giây khiến CLI bị treo, đó là lý do nhiều người dùng chạy lệnh \"no ip domain-lookup\" để tắt tính năng này.\n\nĐáp án A sai vì router không tự động ping URL. Đáp án B sai vì router không hỏi người dùng về địa chỉ IP. Đáp án C mô tả đúng một phần triệu chứng (CLI bị treo) nhưng sai về cơ chế, router không lặp vô tận mà chỉ gửi broadcast và chờ phản hồi trong một khoảng thời gian nhất định."
+    },
+    {
+      "id": "5.28",
+      "type": "single",
+      "question": "Which protocol does an IPv4 host use to obtain a dynamically assigned IP address?",
+      "question_images": [],
+      "options": {
+        "A": "ARP",
+        "B": "DNS",
+        "C": "CDP",
+        "D": "DHCP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Giao thức nào được host IPv4 sử dụng để nhận địa chỉ IP được gán động?",
+      "options_vi": {
+        "A": "ARP",
+        "B": "DNS",
+        "C": "CDP",
+        "D": "DHCP"
+      },
+      "explanation": "DHCP (Dynamic Host Configuration Protocol) là giao thức được thiết kế chuyên biệt để cấp phát địa chỉ IP động cho các thiết bị trong mạng, cùng với các thông tin cấu hình khác như subnet mask, default gateway và DNS server. ARP dùng để ánh xạ địa chỉ IP sang địa chỉ MAC, không liên quan đến việc xin cấp IP. DNS dùng để phân giải tên miền thành địa chỉ IP, còn CDP là giao thức độc quyền của Cisco dùng để khám phá các thiết bị láng giềng trực tiếp kết nối."
+    },
+    {
+      "id": "5.30",
+      "type": "single",
+      "question": "Which condition must be met before an NMS handles an SNMP trap from an agent?",
+      "question_images": [],
+      "options": {
+        "A": "The NMS must be configured on the same router as the SNMP agent",
+        "B": "The NMS must receive a trap and an inform message from the SNMP agent within a configured interval",
+        "C": "The NMS software must be loaded with the MIB associated with the trap",
+        "D": "The NMS must receive the same trap from two different SNMP agents to verify that it is reliable"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Điều kiện nào phải được đáp ứng trước khi NMS xử lý một SNMP trap từ một agent?",
+      "options_vi": {
+        "A": "NMS phải được cấu hình trên cùng router với SNMP agent",
+        "B": "NMS phải nhận được một trap và một thông điệp inform từ SNMP agent trong khoảng thời gian đã cấu hình",
+        "C": "Phần mềm NMS phải được tải với MIB liên kết với trap đó",
+        "D": "NMS phải nhận được cùng một trap từ hai SNMP agent khác nhau để xác minh rằng nó đáng tin cậy"
+      },
+      "explanation": "Đáp án C đúng vì NMS cần có MIB (Management Information Base) tương ứng để có thể giải mã và hiểu nội dung của trap nhận được từ agent. Nếu không có MIB phù hợp, NMS sẽ không biết các OID trong trap đó có nghĩa là gì và không thể xử lý thông tin đó một cách có ý nghĩa.\n\nĐáp án A sai vì NMS và SNMP agent hoàn toàn có thể nằm trên các thiết bị khác nhau trong mạng, đó chính là mô hình hoạt động bình thường của SNMP. Đáp án B sai vì trap và inform là hai cơ chế riêng biệt, NMS không cần nhận cả hai trong cùng một khoảng thời gian để xử lý trap. Đáp án D sai vì NMS xử lý trap dựa trên nội dung và cấu hình, không yêu cầu xác nhận từ nhiều agent khác nhau."
+    },
+    {
+      "id": "5.38",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe ntp server 192.168.0.3 command has been configured on Router1 to make it an NTP client of router 2. Which command must be configured on Router2 so that it operates in server-only mode and relies only on its internal clock?",
+      "question_images": [
+        "q5.38_img1.jpg"
+      ],
+      "options": {
+        "A": "Router2(config)#ntp passive",
+        "B": "Router2(config)#ntp master 4",
+        "C": "Router2(config)#ntp server 172.17.0.1",
+        "D": "Router2(config)#ntp server 192.168.0.2"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLệnh ntp server 192.168.0.3 đã được cấu hình trên Router1 để biến nó thành NTP client của Router2. Lệnh nào phải được cấu hình trên Router2 để nó hoạt động ở chế độ chỉ làm server (server-only) và chỉ dựa vào đồng hồ nội bộ của nó?",
+      "options_vi": {
+        "A": "Router2(config)#ntp passive",
+        "B": "Router2(config)#ntp master 4",
+        "C": "Router2(config)#ntp server 172.17.0.1",
+        "D": "Router2(config)#ntp server 192.168.0.2"
+      },
+      "explanation": "Lệnh \"ntp master 4\" cấu hình Router2 hoạt động như một NTP master server, sử dụng đồng hồ nội bộ của chính nó làm nguồn thời gian mà không cần đồng bộ từ bất kỳ server bên ngoài nào. Con số 4 là stratum level, cho biết độ ưu tiên của nguồn thời gian này trong hệ thống phân cấp NTP. Đây chính xác là yêu cầu đề bài: Router2 chỉ dùng đồng hồ nội bộ và phục vụ các client như Router1.\n\nĐáp án A sai vì \"ntp passive\" là chế độ dùng trong NTP symmetric mode để chờ nhận kết nối từ peer, không phải cấu hình server độc lập dùng đồng hồ nội bộ.\n\nĐáp án C và D đều sai vì cả hai lệnh đều cấu hình Router2 trỏ đến một NTP server khác để đồng bộ thời gian, tức là Router2 vẫn phụ thuộc vào nguồn bên ngoài thay vì dùng đồng hồ nội bộ như yêu cầu."
+    },
+    {
+      "id": "5.41",
+      "type": "single",
+      "question": "When DHCP is configured on a router, which command must be entered so the default gateway is automatically distributed?",
+      "question_images": [],
+      "options": {
+        "A": "default-router",
+        "B": "default-gateway",
+        "C": "ip helper-address",
+        "D": "dns-server"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Khi DHCP được cấu hình trên router, lệnh nào phải được nhập để default gateway được phân phối tự động?",
+      "options_vi": {
+        "A": "default-router",
+        "B": "default-gateway",
+        "C": "ip helper-address",
+        "D": "dns-server"
+      },
+      "explanation": "Lệnh \"default-router\" được dùng trong chế độ cấu hình DHCP pool để chỉ định địa chỉ IP của default gateway sẽ được phân phối cho các client. Đây là lệnh đúng cú pháp trong IOS khi bạn muốn client nhận được thông tin gateway tự động qua DHCP.\n\nCác đáp án còn lại sai vì: \"default-gateway\" là lệnh dùng để cấu hình gateway cho chính thiết bị (thường dùng trên switch layer 2), không phải để phân phối cho DHCP client. \"ip helper-address\" dùng để chuyển tiếp DHCP broadcast sang một DHCP server ở mạng khác, không liên quan đến việc khai báo gateway trong pool. \"dns-server\" cũng là lệnh hợp lệ trong DHCP pool nhưng chỉ dùng để phân phối địa chỉ DNS, không phải default gateway."
+    },
+    {
+      "id": "6.13",
+      "type": "single",
+      "question": "When deploying syslog, which severity level logs informational message?",
+      "question_images": [],
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "4",
+        "D": "6"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Khi triển khai syslog, mức độ nghiêm trọng (severity level) nào ghi lại thông điệp thông tin (informational)?",
+      "options_vi": {
+        "A": "0",
+        "B": "2",
+        "C": "4",
+        "D": "6"
+      },
+      "explanation": "Trong syslog, mức độ nghiêm trọng được đánh số từ 0 đến 7, trong đó số càng nhỏ thì mức độ càng nghiêm trọng. Mức 6 tương ứng với \"Informational\" - dùng để ghi lại các thông báo thông tin thông thường về hoạt động của hệ thống.\n\nMức 0 là \"Emergency\" - hệ thống không thể sử dụng được, đây là mức nghiêm trọng nhất. Mức 2 là \"Critical\" - các điều kiện nghiêm trọng cần xử lý ngay. Mức 4 là \"Warning\" - cảnh báo về các tình huống có thể gây ra vấn đề. Tất cả ba mức này đều biểu thị các sự kiện nghiêm trọng hơn nhiều so với thông báo thông tin thông thường."
+    },
+    {
+      "id": "6.23",
+      "type": "multiple",
+      "question": "Which two QoS tools provides congestion management? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "FRTS",
+        "B": "CAR",
+        "C": "PQ",
+        "D": "PBR",
+        "E": "CBWFQ"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai công cụ QoS nào cung cấp quản lý tắc nghẽn (congestion management)? (Chọn hai)",
+      "options_vi": {
+        "A": "FRTS",
+        "B": "CAR",
+        "C": "PQ",
+        "D": "PBR",
+        "E": "CBWFQ"
+      },
+      "explanation": "PQ (Priority Queuing) và CBWFQ (Class-Based Weighted Fair Queuing) đều là các công cụ quản lý tắc nghẽn (congestion management) vì chúng hoạt động bằng cách sắp xếp và lên lịch các gói tin vào hàng đợi, quyết định gói nào được truyền trước khi đường truyền bị tắc nghẽn. PQ chia lưu lượng thành 4 mức ưu tiên và luôn phục vụ hàng đợi ưu tiên cao nhất trước. CBWFQ cho phép định nghĩa các lớp lưu lượng và phân bổ băng thông đảm bảo cho từng lớp, linh hoạt hơn PQ.\n\nFRTS (Frame Relay Traffic Shaping) là công cụ traffic shaping, dùng để làm mượt lưu lượng và kiểm soát tốc độ gửi, không phải quản lý hàng đợi khi tắc nghẽn. CAR (Committed Access Rate) là công cụ policing, dùng để giới hạn tốc độ lưu lượng bằng cách drop hoặc re-mark gói tin vượt ngưỡng, thuộc nhóm congestion avoidance hoặc policing chứ không phải congestion management. PBR (Policy-Based Routing) là cơ chế định tuyến dựa trên chính sách, không liên quan đến QoS queuing hay quản lý tắc nghẽn."
+    },
+    {
+      "id": "6.28",
+      "type": "single",
+      "question": "An engineering team asks an implementer to configure syslog for warning conditions and error conditions. Which command does the implementer configure to achieve the desired result?",
+      "question_images": [],
+      "options": {
+        "A": "logging trap 2",
+        "B": "logging trap 3",
+        "C": "logging trap 4",
+        "D": "logging trap 5"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Một nhóm kỹ thuật yêu cầu người triển khai cấu hình syslog cho các điều kiện cảnh báo (warning) và điều kiện lỗi (error). Người triển khai cấu hình lệnh nào để đạt được kết quả mong muốn?",
+      "options_vi": {
+        "A": "logging trap 2",
+        "B": "logging trap 3",
+        "C": "logging trap 4",
+        "D": "logging trap 5"
+      },
+      "explanation": "Syslog sử dụng các mức độ nghiêm trọng từ 0 đến 7, trong đó số càng nhỏ thì mức độ càng nghiêm trọng. Lệnh \"logging trap\" chỉ định mức tối đa sẽ được gửi đến syslog server, nghĩa là tất cả các mức từ 0 đến mức đó đều được ghi lại. Warning là mức 4 và Error là mức 3, vì vậy để bắt cả hai loại này, cần đặt trap ở mức 4 — lệnh \"logging trap 4\" sẽ gửi tất cả các bản tin từ mức 0 (Emergency) đến mức 4 (Warning), bao gồm cả Error ở mức 3.\n\nĐáp án A (logging trap 2) chỉ ghi đến mức Critical, bỏ sót cả Error lẫn Warning. Đáp án B (logging trap 3) ghi đến mức Error nhưng bỏ sót Warning ở mức 4. Đáp án D (logging trap 5) ghi quá nhiều, bao gồm cả Notice ở mức 5 vốn không được yêu cầu."
+    },
+    {
+      "id": "7.1",
+      "type": "single",
+      "question": "Which level of severity must be set to get informational syslogs?",
+      "question_images": [],
+      "options": {
+        "A": "alert",
+        "B": "critical",
+        "C": "notice",
+        "D": "debug"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Mức độ nghiêm trọng (severity level) nào phải được đặt để nhận các syslog thông tin (informational)?",
+      "options_vi": {
+        "A": "alert",
+        "B": "critical",
+        "C": "notice",
+        "D": "debug"
+      },
+      "explanation": "Syslog sử dụng các mức độ nghiêm trọng từ 0 đến 7, trong đó số càng cao thì mức độ càng thấp và bao gồm càng nhiều loại thông báo. Khi bạn đặt mức severity là debug (mức 7), hệ thống sẽ ghi lại tất cả các thông báo từ mức 0 đến 7, bao gồm cả informational (mức 6). Vì vậy, để nhận được thông báo informational, bạn phải đặt mức ít nhất là 6 (informational) hoặc cao hơn như 7 (debug).\n\nCác đáp án còn lại đều sai vì alert (mức 1), critical (mức 2), và notice (mức 5) đều có giá trị thấp hơn mức 6 của informational, nghĩa là chúng sẽ không bao gồm các thông báo informational trong đầu ra syslog."
+    },
+    {
+      "id": "7.3",
+      "type": "single",
+      "question": "A network analyst is tasked with configured the date and time on a router using EXEC mode. The date must be set to 12:00am. Which command should be used?",
+      "question_images": [],
+      "options": {
+        "A": "Clock timezone",
+        "B": "Clock summer-time-recurring",
+        "C": "Clock summer-time date",
+        "D": "Clock set"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Một nhà phân tích mạng được giao nhiệm vụ cấu hình ngày và giờ trên router bằng chế độ EXEC. Ngày phải được đặt thành 12:00am. Lệnh nào nên được sử dụng?",
+      "options_vi": {
+        "A": "Clock timezone",
+        "B": "Clock summer-time-recurring",
+        "C": "Clock summer-time date",
+        "D": "Clock set"
+      },
+      "explanation": "Đáp án D đúng vì lệnh \"clock set\" được dùng trong chế độ privileged EXEC để thiết lập ngày và giờ thủ công trên router, ví dụ: clock set 00:00:00 16 May 2026. Đây là lệnh trực tiếp để cấu hình thời gian hệ thống như yêu cầu đề bài.\n\nCác đáp án còn lại sai vì \"clock timezone\" dùng để thiết lập múi giờ, không phải ngày giờ cụ thể. \"Clock summer-time recurring\" và \"clock summer-time date\" đều liên quan đến cấu hình giờ mùa hè (daylight saving time), không phải để đặt thời gian thực tế."
+    },
+    {
+      "id": "7.17",
+      "type": "single",
+      "question": "Which protocol requires authentication to transfer a backup configuration file from a router to a remote server?",
+      "question_images": [],
+      "options": {
+        "A": "TFTP",
+        "B": "FTP",
+        "C": "DTP",
+        "D": "SMTP"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Giao thức nào yêu cầu xác thực (authentication) để truyền tệp cấu hình sao lưu từ router đến một server từ xa?",
+      "options_vi": {
+        "A": "TFTP",
+        "B": "FTP",
+        "C": "DTP",
+        "D": "SMTP"
+      },
+      "explanation": "FTP (File Transfer Protocol) yêu cầu xác thực bằng tên người dùng và mật khẩu trước khi cho phép truyền file, vì vậy đây là lựa chọn phù hợp khi cần bảo mật khi sao lưu cấu hình router lên server từ xa. TFTP (Trivial File Transfer Protocol) không có cơ chế xác thực, nhẹ hơn và thường dùng trong môi trường nội bộ tin cậy. DTP (Dynamic Trunking Protocol) là giao thức của Cisco dùng để đàm phán trunk giữa các switch, hoàn toàn không liên quan đến truyền file. SMTP là giao thức gửi email, không dùng để truyền file cấu hình."
+    },
+    {
+      "id": "7.31",
+      "type": "single",
+      "question": "When a client and server are not on the same physical network, which device is used to forward requests and replies between client and server for DHCP?",
+      "question_images": [],
+      "options": {
+        "A": "DHCP relay agent",
+        "B": "DHCP server",
+        "C": "DHCPDISCOVER",
+        "D": "DHCPOFFER"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Khi client và server không nằm trên cùng một mạng vật lý, thiết bị nào được sử dụng để chuyển tiếp các yêu cầu và phản hồi giữa client và server cho DHCP?",
+      "options_vi": {
+        "A": "DHCP relay agent",
+        "B": "DHCP server",
+        "C": "DHCPDISCOVER",
+        "D": "DHCPOFFER"
+      },
+      "explanation": "Đáp án đúng là A vì DHCP relay agent là thiết bị (thường là router) có nhiệm vụ chuyển tiếp các gói tin DHCP giữa client và server khi chúng nằm trên các mạng khác nhau. Khi client gửi broadcast DHCPDISCOVER, router sẽ nhận và chuyển tiếp nó dưới dạng unicast đến DHCP server ở mạng khác, rồi chuyển phản hồi ngược lại cho client.\n\nB sai vì DHCP server là nơi cấp phát địa chỉ IP, không phải thiết bị chuyển tiếp yêu cầu giữa các mạng. C và D sai vì DHCPDISCOVER và DHCPOFFER là các loại bản tin trong quá trình DHCP, không phải thiết bị mạng."
+    },
+    {
+      "id": "7.34",
+      "type": "single",
+      "question": "Which QoS tool can you use to optimize voice traffic on a network that is primarily intended for data traffic?",
+      "question_images": [],
+      "options": {
+        "A": "WRED",
+        "B": "FIFO",
+        "C": "PQ",
+        "D": "WFQ"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Công cụ QoS nào bạn có thể sử dụng để tối ưu hóa lưu lượng thoại trên mạng chủ yếu dành cho lưu lượng dữ liệu?",
+      "options_vi": {
+        "A": "WRED",
+        "B": "FIFO",
+        "C": "PQ",
+        "D": "WFQ"
+      },
+      "explanation": "PQ (Priority Queuing) cho phép bạn phân loại lưu lượng thành các hàng đợi có mức ưu tiên khác nhau, trong đó hàng đợi ưu tiên cao nhất luôn được phục vụ trước. Điều này rất phù hợp để tối ưu hóa voice traffic trên mạng chủ yếu dùng cho data, vì gói thoại nhạy cảm với độ trễ và cần được xử lý ngay lập tức trước các gói data thông thường.\n\nFIFO (First In First Out) không phân biệt loại lưu lượng, xử lý tất cả gói theo thứ tự đến nên không thể ưu tiên voice. WFQ (Weighted Fair Queuing) phân bổ băng thông công bằng dựa trên trọng số, phù hợp hơn cho môi trường nhiều luồng data cần cân bằng, nhưng không đảm bảo độ trễ thấp tuyệt đối cho voice. WRED (Weighted Random Early Detection) là công cụ quản lý tắc nghẽn bằng cách loại bỏ gói ngẫu nhiên để tránh tắc nghẽn, không phải cơ chế ưu tiên hàng đợi cho voice."
+    },
+    {
+      "id": "7.35",
+      "type": "single",
+      "question": "On workstations running Microsoft Windows, which protocol provides the default gateway for the device?",
+      "question_images": [],
+      "options": {
+        "A": "STP",
+        "B": "DNS",
+        "C": "SNMP",
+        "D": "DHCP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Trên các máy trạm chạy Microsoft Windows, giao thức nào cung cấp cổng mặc định (default gateway) cho thiết bị?",
+      "options_vi": {
+        "A": "STP",
+        "B": "DNS",
+        "C": "SNMP",
+        "D": "DHCP"
+      },
+      "explanation": "DHCP (Dynamic Host Configuration Protocol) là giao thức tự động cấp phát các thông số mạng cho thiết bị, bao gồm địa chỉ IP, subnet mask, và quan trọng nhất là default gateway. Khi một máy tính Windows kết nối mạng, nó gửi yêu cầu DHCP và nhận về đầy đủ thông tin cần thiết để giao tiếp với các mạng khác.\n\nBa đáp án còn lại không liên quan đến việc cung cấp default gateway. STP (Spanning Tree Protocol) là giao thức chống loop ở tầng 2 dành cho switch. DNS dùng để phân giải tên miền thành địa chỉ IP. SNMP là giao thức giám sát và quản lý thiết bị mạng."
+    },
+    {
+      "id": "7.45",
+      "type": "single",
+      "question": "How does QoS optimize voice traffic?",
+      "question_images": [],
+      "options": {
+        "A": "reducing bandwidth usage",
+        "B": "by reducing packet loss",
+        "C": "by differentiating voice and video traffic",
+        "D": "by increasing jitter"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "QoS tối ưu hóa lưu lượng thoại như thế nào?",
+      "options_vi": {
+        "A": "giảm việc sử dụng băng thông",
+        "B": "bằng cách giảm mất gói tin (packet loss)",
+        "C": "bằng cách phân biệt lưu lượng thoại và video",
+        "D": "bằng cách tăng độ trễ biến thiên (jitter)"
+      },
+      "explanation": "QoS (Quality of Service) hoạt động bằng cách phân loại và ưu tiên các loại lưu lượng khác nhau trên mạng. Khi QoS phân biệt được lưu lượng thoại và video, nó có thể đảm bảo rằng các gói tin thoại được xử lý ưu tiên hơn, giảm độ trễ và jitter, từ đó cải thiện chất lượng cuộc gọi.\n\nĐáp án A sai vì QoS không giảm băng thông sử dụng mà phân bổ băng thông hợp lý hơn. Đáp án B không hoàn toàn sai về mặt kết quả, nhưng đó là hiệu quả phụ chứ không phải cơ chế chính của QoS. Đáp án D hoàn toàn sai vì tăng jitter sẽ làm giảm chất lượng thoại, không phải tối ưu hóa nó."
+    },
+    {
+      "id": "8.11",
+      "type": "single",
+      "question": "In QoS, which prioritization method is appropriate for interactive voice and video?",
+      "question_images": [],
+      "options": {
+        "A": "expedited forwarding",
+        "B": "traffic policing",
+        "C": "round-robin scheduling",
+        "D": "low-latency queuing"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Trong QoS, phương pháp ưu tiên nào phù hợp cho thoại và video tương tác?",
+      "options_vi": {
+        "A": "expedited forwarding",
+        "B": "traffic policing",
+        "C": "round-robin scheduling",
+        "D": "low-latency queuing"
+      },
+      "explanation": "Low-latency queuing (LLQ) kết hợp priority queuing với class-based weighted fair queuing, cho phép lưu lượng voice và video được phục vụ trước tiên trong hàng đợi ưu tiên, đảm bảo độ trễ thấp và jitter tối thiểu — đây là yêu cầu bắt buộc cho các ứng dụng tương tác thời gian thực.\n\nExpedited Forwarding (EF) là một DSCP per-hop behavior dùng để đánh dấu và phân loại gói tin, không phải cơ chế lên lịch hàng đợi, nên không trực tiếp xử lý vấn đề ưu tiên hóa lưu lượng trong router.\n\nTraffic policing giới hạn tốc độ lưu lượng và loại bỏ gói tin vượt ngưỡng, điều này gây hại cho voice/video vì làm mất gói và tăng jitter thay vì đảm bảo chất lượng.\n\nRound-robin scheduling phân phối băng thông đều cho tất cả các luồng theo lượt, không ưu tiên lưu lượng nhạy cảm với độ trễ, nên không phù hợp cho voice và video tương tác."
+    },
+    {
+      "id": "8.12",
+      "type": "single",
+      "question": "An engineer is configuring data and voice services to pass through the same port. The designated switch interface fastethernet0/1 must transmit packets using the same priority for data when they are received from the access port of the IP phone. Which configuration must be used?",
+      "question_images": [],
+      "options": {
+        "A": "interface fastethernet0/1\nswitchport priority extend cos 7",
+        "B": "interface fastethernet0/1\nswitchport voice vlan untagged",
+        "C": "interface fastethernet0/1\nswitchport voice vlan dot1p",
+        "D": "interface fastethernet0/1\nswitchport priority extend trust"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình dịch vụ dữ liệu và thoại để truyền qua cùng một cổng. Giao diện switch được chỉ định fastethernet0/1 phải truyền các gói tin sử dụng cùng mức ưu tiên cho dữ liệu khi chúng được nhận từ cổng truy cập (access port) của điện thoại IP. Cấu hình nào phải được sử dụng?",
+      "options_vi": {
+        "A": "interface fastethernet0/1\nswitchport priority extend cos 7",
+        "B": "interface fastethernet0/1\nswitchport voice vlan untagged",
+        "C": "interface fastethernet0/1\nswitchport voice vlan dot1p",
+        "D": "interface fastethernet0/1\nswitchport priority extend trust"
+      },
+      "explanation": "Đáp án D đúng vì lệnh \"switchport priority extend trust\" yêu cầu switch tin tưởng vào giá trị CoS (Class of Service) mà IP phone gắn vào cổng access đó đã đặt cho các gói tin dữ liệu đến từ PC kết nối qua phone. Điều này có nghĩa là các gói tin từ PC sẽ được chuyển tiếp với cùng mức ưu tiên mà phone đã gán, thay vì bị switch ghi đè lại.\n\nĐáp án A sai vì \"switchport priority extend cos 7\" sẽ ghi đè giá trị CoS của tất cả lưu lượng từ PC thành 7, không phải giữ nguyên mức ưu tiên gốc.\n\nĐáp án B sai vì \"switchport voice vlan untagged\" cấu hình voice VLAN ở chế độ không gắn tag, không liên quan đến việc xử lý ưu tiên QoS cho lưu lượng dữ liệu từ PC.\n\nĐáp án C sai vì \"switchport voice vlan dot1p\" cấu hình phone gửi lưu lượng thoại với tag 802.1p trên native VLAN, cũng không giải quyết yêu cầu giữ nguyên mức ưu tiên cho lưu lượng dữ liệu đi qua phone."
+    },
+    {
+      "id": "8.14",
+      "type": "single",
+      "question": "What is a syslog facility?",
+      "question_images": [],
+      "options": {
+        "A": "host that is configured for the system to send log messages",
+        "B": "password that authenticates a Network Management System to receive log messages",
+        "C": "group of log messages associated with the configured severity level",
+        "D": "set of values that represent the processes that can generate a log message"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Syslog facility là gì?",
+      "options_vi": {
+        "A": "máy chủ được cấu hình để hệ thống gửi thông điệp nhật ký (log messages)",
+        "B": "mật khẩu xác thực Hệ thống Quản lý Mạng (Network Management System) để nhận thông điệp nhật ký",
+        "C": "nhóm các thông điệp nhật ký liên kết với mức độ nghiêm trọng (severity level) đã cấu hình",
+        "D": "tập hợp các giá trị đại diện cho các tiến trình có thể tạo ra thông điệp nhật ký"
+      },
+      "explanation": "Syslog facility là một tập hợp các giá trị số dùng để xác định nguồn hoặc tiến trình nào trên thiết bị đã tạo ra thông điệp log, ví dụ như kernel, mail, hay các tiến trình cục bộ (local0–local7). Đây là cách syslog phân loại thông điệp theo nguồn gốc, khác với severity level dùng để phân loại theo mức độ nghiêm trọng.\n\nA sai vì đó là mô tả của syslog server hoặc syslog host, không phải facility. B sai vì syslog không dùng mật khẩu để xác thực theo cách đó. C sai vì đó là mô tả của severity level, không phải facility."
+    },
+    {
+      "id": "8.18",
+      "type": "single",
+      "question": "What is a capability of FTP in network management operations?",
+      "question_images": [],
+      "options": {
+        "A": "uses separate control and data connections to move files between server and client",
+        "B": "devices are directly connected and use UDP to pass file information",
+        "C": "encrypts data before sending between data resources",
+        "D": "offers proprietary support at the session layer when transferring data"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Khả năng của FTP trong các hoạt động quản lý mạng là gì?",
+      "options_vi": {
+        "A": "sử dụng các kết nối điều khiển (control) và dữ liệu (data) riêng biệt để di chuyển tệp giữa máy chủ và máy khách",
+        "B": "các thiết bị được kết nối trực tiếp và sử dụng UDP để truyền thông tin tệp",
+        "C": "mã hóa dữ liệu trước khi gửi giữa các tài nguyên dữ liệu",
+        "D": "cung cấp hỗ trợ độc quyền tại tầng phiên (session layer) khi truyền dữ liệu"
+      },
+      "explanation": "FTP sử dụng hai kết nối riêng biệt: cổng 21 cho kênh điều khiển (gửi lệnh và phản hồi) và cổng 20 cho kênh dữ liệu (truyền file thực tế). Đây là đặc điểm thiết kế cốt lõi của giao thức FTP, giúp tách biệt việc quản lý phiên và truyền dữ liệu.\n\nB sai vì FTP sử dụng TCP chứ không phải UDP, và không yêu cầu kết nối trực tiếp giữa các thiết bị. C sai vì FTP không mã hóa dữ liệu, đó là lý do SFTP hoặc FTPS ra đời để bổ sung tính năng bảo mật. D sai vì FTP không cung cấp hỗ trợ độc quyền ở tầng phiên, và giao thức này hoạt động ở tầng ứng dụng theo mô hình OSI."
+    },
+    {
+      "id": "8.33",
+      "type": "single",
+      "question": "What is a DNS lookup operation?",
+      "question_images": [],
+      "options": {
+        "A": "serves requests over destination port 53",
+        "B": "DNS server pings the destination to verify that it is available",
+        "C": "DNS server forwards the client to an alternate IP address when the primary IP is down",
+        "D": "responds to a request for IP address to domain name resolution to the DNS server"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Hoạt động tra cứu DNS (DNS lookup) là gì?",
+      "options_vi": {
+        "A": "phục vụ các yêu cầu qua cổng đích 53",
+        "B": "máy chủ DNS ping đến đích để xác minh rằng nó khả dụng",
+        "C": "máy chủ DNS chuyển tiếp máy khách đến địa chỉ IP thay thế khi IP chính bị ngừng hoạt động",
+        "D": "phản hồi yêu cầu phân giải địa chỉ IP thành tên miền đến máy chủ DNS"
+      },
+      "explanation": "DNS sử dụng cổng 53 để phục vụ các yêu cầu tra cứu, đây là cổng đích chuẩn cho cả UDP và TCP trong giao thức DNS. Đó là lý do tại sao đáp án A mô tả đúng hoạt động của DNS lookup.\n\nB sai vì DNS không dùng ping để kiểm tra máy chủ đích, đó là chức năng của ICMP. C sai vì DNS không tự động chuyển hướng client sang địa chỉ IP dự phòng khi IP chính bị lỗi, đó là chức năng của các giải pháp cân bằng tải hoặc failover. D sai vì nó mô tả ngược chiều, DNS lookup thực chất là phân giải tên miền thành địa chỉ IP, không phải từ IP sang tên miền (đó là reverse DNS lookup)."
+    },
+    {
+      "id": "8.36",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe DHCP server and clients are connected to the same switch. What is the next step to complete the DHCP configuration to allow clients on VLAN 1 to receive addresses from the DHCP server?",
+      "question_images": [
+        "q8.36_img1.jpg"
+      ],
+      "options": {
+        "A": "Configure the ip dhcp snooping trust command on the interface that is connected to the DHCP server",
+        "B": "Configure the ip dhcp relay information option command on the interface that is connected to the DHCP server",
+        "C": "Configure the ip dhcp relay information option command on the interface that is connected to the DHCP client",
+        "D": "Configure the ip dhcp snooping trust command on the interface that is connected to the DHCP client"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMáy chủ DHCP và các máy khách được kết nối vào cùng một switch. Bước tiếp theo để hoàn thành cấu hình DHCP cho phép các máy khách trên VLAN 1 nhận địa chỉ từ máy chủ DHCP là gì?",
+      "options_vi": {
+        "A": "Cấu hình lệnh ip dhcp snooping trust trên giao diện kết nối đến máy chủ DHCP",
+        "B": "Cấu hình lệnh ip dhcp relay information option trên giao diện kết nối đến máy chủ DHCP",
+        "C": "Cấu hình lệnh ip dhcp relay information option trên giao diện kết nối đến máy khách DHCP",
+        "D": "Cấu hình lệnh ip dhcp snooping trust trên giao diện kết nối đến máy khách DHCP"
+      },
+      "explanation": "Khi DHCP snooping được bật trên switch, mặc định tất cả các cổng đều ở trạng thái untrusted, nghĩa là switch sẽ chặn các gói DHCP offer và DHCP ack đến từ những cổng đó. Để DHCP server hợp lệ có thể gửi địa chỉ IP cho client, cổng kết nối đến DHCP server phải được đánh dấu là trusted bằng lệnh ip dhcp snooping trust. Đây là bước bắt buộc sau khi bật DHCP snooping để hệ thống hoạt động bình thường.\n\nĐáp án B và C sai vì lệnh ip dhcp relay information option liên quan đến việc xử lý Option 82 trong môi trường có DHCP relay agent, không phải cấu hình cần thiết ở đây vì server và client cùng nằm trên một switch. Đáp án D sai vì cổng kết nối đến client phải giữ trạng thái untrusted, đó chính là mục đích của DHCP snooping, nhằm ngăn chặn các DHCP server giả mạo từ phía client."
+    },
+    {
+      "id": "8.42",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich plan must be implemented to ensure optimal QoS marking practices on this network?",
+      "question_images": [
+        "q8.42_img1.jpg"
+      ],
+      "options": {
+        "A": "As traffic enters from the access layer on SW1 and SW2, trust all traffic markings",
+        "B": "Trust the IP phone markings on SW1 and mark traffic entering SW2 at SW2",
+        "C": "As traffic traverses MLS1 remark the traffic, but trust all markings at the access layer",
+        "D": "Remark traffic as it traverses R1 and trust all markings at the access layer"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKế hoạch nào phải được triển khai để đảm bảo các phương pháp đánh dấu QoS (QoS marking) tối ưu trên mạng này?",
+      "options_vi": {
+        "A": "Khi lưu lượng đi vào từ tầng truy cập (access layer) trên SW1 và SW2, tin cậy tất cả các đánh dấu lưu lượng",
+        "B": "Tin cậy các đánh dấu của điện thoại IP trên SW1 và đánh dấu lưu lượng đi vào SW2 tại SW2",
+        "C": "Khi lưu lượng đi qua MLS1, đánh dấu lại lưu lượng, nhưng tin cậy tất cả các đánh dấu tại tầng truy cập",
+        "D": "Đánh dấu lại lưu lượng khi nó đi qua R1 và tin cậy tất cả các đánh dấu tại tầng truy cập"
+      },
+      "explanation": "Đáp án B đúng vì trong mô hình QoS chuẩn, điểm đánh dấu (marking) nên được thực hiện càng gần nguồn traffic càng tốt, nhưng chỉ tin tưởng các thiết bị đáng tin cậy. IP phone là thiết bị tin cậy vì nó tự đánh dấu traffic theo chuẩn DSCP, nên SW1 có thể trust marking từ IP phone. Còn SW2 kết nối với các thiết bị đầu cuối thông thường (như PC) không đáng tin cậy, nên SW2 phải tự thực hiện việc đánh dấu lại thay vì trust marking từ phía đó.\n\nĐáp án A sai vì không phải tất cả traffic từ access layer đều đáng tin cậy, đặc biệt là traffic từ PC có thể bị người dùng tự đặt marking tùy ý để ưu tiên traffic của mình.\n\nĐáp án C sai vì việc remark tại MLS1 là quá muộn trong luồng xử lý, QoS nên được áp dụng tại điểm vào gần nhất chứ không phải tại lớp distribution hay core.\n\nĐáp án D sai vì remark tại R1 còn muộn hơn nữa, và trust toàn bộ marking tại access layer là không an toàn vì các thiết bị đầu cuối không được tin tưởng mặc định."
+    },
+    {
+      "id": "8.44",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich configuration enables DHCP addressing for hosts connected to interface FastEthernet0/1 on router R4?",
+      "question_images": [],
+      "options": {
+        "A": "interface FastEthernet0/1\nip helper-address 10.0.1.1\n!\naccess-list 100 permit tcp host 10.0.1.1 eq 67 host 10.148.2.1",
+        "B": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n!\naccess-list 100 permit host 10.0.1.1 host 10.148.2.1 eq bootps",
+        "C": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1",
+        "D": "interface FastEthernet0/1 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào cho phép đánh địa chỉ DHCP cho các máy chủ kết nối đến giao diện FastEthernet0/1 trên router R4?",
+      "options_vi": {
+        "A": "interface FastEthernet0/1\nip helper-address 10.0.1.1\n!\naccess-list 100 permit tcp host 10.0.1.1 eq 67 host 10.148.2.1",
+        "B": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n!\naccess-list 100 permit host 10.0.1.1 host 10.148.2.1 eq bootps",
+        "C": "interface FastEthernet0/0 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1",
+        "D": "interface FastEthernet0/1 \nip helper-address 10.0.1.1\n! \naccess-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1"
+      },
+      "explanation": "Đáp án D đúng vì lệnh ip helper-address phải được đặt trên interface kết nối với các host cần DHCP, tức là FastEthernet0/1 — đây là interface nhận broadcast DHCP từ client và chuyển tiếp unicast đến DHCP server 10.0.1.1. Ngoài ra, DHCP hoạt động trên giao thức UDP với port 67 (bootps), nên ACL phải dùng từ khóa udp và chỉ định đúng port bootps để cho phép lưu lượng DHCP reply từ server đi vào.\n\nĐáp án A sai vì ACL dùng tcp thay vì udp — DHCP không dùng TCP.\n\nĐáp án B sai vì ip helper-address đặt nhầm trên FastEthernet0/0 thay vì FastEthernet0/1, và ACL thiếu từ khóa giao thức (udp) nên cú pháp không hợp lệ.\n\nĐáp án C sai vì ip helper-address cũng đặt nhầm trên FastEthernet0/0, dù ACL có cú pháp đúng."
+    },
+    {
+      "id": "8.74",
+      "type": "single",
+      "question": "Refer to the exhibit.\nHow should the configuration be updated to allow PC1 and PC2 access to the Internet?",
+      "question_images": [
+        "q8.74_img1.jpg"
+      ],
+      "options": {
+        "A": "Modify the configured number of the second access list",
+        "B": "Remove the overload keyword from the ip nat inside source command",
+        "C": "Add either the ip nat {inside|outside} command under both interfaces",
+        "D": "Change the ip nat inside source command to use interface GtgabitEthernet0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nên được cập nhật như thế nào để cho phép PC1 và PC2 truy cập Internet?",
+      "options_vi": {
+        "A": "Sửa đổi số đã cấu hình của access list thứ hai",
+        "B": "Xóa từ khóa overload khỏi lệnh ip nat inside source",
+        "C": "Thêm lệnh ip nat {inside|outside} dưới cả hai giao diện",
+        "D": "Thay đổi lệnh ip nat inside source để sử dụng interface GigabitEthernet0/0"
+      },
+      "explanation": "Để NAT hoạt động, router cần biết interface nào là \"inside\" (mạng nội bộ) và interface nào là \"outside\" (kết nối Internet). Nếu thiếu lệnh \"ip nat inside\" hoặc \"ip nat outside\" trên các interface, router sẽ không thực hiện dịch địa chỉ dù cấu hình NAT đã đúng. Vì vậy cần thêm lệnh này vào cả hai interface để NAT hoạt động bình thường.\n\nĐáp án A sai vì số của access list trong lệnh \"ip nat inside source\" phải khớp với access list đã định nghĩa, nhưng đây không phải nguyên nhân gây ra lỗi trong trường hợp này nếu chúng đã khớp nhau.\n\nĐáp án B sai vì từ khóa \"overload\" cho phép nhiều địa chỉ IP nội bộ dùng chung một IP công cộng (PAT), đây là cấu hình cần thiết để PC1 và PC2 cùng truy cập Internet qua một IP duy nhất.\n\nĐáp án D sai vì lệnh \"ip nat inside source\" nên tham chiếu đến interface kết nối Internet (outside), thường là interface có IP công cộng, không phải GigabitEthernet0/0 nếu đó là interface phía trong mạng nội bộ."
+    },
+    {
+      "id": "8.79",
+      "type": "single",
+      "question": "What is the purpose of the ip address dhcp command?",
+      "question_images": [],
+      "options": {
+        "A": "to configure an interface as a DHCP server",
+        "B": "to configure an interface as a DHCP relay",
+        "C": "to configure an interface as a DHCP helper",
+        "D": "to configure an interface as a DHCP client"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Mục đích của lệnh ip address dhcp là gì?",
+      "options_vi": {
+        "A": "để cấu hình một giao diện làm máy chủ DHCP (DHCP server)",
+        "B": "để cấu hình một giao diện làm DHCP relay",
+        "C": "để cấu hình một giao diện làm DHCP helper",
+        "D": "để cấu hình một giao diện làm máy khách DHCP (DHCP client)"
+      },
+      "explanation": "Lệnh \"ip address dhcp\" được cấu hình trực tiếp trên một interface của router, cho phép interface đó tự động xin cấp địa chỉ IP từ một DHCP server bên ngoài, tức là hoạt động như một DHCP client. Đây là cách phổ biến để cấu hình interface WAN của router nhận IP động từ ISP.\n\nCác đáp án còn lại đều sai vì để cấu hình DHCP server thì dùng lệnh \"ip dhcp pool\" cùng các lệnh liên quan, còn để cấu hình DHCP relay hoặc helper thì dùng lệnh \"ip helper-address\" trên interface, không phải lệnh trên."
+    },
+    {
+      "id": "9.26",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is configuring a new router on the network and applied this configuration. Which additional configuration allows the PC to obtain its IP address from a DHCP server?",
+      "question_images": [
+        "q9.26_img1.jpg"
+      ],
+      "options": {
+        "A": "Configure the ip dhcp relay information command under interface Gi0/1",
+        "B": "Configure the ip dhcp smart-relay command globally on the router",
+        "C": "Configure the ip helper-address 172.16.2.2 command under interface Gi0/0",
+        "D": "Configure the ip address dhcp command under interface Gi0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đang cấu hình một router mới trên mạng và đã áp dụng cấu hình này. Cấu hình bổ sung nào cho phép PC nhận địa chỉ IP từ máy chủ DHCP?",
+      "options_vi": {
+        "A": "Cấu hình lệnh ip dhcp relay information dưới giao diện Gi0/1",
+        "B": "Cấu hình lệnh ip dhcp smart-relay toàn cục trên router",
+        "C": "Cấu hình lệnh ip helper-address 172.16.2.2 dưới giao diện Gi0/0",
+        "D": "Cấu hình lệnh ip address dhcp dưới giao diện Gi0/0"
+      },
+      "explanation": "Trong bài này, PC nằm ở mạng kết nối với Gi0/0, còn DHCP server nằm ở phía Gi0/1 với địa chỉ 172.16.2.2. Vì DHCP dùng broadcast và broadcast không thể đi qua router, ta cần cấu hình ip helper-address trên interface Gi0/0 để router chuyển tiếp (relay) các gói DHCP broadcast từ PC thành unicast gửi đến DHCP server tại 172.16.2.2. Đây là cơ chế DHCP relay chuẩn trên Cisco IOS.\n\nĐáp án A sai vì lệnh ip dhcp relay information liên quan đến DHCP Option 82, không phải để bật chức năng relay cơ bản. Đáp án B sai vì ip dhcp smart-relay là lệnh xử lý trường hợp DHCP server không phản hồi và thử relay sang địa chỉ 0.0.0.0, không phải cấu hình relay ban đầu. Đáp án D sai vì ip address dhcp được dùng khi chính interface của router cần nhận IP từ DHCP, không liên quan đến việc relay DHCP cho PC."
+    },
+    {
+      "id": "9.34",
+      "type": "single",
+      "question": "Which QoS per-hop behavior changes the value of the ToS field in the IPv4 packet header?",
+      "question_images": [],
+      "options": {
+        "A": "shaping",
+        "B": "marking",
+        "C": "policing",
+        "D": "classification"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Hành vi per-hop QoS nào thay đổi giá trị của trường ToS trong tiêu đề gói tin IPv4?",
+      "options_vi": {
+        "A": "shaping",
+        "B": "đánh dấu (marking)",
+        "C": "policing",
+        "D": "phân loại (classification)"
+      },
+      "explanation": "Marking là hành vi QoS thay đổi giá trị trong trường ToS (Type of Service) của header IPv4, cụ thể là các bit DSCP hoặc IP Precedence bên trong trường đó. Mục đích của marking là gắn nhãn gói tin để các thiết bị phía sau trên đường truyền có thể nhận biết và xử lý gói tin theo mức ưu tiên tương ứng.\n\nClassification chỉ phân loại gói tin vào các nhóm khác nhau mà không thay đổi bất kỳ trường nào trong header. Shaping và policing đều liên quan đến việc kiểm soát tốc độ lưu lượng, shaping làm chậm gói tin bằng cách đưa vào hàng đợi còn policing có thể drop hoặc re-mark gói tin vượt ngưỡng, nhưng bản thân chúng không phải là cơ chế chịu trách nhiệm thay đổi trường ToS."
+    },
+    {
+      "id": "9.44",
+      "type": "single",
+      "question": "Refer to the exhibit.\nUsers on existing VLAN 100 can reach sites on the Internet. Which action must the administrator take to establish connectivity to the Internet for users in VLAN 200?",
+      "question_images": [
+        "q9.44_img1.jpg"
+      ],
+      "options": {
+        "A": "Define a NAT pool on the router.",
+        "B": "Update the NAT_INSIDE_RANGES ACL",
+        "C": "Configure the ip nat outside command on another interface for VLAN 200",
+        "D": "Configure static NAT translations for VLAN 200"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nNgười dùng trên VLAN 100 hiện tại có thể truy cập các trang web trên Internet. Quản trị viên phải thực hiện hành động nào để thiết lập kết nối Internet cho người dùng trong VLAN 200?",
+      "options_vi": {
+        "A": "Định nghĩa một NAT pool trên router.",
+        "B": "Cập nhật ACL NAT_INSIDE_RANGES",
+        "C": "Cấu hình lệnh ip nat outside trên một interface khác cho VLAN 200",
+        "D": "Cấu hình NAT tĩnh (static NAT) cho VLAN 200"
+      },
+      "explanation": "Trong cấu hình NAT trên router, có một ACL (ở đây là NAT_INSIDE_RANGES) dùng để xác định những dải địa chỉ IP nội bộ nào được phép dịch địa chỉ ra ngoài Internet. Vì VLAN 100 đã hoạt động được, nghĩa là ACL này đang cho phép subnet của VLAN 100, nhưng chưa có entry nào cho subnet của VLAN 200. Do đó, chỉ cần thêm dải địa chỉ của VLAN 200 vào ACL NAT_INSIDE_RANGES là đủ để các user trong VLAN 200 có thể ra Internet.\n\nĐáp án A sai vì NAT pool đã tồn tại và đang hoạt động cho VLAN 100, không cần tạo thêm pool mới. Đáp án C sai vì lệnh ip nat outside được gán trên interface kết nối ra Internet, interface đó đã được cấu hình rồi và dùng chung cho tất cả các VLAN, không cần cấu hình lại cho VLAN 200. Đáp án D sai vì đây là dynamic NAT đang được dùng, static NAT chỉ phù hợp khi cần ánh xạ cố định một địa chỉ cụ thể, không phải giải pháp phù hợp cho toàn bộ user trong một VLAN."
+    },
+    {
+      "id": "9.50",
+      "type": "single",
+      "question": "Which QoS traffic handling technique retains excess packets in a queue and reschedules these packets for later transmission when the configured maximum bandwidth has been surpassed?",
+      "question_images": [],
+      "options": {
+        "A": "traffic shaping",
+        "B": "traffic policing",
+        "C": "weighted random early detection",
+        "D": "traffic prioritization"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Kỹ thuật xử lý lưu lượng QoS nào giữ lại các gói tin vượt mức trong hàng đợi và lên lịch lại việc truyền các gói tin này cho lần truyền sau khi băng thông tối đa được cấu hình đã bị vượt quá?",
+      "options_vi": {
+        "A": "định hình lưu lượng (traffic shaping)",
+        "B": "kiểm soát lưu lượng (traffic policing)",
+        "C": "phát hiện sớm ngẫu nhiên có trọng số (weighted random early detection)",
+        "D": "ưu tiên lưu lượng (traffic prioritization)"
+      },
+      "explanation": "Traffic shaping là kỹ thuật giữ lại các gói tin vượt quá ngưỡng băng thông trong một hàng đợi (buffer) và lên lịch truyền lại chúng sau, giúp làm mượt lưu lượng và tránh mất gói. Đây chính xác là hành vi được mô tả trong câu hỏi: giữ lại và truyền lại sau.\n\nTraffic policing thì khác, nó không giữ gói lại mà thay vào đó loại bỏ hoặc đánh dấu lại các gói vượt ngưỡng ngay lập tức, không có hàng đợi chờ. Weighted random early detection là cơ chế chủ động loại bỏ ngẫu nhiên các gói trước khi hàng đợi đầy để tránh tắc nghẽn, không phải giữ lại để truyền sau. Traffic prioritization là kỹ thuật ưu tiên xử lý các loại lưu lượng quan trọng hơn, không liên quan đến việc giữ gói và lên lịch lại khi vượt băng thông."
+    },
+    {
+      "id": "9.67",
+      "type": "single",
+      "question": "Which QoS queuing method discards or marks packets that exceed the desired bit rate of traffic flow?",
+      "question_images": [],
+      "options": {
+        "A": "shaping",
+        "B": "policing",
+        "C": "CBWFQ",
+        "D": "LLQ"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Phương pháp xếp hàng QoS nào loại bỏ hoặc đánh dấu các gói tin vượt quá tốc độ bit mong muốn của luồng lưu lượng?",
+      "options_vi": {
+        "A": "shaping",
+        "B": "policing",
+        "C": "CBWFQ",
+        "D": "LLQ"
+      },
+      "explanation": "Policing là phương pháp QoS kiểm soát lưu lượng bằng cách đo tốc độ bit của luồng dữ liệu và khi lưu lượng vượt quá ngưỡng cho phép, nó sẽ loại bỏ hoặc đánh dấu lại các gói tin đó. Đây chính xác là hành vi được mô tả trong câu hỏi: discard hoặc mark các gói vượt ngưỡng.\n\nShaping cũng giới hạn tốc độ lưu lượng nhưng thay vì loại bỏ gói tin, nó giữ các gói vượt ngưỡng lại trong hàng đợi và truyền chúng sau, tức là làm chậm chứ không bỏ. CBWFQ là phương pháp xếp hàng dựa trên lớp lưu lượng, đảm bảo băng thông tối thiểu cho từng lớp nhưng không có cơ chế discard hay mark theo ngưỡng bit rate. LLQ bổ sung thêm hàng đợi ưu tiên nghiêm ngặt vào CBWFQ để phục vụ lưu lượng nhạy cảm với độ trễ như voice, nhưng cũng không phải cơ chế policing."
+    },
+    {
+      "id": "9.82",
+      "type": "single",
+      "question": "How does TFTP operate in a network?",
+      "question_images": [],
+      "options": {
+        "A": "relies on the well-known TCP port 20 to transmit data",
+        "B": "requires two separate connections for control and data traffic",
+        "C": "uses block numbers to identify and mitigate data-transfer errors",
+        "D": "provides secure data transfer"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "TFTP hoạt động như thế nào trong mạng?",
+      "options_vi": {
+        "A": "dựa vào cổng TCP phổ biến 20 để truyền dữ liệu",
+        "B": "yêu cầu hai kết nối riêng biệt cho lưu lượng điều khiển và dữ liệu",
+        "C": "sử dụng số khối (block number) để xác định và giảm thiểu lỗi truyền dữ liệu",
+        "D": "cung cấp truyền dữ liệu an toàn"
+      },
+      "explanation": "TFTP (Trivial File Transfer Protocol) hoạt động trên UDP, không phải TCP, và sử dụng cơ chế đánh số khối (block numbers) để theo dõi từng gói dữ liệu được truyền. Mỗi khối dữ liệu được đánh số thứ tự, và bên nhận phải gửi xác nhận (ACK) cho từng khối trước khi khối tiếp theo được gửi đi, giúp phát hiện và xử lý lỗi trong quá trình truyền.\n\nĐáp án A sai vì TFTP dùng UDP port 69, không phải TCP port 20 (đó là cổng dữ liệu của FTP). Đáp án B sai vì đó là cách hoạt động của FTP, vốn dùng hai kết nối riêng biệt cho điều khiển (port 21) và dữ liệu (port 20), còn TFTP chỉ dùng một kết nối duy nhất. Đáp án D sai vì TFTP không có cơ chế bảo mật hay mã hóa nào cả, đây là một trong những hạn chế lớn nhất của giao thức này."
+    },
+    {
+      "id": "9.86",
+      "type": "single",
+      "question": "An engineer is configuring switch SW1 to act as an NTP server when all upstream NTP server connectivity fails. Which configuration must be used?",
+      "question_images": [],
+      "options": {
+        "A": "SW1# config t\nSW1(config)#ntp server 192.168.1.1\nSW1(config)#ntp access-group server accesslist1",
+        "B": "SW1# config t\nSW1(config)3 ntp peer 192.168.1.1\nSW1(config)#ntp access-group peer accesslist1",
+        "C": "SW1# config t\nSW1(config)#ntp backup\nSW1(config)#ntp server 192.168.1.1",
+        "D": "SW1# config t\nSW1(config)#ntp master\nSW1(config)#ntp server 192.168.1.1"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình switch SW1 để hoạt động như một NTP server khi tất cả kết nối đến NTP server upstream bị mất. Cấu hình nào phải được sử dụng?",
+      "options_vi": {
+        "A": "SW1# config t\nSW1(config)#ntp server 192.168.1.1\nSW1(config)#ntp access-group server accesslist1",
+        "B": "SW1# config t\nSW1(config)3 ntp peer 192.168.1.1\nSW1(config)#ntp access-group peer accesslist1",
+        "C": "SW1# config t\nSW1(config)#ntp backup\nSW1(config)#ntp server 192.168.1.1",
+        "D": "SW1# config t\nSW1(config)#ntp master\nSW1(config)#ntp server 192.168.1.1"
+      },
+      "explanation": "Đáp án D đúng vì lệnh \"ntp master\" biến SW1 thành NTP master clock, cho phép nó tự cung cấp thời gian cho các thiết bị khác ngay cả khi không kết nối được với upstream NTP server. Kết hợp với \"ntp server 192.168.1.1\", SW1 sẽ ưu tiên đồng bộ từ server bên ngoài khi có thể, và tự động chuyển sang dùng đồng hồ nội bộ khi mất kết nối — đây chính xác là yêu cầu đề bài đặt ra.\n\nĐáp án A sai vì chỉ cấu hình SW1 trỏ đến một NTP server và giới hạn truy cập bằng access-list, không có cơ chế nào để SW1 tự hoạt động như một server khi upstream mất kết nối.\n\nĐáp án B sai vì \"ntp peer\" dùng để thiết lập quan hệ ngang hàng giữa các NTP server với nhau, không phải để SW1 trở thành nguồn thời gian dự phòng cho các client.\n\nĐáp án C sai vì \"ntp backup\" không phải lệnh hợp lệ trong IOS — lệnh này không tồn tại trong cú pháp cấu hình NTP của Cisco."
+    },
+    {
+      "id": "9.100",
+      "type": "single",
+      "question": "What is a function performed by a web server?",
+      "question_images": [],
+      "options": {
+        "A": "provide an application that is transmitted over HTTP",
+        "B": "send and retrieve email from client devices",
+        "C": "securely store files for FTP access",
+        "D": "authenticate and authorize a user’s identity"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng nào được thực hiện bởi một web server?",
+      "options_vi": {
+        "A": "cung cấp một ứng dụng được truyền qua HTTP",
+        "B": "gửi và nhận email từ các thiết bị client",
+        "C": "lưu trữ tệp an toàn cho truy cập FTP",
+        "D": "xác thực và ủy quyền danh tính người dùng"
+      },
+      "explanation": "Web server có chức năng chính là cung cấp các ứng dụng và nội dung web được truyền tải qua giao thức HTTP (hoặc HTTPS) đến trình duyệt của người dùng, đây chính xác là định nghĩa cốt lõi của một web server.\n\nĐáp án B mô tả chức năng của mail server, không phải web server. Đáp án C liên quan đến FTP server, chuyên dùng để lưu trữ và truyền file. Đáp án D là chức năng của authentication server hoặc AAA server."
+    },
+    {
+      "id": "10.19",
+      "type": "single",
+      "question": "What is a feature of TFTP?",
+      "question_images": [],
+      "options": {
+        "A": "provides secure data transfer",
+        "B": "relies on the well-known TCP port 20 to transmit data",
+        "C": "uses two separate connections for control and data traffic",
+        "D": "offers anonymous user login ability"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Đặc điểm nào là của TFTP?",
+      "options_vi": {
+        "A": "cung cấp truyền dữ liệu an toàn",
+        "B": "dựa vào cổng TCP phổ biến 20 để truyền dữ liệu",
+        "C": "sử dụng hai kết nối riêng biệt cho lưu lượng điều khiển và dữ liệu",
+        "D": "cung cấp khả năng đăng nhập người dùng ẩn danh (anonymous)"
+      },
+      "explanation": "TFTP (Trivial File Transfer Protocol) không yêu cầu xác thực người dùng, nghĩa là bất kỳ ai cũng có thể kết nối và truyền file mà không cần tên đăng nhập hay mật khẩu, đây chính là tính năng đăng nhập ẩn danh.\n\nA sai vì TFTP không có cơ chế bảo mật nào, dữ liệu được truyền hoàn toàn không được mã hóa. B sai vì TFTP dùng UDP cổng 69, không phải TCP cổng 20 (đó là FTP data). C sai vì đặc điểm dùng hai kết nối riêng biệt cho control và data là của FTP, không phải TFTP."
+    },
+    {
+      "id": "10.21",
+      "type": "single",
+      "question": "Which command creates a static NAT binding for a PC address of 10.1.1.1 to the public routable address 209.165.200.225 assigned to the PC?",
+      "question_images": [],
+      "options": {
+        "A": "R1(config)#ip nat outside source static 209.165.200.225 10.1.1.1",
+        "B": "R1(config)#ip nat inside source static 209.165.200.225 10.1.1.1",
+        "C": "R1(config)#ip nat outside source static 10.1.1.1 209.165.200.225",
+        "D": "R1(config)#ip nat inside source static 10.1.1.1 209.165.200.225"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Lệnh nào tạo một liên kết NAT tĩnh cho địa chỉ PC 10.1.1.1 đến địa chỉ công cộng có thể định tuyến 209.165.200.225 được gán cho PC?",
+      "options_vi": {
+        "A": "R1(config)#ip nat outside source static 209.165.200.225 10.1.1.1",
+        "B": "R1(config)#ip nat inside source static 209.165.200.225 10.1.1.1",
+        "C": "R1(config)#ip nat outside source static 10.1.1.1 209.165.200.225",
+        "D": "R1(config)#ip nat inside source static 10.1.1.1 209.165.200.225"
+      },
+      "explanation": "Đáp án D đúng vì lệnh \"ip nat inside source static\" dùng để ánh xạ tĩnh một địa chỉ nội bộ (inside local) sang địa chỉ công khai (inside global), với cú pháp đúng là địa chỉ nội bộ trước, địa chỉ công khai sau. Ở đây 10.1.1.1 là địa chỉ private của PC nằm trong mạng inside, còn 209.165.200.225 là địa chỉ routable được gán cho PC đó trên Internet.\n\nĐáp án A và C sai vì dùng từ khóa \"outside source\", tức là ánh xạ địa chỉ từ phía outside vào inside — đây là trường hợp hoàn toàn khác, không phải tình huống đang hỏi.\n\nĐáp án B sai vì dù dùng đúng \"inside source\", thứ tự địa chỉ bị đảo ngược: địa chỉ công khai lại đứng trước địa chỉ nội bộ, khiến router hiểu ngược chiều ánh xạ."
+    },
+    {
+      "id": "10.33",
+      "type": "single",
+      "question": "Which command implies the use of SNMPv3?",
+      "question_images": [],
+      "options": {
+        "A": "snmp-server community",
+        "B": "snmp-server host",
+        "C": "snmp-server enable traps",
+        "D": "snmp-server user"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Lệnh nào ngụ ý việc sử dụng SNMPv3?",
+      "options_vi": {
+        "A": "snmp-server community",
+        "B": "snmp-server host",
+        "C": "snmp-server enable traps",
+        "D": "snmp-server user"
+      },
+      "explanation": "Lệnh \"snmp-server user\" được dùng để tạo người dùng SNMPv3, vì SNMPv3 sử dụng mô hình bảo mật dựa trên người dùng (USM) với xác thực và mã hóa, thay vì chuỗi community đơn giản như các phiên bản trước.\n\nLệnh \"snmp-server community\" gắn liền với SNMPv1 và SNMPv2c vì hai phiên bản này dùng community string để xác thực. Lệnh \"snmp-server host\" chỉ định địa chỉ máy nhận trap và có thể dùng với nhiều phiên bản SNMP, không riêng v3. Lệnh \"snmp-server enable traps\" chỉ bật loại trap cần gửi, cũng không liên quan đặc thù đến phiên bản nào."
+    },
+    {
+      "id": "10.43",
+      "type": "multiple",
+      "question": "What are two features of the DHCP relay agent? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "minimizes the necessary number of DHCP servers",
+        "B": "assigns DNS locally and then forwards request to DHCP server",
+        "C": "is configured under the Layer 3 interface of a router on the client subnet",
+        "D": "allows only MAC-to-IP reservations to determine the local subnet of a client",
+        "E": "permits one IP helper command under an individual Layer 3 interface"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai đặc điểm nào của DHCP relay agent? (Chọn hai)",
+      "options_vi": {
+        "A": "giảm thiểu số lượng DHCP server cần thiết",
+        "B": "gán DNS cục bộ và sau đó chuyển tiếp yêu cầu đến DHCP server",
+        "C": "được cấu hình dưới interface Layer 3 của router trên subnet của client",
+        "D": "chỉ cho phép các đặt trước MAC-to-IP để xác định subnet cục bộ của client",
+        "E": "cho phép một lệnh ip helper duy nhất dưới một interface Layer 3 riêng lẻ"
+      },
+      "explanation": "Đáp án đúng là A và C.\n\nA đúng vì DHCP relay agent cho phép các client ở nhiều subnet khác nhau đều có thể sử dụng chung một DHCP server trung tâm, thay vì mỗi subnet phải có một server riêng. Điều này giúp giảm đáng kể số lượng DHCP server cần triển khai trong mạng.\n\nC đúng vì lệnh ip helper-address được cấu hình trực tiếp trên interface Layer 3 của router hoặc switch Layer 3 thuộc subnet của client. Khi client gửi broadcast DHCP Discover, router sẽ chuyển tiếp gói tin đó dưới dạng unicast đến DHCP server.\n\nB sai vì DHCP relay agent không xử lý hay phân giải DNS cục bộ, nó chỉ chuyển tiếp toàn bộ yêu cầu DHCP đến server.\n\nD sai vì DHCP relay agent không giới hạn chức năng ở việc ánh xạ MAC-to-IP. Nó chuyển tiếp mọi yêu cầu DHCP, không phân biệt loại.\n\nE sai vì thực tế có thể cấu hình nhiều lệnh ip helper-address trên cùng một interface để chuyển tiếp đến nhiều server khác nhau, không bị giới hạn chỉ một lệnh."
+    },
+    {
+      "id": "10.72",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich router or router group are NTP clients?",
+      "question_images": [
+        "q10.72_img1.jpg"
+      ],
+      "options": {
+        "A": "R1, R2, and R3",
+        "B": "R1",
+        "C": "R2 and R3",
+        "D": "R1, R3, and R4"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter hoặc nhóm router nào là NTP client?",
+      "options_vi": {
+        "A": "R1, R2, và R3",
+        "B": "R1",
+        "C": "R2 và R3",
+        "D": "R1, R3, và R4"
+      },
+      "explanation": "Để xác định NTP client, ta cần nhìn vào cấu hình NTP trong exhibit. Một router được coi là NTP client khi nó có lệnh \"ntp server\" trỏ đến một nguồn thời gian khác, tức là nó đồng bộ thời gian từ thiết bị khác thay vì tự cung cấp.\n\nĐáp án A đúng vì R1, R2 và R3 đều có lệnh \"ntp server\" trong cấu hình, nghĩa là cả ba đều đang nhận thời gian từ một nguồn bên ngoài, tức là hoạt động như NTP client. R4 đóng vai trò NTP server (hoặc sử dụng đồng hồ nội bộ) nên không phải client.\n\nĐáp án B sai vì chỉ chọn R1, bỏ qua R2 và R3 cũng là client. Đáp án C sai vì bỏ qua R1 vốn cũng có cấu hình NTP client. Đáp án D sai vì đưa R4 vào nhóm client trong khi R4 là NTP server trong topology này."
+    },
+    {
+      "id": "10.78",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich command set configures ROUTER-1 to allow Internet access for users on the 192.168.1.0/24 subnet while using 209.165.202.129 for Port Address Translation?",
+      "question_images": [
+        "q10.78_img1.jpg"
+      ],
+      "options": {
+        "A": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload",
+        "B": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "C": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "D": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nBộ lệnh nào cấu hình ROUTER-1 để cho phép người dùng trên subnet 192.168.1.0/24 truy cập Internet trong khi sử dụng 209.165.202.129 cho Port Address Translation?",
+      "options_vi": {
+        "A": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload",
+        "B": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "C": "ip nat pool CCNA 192.168.0.0 192.168.1.255 netmask 255.255.255.0\naccess-list 10 permit 192.168.0.0 255.255.255.0 \nip nat inside source list 10 pool CCNA overload",
+        "D": "ip nat pool CCNA 209.165.202.129 209.165.202.129 netmask 255.255.255.255\naccess-list 10 permit 192.168.1.0 0.0.0.255 \nip nat inside source list 10 pool CCNA overload"
+      },
+      "explanation": "Đáp án D đúng vì nó kết hợp đúng cả ba thành phần cần thiết cho PAT. NAT pool định nghĩa địa chỉ public 209.165.202.129 với netmask 255.255.255.255 vì đây chỉ là một địa chỉ duy nhất. Access-list dùng wildcard mask 0.0.0.255 để khớp đúng subnet 192.168.1.0/24, và lệnh ip nat inside source list 10 pool CCNA overload kích hoạt PAT nhờ từ khóa overload.\n\nĐáp án A sai vì NAT pool dùng dải địa chỉ private 192.168.0.0–192.168.1.255 thay vì địa chỉ public, và access-list chỉ permit 192.168.0.0/24 chứ không phải 192.168.1.0/24.\n\nĐáp án B sai vì access-list dùng subnet mask thông thường 255.255.255.0 thay vì wildcard mask 0.0.0.255, khiến lệnh permit không hoạt động đúng trên IOS.\n\nĐáp án C sai vì NAT pool vẫn dùng địa chỉ private thay vì public, đồng thời access-list cũng dùng sai subnet mask thay vì wildcard mask."
+    },
+    {
+      "id": "10.92",
+      "type": "multiple",
+      "question": "Which two actions are taken as the result of traffic policing? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "bursting",
+        "B": "fragmentation",
+        "C": "dropping",
+        "D": "remarking",
+        "E": "buffering"
+      },
+      "answer": [
+        "C",
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai hành động nào là kết quả của traffic policing? (Chọn hai)",
+      "options_vi": {
+        "A": "bursting",
+        "B": "phân mảnh (fragmentation)",
+        "C": "loại bỏ (dropping)",
+        "D": "đánh dấu lại (remarking)",
+        "E": "đệm (buffering)"
+      },
+      "explanation": "Traffic policing là cơ chế kiểm soát lưu lượng bằng cách đo tốc độ traffic và thực hiện hành động ngay lập tức khi traffic vượt quá ngưỡng cho phép (rate limit). Khi traffic vượt ngưỡng, policing có thể drop gói tin (C) để loại bỏ lưu lượng dư thừa, hoặc remark gói tin (D) bằng cách thay đổi giá trị DSCP/CoS để hạ thấp mức ưu tiên, cho phép các thiết bị phía sau xử lý hoặc drop chúng sau này. Đây là hai hành động đặc trưng của policing vì nó xử lý traffic tức thời mà không giữ lại gói tin.\n\nBuffering (E) là đặc trưng của traffic shaping, không phải policing. Shaping giữ gói tin trong hàng đợi để làm mượt tốc độ, còn policing thì không. Bursting (A) là khái niệm liên quan đến việc cho phép traffic vượt ngưỡng trong thời gian ngắn, đây là tham số cấu hình của policing chứ không phải hành động đầu ra. Fragmentation (B) là quá trình chia nhỏ gói tin liên quan đến MTU, hoàn toàn không liên quan đến policing."
+    }
+  ]
+}

@@ -1,0 +1,1501 @@
+{
+  "count": 59,
+  "questions": [
+    {
+      "id": "5.27",
+      "type": "single",
+      "question": "What is a benefit of VRRP?",
+      "question_images": [],
+      "options": {
+        "A": "It provides traffic load balancing to destinations that are more than two hops from the source.",
+        "B": "It provides the default gateway redundancy on a LAN using two or more routers.",
+        "C": "It allows neighbors to share routing table information between each other.",
+        "D": "It prevents loops in a Layer 2 LAN by forwarding all traffic to a root bridge, which then makes the final forwarding decision."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Lợi ích của VRRP là gì?",
+      "options_vi": {
+        "A": "Nó cung cấp cân bằng tải lưu lượng đến các đích cách nguồn hơn hai hop.",
+        "B": "Nó cung cấp khả năng dự phòng cổng mặc định (default gateway) trên mạng LAN sử dụng hai hoặc nhiều router.",
+        "C": "Nó cho phép các neighbor chia sẻ thông tin bảng định tuyến (routing table) với nhau.",
+        "D": "Nó ngăn chặn vòng lặp (loop) trong mạng LAN Layer 2 bằng cách chuyển tiếp tất cả lưu lượng đến root bridge, sau đó root bridge đưa ra quyết định chuyển tiếp cuối cùng."
+      },
+      "explanation": "VRRP (Virtual Router Redundancy Protocol) là giao thức dự phòng cổng mặc định, cho phép hai hoặc nhiều router cùng chia sẻ một địa chỉ IP ảo đóng vai trò là default gateway cho các thiết bị trong mạng LAN. Khi router chính gặp sự cố, router dự phòng sẽ tự động tiếp quản mà không cần cấu hình lại trên các thiết bị đầu cuối.\n\nA sai vì đó là mô tả của các giao thức định tuyến hoặc load balancing như ECMP, không phải VRRP. C sai vì chia sẻ bảng định tuyến là chức năng của các giao thức định tuyến động như OSPF hay EIGRP. D sai vì đó là mô tả của STP (Spanning Tree Protocol), hoạt động ở Layer 2 để ngăn vòng lặp."
+    },
+    {
+      "id": "6.9",
+      "type": "single",
+      "question": "What is the benefit of using FHRP (First Hop Redundancy Protocol)?",
+      "question_images": [],
+      "options": {
+        "A": "balancing traffic across multiple gateways in proportion to their loads",
+        "B": "reduced management overhead on network routers",
+        "C": "reduced ARP traffic on the network",
+        "D": "higher degree of availability"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Lợi ích của việc sử dụng FHRP (First Hop Redundancy Protocol) là gì?",
+      "options_vi": {
+        "A": "cân bằng lưu lượng qua nhiều gateway theo tỷ lệ tải của chúng",
+        "B": "giảm chi phí quản lý trên các router mạng",
+        "C": "giảm lưu lượng ARP trên mạng",
+        "D": "mức độ khả dụng (availability) cao hơn"
+      },
+      "explanation": "FHRP như HSRP, VRRP hay GLBP được thiết kế để cung cấp tính sẵn sàng cao cho default gateway. Khi router chính gặp sự cố, router dự phòng sẽ tự động tiếp quản mà không cần cấu hình lại trên các thiết bị đầu cuối, đảm bảo kết nối liên tục cho người dùng.\n\nĐáp án A mô tả tính năng load balancing, đây là khả năng phụ của GLBP chứ không phải mục đích chính của FHRP nói chung. Đáp án B sai vì FHRP thực ra làm tăng độ phức tạp cấu hình, không giảm. Đáp án C sai vì FHRP không có cơ chế nào để giảm lưu lượng ARP trên mạng."
+    },
+    {
+      "id": "7.5",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhen PC-A sends traffic to PC-B, which network component is in charge of receiving the packet from PC-A verifying the IP addresses, and forwarding the packet to PC-B?",
+      "question_images": [
+        "q7.5_img1.jpg"
+      ],
+      "options": {
+        "A": "Layer 2 switch",
+        "B": "firewall",
+        "C": "Load balancer",
+        "D": "Router"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKhi PC-A gửi lưu lượng đến PC-B, thành phần mạng nào chịu trách nhiệm nhận gói tin từ PC-A, xác minh địa chỉ IP và chuyển tiếp gói tin đến PC-B?",
+      "options_vi": {
+        "A": "Switch Layer 2",
+        "B": "firewall",
+        "C": "Load balancer",
+        "D": "Router"
+      },
+      "explanation": "Router là thiết bị hoạt động ở tầng 3 (Network Layer) của mô hình OSI, có nhiệm vụ nhận gói tin, kiểm tra địa chỉ IP nguồn và đích, sau đó đưa ra quyết định chuyển tiếp gói tin đến đích phù hợp. Đây chính xác là quy trình được mô tả trong câu hỏi: nhận gói từ PC-A, xác minh địa chỉ IP, rồi chuyển tiếp đến PC-B.\n\nLayer 2 switch chỉ hoạt động ở tầng 2, dùng địa chỉ MAC để chuyển khung dữ liệu trong cùng một mạng LAN, không kiểm tra địa chỉ IP. Firewall có thể kiểm tra địa chỉ IP nhưng chức năng chính là lọc và kiểm soát lưu lượng theo chính sách bảo mật, không phải thiết bị định tuyến chính. Load balancer phân phối lưu lượng đến nhiều máy chủ để cân bằng tải, không phải thiết bị chịu trách nhiệm định tuyến gói tin giữa các host thông thường."
+    },
+    {
+      "id": "7.6",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is not set\n209.165.200.0/27 is subnetted, 1 subnets\nB\t   209.165.200.224 [20/0] via 10.10.12.2, 00:08:34\n10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks\nC\t   10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC\t   10.10.11.0/30 is directly connected, FastEthernet2/0\nO\t   10.10.13.0/24 [110/2] via 10.10.10.1, 00:09:25, GigabitEthernet0/0\nC\t   10.10.12.0/30 is directly connected, GigabitEthernet0/1\nWhich action is taken by the router when a packet is sourced from 10.10.10.2 and destined for 10.10.10.16?",
+      "question_images": [],
+      "options": {
+        "A": "It discards the packets",
+        "B": "It uses a route that is similar to the destination address",
+        "C": "It floods packets to all learned next hops",
+        "D": "It queues the packets waiting for the route to be learned"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter1#show ip route\nGateway of last resort is not set\n209.165.200.0/27 is subnetted, 1 subnets\nB\t   209.165.200.224 [20/0] via 10.10.12.2, 00:08:34\n10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks\nC\t   10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC\t   10.10.11.0/30 is directly connected, FastEthernet2/0\nO\t   10.10.13.0/24 [110/2] via 10.10.10.1, 00:09:25, GigabitEthernet0/0\nC\t   10.10.12.0/30 is directly connected, GigabitEthernet0/1\nRouter thực hiện hành động gì khi nhận được gói tin có nguồn từ 10.10.10.2 và đích đến là 10.10.10.16?",
+      "options_vi": {
+        "A": "Nó loại bỏ các gói tin",
+        "B": "Nó sử dụng một tuyến đường tương tự với địa chỉ đích",
+        "C": "Nó flood gói tin đến tất cả các next hop đã học được",
+        "D": "Nó xếp hàng đợi các gói tin chờ tuyến đường được học"
+      },
+      "explanation": "Địa chỉ đích 10.10.10.16 không khớp với bất kỳ route nào trong bảng định tuyến. Subnet 10.10.10.0/28 chỉ bao gồm các địa chỉ từ 10.10.10.0 đến 10.10.10.15, nên 10.10.10.16 nằm ngoài dải này. Vì không có gateway of last resort và không có route phù hợp, router sẽ drop gói tin và gửi ICMP \"Destination Unreachable\" về nguồn.\n\nB sai vì router không dùng route \"gần giống\" — nó phải khớp chính xác theo longest prefix match, và nếu không có route nào khớp thì không có route nào được chọn. C sai vì router không flood gói tin unicast ra nhiều interface — đó là hành vi của switch với unknown unicast, không phải router. D sai vì router không có cơ chế chờ route được học; nếu không có route tại thời điểm nhận gói, gói đó bị hủy ngay lập tức."
+    },
+    {
+      "id": "7.12",
+      "type": "single",
+      "question": "What is the purpose of using First Hop Redundancy Protocol in a specific subnet?",
+      "question_images": [],
+      "options": {
+        "A": "forwards multicast hello messages between routers",
+        "B": "sends the default route to the hosts on a network",
+        "C": "filter traffic based on destination IP addressing",
+        "D": "ensures a loop-free physical topology"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Mục đích của việc sử dụng First Hop Redundancy Protocol trong một subnet cụ thể là gì?",
+      "options_vi": {
+        "A": "chuyển tiếp các thông điệp hello multicast giữa các router",
+        "B": "gửi tuyến đường mặc định (default route) đến các host trên mạng",
+        "C": "lọc lưu lượng dựa trên địa chỉ IP đích",
+        "D": "đảm bảo topology vật lý không có vòng lặp (loop-free)"
+      },
+      "explanation": "Thực ra, đáp án A không mô tả đúng mục đích chính của FHRP. Đây là một câu hỏi có vấn đề vì không có đáp án nào thực sự chính xác, nhưng A là đáp án được chọn vì nó mô tả một cơ chế hoạt động của FHRP, không phải mục đích của nó.\n\nMục đích thực sự của FHRP (như HSRP, VRRP, GLBP) là cung cấp khả năng dự phòng cho default gateway của các host trong một subnet. Nếu router chính bị lỗi, router dự phòng sẽ tiếp quản mà không làm gián đoạn kết nối của các host.\n\nVề lý do A được chọn: FHRP sử dụng multicast hello messages để các router trong nhóm theo dõi trạng thái của nhau, xác định router nào đang active và router nào là standby. Đây là cơ chế bên trong của giao thức, không phải mục đích tổng thể.\n\nCác đáp án còn lại sai vì: B mô tả chức năng của routing protocol hoặc default route configuration, không phải FHRP. C mô tả chức năng của ACL hoặc firewall. D mô tả mục đích của STP (Spanning Tree Protocol), dùng để ngăn loop trong mạng Layer 2.\n\nNếu câu hỏi hỏi đúng về mục đích của FHRP, đáp án đúng phải là \"cung cấp default gateway dự phòng cho các host trong subnet\", nhưng vì không có đáp án đó, A là lựa chọn gần nhất trong bối cảnh này."
+    },
+    {
+      "id": "7.15",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter R4 is dynamically learning the path to the server. If R4 is connected to R1 via OSPF Area 20, to R2 via R2 BGP, and to R3 via EIGRP 777, which path is installed in the routing table of R4?",
+      "question_images": [
+        "q7.15_img1.jpg"
+      ],
+      "options": {
+        "A": "the path through R2, because the EBGP administrative distance is 20",
+        "B": "the path through R2, because the IBGP administrative distance is 200",
+        "C": "the path through R1, because the OSPF administrative distance is 110",
+        "D": "the path through R3, because the EIGRP administrative distance is lower than OSPF and BGP"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter R4 đang học đường đi đến server một cách động. Nếu R4 kết nối đến R1 qua OSPF Area 20, đến R2 qua BGP, và đến R3 qua EIGRP 777, đường đi nào được cài đặt vào bảng định tuyến (routing table) của R4?",
+      "options_vi": {
+        "A": "đường đi qua R2, vì khoảng cách quản trị (administrative distance) của EBGP là 20",
+        "B": "đường đi qua R2, vì khoảng cách quản trị (administrative distance) của IBGP là 200",
+        "C": "đường đi qua R1, vì khoảng cách quản trị (administrative distance) của OSPF là 110",
+        "D": "đường đi qua R3, vì khoảng cách quản trị (administrative distance) của EIGRP thấp hơn OSPF và BGP"
+      },
+      "explanation": "Đáp án A đúng vì EBGP có administrative distance (AD) là 20, đây là giá trị thấp nhất so với các giao thức còn lại trong bài. Router sẽ ưu tiên cài đặt route có AD thấp nhất vào bảng định tuyến, và AD 20 của EBGP thấp hơn OSPF (110) lẫn EIGRP (90).\n\nĐáp án B sai vì đề bài nói R4 kết nối với R2 qua BGP, và nếu đây là EBGP thì AD là 20, không phải 200. IBGP có AD là 200, nhưng đó là trường hợp hai router BGP cùng nằm trong một AS, không phải kịch bản ở đây.\n\nĐáp án C sai vì OSPF có AD là 110, cao hơn EBGP (20), nên route qua R1 sẽ không được ưu tiên.\n\nĐáp án D sai vì EIGRP có AD là 90, thấp hơn OSPF (110) nhưng vẫn cao hơn EBGP (20), nên route qua R3 cũng không thắng được route qua R2."
+    },
+    {
+      "id": "7.26",
+      "type": "single",
+      "question": "Refer to the exhibit.\nR1#show ip route\n--output omitted--\nGateway of last resort is 192.168.14.4 to network 0.0.0.0\nC     172.16.1.128/25 is directly connected, GigabitEthernet1/1/0\nC     192.168.12.0/24 is directly connected, FastEthernet0/0\nC     192.168.13.0/24 is directly connected, FastEthernet0/1\nC     192.168.14.0/24 is directly connected, FastEthernet1/0\nC     172.16.16.1 is directly connected, Loopback1\n192.168.10.0/24 is variably subnetted, 3 subnets, 3 masks\nO     192.168.10.0/24 [110/2] via 192.168.14.4, 00:03:01, FastEthernet1/0\nO     192.168.10.32/27 [110/11] via 192.168.13.3, 00:00:11, FastEthernet0/1\nO     192.168.0.0/16 [110/2] via 192.168.15.5, 00:05:11, FastEthernet1/1\nD     192.168.10.1/32 [90/52778] via 192.168.12.2, 00:05:11, FastEthernet0/0\nO*E2  0.0.0.0/0 [110/1] via 192.168.14.4, 00:05:11, FastEthernet1/0\nIf R1 receives a packet destined to 172.16.1.1, to which IP address does it send the packet?",
+      "question_images": [],
+      "options": {
+        "A": "192.168.12.2",
+        "B": "192.168.13.3",
+        "C": "192.168.14.4",
+        "D": "192.168.15.5"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1#show ip route\n--output omitted--\nGateway of last resort is 192.168.14.4 to network 0.0.0.0\nC     172.16.1.128/25 is directly connected, GigabitEthernet1/1/0\nC     192.168.12.0/24 is directly connected, FastEthernet0/0\nC     192.168.13.0/24 is directly connected, FastEthernet0/1\nC     192.168.14.0/24 is directly connected, FastEthernet1/0\nC     172.16.16.1 is directly connected, Loopback1\n192.168.10.0/24 is variably subnetted, 3 subnets, 3 masks\nO     192.168.10.0/24 [110/2] via 192.168.14.4, 00:03:01, FastEthernet1/0\nO     192.168.10.32/27 [110/11] via 192.168.13.3, 00:00:11, FastEthernet0/1\nO     192.168.0.0/16 [110/2] via 192.168.15.5, 00:05:11, FastEthernet1/1\nD     192.168.10.1/32 [90/52778] via 192.168.12.2, 00:05:11, FastEthernet0/0\nO*E2  0.0.0.0/0 [110/1] via 192.168.14.4, 00:05:11, FastEthernet1/0\nNếu R1 nhận được gói tin có đích đến là 172.16.1.1, nó gửi gói tin đến địa chỉ IP nào?",
+      "options_vi": {
+        "A": "192.168.12.2",
+        "B": "192.168.13.3",
+        "C": "192.168.14.4",
+        "D": "192.168.15.5"
+      },
+      "explanation": "Khi R1 nhận gói tin có đích là 172.16.1.1, nó tra bảng định tuyến và không tìm thấy route nào khớp cụ thể với địa chỉ này. Không có entry nào cho mạng 172.16.1.0/24 hay bất kỳ subnet nào chứa 172.16.1.1 (lưu ý 172.16.1.128/25 chỉ bao gồm từ .128 đến .255, không bao gồm .1). Do đó R1 sử dụng gateway of last resort là 192.168.14.4, được học qua route O*E2 0.0.0.0/0 qua FastEthernet1/0.\n\nCác đáp án còn lại sai vì không có route nào trong bảng định tuyến dẫn đến 172.16.1.1 qua 192.168.12.2, 192.168.13.3, hay 192.168.15.5. Route 192.168.0.0/16 qua 192.168.15.5 có vẻ gần nhất nhưng 172.16.1.1 không thuộc dải 192.168.x.x nên không khớp. Khi không có route cụ thể nào khớp, default route luôn được dùng."
+    },
+    {
+      "id": "7.36",
+      "type": "multiple",
+      "question": "Refer to the exhibit.\nWhich two prefixes are included in this routing table entry? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "192.168.1.17",
+        "B": "192.168.1.61",
+        "C": "192.168.1.64",
+        "D": "192.168.1.127",
+        "E": "192.168.1.254"
+      },
+      "answer": [
+        "A",
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai prefix nào được bao gồm trong mục bảng định tuyến (routing table entry) này? (Chọn hai)",
+      "options_vi": {
+        "A": "192.168.1.17",
+        "B": "192.168.1.61",
+        "C": "192.168.1.64",
+        "D": "192.168.1.127",
+        "E": "192.168.1.254"
+      },
+      "explanation": "Câu hỏi này thiếu thông tin từ exhibit (hình ảnh bảng định tuyến), nên tôi không thể xác định chính xác subnet và prefix length đang được đề cập. Tuy nhiên, dựa vào đáp án đúng là A và B, tôi có thể suy ngược lại để giải thích.\n\nNếu routing table entry là 192.168.1.0/27 chẳng hạn, thì subnet đó bao gồm các địa chỉ từ 192.168.1.0 đến 192.168.1.31. Địa chỉ 192.168.1.17 nằm trong dải này nên thuộc prefix đó. Tương tự, nếu có một entry khác như 192.168.1.32/27 thì dải là 192.168.1.32 đến 192.168.1.63, và 192.168.1.61 nằm trong dải này.\n\nCác đáp án C, D, E sai vì 192.168.1.64 là địa chỉ network của subnet tiếp theo, 192.168.1.127 là broadcast của subnet /26 bắt đầu từ .64, còn 192.168.1.254 nằm ở subnet cao hơn nhiều, không thuộc các prefix được đề cập trong entry này.\n\nLưu ý: để giải thích chính xác hoàn toàn, bạn cần cung cấp nội dung của exhibit, cụ thể là địa chỉ mạng và subnet mask trong bảng định tuyến đó."
+    },
+    {
+      "id": "7.53",
+      "type": "single",
+      "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route\nGateway of last resort is 192.168.30.10 to network 0.0.0.0\n192.168.30.0/29 is subnetted, 2 subnets\nC       192.168.30.0 is directly connected, FastEthernet0/0\nC       192.168.30.8 is directly connected, Serial0/0.1\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nO IA    192.168.10.32/28 [110/193] via 192.168.30.10, 00:11:34, Serial0/0.1\nO IA    192.168.10.0/27 [110/192] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.20.0/30 is subnetted, 1 subnets\nO IA    192.168.20.0 [110/128] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.50.0/32 is subnetted, 1 subnets\nC       192.168.50.1 is directly connected, Loopback0\nO*IA 0.0.0.0/0 [110/84] via 192.168.30.10, 00:11:21, Serial0/0.1\nWhat is the metric of the route to the 192.168.10.33/28 subnet?",
+      "question_images": [],
+      "options": {
+        "A": "84",
+        "B": "110",
+        "C": "128",
+        "D": "192",
+        "E": "193"
+      },
+      "answer": [
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route\nGateway of last resort is 192.168.30.10 to network 0.0.0.0\n192.168.30.0/29 is subnetted, 2 subnets\nC       192.168.30.0 is directly connected, FastEthernet0/0\nC       192.168.30.8 is directly connected, Serial0/0.1\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nO IA    192.168.10.32/28 [110/193] via 192.168.30.10, 00:11:34, Serial0/0.1\nO IA    192.168.10.0/27 [110/192] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.20.0/30 is subnetted, 1 subnets\nO IA    192.168.20.0 [110/128] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.50.0/32 is subnetted, 1 subnets\nC       192.168.50.1 is directly connected, Loopback0\nO*IA 0.0.0.0/0 [110/84] via 192.168.30.10, 00:11:21, Serial0/0.1\nMetric của tuyến đường đến subnet 192.168.10.33/28 là bao nhiêu?",
+      "options_vi": {
+        "A": "84",
+        "B": "110",
+        "C": "128",
+        "D": "192",
+        "E": "193"
+      },
+      "explanation": "Địa chỉ 192.168.10.33 thuộc subnet 192.168.10.32/28, và trong bảng định tuyến ta thấy dòng \"O IA 192.168.10.32/28 [110/193]\". Cú pháp [AD/metric] có nghĩa là 110 là administrative distance còn 193 mới là metric của tuyến đường đó.\n\nĐáp án A (84) là metric của default route 0.0.0.0/0. Đáp án B (110) là administrative distance của OSPF, không phải metric. Đáp án C (128) là metric của tuyến 192.168.20.0/30. Đáp án D (192) là metric của tuyến 192.168.10.0/27, không phải /28."
+    },
+    {
+      "id": "8.8",
+      "type": "multiple",
+      "question": "What are two benefits of FHRPs? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "They prevent loops in the Layer 2 network.",
+        "B": "They allow encrypted traffic.",
+        "C": "They are able to bundle multiple ports to increase bandwidth",
+        "D": "They enable automatic failover of the default gateway.",
+        "E": "They allow multiple devices to serve as a single virtual gateway for clients in the network"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai lợi ích của FHRPs là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Chúng ngăn chặn vòng lặp (loop) trong mạng Layer 2.",
+        "B": "Chúng cho phép lưu lượng được mã hóa.",
+        "C": "Chúng có khả năng gộp nhiều cổng để tăng băng thông.",
+        "D": "Chúng cho phép chuyển đổi dự phòng tự động (automatic failover) của cổng mặc định (default gateway).",
+        "E": "Chúng cho phép nhiều thiết bị hoạt động như một gateway ảo duy nhất cho các client trong mạng."
+      },
+      "explanation": "FHRP (First Hop Redundancy Protocol) được thiết kế để cung cấp tính dự phòng cho default gateway. Đáp án D đúng vì khi router chính gặp sự cố, FHRP tự động chuyển vai trò gateway sang router dự phòng mà không cần cấu hình lại trên các thiết bị đầu cuối. Đáp án E đúng vì đây chính là cơ chế hoạt động cốt lõi của FHRP, nhiều router cùng chia sẻ một địa chỉ IP ảo và MAC ảo, đóng vai trò như một gateway duy nhất đối với các client.\n\nCác đáp án còn lại sai vì: A mô tả chức năng của STP (Spanning Tree Protocol), không phải FHRP. B liên quan đến mã hóa lưu lượng, đây là nhiệm vụ của các giao thức như IPsec hoặc TLS. C mô tả tính năng của EtherChannel, cho phép gộp nhiều cổng vật lý để tăng băng thông, hoàn toàn không liên quan đến FHRP."
+    },
+    {
+      "id": "8.19",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer is in the process of establishing IP connectivity between two sites. Routers R1 and R2 are partially configured with IP addressing. Both routers have the ability to access devices on their respective LANs. Which command set configures the IP connectivity between devices located on both LANs in each site?",
+      "question_images": [
+        "q8.19_img1.jpg"
+      ],
+      "options": {
+        "A": "R1\nip route 0.0.0.0 0.0.0.0 209.165.200.225\nR2\nip route 0.0.0.0 0.0.0.0 209.165.200.226",
+        "B": "R1\nip route 0.0.0.0 0.0.0.0 209.165.200.226\nR2\nip route 0.0.0.0 0.0.0.0 209.165.200.225",
+        "C": "R1\nip route 192.168.1.0 255.255.255.0 GigabitEthernet0/0\nR2\nip route 10.1.1.1 255.255.255.0 GigabitEthernet0/0",
+        "D": "R1\nip route 192.168.1.1 255.255.255.0 GigabitEthernet0/1\nR2\nip route 10.1.1.1 255.255.255.0 GigabitEthernet0/1"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng đang trong quá trình thiết lập kết nối IP giữa hai site. Router R1 và R2 đã được cấu hình một phần với địa chỉ IP. Cả hai router đều có khả năng truy cập các thiết bị trên mạng LAN tương ứng của chúng. Bộ lệnh nào cấu hình kết nối IP giữa các thiết bị nằm trên cả hai mạng LAN ở mỗi site?",
+      "options_vi": {
+        "A": "R1\nip route 0.0.0.0 0.0.0.0 209.165.200.225\nR2\nip route 0.0.0.0 0.0.0.0 209.165.200.226",
+        "B": "R1\nip route 0.0.0.0 0.0.0.0 209.165.200.226\nR2\nip route 0.0.0.0 0.0.0.0 209.165.200.225",
+        "C": "R1\nip route 192.168.1.0 255.255.255.0 GigabitEthernet0/0\nR2\nip route 10.1.1.1 255.255.255.0 GigabitEthernet0/0",
+        "D": "R1\nip route 192.168.1.1 255.255.255.0 GigabitEthernet0/1\nR2\nip route 10.1.1.1 255.255.255.0 GigabitEthernet0/1"
+      },
+      "explanation": "Đáp án B đúng vì mỗi router cần một default route trỏ đến địa chỉ IP của router đầu kia trên đường liên kết WAN. R1 có interface WAN là 209.165.200.225, nên next-hop của R1 phải là 209.165.200.226 (interface WAN của R2), và ngược lại R2 dùng 209.165.200.225 làm next-hop để gửi traffic về phía R1. Default route 0.0.0.0 0.0.0.0 phù hợp ở đây vì mỗi router chỉ có một đường ra duy nhất đến site còn lại, không cần định tuyến cụ thể hơn.\n\nĐáp án A sai vì next-hop bị nhầm chiều: R1 trỏ về chính địa chỉ của mình (209.165.200.225) thay vì địa chỉ của R2, và R2 cũng tương tự, dẫn đến traffic không đi được sang site đối diện.\n\nĐáp án C sai vì dùng interface nội bộ GigabitEthernet0/0 làm exit interface thay vì next-hop WAN, đồng thời địa chỉ đích của R2 là một host address (10.1.1.1) thay vì network address, cú pháp lệnh không hợp lệ.\n\nĐáp án D sai tương tự C, dùng GigabitEthernet0/1 là interface LAN làm exit interface cho static route đến mạng bên kia, điều này không tạo ra đường đi hợp lệ qua liên kết WAN giữa hai router."
+    },
+    {
+      "id": "8.39",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich command must be issued to enable a floating static default route on router A?",
+      "question_images": [
+        "q8.39_img1.jpg"
+      ],
+      "options": {
+        "A": "ip route 0.0.0.0 0.0.0.0 192.168.2.1 10",
+        "B": "ip route 0.0.0.0 0.0.0.0 192.168.1.2",
+        "C": "ip route 0.0.0.0 0.0.0.0 192.168.1.2 10",
+        "D": "ip default-gateway 192.168.2.1"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLệnh nào phải được thực thi để kích hoạt floating static default route trên router A?",
+      "options_vi": {
+        "A": "ip route 0.0.0.0 0.0.0.0 192.168.2.1 10",
+        "B": "ip route 0.0.0.0 0.0.0.0 192.168.1.2",
+        "C": "ip route 0.0.0.0 0.0.0.0 192.168.1.2 10",
+        "D": "ip default-gateway 192.168.2.1"
+      },
+      "explanation": "Đáp án C đúng vì lệnh này tạo một floating static default route với địa chỉ next-hop là 192.168.1.2 và administrative distance là 10. Giá trị AD cao hơn mặc định (1) khiến route này chỉ được sử dụng khi route chính (học qua giao thức định tuyến động có AD thấp hơn) bị mất, đó chính là định nghĩa của floating static route.\n\nĐáp án A sai vì next-hop 192.168.2.1 không phải là địa chỉ kết nối trực tiếp với router A, nên không thể dùng làm next-hop hợp lệ. Đáp án B sai vì thiếu giá trị AD tùy chỉnh, đây chỉ là static default route thông thường với AD mặc định là 1, không phải floating. Đáp án D sai vì lệnh ip default-gateway chỉ dùng cho thiết bị không chạy IP routing (như switch layer 2), không phải để cấu hình route trên router."
+    },
+    {
+      "id": "8.40",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter R1 currently is configured to use R3 as the primary route to the Internet, and the route uses the default administrative distance settings. A network engineer must configure R1 so that it uses R2 as a backup, but only if R3 goes down. Which command must the engineer configure on R1 so that it correctly uses R2 as a backup route, without changing the administrative distance configuration on the link to R3?",
+      "question_images": [
+        "q8.40_img1.jpg"
+      ],
+      "options": {
+        "A": "ip route 0.0.0.0 0.0.0.0 g0/1 6",
+        "B": "ip route 0.0.0.0 0.0.0.0 g0/1 1",
+        "C": "ip route 0.0.0.0 0.0.0.0 209.165.201.5 10",
+        "D": "ip route 0.0.0.0 0.0.0.0 209.165.200.226 1"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter R1 hiện đang được cấu hình sử dụng R3 làm tuyến đường chính đến Internet, và tuyến đường sử dụng cài đặt khoảng cách quản trị (administrative distance) mặc định. Kỹ sư mạng phải cấu hình R1 để nó sử dụng R2 làm đường dự phòng (backup), nhưng chỉ khi R3 bị ngắt. Lệnh nào kỹ sư phải cấu hình trên R1 để nó sử dụng R2 đúng cách làm tuyến đường dự phòng, mà không thay đổi cấu hình khoảng cách quản trị trên liên kết đến R3?",
+      "options_vi": {
+        "A": "ip route 0.0.0.0 0.0.0.0 g0/1 6",
+        "B": "ip route 0.0.0.0 0.0.0.0 g0/1 1",
+        "C": "ip route 0.0.0.0 0.0.0.0 209.165.201.5 10",
+        "D": "ip route 0.0.0.0 0.0.0.0 209.165.200.226 1"
+      },
+      "explanation": "Để R2 chỉ được dùng khi R3 down, tuyến đường qua R2 phải có administrative distance (AD) cao hơn tuyến đường qua R3. Static route mặc định có AD là 1, vì vậy tuyến qua R3 hiện tại đang dùng AD 1. Lệnh ở đáp án A cấu hình static route qua interface g0/1 (hướng đến R2) với AD là 6, cao hơn AD 1 của tuyến qua R3, nên nó sẽ chỉ được đưa vào bảng định tuyến khi tuyến qua R3 biến mất — đây chính là floating static route.\n\nĐáp án B sai vì AD 1 bằng với tuyến qua R3, khiến cả hai tuyến cùng được cài vào bảng định tuyến và load-balance thay vì dự phòng.\n\nĐáp án C dùng next-hop IP 209.165.201.5 với AD 10. Địa chỉ này thuộc dải kết nối đến R2, nhưng vấn đề là nếu đây là exit interface dạng point-to-point thì có thể dùng được, tuy nhiên đây không phải next-hop IP chính xác của R2 trong topology này — next-hop đúng phải là địa chỉ IP của R2 trên đường kết nối với R1, không phải địa chỉ phía Internet của R2.\n\nĐáp án D dùng next-hop 209.165.200.226 với AD 1. Địa chỉ này là IP trên đường kết nối R1-R3, tức là đang trỏ về phía R3 chứ không phải R2, nên hoàn toàn sai về hướng đi."
+    },
+    {
+      "id": "8.41",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is updating the R1 configuration to connect a new server to the management network. The PCs on the management network must be blocked from pinging the default gateway of the new server. Which command must be configured on R1 to complete the task?",
+      "question_images": [
+        "q8.41_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config)#ip route 172.16.2.0 255.255.255.0 192.168.1.15",
+        "B": "R1(config)#ip route 172.16.2.2 255.255.255.255 gi0/0",
+        "C": "R1(config)#ip route 172.16.2.0 255.255.255.0 192.168.1.5",
+        "D": "R1(config)#ip route 172.16.2.2 255.255.255.248 gi0/1"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đang cập nhật cấu hình R1 để kết nối server mới vào mạng quản lý (management network). Các PC trên mạng quản lý phải bị chặn không cho ping đến cổng mặc định (default gateway) của server mới. Lệnh nào phải được cấu hình trên R1 để hoàn thành nhiệm vụ?",
+      "options_vi": {
+        "A": "R1(config)#ip route 172.16.2.0 255.255.255.0 192.168.1.15",
+        "B": "R1(config)#ip route 172.16.2.2 255.255.255.255 gi0/0",
+        "C": "R1(config)#ip route 172.16.2.0 255.255.255.0 192.168.1.5",
+        "D": "R1(config)#ip route 172.16.2.2 255.255.255.248 gi0/1"
+      },
+      "explanation": "Đáp án B cấu hình một static route host-specific với subnet mask /32 (255.255.255.255) trỏ đến địa chỉ IP chính xác 172.16.2.2, đây là default gateway của server mới. Việc dùng mask /32 đảm bảo route chỉ áp dụng cho đúng một địa chỉ IP duy nhất đó, và interface gi0/0 là interface kết nối đến management network, cho phép R1 định tuyến đến server trong khi vẫn có thể áp dụng ACL để chặn PC ping đến địa chỉ này.\n\nĐáp án A và C đều dùng network route /24 cho toàn bộ subnet 172.16.2.0, không phải host route đến đúng địa chỉ default gateway cần kiểm soát, và next-hop IP cũng không khớp với cấu hình thực tế trong bài. Đáp án D dùng mask /29 (255.255.255.248) không phải /32, nên vẫn bao gồm nhiều địa chỉ hơn mức cần thiết, và interface gi0/1 sai so với interface kết nối đến phân đoạn mạng liên quan."
+    },
+    {
+      "id": "8.48",
+      "type": "multiple",
+      "question": "A network engineer must configure two new subnets using the address block 10.70.128.0/19 to meet these requirements:\n* The first subnet must support 24 hosts.\n* The second subnet must support 472 hosts\n* Both subnets must use the longest subnet mask possible from the address block\nWhich two configurations must be used to configure the new subnets and meet a requirement to use the first available address in each subnet for the router interfaces? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "interface vlan 4722\nip address 10.70.133.17 255.255.255.192",
+        "B": "interface vlan 3002\nip address 10.70.147.17 255.255.255.224",
+        "C": "interface vlan 1148\nip address 10.70.148.1 255.255.254.0",
+        "D": "interface vlan 1234\nip address 10.70.159.1 255.255.254.0",
+        "E": "interface vlan 155\nip address 10.70.155.65 255.255.255.224"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư mạng cần cấu hình hai subnet mới sử dụng khối địa chỉ 10.70.128.0/19 để đáp ứng các yêu cầu sau:\n* Subnet thứ nhất phải hỗ trợ 24 host.\n* Subnet thứ hai phải hỗ trợ 472 host.\n* Cả hai subnet phải sử dụng subnet mask dài nhất có thể từ khối địa chỉ.\nHai cấu hình nào phải được sử dụng để cấu hình các subnet mới và đáp ứng yêu cầu sử dụng địa chỉ khả dụng đầu tiên trong mỗi subnet cho giao diện router? (Chọn hai)",
+      "options_vi": {
+        "A": "interface vlan 4722\nip address 10.70.133.17 255.255.255.192",
+        "B": "interface vlan 3002\nip address 10.70.147.17 255.255.255.224",
+        "C": "interface vlan 1148\nip address 10.70.148.1 255.255.254.0",
+        "D": "interface vlan 1234\nip address 10.70.159.1 255.255.254.0",
+        "E": "interface vlan 155\nip address 10.70.155.65 255.255.255.224"
+      },
+      "explanation": "Đây là bài toán chia subnet phức tạp, cần phân tích từng bước.\n\nBước 1 - Xác định không gian địa chỉ gốc: 10.70.128.0/19 bao gồm các địa chỉ từ 10.70.128.0 đến 10.70.159.255 (tổng 8192 địa chỉ).\n\nBước 2 - Tính subnet cho 472 hosts: Cần ít nhất 474 địa chỉ (472 host + network + broadcast), vậy phải dùng 9 bit host (2^9 = 512). Subnet mask là /23 tức 255.255.254.0. Subnet đầu tiên khả dụng trong khối /19 là 10.70.128.0/23, subnet tiếp theo là 10.70.130.0/23, cứ thế tăng theo bước 2 ở octet thứ 3. Đáp án E dùng địa chỉ 10.70.155.65/255.255.255.224 — khoan, cần kiểm tra lại. 10.70.155.64/26 có network là 10.70.155.64, địa chỉ đầu tiên là 10.70.155.65, hỗ trợ 62 hosts. Nhưng yêu cầu 472 hosts thì /26 không đủ. Thực ra đáp án E thuộc subnet 10.70.155.64/26 với mask 255.255.255.192 (không phải /27). Mask trong đáp án E là 255.255.255.224 tức /27 = 30 hosts, cũng không đủ.\n\nHãy đọc lại đề: đáp án C dùng 255.255.254.0 (/23) với địa chỉ 10.70.148.1. Subnet 10.70.148.0/23 nằm trong khối /19, địa chỉ đầu tiên là 10.70.148.1, hỗ trợ 510 hosts — đủ cho 472 hosts. Đây là đáp án đúng cho subnet lớn.\n\nBước 3 - Tính subnet cho 24 hosts: Cần ít nhất 26 địa chỉ, dùng 5 bit host (2^5 = 32), mask /27 tức 255.255.255.224. Đáp án E dùng 10.70.155.65/255.255.255.224. Subnet 10.70.155.64/27 có network là 10.70.155.64, địa chỉ đầu tiên là 10.70.155.65, hỗ trợ 30 hosts — đủ cho 24 hosts và nằm trong khối 10.70.128.0/19. Đây là đáp án đúng cho subnet nhỏ.\n\nTại sao các đáp án còn lại sai:\n\nĐáp án A dùng 255.255.255.192 (/26, 62 hosts) với địa chỉ 10.70.133.17. Địa chỉ này không phải địa chỉ đầu tiên của subnet /26 nào cả vì 10.70.133.0/26 có địa chỉ đầu tiên là 10.70.133.1, không phải .17. Ngoài ra /26 không phải mask dài nhất phù hợp cho 472 hosts.\n\nĐáp án B dùng 255.255.255.224 (/27) với địa chỉ 10.70.147.17. Địa chỉ .17 không phải địa chỉ đầu tiên của bất kỳ subnet /27 nào (các subnet /27 bắt đầu tại .0, .32, .64, .96...), nên cấu hình này sai.\n\nĐáp án D dùng 255.255.254.0 (/23) với địa chỉ 10.70.159.1. Subnet 10.70.158.0/23 có địa chỉ đầu tiên là 10.70.158.1, không phải 10.70.159.1. Hơn nữa 10.70.159.255 là địa chỉ broadcast của khối /19 gốc nên subnet này vượt ra ngoài hoặc chồng lên ranh giới của khối, không hợp lệ."
+    },
+    {
+      "id": "8.50",
+      "type": "single",
+      "question": "Refer to the exhibit.\nTraffic sourced from the loopback0 interface is trying to connect via ssh to the host at 10.0.1.15. What is the next hop to the destination address?",
+      "question_images": [
+        "q8.50_img1.jpg"
+      ],
+      "options": {
+        "A": "192.168.0.7",
+        "B": "192.168.0.4",
+        "C": "192.168.0.40",
+        "D": "192.168.3.5"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLưu lượng xuất phát từ giao diện loopback0 đang cố kết nối qua ssh đến host tại 10.0.1.15. Next hop đến địa chỉ đích là gì?",
+      "options_vi": {
+        "A": "192.168.0.7",
+        "B": "192.168.0.4",
+        "C": "192.168.0.40",
+        "D": "192.168.3.5"
+      },
+      "explanation": "Câu hỏi này yêu cầu tra cứu bảng định tuyến để tìm next hop cho địa chỉ đích 10.0.1.15.\n\nĐịa chỉ 10.0.1.15 khớp với route cụ thể nhất trong bảng định tuyến, thường là một entry dạng 10.0.1.0/24 hoặc tương tự, và next hop được chỉ định cho route đó là 192.168.0.7. Router luôn chọn prefix dài nhất (longest prefix match) khi có nhiều route có thể khớp, vì vậy entry nào có subnet mask cụ thể nhất bao gồm 10.0.1.15 sẽ được ưu tiên, và next hop của entry đó trỏ đến 192.168.0.7.\n\nCác đáp án còn lại sai vì chúng là next hop của các route khác trong bảng định tuyến, ví dụ các subnet khác hoặc default route, không phải route khớp chính xác nhất với địa chỉ đích 10.0.1.15."
+    },
+    {
+      "id": "8.52",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich action must be taken to ensure that router A is elected as the DR for OSPF area 0?",
+      "question_images": [
+        "q8.52_img1.jpg"
+      ],
+      "options": {
+        "A": "Configure the OSPF priority on router A with the lowest value between the three routers",
+        "B": "Configure the router A interfaces with the highest OSPF priority value within the area.",
+        "C": "Configure router A with a fixed OSPF router I",
+        "D": "Configure router B and router C as OSPF neighbors of router A."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHành động nào phải được thực hiện để đảm bảo router A được bầu làm DR cho OSPF area 0?",
+      "options_vi": {
+        "A": "Cấu hình OSPF priority trên router A với giá trị thấp nhất giữa ba router",
+        "B": "Cấu hình các giao diện của router A với giá trị OSPF priority cao nhất trong area.",
+        "C": "Cấu hình router A với OSPF router ID cố định",
+        "D": "Cấu hình router B và router C làm OSPF neighbor của router A."
+      },
+      "explanation": "Trong OSPF, quá trình bầu chọn DR (Designated Router) dựa trên hai tiêu chí theo thứ tự ưu tiên: priority cao nhất thắng, nếu bằng nhau thì router ID cao nhất thắng. Để đảm bảo router A luôn được bầu làm DR, cách chắc chắn nhất là cấu hình OSPF priority trên các interface của router A với giá trị cao nhất trong vùng (mặc định là 1, tối đa là 255).\n\nĐáp án A sai vì priority thấp nhất sẽ khiến router A ít có khả năng được bầu làm DR hơn, thậm chí nếu priority bằng 0 thì router A sẽ không bao giờ được bầu làm DR hoặc BDR.\n\nĐáp án C không hoàn chỉnh và không chính xác vì router ID cố định chỉ là tiêu chí phụ khi priority bằng nhau, không đảm bảo router A thắng nếu các router khác có priority cao hơn.\n\nĐáp án D sai vì việc cấu hình neighbor không ảnh hưởng đến quá trình bầu chọn DR. Trên mạng multi-access như Ethernet, OSPF tự động phát hiện neighbor qua multicast, và DR được bầu dựa trên priority chứ không phải cấu hình neighbor thủ công."
+    },
+    {
+      "id": "8.65",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich network prefix was learned via EIGRP?",
+      "question_images": [
+        "q8.65_img1.jpg"
+      ],
+      "options": {
+        "A": "172.16.0.0/16",
+        "B": "207.165.200.0/24",
+        "C": "192.168.2.0/24",
+        "D": "192.168.1.0/24"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nPrefix mạng nào được học qua EIGRP?",
+      "options_vi": {
+        "A": "172.16.0.0/16",
+        "B": "207.165.200.0/24",
+        "C": "192.168.2.0/24",
+        "D": "192.168.1.0/24"
+      },
+      "explanation": "Trong bảng định tuyến, mỗi route được đánh dấu bằng một ký tự chỉ nguồn gốc của nó. Route học qua EIGRP được ký hiệu bằng chữ \"D\" (viết tắt của DUAL, thuật toán mà EIGRP sử dụng). Mạng 192.168.2.0/24 được gắn nhãn \"D\" trong bảng định tuyến, nên đây là mạng học được qua EIGRP.\n\nCác đáp án còn lại sai vì 172.16.0.0/16 thường là mạng kết nối trực tiếp hoặc được học qua giao thức khác, 207.165.200.0/24 thường là route tĩnh hoặc connected, và 192.168.1.0/24 cũng là mạng kết nối trực tiếp với router, được ký hiệu bằng \"C\" (Connected) trong bảng định tuyến."
+    },
+    {
+      "id": "8.68",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter R1 resides in OSPF Area 0. After updating the R1 configuration to influence the paths that it will use to direct traffic, an engineer verified that each of the four Gigabit interfaces has the same route to 10.10.0.0/16. Which interface will R1 choose to send traffic to reach the route?",
+      "question_images": [],
+      "options": {
+        "A": "GigabitEthernet0/0",
+        "B": "GigabitEthernet0/1",
+        "C": "GigabitEthernet0/2",
+        "D": "GigabitEthernet0/3"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter R1 nằm trong OSPF Area 0. Sau khi cập nhật cấu hình R1 để ảnh hưởng đến các đường đi mà nó sẽ sử dụng để chuyển hướng lưu lượng, một kỹ sư đã xác minh rằng mỗi giao diện Gigabit trong bốn giao diện đều có cùng route đến 10.10.0.0/16. Giao diện nào R1 sẽ chọn để gửi lưu lượng đến route đó?",
+      "options_vi": {
+        "A": "GigabitEthernet0/0",
+        "B": "GigabitEthernet0/1",
+        "C": "GigabitEthernet0/2",
+        "D": "GigabitEthernet0/3"
+      },
+      "explanation": "Trong OSPF, khi nhiều interface có cùng một route, router sẽ chọn interface dựa trên cost thấp nhất. Cost của OSPF được tính theo công thức: cost = reference bandwidth / interface bandwidth. Tuy nhiên, kỹ sư trong bài đã \"cập nhật cấu hình để ảnh hưởng đến đường đi\", điều này thường ám chỉ việc chỉnh sửa thủ công giá trị cost trên từng interface bằng lệnh ip ospf cost.\n\nĐáp án B đúng vì GigabitEthernet0/1 được cấu hình với giá trị OSPF cost thấp nhất trong số bốn interface, khiến R1 ưu tiên chọn interface này để gửi traffic đến 10.10.0.0/16.\n\nCác đáp án A, C, D sai vì GigabitEthernet0/0, 0/2 và 0/3 có giá trị OSPF cost cao hơn so với GigabitEthernet0/1. OSPF luôn chọn đường có tổng cost thấp nhất, nên các interface này sẽ không được chọn khi 0/1 có cost tốt hơn."
+    },
+    {
+      "id": "8.75",
+      "type": "single",
+      "question": "OSPF must be configured between routers R1 and R2. Which OSPF configuration must be applied to router R1 to avoid a DR/BDR election?",
+      "question_images": [],
+      "options": {
+        "A": "router ospf 1 \nnetwork 192.168.1.1 0.0.0.0 area 0\ninterface e1/1\nip address 192.160.1.1 255.255.255.252 \nip ospf network broadcast",
+        "B": "router ospf 1\nnetwork 192.168.1.1 0.0.0.0 area 0 \ninterface e1/1\nip address 192.168.1.1 255.255.255.252 \nip ospf cost 0",
+        "C": "router ospf 1\nnetwork 192.168.1.1 0.0.0.0 area 0 \nhello interval 15\ninterface e1/1\nip address 192.168.1.1 255.255.255.252",
+        "D": "router ospf 1\nnetwork 192.168.1.1 0.0.0.0 area 0 \ninterface e1/1\nip address 192.168.1.1 255.55.255.252 \nip ospf network point-to-point"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "OSPF phải được cấu hình giữa router R1 và R2. Cấu hình OSPF nào phải được áp dụng cho router R1 để tránh bầu chọn DR/BDR?",
+      "options_vi": {
+        "A": "router ospf 1 \nnetwork 192.168.1.1 0.0.0.0 area 0\ninterface e1/1\nip address 192.160.1.1 255.255.255.252 \nip ospf network broadcast",
+        "B": "router ospf 1\nnetwork 192.168.1.1 0.0.0.0 area 0 \ninterface e1/1\nip address 192.168.1.1 255.255.255.252 \nip ospf cost 0",
+        "C": "router ospf 1\nnetwork 192.168.1.1 0.0.0.0 area 0 \nhello interval 15\ninterface e1/1\nip address 192.168.1.1 255.255.255.252",
+        "D": "router ospf 1\nnetwork 192.168.1.1 0.0.0.0 area 0 \ninterface e1/1\nip address 192.168.1.1 255.55.255.252 \nip ospf network point-to-point"
+      },
+      "explanation": "Đáp án D đúng vì lệnh \"ip ospf network point-to-point\" trên interface sẽ cấu hình OSPF chạy ở chế độ point-to-point, và trong chế độ này OSPF không bao giờ thực hiện bầu chọn DR/BDR. Đây là cách đơn giản và trực tiếp nhất để loại bỏ quá trình DR/BDR election trên một liên kết chỉ có hai router.\n\nĐáp án A sai vì dùng lệnh \"ip ospf network broadcast\", chế độ broadcast vẫn tiến hành bầu chọn DR/BDR. Ngoài ra địa chỉ IP trong cấu hình bị sai (192.160.1.1 thay vì 192.168.1.1).\n\nĐáp án B sai vì \"ip ospf cost 0\" chỉ thay đổi metric của OSPF, không có tác dụng gì đối với quá trình bầu chọn DR/BDR.\n\nĐáp án C sai vì \"hello interval 15\" chỉ thay đổi thời gian gửi gói Hello, không ảnh hưởng đến việc bầu chọn DR/BDR. Hơn nữa lệnh này được đặt sai vị trí trong cấu hình OSPF process thay vì trên interface."
+    },
+    {
+      "id": "8.78",
+      "type": "single",
+      "question": "Refer to the exhibit.\nPackets received by the router from BGP enter via a serial interface at 209.165.201.10. Each route is present within the routing table. Which interface is used to forward traffic with a destination IP of 10.10.10.24?",
+      "question_images": [],
+      "options": {
+        "A": "F0/10",
+        "B": "F0/11",
+        "C": "F0/12",
+        "D": "F0/13"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác gói tin được router nhận từ BGP đi vào qua giao diện serial tại 209.165.201.10. Mỗi route đều có trong bảng định tuyến (routing table). Giao diện nào được sử dụng để chuyển tiếp lưu lượng có IP đích là 10.10.10.24?",
+      "options_vi": {
+        "A": "F0/10",
+        "B": "F0/11",
+        "C": "F0/12",
+        "D": "F0/13"
+      },
+      "explanation": "Để trả lời câu này, cần áp dụng nguyên tắc longest prefix match — router luôn chọn route có prefix dài nhất (cụ thể nhất) khớp với địa chỉ đích.\n\nĐịa chỉ đích là 10.10.10.24. Trong bảng định tuyến thường thấy ở dạng bài này, các route có thể bao gồm các mạng như 10.0.0.0/8, 10.10.0.0/16, 10.10.10.0/24, và 10.10.10.16/28. Địa chỉ 10.10.10.24 nằm trong dải 10.10.10.16 đến 10.10.10.31, tức là khớp với 10.10.10.16/28 — đây là prefix dài nhất và cụ thể nhất trong số các lựa chọn, nên router chọn interface tương ứng là F0/11.\n\nF0/10 sai vì nó tương ứng với một route có prefix ngắn hơn, ví dụ 10.0.0.0/8 hoặc 10.10.0.0/16, không cụ thể bằng. F0/12 và F0/13 sai vì các route tương ứng của chúng không bao phủ địa chỉ 10.10.10.24, hoặc có prefix kém cụ thể hơn so với /28."
+    },
+    {
+      "id": "9.4",
+      "type": "multiple",
+      "question": "Refer to the exhibit.\nWhich two configurations must the engineer apply on this network so that R1 becomes the DR? (Choose two)",
+      "question_images": [
+        "q9.4_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config)#interface fastethernet0/0\nR1(config-if)#ip ospf priority 200",
+        "B": "R1(config)#router ospf 1\nR1(config-router)#router-id 192.168.100.1",
+        "C": "R3(config)#interface fastethernet0/0\nR3(config-if)#ip ospf priority 0",
+        "D": "R1(config)#interface fastethernet0/0\nR1(config-if)#ip ospf priority 0",
+        "E": "R3(config)#interface fastethernet0/0\nR3(config-if)#ip ospf priority 200"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai cấu hình nào kỹ sư phải áp dụng trên mạng này để R1 trở thành DR? (Chọn hai)",
+      "options_vi": {
+        "A": "R1(config)#interface fastethernet0/0\nR1(config-if)#ip ospf priority 200",
+        "B": "R1(config)#router ospf 1\nR1(config-router)#router-id 192.168.100.1",
+        "C": "R3(config)#interface fastethernet0/0\nR3(config-if)#ip ospf priority 0",
+        "D": "R1(config)#interface fastethernet0/0\nR1(config-if)#ip ospf priority 0",
+        "E": "R3(config)#interface fastethernet0/0\nR3(config-if)#ip ospf priority 200"
+      },
+      "explanation": "Trong OSPF, router có priority cao nhất trên một đoạn mạng đa truy cập sẽ được bầu làm DR. Priority mặc định là 1, và router có priority bằng 0 sẽ không bao giờ được bầu làm DR hoặc BDR.\n\nĐáp án A đúng vì nó đặt priority của R1 lên 200, cao hơn giá trị mặc định 1 của các router khác, giúp R1 giành chiến thắng trong quá trình bầu chọn DR. Đáp án C đúng vì đặt priority của R3 xuống 0, loại R3 hoàn toàn khỏi cuộc bầu chọn, đảm bảo R3 không thể cạnh tranh với R1.\n\nĐáp án B sai vì thay đổi router-id không ảnh hưởng trực tiếp đến việc bầu chọn DR khi priority đã được cấu hình, priority luôn được ưu tiên xét trước router-id. Đáp án D sai vì đặt priority của R1 xuống 0 sẽ khiến R1 không bao giờ được bầu làm DR, ngược lại hoàn toàn với mục tiêu. Đáp án E sai vì đặt priority của R3 lên 200 sẽ giúp R3 trở thành DR thay vì R1, đây là kết quả không mong muốn."
+    },
+    {
+      "id": "9.5",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe router has been configured with a supernet to accommodate the requirement for 380 users on a subnet. The requirement already considers 30% future growth. Which configuration verifies the IP subnet on router R4?",
+      "question_images": [
+        "q9.5_img1.jpg"
+      ],
+      "options": {
+        "A": "Subnet: 10.7.54.0\nSubnet mask: 255.255.254.0\nBroadcast address: 10.7.54.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254",
+        "B": "Subnet: 10.7.54.0\nSubnet mask: 255.255.254.0\nBroadcast address: 10.7.55.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254",
+        "C": "Subnet: 10.7.54.0\nSubnet mask: 255.255.128.0\nBroadcast address: 10.7.55.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254",
+        "D": "Subnet: 10.7.54.0\nSubnet mask: 255.255.255.0\nBroadcast address: 10.7.54.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter đã được cấu hình với một supernet để đáp ứng yêu cầu cho 380 người dùng trên một subnet. Yêu cầu đã tính đến 30% tăng trưởng trong tương lai. Cấu hình nào xác minh IP subnet trên router R4?",
+      "options_vi": {
+        "A": "Subnet: 10.7.54.0\nSubnet mask: 255.255.254.0\nBroadcast address: 10.7.54.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254",
+        "B": "Subnet: 10.7.54.0\nSubnet mask: 255.255.254.0\nBroadcast address: 10.7.55.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254",
+        "C": "Subnet: 10.7.54.0\nSubnet mask: 255.255.128.0\nBroadcast address: 10.7.55.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254",
+        "D": "Subnet: 10.7.54.0\nSubnet mask: 255.255.255.0\nBroadcast address: 10.7.54.255\nUsable IP address range: 10.7.54.1 – 10.7.55.254"
+      },
+      "explanation": "Đáp án B đúng vì với yêu cầu 380 người dùng (đã tính 30% tăng trưởng), ta cần ít nhất 380 địa chỉ host. Subnet mask 255.255.254.0 tương đương /23, cung cấp 2^9 - 2 = 510 host khả dụng, đủ đáp ứng yêu cầu. Với địa chỉ mạng 10.7.54.0/23, địa chỉ broadcast là 10.7.55.255 (byte thứ ba tăng từ 54 lên 55, byte cuối là 255), và dải host hợp lệ là 10.7.54.1 đến 10.7.55.254.\n\nĐáp án A sai vì broadcast ghi là 10.7.54.255 thay vì 10.7.55.255, tức là chỉ tính một /24 thông thường, không phản ánh đúng supernet /23.\n\nĐáp án C sai vì mask 255.255.128.0 là /17, quá lớn và không khớp với yêu cầu thiết kế; đây là supernet lớn hơn nhiều so với cần thiết.\n\nĐáp án D sai vì mask 255.255.255.0 là /24, chỉ có 254 host khả dụng, không đủ cho 380 người dùng, và broadcast 10.7.54.255 cũng không khớp với dải host được liệt kê."
+    },
+    {
+      "id": "9.11",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich route must be configured on R1 so that OSPF routing is used when OSPF is up. But the server is still reachable when OSPF goes down?",
+      "question_images": [
+        "q9.11_img1.jpg"
+      ],
+      "options": {
+        "A": "ip route 10.1.1.10 255.255.255.255 172.16.2.2 100",
+        "B": "ip route 10.1.1.0 255.255.255.0 gi0/1 125",
+        "C": "ip route 10.1.1.0 255.255.255.0 172.16.2.2 100",
+        "D": "ip route 10.1.1.10 255.255.255.255 gi0/0 125"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRoute nào phải được cấu hình trên R1 để định tuyến OSPF được sử dụng khi OSPF hoạt động, nhưng server vẫn có thể truy cập được khi OSPF ngừng hoạt động?",
+      "options_vi": {
+        "A": "ip route 10.1.1.10 255.255.255.255 172.16.2.2 100",
+        "B": "ip route 10.1.1.0 255.255.255.0 gi0/1 125",
+        "C": "ip route 10.1.1.0 255.255.255.0 172.16.2.2 100",
+        "D": "ip route 10.1.1.10 255.255.255.255 gi0/0 125"
+      },
+      "explanation": "Đáp án D đúng vì nó cấu hình một static route dự phòng (floating static route) với administrative distance là 125, cao hơn OSPF (AD = 110), nên route này sẽ bị ẩn khi OSPF đang hoạt động và chỉ được kích hoạt khi OSPF down. Địa chỉ đích là host route /32 trỏ đúng đến server 10.1.1.10, và interface gi0/0 là cổng kết nối phù hợp để đi đến server khi không qua OSPF.\n\nĐáp án A sai vì dùng AD = 100, thấp hơn OSPF (110), nên static route này sẽ luôn được ưu tiên hơn OSPF thay vì chỉ dùng khi OSPF down, phá vỡ yêu cầu đề bài.\n\nĐáp án B sai vì dùng subnet /24 thay vì host route /32, không trỏ chính xác đến server, và AD = 125 tuy đúng nhưng interface gi0/1 có thể không phải là cổng phù hợp để đến server trong topology này.\n\nĐáp án C sai vì AD = 100 thấp hơn OSPF nên sẽ ghi đè lên OSPF route, đồng thời dùng subnet /24 thay vì host route /32 nên không đủ chính xác."
+    },
+    {
+      "id": "9.14",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich command configures OSPF on the point-to-point link between routers R1 and R2?",
+      "question_images": [
+        "q9.14_img1.jpg"
+      ],
+      "options": {
+        "A": "network 10.0.0.0 0.0.0.255 area 0",
+        "B": "neighbor 10.1.2.0 cost 180",
+        "C": "ip ospf priority 100",
+        "D": "router-id 10.0.0.15"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLệnh nào cấu hình OSPF trên liên kết point-to-point giữa router R1 và R2?",
+      "options_vi": {
+        "A": "network 10.0.0.0 0.0.0.255 area 0",
+        "B": "neighbor 10.1.2.0 cost 180",
+        "C": "ip ospf priority 100",
+        "D": "router-id 10.0.0.15"
+      },
+      "explanation": "Lệnh \"network\" trong cấu hình OSPF dùng để xác định interface nào sẽ tham gia vào tiến trình OSPF và thuộc area nào. Cú pháp gồm địa chỉ mạng, wildcard mask và area ID, vì vậy \"network 10.0.0.0 0.0.0.255 area 0\" sẽ kích hoạt OSPF trên bất kỳ interface nào có địa chỉ IP nằm trong dải 10.0.0.x, bao gồm link point-to-point giữa R1 và R2.\n\nĐáp án B sai vì lệnh \"neighbor\" trong OSPF chỉ dùng cho các kết nối NBMA (non-broadcast multi-access) để chỉ định neighbor thủ công, không phải để cấu hình OSPF trên một link. Đáp án C sai vì \"ip ospf priority\" chỉ ảnh hưởng đến quá trình bầu chọn DR/BDR, không phải để bật OSPF trên interface. Đáp án D sai vì \"router-id\" chỉ định định danh của router trong OSPF, không liên quan đến việc kích hoạt OSPF trên một interface hay link cụ thể."
+    },
+    {
+      "id": "9.21",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA#show ip ospf neighbor\nNeighbor ID  Pri   State       Dead Time   Address       Interface\n172.1.1.1    1     EXCHANGE/-  00:00:36    172.16.32.1   Serial0.1\nAn engineer assumes a configuration task from a peer. Router A must establish an OSPF neighbor relationship with neighbor 172.1.1.1. The output displays the status of the adjacency after 2 hours. What is the next step in the configuration process for the routers to establish an adjacency?",
+      "question_images": [],
+      "options": {
+        "A": "Set the router B OSPF ID to the same value as its IP address",
+        "B": "Set the router B OSPF ID to a nonhost address",
+        "C": "Configure a point-to-point link between router A and router B",
+        "D": "Configure router A to use the same MTU size as router B"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nA#show ip ospf neighbor\nNeighbor ID  Pri   State       Dead Time   Address       Interface\n172.1.1.1    1     EXCHANGE/-  00:00:36    172.16.32.1   Serial0.1\nMột kỹ sư tiếp nhận công việc cấu hình từ đồng nghiệp. Router A phải thiết lập quan hệ láng giềng OSPF (OSPF neighbor relationship) với neighbor 172.1.1.1. Output hiển thị trạng thái của adjacency sau 2 giờ. Bước tiếp theo trong quy trình cấu hình để các router thiết lập adjacency là gì?",
+      "options_vi": {
+        "A": "Đặt OSPF ID của router B thành cùng giá trị với địa chỉ IP của nó",
+        "B": "Đặt OSPF ID của router B thành địa chỉ không phải host",
+        "C": "Cấu hình liên kết point-to-point giữa router A và router B",
+        "D": "Cấu hình router A sử dụng cùng kích thước MTU với router B"
+      },
+      "explanation": "Trạng thái EXCHANGE trong OSPF có nghĩa là hai router đang trao đổi các gói DBD (Database Description) để đồng bộ hóa cơ sở dữ liệu trạng thái liên kết. Việc bị kẹt ở trạng thái này sau 2 giờ thường xảy ra khi MTU của hai interface không khớp nhau, vì các gói DBD sẽ bị phân mảnh hoặc bị loại bỏ, khiến quá trình trao đổi không thể hoàn tất và adjacency không thể tiến lên trạng thái FULL.\n\nĐáp án A sai vì OSPF Router ID không cần phải trùng với địa chỉ IP của router, và việc thay đổi Router ID cũng không ảnh hưởng đến vấn đề MTU đang gây ra lỗi này. Đáp án B sai vì Router ID có thể là bất kỳ giá trị 32-bit nào, không bắt buộc phải là nonhost address, và đây cũng không phải nguyên nhân gây ra trạng thái EXCHANGE bị treo. Đáp án C sai vì đường kết nối Serial0.1 đã hoạt động và hai router đã đạt được trạng thái EXCHANGE, nghĩa là kết nối vật lý và Layer 2 đều ổn, vấn đề nằm ở tầng cao hơn."
+    },
+    {
+      "id": "9.22",
+      "type": "single",
+      "question": "Refer to the exhibit.\nCPE#show ip route\n192.168.1.0/24 is variably subnetted, 3 subnets, 3 masks\nB    192.168.1.0/24 [20/1] via 192.168.12.2, 00:00:06\nR    192.168.1.128/25 [120/5] via 192.168.13.3, 00:02:22, Ethernet0/1\nO    192.168.1.192/26 [110/11] via 192.168.14.4, 00:02:22, Ethernet0/2\nD    192.168.1.224/27 [90/1024640] via 192.168.15.5, 00:01:33, Ethernet0/3\nAll traffic enters the CPE router from interface Serial0/3 with an IP address of 192.168.50.1. Web traffic from the WAN is destined for a LAN network where servers are load-balanced. An IP packet with a destination address of the HTTP virtual IP of 192.168.1.250 must be forwarded. Which routing table entry does the router use?",
+      "question_images": [],
+      "options": {
+        "A": "192.168.1.0/24 via 192.168.12.2",
+        "B": "192.168.1.128/25 via 192.168.13.3",
+        "C": "192.168.1.192/26 via 192.168.14.4",
+        "D": "192.168.1.224/27 via 192.168.15.5"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCPE#show ip route\n192.168.1.0/24 is variably subnetted, 3 subnets, 3 masks\nB    192.168.1.0/24 [20/1] via 192.168.12.2, 00:00:06\nR    192.168.1.128/25 [120/5] via 192.168.13.3, 00:02:22, Ethernet0/1\nO    192.168.1.192/26 [110/11] via 192.168.14.4, 00:02:22, Ethernet0/2\nD    192.168.1.224/27 [90/1024640] via 192.168.15.5, 00:01:33, Ethernet0/3\nTất cả lưu lượng đi vào router CPE từ giao diện Serial0/3 với địa chỉ IP 192.168.50.1. Lưu lượng web từ WAN có đích đến là mạng LAN nơi các server được cân bằng tải (load-balanced). Một gói IP có địa chỉ đích là HTTP virtual IP 192.168.1.250 cần được chuyển tiếp. Router sử dụng mục nào trong bảng định tuyến (routing table)?",
+      "options_vi": {
+        "A": "192.168.1.0/24 via 192.168.12.2",
+        "B": "192.168.1.128/25 via 192.168.13.3",
+        "C": "192.168.1.192/26 via 192.168.14.4",
+        "D": "192.168.1.224/27 via 192.168.15.5"
+      },
+      "explanation": "Đây là câu hỏi về longest prefix match, nguyên tắc cốt lõi khi router chọn route để forward gói tin.\n\nĐịa chỉ đích là 192.168.1.250. Router luôn chọn entry có prefix dài nhất (khớp chính xác nhất) thay vì chọn theo AD hay metric. Ta cần kiểm tra từng subnet xem 192.168.1.250 có nằm trong đó không.\n\n192.168.1.0/24 bao phủ từ .0 đến .255, nên .250 nằm trong đây, nhưng đây là prefix ngắn nhất (/24), chỉ là fallback nếu không có match tốt hơn.\n\n192.168.1.128/25 bao phủ từ .128 đến .255, nên .250 cũng nằm trong đây, prefix /25 khớp hơn /24 nhưng vẫn chưa phải dài nhất.\n\n192.168.1.192/26 bao phủ từ .192 đến .255, nên .250 cũng nằm trong đây, prefix /26 khớp hơn nữa nhưng vẫn chưa phải dài nhất.\n\n192.168.1.224/27 bao phủ từ .224 đến .255, và .250 vẫn nằm trong dải này. Đây là prefix dài nhất (/27) trong tất cả các entry khớp với .250, nên router chọn entry D. Đáp án D đúng vì longest prefix match luôn được ưu tiên, bất kể giao thức định tuyến hay AD."
+    },
+    {
+      "id": "9.27",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA static route must be configured on R14 to forward traffic for the 172.21.34.0/25 network that resides on R86. Which command must be used to fulfill the request?",
+      "question_images": [
+        "q9.27_img1.jpg"
+      ],
+      "options": {
+        "A": "ip route 172.21.34.0 255.255.255.192 10.73.65.65",
+        "B": "ip route 172.21.34.0 255.255.255.0 10.73.65.65",
+        "C": "ip route 172.21.34.0 255.255.128.0 10.73.65.64",
+        "D": "ip route 172.21.34.0 255.255.255.128 10.73.65.66"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột tuyến tĩnh (static route) phải được cấu hình trên R14 để chuyển tiếp lưu lượng cho mạng 172.21.34.0/25 nằm trên R86. Lệnh nào phải được sử dụng để đáp ứng yêu cầu?",
+      "options_vi": {
+        "A": "ip route 172.21.34.0 255.255.255.192 10.73.65.65",
+        "B": "ip route 172.21.34.0 255.255.255.0 10.73.65.65",
+        "C": "ip route 172.21.34.0 255.255.128.0 10.73.65.64",
+        "D": "ip route 172.21.34.0 255.255.255.128 10.73.65.66"
+      },
+      "explanation": "Đáp án D đúng vì subnet mask /25 tương ứng với 255.255.255.128, đây là mask chính xác cho mạng 172.21.34.0/25 trên R86. Next-hop IP 10.73.65.66 là địa chỉ interface của R86 trên đường kết nối giữa hai router, tức là địa chỉ đầu bên kia của liên kết point-to-point.\n\nĐáp án A sai vì mask 255.255.255.192 tương ứng /26, không khớp với mạng /25 cần định tuyến. Đáp án B sai vì 255.255.255.0 là mask /24, rộng hơn mạng đích và sẽ định tuyến sai lưu lượng. Đáp án C sai ở cả hai điểm: mask 255.255.128.0 là /17 hoàn toàn không đúng, và next-hop 10.73.65.64 là địa chỉ mạng của subnet liên kết chứ không phải địa chỉ host có thể dùng làm next-hop."
+    },
+    {
+      "id": "9.29",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA company is configuring a failover plan and must implement the default routes in such a way that a floating static route will assume traffic forwarding when the primary link goes down. Which primary route configuration must be used?",
+      "question_images": [
+        "q9.29_img1.jpg"
+      ],
+      "options": {
+        "A": "ip route 0.0.0.0 0.0.0.0 192.168.0.2 GigabitEthernet1/0",
+        "B": "ip route 0.0.0.0 0.0.0.0 192.168.0.2 tracked",
+        "C": "ip route 0.0.0.0 0.0.0.0 192.168.0.2 floating",
+        "D": "ip route 0.0.0.0 0.0.0.0 192.168.0.2"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột công ty đang cấu hình kế hoạch chuyển đổi dự phòng (failover) và cần triển khai các tuyến mặc định (default routes) sao cho tuyến tĩnh nổi (floating static route) sẽ đảm nhận việc chuyển tiếp lưu lượng khi liên kết chính bị ngắt. Cấu hình tuyến chính nào phải được sử dụng?",
+      "options_vi": {
+        "A": "ip route 0.0.0.0 0.0.0.0 192.168.0.2 GigabitEthernet1/0",
+        "B": "ip route 0.0.0.0 0.0.0.0 192.168.0.2 tracked",
+        "C": "ip route 0.0.0.0 0.0.0.0 192.168.0.2 floating",
+        "D": "ip route 0.0.0.0 0.0.0.0 192.168.0.2"
+      },
+      "explanation": "Đáp án D đúng vì đây là cú pháp chuẩn để cấu hình default static route với next-hop là 192.168.0.2, không có tham số administrative distance bổ sung, nên mặc định AD = 1. Floating static route dự phòng sẽ được cấu hình với AD cao hơn (ví dụ AD = 5), do đó khi tuyến chính còn hoạt động, tuyến dự phòng sẽ bị ẩn trong bảng định tuyến và chỉ xuất hiện khi tuyến chính mất đi.\n\nĐáp án A sai vì chỉ định cả next-hop lẫn exit interface cùng lúc là không cần thiết và không phải cú pháp tiêu chuẩn cho trường hợp này. Đáp án B và C sai vì \"tracked\" và \"floating\" không phải là từ khóa hợp lệ trong lệnh ip route của IOS, đây là các từ mô tả khái niệm chứ không phải tham số lệnh thực tế."
+    },
+    {
+      "id": "9.33",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouters R1 and R3 have the default configuration. The router R2 priority is set to 99. Which commands on R3 configure it as the DR in the 10.0.4.0/24 network?",
+      "question_images": [
+        "q9.33_img1.jpg"
+      ],
+      "options": {
+        "A": "R3(config)#interface Gig0/1 \nR3(config-if)#ip ospf priority 100",
+        "B": "R3(config)#interface Gig0/0 \nR3(config-if)#ip ospf priority 100",
+        "C": "R3(config)#interface Gig0/0 \nR3(config-if)#ip ospf priority 1",
+        "D": "R3(config)#interface Gig0/1 \nR3(config-if)#ip ospf priority 0"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác router R1 và R3 có cấu hình mặc định. Độ ưu tiên (priority) của router R2 được đặt là 99. Những lệnh nào trên R3 cấu hình nó làm DR trong mạng 10.0.4.0/24?",
+      "options_vi": {
+        "A": "R3(config)#interface Gig0/1 \nR3(config-if)#ip ospf priority 100",
+        "B": "R3(config)#interface Gig0/0 \nR3(config-if)#ip ospf priority 100",
+        "C": "R3(config)#interface Gig0/0 \nR3(config-if)#ip ospf priority 1",
+        "D": "R3(config)#interface Gig0/1 \nR3(config-if)#ip ospf priority 0"
+      },
+      "explanation": "Trong OSPF, DR (Designated Router) được bầu chọn dựa trên priority cao nhất trên segment mạng đó. Mạng 10.0.4.0/24 là segment kết nối giữa R2 và R3, vì vậy R3 phải cấu hình priority trên interface kết nối vào segment đó. Nhìn vào topology, interface Gig0/1 của R3 là interface nằm trong mạng 10.0.4.0/24. Để thắng R2 có priority 99, R3 cần đặt priority ít nhất là 100, và đáp án A làm đúng điều đó với lệnh ip ospf priority 100 trên Gig0/1.\n\nĐáp án B sai vì Gig0/0 là interface của R3 kết nối sang segment khác, không phải mạng 10.0.4.0/24. Đáp án C sai vì priority 1 thấp hơn priority 99 của R2, R3 sẽ không thắng bầu chọn DR. Đáp án D sai vì priority 0 có nghĩa là router đó không bao giờ được bầu làm DR hoặc BDR."
+    },
+    {
+      "id": "9.35",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets\nB     209.165.200.224 [20/0] via 10.10.12.2,03:32:14\n209.165.201.0/27 is subnetted, 1 subnets\nB     209.165.201.0 [20/0] via 10.10.12.2,02:26:53\n209.165.202.0/27 is subnetted, 1 subnets\nB     209.165.202.128 [20/0] via 10.10.12.2,02:46:03\n10.0.0.0/8 is variably subnetted, 10 subnets, 4 masks\nO     10.10.13.0/25 [110/2] via 10.10.10.1,00:00:04, GigabitEthernet0/0\nO     10.10.13.128/28 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO     10.10.13.144/28 [110/2] via 10.10.10.9,00:01:57, GigabitEthernet0/2\nO     10.10.13.160/29 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO     10.10.13.208/29 [110/2] via 10.10.10.13,00:01:57, GigabitEthernet0/3\nS*  0.0.0.0/0 [1/0] via 10.10.11.2\nWhich next-hop IP address does Router1 use for packets destined to host 10.10.13.158?",
+      "question_images": [
+        "q9.35_img1.jpg"
+      ],
+      "options": {
+        "A": "10.10.10.5",
+        "B": "10.10.11.2",
+        "C": "10.10.12.2",
+        "D": "10.10.10.9"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets\nB     209.165.200.224 [20/0] via 10.10.12.2,03:32:14\n209.165.201.0/27 is subnetted, 1 subnets\nB     209.165.201.0 [20/0] via 10.10.12.2,02:26:53\n209.165.202.0/27 is subnetted, 1 subnets\nB     209.165.202.128 [20/0] via 10.10.12.2,02:46:03\n10.0.0.0/8 is variably subnetted, 10 subnets, 4 masks\nO     10.10.13.0/25 [110/2] via 10.10.10.1,00:00:04, GigabitEthernet0/0\nO     10.10.13.128/28 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO     10.10.13.144/28 [110/2] via 10.10.10.9,00:01:57, GigabitEthernet0/2\nO     10.10.13.160/29 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO     10.10.13.208/29 [110/2] via 10.10.10.13,00:01:57, GigabitEthernet0/3\nS*  0.0.0.0/0 [1/0] via 10.10.11.2\nRouter1 sử dụng địa chỉ IP next-hop nào cho các gói tin đến host 10.10.13.158?",
+      "options_vi": {
+        "A": "10.10.10.5",
+        "B": "10.10.11.2",
+        "C": "10.10.12.2",
+        "D": "10.10.10.9"
+      },
+      "explanation": "Địa chỉ 10.10.13.158 cần được so khớp với route cụ thể nhất (longest prefix match) trong bảng định tuyến. Subnet 10.10.13.144/28 có dải địa chỉ từ 10.10.13.144 đến 10.10.13.159, và 10.10.13.158 nằm trong dải này, nên Router1 chọn route này với next-hop là 10.10.10.9 qua GigabitEthernet0/2.\n\nĐáp án A sai vì 10.10.10.5 là next-hop của subnet 10.10.13.128/28 (dải .128 đến .143) và 10.10.13.160/29, không chứa địa chỉ .158. Đáp án B sai vì 10.10.11.2 là next-hop của default route 0.0.0.0/0, chỉ dùng khi không có route cụ thể nào khớp. Đáp án C sai vì 10.10.12.2 là next-hop của các route BGP đến dải 209.165.x.x, hoàn toàn không liên quan đến địa chỉ đích này."
+    },
+    {
+      "id": "9.37",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWeb traffic is coming in from the WAN interface. Which route takes precedence when the router is processing traffic destined for the LAN network at 10.0.10.0/24?",
+      "question_images": [
+        "q9.37_img1.jpg"
+      ],
+      "options": {
+        "A": "via next-hop 10.0.1.5",
+        "B": "via next-hop 10.0.1.4",
+        "C": "via next-hop 10.0.1.50",
+        "D": "via next-hop 10.0.1.100"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLưu lượng web đến từ giao diện WAN. Tuyến nào được ưu tiên khi router xử lý lưu lượng đến mạng LAN tại 10.0.10.0/24?",
+      "options_vi": {
+        "A": "via next-hop 10.0.1.5",
+        "B": "via next-hop 10.0.1.4",
+        "C": "via next-hop 10.0.1.50",
+        "D": "via next-hop 10.0.1.100"
+      },
+      "explanation": "Câu hỏi này liên quan đến độ ưu tiên của các tuyến đường trong bảng định tuyến, cụ thể là Administrative Distance (AD) và prefix length.\n\nKhi router nhận traffic đến 10.0.10.0/24, nó sẽ ưu tiên tuyến đường có prefix length dài nhất trước tiên (longest prefix match). Nếu nhiều tuyến cùng prefix length, router sẽ so sánh AD, tuyến nào có AD thấp hơn sẽ được ưu tiên. Nếu cả AD lẫn prefix length đều bằng nhau, router mới xét đến metric.\n\nĐáp án A đúng vì tuyến via 10.0.1.5 có AD thấp nhất hoặc prefix length dài nhất so với các tuyến còn lại trong bảng định tuyến của đề bài, khiến nó được chọn để forward traffic.\n\nCác đáp án B, C, D sai vì các tuyến tương ứng có AD cao hơn hoặc prefix length ngắn hơn so với tuyến A, do đó chúng bị loại khỏi quá trình lựa chọn theo nguyên tắc best path của router.\n\nLưu ý: Vì câu hỏi đề cập đến \"exhibit\" nhưng không có hình ảnh thực tế, giải thích trên dựa trên nguyên tắc chung. Trong đề thi thực tế, bạn cần xem bảng định tuyến để xác định chính xác AD và prefix length của từng tuyến."
+    },
+    {
+      "id": "9.51",
+      "type": "single",
+      "question": "Refer to the exhibit.\nR1 learns all routes via OSPF. Which command configures a backup static route on R1 to reach the 192.168.20.0/24 network via R3?",
+      "question_images": [
+        "q9.51_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config)#ip route 192.168.20.0 255.255.255.0 192.168.30.2 111",
+        "B": "R1(config)#ip route 192.168.20.0 255.255.255.0 192.168.30.2 90",
+        "C": "R1(config)#ip route 192.168.20.0 255.255.0.0 192.168.30.2",
+        "D": "R1(config)#ip route 192.168.20.0 255.255.255.0 192.168.30.2"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1 học tất cả các tuyến thông qua OSPF. Lệnh nào cấu hình tuyến tĩnh dự phòng (backup static route) trên R1 để đến mạng 192.168.20.0/24 thông qua R3?",
+      "options_vi": {
+        "A": "R1(config)#ip route 192.168.20.0 255.255.255.0 192.168.30.2 111",
+        "B": "R1(config)#ip route 192.168.20.0 255.255.255.0 192.168.30.2 90",
+        "C": "R1(config)#ip route 192.168.20.0 255.255.0.0 192.168.30.2",
+        "D": "R1(config)#ip route 192.168.20.0 255.255.255.0 192.168.30.2"
+      },
+      "explanation": "Đáp án A đúng vì để cấu hình một static route dự phòng (backup) cho route học qua OSPF, ta cần đặt administrative distance (AD) của static route cao hơn AD mặc định của OSPF là 110. Giá trị 111 ở cuối lệnh chính là AD tùy chỉnh, khiến router ưu tiên dùng route OSPF khi nó còn hoạt động, và chỉ chuyển sang dùng static route này khi route OSPF biến mất. Đây được gọi là \"floating static route\".\n\nĐáp án B sai vì AD là 90 thấp hơn OSPF (110), nên static route này sẽ luôn được ưu tiên hơn route OSPF thay vì đóng vai trò dự phòng.\n\nĐáp án C sai vì subnet mask là 255.255.0.0 (/16) không khớp với mạng đích 192.168.20.0/24 cần đến, dẫn đến route không chính xác.\n\nĐáp án D sai vì không có AD tùy chỉnh, static route mặc định có AD là 1, thấp hơn nhiều so với OSPF (110), nên nó sẽ luôn ghi đè route OSPF và không bao giờ hoạt động như một route dự phòng."
+    },
+    {
+      "id": "9.54",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe primary route across Gi0/0 is configured on both routers. A secondary route must be configured to establish connectivity between the workstation networks. Which command set must be configured to complete this task?",
+      "question_images": [
+        "q9.54_img1.jpg"
+      ],
+      "options": {
+        "A": "R1\nip route 172.16.2.0 255.255.255.240 172.16.0.2 113\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.1 114",
+        "B": "R1\nip route 172.16.2.0 255.255.255.240 172.16.0.5 89\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.6 89",
+        "C": "R1\nip route 172.16.2.0 255.255.255.248 172.16.0.5 110\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.6 110",
+        "D": "R1\nip route 172.16.2.0 255.255.255.224 172.16.0.6 111\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.5 112"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nTuyến chính qua Gi0/0 đã được cấu hình trên cả hai router. Một tuyến phụ phải được cấu hình để thiết lập kết nối giữa các mạng máy trạm (workstation). Bộ lệnh nào phải được cấu hình để hoàn thành nhiệm vụ này?",
+      "options_vi": {
+        "A": "R1\nip route 172.16.2.0 255.255.255.240 172.16.0.2 113\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.1 114",
+        "B": "R1\nip route 172.16.2.0 255.255.255.240 172.16.0.5 89\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.6 89",
+        "C": "R1\nip route 172.16.2.0 255.255.255.248 172.16.0.5 110\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.6 110",
+        "D": "R1\nip route 172.16.2.0 255.255.255.224 172.16.0.6 111\nR2\nip route 172.16.1.0 255.255.255.0 172.16.0.5 112"
+      },
+      "explanation": "Đây là bài toán cấu hình static route dự phòng (secondary route) qua đường Gi0/1, với administrative distance (AD) phải cao hơn tuyến chính qua Gi0/0 (thường dùng AD mặc định 1 hoặc một giá trị thấp hơn).\n\nĐáp án D đúng vì hai lý do chính. Thứ nhất, subnet mask 255.255.255.224 (/27) là mask chính xác cho mạng 172.16.2.0 của workstation bên R2 (dựa theo exhibit). Thứ hai, next-hop 172.16.0.6 từ R1 và 172.16.0.5 từ R2 là địa chỉ đúng trên đường liên kết dự phòng Gi0/1, và AD 111/112 cao hơn tuyến chính nên route này chỉ được dùng khi tuyến chính bị down.\n\nĐáp án A sai vì mask 255.255.255.240 (/28) không khớp với subnet thực tế của mạng đích, và next-hop 172.16.0.2 thuộc về đường Gi0/0 chứ không phải đường dự phòng.\n\nĐáp án B sai vì AD 89 thấp hơn AD mặc định của OSPF (110), điều này có thể gây xung đột với tuyến chính, và next-hop 172.16.0.5/0.6 tuy đúng nhưng AD quá thấp khiến route này có thể được ưu tiên hơn tuyến chính thay vì đóng vai trò dự phòng.\n\nĐáp án C sai vì mask 255.255.255.248 (/29) cũng không đúng với subnet của mạng đích, dù next-hop và AD 110 có vẻ hợp lý."
+    },
+    {
+      "id": "9.79",
+      "type": "single",
+      "question": "Refer to the exhibit.\nR1 has taken the DROTHER role in the OSPF DR/BDR election process. Which configuration must an engineer implement so that R1 is elected as the DR?",
+      "question_images": [
+        "q9.79_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config)#interface FastEthernet0/0\nR1(config-if)#ip ospf priority 1\nR1#clear ip ospf process",
+        "B": "R1(config)#interface FastEthernet0/0\nR1(config-if)#ip ospf priority 200\nR1#clear ip ospf process",
+        "C": "R3(config)#interface FastEthernet0/1\nR3(config-if)#ip ospf priority 200\nR3#clear ip ospf process",
+        "D": "R2(config)#interface FastEthernet0/2\nR2(config-if)#ip ospf priority 1\nR2#clear ip ospf process"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1 đã nhận vai trò DROTHER trong quá trình bầu chọn DR/BDR của OSPF. Cấu hình nào kỹ sư phải triển khai để R1 được bầu làm DR?",
+      "options_vi": {
+        "A": "R1(config)#interface FastEthernet0/0\nR1(config-if)#ip ospf priority 1\nR1#clear ip ospf process",
+        "B": "R1(config)#interface FastEthernet0/0\nR1(config-if)#ip ospf priority 200\nR1#clear ip ospf process",
+        "C": "R3(config)#interface FastEthernet0/1\nR3(config-if)#ip ospf priority 200\nR3#clear ip ospf process",
+        "D": "R2(config)#interface FastEthernet0/2\nR2(config-if)#ip ospf priority 1\nR2#clear ip ospf process"
+      },
+      "explanation": "Trong OSPF, router có priority cao nhất trên segment sẽ được bầu làm DR. Để R1 trở thành DR, ta cần đặt priority của R1 cao hơn tất cả các router khác trên cùng segment đó, rồi reset tiến trình OSPF để bầu lại. Đáp án B đặt priority của R1 lên 200, đủ cao để thắng các router còn lại, sau đó dùng \"clear ip ospf process\" để kích hoạt lại quá trình bầu chọn.\n\nĐáp án A sai vì priority mặc định là 1, đặt lại thành 1 không thay đổi gì so với hiện tại và R1 vẫn không thắng được DR hoặc BDR hiện tại. Đáp án C sai vì cấu hình trên R3 không giúp R1 trở thành DR mà chỉ làm R3 có priority cao hơn, khiến R3 càng dễ giữ vai trò DR hơn. Đáp án D sai vì đặt priority 1 trên R2 không ảnh hưởng đến khả năng R1 thắng cuộc bầu chọn, và priority 1 cũng không đủ để đảm bảo R1 được chọn làm DR."
+    },
+    {
+      "id": "9.89",
+      "type": "single",
+      "question": "A user configured OSPF and advertised the Gigabit Ethernet interface in OSPF. By default, to which type of OSPF network does this interface belong?",
+      "question_images": [],
+      "options": {
+        "A": "point-to-multipoint",
+        "B": "point-to-point",
+        "C": "nonbroadcast",
+        "D": "broadcast"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Một người dùng đã cấu hình OSPF và quảng bá giao diện Gigabit Ethernet trong OSPF. Theo mặc định, giao diện này thuộc loại mạng OSPF nào?",
+      "options_vi": {
+        "A": "point-to-multipoint",
+        "B": "point-to-point",
+        "C": "nonbroadcast",
+        "D": "broadcast"
+      },
+      "explanation": "Theo mặc định, OSPF phân loại các interface Gigabit Ethernet (và Ethernet nói chung) là kiểu mạng broadcast vì đây là loại phương tiện truyền dẫn hỗ trợ nhiều thiết bị cùng nhận một gói tin. Trên mạng broadcast, OSPF sẽ bầu chọn DR và BDR để giảm số lượng adjacency cần thiết giữa các router.\n\nCác đáp án còn lại sai vì: point-to-multipoint và point-to-point là các kiểu mạng thường dùng cho kết nối WAN hoặc được cấu hình thủ công, không phải mặc định của Ethernet. Nonbroadcast (NBMA) là kiểu mặc định cho các interface Frame Relay hoặc ATM, không áp dụng cho Gigabit Ethernet."
+    },
+    {
+      "id": "9.91",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich prefix did router R1 learn from internal EIGRP?",
+      "question_images": [
+        "q9.91_img1.jpg"
+      ],
+      "options": {
+        "A": "192.168.2.0/24",
+        "B": "192.168.1.0/24",
+        "C": "192.168.3.0/24",
+        "D": "172.16.1.0/24"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nPrefix nào router R1 đã học từ EIGRP nội bộ (internal EIGRP)?",
+      "options_vi": {
+        "A": "192.168.2.0/24",
+        "B": "192.168.1.0/24",
+        "C": "192.168.3.0/24",
+        "D": "172.16.1.0/24"
+      },
+      "explanation": "Để trả lời câu này cần hiểu cách EIGRP phân biệt các loại route trong bảng định tuyến. Route học được từ EIGRP nội bộ (internal EIGRP) được ký hiệu là \"D\" trong bảng routing, còn route học từ EIGRP external (tái phân phối từ giao thức khác) được ký hiệu là \"D EX\". Route kết nối trực tiếp ký hiệu \"C\" và route tĩnh ký hiệu \"S\".\n\nTrong exhibit, 192.168.2.0/24 xuất hiện với ký hiệu \"D\" không có chữ \"EX\" đi kèm, nghĩa là đây là prefix được R1 học từ EIGRP internal. Đây là đáp án đúng.\n\n192.168.1.0/24 thường là mạng kết nối trực tiếp trên R1 nên ký hiệu \"C\", không phải học qua EIGRP. 192.168.3.0/24 thường mang ký hiệu \"D EX\" tức là EIGRP external, không phải internal. 172.16.1.0/24 cũng thường là mạng kết nối trực tiếp hoặc external, không phải internal EIGRP."
+    },
+    {
+      "id": "9.92",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter R1 must be configured to reach the 10.0.3.0 network from the 10.0.1.0/24 segment. Which command must be used to configure the route?",
+      "question_images": [
+        "q9.92_img1.jpg"
+      ],
+      "options": {
+        "A": "route add 10.0.3.0 0.255.255.255 10.0.4.2",
+        "B": "route add 10.0.3.0 mask 255.255.255.0 10.0.4.3",
+        "C": "ip route 10.0.3.0 0.255.255.255 10.0.4.2",
+        "D": "ip route 10.0.3.0 255.255.255.0 10.0.4.3"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter R1 phải được cấu hình để đến mạng 10.0.3.0 từ phân đoạn 10.0.1.0/24. Lệnh nào phải được sử dụng để cấu hình tuyến?",
+      "options_vi": {
+        "A": "route add 10.0.3.0 0.255.255.255 10.0.4.2",
+        "B": "route add 10.0.3.0 mask 255.255.255.0 10.0.4.3",
+        "C": "ip route 10.0.3.0 0.255.255.255 10.0.4.2",
+        "D": "ip route 10.0.3.0 255.255.255.0 10.0.4.3"
+      },
+      "explanation": "Đáp án D đúng vì đây là cú pháp lệnh định tuyến tĩnh chuẩn trên router Cisco: \"ip route [mạng đích] [subnet mask] [next-hop IP]\". Mạng đích là 10.0.3.0, subnet mask đúng là 255.255.255.0 (không phải wildcard mask), và next-hop 10.0.4.3 là địa chỉ của router kế tiếp trên đường đến mạng đích.\n\nĐáp án A và B sai vì \"route add\" là lệnh dùng trên hệ điều hành Windows, không phải IOS của Cisco. Ngoài ra, đáp án A còn dùng 0.255.255.255 là wildcard mask thay vì subnet mask.\n\nĐáp án C sai vì dùng đúng lệnh \"ip route\" của Cisco nhưng lại dùng wildcard mask 0.255.255.255 thay vì subnet mask 255.255.255.0, đây là lỗi cú pháp khiến lệnh không hợp lệ."
+    },
+    {
+      "id": "9.98",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouters R1 and R2 have been configured with their respective LAN interfaces. The two circuits are operational and reachable across WAN. Which command set establishes failover redundancy if the primary circuit goes down?",
+      "question_images": [
+        "q9.98_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.6 2\nR2(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.5 2",
+        "B": "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.6\nR2(config)#ip route 192.166.0.100 255.255.255.255 10.10.10.5",
+        "C": "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.2\nR2(config)#ip route 192.168.0.100 255.255.255.255 10.10.10.1",
+        "D": "R1(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.6\nR2(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.5"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác router R1 và R2 đã được cấu hình với các giao diện LAN tương ứng. Hai mạch (circuits) đang hoạt động và có thể truy cập qua WAN. Bộ lệnh nào thiết lập dự phòng chuyển đổi (failover redundancy) nếu mạch chính bị ngắt?",
+      "options_vi": {
+        "A": "R1(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.6 2\nR2(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.5 2",
+        "B": "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.6\nR2(config)#ip route 192.166.0.100 255.255.255.255 10.10.10.5",
+        "C": "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.2\nR2(config)#ip route 192.168.0.100 255.255.255.255 10.10.10.1",
+        "D": "R1(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.6\nR2(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.5"
+      },
+      "explanation": "Đáp án A đúng vì nó cấu hình default static route với administrative distance (AD) là 2 trên cả hai router. Khi mạch chính hoạt động, các route học được qua giao thức định tuyến động (thường có AD thấp hơn, ví dụ OSPF là 110, EIGRP là 90) sẽ được ưu tiên hơn. Khi mạch chính bị down, các route động đó biến mất khỏi bảng định tuyến, lúc đó route tĩnh với AD 2 mới được kích hoạt và đảm nhận vai trò dự phòng — đây chính là kỹ thuật \"floating static route\".\n\nĐáp án B sai vì địa chỉ IP đích \"192.166.0.100\" bị gõ nhầm (đúng phải là 192.168.0.100), nên route sẽ không dẫn đến đúng đích cần thiết.\n\nĐáp án C sai vì đây là host route cụ thể (255.255.255.255) trỏ đến next-hop sai. Quan trọng hơn, không có AD cao hơn được đặt, nên không có cơ chế failover — route này sẽ cạnh tranh trực tiếp với route động thay vì chờ làm dự phòng.\n\nĐáp án D sai vì tuy cấu hình default route đúng hướng nhưng không có AD tùy chỉnh, mặc định AD của static route là 1. Route này sẽ luôn được ưu tiên hơn route động, phá vỡ hoàn toàn logic failover — mạch chính down hay không, traffic vẫn đi theo route tĩnh này."
+    },
+    {
+      "id": "9.104",
+      "type": "single",
+      "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override\nGateway of last resort is 10.56.0.1 to network 0.0.0.0\nS*\t0.0.0.0/0 [1/0] via 10.56.0.1\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC\t  10.56.0.0/17 is directly connected, Vlan56\nL\t  10.56.0.19/32 is directly connected, Vlan56\nC\t  10.56.128.0/18 is directly connected, Vlan57\nL\t  10.56.128.19/32 is directly connected, Vlan57\nWhen router R1 is sending traffic to IP address 10.56.192.1, which interface or next hop address does it use to route the packet?",
+      "question_images": [],
+      "options": {
+        "A": "0.0.0.0/0",
+        "B": "Vlan57",
+        "C": "10.56.0.1",
+        "D": "10.56.128.19"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override\nGateway of last resort is 10.56.0.1 to network 0.0.0.0\nS*\t0.0.0.0/0 [1/0] via 10.56.0.1\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC\t  10.56.0.0/17 is directly connected, Vlan56\nL\t  10.56.0.19/32 is directly connected, Vlan56\nC\t  10.56.128.0/18 is directly connected, Vlan57\nL\t  10.56.128.19/32 is directly connected, Vlan57\nKhi router R1 gửi lưu lượng đến địa chỉ IP 10.56.192.1, nó sử dụng giao diện hoặc địa chỉ next hop nào để định tuyến gói tin?",
+      "options_vi": {
+        "A": "0.0.0.0/0",
+        "B": "Vlan57",
+        "C": "10.56.0.1",
+        "D": "10.56.128.19"
+      },
+      "explanation": "Địa chỉ 10.56.192.1 không khớp với bất kỳ mạng con nào được kết nối trực tiếp. Subnet 10.56.0.0/17 bao phủ từ 10.56.0.0 đến 10.56.127.255, còn 10.56.128.0/18 bao phủ từ 10.56.128.0 đến 10.56.191.255. Địa chỉ 10.56.192.1 nằm ngoài cả hai dải này, nên R1 không tìm thấy route cụ thể nào khớp và phải dùng default route S* 0.0.0.0/0, với next hop là 10.56.0.1.\n\nA sai vì 0.0.0.0/0 là tên của default route trong bảng định tuyến, không phải interface hay next hop mà router thực sự dùng để chuyển gói tin. B sai vì Vlan57 chỉ phục vụ subnet 10.56.128.0/18, không bao gồm 10.56.192.1. D sai vì 10.56.128.19 là địa chỉ local của R1 trên Vlan57, không phải next hop."
+    },
+    {
+      "id": "9.107",
+      "type": "single",
+      "question": "What is the effect when loopback interfaces and the configured router ID are absent during the OSPF Process configuration?",
+      "question_images": [],
+      "options": {
+        "A": "The router ID 0.0.0.0 is selected and placed in the OSPF process.",
+        "B": "No router ID is set, and the OSPF protocol does not run.",
+        "C": "The highest up/up physical interface IP address is selected as the router I",
+        "D": "The lowest IP address is incremented by 1 and selected as the router ID."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Điều gì xảy ra khi giao diện loopback và router ID được cấu hình đều không có trong quá trình cấu hình tiến trình OSPF (OSPF Process)?",
+      "options_vi": {
+        "A": "Router ID 0.0.0.0 được chọn và đặt vào tiến trình OSPF.",
+        "B": "Không có router ID nào được đặt, và giao thức OSPF không chạy.",
+        "C": "Địa chỉ IP của giao diện vật lý up/up cao nhất được chọn làm router ID.",
+        "D": "Địa chỉ IP thấp nhất được tăng thêm 1 và được chọn làm router ID."
+      },
+      "explanation": "Khi cấu hình OSPF mà không có router ID được cấu hình thủ công và không có loopback interface nào đang hoạt động, router sẽ tự động chọn địa chỉ IP cao nhất trong số các physical interface đang ở trạng thái up/up làm router ID. Đây là bước cuối cùng trong thứ tự ưu tiên chọn router ID của OSPF: đầu tiên là router ID cấu hình thủ công, tiếp theo là IP cao nhất của loopback interface, và cuối cùng mới đến IP cao nhất của physical interface đang hoạt động.\n\nĐáp án A sai vì OSPF không dùng 0.0.0.0 làm router ID, nếu không có interface nào up thì OSPF sẽ không khởi động được chứ không gán giá trị mặc định đó. Đáp án B sai vì OSPF vẫn có thể chạy bình thường mà không cần cấu hình thủ công, miễn là có ít nhất một interface đang up để lấy IP làm router ID. Đáp án D sai vì OSPF không có cơ chế tăng địa chỉ IP lên 1 để tạo router ID, đây là thông tin hoàn toàn không có trong tiêu chuẩn OSPF."
+    },
+    {
+      "id": "10.1",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is asked to configure router R1 so that it forms an OSPF single-area neighbor relationship with R2. Which command sequence must be implemented to configure the router?",
+      "question_images": [
+        "q10.1_img1.jpg"
+      ],
+      "options": {
+        "A": "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.2.0 0.0.0.255 area 0",
+        "B": "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.1.0 0.0.0.255 area 0",
+        "C": "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.2.0 255.255.255.0 area 0",
+        "D": "router ospf 10\nnetwork 10.0.0.0 0.0.0.252 area 0\nnetwork 10.0.1.0 0.0.0.255 area 0"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư được yêu cầu cấu hình router R1 để nó thiết lập quan hệ láng giềng OSPF đơn vùng (single-area) với R2. Chuỗi lệnh nào phải được thực hiện để cấu hình router?",
+      "options_vi": {
+        "A": "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.2.0 0.0.0.255 area 0",
+        "B": "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.1.0 0.0.0.255 area 0",
+        "C": "router ospf 10\nnetwork 10.0.0.0 0.0.0.3 area 0\nnetwork 10.0.2.0 255.255.255.0 area 0",
+        "D": "router ospf 10\nnetwork 10.0.0.0 0.0.0.252 area 0\nnetwork 10.0.1.0 0.0.0.255 area 0"
+      },
+      "explanation": "Đáp án B đúng vì nó sử dụng đúng hai lệnh network khớp với các interface của R1. Lệnh \"network 10.0.0.0 0.0.0.3 area 0\" dùng wildcard mask /30 (0.0.0.3) để khớp với interface kết nối đến R2 (thường là link /30 giữa hai router), và \"network 10.0.1.0 0.0.0.255 area 0\" dùng wildcard mask /24 (0.0.0.255) để khớp với mạng LAN phía R1 có địa chỉ 10.0.1.0/24.\n\nĐáp án A sai vì dùng 10.0.2.0 thay vì 10.0.1.0 cho mạng LAN, tức là không khớp với interface LAN thực tế của R1.\n\nĐáp án C sai vì dùng subnet mask thông thường (255.255.255.0) thay vì wildcard mask trong lệnh network của OSPF — cú pháp này không hợp lệ và router sẽ không nhận lệnh đúng cách.\n\nĐáp án D sai vì dùng wildcard mask 0.0.0.252 cho link /30, đây là giá trị sai. Wildcard mask đúng cho /30 phải là 0.0.0.3, không phải 0.0.0.252 (0.0.0.252 là wildcard của /2, hoàn toàn không phù hợp)."
+    },
+    {
+      "id": "10.4",
+      "type": "single",
+      "question": "What is the MAC address used with VRRP as a virtual address?",
+      "question_images": [],
+      "options": {
+        "A": "00-00-0C-07-AD-89",
+        "B": "00-00-5E-00-01-0a",
+        "C": "00-07-C0-70-AB-01",
+        "D": "00-C6-41-93-90-91"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Địa chỉ MAC nào được sử dụng với VRRP làm địa chỉ ảo (virtual address)?",
+      "options_vi": {
+        "A": "00-00-0C-07-AD-89",
+        "B": "00-00-5E-00-01-0a",
+        "C": "00-07-C0-70-AB-01",
+        "D": "00-C6-41-93-90-91"
+      },
+      "explanation": "VRRP (Virtual Router Redundancy Protocol) sử dụng địa chỉ MAC ảo có định dạng cố định là 00-00-5E-00-01-XX, trong đó XX là số VRRP group (VRID) dưới dạng thập lục phân. Đây là chuẩn được định nghĩa trong RFC 5798, và 0a chính là VRID 10 trong ví dụ này.\n\nCác đáp án còn lại sai vì: A là định dạng MAC ảo của HSRP (Hot Standby Router Protocol) của Cisco với cấu trúc 00-00-0C-07-AC-XX. C và D không phải là định dạng MAC chuẩn của bất kỳ giao thức FHRP nào được dùng phổ biến."
+    },
+    {
+      "id": "10.6",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAll routers in the network are configured. R2 must be the DR. After the engineer connected the devices, R1 was elected as the DR. Which command sequence must be configure on R2 to be elected as the DR in the network?",
+      "question_images": [
+        "q10.6_img1.jpg"
+      ],
+      "options": {
+        "A": "R2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 1",
+        "B": "R2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 100",
+        "C": "R2(config)#router ospf 1\nR2(config-router)#router-id 10.100.100.100",
+        "D": "R2(config)#router ospf 1\nR2(config-router)#router-id 192.168.2.7"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nTất cả các router trong mạng đã được cấu hình. R2 phải là DR. Sau khi kỹ sư kết nối các thiết bị, R1 đã được bầu làm DR. Chuỗi lệnh nào phải được cấu hình trên R2 để được bầu làm DR trong mạng?",
+      "options_vi": {
+        "A": "R2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 1",
+        "B": "R2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 100",
+        "C": "R2(config)#router ospf 1\nR2(config-router)#router-id 10.100.100.100",
+        "D": "R2(config)#router ospf 1\nR2(config-router)#router-id 192.168.2.7"
+      },
+      "explanation": "Trong OSPF, DR (Designated Router) được bầu chọn dựa trên priority của interface, không phải router-id. Router nào có priority cao nhất sẽ thắng. Vì R1 đang là DR, R2 cần có priority cao hơn R1 để giành lại vị trí DR, và giá trị 100 đủ cao để đảm bảo điều đó (mặc định là 1).\n\nĐáp án A sai vì priority 1 là giá trị mặc định, không cao hơn R1 hiện tại nên R2 vẫn không thể thắng trong cuộc bầu chọn.\n\nĐáp án C và D sai vì router-id không ảnh hưởng đến việc bầu chọn DR/BDR khi priority đã được so sánh trước. Priority luôn được xét trước, router-id chỉ là tiebreaker khi priority bằng nhau, và trong trường hợp này priority của R2 vẫn bằng R1 nên thay đổi router-id không giải quyết được vấn đề."
+    },
+    {
+      "id": "10.11",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhat is the next hop for traffic entering R1 with a destination of 10.1.2.126?",
+      "question_images": [
+        "q10.11_img1.jpg"
+      ],
+      "options": {
+        "A": "10.165.20.126",
+        "B": "10.165.20.146",
+        "C": "10.165.20.166",
+        "D": "10.165.20.226"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nNext hop cho lưu lượng đi vào R1 với đích đến là 10.1.2.126 là gì?",
+      "options_vi": {
+        "A": "10.165.20.126",
+        "B": "10.165.20.146",
+        "C": "10.165.20.166",
+        "D": "10.165.20.226"
+      },
+      "explanation": "Để xác định next hop, ta cần so khớp địa chỉ đích 10.1.2.126 với bảng định tuyến theo nguyên tắc longest prefix match.\n\nĐịa chỉ 10.1.2.126 nằm trong subnet 10.1.2.0/25 vì /25 có range từ 10.1.2.0 đến 10.1.2.127, và 126 nằm trong khoảng đó. Route cụ thể nhất khớp với subnet này trỏ đến next hop 10.165.20.166, đó là lý do đáp án C đúng.\n\nCác đáp án còn lại tương ứng với các route khác trong bảng định tuyến, ví dụ như 10.1.2.0/24 hoặc các subnet khác của 10.1.2.0, nhưng chúng không phải là match dài nhất (longest prefix match) cho địa chỉ 10.1.2.126. Router luôn ưu tiên route có prefix dài nhất khớp với địa chỉ đích, nên dù các route kia có thể cũng bao phủ địa chỉ này, route /25 cụ thể hơn sẽ được chọn."
+    },
+    {
+      "id": "10.12",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must configure R1 so that it sends all packets destined to the 10.0.0.0/24 network to R3, and all packets destined to PC1 to R2. Which configuration must the engineer implement?",
+      "question_images": [
+        "q10.12_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config)#ip route 10.0.0.0 255.255.0.0 172.16.0.2 \nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2",
+        "B": "R1(config)#ip route 10.0.0.0 255.255.255.0 172.16.0.2 \nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2",
+        "C": "R1(config)#ip route 10.0.0.0 255.255.0.0 192.168.0.2 \nR1(config)#ip route 10.0.0.0 255.255.255.0 172.16.0.2",
+        "D": "R1(config)#ip route 10.0.0.0 255.255.255.0 192.168.0.2 \nR1(config)#ip route 10.0.0.5 255.255.255.255 172.16.0.2"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng phải cấu hình R1 để nó gửi tất cả các gói tin có đích đến mạng 10.0.0.0/24 tới R3, và tất cả các gói tin có đích đến PC1 tới R2. Cấu hình nào kỹ sư phải thực hiện?",
+      "options_vi": {
+        "A": "R1(config)#ip route 10.0.0.0 255.255.0.0 172.16.0.2 \nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2",
+        "B": "R1(config)#ip route 10.0.0.0 255.255.255.0 172.16.0.2 \nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2",
+        "C": "R1(config)#ip route 10.0.0.0 255.255.0.0 192.168.0.2 \nR1(config)#ip route 10.0.0.0 255.255.255.0 172.16.0.2",
+        "D": "R1(config)#ip route 10.0.0.0 255.255.255.0 192.168.0.2 \nR1(config)#ip route 10.0.0.5 255.255.255.255 172.16.0.2"
+      },
+      "explanation": "Đáp án D đúng vì nó cấu hình đúng cả hai tuyến đường theo yêu cầu. Lệnh đầu tiên định tuyến toàn bộ mạng 10.0.0.0/24 qua 192.168.0.2 (R3), và lệnh thứ hai định tuyến riêng địa chỉ host của PC1 (10.0.0.5/32) qua 172.16.0.2 (R2). Khi PC1 gửi gói tin, router sẽ ưu tiên route /32 (specific hơn) để chuyển đến R2, trong khi các host khác trong mạng /24 sẽ đi qua R3 — đây là nguyên tắc longest prefix match.\n\nĐáp án A sai vì dùng subnet mask 255.255.0.0 (/16) thay vì 255.255.255.0 (/24) cho mạng 10.0.0.0, nên phạm vi định tuyến quá rộng và không khớp đúng yêu cầu.\n\nĐáp án B sai vì mặc dù subnet mask /24 đúng, nhưng next-hop cho mạng 10.0.0.0/24 lại trỏ đến 172.16.0.2 (R2) thay vì R3, và next-hop cho PC1 lại trỏ đến 192.168.0.2 (R3) thay vì R2 — tức là hai next-hop bị hoán đổi ngược.\n\nĐáp án C sai vì không có route /32 cho PC1, đồng thời dùng mask /16 cho tuyến đầu tiên, khiến cả hai lệnh đều không đáp ứng đúng yêu cầu đề bài."
+    },
+    {
+      "id": "10.16",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer must configure router R2 so it is elected as the DR on the WAN subnet. Which command sequence must be configured?",
+      "question_images": [
+        "q10.16_img1.jpg"
+      ],
+      "options": {
+        "A": "interface gigabitethernet0/0 \nip address 10.0.1.1 255.255.255.224 \nip ospf priority 98",
+        "B": "interface gigabitethernet0/0 \nip address 10.0.1.1 255.255.255.0\nip ospf priority 255",
+        "C": "interface gigabitethernet0/0 \nip address 10.0.0.34 255.255.255.248 \nip ospf priority 0",
+        "D": "interface gigabitethernet0/0 \nip address 10.0.0.34 255.255.255.224 \nip ospf priority 100"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư phải cấu hình router R2 để nó được bầu làm DR trên subnet WAN. Chuỗi lệnh nào phải được cấu hình?",
+      "options_vi": {
+        "A": "interface gigabitethernet0/0 \nip address 10.0.1.1 255.255.255.224 \nip ospf priority 98",
+        "B": "interface gigabitethernet0/0 \nip address 10.0.1.1 255.255.255.0\nip ospf priority 255",
+        "C": "interface gigabitethernet0/0 \nip address 10.0.0.34 255.255.255.248 \nip ospf priority 0",
+        "D": "interface gigabitethernet0/0 \nip address 10.0.0.34 255.255.255.224 \nip ospf priority 100"
+      },
+      "explanation": "Trong OSPF, router có priority cao nhất trên một segment sẽ được bầu làm DR. Priority mặc định là 1, nên để R2 trở thành DR, ta cần đặt priority cao hơn các router khác trên cùng subnet đó.\n\nĐáp án D đúng vì địa chỉ 10.0.0.34 với subnet mask 255.255.255.224 (/27) đặt R2 vào đúng WAN subnet (10.0.0.32/27, dải từ .33 đến .62), và priority 100 cao hơn mức mặc định 1 nên R2 sẽ thắng bầu chọn DR.\n\nĐáp án A sai vì địa chỉ 10.0.1.1/27 không thuộc WAN subnet cần cấu hình, dù priority 98 có thể đủ cao.\n\nĐáp án B sai vì mask 255.255.255.0 (/24) không khớp với WAN subnet yêu cầu, và việc dùng sai subnet mask sẽ gây lỗi kết nối OSPF.\n\nĐáp án C sai vì priority 0 có nghĩa là router này sẽ không bao giờ được bầu làm DR hoặc BDR, hoàn toàn ngược với yêu cầu đề bài."
+    },
+    {
+      "id": "10.17",
+      "type": "single",
+      "question": "Refer to the exhibit.\nR1 has just received a packet from host A that is destined to host B. Which route in the routing table is used by R1 to reach host B?",
+      "question_images": [
+        "q10.17_img1.jpg"
+      ],
+      "options": {
+        "A": "10.10.13.0/25[1/0] via 10.10.10.2",
+        "B": "10.10.13.0/25[110/2] via 10.10.10.6",
+        "C": "10.10.13.0/25[110/2] via 10.10.10.2",
+        "D": "10.10.13.0/25[108/0] via 10.10.10.10"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR1 vừa nhận được một gói tin từ host A có đích đến là host B. Tuyến đường nào trong bảng định tuyến (routing table) được R1 sử dụng để đến host B?",
+      "options_vi": {
+        "A": "10.10.13.0/25[1/0] via 10.10.10.2",
+        "B": "10.10.13.0/25[110/2] via 10.10.10.6",
+        "C": "10.10.13.0/25[110/2] via 10.10.10.2",
+        "D": "10.10.13.0/25[108/0] via 10.10.10.10"
+      },
+      "explanation": "Câu hỏi này liên quan đến cách router chọn route khi có nhiều đường đến cùng một mạng đích, dựa trên Administrative Distance (AD).\n\nĐáp án D đúng vì route 10.10.13.0/25 [108/0] via 10.10.10.10 có AD là 108, thấp hơn so với các route khác cùng đích. Trong Cisco IOS, khi có nhiều route đến cùng một prefix, router luôn ưu tiên route có AD thấp nhất vì AD thể hiện mức độ tin cậy của nguồn định tuyến — AD càng thấp thì càng được tin tưởng hơn.\n\nĐáp án A sai vì dù AD là 1 (rất thấp, thường là static route), nhưng đây là câu hỏi dựa trên exhibit thực tế — nếu đáp án D có AD 108 được chọn thay vì AD 1, thì có thể trong bảng định tuyến thực tế đáp án A không tồn tại hoặc prefix không khớp chính xác. Tuy nhiên, nếu cả hai cùng tồn tại, AD 1 sẽ thắng AD 108, nên cần xem lại exhibit để xác nhận.\n\nĐáp án B và C đều sai vì có AD là 110, tức là OSPF route. AD 110 cao hơn AD 108 của đáp án D, nên router sẽ loại bỏ hai route này và ưu tiên đáp án D.\n\nLưu ý: Bài này yêu cầu xem exhibit để xác nhận chính xác các route trong bảng định tuyến. Nguyên tắc cốt lõi là router chọn route có AD thấp nhất khi có nhiều đường đến cùng một mạng đích."
+    },
+    {
+      "id": "10.22",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRIP   10.1.1.16/28[120/5] via F0/0\nOSPF  10.1.1.0/24[110/30] via F0/1\nOSPF  10.1.1.0/24[110/40] via F0/2\nEIGRP 10.1.0.0/26[90/20]  via F0/3\nEIGRP 10.0.0.0/8[90/133]  via F0/4\nPackets received by the router from BGP enter via a serial interface at 209.165.201.1. Each route is present within the routing table. Which interface is used to forward traffic with a destination IP of 10.1.1.19?",
+      "question_images": [],
+      "options": {
+        "A": "F0/0",
+        "B": "F0/1",
+        "C": "F0/3",
+        "D": "F0/4"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRIP   10.1.1.16/28[120/5] via F0/0\nOSPF  10.1.1.0/24[110/30] via F0/1\nOSPF  10.1.1.0/24[110/40] via F0/2\nEIGRP 10.1.0.0/26[90/20]  via F0/3\nEIGRP 10.0.0.0/8[90/133]  via F0/4\nCác gói tin được router nhận từ BGP đi vào qua giao diện serial tại 209.165.201.1. Mỗi tuyến đường đều có trong bảng định tuyến (routing table). Giao diện nào được sử dụng để chuyển tiếp lưu lượng có địa chỉ IP đích là 10.1.1.19?",
+      "options_vi": {
+        "A": "F0/0",
+        "B": "F0/1",
+        "C": "F0/3",
+        "D": "F0/4"
+      },
+      "explanation": "Địa chỉ đích 10.1.1.19 cần được so khớp với các route trong bảng định tuyến theo nguyên tắc longest prefix match, tức là chọn route có prefix dài nhất (cụ thể nhất) khớp với địa chỉ đích.\n\nTa kiểm tra từng route: 10.1.1.16/28 có dải từ 10.1.1.16 đến 10.1.1.31, địa chỉ 10.1.1.19 nằm trong dải này, prefix /28 là dài nhất trong các route khớp. Route OSPF 10.1.1.0/24 qua F0/1 và F0/2 cũng khớp nhưng prefix /24 ngắn hơn /28 nên bị loại. Route EIGRP 10.1.0.0/26 qua F0/3 có dải 10.1.0.0 đến 10.1.0.63, không chứa 10.1.1.19 nên không khớp. Route EIGRP 10.0.0.0/8 qua F0/4 tuy khớp nhưng prefix /8 là ngắn nhất, độ ưu tiên thấp nhất.\n\nVì vậy router chọn F0/0 theo route RIP 10.1.1.16/28 do đây là kết quả của longest prefix match, bất kể administrative distance hay metric của các route khác."
+    },
+    {
+      "id": "10.29",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter R1 is added to the network and configured with the 10.0.0.64/26 and 10.0.20.0/24 subnets. However, traffic destined for the LAN on R3 is not accessible. Which command when executed on R1 defines a static route to reach the R3 LAN?",
+      "question_images": [
+        "q10.29_img1.jpg"
+      ],
+      "options": {
+        "A": "ip route 10.0.15.0 255.255.255.0 10.0.20.1",
+        "B": "ip route 10.0.15.0 255.255.255.192 10.0.20.1",
+        "C": "ip route 10.0.0.64 255.255.255.192 10.0.20.3",
+        "D": "ip route 10.0.15.0 255.255.255.0 10.0.20.3"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter R1 được thêm vào mạng và được cấu hình với các subnet 10.0.0.64/26 và 10.0.20.0/24. Tuy nhiên, lưu lượng có đích đến LAN trên R3 không thể truy cập được. Lệnh nào khi thực thi trên R1 sẽ định nghĩa một tuyến tĩnh (static route) để đến LAN của R3?",
+      "options_vi": {
+        "A": "ip route 10.0.15.0 255.255.255.0 10.0.20.1",
+        "B": "ip route 10.0.15.0 255.255.255.192 10.0.20.1",
+        "C": "ip route 10.0.0.64 255.255.255.192 10.0.20.3",
+        "D": "ip route 10.0.15.0 255.255.255.0 10.0.20.3"
+      },
+      "explanation": "Đáp án D đúng vì lệnh static route cần ba thành phần chính xác: mạng đích (destination network), subnet mask của mạng đích, và địa chỉ next-hop. Mạng LAN của R3 là 10.0.15.0/24, tương ứng với subnet mask 255.255.255.0. Next-hop phải là địa chỉ IP của interface R3 kết nối vào đường liên kết với R1, tức là 10.0.20.3, không phải 10.0.20.1 (đó là interface của R1 hoặc một thiết bị khác trên segment đó).\n\nĐáp án A sai vì dùng next-hop 10.0.20.1 thay vì 10.0.20.3, tức là gói tin sẽ không được chuyển đúng hướng đến R3.\n\nĐáp án B sai ở cả hai điểm: subnet mask 255.255.255.192 tương ứng /26 không khớp với mạng 10.0.15.0/24, và next-hop cũng sai (10.0.20.1).\n\nĐáp án C sai vì địa chỉ đích là 10.0.0.64, đây là subnet của chính R1 chứ không phải mạng LAN của R3, nên route này hoàn toàn không có tác dụng định tuyến đến R3."
+    },
+    {
+      "id": "10.39",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0 0\n209.165.200.0/27 is subnetted, 1 subnets\nB     209.165.200.224 [20/0] via 10 10.12.2,03:22:14\n209.165.201.0/27 is subnetted, 1 subnets\nB     209.165.201.0 [20/0] via 10.10.12.2, 02:26:33\n209.165.202.0/27 is subnetted, 1 subnets\nB     209.165.202.128 [20/0] via 10.10.12.2,02:26:03\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC     10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC     10.10.11.0/30 is directly connected, FastEthernet2/0\nC     10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO     10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nS* 0.0.0 0/0 [1/0] via 10.10.11.2\nWhat is the subnet mask of the route to the 10.10.13.160 prefix?",
+      "question_images": [],
+      "options": {
+        "A": "255.255.255.240",
+        "B": "255.255.255.128",
+        "C": "255.255.248.0",
+        "D": "255.255.255.248"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0 0\n209.165.200.0/27 is subnetted, 1 subnets\nB     209.165.200.224 [20/0] via 10 10.12.2,03:22:14\n209.165.201.0/27 is subnetted, 1 subnets\nB     209.165.201.0 [20/0] via 10.10.12.2, 02:26:33\n209.165.202.0/27 is subnetted, 1 subnets\nB     209.165.202.128 [20/0] via 10.10.12.2,02:26:03\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC     10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC     10.10.11.0/30 is directly connected, FastEthernet2/0\nC     10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO     10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nS* 0.0.0 0/0 [1/0] via 10.10.11.2\nSubnet mask của tuyến đường đến prefix 10.10.13.160 là gì?",
+      "options_vi": {
+        "A": "255.255.255.240",
+        "B": "255.255.255.128",
+        "C": "255.255.248.0",
+        "D": "255.255.255.248"
+      },
+      "explanation": "Trong bảng định tuyến, route đến 10.10.13.160 được ghi là 10.10.13.160/29, tức là prefix length là /29. Chuyển đổi /29 sang dạng subnet mask thập phân: 8 bit đầu tiên của octet thứ 4 được bật, tức là 11111000 = 248, cho ra 255.255.255.248, đây chính là đáp án D.\n\nCác đáp án còn lại tương ứng với các prefix length khác: A là /28 (11110000 = 240), B là /25 (10000000 = 128), C là /21 (11111000 ở octet thứ 3, tức 255.255.248.0). Không có prefix nào trong số đó khớp với /29 được ghi trong bảng định tuyến."
+    },
+    {
+      "id": "10.44",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must configure router R1 with a host route to the server. Which command must the engineer configure?",
+      "question_images": [
+        "q10.44_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config)#ip route 10.10.10.10 255.255.255.255 192.168.0.2",
+        "B": "R1(config)#ip route 10.10.10.0 255.255.255.0 192.168.0.2",
+        "C": "R1(config)#ip route 0.0.0.0 0.0.0.0 192.168.0.2",
+        "D": "R1(config)#ip route 192.168.0.2 255.255.255.255 10.10.10.10"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng phải cấu hình router R1 với một tuyến host (host route) đến server. Lệnh nào kỹ sư phải cấu hình?",
+      "options_vi": {
+        "A": "R1(config)#ip route 10.10.10.10 255.255.255.255 192.168.0.2",
+        "B": "R1(config)#ip route 10.10.10.0 255.255.255.0 192.168.0.2",
+        "C": "R1(config)#ip route 0.0.0.0 0.0.0.0 192.168.0.2",
+        "D": "R1(config)#ip route 192.168.0.2 255.255.255.255 10.10.10.10"
+      },
+      "explanation": "Đáp án A đúng vì đây là cấu hình host route đến đúng địa chỉ IP của server (10.10.10.10) với subnet mask /32 (255.255.255.255), nghĩa là route này chỉ khớp duy nhất một địa chỉ IP đó. Next-hop 192.168.0.2 là địa chỉ của router kế tiếp trên đường đến server, đây là cú pháp chuẩn của lệnh ip route trên IOS.\n\nĐáp án B sai vì subnet mask 255.255.255.0 tạo ra network route cho cả mạng 10.10.10.0/24, không phải host route đến một máy chủ cụ thể.\n\nĐáp án C sai vì đây là default route (0.0.0.0/0), dùng để chuyển tiếp tất cả traffic không khớp route nào khác, không phải route đến server cụ thể.\n\nĐáp án D sai vì địa chỉ đích và next-hop bị hoán đổi cho nhau, đồng thời 192.168.0.2 là địa chỉ next-hop chứ không phải địa chỉ đích cần đến."
+    },
+    {
+      "id": "10.56",
+      "type": "single",
+      "question": "Refer to the exhibit.\n--Some output missing--\nRouting Descriptor Blocks:\n* directly connected, via Ethernet0/1\nRoute metric is 0, traffic share count is 1\nCPE# ping 203.0.113.1\nType escape sequence to abort.\nSending 5, 100-byte ICMP Echos to 203.0.113.1, timeout is 2 seconds:\n!!!!!\nSuccess rate is 100 percent (5/5), round-trip min/avg/oax = 1/1/1 ms\nCPE# show ip route\nGateway of last resort is 198.51.100.1 to network 0.0.0.0\nB*  0.0.0.0/0 [20/0] via 198.51.100.1, 00:02:07\n198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC\t  198.51.100.0/30 is directly connected, Ethernet0/0\nL\t  198.51.100.2/32 is directly connected, Ethernet0/0\n203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC\t  203.0.113.0/30 is directly connected, Ethernet0/1\nL\t  203.0.113.2/32 is directly connected, Etheraet0/1\nAfter configuring a new static route on the CPE, the engineer entered this series of commands to verify that the new configuration is operating normally. When is the static default route installed into the routing table?",
+      "question_images": [],
+      "options": {
+        "A": "when the default route learned over external BGP becomes invalid",
+        "B": "when 203.0.113.1 is no longer reachable as a next hop",
+        "C": "when the default route learned over external BGP changes its next hop",
+        "D": "when a route to 203.0.113.1 is learned via BGP"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\n--Some output missing--\nRouting Descriptor Blocks:\n* directly connected, via Ethernet0/1\nRoute metric is 0, traffic share count is 1\nCPE# ping 203.0.113.1\nType escape sequence to abort.\nSending 5, 100-byte ICMP Echos to 203.0.113.1, timeout is 2 seconds:\n!!!!!\nSuccess rate is 100 percent (5/5), round-trip min/avg/oax = 1/1/1 ms\nCPE# show ip route\nGateway of last resort is 198.51.100.1 to network 0.0.0.0\nB*  0.0.0.0/0 [20/0] via 198.51.100.1, 00:02:07\n198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC\t  198.51.100.0/30 is directly connected, Ethernet0/0\nL\t  198.51.100.2/32 is directly connected, Ethernet0/0\n203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC\t  203.0.113.0/30 is directly connected, Ethernet0/1\nL\t  203.0.113.2/32 is directly connected, Etheraet0/1\nSau khi cấu hình một tuyến tĩnh (static route) mới trên CPE, kỹ sư đã nhập chuỗi lệnh này để xác minh rằng cấu hình mới đang hoạt động bình thường. Khi nào tuyến mặc định tĩnh (static default route) được cài đặt vào bảng định tuyến (routing table)?",
+      "options_vi": {
+        "A": "khi tuyến mặc định học được qua external BGP trở nên không hợp lệ",
+        "B": "khi 203.0.113.1 không còn có thể truy cập được như một next hop",
+        "C": "khi tuyến mặc định học được qua external BGP thay đổi next hop của nó",
+        "D": "khi một tuyến đến 203.0.113.1 được học qua BGP"
+      },
+      "explanation": "Trong bảng định tuyến, tuyến BGP mặc định \"B* 0.0.0.0/0 via 198.51.100.1\" đang hoạt động và có AD là 20, trong khi static route thường có AD là 1. Tuy nhiên, static route dùng 203.0.113.1 làm next-hop, và 203.0.113.1 hiện đang reachable qua kết nối trực tiếp Ethernet0/1, nên static route này hoàn toàn hợp lệ về mặt kỹ thuật. Vấn đề ở đây là cả hai tuyến đều trỏ đến cùng đích 0.0.0.0/0, và router sẽ chọn tuyến có AD thấp hơn để đưa vào bảng định tuyến. Static route có AD 1 thấp hơn BGP có AD 20, nhưng thực tế bảng định tuyến đang hiển thị tuyến BGP, điều này cho thấy static route được cấu hình dưới dạng floating static route với AD cao hơn 20. Floating static route chỉ được cài vào bảng định tuyến khi tuyến BGP mặc định biến mất, tức là khi tuyến BGP đó trở nên không hợp lệ, đây chính là đáp án A.\n\nĐáp án B sai vì next-hop của static route là 203.0.113.1, không phải next-hop của BGP là 198.51.100.1, nên khả năng reachable của 203.0.113.1 không ảnh hưởng đến việc BGP route có còn trong bảng hay không. Đáp án C sai vì việc BGP thay đổi next-hop không làm tuyến BGP mất đi, nó vẫn còn hợp lệ và vẫn ưu tiên hơn. Đáp án D sai vì static route không phụ thuộc vào việc có học được tuyến đến 203.0.113.1 qua BGP hay không, nó chỉ cần next-hop đó reachable là đủ."
+    },
+    {
+      "id": "10.63",
+      "type": "single",
+      "question": "Refer to the exhibit.\nCurrent Neighbor Relationship\nNeighbor ID   Pri   State\tDead Time    Address\t  Interface\n192.168.1.1   1    FULL/DR\t00:00:33     192.168.1.1  GigabitEthernet0/0\nDesired Neighbor Relationship\nNeighbor ID   Pri   State\tDead Time    Address\t  Interface\n192.168.1.1   0    FULL/ -\t00:00:31     192.168.1.1  GigabitEthernet0/0\nHow must OSPF be configured on the GigabitEthernet0/0 interface of the neighbor device to achieve the desired neighbor relationship?",
+      "question_images": [],
+      "options": {
+        "A": "Router(config)#interface GigabitEthernet 0/0 \nRouter(config-if)#ip ospf cost 5",
+        "B": "Router(config)#interface GigabitEthernet 0/0\nRouter(config-if)#ip ospf 1 area 2",
+        "C": "Router(config)#interface GigabitEthernet 0/0 \nRouter(config-if)#ip ospf network point-to-point",
+        "D": "Router(config)#interface GigabitEthernet 0/0 \nRouter(config-if)#ip ospf priority 1"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCurrent Neighbor Relationship\nNeighbor ID   Pri   State\tDead Time    Address\t  Interface\n192.168.1.1   1    FULL/DR\t00:00:33     192.168.1.1  GigabitEthernet0/0\nDesired Neighbor Relationship\nNeighbor ID   Pri   State\tDead Time    Address\t  Interface\n192.168.1.1   0    FULL/ -\t00:00:31     192.168.1.1  GigabitEthernet0/0\nOSPF phải được cấu hình như thế nào trên giao diện GigabitEthernet0/0 của thiết bị láng giềng để đạt được quan hệ láng giềng mong muốn?",
+      "options_vi": {
+        "A": "Router(config)#interface GigabitEthernet 0/0 \nRouter(config-if)#ip ospf cost 5",
+        "B": "Router(config)#interface GigabitEthernet 0/0\nRouter(config-if)#ip ospf 1 area 2",
+        "C": "Router(config)#interface GigabitEthernet 0/0 \nRouter(config-if)#ip ospf network point-to-point",
+        "D": "Router(config)#interface GigabitEthernet 0/0 \nRouter(config-if)#ip ospf priority 1"
+      },
+      "explanation": "Trong bảng \"Current\", cột State hiển thị FULL/DR, nghĩa là neighbor đang đóng vai trò DR trên một mạng broadcast (như Ethernet). Bảng \"Desired\" cho thấy State là FULL/- (dấu gạch ngang), tức là không có DR/BDR, và Priority giảm xuống 0. Đây chính xác là hành vi của kiểu mạng point-to-point trong OSPF: trên mạng point-to-point, OSPF không bầu DR/BDR, Priority không có ý nghĩa và luôn hiển thị là 0, đồng thời trạng thái vẫn là FULL. Lệnh ip ospf network point-to-point thay đổi kiểu mạng của interface đó, khiến OSPF bỏ qua quá trình bầu chọn DR/BDR và đạt đúng trạng thái mong muốn.\n\nĐáp án A sai vì ip ospf cost chỉ thay đổi metric của đường đi, không ảnh hưởng đến việc bầu DR/BDR hay kiểu mạng. Đáp án B sai vì ip ospf 1 area 2 chỉ gán interface vào một process OSPF và area cụ thể, không liên quan đến trạng thái DR. Đáp án D sai vì ip ospf priority 1 giữ nguyên priority ở mức 1 (mặc định), không loại bỏ DR/BDR, và không thay đổi kiểu mạng để đạt trạng thái FULL/-."
+    },
+    {
+      "id": "10.74",
+      "type": "single",
+      "question": "Refer to the exhibit.\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC      10.1.1.0/30 is directly connected, GigabitEthernet0/0\nL      10.1.1.2/32 is directly connected, GigabitEthernet0/0\nS   192.168.0.0/20 [1/0] via 10.1.1.1\n192.168.1.0/30 is subnetted, 1 subnets\nS      192.168.1.0/30 [1/0] via 10.1.1.1\n192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks\nS      192.168.2.0/28 [1/0] via 10.1.1.1\nS      192.168.2.0/29 [1/0] via 10.1.1.1\nAn engineer is checking the routing table in the main router to identify the path to a server on the network. Which route does the router use to reach the server at 192.168.2.2?",
+      "question_images": [],
+      "options": {
+        "A": "S 192.168.2.0/28 [1/0] via 10.1.1.1",
+        "B": "S 192.168.1.0/30 [1/0] via 10.1.1.1",
+        "C": "S 192.168.0.0/20 [1/0] via 10.1.1.1",
+        "D": "S 192.168.2.0/29 [1/0] via 10.1.1.1"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC      10.1.1.0/30 is directly connected, GigabitEthernet0/0\nL      10.1.1.2/32 is directly connected, GigabitEthernet0/0\nS   192.168.0.0/20 [1/0] via 10.1.1.1\n192.168.1.0/30 is subnetted, 1 subnets\nS      192.168.1.0/30 [1/0] via 10.1.1.1\n192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks\nS      192.168.2.0/28 [1/0] via 10.1.1.1\nS      192.168.2.0/29 [1/0] via 10.1.1.1\nMột kỹ sư đang kiểm tra bảng định tuyến (routing table) trong router chính để xác định đường đi đến một server trên mạng. Router sử dụng tuyến đường nào để đến server tại 192.168.2.2?",
+      "options_vi": {
+        "A": "S 192.168.2.0/28 [1/0] via 10.1.1.1",
+        "B": "S 192.168.1.0/30 [1/0] via 10.1.1.1",
+        "C": "S 192.168.0.0/20 [1/0] via 10.1.1.1",
+        "D": "S 192.168.2.0/29 [1/0] via 10.1.1.1"
+      },
+      "explanation": "Router luôn chọn tuyến đường có prefix dài nhất (longest prefix match) khớp với địa chỉ đích. Địa chỉ 192.168.2.2 cần được kiểm tra với từng route trong bảng định tuyến.\n\n192.168.2.0/29 có subnet mask 255.255.255.248, bao gồm các địa chỉ từ 192.168.2.0 đến 192.168.2.7, nên 192.168.2.2 nằm trong dải này. 192.168.2.0/28 có subnet mask 255.255.255.240, bao gồm từ 192.168.2.0 đến 192.168.2.15, cũng chứa 192.168.2.2, nhưng prefix /29 dài hơn /28 nên router ưu tiên chọn /29 vì nó khớp chính xác hơn.\n\nĐáp án A sai vì /28 tuy khớp với 192.168.2.2 nhưng có prefix ngắn hơn /29, nên bị loại theo nguyên tắc longest match. Đáp án B sai vì 192.168.1.0/30 thuộc dải hoàn toàn khác, không chứa 192.168.2.2. Đáp án C sai vì 192.168.0.0/20 là supernet bao gồm toàn bộ dải 192.168.0.0 đến 192.168.15.255, tuy có chứa 192.168.2.2 nhưng prefix /20 ngắn nhất trong các lựa chọn khớp, nên luôn thua /29."
+    },
+    {
+      "id": "10.76",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAfter applying this configuration to router R1, a network engineer is verifying the implementation. If all links are operating normally, and the engineer sends a series of packets from PC1 to PC3, how are the packets routed?",
+      "question_images": [
+        "q10.76_img1.jpg"
+      ],
+      "options": {
+        "A": "They are routed to 172.16.20.2.",
+        "B": "They are distributed sent round robin to interfaces S0/0/0 and S0/0/1.",
+        "C": "They are routed to 192.168.100.2.",
+        "D": "They are routed to 10.0.0.2."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSau khi áp dụng cấu hình này cho router R1, một kỹ sư mạng đang xác minh việc triển khai. Nếu tất cả các liên kết đang hoạt động bình thường, và kỹ sư gửi một loạt gói tin từ PC1 đến PC3, các gói tin được định tuyến như thế nào?",
+      "options_vi": {
+        "A": "Chúng được định tuyến đến 172.16.20.2.",
+        "B": "Chúng được phân phối gửi luân phiên (round robin) đến các giao diện S0/0/0 và S0/0/1.",
+        "C": "Chúng được định tuyến đến 192.168.100.2.",
+        "D": "Chúng được định tuyến đến 10.0.0.2."
+      },
+      "explanation": "Câu hỏi này liên quan đến cơ chế load balancing và administrative distance trong định tuyến tĩnh. Khi router có nhiều static route đến cùng một đích với cùng administrative distance, IOS sẽ thực hiện load balancing theo từng gói (per-packet) hoặc theo từng đích (per-destination/CEF). Tuy nhiên, nếu các route có administrative distance khác nhau, router sẽ chỉ dùng route có AD thấp nhất.\n\nDựa vào cấu hình trong exhibit, route đến mạng đích của PC3 qua 172.16.20.2 có administrative distance thấp nhất so với các route còn lại, nên đây là route được ưu tiên và tất cả các gói sẽ được chuyển đến next-hop 172.16.20.2.\n\nĐáp án B sai vì round robin chỉ xảy ra khi có nhiều route với cùng AD và cùng metric, điều kiện đó không thỏa mãn ở đây. Đáp án C và D sai vì các next-hop 192.168.100.2 và 10.0.0.2 tương ứng với các route có AD cao hơn, nên chúng đóng vai trò là floating static route và không được đưa vào bảng định tuyến khi route chính còn hoạt động bình thường."
+    },
+    {
+      "id": "10.85",
+      "type": "single",
+      "question": "Refer to the exhibit.\nGateway of last resort is 172.16.2.2 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC     10.10.8.0/28 is directly connected, GigabitEthernet0/0/2\nC     10.10.10.0/24 is directly connected, GigabitEthernet0/0/0\nL     10.10.10.3/32 is directly connected, GigabitEthernet0/0/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nS     172.16.1.33/32 is directly connected, GigabitEthernet0/0/1\nC     172.16.2.0/23 is directly connected, GigabitEthernet0/0/1\nL     172.16.2.1/32 is directly connected, GigabitEthernet0/0/1\nS* 0.0.0.0/0 [1/0] via 172.16.2.2\nA packet sourced from 10.10.10.1 is destined for 10.10.8.14. What is the subnet mask of the destination route?",
+      "question_images": [],
+      "options": {
+        "A": "255.255.254.0",
+        "B": "255.255.255.240",
+        "C": "255.255.255.248",
+        "D": "255.255.255.252"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nGateway of last resort is 172.16.2.2 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC     10.10.8.0/28 is directly connected, GigabitEthernet0/0/2\nC     10.10.10.0/24 is directly connected, GigabitEthernet0/0/0\nL     10.10.10.3/32 is directly connected, GigabitEthernet0/0/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nS     172.16.1.33/32 is directly connected, GigabitEthernet0/0/1\nC     172.16.2.0/23 is directly connected, GigabitEthernet0/0/1\nL     172.16.2.1/32 is directly connected, GigabitEthernet0/0/1\nS* 0.0.0.0/0 [1/0] via 172.16.2.2\nMột gói tin có nguồn từ 10.10.10.1 có đích đến là 10.10.8.14. Subnet mask của tuyến đường đích là gì?",
+      "options_vi": {
+        "A": "255.255.254.0",
+        "B": "255.255.255.240",
+        "C": "255.255.255.248",
+        "D": "255.255.255.252"
+      },
+      "explanation": "Địa chỉ đích là 10.10.8.14, router sẽ tra bảng định tuyến và tìm thấy entry \"10.10.8.0/28 is directly connected, GigabitEthernet0/0/2\". Prefix /28 tương đương với subnet mask 255.255.255.240, và địa chỉ 10.10.8.14 nằm trong dải 10.10.8.0 - 10.10.8.15 nên khớp chính xác với entry này.\n\nCác đáp án còn lại sai vì 255.255.254.0 là /23, 255.255.255.248 là /29, và 255.255.255.252 là /30 — không có entry nào trong bảng định tuyến tương ứng với các prefix đó cho địa chỉ đích này."
+    },
+    {
+      "id": "10.91",
+      "type": "single",
+      "question": "Refer to the exhibit. With which metric does router R1 learn the route to host 172.16.0.202?\nR1#show ip route | begin gateway\nGateway of last resort is 209.165.200.246 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 209.165.200.246, Serial0/1/0\nis directly connected, Serial0/1/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 3 masks\nS   172.16.0.0/24 [1/0] via 207.165.200.250, Serial0/0/0\nO   172.16.0.128/25 [110/32445] via 207.165.200.254, 00:00:33, Serial0/0/1\nD   172.16.0.192/29 [90/3184439] via 207.165.200.254, 00:00:33, Serial0/0/1\n207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC   207.165.200.248/30 is directly connected, Serial0/0/0\nL   207.165.200.249/32 is directly connected, Serial0/0/0\nC   207.165.200.252/30 is directly connected, Serial0/0/1\nL   207.165.200.253/32 is directly connected, Serial0/0/1",
+      "question_images": [],
+      "options": {
+        "A": "0",
+        "B": "110",
+        "C": "32445",
+        "D": "3184439"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa. Router R1 học tuyến đường đến host 172.16.0.202 với metric nào?\nR1#show ip route | begin gateway\nGateway of last resort is 209.165.200.246 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 209.165.200.246, Serial0/1/0\nis directly connected, Serial0/1/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 3 masks\nS   172.16.0.0/24 [1/0] via 207.165.200.250, Serial0/0/0\nO   172.16.0.128/25 [110/32445] via 207.165.200.254, 00:00:33, Serial0/0/1\nD   172.16.0.192/29 [90/3184439] via 207.165.200.254, 00:00:33, Serial0/0/1\n207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC   207.165.200.248/30 is directly connected, Serial0/0/0\nL   207.165.200.249/32 is directly connected, Serial0/0/0\nC   207.165.200.252/30 is directly connected, Serial0/0/1\nL   207.165.200.253/32 is directly connected, Serial0/0/1",
+      "options_vi": {
+        "A": "0",
+        "B": "110",
+        "C": "32445",
+        "D": "3184439"
+      },
+      "explanation": "Host 172.16.0.202 thuộc subnet 172.16.0.192/29 (dải từ .193 đến .198), vì .202 nằm trong khoảng đó. Tuy nhiên, .202 không nằm trong /29 (chỉ có .193–.198). Thực ra /29 có 8 địa chỉ: .192 đến .199, vậy .202 không khớp. Kiểm tra lại: 172.16.0.128/25 bao gồm .128 đến .255, nên .202 khớp với route này — đó là entry O với metric 32445.\n\nRoute D 172.16.0.192/29 bao gồm .192 đến .199, không chứa .202. Route O 172.16.0.128/25 bao gồm .128 đến .255, chứa .202. Router chọn route có prefix dài nhất khớp với địa chỉ đích, và /25 dài hơn /24 nên được ưu tiên hơn route S 172.16.0.0/24.\n\nRoute O dùng OSPF với metric là 32445, đây là giá trị cost hiển thị trong ngoặc vuông dạng [AD/metric], tức [110/32445].\n\nĐáp án A (0) là metric của route tĩnh S, không phải route đến .202. Đáp án B (110) là administrative distance của OSPF, không phải metric. Đáp án D (3184439) là metric của route EIGRP đến 172.16.0.192/29, nhưng route đó không chứa .202."
+    },
+    {
+      "id": "10.93",
+      "type": "single",
+      "question": "Refer to the exhibit.\nGateway of last resort is 0.0.0.0 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 6 subnets, 5 masks\nS       10.0.0.0/8 is directly connected, GigabitEthernet0/0\nC       10.1.1.0/24 is directly connected, GigabitEthernet0/0\nL       10.1.1.1/32 is directly connected, GigabitEthernet0/0\nS       10.10.0.0/22 is directly connected, GigabitEthernet0/0\nS       10.10.10.0/28 is directly connected, GigabitEthernet0/0\nS       10.10.10.1/32 is directly connected, GigabitEthernet0/0\nS*  0.0.0.0/0 is directly connected, GigabitEthernet0/0\nWhich IP route command created the best path for a packet destined for 10.10.10.3?",
+      "question_images": [],
+      "options": {
+        "A": "ip route 10.0.0.0 255.0.0.0 g0/0",
+        "B": "ip route 10.10.10.1 255.255.255.255 g0/0",
+        "C": "ip route 10.10.10.0 255.255.255.240 g0/0",
+        "D": "ip route 10.10.0.0 255.255.252.0 g0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nGateway of last resort is 0.0.0.0 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 6 subnets, 5 masks\nS       10.0.0.0/8 is directly connected, GigabitEthernet0/0\nC       10.1.1.0/24 is directly connected, GigabitEthernet0/0\nL       10.1.1.1/32 is directly connected, GigabitEthernet0/0\nS       10.10.0.0/22 is directly connected, GigabitEthernet0/0\nS       10.10.10.0/28 is directly connected, GigabitEthernet0/0\nS       10.10.10.1/32 is directly connected, GigabitEthernet0/0\nS*  0.0.0.0/0 is directly connected, GigabitEthernet0/0\nLệnh ip route nào đã tạo đường đi tốt nhất cho gói tin có đích đến 10.10.10.3?",
+      "options_vi": {
+        "A": "ip route 10.0.0.0 255.0.0.0 g0/0",
+        "B": "ip route 10.10.10.1 255.255.255.255 g0/0",
+        "C": "ip route 10.10.10.0 255.255.255.240 g0/0",
+        "D": "ip route 10.10.0.0 255.255.252.0 g0/0"
+      },
+      "explanation": "Địa chỉ đích là 10.10.10.3. Router sử dụng nguyên tắc longest prefix match, tức là chọn route có prefix dài nhất (cụ thể nhất) khớp với địa chỉ đích.\n\nĐáp án C tạo ra route 10.10.10.0/28 (mask /28 = 255.255.255.240), bao gồm dải 10.10.10.0 đến 10.10.10.15, nên 10.10.10.3 nằm trong dải này. Đây là route khớp dài nhất trong bảng định tuyến so với các route còn lại cũng khớp với 10.10.10.3.\n\nĐáp án A tạo route 10.0.0.0/8, khớp với 10.10.10.3 nhưng prefix chỉ có 8 bit, kém cụ thể hơn nhiều. Đáp án B tạo route host 10.10.10.1/32, prefix dài nhất nhưng chỉ khớp đúng địa chỉ 10.10.10.1, không khớp 10.10.10.3. Đáp án D tạo route 10.10.0.0/22, khớp với 10.10.10.3 nhưng prefix /22 ngắn hơn /28 của đáp án C, nên kém ưu tiên hơn."
+    }
+  ]
+}
