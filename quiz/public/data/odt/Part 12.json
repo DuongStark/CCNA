@@ -273,9 +273,9 @@
       "question": "Refer to the exhibit.\nSW1#show run\nBuilding configuration...\n!\nhostname SW1\n!\nip domain-name test\n!\nusername CCNA privilege 1 password 0 ciscol23\n!\ninterface FastEthernet0/1\nswitchport access vlan 10\n!\ninterface Vlan10\nip address 192.168.1.2 255.255.255.0\n!\nline vty 0 4\nlogin local\ntransport input telnet\nline vty 5 15\nlogin local\ntransport input telnet\nSW1#show crypto key mypubkey rsa\n% Key pair was generated at: 0:1:23 UTC Mar 1 2021\nKey name: SW1.test\nAn engineer is updating the management access configuration of switch SW1 to allow secured, encrypted remote configuration. Which two commands or command sequences must the engineer apply to the switch? (Choose two)",
       "question_images": [],
       "options": {
-        "A": "SW1(config)#line vty 0 15SW1(config-line)#transport input ssh",
+        "A": "SW1(config)#line vty 0 15\nSW1(config-line)#transport input ssh",
         "B": "SW1(config)# crypto key generate rsa",
-        "C": "SW1(config)# interface f0/1SW1(config-if)# switch port mode trunk",
+        "C": "SW1(config)# interface f0/1\nSW1(config-if)# switch port mode trunk",
         "D": "SW1(config)#enable secret ccnaTest123",
         "E": "SW1(config)# username NEW secret R3mote123"
       },
@@ -1333,10 +1333,10 @@
       "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 45, Wait 15, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?",
       "question_images": [],
       "options": {
-        "A": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf hello-interval 10",
-        "B": "R2(config)#\nrouter ospf 1R2(config-router)#router-id 192.168.1.2",
-        "C": "R2(config)#\nrouter ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2",
-        "D": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf dead-interval 40"
+        "A": "R2(config)#\ninterface g0/0/0\nR2(config-if)#\nip ospf hello-interval 10",
+        "B": "R2(config)#\nrouter ospf 1\nR2(config-router)#router-id 192.168.1.2",
+        "C": "R2(config)#\nrouter ospf 1\nR2(config-router)#network 192.168.1.0 255.255.255.0 area 2",
+        "D": "R2(config)#\ninterface g0/0/0\nR2(config-if)#\nip ospf dead-interval 40"
       },
       "answer": "D",
       "answer_images": [],
@@ -2167,10 +2167,10 @@
       "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?",
       "question_images": [],
       "options": {
-        "A": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf hello-interval 10",
-        "B": "R2(config)#\nrouter ospf 1R2(config-router)#router-id 192.168.1.1",
-        "C": "R2(config)#\nrouter ospf 1R2(config-router)#network 192.168.1.0 255.255.255.0 area 2",
-        "D": "R2(config)#\ninterface g0/0/0R2(config-if)#\nip ospf dead-interval 45"
+        "A": "R2(config)#\ninterface g0/0/0\nR2(config-if)#\nip ospf hello-interval 10",
+        "B": "R2(config)#\nrouter ospf 1\nR2(config-router)#router-id 192.168.1.1",
+        "C": "R2(config)#\nrouter ospf 1\nR2(config-router)#network 192.168.1.0 255.255.255.0 area 2",
+        "D": "R2(config)#\ninterface g0/0/0\nR2(config-if)#\nip ospf dead-interval 45"
       },
       "answer": "A",
       "answer_images": [],

@@ -416,10 +416,10 @@
       "question": "Refer to the exhibit.\nSW1#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nSW1(config)#enable password test!2E\nSW1(config)#line con 0\nSW1(config-line)#password Labtest32!\nSH1(config-line)#exit\nSW1(config)#\nA network engineer started to change default settings on SW1 to allow remote access and has entered the following in the configuration mode:\nSW1#(config)#line vty 0 15SW1#(config-line)#password Labtest32!\nWhich set of commands are needed to allow only SSH access and hide passwords in the running configuration?",
       "question_images": [],
       "options": {
-        "A": "SW1(config-line)#login localSW1(config-line)#exitSW1(config)#enable secret test\n!2E",
-        "B": "SW1(config-line)#transport input sshSW1(config-line)#exitSW1(config)#service password-encryption",
-        "C": "SW1(config-line)#login localSW1(config-line)#exit",
-        "D": "SW1(config-line)#exitSW1(config)#aaa new-model"
+        "A": "SW1(config-line)#login local\nSW1(config-line)#exit\nSW1(config)#enable secret test\n!2E",
+        "B": "SW1(config-line)#transport input ssh\nSW1(config-line)#exit\nSW1(config)#service password-encryption",
+        "C": "SW1(config-line)#login local\nSW1(config-line)#exit",
+        "D": "SW1(config-line)#exit\nSW1(config)#aaa new-model"
       },
       "answer": "B",
       "answer_images": [],

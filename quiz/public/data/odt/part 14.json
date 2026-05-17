@@ -2182,10 +2182,10 @@
       "question": "Refer to the exhibit.\nWhich configuration enables SW2 to establish an LACP EtherChannel?",
       "question_images": [],
       "options": {
-        "A": "SW2(config)#\ninterface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode desirableSW2(config-if)#\ninterface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode desirable",
-        "B": "SW2(config)#\ninterface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode activeSW2(config-if)#\ninterface gigabitEthernet0/2SW2(config-if)#channel-group 1 mode active",
-        "C": "SW2(config)#\ninterface gigabitEthernet0/1SW2(config-if)#channel-group 1 mode onSW2(config-if)#\ninterface glgabitEthernet0/2SW2(config-if)#channel-group 1 mode on",
-        "D": "SW2(config \ninterface gigabitEthernet0/1SW2(config-if)#channel-group 2 mode autoSW2(config-if)#\ninterface gigabitEthernet0/2SW2(config-if)#channel-group 2 mode auto"
+        "A": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode desirable\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode desirable",
+        "B": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode active\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 1 mode active",
+        "C": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode on\nSW2(config-if)#\ninterface glgabitEthernet0/2\nSW2(config-if)#channel-group 1 mode on",
+        "D": "SW2(config \ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode auto\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode auto"
       },
       "answer": "B",
       "answer_images": [],

@@ -945,10 +945,10 @@
       "question": "Refer to the exhibit.\n0ldR#show ip ospf interface\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.1, Network Type BROADCAST, Cost: 1 Transmit Delay is 1 sec, State DROTHER, Priority 1\nDesignated Router (ID) 192.168.1.1, Interface address 192.168.1.1\nBackup Designated Router (ID) 192.168.1.1, Interface address 192.168.1.1\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:01\nIndex 1/1, flood queue length 0\nNeighbor Count is 1, Adjacent neighbor count is 2\nR2#show ip ospf interface\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 192.168.1.1, Network Type BROADCAST, Cost: 1\nTransmit Delay is 1 sec, State DROTHER, Priority 1\nDesignated Router (ID) 192.168.1.1, Interface address 192.168.1.2\nBackup Designated Router (ID) 192.168.1.1, Interface address 192.168.1.2\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:02\nIndex 2/2, flood queue length 0\nNeighbor Count is 1, Adjacent neighbor count is 2\nRouter OldR is replacing another router on the network with the intention of having OldR and R2 exchange routes. After the engineer applied the initial OSPF configuration, the routes were still missing on both devices. Which command sequence must be issued before the clear IP ospf process command is entered to enable the neighbor relationship?",
       "question_images": [],
       "options": {
-        "A": "OldR(config)#router ospf 1OldR(config-router)#no router-id 192.168.1.1",
-        "B": "OldR(config)#interface g0/0/0OldR(config-if)#ip ospf dead-interval 15",
-        "C": "OldR(config)#interface g0/0/0OldR(config-if)#ip ospf hello-interval 15",
-        "D": "OldR(config)#router ospf 1OldR(config-router)# network 192.168.1.0 255.255.255.0 area 2"
+        "A": "OldR(config)#router ospf 1\nOldR(config-router)#no router-id 192.168.1.1",
+        "B": "OldR(config)#interface g0/0/0\nOldR(config-if)#ip ospf dead-interval 15",
+        "C": "OldR(config)#interface g0/0/0\nOldR(config-if)#ip ospf hello-interval 15",
+        "D": "OldR(config)#router ospf 1\nOldR(config-router)# network 192.168.1.0 255.255.255.0 area 2"
       },
       "answer": [
         "A"
@@ -1504,10 +1504,10 @@
       "question": "Refer to the exhibit.\nWhich set of commands must be applied to the two switches to configure an LACP Layer 2 EtherChannel?",
       "question_images": [],
       "options": {
-        "A": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode desirableSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
-        "B": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode onSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
-        "C": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode activeSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive",
-        "D": "SW1(config)#\ninterface range f0/13 -14SW1(config-if-range)#channel-group 1 mode autoSW2(config)#\ninterface range f0/13 -14SW2(config-if-range)#channel-group 1 mode passive"
+        "A": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode desirable\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
+        "B": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode on\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
+        "C": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode active\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
+        "D": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode auto\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive"
       },
       "answer": "C",
       "answer_images": [],
@@ -1579,10 +1579,10 @@
       "question": "Refer to the exhibit.\nConnections must be blocked from PC2 to the file server while still allowing PC2 to connect to other network hosts and devices. Which configuration must be used to complete the task?",
       "question_images": [],
       "options": {
-        "A": "R1(config)#access-list 1 permit 192.168.2.10R1(config)#access-list 1 deny anyR1(config)#\ninterface g0/1R1(config-if)#\nip access-group 1 out",
-        "B": "R2(config)#access-list 1 deny 192.168.2.10R2(config)#access-list 1 permit anyR2(config)#\ninterface g0/1R2(config-if)#\nip access-group 1 out",
-        "C": "R2(config)#access-list 1 permit 192.168.2.10R2(config)#access-list 1 deny 192.168.2.0 0.0.0.255R2(config)#\ninterface g0/1R2(config)#\nip access-group 1 in",
-        "D": "R1(config)#access-list 1 deny 192.168.2.10R1(config)#access-list 1 permit 192.168.2.0 0.0.0.255R1(config)#\ninterface g0/0R1(config-if)#\nip access-group 1 in"
+        "A": "R1(config)#access-list 1 permit 192.168.2.10\nR1(config)#access-list 1 deny any\nR1(config)#\ninterface g0/1\nR1(config-if)#\nip access-group 1 out",
+        "B": "R2(config)#access-list 1 deny 192.168.2.10\nR2(config)#access-list 1 permit any\nR2(config)#\ninterface g0/1\nR2(config-if)#\nip access-group 1 out",
+        "C": "R2(config)#access-list 1 permit 192.168.2.10\nR2(config)#access-list 1 deny 192.168.2.0 0.0.0.255\nR2(config)#\ninterface g0/1\nR2(config)#\nip access-group 1 in",
+        "D": "R1(config)#access-list 1 deny 192.168.2.10\nR1(config)#access-list 1 permit 192.168.2.0 0.0.0.255\nR1(config)#\ninterface g0/0\nR1(config-if)#\nip access-group 1 in"
       },
       "answer": "B",
       "answer_images": [],
@@ -1728,10 +1728,10 @@
       "question": "Refer to the exhibit.\nAn engineer configures interface fa0/1 on SW1 and SW2 to pass traffic from two different VLANs. For security reasons, company policy requires the native VLAN to be set to a nondefault value. Which configuration meets this requirement?",
       "question_images": [],
       "options": {
-        "A": "Switch(config-if)#switchport mode dynamicSwitch(config-if}#switchport accessvlan 100,105Switch(config-if)#switchport trunk native vlan 1",
-        "B": "Switch(config-if)#switchport mode accessSwitch(config-if)#switchport trunkencapsulation dot1qSwitch(config-if)#switchport access vlan 100.105Switch(config-if)#switchport trunk native vlan 3",
-        "C": "Switch(config-if)#switchport mode trunkSwitch(config-if)# switch port trunk encapsulation islSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config-if)#s witch port trunk native vlan 1",
-        "D": "Switch(config-if)#switchport mode trunkSwitch(config-if)#switchport trunk encapsulation dot1qSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config if)#switchport trunk native vlan 3"
+        "A": "Switch(config-if)#switchport mode dynamicSwitch(config-if}#switchport accessvlan 100,105\nSwitch(config-if)#switchport trunk native vlan 1",
+        "B": "Switch(config-if)#switchport mode access\nSwitch(config-if)#switchport trunkencapsulation dot1q\nSwitch(config-if)#switchport access vlan 100.105\nSwitch(config-if)#switchport trunk native vlan 3",
+        "C": "Switch(config-if)#switchport mode trunk\nSwitch(config-if)# switch port trunk encapsulation isl\nSwitch(config-if)#switchport trunk allowed vlan 100,105\nSwitch(config-if)#s witch port trunk native vlan 1",
+        "D": "Switch(config-if)#switchport mode trunk\nSwitch(config-if)#switchport trunk encapsulation dot1q\nSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config if)#switchport trunk native vlan 3"
       },
       "answer": "D",
       "answer_images": [],

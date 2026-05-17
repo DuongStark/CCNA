@@ -84,10 +84,10 @@
       "question": "R2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?",
       "question_images": [],
       "options": {
-        "A": "R2(config)#interface g0/0/0R2(config-if)#ip ospf hello-interval 15R2(config-if)#ip ospf dead-interval 20",
-        "B": "R2(config)#router ospf 1R2(config-router)#router-id 192.168.1.2",
-        "C": "R2(config)#router ospf 1R2(config-router)#network 192.168.1.0255.255.255.0 area 2R2(config-router)#network 10.1.1.0 255.255.255.255 area 2",
-        "D": "R2(config)#interface g0/0/0R2(config-if)#ip ospf dead-interval 20"
+        "A": "R2(config)#interface g0/0/0\nR2(config-if)#ip ospf hello-interval 15\nR2(config-if)#ip ospf dead-interval 20",
+        "B": "R2(config)#router ospf 1\nR2(config-router)#router-id 192.168.1.2",
+        "C": "R2(config)#router ospf 1\nR2(config-router)#network 192.168.1.0255.255.255.0 area 2\nR2(config-router)#network 10.1.1.0 255.255.255.255 area 2",
+        "D": "R2(config)#interface g0/0/0\nR2(config-if)#ip ospf dead-interval 20"
       },
       "answer": [
         "A"
@@ -600,10 +600,10 @@
         "q11.24_img1.jpg"
       ],
       "options": {
-        "A": "SW2#configure terminalSW2(config)# interface port-channel 1SW2(config-if)#lacp port-priority 32000",
-        "B": "SW2#configure terminalSW2(config)#interface port-channel 1SW2(config-if)#lacp max-bundle 2",
-        "C": "SW2#configure terminalSW2(config)#lacp system-priority 32000",
-        "D": "SW2#configure terminalSW2(config)#interface port-channel 1SW2(config-if)#port-channel min-links 2"
+        "A": "SW2#configure terminal\nSW2(config)# interface port-channel 1\nSW2(config-if)#lacp port-priority 32000",
+        "B": "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#lacp max-bundle 2",
+        "C": "SW2#configure terminal\nSW2(config)#lacp system-priority 32000",
+        "D": "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#port-channel min-links 2"
       },
       "answer": [
         "D"
@@ -754,10 +754,10 @@
         "q11.30_img1.jpg"
       ],
       "options": {
-        "A": "NewSW(config)#interface f0/0NewSW(config-if)#switchport mode trunkNewSW(config-if)#switchport trunk allowed vlan 2,10NewSW(config-if)#switchport trunk native vlan 2",
-        "B": "NewSW(config)#interface f0/0NewSW(config-if)#switchport mode trunkNewSW(config-if)#switchport trunk allowed vlan 10NewSW(config-if)#switchport trunk native vlan 10",
-        "C": "NewSW(config)#interface f0/0NewSW(config-if)#switchport mode accessNewSW(config-if)#switchport trunk allowed vlan 2,10NewSW(config-if)#switchport trunk native vlan 10",
-        "D": "NewSW(config)#interface f0/0NewSW(config-if)#switchport mode accessNewSW(config-if)#switchport trunk allowed vlan 2,10NewSW(config-if)#switchport trunk native vlan 2"
+        "A": "NewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode trunk\nNewSW(config-if)#switchport trunk allowed vlan 2,10\nNewSW(config-if)#switchport trunk native vlan 2",
+        "B": "NewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode trunk\nNewSW(config-if)#switchport trunk allowed vlan 10\nNewSW(config-if)#switchport trunk native vlan 10",
+        "C": "NewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode access\nNewSW(config-if)#switchport trunk allowed vlan 2,10\nNewSW(config-if)#switchport trunk native vlan 10",
+        "D": "NewSW(config)#interface f0/0\nNewSW(config-if)#switchport mode access\nNewSW(config-if)#switchport trunk allowed vlan 2,10\nNewSW(config-if)#switchport trunk native vlan 2"
       },
       "answer": [
         "A"
