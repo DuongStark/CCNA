@@ -9,7 +9,15 @@ import './App.css';
 
 const SESSION_KEY = 'ccna_quiz_session';
 const PROGRESS_KEY = 'ccna_quiz_progress';
-const storage = localStorage;
+const storage = (() => {
+  try {
+    localStorage.setItem('__test__', '1');
+    localStorage.removeItem('__test__');
+    return localStorage;
+  } catch {
+    return sessionStorage;
+  }
+})();
 
 class ErrorBoundary extends Component {
   constructor(props) {
