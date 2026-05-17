@@ -12,6 +12,40 @@ export function looksLikeCli(line) {
   return false;
 }
 
+// Strict version for option text — only detect CLI prompt (hostname# or hostname>)
+// Avoids false positives like "ip address of..." or "Switch A is..."
+export function splitOptionSegments(text) {
+  if (!text) return [{ kind: 'prose', text }];
+  const lines = text.split('\n');
+  const segments = [];
+  let buffer = [], bufferKind = null, inCliBlock = false;
+
+  const flush = () => {
+    if (!buffer.length) return;
+    if (buffer.length) segments.push({ kind: bufferKind, text: buffer.join('\n') });
+    buffer = [];
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (inCliBlock) {
+      // Only exit CLI block on clear prose (question-like sentence)
+      const isClearProse = PROSE_RE.test(trimmed) && !CLI_PROMPT_RE.test(trimmed) && trimmed.length > 20;
+      if (isClearProse) { inCliBlock = false; flush(); bufferKind = 'prose'; buffer.push(line); }
+      else buffer.push(line);
+      continue;
+    }
+    if (CLI_PROMPT_RE.test(trimmed)) {
+      inCliBlock = true; flush(); bufferKind = 'cli'; buffer.push(line); continue;
+    }
+    const kind = 'prose';
+    if (kind !== bufferKind) { flush(); bufferKind = kind; }
+    buffer.push(line);
+  }
+  flush();
+  return segments;
+}
+
 // Detect inline CLI block: "Refer to the exhibit. Cat9K-1#show lldp..." — CLI starts mid-sentence
 // Match only when there's a clear sentence boundary before the CLI prompt
 const INLINE_CLI_RE = /^(.+?[.!?])\s+([\w][\w.:-]*(?:\([\w-]*\))?[>#]\s.+)$/;

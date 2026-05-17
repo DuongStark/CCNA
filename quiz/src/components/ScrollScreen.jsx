@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { looksLikeCli, splitIntoSegments } from '../utils/cliUtils';
+import { looksLikeCli, splitIntoSegments, splitOptionSegments } from '../utils/cliUtils';
 import ExhibitImage from './ExhibitImage';
 import styles from './ScrollScreen.module.css';
 
@@ -17,7 +17,7 @@ function renderMarkdown(text) {
 }
 
 function OptionItem({ letter, text, isCorrect, revealed }) {
-  const segments = splitIntoSegments(text);
+  const segments = splitOptionSegments(text);
   const cls = [styles.option];
   if (revealed && isCorrect) cls.push(styles.optionCorrect);
 

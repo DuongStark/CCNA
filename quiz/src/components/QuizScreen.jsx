@@ -4,7 +4,7 @@ import OptionCard from './OptionCard';
 import ExhibitImage from './ExhibitImage';
 import QuestionNav from './QuestionNav';
 import { getImagePath } from '../utils/dataLoader';
-import { splitIntoSegments } from '../utils/cliUtils';
+import { splitIntoSegments, splitOptionSegments } from '../utils/cliUtils';
 import { IconCheck, IconX, IconMenu, IconClose, IconCheckbox, IconArrowLeft } from '../icons';
 import styles from './QuizScreen.module.css';
 

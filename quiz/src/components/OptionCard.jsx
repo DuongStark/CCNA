@@ -1,5 +1,5 @@
 import styles from './OptionCard.module.css';
-import { looksLikeCli, splitIntoSegments } from '../utils/cliUtils';
+import { looksLikeCli, splitOptionSegments } from '../utils/cliUtils';
 import { IconCheck, IconX } from '../icons';
 
 export default function OptionCard({
@@ -20,7 +20,7 @@ export default function OptionCard({
   else if (revealed && isIncorrect) classes.push(styles.incorrect);
   else if (selected) classes.push(styles.selected);
 
-  const segments = splitIntoSegments(text);
+  const segments = splitOptionSegments(text);
 
   const isCliConfig =
     typeof text === 'string' &&
