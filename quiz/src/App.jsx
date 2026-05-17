@@ -121,7 +121,7 @@ export default function App() {
         const progress = JSON.parse(sessionStorage.getItem(PROGRESS_KEY) || 'null');
         setSession(s);
         setInitialProgress(progress);
-        setScreen('quiz');
+        setScreen(s.scrollMode ? 'scroll' : 'quiz');
       }
     } catch {
       // ignore
