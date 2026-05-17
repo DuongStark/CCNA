@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Options Debug — CCNA Quiz</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #FAF9F5; font-family: Inter, system-ui, sans-serif; font-size: 15px; color: #1a1a1a; padding: 24px; }
+  h1 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .meta { color: #888; font-size: 13px; margin-bottom: 24px; }
+  .card { background: #fff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  .card-header { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .badge { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+  .badge-pos { background: #f0f0f0; color: #555; }
+  .badge-id { background: #D97757; color: #fff; }
+  .badge-source { background: #e8f0fe; color: #1a56db; }
+  .badge-topic { background: #f3f4f6; color: #374151; }
+  .question { color: #555; font-size: 13px; margin-bottom: 12px; line-height: 1.5; }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option { display: flex; gap: 10px; padding: 10px 14px; border: 1px solid #e5e5e5; border-radius: 8px; background: #fafafa; }
+  .option-letter { font-weight: 700; color: #D97757; min-width: 20px; }
+  .option-text { flex: 1; line-height: 1.6; }
+  .option-text p { margin-bottom: 4px; }
+  .option-text p:last-child { margin-bottom: 0; }
+  pre.cli { background: #1e1e2e; color: #cdd6f4; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 12px; padding: 10px 14px; border-radius: 6px; overflow-x: auto; margin: 4px 0; white-space: pre; }
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+  .filter-bar input { padding: 6px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; width: 200px; }
+  .filter-bar button { padding: 6px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 13px; cursor: pointer; background: #fff; }
+  .filter-bar button.active { background: #D97757; color: #fff; border-color: #D97757; }
+  .count { color: #888; font-size: 13px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>Options Debug Page</h1>
+<p class="meta">Tất cả câu hỏi có CLI trong đáp án — kiểm tra render đúng/sai</p>
+
+<div class="filter-bar">
+  <input type="text" id="search" placeholder="Tìm theo ID hoặc text..." oninput="renderCards()">
+  <button class="active" onclick="filterSource('all', this)">Tất cả</button>
+  <button onclick="filterSource('docx', this)">DOCX</button>
+  <button onclick="filterSource('odt', this)">ODT</button>
+  <span class="count" id="count"></span>
+</div>
+
+<div id="cards"></div>
+
+<script>
+let questions = [];
+let currentSource = 'all';
+
+const PROMPT_RE = /[A-Z][A-Za-z0-9_.-]*(?:\([A-Za-z0-9_-]*\))?[>#]/;
+
+function splitOptionSegments(text) {
+  if (!text) return [{ kind: 'prose', text: '' }];
+  const CLI_PROMPT_RE = /^(?:[\w.-]+(?:\([\w-]*\))?[>#]\s*|Router[>(#]|Switch[>(#]|R\d+[\w(>#]|SW\d+[\w(>#])/;
+  const PROSE_RE = /^(?:which|what|how|why|where|when|who|select|choose|an |a |the |this |that |these |if |given |based |refer |drag |place |match |\w.*\?$)/i;
+
+  const lines = text.split('\n');
+  const segments = [];
+  let buffer = [], bufferKind = null, inCliBlock = false;
+
+  const flush = () => {
+    if (!buffer.length) return;
+    segments.push({ kind: bufferKind, text: buffer.join('\n') });
+    buffer = [];
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (inCliBlock) {
+      const isClearProse = PROSE_RE.test(trimmed) && !CLI_PROMPT_RE.test(trimmed) && trimmed.length > 20;
+      if (isClearProse) { inCliBlock = false; flush(); bufferKind = 'prose'; buffer.push(line); }
+      else buffer.push(line);
+      continue;
+    }
+    if (CLI_PROMPT_RE.test(trimmed)) {
+      inCliBlock = true; flush(); bufferKind = 'cli'; buffer.push(line); continue;
+    }
+    const kind = 'prose';
+    if (kind !== bufferKind) { flush(); bufferKind = kind; }
+    buffer.push(line);
+  }
+  flush();
+  return segments.length ? segments : [{ kind: 'prose', text }];
+}
+
+function renderOptionText(text) {
+  const segs = splitOptionSegments(text);
+  return segs.map(s => s.kind === 'cli'
+    ? `<pre class="cli">${escHtml(s.text)}</pre>`
+    : `<p>${escHtml(s.text)}</p>`
+  ).join('');
+}
+
+function escHtml(t) {
+  return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderCards() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const container = document.getElementById('cards');
+  let visible = 0;
+  container.innerHTML = questions.map(q => {
+    const matchSource = currentSource === 'all' || q.source === currentSource;
+    const matchSearch = !search || q.id.toLowerCase().includes(search) || q.question.toLowerCase().includes(search) || q.topic.toLowerCase().includes(search);
+    const hide = !matchSource || !matchSearch;
+    if (!hide) visible++;
+
+    const optionsHtml = Object.entries(q.options).map(([letter, text]) => `
+      <div class="option">
+        <span class="option-letter">${letter}</span>
+        <div class="option-text">${renderOptionText(text)}</div>
+      </div>
+    `).join('');
+
+    return `<div class="card ${hide ? 'hidden' : ''}">
+      <div class="card-header">
+        <span class="badge badge-pos">Câu ${q.pos}/${q.total}</span>
+        <span class="badge badge-id">#${q.id}</span>
+        <span class="badge badge-source">${q.source.toUpperCase()}</span>
+        <span class="badge badge-topic">${q.topic}</span>
+      </div>
+      <div class="question">${escHtml(q.question.slice(0, 150))}${q.question.length > 150 ? '...' : ''}</div>
+      <div class="options">${optionsHtml}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('count').textContent = `${visible} câu`;
+}
+
+function filterSource(src, btn) {
+  currentSource = src;
+  document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards();
+}
+
+fetch('options_debug.json').then(r => r.json()).then(data => {
+  questions = data;
+  renderCards();
+});
+</script>
+</body>
+</html>
