@@ -599,7 +599,7 @@
     {
       "id": "14.32",
       "type": "single",
-      "question": "Which interface is used to send traffic to the destination network?\nO 10.18.75.113/27 [110/6906] via G0/6O 10.18.75.113/27 [110/23018] via G0/3R 10.18.75.113/27 [120/16] via G0/16R 10.18.75.113/27 [120/14] via G0/23",
+      "question": "Which interface is used to send traffic to the destination network?\nO 10.18.75.113/27 [110/6906] via G0/6\nO 10.18.75.113/27 [110/23018] via G0/3\nR 10.18.75.113/27 [120/16] via G0/16\nR 10.18.75.113/27 [120/14] via G0/23",
       "question_images": [],
       "options": {
         "A": "G0/6",
