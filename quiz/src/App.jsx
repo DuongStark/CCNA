@@ -9,6 +9,7 @@ import './App.css';
 
 const SESSION_KEY = 'ccna_quiz_session';
 const PROGRESS_KEY = 'ccna_quiz_progress';
+const storage = localStorage;
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -68,7 +69,7 @@ function QuizContainer({ session, initialProgress, onExit, onFinish }) {
 
   useEffect(() => {
     if (!quiz.currentQuestion) return;
-    sessionStorage.setItem(
+    storage.setItem(
       PROGRESS_KEY,
       JSON.stringify({
         currentIndex: quiz.currentIndex,
@@ -113,12 +114,12 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const saved = sessionStorage.getItem(SESSION_KEY);
+    const saved = storage.getItem(SESSION_KEY);
     if (!saved) return;
     try {
       const s = JSON.parse(saved);
       if (s && s.questions && s.questions.length) {
-        const progress = JSON.parse(sessionStorage.getItem(PROGRESS_KEY) || 'null');
+        const progress = JSON.parse(storage.getItem(PROGRESS_KEY) || 'null');
         setSession(s);
         setInitialProgress(progress);
         setScreen(s.scrollMode ? 'scroll' : 'quiz');
@@ -147,8 +148,8 @@ export default function App() {
       setInitialProgress(null);
       setResult(null);
       setScreen(scrollMode ? 'scroll' : 'quiz');
-      sessionStorage.setItem(SESSION_KEY, JSON.stringify(newSession));
-      sessionStorage.removeItem(PROGRESS_KEY);
+      storage.setItem(SESSION_KEY, JSON.stringify(newSession));
+      storage.removeItem(PROGRESS_KEY);
     } catch (e) {
       setError(e.message || 'Failed to load questions.');
     } finally {
@@ -159,8 +160,8 @@ export default function App() {
   const handleFinish = useCallback((res) => {
     setResult(res);
     setScreen('result');
-    sessionStorage.removeItem(SESSION_KEY);
-    sessionStorage.removeItem(PROGRESS_KEY);
+    storage.removeItem(SESSION_KEY);
+    storage.removeItem(PROGRESS_KEY);
   }, []);
 
   const handleExit = useCallback(() => {
@@ -169,8 +170,8 @@ export default function App() {
     setResult(null);
     setError(null);
     setScreen('home');
-    sessionStorage.removeItem(SESSION_KEY);
-    sessionStorage.removeItem(PROGRESS_KEY);
+    storage.removeItem(SESSION_KEY);
+    storage.removeItem(PROGRESS_KEY);
   }, []);
 
   const handleRepeat = useCallback(() => {
@@ -180,8 +181,8 @@ export default function App() {
     setInitialProgress(null);
     setResult(null);
     setScreen('quiz');
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify(newSession));
-    sessionStorage.removeItem(PROGRESS_KEY);
+    storage.setItem(SESSION_KEY, JSON.stringify(newSession));
+    storage.removeItem(PROGRESS_KEY);
   }, [session]);
 
   const handleReviewWrong = useCallback(() => {
@@ -196,8 +197,8 @@ export default function App() {
     setInitialProgress(null);
     setResult(null);
     setScreen('quiz');
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify(newSession));
-    sessionStorage.removeItem(PROGRESS_KEY);
+    storage.setItem(SESSION_KEY, JSON.stringify(newSession));
+    storage.removeItem(PROGRESS_KEY);
   }, [result, session]);
 
   const overlay = useMemo(() => {
