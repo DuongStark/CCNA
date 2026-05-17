@@ -212,3 +212,46 @@
   padding-top: 6px;
   border-top: 1px solid var(--color-border);
 }
+
+@media (max-width: 768px) {
+  .card {
+    padding: 12px 14px;
+    min-height: 48px;
+    gap: var(--space-sm);
+    font-size: 0.9375rem;
+    border-radius: var(--radius-md);
+  }
+
+  .badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8125rem;
+  }
+
+  .checkbox {
+    width: 22px;
+    height: 22px;
+  }
+
+  .body {
+    padding-top: 2px;
+    gap: 2px;
+  }
+
+  .text {
+    line-height: 1.5;
+  }
+
+  .icon {
+    margin-left: 6px;
+  }
+
+  .codeBlock {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.75rem;
+    overflow-x: auto;
+    white-space: pre;
+    word-break: normal;
+    margin: 6px 0;
+  }
+}

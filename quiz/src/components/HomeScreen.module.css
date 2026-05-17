@@ -360,3 +360,69 @@
   color: var(--color-text);
   box-shadow: 0 1px 3px rgba(120, 80, 50, 0.1);
 }
+
+@media (max-width: 768px) {
+  .screen {
+    padding: var(--space-xl) var(--space-md);
+    gap: var(--space-lg);
+  }
+
+  .header h1 {
+    font-size: 1.625rem;
+  }
+
+  .stepTitle {
+    font-size: 1rem;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .sourceCard {
+    padding: var(--space-md);
+    min-height: 44px;
+  }
+
+  .sourceLabel {
+    font-size: 1.125rem;
+  }
+
+  .topicGroup {
+    gap: 6px;
+  }
+
+  .topicButton {
+    padding: 12px 14px;
+    min-height: 44px;
+    font-size: var(--fs-body-sm);
+  }
+
+  .countSegment {
+    padding: 4px;
+  }
+
+  .countButton {
+    padding: 12px 8px;
+    min-height: 44px;
+    min-width: 0;
+    font-size: var(--fs-body-sm);
+  }
+
+  .toggleRow {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .viewModeBtn {
+    padding: 12px 12px;
+    min-height: 44px;
+  }
+
+  .startButton {
+    width: 100%;
+    padding: 16px 24px;
+    min-height: 48px;
+    font-size: var(--fs-body);
+  }
+}

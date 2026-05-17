@@ -128,7 +128,8 @@ export default function App() {
       const s = JSON.parse(saved);
       if (s && s.questions && s.questions.length) {
         const progress = JSON.parse(storage.getItem(PROGRESS_KEY) || 'null');
-        setSession(s);
+        // Questions already ordered from previous session — don't re-shuffle
+        setSession({ ...s, mode: 'sequential' });
         setInitialProgress(progress);
         setScreen(s.scrollMode ? 'scroll' : 'quiz');
       }

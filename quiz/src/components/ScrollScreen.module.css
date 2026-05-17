@@ -240,3 +240,73 @@
   line-height: var(--lh-body);
   color: var(--color-text-muted);
 }
+
+@media (max-width: 768px) {
+  .screen {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .header {
+    padding: var(--space-sm) 0;
+  }
+
+  .exitBtn {
+    min-height: 36px;
+    padding: 8px 14px;
+  }
+
+  .list {
+    gap: var(--space-md);
+    padding-bottom: var(--space-xl);
+  }
+
+  .card {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .questionText {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .options {
+    gap: 6px;
+  }
+
+  .option {
+    padding: 12px 14px;
+    gap: var(--space-sm);
+  }
+
+  .optionBody {
+    font-size: 0.9375rem;
+  }
+
+  .codeBlock {
+    font-size: 0.75rem;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .revealBtn {
+    align-self: stretch;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  .translateBtn {
+    min-height: 36px;
+    padding: 6px 12px;
+  }
+
+  .explanation {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .explanationText {
+    font-size: 0.875rem;
+  }
+}
