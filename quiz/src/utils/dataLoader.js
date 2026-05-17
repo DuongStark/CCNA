@@ -107,6 +107,7 @@ export async function loadSource(sourceId, topicId) {
     _source: sourceId,
     _topic: topicId,
     _uid: `${sourceId}:${topicId}:${q.id}`,
+    imageFolder: topic.imageFolder,
   }));
   cache.set(key, normalized);
   return normalized;

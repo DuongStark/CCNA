@@ -22,6 +22,7 @@ export default function HomeScreen({ onStart }) {
   const [count, setCount] = useState(20);
   const [randomOrder, setRandomOrder] = useState(true);
   const [srsMode, setSrsMode] = useState(false);
+  const [scrollMode, setScrollMode] = useState(false);
 
   const countSegmentRef = useRef(null);
   const countButtonRefs = useRef({});
@@ -55,6 +56,7 @@ export default function HomeScreen({ onStart }) {
       count: count === 'all' ? null : count,
       srsMode,
       randomOrder,
+      scrollMode,
     });
   };
 
@@ -217,6 +219,25 @@ export default function HomeScreen({ onStart }) {
               <span className={styles.switchSlider} aria-hidden="true" />
             </span>
           </label>
+
+          <div className={styles.viewModeRow}>
+            <button
+              type="button"
+              className={`${styles.viewModeBtn} ${!scrollMode ? styles.viewModeBtnActive : ''}`}
+              onClick={() => setScrollMode(false)}
+              aria-pressed={!scrollMode}
+            >
+              Từng câu
+            </button>
+            <button
+              type="button"
+              className={`${styles.viewModeBtn} ${scrollMode ? styles.viewModeBtnActive : ''}`}
+              onClick={() => setScrollMode(true)}
+              aria-pressed={scrollMode}
+            >
+              Cuộn toàn bộ
+            </button>
+          </div>
 
           <button
             type="button"

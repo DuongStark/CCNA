@@ -4,8 +4,6 @@ export default function ProgressBar({ current = 0, total = 1 }) {
   const safeTotal = Math.max(total, 1);
   const clamped = Math.min(Math.max(current, 0), safeTotal);
   const percent = (clamped / safeTotal) * 100;
-  const pct = Math.round(percent);
-
   return (
     <div className={styles.wrapper}>
       <div
@@ -14,10 +12,10 @@ export default function ProgressBar({ current = 0, total = 1 }) {
         aria-valuemin={0}
         aria-valuemax={safeTotal}
         aria-valuenow={clamped}
+        aria-label={`${Math.round(percent)}%`}
       >
         <div className={styles.fill} style={{ width: `${percent}%` }} />
       </div>
-      <span className={styles.label}>{pct}%</span>
     </div>
   );
 }

@@ -361,7 +361,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "At present, there are four kinds of c: OM1, OM2, OM3 and OM4. The letters “OM” stand for optical\nmulti-mode. OM3 and OM4 fibers will support upcoming 40 and 100 Gb/s speeds. OM2, OM3, OM4 and\nOM5 have 50 micron core diameter.",
+      "explanation": "OM3 và OM4 đều là cáp quang đa mode (multimode) với đường kính lõi 50 micron, đây là điểm chung quan trọng giữa hai loại này. Sự khác biệt giữa chúng nằm ở chất lượng sợi quang và băng thông, trong đó OM4 hỗ trợ khoảng cách truyền xa hơn OM3 ở cùng tốc độ.\n\nĐáp án B sai vì lõi 9 micron là đặc trưng của cáp quang đơn mode (SMF), không phải OM3 hay OM4. Đáp án C sai vì lõi 62.5 micron thuộc về cáp OM1 và OM2. Đáp án D sai vì không có loại cáp quang phổ biến nào trong chuẩn OM có lõi 100 micron.",
       "explanation_images": [],
       "question_vi": "Điểm tương đồng giữa cáp quang OM3 và OM4 là gì?",
       "options_vi": {
@@ -470,7 +470,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "1000BASE-T standard only supports up to 100 meters while 1000BASE-LX is a standard which uses a\n1,270–1,355 nm laser for longer wavelength. It has a distance capability of up to 5 kilometers over a\nSingle-mode fiber -> Answer D is not correct.\n1000BASE-LX is an optical fiber Gigabit Ethernet standard so it does not support RJ-45 connectors\ndirectly -> Answer C is not correct.\n1000BASE-LX only support LC connectors so answer B is not correct.",
+      "explanation": "Đáp án A đúng vì 1000BASE-LX (dùng cáp quang) và 1000BASE-T (dùng cáp đồng xoắn đôi) đều là các chuẩn Gigabit Ethernet, nên chúng dùng chung định dạng header và trailer của lớp data-link (Ethernet frame), bao gồm các trường như MAC address, EtherType và FCS. Đây là điểm chung quan trọng nhất giữa các chuẩn Ethernet dù khác nhau về phương tiện vật lý.\n\nĐáp án B sai vì 1000BASE-LX dùng đầu nối LC hoặc SC, không phải LP. Đáp án C sai vì 1000BASE-LX dùng đầu nối quang, còn RJ-45 chỉ dùng cho 1000BASE-T. Đáp án D sai vì 550 mét là giới hạn của 1000BASE-SX trên cáp multimode, không phải của cả hai chuẩn này.",
       "explanation_images": [],
       "question_vi": "Điểm tương đồng giữa chuẩn 1000BASE-LX và 1000BASE-T là gì?",
       "options_vi": {
@@ -850,7 +850,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The “Status” of fa0/1 is “notconnect” so port security is not the issue or it would show the status of\n“err-disabled”.\n“Shutdown” command is also not the issue as it would show “Administratively down” in the “Status”\nfield of the “show ip interface brief” command.\nWith STP, even if the port is in “Block” (BLK) status but it is still in “up/up” state with the “show ip\ninterface brief” command.\nWith wrong cable type, the port is in “down/down” state, same as there is no connected cable to the\nport.",
+      "explanation": "Kết quả từ \"show ip interface brief\" cho thấy trạng thái là \"down/down\", trong khi \"show interface fa0/1 status\" lại hiển thị \"notconnect\" thay vì \"disabled\". Sự khác biệt này rất quan trọng: nếu cổng bị tắt bằng lệnh shutdown, trạng thái sẽ là \"disabled\" trong output thứ hai. Trạng thái \"notconnect\" có nghĩa là cổng đang hoạt động về mặt cấu hình nhưng không phát hiện được tín hiệu vật lý từ thiết bị đầu kia, điều này thường xảy ra khi dùng sai loại cáp, ví dụ dùng cáp thẳng (straight-through) thay vì cáp chéo (crossover) khi kết nối hai switch với nhau, hoặc ngược lại.\n\nĐáp án A sai vì STP có thể chặn lưu lượng nhưng không làm cổng xuống ở tầng vật lý, trạng thái vẫn sẽ là \"connected\". Đáp án B sai vì lệnh shutdown sẽ tạo ra trạng thái \"disabled\", không phải \"notconnect\". Đáp án C sai vì port security vi phạm sẽ hiển thị trạng thái \"err-disabled\", không phải \"notconnect\".",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nSW1#show ip interface brief\nInterface IP-Address OK? Method Status Protocol\nFastEthernet0/1 unassigned YES manual down down\nSW1#show interface fa0/1 status\nPort Name Status Vlan Duplex Speed Type\nFa0/1 notconnect 1 a-full a-100 10/100BaseTX\nNguyên nhân của vấn đề là gì?",
       "options_vi": {
@@ -928,7 +928,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "This interface gets high collision (15000 collisions) so one end may be set to “Half-duplex”.",
+      "explanation": "Đáp án A đúng vì trong output có 15000 collisions và 179 deferred. Số lượng collision lớn như vậy trên một đường kết nối switch-to-router là dấu hiệu điển hình của duplex mismatch, tức là một đầu đang chạy full-duplex còn đầu kia chạy half-duplex. Đầu half-duplex sẽ phát hiện collision vì nó dùng CSMA/CD, trong khi đầu full-duplex cứ gửi mà không quan tâm, dẫn đến hiệu năng ứng dụng kém.\n\nB sai vì MTU đang là 1500 bytes, đúng với giá trị mặc định chuẩn.\n\nC sai vì tốc độ đầu vào chỉ có 1000 bits/sec trên đường 10 Mbps, hoàn toàn không phải tình trạng quá tải.\n\nD sai vì mặc dù interface đang dùng RED (random early detection), không có gói nào bị drop trong output queue (Total output drops: 0), nên QoS không phải nguyên nhân.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter1#show interface ethernet 1\nEthernet1 is up, line protocol is up\nHardware is Lance, address is 0010.7b36.Ibe8 (bia 0010.7b36.Ibe8)\nInternet address is 10.100.48.240/24\nMTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec,\nreliability 255/255, txload 1/255, rxload 1/255 Encapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:00, output 00:00:06, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 1/75/1/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: random early detection(RED)\nOutput queue :0/40 (size/max)\n5 minute input rate 1000 bits/sec, 2 packets/sec\n5 minute output rate 0 bits/sec, 0 packets/sec\n7558065 packets input, 783768942 bytes, 1 no buffer\nReceived 8280963 broadcasts, 0 runts, 0 giants, 1 throttles\n15 input errors, 14278 GRC, 0 frame, 0 overrun, 3 ignored\n0 input packets with dribble condition detected\n798092 packets output, 50280266 bytes, 0 underruns\n0 output errors, 15000 collisions, 0 interface resets\n0 babbles, 0 late collision, 179 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nQuản trị viên nhận được cuộc gọi từ văn phòng chi nhánh về hiệu suất ứng dụng kém được lưu trữ tại trụ sở chính. Ethernet 1 được kết nối giữa Router1 và switch LAN. Điều gì xác định vấn đề?",
       "options_vi": {

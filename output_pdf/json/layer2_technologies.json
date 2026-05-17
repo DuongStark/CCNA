@@ -51,7 +51,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "Whenever the physical transmission has problems, the receiving device might receive a frame\nwhose bits have changed values. These frames do not pass the error detection logic as\nimplemented in the FCS field in the Ethernet trailer. The receiving device discards the frame and\ncounts it as some kind of input error. Cisco switches list this error as a CRC error. Cyclic\nredundancy check (CRC) is a term related to how the FCS math detects an error.\nThe “input errors” includes runts, giants, no buffer, CRC, frame, overrun, and ignored counts.\nThe output below show the interface counters with the “show interface s0/0/0” command:\nRouter#show interface s0/0/0\nSerial0/0/0 is up, line protocol is up\nHardware is M4T\nDescription: Link to R2\nInternet address is 10.1.1.1/30\nMTU 1500 bytes, BW 1544 Kbit, DLY 20000 usec,\nreliability 255/255, txload 1/255, rxload 1/255\n--output omitted--\n5 minute output rate 0 bits/sec, 0 packets/sec\n268 packets input, 24889 bytes, 0 no buffer\nReceived 0 broadcasts, 0 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\n251 packets output, 23498 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 output buffer failures, 0 output buffers swapped out\n0 carrier transitions DCD=up DSR=up DTR=up RTS=up CTS=up",
+      "explanation": "Khi một frame không qua được kiểm tra FCS (Frame Check Sequence), switch sẽ tăng bộ đếm CRC vì FCS chính là cơ chế phát hiện lỗi dựa trên thuật toán CRC. Đồng thời, bộ đếm input errors cũng tăng vì đây là bộ đếm tổng hợp, tự động tăng mỗi khi bất kỳ loại lỗi đầu vào nào xảy ra, bao gồm cả lỗi CRC.\n\nCác đáp án còn lại không đúng vì runts chỉ đếm các frame có kích thước nhỏ hơn 64 byte, giants chỉ đếm các frame vượt quá kích thước tối đa cho phép, còn frame đếm các lỗi liên quan đến định dạng frame không hợp lệ như frame không kết thúc đúng trên ranh giới byte, tất cả đều là những loại lỗi khác biệt hoàn toàn với lỗi FCS.",
       "explanation_images": [],
       "question_vi": "Một khung (frame) đi vào switch không vượt qua được kiểm tra Frame Check Sequence. Hai bộ đếm giao diện nào được tăng lên? (Chọn hai)",
       "options_vi": {
@@ -109,7 +109,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "The down/down state indicates a Layer 1 problem -> “Protocol mismatch” answer is a Layer 2\nproblem so it is not correct.\nDuplex should be matched on both side but it is not a must -> Therefore “duplex mismatch” is not\na correct answer.\nThe most common Layer 1 problems are faulty or incorrect cabling or hardware failure but none of\nthem is in the answer choices.\nIf the port is error-disabled, we will see it in down/down state so this answer is correct.\nSW#sh int f1/0/1\nFastEthernet1/0/1 is down, line protocol is down (err-disabled)\nThere are only two answers left, which are “speed mismatch” and “interface is shut down” and we\nhave to choose one. Speed must match between two ends. We tested speed mismatch on real\ndevice but we only received “up/down” state. So the answer “interface is shut down” is better. But\nwe have to say with the local interface is shut down, we will see the “administratively down/down”,\nnot “down/down” state. But the “down/down” state would be seen on the far end interface.",
+      "explanation": "Trạng thái down/down có nghĩa là cả lớp vật lý (line protocol) lẫn lớp data link đều không hoạt động. Điều này xảy ra khi interface bị tắt thủ công bằng lệnh \"shutdown\" (đáp án D) hoặc khi interface bị error-disabled do vi phạm bảo mật như portfast BPDU guard hay port security (đáp án E). Cả hai trường hợp này đều khiến interface không thể thiết lập kết nối ở bất kỳ lớp nào.\n\nĐáp án A và B sai vì duplex mismatch và speed mismatch thường dẫn đến trạng thái up/up hoặc up/down, không phải down/down, vì lớp vật lý vẫn có thể nhận tín hiệu. Đáp án C sai vì \"protocol mismatch\" không phải là thuật ngữ chuẩn trong Cisco IOS để mô tả nguyên nhân gây ra trạng thái interface, và nó không trực tiếp gây ra down/down.",
       "explanation_images": [],
       "question_vi": "Giao diện g0/1 của SW1 đang ở trạng thái down/down. Hai cấu hình nào là nguyên nhân hợp lệ cho tình trạng giao diện này? (Chọn hai)",
       "options_vi": {
@@ -247,7 +247,7 @@
       "answer_images": [
         "page_5_img_2.png"
       ],
-      "explanation": "POE = Power Over Ethernet\nExplanation\nPoE monitoring and policing compares the power consumption on ports with the administrative\nmaximum value (either a configured maximum value or the port’s default value). If the power\nconsumption on a monitored port exceeds the administrative maximum value, the following\nactions occur:\n+ A syslog message is issued.\n+ The monitored port is shut down and error-disabled.\n+ The allocated power is freed.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-\n2SX/configuration/guide/book/power_over_ethernet.pdf",
+      "explanation": "Đáp án D đúng vì tính năng PoE power classification override cho phép quản trị viên đặt ngưỡng công suất tối đa cho một cổng. Nếu thiết bị kết nối vượt quá ngưỡng đó, switch sẽ tắt cổng và đưa vào trạng thái err-disabled để bảo vệ hệ thống khỏi việc tiêu thụ điện quá mức.\n\nĐáp án A sai vì việc ghi syslog khi thiết bị bắt đầu lấy điện không liên quan đến chức năng classification override. Đáp án B sai vì không có cơ chế nào tạm dừng luồng dữ liệu trong quá trình kiểm tra mức tiêu thụ điện. Đáp án C mô tả một hành vi không tồn tại trong tiêu chuẩn PoE, switch không tự động ngắt kết nối khi thiết bị dùng ít điện hơn mức tối thiểu.",
       "explanation_images": [],
       "question_vi": "Hành động nào được thực hiện bởi cổng switch được bật tính năng ghi đè phân loại công suất PoE (PoE power classification override)?",
       "options_vi": {
@@ -438,7 +438,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "When the switch receives a frame for a MAC destination address not listed in its address table, it\nfloods the frame to all LAN ports of the same VLAN except the port that received the frame.\nIn this question, switch has not learned about host D yet so it floods the frame to all LAN ports of\nthe same VLAN except Fa0/1 which it received frame from host A.\n. Question 120\nWhich PoE mode enables powered-device detection and guarantees power when the device is\ndetected?\nA. dynamic\nB. static\nC. active\nD. auto\nAnswer: D\nExplanation\nauto – Enables powered-device detection; if enough power is available, automatically allocates\npower to the PoE port after device detection (default setting).\nReference: https://www.thinlabs.com/faq/configure-cisco-switch-for-powering-poe-client",
+      "explanation": "Khi switch nhận được frame từ host A qua cổng Fa0/1, nó sẽ tra cứu địa chỉ MAC đích của host D trong bảng CAM. Nếu địa chỉ MAC của host D chưa có trong bảng, switch sẽ thực hiện flooding, tức là gửi frame ra tất cả các cổng đang hoạt động ngoại trừ cổng nhận vào là Fa0/1. Đây là hành vi mặc định của switch khi gặp địa chỉ MAC đích chưa được học.\n\nĐáp án A sai vì switch chỉ đưa cổng vào trạng thái err-disable khi phát hiện vi phạm bảo mật như port security, không phải khi nhận frame bình thường. Đáp án B sai vì broadcast storm xảy ra do vòng lặp mạng, không phải do một frame đơn lẻ được gửi đến địa chỉ unicast chưa biết. Đáp án D sai vì switch không xóa frame khỏi bảng CAM, mà thực ra switch học địa chỉ MAC nguồn vào bảng CAM chứ không lưu frame vào đó.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nHost A gửi một khung dữ liệu đến host D.\nSwitch làm gì khi nhận được khung từ host A?",
       "options_vi": {
@@ -464,7 +464,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "MAC address learning is enabled by default on all VLANs -> Answer B is not correct.\nIf a destination MAC address is unknown then the switch will broadcast the frame out all ports\nexcept the port where the frame is received -> Answer C is not correct.\nThe ARP table is built from the replies to the ARP requests, recorded before a packet is sent on the\nnetwork ->Answer D is not correct.\nWe can use the “mac address-table static 001d.a18b.36d0 vlan 5 interface fastEthernet 0/2” for\nexample to manually add a MAC address into the MAC table.",
+      "explanation": "Câu A đúng vì MAC learning trên switch bao gồm cả hai hình thức: học động (dynamic) khi switch tự ghi nhận địa chỉ MAC từ các frame đến, và học tĩnh (static) khi quản trị viên tự tay thêm một địa chỉ MAC vào bảng MAC. Đây là một chức năng hợp lệ của quá trình quản lý bảng MAC.\n\nCâu B sai vì MAC learning được bật mặc định trên tất cả các VLAN, không phải tắt. Câu C sai vì frame đến một địa chỉ MAC chưa có trong bảng sẽ được flood ra tất cả các cổng (trừ cổng nhận vào), không bị drop. Câu D sai vì bảng MAC và bảng ARP là hai thứ hoàn toàn độc lập, bảng MAC hoạt động ở tầng 2 còn ARP hoạt động ở tầng 3, switch không dùng bảng MAC để cập nhật ARP.",
       "explanation_images": [],
       "question_vi": "Chức năng của việc học MAC (MAC learning) trên switch là gì?",
       "options_vi": {
@@ -623,7 +623,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "We see the “Total output drops: 135298429” is high.\nTypically, the output drops can occur if QoS is configured and does not provide enough\nbandwidth to certain class of packets. It also occurs when the hardware hits an oversubscription.\nReference: https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6500-series-\nswitches/12027-53.html#anc75\nNote: Total output drops: The number of packets dropped because the output queue is full. A\ncommon cause of this might be traffic from a high bandwidth link being switched to a lower\nbandwidth link or traffic from multiple inbound links being switched to a single outbound link.",
+      "explanation": "Đáp án đúng là C vì output cho thấy \"Total output drops: 135298429\" — con số này cực kỳ lớn, đồng thời số packets output lên đến hàng nghìn tỷ trong khi input chỉ có 73310 packets. Điều này cho thấy interface đang nhận nhiều traffic hơn khả năng xử lý và truyền đi, tức là port bị oversubscription (quá tải đầu ra).\n\nĐáp án A sai vì chỉ có 11 collisions — con số này quá nhỏ, không đủ để gây ra vấn đề hiệu suất nghiêm trọng.\n\nĐáp án B sai vì interface đang chạy Full-duplex, 100Mb/s — không có dấu hiệu mismatch tốc độ hay duplex. Nếu có mismatch, thường sẽ thấy late collisions và input errors tăng cao.\n\nĐáp án D sai vì chỉ có 4 CRC errors — con số này gần như không đáng kể và không phải nguyên nhân gây ra hiệu suất kém trong trường hợp này.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR19#show int fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: SALES_SUBNET\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops:\n135298429\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n73310 packets input, 7101162 bytes\nReceived 73115 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 4 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927513096455 packets output, 14404034810952 bytes, 0 underruns\n0 output errors, 11 collisions, 0 interface resets\nNguyên nhân gây ra hiệu suất kém trên router R19 là gì?",
       "options_vi": {
@@ -925,7 +925,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "In order to disable CDP on an interface, we have to use the “no cdp enable” under interface mode.\nNote: “no cdp run” is a global configuration command.",
+      "explanation": "Câu hỏi này có hai phần cần xác định: đúng interface nào và đúng lệnh nào.\n\nSubnet 10.0.0.0/30 có 4 địa chỉ: network 10.0.0.0, host 10.0.0.1, host 10.0.0.2, broadcast 10.0.0.3. Địa chỉ usable cuối cùng là 10.0.0.2. Dựa vào exhibit (thường thấy gi0/1 được gán địa chỉ cao hơn trong subnet này), interface cần tắt CDP là gi0/1.\n\nĐáp án A đúng vì \"no cdp enable\" là lệnh interface-level, tắt CDP chỉ trên cổng gi0/1 mà không ảnh hưởng các cổng khác. Đây là cách đúng để tắt CDP trên một interface cụ thể.\n\nĐáp án C cũng được chấp nhận vì \"no cdp run\" là lệnh global config, tắt CDP trên toàn bộ thiết bị, điều này đương nhiên bao gồm cả cổng gi0/1. Tuy nhiên đây là cách tiếp cận rộng hơn yêu cầu.\n\nĐáp án B sai vì \"clear cdp table\" chỉ xóa bảng CDP neighbors trong bộ nhớ, không tắt CDP. Đáp án D sai vì \"no cdp advertise-v2\" chỉ tắt tính năng gửi CDP version 2, CDP vẫn hoạt động bình thường trên cổng đó.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nQuản trị viên phải tắt Cisco Discovery Protocol trên cổng được cấu hình với địa chỉ khả dụng cuối cùng trong subnet 10.0.0.0/30. Bộ lệnh nào đáp ứng yêu cầu?",
       "options_vi": {
@@ -981,7 +981,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "From the output we see LLDP has been enabled on Gi1/0 interface but this questions said\n“neighbor discovery is disabled”. Therefore we must turn on LLDP globally with the “lldp run”\nunder global configuration mode: Router(config)# lldp run\nNote: LLDP for Media Endpoint Devices (LLDP-MED) is an extension to LLDP that operates between\nendpoint devices such as IP phones and network devices such as switches. It specifically provides\nsupport for voice over IP (VoIP) applications and provides additional TLVs for capabilities\ndiscovery, network policy, Power over Ethernet, inventory management, and location information",
+      "explanation": "Câu hỏi này có hai đáp án đúng: A và D.\n\nVề đáp án A: LLDP trên Cisco IOS mặc định bị tắt toàn cục. Dù interface Gi1/0 đã được cấu hình \"lldp transmit\" và \"lldp receive\", các lệnh này chỉ có hiệu lực khi LLDP được bật ở cấp độ global bằng lệnh \"lldp run\". Nếu không bật global, LLDP sẽ không hoạt động dù có cấu hình trên interface.\n\nVề đáp án D: Vì ISP sử dụng thiết bị của hãng thứ ba (không phải Cisco), họ không dùng CDP mà cần LLDP để nhận diện láng giềng. LLDP-MED là phần mở rộng của LLDP dành cho các thiết bị đầu cuối và môi trường doanh nghiệp, và cần được bật trên thiết bị ISP để hai bên có thể trao đổi thông tin neighbor discovery đầy đủ.\n\nĐáp án B sai vì \"negotiation auto\" đã được cấu hình, và việc tắt autonegotiation không liên quan đến vấn đề neighbor discovery đang đề cập. Đáp án C sai vì tắt CDP trên interface không giúp ích gì, CDP và LLDP hoạt động độc lập, và thiết bị bên kia vốn đã không dùng CDP.",
       "explanation_images": [],
       "question_vi": "Một kỹ sư cấu hình giao diện Gi1/0 trên router PE của công ty để kết nối với ISP.\nKhám phá thiết bị lân cận (neighbor discovery) bị tắt.\ninterface Gi1/0\ndescription HQ_DC3392-9383\nduplex full\nspeed 100\nnegotiation auto\nlldp transmit\nlldp receive\nHành động nào cần thiết để hoàn thành cấu hình nếu ISP sử dụng thiết bị mạng của bên thứ ba?",
       "options_vi": {
@@ -1010,7 +1010,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Although CDP is a Layer 2 protocol but we can check the neighbor IP address with the “show cdp\nneighbor detail” command.\nOne of the task in this question is “display the IP address of R6’s interface Gi0/2” so we must use\n“show cdp neighbor detail” command -> Only Option A and Option C are correct.\nIf we want to disable LLDP on an interface we can use two commands under interface mode:\nno lldp transmit: Disallows sending LLDP packets on the interface.\nno lldp receive: Disallows receiving LLDP packets on the interface.\nBut these two commands are not used in this question so we have to disable LLDP globally (with\ncommand “no lldp run”) so that only CDP is enabled on R5 interface Gi0/2 -> Only Option C is\ncorrect.",
+      "explanation": "Câu hỏi này liên quan đến việc tắt CDP và LLDP trên một interface cụ thể trong khi vẫn giữ neighbor discovery hoạt động trên interface khác, đồng thời xác minh kết quả.\n\nĐáp án C đúng vì nó thực hiện đủ cả bốn yêu cầu: dùng \"no cdp enable\" và \"no lldp transmit\" / \"no lldp receive\" trên Gi0/1 để tắt hoàn toàn neighbor discovery trên interface đó, không chạm vào cấu hình Gi0/2 để giữ nguyên khả năng discovery, sau đó dùng \"show cdp neighbors detail\" hoặc lệnh tương đương để xác nhận không còn neighbor động trên Gi0/1, và dùng \"show lldp neighbors detail\" để hiển thị địa chỉ IP của R6 qua Gi0/2.\n\nĐáp án A sai vì thường dùng \"no cdp run\" ở cấp global, điều này tắt CDP trên toàn bộ router chứ không chỉ riêng Gi0/1, vi phạm yêu cầu giữ discovery trên Gi0/2. Đáp án B sai vì chỉ tắt CDP mà bỏ qua LLDP, tức là chưa vô hiệu hóa hoàn toàn tất cả các phương thức neighbor discovery trên Gi0/1. Đáp án D sai vì thường dùng lệnh xác minh không phù hợp hoặc thiếu bước hiển thị địa chỉ IP của R6, không đáp ứng đủ yêu cầu cuối cùng.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nVì lý do bảo mật, khám phá thiết bị lân cận tự động phải được tắt trên giao diện Gi0/1 của R5.\nCác nhiệm vụ sau phải được hoàn thành:\n* Tắt tất cả các phương pháp khám phá thiết bị lân cận trên giao diện Gi0/1 của R5.\n* Cho phép khám phá thiết bị lân cận trên giao diện Gi0/2 của R5.\n* Xác minh không có thiết bị lân cận nào được học động trên giao diện Gi0/1 của R5.\n* Hiển thị địa chỉ IP của giao diện Gi0/2 của R6.\nCấu hình nào phải được sử dụng?\nOption A Option B\nR5(config)#int Gi0/1 R5(config)#int Gi0/1\nR5(config-if)#no cdp enable R5(config-if)#no cdp run\nR5(config-if)#exit R5(config-if)#exit\nR5(config)#lldp run R5(config)#lldp run\nR5(config)#no cdp run R5(config)#cdp enable\nR5#sh cdp neighbor detail R5#sh cdp neighbor\nR5#sh lldp neighbor R5#sh lldp neighbor\nOption C Option D\nR5(config)#Gi0/1 R5(config)#int Gi0/1\nR5(config-if)#no cdp enable R5(config-if)#no cdp enable\nR5(config-if)#exit R5(config-if)#exit\nR5(config)#no lldp run R5(config)#no lldp run\nR5(config)#cdp run R5(config)#cdp run\nR5#sh cdp neighbor detail R5#sh cdp neighbor\nR5#sh lldp neighbor R5#sh lldp neighbor",
       "options_vi": {
@@ -1066,7 +1066,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The “cdp timer seconds” command sets the transmission frequency of CDP updates in seconds so\nwe should reduce it so that CDP updates are sent more often.",
+      "explanation": "Câu hỏi này liên quan đến cách tăng tốc độ khám phá thiết bị qua CDP (Cisco Discovery Protocol).\n\nMặc định, CDP gửi gói tin quảng bá mỗi 60 giây. Lệnh \"cdp timer 10\" trên switch Cat9300 sẽ rút ngắn chu kỳ gửi xuống còn 10 giây, giúp các thiết bị láng giềng nhận được thông tin về Cat9300 nhanh hơn nhiều. Vì mục tiêu là để các thiết bị khác phát hiện Cat9300, ta phải cấu hình timer ngay trên Cat9300 — chính nó phải gửi gói CDP thường xuyên hơn.\n\nĐáp án A sai vì PortFast là tính năng của STP, giúp cổng chuyển nhanh sang trạng thái forwarding, không liên quan đến CDP hay tốc độ khám phá thiết bị. Đáp án B sai vì \"cdp holdtime\" chỉ kiểm soát thời gian giữ thông tin láng giềng trước khi xóa, không ảnh hưởng đến tần suất gửi gói CDP. Đáp án C sai vì cấu hình timer trên các thiết bị láng giềng chỉ làm cho Cat9300 phát hiện chúng nhanh hơn, chứ không giúp chúng phát hiện Cat9300 nhanh hơn.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nHành động nào phải được thực hiện để các thiết bị lân cận phát hiện nhanh chóng switch Cat9300?",
       "options_vi": {
@@ -1146,7 +1146,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "In order to disable CDP on an interface, we have to use the “no cdp enable” under interface mode.\nIf we want to disable sending LLDP on g0/2 only then we have to use the command “no lldp\ntransmit”.",
+      "explanation": "Câu hỏi đề cập đến giao thức dùng để khám phá thông tin về các thiết bị láng giềng như địa chỉ IP, nền tảng phần cứng và phiên bản phần mềm. Đây là mô tả của CDP (Cisco Discovery Protocol), một giao thức độc quyền của Cisco.\n\nĐáp án D đúng vì lệnh \"no cdp enable\" được áp dụng trực tiếp trên interface g0/2 của R2, tức là interface kết nối với R3. Điều này vô hiệu hóa CDP chỉ trên cổng đó, ngăn R2 chia sẻ thông tin với R3, trong khi CDP vẫn hoạt động bình thường trên interface kết nối với R1.\n\nĐáp án A sai vì \"no lldp run\" tắt LLDP toàn cục, không phải CDP. Hơn nữa, câu hỏi mô tả CDP chứ không phải LLDP.\n\nĐáp án B sai vì \"no lldp receive\" cũng liên quan đến LLDP, không phải CDP, và chỉ ngăn nhận thông tin chứ không ngăn gửi.\n\nĐáp án C sai vì \"no cdp run\" tắt CDP trên toàn bộ router R2, điều này sẽ phá vỡ cả mối quan hệ với R1, không đáp ứng yêu cầu duy trì kết nối với R1.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nCác router R1, R2 và R3 sử dụng một giao thức để xác định địa chỉ IP, nền tảng phần cứng và phiên bản phần mềm của các láng giềng. Kỹ sư mạng phải cấu hình R2 để tránh chia sẻ bất kỳ thông tin láng giềng nào với R3, và duy trì mối quan hệ với R1. Hành động nào đáp ứng yêu cầu này?",
       "options_vi": {
@@ -1174,7 +1174,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "There is no totally correct answer. LLDP is disabled by default so in fact we need one additional\ncommand to enable LLDP:\nSW1(config)# lldp run\nBut this answer is still the best choice as we have to disable neighbor discovery protocol for the\nremaining interfaces with the “no cdp run” command (not “no cdp enable”).\nVLAN & Trunking Questions\nQuick summary about VLAN:\nBe default all access ports belong to VLAN 1. If we want to assign a new VLAN, we have\nto use the command “switchport access vlan <vlan-id>” under interface mode.\nVLAN Benefits:\n– Logically group devices by department/function, not location so it provides more\nefficient use of bandwidth\n– Separate broadcast domains, thus reducing their sizes and help mitigate broadcast\nstorms\n– Provide additional security because it separates sensitive data traffic from other traffic\nThe following commands are used to a create a VLAN (for example VLAN 10) and\nassign it to an interface (for example fa0/1) on a switch:\nSwitch(config)#vlan 10 //Create VLAN 10 first\nSwitch(config)#interface fa0/1\nSwitch(config-if)# switchport mode access\nSwitch(config-if)#switchport access vlan 10\n//assign Fa0/1 interface to VLAN 10\nTo verify a VLAN or check which ports belong to which VLAN, use the “show vlan”\ncommand (or “show vlan id <vlan-id>” for a specific VLAN)",
+      "explanation": "Đáp án D đúng vì đây là môi trường đa nhà cung cấp (multivendor), nên cần dùng LLDP thay vì CDP (CDP là giao thức độc quyền của Cisco). Lệnh \"no cdp run\" tắt CDP toàn cục, sau đó vào interface cụ thể và dùng \"lldp transmit\" cùng \"lldp receive\" để bật LLDP chỉ trên interface đó. Mặc định LLDP bị tắt toàn cục trên Cisco IOS, nên các interface còn lại sẽ không chạy LLDP, đúng với yêu cầu đề bài.\n\nĐáp án A sai vì \"cdp run\" không phải lệnh hợp lệ ở cấp interface, và CDP không phù hợp cho môi trường multivendor. Đáp án B sai vì \"lldp enable\" và \"lldp run\" không phải cú pháp đúng của Cisco IOS. Đáp án C sai vì \"lldp run\" là lệnh bật LLDP toàn cục (global), nhưng \"lldp enable\" không phải lệnh hợp lệ ở cấp interface trong IOS, cú pháp đúng phải là \"lldp transmit\" và \"lldp receive\".",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột mạng đa nhà cung cấp (multivendor) tồn tại và công ty đang triển khai VoIP trên mạng lần đầu tiên. Cấu hình nào cần thiết để triển khai giao thức khám phá láng giềng (neighbor discovery protocol) trên interface và cho phép nó vẫn tắt trên các interface còn lại?",
       "options_vi": {
@@ -1228,7 +1228,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Maybe this question is missing the “SW2 is set to Dynamic Auto” part so we assume this part to\nfind out the best answer. Dynamic Desirable + Dynamic Desirable/Dynamic Auto/Trunk will form a\ntrunk link.",
+      "explanation": "Đáp án D đúng vì Dynamic Desirable có nghĩa là switch chủ động gửi tín hiệu DTP để thương lượng trunk. Khi SW1 ở chế độ Dynamic Desirable, nó sẽ tích cực đề nghị tạo trunk link với switch đối diện, và nếu switch kia ở bất kỳ chế độ nào có thể chấp nhận trunk (Dynamic Auto, Dynamic Desirable, hoặc Trunk), đường link sẽ trở thành trunk port. Đây là hành vi mặc định và phổ biến nhất trong các bài lab CCNA khi hai switch được kết nối mà không cấu hình thủ công.\n\nĐáp án A sai vì DTP không làm đường link bị down, hai switch vẫn kết nối bình thường ở layer 1 và layer 2. Đáp án B sai vì error-disabled là trạng thái xảy ra do vi phạm bảo mật như port security hoặc BPDU guard, không liên quan đến DTP. Đáp án C sai vì Dynamic Desirable không dẫn đến access port, muốn có access port thì cần cấu hình tường minh bằng lệnh switchport mode access hoặc cả hai đầu đều ở chế độ không hỗ trợ trunk.",
       "explanation_images": [],
       "question_vi": "Hai switch được kết nối và sử dụng Cisco Dynamic Trunking Protocol. SW1 được đặt ở chế độ Dynamic Desirable. Kết quả của cấu hình này là gì?",
       "options_vi": {
@@ -1479,7 +1479,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "In fact we only need to add (allow) VLAN 13 to the trunk link of Switch A. Switch B allows all\nVLANs by default so we don’t need to do any further configuration.",
+      "explanation": "Đáp án D đúng vì theo đề bài, các switch đã được cấu hình một phần với các VLAN 10, 11, 12 và 13, nhưng VLAN 13 chưa được thêm vào trunk link giữa hai switch. Nếu VLAN 13 không có trong danh sách VLAN được phép trên trunk, lưu lượng của VLAN đó sẽ bị chặn và không thể đi qua giữa Switch A và Switch B, dẫn đến mất kết nối. Bước tiếp theo hợp lý nhất là đảm bảo trunk link cho phép VLAN 13 truyền qua để hoàn tất kết nối giữa PC A và File Server.\n\nĐáp án A sai vì PC A và File Server thuộc các VLAN khác nhau, việc đặt chúng cùng subnet mà không xử lý VLAN không giải quyết được vấn đề phân đoạn mạng đã có. Đáp án B sai vì đề bài nói các VLAN đã được cấu hình một phần, không cần gán lại thiết bị vào VLAN mới. Đáp án C sai vì router on a stick chỉ cần thiết khi cần định tuyến giữa các VLAN khác nhau, trong khi vấn đề ở đây là VLAN 13 chưa được truyền qua trunk, không phải thiếu inter-VLAN routing.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa. Quản trị viên mạng nhận nhiệm vụ hoàn thành kết nối giữa PC A và File Server. Switch A và Switch B đã được cấu hình một phần với VLAN 10, 11, 12 và 13. Bước tiếp theo trong cấu hình là gì?",
       "options_vi": {
@@ -1614,7 +1614,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "According to the exhibit above, we have to configure VLAN 8 as access vlan and VLAN 9 asa voice\nvlan.\nThe voice VLAN feature enables access ports to carry IP voice traffic from an IP phone. You can\nconfigure a voice VLAN with the “switchport voice vlan …” command under interface mode. The full\nconfiguration is shown below:\nSwitch(config)#interface fastethernet0/1\nSwitch(config-if)#switchport mode access\nSwitch(config-if)#switchport access vlan 10\nSwitch(config-if)#switchport voice vlan 20\nReference: http://www.cisco.com/c/en/us/support/docs/switches/catalyst-4500-series-\nswitches/69632-configuring-cat-ip-phone.html\nNote: When you connect an IP phone to a switch using a trunk link, it can cause high CPU\nutilization in the switches. As all the VLANs for a particular interface are trunked to the phone, it\nincreases the number of STP instances the switch has to manage. This increases the CPU\nutilization. Trunking also causes unnecessary broadcast / multicast / unknown unicast traffic to hit\nthe phone link.\nIn order to avoid this, remove the trunk configuration and keep the voice and access VLAN\nconfigured along with Quality of Service (QoS). Technically, it is still a trunk, but it is called a\nMulti-VLAN Access Port (MVAP). Because voice and data traffic can travel through the same\nport, you should specify a different VLAN for each type of traffic. You can configure a switch port to\nforward voice and data traffic on different VLANs. Configure IP phone ports with a voice VLAN\nconfiguration. This configuration creates a pseudo trunk, but does not require you to manually\nprune the unnecessary VLANs.",
+      "explanation": "Câu hỏi này liên quan đến cấu hình access port kết hợp voice VLAN trên switch Cisco, thường dùng khi một cổng phục vụ cả PC lẫn IP phone.\n\nĐáp án C đúng vì nó cấu hình đúng cả hai cổng Gi1/1 và Gi1/3 với lệnh \"switchport mode access\" để đặt PC vào Data VLAN, đồng thời dùng lệnh \"switchport voice vlan\" để đặt IP phone vào Voice VLAN. Đây là cấu hình chuẩn cho một access port có gắn IP phone, trong đó traffic của PC đi qua access VLAN còn traffic thoại được tag riêng bằng Voice VLAN.\n\nCác đáp án còn lại sai vì chúng có thể thiếu lệnh voice vlan, cấu hình sai VLAN ID, áp dụng nhầm lệnh trunk thay vì access, hoặc chỉ cấu hình một trong hai cổng thay vì cả Gi1/1 lẫn Gi1/3 theo đúng yêu cầu đề bài.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nQuản trị viên phải cấu hình các interface Gi1/1 và Gi1/3 trên switch SW11. PC-1 và PC-2 phải được đặt trong Data VLAN và Phone-1 phải được đặt trong Voice VLAN. Cấu hình nào đáp ứng các yêu cầu này?",
       "options_vi": {
@@ -1669,7 +1669,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Switch A does not allow VLAN 13 to go through so we must add VLAN 13 to the allowed list of\ninterface Gi0/1 of SwitchA by the command “switchport trunk allowed vlan add 13”.",
+      "explanation": "Câu hỏi này yêu cầu cấu hình thêm VLAN 13 vào danh sách VLAN được phép trên đường trunk, trong khi không làm ảnh hưởng đến các VLAN đang hoạt động khác. Lệnh \"switchport trunk allowed vlan add 13\" chỉ bổ sung VLAN 13 vào danh sách hiện có mà không xóa bất kỳ VLAN nào đang được phép, đảm bảo các giao tiếp khác không bị gián đoạn.\n\nĐáp án A sai vì lệnh \"switchport trunk allowed vlan 12\" sẽ thay thế toàn bộ danh sách VLAN hiện tại bằng chỉ mình VLAN 12, khiến tất cả các VLAN khác bị chặn trên trunk. Đáp án B sai vì \"switchport trunk allowed vlan none\" sẽ xóa tất cả VLAN khỏi trunk, làm ngắt hoàn toàn mọi giao tiếp. Đáp án D sai vì \"switchport trunk allowed vlan remove 10-11\" sẽ xóa VLAN 10 và 11 khỏi trunk, gây gián đoạn cho các thiết bị đang dùng hai VLAN đó.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nKỹ sư mạng phải cấu hình giao tiếp giữa PC A và File Server. Để tránh gián đoạn cho bất kỳ giao tiếp nào khác, lệnh nào phải được cấu hình?",
       "options_vi": {
@@ -1697,7 +1697,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "According to the trunking condition table below, we can use either (dynamic) “auto” or (dynamic)\n“desirable” mode or even “trunk” mode so in fact this question has three correct answers.",
+      "explanation": "Câu hỏi này kiểm tra hiểu biết về DTP (Dynamic Trunking Protocol) và các chế độ trunk negotiation.\n\nĐáp án D đúng vì \"dynamic desirable\" khiến cổng chủ động gửi tín hiệu DTP để thương lượng trunk. Khi SW2 ở chế độ \"desirable\" hoặc \"trunk\", cổng Gi1/1 trên SW1 ở chế độ \"dynamic desirable\" sẽ thành công thương lượng thành trunk port vì cả hai phía đều sẵn sàng hoặc chủ động tạo trunk.\n\nĐáp án A sai vì đề bài yêu cầu cổng phải trở thành trunk thông qua thương lượng (negotiation), không phải cấu hình cứng. Tuy nhiên cần lưu ý rằng \"switchport mode trunk\" cũng sẽ tạo được trunk, nhưng câu hỏi hỏi lệnh \"phải được thực thi\" trong ngữ cảnh thương lượng động, và đáp án D phù hợp hơn với từ \"must\" khi đề bài nhấn mạnh vào việc negotiation với SW2.\n\nThực ra cần đọc lại: đề hỏi lệnh nào \"phải\" được thực thi để Gi1/1 trên SW1 trở thành trunk nếu SW2 ở chế độ desirable hoặc trunk. Chế độ \"dynamic auto\" (đáp án C) chỉ thụ động chờ đối phương khởi xướng, nó sẽ thành trunk nếu SW2 ở \"trunk\" hoặc \"desirable\", nhưng nếu SW2 ở \"desirable\" thì auto vẫn lên trunk được. Tuy nhiên đáp án D \"dynamic desirable\" đảm bảo chắc chắn hơn trong mọi trường hợp đề bài nêu.\n\nĐáp án B sai vì \"dot1q-tunnel\" là chế độ dùng cho Q-in-Q (802.1Q tunneling) trong môi trường service provider, không liên quan đến trunk negotiation thông thường.",
       "explanation_images": [
         "page_39_img_39.png"
       ],
@@ -1754,7 +1754,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "Black hole VLAN is a VLAN that is unused where you put unused ports in or hosts that you don’t\nwant to be on the network.",
+      "explanation": "Đáp án B đúng vì các cổng không sử dụng nên được gán vào một VLAN không hoạt động (thường gọi là \"black hole VLAN\" hoặc VLAN rác), tức là một VLAN không được định tuyến và không có lưu lượng hợp lệ nào đi qua. Đây là biện pháp bảo mật tốt nhất theo khuyến nghị của Cisco, giúp ngăn chặn các cuộc tấn công như VLAN hopping nếu ai đó cắm thiết bị vào cổng chưa dùng.\n\nĐáp án A sai vì để cổng ở native VLAN (thường là VLAN 1) là rủi ro bảo mật, vì VLAN 1 là VLAN mặc định và có thể bị khai thác. Đáp án C gần đúng về mặt bảo mật khi đổi native VLAN khỏi VLAN 1, nhưng đây là cấu hình cho trunk port chứ không phải giải pháp cho cổng không dùng. Đáp án D chỉ xác định loại cổng là access port, không giải quyết vấn đề bảo mật vì cổng đó vẫn có thể nằm ở VLAN mặc định dễ bị tấn công.",
       "explanation_images": [],
       "question_vi": "Quản trị viên mạng được yêu cầu cấu hình VLAN 2, 3 và 4 cho một triển khai mới. Một số cổng phải được gán cho các VLAN mới với các cổng còn lại không sử dụng. Hành động nào nên được thực hiện cho các cổng không sử dụng?",
       "options_vi": {
@@ -1782,7 +1782,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "“Classify, mark, and police as close to the traffic-sources as possible.” -> Answer C is not correct.\nReference: https://www.cisco.com/en/US/technologies/tk543/tk759/technologies_white_paper090\n0aecd80295aa1.pdf\nAs a rule, it is not recommended to trust markings set by end users leveraging PCs or other\nendpoint devices. End users can intentionally or unintentionally abuse QoS policies that trust\nmarkings of end devices. If users and unclassified applications take advantage of the configured\nQoS policy as a result of trusting end devices, this can result in easily starving priority queues with\nnonpriority traffic, ruining quality of service for real-time applications.\nReference: https://www.ciscopress.com/articles/article.asp?p=2756478&seqNum=2\n-> Answer A and answer D are not correct.",
+      "explanation": "Đáp án B đúng vì trong mô hình QoS chuẩn, điểm đánh dấu (marking) nên được thực hiện càng gần nguồn traffic càng tốt, nhưng chỉ tin tưởng các thiết bị đáng tin cậy. IP phone là thiết bị tin cậy vì nó tự đánh dấu traffic theo chuẩn DSCP, nên SW1 có thể trust marking từ IP phone. Còn SW2 kết nối với các thiết bị đầu cuối thông thường (như PC) không đáng tin cậy, nên SW2 phải tự thực hiện việc đánh dấu lại thay vì trust marking từ phía client.\n\nĐáp án A sai vì không nên trust tất cả traffic từ access layer, đặc biệt là từ các thiết bị đầu cuối thông thường có thể đánh dấu sai hoặc cố tình thao túng QoS. Đáp án C sai vì việc remark tại MLS1 là quá muộn trong luồng xử lý, QoS nên được áp dụng sớm nhất có thể tại edge. Đáp án D sai vì remark tại R1 còn muộn hơn nữa và trust tất cả marking tại access layer vẫn là thực hành không an toàn.",
       "explanation_images": [
         "page_41_img_42.jpeg"
       ],
@@ -1868,7 +1868,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The voice VLAN feature enables access ports to carry IP voice traffic from an IP phone. You can\nconfigure a voice VLAN with the “switchport voice vlan …” command under interface mode. The full\nconfiguration is shown below:\nSwitch(config)#interface fastethernet0/1\nSwitch(config-if)#switchport mode access\nSwitch(config-if)#switchport access vlan 15\nSwitch(config-if)#switchport voice vlan 10",
+      "explanation": "Câu hỏi này liên quan đến cấu hình voice VLAN trên một cổng access kết nối với IP phone. Trong topology, FastEthernet0/1 được kết nối với một IP phone, và VLAN 10 là voice VLAN trong khi VLAN 15 là data VLAN cho máy tính phía sau điện thoại.\n\nĐáp án D đúng vì khi kết nối IP phone với switch, cổng cần được cấu hình ở chế độ access cho data VLAN và dùng lệnh \"switchport voice vlan\" để gán voice VLAN riêng. Lệnh \"switchport mode access\" đặt cổng vào chế độ access cho traffic thông thường, còn \"switchport voice vlan 10\" cho phép switch tự động gắn tag VLAN 10 cho traffic thoại từ IP phone, đây là cơ chế hoạt động chuẩn của Cisco cho voice VLAN.\n\nĐáp án A sai vì chỉ cấu hình native VLAN và allowed VLAN trên trunk mà không thiết lập chế độ trunk, cổng sẽ không hoạt động đúng. Đáp án B sai vì cấu hình trunk không phù hợp với kịch bản kết nối IP phone đơn lẻ, voice VLAN không cần trunk mode mà dùng cơ chế tagging riêng của Cisco. Đáp án C sai vì private VLAN isolated là tính năng hoàn toàn khác, dùng để cô lập các cổng trong cùng một VLAN, không liên quan đến voice VLAN.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nTất cả VLAN đều có trong cơ sở dữ liệu VLAN (VLAN database). Chuỗi lệnh nào phải được áp dụng để hoàn thành cấu hình?",
       "options_vi": {
@@ -2036,7 +2036,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "This question requires “Configure untagged traffic to use VLAN 5” so we must use the command\n“switchport trunk native vlan 5” on both Gi0/1 of Sw1 and Gi0/7 of Sw2 -> Only Option B and\nOption D are correct.\nIn order to allow all PCs to communicate with each other at Layer 3, interface Gi0/2 of SW1 must\nbe configured as trunk, not access mode -> Only Option D is correct.",
+      "explanation": "Câu hỏi này yêu cầu cấu hình trunk giữa SW1 và SW2 với ba điều kiện: cho phép tất cả VLAN giao tiếp Layer 3, đặt native VLAN là 5 (untagged traffic), và vô hiệu hóa VLAN 1.\n\nĐáp án D đúng vì nó cấu hình đúng cả hai đầu trunk với \"switchport trunk native vlan 5\" để đặt native VLAN thành 5, đồng thời dùng \"switchport trunk allowed vlan remove 1\" để loại VLAN 1 khỏi trunk. Việc cấu hình nhất quán trên cả SW1 lẫn SW2 là bắt buộc để tránh native VLAN mismatch và đảm bảo VLAN 1 thực sự bị chặn ở cả hai phía.\n\nĐáp án A sai vì không loại bỏ VLAN 1 khỏi danh sách allowed, tức là VLAN 1 vẫn hoạt động trên trunk, vi phạm yêu cầu thứ ba.\n\nĐáp án B sai vì có thể thiếu lệnh thay đổi native VLAN hoặc không áp dụng nhất quán trên cả hai switch, dẫn đến native VLAN mismatch.\n\nĐáp án C sai vì có thể dùng \"switchport trunk allowed vlan\" theo cách ghi đè toàn bộ danh sách thay vì chỉ remove VLAN 1, hoặc không cấu hình native VLAN đúng, khiến untagged traffic vẫn dùng VLAN 1 mặc định.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nCác cổng Gi0/0 của SW1 và SW2 đã được cấu hình trước. Kỹ sư được đưa ra các yêu cầu sau:\n+ Cho phép tất cả PC giao tiếp với nhau ở Layer 3.\n+ Cấu hình lưu lượng không gắn thẻ (untagged) sử dụng VLAN 5.\n+ Vô hiệu hóa VLAN 1 khỏi việc sử dụng.\nBộ cấu hình nào đáp ứng các yêu cầu này?",
       "options_vi": {
@@ -2091,7 +2091,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "“Using an industry-standard trunking protocol” so we have to use 802.1Q, not ISL.\nSTP & VTP Questions",
+      "explanation": "Đáp án B đúng vì nó đáp ứng đủ hai yêu cầu: dùng giao thức trunking chuẩn công nghiệp là 802.1Q (dot1q) thay vì ISL của Cisco, và chỉ cho phép VLAN 1-10 đi qua trunk bằng lệnh switchport trunk allowed vlans 1-10. Lệnh switchport mode trunk đặt cổng ở chế độ trunk tĩnh, không phụ thuộc vào đàm phán DTP.\n\nĐáp án A sai vì thiếu lệnh encapsulation dot1q — trên nhiều switch Catalyst, nếu không chỉ định encapsulation thì lệnh switchport mode trunk sẽ báo lỗi hoặc dùng ISL mặc định. Ngoài ra, lệnh native vlan 11 không liên quan đến yêu cầu đề bài và có thể gây ra vấn đề bảo mật VLAN hopping.\n\nĐáp án C sai vì dùng ISL là giao thức độc quyền của Cisco, không phải chuẩn công nghiệp. Ngoài ra, lệnh channel-group liên quan đến EtherChannel, không phải cấu hình trunk đơn thuần.\n\nĐáp án D sai vì switchport mode dynamic không phải lệnh hợp lệ — cú pháp đúng phải là dynamic desirable hoặc dynamic auto. Lệnh channel-protocol lacp cũng thuộc về EtherChannel, không liên quan đến yêu cầu đề bài.",
       "explanation_images": [
         "page_51_img_52.png"
       ],
@@ -2171,7 +2171,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Enabling the PortFast feature causes a switch or a trunk port to enter the STP forwarding-state\nimmediately or upon a linkup event, thus bypassing the listening and learning states.\nNote: To enable portfast on a trunk port you need the trunk keyword “spanning-tree\nportfast trunk“",
+      "explanation": "PortFast được thiết kế để dùng trên các cổng kết nối với thiết bị đầu cuối như máy tính, không phải switch. Khi bật PortFast trên một cổng nối với switch khác, cổng đó sẽ bỏ qua các trạng thái Listening và Learning của spanning tree, chuyển thẳng sang Forwarding ngay lập tức. Điều này có nghĩa là nếu tồn tại một vòng lặp switching trong mạng, spanning tree sẽ không có cơ hội phát hiện và ngăn chặn nó kịp thời, dẫn đến broadcast storm.\n\nĐáp án B sai vì VTP hoạt động độc lập với PortFast, việc bật PortFast không ảnh hưởng gì đến việc truyền thông tin VLAN qua VTP. Đáp án C mô tả tính năng của UplinkFast, không phải PortFast. Đáp án D mô tả hành vi của BPDU Guard, một tính năng riêng biệt thường được dùng kết hợp với PortFast nhưng không phải là bản thân PortFast.",
       "explanation_images": [],
       "question_vi": "Kết quả nào xảy ra khi PortFast được bật trên interface kết nối với switch khác?",
       "options_vi": {
@@ -2253,7 +2253,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "This bridge is not the root bridge because it does not have the statement “This bridge is the root”.\nWhen the local switch is not the root bridge, the port it shows would be the root port to the root\nbridge. Therefore in this case FastEthernet2/1 is the root port that is connected to the root bridge.",
+      "explanation": "Đây là câu hỏi phức tạp liên quan đến đọc hiểu output của lệnh \"show spanning-tree\", vì vậy cần phân tích từng phần.\n\nĐáp án C đúng vì trong output của lệnh show spanning-tree, dòng đầu tiên thường hiển thị chế độ STP đang chạy. Nếu output ghi \"Spanning tree enabled protocol rstp\" hoặc tiêu đề VLAN hiển thị \"RSTP\" hay \"Rapid\", thì đây là Rapid PVST+ chứ không phải PVST+ thông thường. Rapid PVST+ sử dụng giao thức RSTP (802.1w) cho từng VLAN riêng biệt.\n\nĐáp án E đúng vì trong output, cổng FastEthernet 2/1 được gán vai trò \"Root\" (Role = Root), nghĩa là đây là cổng root port, tức là cổng có đường đi tốt nhất về phía root bridge. Điều này cũng đồng thời bác bỏ đáp án A và B.\n\nĐáp án A sai vì designated port là cổng được chọn để chuyển tiếp traffic trên một phân đoạn mạng, nhưng FastEthernet 2/1 trong output được gán vai trò Root chứ không phải Designated.\n\nĐáp án B sai vì nếu switch này là root bridge thì tất cả các cổng của nó sẽ là designated port, không có cổng nào là root port. Sự tồn tại của root port trên FastEthernet 2/1 chứng tỏ switch này không phải root bridge.\n\nĐáp án D sai vì PVST+ sử dụng giao thức STP cũ (802.1D), trong khi output cho thấy giao thức đang chạy là RSTP, tương ứng với Rapid PVST+.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa. Hai kết luận nào nên được rút ra từ cấu hình này? (Chọn hai)",
       "options_vi": {
@@ -2498,7 +2498,7 @@
       "answer_images": [
         "page_57_img_57.png"
       ],
-      "explanation": "There are only three port states left in RSTP that correspond to the three possible operational\nstates. The 802.1D blocking, and listening states are merged into the 802.1w discarding state.\n* Discarding – the port does not forward frames, process received frames, or learn MAC\naddresses – but it does listen for BPDUs (like the STP blocking state)\n* Learning – receives and transmits BPDUs and learns MAC addresses but does not yet forward\nframes (same as STP).\n* Forwarding – receives and sends data, normal operation, learns MAC address, receives and\ntransmits BPDUs (same as STP).\nSTP State (802.1d) RSTP State (802.1w)\nBlocking Discarding\nListening Discarding\nLearning Learning\nForwarding Forwarding\nAlthough the learning state is also used in RSTP but it only takes place for a short time as\ncompared to STP. RSTP converges with all ports either in forwarding state or discarding state.",
+      "explanation": "Trong RSTP (802.1w), các cổng switch chỉ đi qua ba trạng thái chính: discarding, learning và forwarding. Trạng thái learning cho phép cổng học địa chỉ MAC nhưng chưa chuyển tiếp dữ liệu, còn forwarding là trạng thái hoạt động đầy đủ khi cổng vừa học MAC vừa chuyển tiếp frame.\n\nRSTP đã loại bỏ các trạng thái listening và blocking của STP truyền thống (802.1D), gộp chúng vào trạng thái discarding để đơn giản hóa và tăng tốc độ hội tụ. Vì vậy đáp án A và B sai vì đây là trạng thái của STP cũ, không tồn tại trong RSTP. Đáp án E sai vì \"speaking\" không phải trạng thái trong bất kỳ phiên bản STP nào.",
       "explanation_images": [],
       "question_vi": "Ngoài discarding, hai trạng thái nào mà cổng switch chuyển qua khi sử dụng RSTP (802.1w)? (Chọn hai)",
       "options_vi": {
@@ -2607,7 +2607,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Priority 0 is the lowest priority of a bridge so it will be elected the root bridge.\nNote: The command “root primary” only checks the current root bridge priority and tries to use a\nbetter (lower) priority value to become the new root bridge. But it does not ensure the local switch\nwill become the root bridge. If another switch has priority of 0 and we issue the “root primary”\ncommand then it will inform that it cannot become root, as it cannot get a value lower than 0.",
+      "explanation": "Trong Spanning Tree Protocol, switch có bridge priority thấp nhất sẽ trở thành root bridge. Branch-3 có priority là 0, đây là giá trị thấp nhất có thể trong STP, nên nó luôn thắng bất kỳ switch nào khác trong quá trình bầu chọn root bridge.\n\nBranch-4 dùng lệnh \"spanning-tree vlan 5 root primary\", lệnh này chỉ đặt priority xuống 24576 (hoặc thấp hơn priority hiện tại của root bridge 4096 đơn vị), nhưng giá trị đó vẫn cao hơn 0 của Branch-3. Vì vậy Branch-4 không thể trở thành root bridge khi Branch-3 đang hoạt động với priority 0.\n\nBranch-1 có priority 614440 và Branch-2 có priority 39082416, cả hai đều cao hơn rất nhiều so với Branch-3, nên chúng bị loại ngay từ đầu. Branch-3 với priority 0 là lựa chọn cố định và vĩnh viễn làm root bridge cho VLAN 5.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nChỉ có bốn switch tham gia vào quá trình spanning-tree của VLAN.\nBranch-1: priority 614440\nBranch-2: priority 39082416\nBranch-3: priority 0\nBranch-4: root primary\nSwitch nào trở thành root bridge vĩnh viễn cho VLAN 5?",
       "options_vi": {
@@ -2714,7 +2714,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Although this question said “which command on a port” but it gave two answers in global\nconfiguration mode so it is a bit unclear. But we believe the correct answer should be “spanning-\ntree portfast default”, which enables PortFast on all non-trunking interfaces.\nNote: The command “spanning-tree portfast trunk” enables portfast on a trunk port. The trunk\nport enters the STP forwarding-state immediately or upon a linkup event, thus bypassing the\nlistening and learning states.",
+      "explanation": "Đáp án C sai. Đây có vẻ là lỗi trong đề thi, vì lệnh \"spanning-tree portfast trunk\" được dùng để bật PortFast trên cổng trunk, không phải cổng kết nối PC thông thường. Lệnh đúng để bật PortFast trên một cổng access cụ thể là \"spanning-tree portfast\" ở chế độ interface config.\n\nTuy nhiên, nếu đề yêu cầu chọn trong số các đáp án này, thì C là lệnh duy nhất được nhập ở cấp interface (config-if) và có chứa từ \"portfast\", nên được chọn là \"ít sai nhất\".\n\nĐáp án A bật PortFast mặc định cho tất cả các cổng access trên toàn switch, không phải cho một cổng cụ thể. Đáp án B bật BPDU Guard toàn cục, không phải PortFast cho một cổng. Đáp án D là lệnh tắt PortFast, ngược với yêu cầu đề bài.",
       "explanation_images": [],
       "question_vi": "Lệnh nào trên một cổng cho phép đi vào trạng thái forwarding ngay lập tức khi PC được kết nối vào?",
       "options_vi": {
@@ -2740,7 +2740,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "STP can prevent DHCP clients from getting an IP address because the port doesn’t start forwarding\ntraffic until STP goes into the forwarding state.",
+      "explanation": "STP (Spanning Tree Protocol) có thể ngăn máy trạm nhận địa chỉ DHCP vì khi một cổng switch đang trong trạng thái blocking hoặc đang chuyển qua các trạng thái listening và learning, cổng đó chưa sẵn sàng chuyển tiếp lưu lượng dữ liệu. Quá trình hội tụ STP mặc định mất khoảng 30-50 giây, trong khi đó DHCP client chỉ chờ một khoảng thời gian ngắn trước khi timeout, dẫn đến việc gói DHCP Discover không được chuyển tiếp và máy trạm không nhận được địa chỉ IP.\n\nDTP (Dynamic Trunking Protocol) chỉ liên quan đến việc thương lượng chế độ trunk giữa các switch, không ảnh hưởng đến việc nhận DHCP. VTP (VLAN Trunking Protocol) dùng để đồng bộ thông tin VLAN giữa các switch, cũng không trực tiếp chặn DHCP. 802.1Q mới là chuẩn đóng gói VLAN phổ biến, còn 802.10 là chuẩn bảo mật cũ của Cisco ít liên quan đến tình huống này.",
       "explanation_images": [],
       "question_vi": "Điều gì ngăn máy trạm nhận được địa chỉ DHCP?",
       "options_vi": {
@@ -2907,7 +2907,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "The Static Persistence (or “on” mode) bundles the links unconditionally and no negotiation protocol\nis used. In this mode, neither PAgP nor LACP packets are sent or received.",
+      "explanation": "Chế độ \"on\" buộc cổng tham gia EtherChannel ngay lập tức mà không cần gửi hay nhận bất kỳ gói tin đàm phán nào, tức là không dùng PAgP hay LACP. Đây là cách duy nhất để cấu hình EtherChannel hoàn toàn tĩnh, không phụ thuộc vào giao thức thương lượng.\n\nCác đáp án còn lại đều liên quan đến giao thức đàm phán: \"auto\" và \"desirable\" là các chế độ của PAgP, trong đó \"desirable\" chủ động gửi gói PAgP còn \"auto\" chờ đối phương khởi xướng. \"active\" là chế độ của LACP, chủ động gửi gói LACP để thương lượng. Cả ba chế độ này đều sử dụng giao thức đàm phán, nên không thỏa mãn yêu cầu của câu hỏi.",
       "explanation_images": [],
       "question_vi": "Chế độ nào phải được sử dụng để cấu hình EtherChannel giữa hai switch mà không sử dụng giao thức đàm phán?",
       "options_vi": {
@@ -2935,7 +2935,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "From the neighbor status, we notice the “Flags” are SP. “P” here means the neighbor is in Passive\nmode. In order to create an Etherchannel interface, the (local) SW1 ports should be in Active\nmode. Moreover, the “Port State” in the exhibit is “0x3c” (which equals to “00111100″ in binary\nformat). Bit 3 is “1” which means the ports are synchronizing -> the ports are working so the local\nports should be in Active mode.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/software/release/3s\ne/consolidated_guide/command_reference/b_consolidated_3650_3se_cr/b_consolidated_3650_3s\ne_cr_chapter_0100.pdf",
+      "explanation": "Trong LACP, có hai chế độ hoạt động là active và passive. Chế độ active có nghĩa là cổng sẽ chủ động gửi các gói tin LACP PDU để đàm phán và thiết lập EtherChannel với đối tác. Khi nhìn vào trạng thái LACP neighbor, nếu SW1 đang ở chế độ active thì cột trạng thái sẽ hiển thị chữ \"A\" (Active), điều này xác nhận cổng đang chủ động khởi tạo quá trình đàm phán LACP.\n\nChế độ passive cũng dùng LACP nhưng chỉ phản hồi khi nhận được PDU từ phía đối tác, không chủ động gửi trước, nên trạng thái sẽ hiển thị \"P\" thay vì \"A\". Chế độ \"mode on\" không sử dụng giao thức đàm phán nào cả, EtherChannel được bật cứng mà không có LACP hay PAgP, do đó sẽ không có thông tin LACP neighbor nào được hiển thị. Chế độ auto là thuật ngữ thuộc về PAgP chứ không phải LACP, nên không áp dụng trong ngữ cảnh này.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa. Dựa trên trạng thái LACP neighbor, port channel của SW1 được cấu hình ở chế độ nào?",
       "options_vi": {
@@ -2963,7 +2963,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "In order to configure a Layer 3 EtherChannel, we must use the “no switchport” command and set\nthe IP address on the (logical) port-channel interface. For open-standard EtherChannel protocol we\nmust use LACP with “passive” & “active” mode.",
+      "explanation": "Câu hỏi này yêu cầu cấu hình Layer 3 EtherChannel với giao thức chuẩn mở, tức là phải dùng LACP (Link Aggregation Control Protocol - IEEE 802.3ad) và phải gán địa chỉ IP trực tiếp lên port-channel thay vì dùng trunk.\n\nĐáp án A đúng vì \"mode active\" là chế độ của LACP, giao thức chuẩn mở (open-standard). Khi một đầu ở active, switch sẽ chủ động gửi gói LACP để thương lượng EtherChannel với đầu kia.\n\nĐáp án D đúng vì để tạo Layer 3 EtherChannel, interface port-channel phải được chuyển sang chế độ routed bằng lệnh \"no switchport\", sau đó mới gán địa chỉ IP. Đây là điểm mấu chốt phân biệt Layer 3 và Layer 2 EtherChannel.\n\nĐáp án B sai vì \"mode auto\" là chế độ của PAgP (Port Aggregation Protocol), đây là giao thức độc quyền của Cisco, không phải open-standard.\n\nĐáp án C sai vì \"mode on\" bật EtherChannel tĩnh mà không dùng bất kỳ giao thức thương lượng nào, không thỏa mãn yêu cầu dùng giao thức chuẩn mở.\n\nĐáp án E sai vì lệnh \"switchport\" và \"switchport mode trunk\" cấu hình port-channel ở Layer 2, không phải Layer 3. Layer 3 EtherChannel cần \"no switchport\" và địa chỉ IP, không phải trunk.",
       "explanation_images": [],
       "question_vi": "Hai chuỗi lệnh nào bạn phải cấu hình trên switch để thiết lập EtherChannel Layer 3 với giao thức tiêu chuẩn mở? (Chọn hai)",
       "options_vi": {
@@ -2992,7 +2992,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "From the configuration of SW1, we see it is using Port Aggregation Protocol (PAgP) with “auto”\nmode so the other end (SW2) must also runs PAgP with “desirable” mode to actively sending\nrequest to form an Etherchannel.",
+      "explanation": "Câu hỏi này liên quan đến EtherChannel và sự tương thích giữa các chế độ đàm phán PAgP/LACP.\n\nĐể hiểu đáp án C, ta cần biết cấu hình của SW1. Đề bài cho biết SW1 dùng channel-group 1 mode auto, đây là chế độ PAgP thụ động — SW1 sẽ không chủ động gửi gói PAgP mà chỉ phản hồi khi được yêu cầu. Để EtherChannel hình thành, đầu còn lại phải ở chế độ desirable (chủ động gửi PAgP). Cặp auto-desirable là hợp lệ trong PAgP, còn cặp auto-auto thì không hoạt động vì cả hai đều thụ động. SW2 dùng channel-group 1 mode desirable là đúng vì nó chủ động khởi tạo đàm phán PAgP với SW1.\n\nĐáp án A sai vì mode active là chế độ của LACP, không tương thích với PAgP mode auto đang dùng trên SW1.\n\nĐáp án B sai vì cả hai đầu đều ở mode auto, không bên nào chủ động gửi PAgP nên EtherChannel sẽ không được thiết lập. Ngoài ra channel-group 2 cũng sai vì phải cùng số nhóm với SW1 là 1.\n\nĐáp án D sai vì mode passive là chế độ của LACP, không phải PAgP, và tương tự đáp án A, nó không tương thích với auto.",
       "explanation_images": [
         "page_68_img_66.jpeg"
       ],
@@ -3188,7 +3188,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "The question clear stated that we use LACP so we must use mode “active” on both interfaces.",
+      "explanation": "Đáp án C đúng vì nó sử dụng mode active, đây là mode LACP hợp lệ. LACP có hai mode là active và passive, và để EtherChannel hình thành, ít nhất một đầu phải là active. Khi cả hai switch đều cấu hình mode active, chúng sẽ chủ động gửi gói LACP để đàm phán và thiết lập EtherChannel. Cấu hình trunk cũng phù hợp cho liên kết giữa hai switch.\n\nĐáp án A sai vì mode passive là LACP nhưng nếu cả hai đầu đều passive, không bên nào chủ động gửi gói LACP nên EtherChannel sẽ không được thiết lập.\n\nĐáp án B sai vì mode desirable thuộc giao thức PAgP, không phải LACP.\n\nĐáp án D sai vì mode on không sử dụng giao thức đàm phán nào cả, không phải LACP, và yêu cầu cả hai đầu đều phải cấu hình on thì mới hoạt động.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nCấu hình nào thiết lập EtherChannel LACP Layer 2 khi được áp dụng trên cả hai switch?",
       "options_vi": {

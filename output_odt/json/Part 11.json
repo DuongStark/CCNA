@@ -118,7 +118,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "The three-tier hierarchical design maximizes performance, network availability, and the ability to scale the network design. Most small enterprise campus’ do not grow significantly larger over time, and most small enterprise campus are small enough to be well served by a two-tier hierarchical design, where the core and distribution layers are collapsed into one layer. The primary motivation for the collapsed core design is reducing network cost, while maintaining most of the benefits of the three-tier hierarchical model.\nReference:",
+      "explanation": "Đáp án A đúng vì trong mô hình collapsed-core (hay còn gọi là two-tier), lớp core và lớp distribution được gộp lại thành một lớp duy nhất, giúp giảm chi phí và độ phức tạp trong các mạng vừa và nhỏ không cần đến ba lớp riêng biệt.\n\nĐáp án B sai vì nó mô tả một kịch bản kết nối EtherChannel giữa access và distribution, không liên quan đến định nghĩa của collapsed-core. Đáp án C mô tả mạng SOHO đơn giản với một switch duy nhất, đó là mô hình flat network chứ không phải collapsed-core. Đáp án D sai vì không có mô hình phân cấp nào cho phép thiết bị không dây kết nối trực tiếp vào lớp core, điều đó vi phạm nguyên tắc thiết kế phân cấp cơ bản.",
       "explanation_images": [],
       "question_vi": "Đặc điểm của mô hình mạng lõi thu gọn (collapsed-core) là gì?",
       "options_vi": {
@@ -143,7 +143,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "This question is a bit unclear to understand. But this question wanted to ask about the severity (levels) of syslog messages. Level = severity level.\nTo rate-limit messages (limit the number of syslog packets sent to the syslog server), we use the command “logging rate-limit …” instead so answer A is not the best answer for this question (although it is not totally wrong).",
+      "explanation": "Đáp án B đúng vì khi cấu hình mức syslog (logging level) trên một thiết bị, bạn đang xác định ngưỡng mức độ nghiêm trọng (severity level) của các thông điệp sẽ được gửi đi hoặc lưu lại. Ví dụ, nếu đặt mức 3 (errors), thiết bị chỉ gửi các thông điệp từ mức 0 đến 3, tức là chỉ những sự kiện nghiêm trọng nhất. Việc đặt mức khác nhau cho từng thiết bị cho phép kiểm soát loại thông tin nào được báo cáo từ mỗi thiết bị đó.\n\nĐáp án A sai vì syslog không có cơ chế giới hạn tốc độ (rate-limiting) dựa trên mức độ nghiêm trọng. Đáp án C sai vì việc xác định nguồn gốc của thông điệp là chức năng của địa chỉ IP nguồn hoặc hostname trong gói syslog, không liên quan đến việc cấu hình mức syslog. Đáp án D sai vì số lượng thông điệp được lưu cục bộ phụ thuộc vào kích thước bộ đệm (logging buffer size), không phải mức severity được cấu hình.",
       "explanation_images": [],
       "question_vi": "Mục đích của việc cấu hình các mức syslog khác nhau cho các thiết bị khác nhau trên mạng là gì?",
       "options_vi": {
@@ -350,7 +350,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "The best entry for destination 172.18.32.38 is “C 172.18.32.36/30 …, GigabitEthernet0/0” so the router will forward the packet to Gi0/0 interface.",
+      "explanation": "Đáp án đúng là A vì router sử dụng nguyên tắc longest prefix match khi tra bảng định tuyến. Địa chỉ đích 172.18.32.38 khớp với nhiều route, nhưng entry 172.18.32.36/30 có prefix dài nhất (30 bit) và bao phủ dải 172.18.32.36 đến 172.18.32.39, tức là 172.18.32.38 nằm trong dải này. Route đó trỏ đến interface GigabitEthernet0/0, nên gói tin được chuyển tiếp ra cổng đó.\n\nCác đáp án còn lại sai vì dù 172.18.32.38 cũng khớp với 172.18.32.0/19 (qua 10.1.1.3 - đáp án D) và các route khác, prefix của chúng ngắn hơn /30 nên bị loại. Loopback0 (đáp án B) gắn với 172.18.32.32/32, không bao phủ địa chỉ .38. Đáp án C (10.1.1.1) là next-hop của route EIGRP /26, cũng thua về độ dài prefix so với /30.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nrouter# show ip route\n...\nD 172.18.32.0/26 [90/25789217] via 10.1.1.1\nR 172.18.32.0/24 [120/4] via 10.1.1.2\nO 172.18.32.0/19 [110/229840] via 10.1.1.3\nC 172.18.32.32/32 is directly connected, Loopback0\nC 172.18.32.36/30 directly connected, GigabitEthernet0/0\nL 172.18.32.37/32 is directly connected, GigabitEthernet0/0\nMột gói tin có nguồn từ 172.18.33.2 có đích đến là 172.18.32.38. Router chuyển tiếp gói tin đến đâu?",
       "options_vi": {
@@ -427,7 +427,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Another security enhancement that has been made in WP3 reduces potential for password cracking attacks such as the WPA2 KRACK Attack. WPA2 is vulnerable to brute force and dictionary-based attacks. That is because security relies on the AP provider setting a secure password and many establishments don’t. With WPA3, the Pre-Shared Key (PSK) exchange protocol is replaced with Simultaneous Authentication of Equals (SAE) or the Dragonfly Key Exchange, which improves security of the initial key exchange and offers better protection against offline dictionary-based attacks.\nReference:",
+      "explanation": "WPA3 giới thiệu cơ chế xác thực SAE (Simultaneous Authentication of Equals) thay thế cho PSK trong WPA2, giúp chống lại các cuộc tấn công brute force và dictionary attack hiệu quả hơn nhiều. Ngay cả khi kẻ tấn công bắt được gói tin handshake, họ cũng không thể thực hiện tấn công offline để đoán mật khẩu.\n\nĐáp án A sai vì 802.1x không phải là tính năng mới của WPA3, nó đã được dùng từ WPA2 Enterprise. Đáp án B sai vì TKIP là giao thức mã hóa cũ của WPA (thế hệ đầu), WPA3 sử dụng AES-GCMP mạnh hơn. Đáp án C sai vì WPA3 không dùng PKI để xác định access point, đây không phải đặc điểm của chuẩn WPA3.",
       "explanation_images": [],
       "question_vi": "Cải tiến nào được triển khai trong WPA3?",
       "options_vi": {
@@ -555,7 +555,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "8 new subnets -> 8 = 23. Therefore the subnet mask is 255.255.255.224 (224 in decimal = 1110 0000 in binary) and each new subnet consists of 25 – 2 = 30 hosts.\n“Interface VLAN 10 must use the last usable IP in the first new subnet” -> The first new subnet is 192.168.32.0/27 ( increment: 32) so it ranges from 192.168.32.0 to 192.168.32.31) so the last usable IP is 192.168.32.30. Therefore we must assign IP address 192.168.32.30/27 to interface VLAN 10.",
+      "explanation": "Để chia 192.168.32.0/24 thành 8 subnet, mỗi subnet chứa ít nhất 30 host, ta cần mượn 3 bit (2³ = 8 subnet) và giữ lại 5 bit cho host (2⁵ - 2 = 30 host). Kết quả là prefix /27, subnet mask 255.255.255.224. Subnet đầu tiên là 192.168.32.0/27, với dải host từ .1 đến .30, vậy địa chỉ IP cuối cùng có thể dùng là 192.168.32.30. Vì đây là Layer 3 interface (routed port), lệnh \"no switchport\" được dùng để chuyển port từ chế độ switching sang chế độ routing, sau đó gán IP trực tiếp lên interface đó. Đáp án D đúng vì dùng đúng lệnh \"no switchport\", đúng IP 192.168.32.30, và đúng mask 255.255.255.224.\n\nĐáp án A sai vì dùng mask 255.255.255.240 tương ứng /28, chỉ có 14 host mỗi subnet, không đủ 30 host theo yêu cầu. Đáp án B sai vì dùng lệnh \"switchport\" thay vì \"no switchport\", tức là giữ port ở chế độ Layer 2, không thể gán IP trực tiếp. Đáp án C sai vì dù dùng \"no switchport\" đúng, nhưng IP 192.168.32.97 thuộc subnet thứ tư (192.168.32.96/27), không phải subnet đầu tiên, và lệnh \"mode trunk\" không liên quan đến routed port.",
       "explanation_images": [],
       "question_vi": "Khối địa chỉ 192.168.32.0/24 phải được chia thành các mạng con nhỏ hơn. Kỹ sư phải đáp ứng các yêu cầu sau:* Tạo 8 mạng con mới* Mỗi mạng con phải chứa được 30 host* Interface VLAN 10 phải sử dụng địa chỉ IP khả dụng cuối cùng trong mạng con mới đầu tiên* Sử dụng giao diện Layer 3\nCấu hình nào phải được áp dụng cho interface?",
       "options_vi": {
@@ -634,7 +634,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "We see the “Total output drops: 135298429” is high.\nTypically, the output drops can occur if QoS is configured and does not provide enough bandwidth to certain class of packets. It also occurs when the hardware hits an oversubscription.\nReference:\nNote: Total output drops: The number of packets dropped because the output queue is full. A common cause of this might be traffic from a high bandwidth link being switched to a lower bandwidth link or traffic from multiple inbound links being switched to a single outbound link.",
+      "explanation": "Đáp án đúng là C vì output cho thấy \"Total output drops: 135298429\" — con số này cực kỳ lớn, cho thấy hàng đợi đầu ra bị tràn liên tục. Đây là dấu hiệu điển hình của port oversubscription, tức là lưu lượng đến cổng này vượt quá khả năng xử lý hoặc băng thông đầu ra, khiến router phải drop gói hàng loạt.\n\nA sai vì chỉ có 11 collisions — con số này không đáng kể và không gây ra vấn đề hiệu suất nghiêm trọng.\n\nB sai vì output rõ ràng cho thấy cổng đang chạy Full-duplex, 100Mb/s — không có dấu hiệu mismatch tốc độ hay duplex.\n\nD sai vì chỉ có 4 CRC errors — quá nhỏ để gây ra poor performance, và CRC errors thường liên quan đến vấn đề vật lý như cáp xấu chứ không phải tắc nghẽn lưu lượng.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR19#show int fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: SALES_SUBNET\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops:\n135298429\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n73310 packets input, 7101162 bytes\nReceived 73115 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 4 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927513096455 packets output, 14404034810952 bytes, 0 underruns\n0 output errors, 11 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nNguyên nhân gây ra hiệu suất kém trên router R19 là gì?",
       "options_vi": {
@@ -659,7 +659,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "We tested the port-security configuration under Web-IOU with IOSv15.2 but there is no “vlan voice” keyword:\nBut in this , we can find such command:\nDevice(config-if)# switchport port-security mac-address 0000.0000.0004 vlan voice\nSo we believe answer D is the best choice.",
+      "explanation": "Đáp án D đúng vì khi cổng switch được cấu hình ở chế độ trunk hoặc access có voice VLAN, bạn cần chỉ định rõ loại VLAN áp dụng port security. Từ khóa \"vlan voice\" cho phép gán MAC address cụ thể cho voice VLAN, đây là cú pháp bắt buộc khi cổng phục vụ cả data VLAN lẫn voice VLAN đồng thời.\n\nĐáp án A sai vì thiếu phần chỉ định VLAN, lệnh này chỉ áp dụng cho access VLAN thông thường, không nhắm đúng vào voice VLAN 4.\n\nĐáp án B sai vì dùng \"vlan 4\" với số VLAN cụ thể không phải cú pháp hợp lệ cho port security trên voice VLAN. Cisco yêu cầu dùng từ khóa \"vlan voice\" thay vì số VLAN khi chỉ định voice VLAN.\n\nĐáp án C sai vì từ khóa \"sticky\" có nghĩa là switch sẽ tự động học và lưu MAC address, không phải gán thủ công. Ngoài ra, cú pháp \"sticky abcd.abcd.abcd\" kết hợp địa chỉ cụ thể với sticky là không hợp lệ.",
       "explanation_images": [
         "q11.26_img1.jpg"
       ],
@@ -736,7 +736,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The SSID is limited to a maximum length of 32 bytes. When represented in ASCII form, the characters of the SSID are case-sensitive. This means that “9tut” is a different network than “9TUT”.",
+      "explanation": "SSID (Service Set Identifier) là tên định danh của một mạng Wi-Fi, và nó phân biệt chữ hoa chữ thường, nghĩa là \"MyNetwork\" và \"mynetwork\" là hai SSID khác nhau. Đây là đặc điểm kỹ thuật chuẩn của SSID theo chuẩn 802.11, không phải do Cisco quy định.\n\nCác đáp án còn lại đều sai vì: SSID không phải tính năng bảo mật độc quyền của Cisco mà là chuẩn mở của IEEE; SSID không có yêu cầu bắt buộc phải chứa cả số lẫn chữ cái; và SSID không liên quan đến việc định nghĩa VLAN trên switch, đó là chức năng hoàn toàn khác nhau.",
       "explanation_images": [],
       "question_vi": "Đặc điểm kỹ thuật nào dành cho SSID?",
       "options_vi": {
@@ -866,7 +866,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "We see the line “Outside interfaces: ” is still empty which means we have not configured an outside interface yet.",
+      "explanation": "Đầu ra lệnh \"show ip nat translations\" hoặc \"show ip nat statistics\" hiển thị 0 doors và 0 queued packets, cho thấy NAT chưa hoạt động. Nguyên nhân phổ biến nhất là chưa chỉ định interface nào là \"outside\" bằng lệnh \"ip nat outside\" trên interface kết nối ra ngoài (thường là interface WAN). NAT cần biết rõ đâu là inside và đâu là outside thì mới có thể dịch địa chỉ được.\n\nĐáp án A sai vì không có dấu hiệu nào cho thấy có xung đột giữa static NAT entry và NAT pool. Đáp án C sai vì access list cho mạng nội bộ thường đã được cấu hình như một phần của bước thiết lập NAT pool trước đó. Đáp án D sai vì ACL được áp dụng vào lệnh \"ip nat inside source list\" chứ không phải vào pool configuration.",
       "explanation_images": [],
       "question_vi": "Total doors: 0\nAppl doors: 0\nNormal doors: 0\nQueued Packets: 0\nBước tiếp theo để hoàn thành triển khai cho cấu hình NAT một phần được hiển thị là gì?",
       "options_vi": {
@@ -991,7 +991,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "“Using an industry-standard trunking protocol” so we have to use 802.1Q, not ISL.",
+      "explanation": "Đáp án B đúng vì nó đáp ứng đủ hai yêu cầu: dùng lệnh \"switchport trunk encapsulation dot1q\" để chỉ định giao thức trunking chuẩn công nghiệp IEEE 802.1Q (thay vì ISL là giao thức độc quyền của Cisco), và dùng \"switchport trunk allowed vlans 1-10\" để chỉ cho phép VLAN 1-10 đi qua trunk, chặn tất cả VLAN còn lại.\n\nĐáp án A sai vì thiếu lệnh chỉ định encapsulation, và lệnh \"native vlan 11\" không liên quan đến yêu cầu lọc VLAN mà đề bài đặt ra.\n\nĐáp án C sai vì dùng ISL là giao thức độc quyền của Cisco, không phải chuẩn công nghiệp, và lệnh \"channel-group\" dùng để cấu hình EtherChannel chứ không phải trunk đơn thuần.\n\nĐáp án D sai vì \"switchport mode dynamic\" không phải là lệnh hợp lệ (cần thêm \"auto\" hoặc \"desirable\"), và \"channel-protocol lacp\" cũng là lệnh EtherChannel không liên quan đến yêu cầu.",
       "explanation_images": [],
       "question_vi": "Hai switch đã được triển khai và tất cả các interface đều ở mức cấu hình mặc định. Một liên kết trunk phải được triển khai giữa hai switch với các yêu cầu sau:+ sử dụng giao thức trunking theo tiêu chuẩn công nghiệp+ cho phép VLAN 1-10 và từ chối các VLAN khác\nCác cổng kết nối phải được cấu hình như thế nào?",
       "options_vi": {
@@ -1018,7 +1018,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "In the example below, we can limit the number of clients that can access in a WLAN to 50 with the “Maximum Allowed Clients” field:\nReference:\nNote: DTIM stands for Delivery traffic indication map or message. It is basically an additional message added after the normal beacon broadcast by your router or access point.",
+      "explanation": "Đáp án A đúng vì trong giao diện WLC, mỗi WLAN (SSID) có tùy chọn \"Maximum Allowed Clients\" cho phép giới hạn số lượng thiết bị kết nối đồng thời vào SSID đó. Kỹ sư chỉ cần vào cấu hình của WLAN USERWL và đặt giá trị này thành 125 là đủ.\n\nĐáp án B sai vì DTIM (Delivery Traffic Indication Message) là tham số liên quan đến việc gửi broadcast/multicast trong mạng không dây, không có chức năng giới hạn số lượng client.\n\nĐáp án C sai vì cấu hình IPv6 trên Controller không liên quan đến việc giới hạn số thiết bị kết nối vào một SSID cụ thể.\n\nĐáp án D sai vì Management Software activation là phần cấu hình bản quyền hoặc phần mềm quản lý, không phải nơi kiểm soát số lượng client trên một WLAN.",
       "explanation_images": [
         "q11.40_img2.jpg"
       ],
@@ -1199,7 +1199,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "“When you enable Fast SSID Change, the controller allows clients to move between SSIDs. When the client sends a new association request for a different SSID, the client entry in the controller connection table is cleared before the client is added to the new SSID.",
+      "explanation": "Fast SSID Change là tính năng cho phép thiết bị client chuyển đổi giữa các SSID khác nhau (ví dụ từ mạng nội bộ sang mạng khách hoặc BYOD) một cách nhanh chóng mà không cần chờ thời gian timeout mặc định. Khi tính năng này được bật trên wireless LAN controller, quá trình chuyển đổi SSID diễn ra gần như tức thì, cải thiện trải nghiệm người dùng trong môi trường có nhiều SSID phục vụ các mục đích khác nhau như đề bài mô tả.\n\nFast Transition (B) là giao thức 802.11r giúp tăng tốc quá trình xác thực khi roaming giữa các access point trong cùng một SSID, không liên quan đến việc chuyển đổi giữa các SSID khác nhau. Assisted Roaming Prediction Optimization (A) giúp điều hướng client đến AP tốt hơn khi roaming, cũng không giải quyết vấn đề chuyển đổi SSID. Neighbor List Dual Band (C) cung cấp danh sách AP lân cận để hỗ trợ roaming băng tần kép, không liên quan đến tình huống này.",
       "explanation_images": [],
       "question_vi": "Một công ty có mỗi văn phòng sử dụng truy cập không dây với nhiều SSID trong khi hạn chế khả năng chuyển vùng (roaming), bao phủ các vị trí khác nhau trên mạng LAN nội bộ, mạng khách (guest network) và truy cập BYOD cho nhân viên. Thay đổi nào phải được kích hoạt để cải thiện trải nghiệm khách hàng khi chuyển đổi SSID?",
       "options_vi": {
@@ -1253,7 +1253,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "Cisco DMVPN can be deployed in conjunction with Cisco IOS Firewall and Cisco IOS IPS, as well as quality of service (QoS), IP Multicast, split tunneling, and routing-based failover mechanisms. Large-scale, highly available Cisco DMVPN deployments are made possible by load balancing multiple Cisco DMVPN hubs.\nReference:\nGet VPNs provide large scale, connectionless, tunnel free transmission protection taking advantage of existing routing infrastructure and can be used with MPLS, IP, Frame relay and ATM networks.\nReference:\nNote:\nSite-to-Site VPN is a simple VPN that connects a central site and a remote site, or a hub and spoke VPN that connects a central site with multiple remote sites -> It is not suitable for large-scale deployments.\nWith clientless VPN, a tunnel is established from a web browser on the remote user’s device to the outside interface of the VPN gateway’s SSL component -> It is not suitable for large-scale deployments.\nIPSec remote access is used to connect remote-access clients, such as a PC or small office, home office (SOHO) device.",
+      "explanation": "GETVPN (Group Encrypted Transport VPN) và DMVPN (Dynamic Multipoint VPN) là hai công nghệ VPN được Cisco khuyến nghị cho môi trường nhiều chi nhánh và triển khai quy mô lớn. GETVPN sử dụng mô hình mã hóa theo nhóm, cho phép tất cả các site trong cùng một nhóm chia sẻ chính sách bảo mật chung mà không cần thiết lập tunnel riêng lẻ giữa từng cặp site, rất phù hợp với mạng MPLS doanh nghiệp lớn. DMVPN cho phép tạo tunnel động giữa các spoke site mà không cần cấu hình thủ công từng kết nối, giúp mở rộng hệ thống dễ dàng khi số lượng chi nhánh tăng lên.\n\nCác đáp án còn lại không phù hợp vì: IPsec remote access (A) được thiết kế cho người dùng di động kết nối từ xa, không tối ưu cho kết nối site-to-site quy mô lớn. Site-to-site VPN truyền thống (B) yêu cầu cấu hình thủ công từng tunnel giữa các cặp site, không thể mở rộng hiệu quả khi có hàng chục hoặc hàng trăm chi nhánh. Clientless VPN (C) hoạt động qua trình duyệt web và chỉ phù hợp cho truy cập ứng dụng từ xa của người dùng cá nhân, hoàn toàn không phù hợp cho kết nối giữa các văn phòng.",
       "explanation_images": [],
       "question_vi": "Hai công nghệ VPN nào được Cisco khuyến nghị cho nhiều văn phòng chi nhánh và triển khai quy mô lớn? (Chọn hai)",
       "options_vi": {
@@ -1304,7 +1304,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "This interface gets high collision (15000 collisions) so one end may be set to “Half-duplex”.",
+      "explanation": "Số lượng collisions lên đến 15000 là dấu hiệu rõ ràng nhất của duplex mismatch. Khi một đầu cấu hình full-duplex và đầu kia là half-duplex, thiết bị half-duplex sẽ phát hiện collision vì nó không biết rằng đầu kia đang gửi và nhận đồng thời, dẫn đến hiệu suất mạng rất kém và giải thích tại sao ứng dụng ở chi nhánh bị chậm.\n\nMTU đang ở giá trị mặc định 1500 bytes nên đáp án B sai. Băng thông đầu vào chỉ 1000 bits/sec trên đường 10 Mbps, tức là chưa đến 0.01% tải, nên đường truyền hoàn toàn không bị quá tải, loại trừ đáp án C. Hàng đợi đầu ra hiển thị 0 gói bị drop và tổng output drops cũng là 0, nên QoS không phải nguyên nhân, loại trừ đáp án D.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter1#show interface ethernet 1\nEthernet1 is up, line protocol is up\nHardware is Lance, address is 0010.7b36.Ibe8 (bia 0010.7b36.Ibe8)\nInternet address is 10.100.48.240/24\nMTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec,\nreliability 255/255, txload 1/255, rxload 1/255 Encapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:00, output 00:00:06, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 1/75/1/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: random early detection(RED)\nOutput queue :0/40 (size/max)\n5 minute input rate 1000 bits/sec, 2 packets/sec\n5 minute output rate 0 bits/sec, 0 packets/sec\n7558065 packets input, 783768942 bytes, 1 no buffer\nReceived 8280963 broadcasts, 0 runts, 0 giants, 1 throttles\n15 input errors, 14278 GRC, 0 frame, 0 overrun, 3 ignored\n0 input packets with dribble condition detected\n798092 packets output, 50280266 bytes, 0 underruns\n0 output errors, 15000 collisions, 0 interface resets\n0 babbles, 0 late collision, 179 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nMột quản trị viên nhận được cuộc gọi từ văn phòng chi nhánh về hiệu suất ứng dụng kém được lưu trữ tại trụ sở chính. Ethernet 1 được kết nối giữa Router1 và switch LAN. Điều gì xác định được vấn đề?",
       "options_vi": {
@@ -1507,7 +1507,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Traffic destined to 10.90.8.0/24 matches the output line “10.90.0.0/16 [200/0] via 0.0.0.0, 03:57:59, Null0” so it will be forwarded to Null0 interface, which means it will be dropped.\nFrom “D EX” letter, we learn that R7 is receiving routes that were redistributed in EIGRP (another routing protocol was redistributed into EIGRP).",
+      "explanation": "Đáp án D đúng vì ba lý do sau.\n\nThứ nhất, bảng định tuyến có dòng \"B* 0.0.0.0/0 [20/0] via 10.6.25.2\", đây là default route học qua BGP, đồng nghĩa R7 có gateway of last resort, loại bỏ đáp án A và B.\n\nThứ hai, các route có ký hiệu \"D EX\" (ví dụ 10.10.10.10/32, 10.90.1.0/24...) là EIGRP external, tức là các route được redistribute vào EIGRP từ giao thức khác, không phải redistribute từ BGP. Đáp án C và A sai vì nói \"redistributed from BGP\".\n\nThứ ba, khi R7 nhận gói tin đến 10.90.8.0/24, nó tra bảng định tuyến và tìm được match dài nhất là \"B 10.90.0.0/16 [200/0] via 0.0.0.0, Null0\". Route này trỏ đến Null0, nghĩa là gói tin sẽ bị drop chứ không được forward. Đây là route BGP internal (iBGP, AD=200) tổng hợp cho dải 10.90.0.0/16, và vì next-hop là Null0 nên nó hoạt động như một route blackhole. Đáp án A và B sai khi cho rằng R7 sẽ forward traffic đó.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR7#\n172.22.0.0/24 is subnetted, 1 subnets\nD 172.22.49.0 [90/284160] via 10.81.22.2, 04:55:53, FastEthernet0/0\n10.0.0.0/8 is variably subnetted, 26 subnets, 5 masks\nD EX 10.10.10.10/32 [170/35840] via 10.3.5.1, 04:55:55, FastEthernet0/1\nD 10.9.1.0/30 [90/33280] via 10.3.5.1, 04:55:56, FastEthernet0/1\nB 10.111.99.0/24 [20/0] via 10.6.25.2, 03:58:52\nD 10.14.3.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nC 10.9.4.0/30 is directly connected, FastEthernet1/0\nB 10.100.100.0/24 [20/0] via 10.6.25.2, 03:58:53\nD 10.0.1.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nD EX 10.10.10.70/32 [170/1612801 via 10.3.5.1, 04:55:57, FastEthernet0/1\nB 10.90.0.0/16 [200/0] via 0.0.0.0, 03:57:59, Null0\nD EX 10.90.1.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD EX 10.90.2.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD 10.90.3.0/29 [90/161280] via 10.3.5.1, 02:46:03, FastEthernet0/1\nD EX 10.90.3.0/24 [170/158720] via 10.3.5.1, 02:46:04, FastEthernet0/1\nD EX 10.90.4.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nD EX 10.90.5.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.6.25.2, 02:22:38\nTheo kết quả đầu ra, bộ tham số nào được xác nhận bằng bảng định tuyến (routing table) của R7?",
       "options_vi": {
@@ -1532,7 +1532,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "The packet destined for 172.16.3.254 will be routed via the entry “C 172.16.2.0/23 …” as this subnet ranges from 172.16.2.0 to 172.16.3.255.",
+      "explanation": "Địa chỉ đích 172.16.3.254 cần được so khớp với các route trong bảng định tuyến. Router sẽ chọn route có prefix dài nhất (longest prefix match) khớp với địa chỉ đích.\n\nKiểm tra từng route liên quan: 172.16.1.33/32 không khớp vì đây là host route cụ thể cho địa chỉ 172.16.1.33. Route 172.16.2.0/23 có subnet mask 255.255.254.0, bao phủ dải địa chỉ từ 172.16.2.0 đến 172.16.3.255, do đó 172.16.3.254 nằm trong dải này và khớp với route này. Đây là match cụ thể nhất so với default route 0.0.0.0/0, nên router chọn route /23 với subnet mask 255.255.254.0.\n\nĐáp án A sai vì 0.0.0.0 là mask của default route, chỉ được dùng khi không có route nào khớp cụ thể hơn. Đáp án C sai vì /24 tương ứng với 255.255.255.0, không có route /24 nào trong bảng khớp với 172.16.3.254. Đáp án D sai vì 255.255.255.255 là mask của host route /32, không có host route nào cho địa chỉ này trong bảng định tuyến.",
       "explanation_images": [],
       "question_vi": "10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.10.10.0/24 is directly connected, GigabitEthernet0/0/0\nL 10.10.10.3/32 is directly connected, GigabitEthernet0/0/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nS 172.16.1.33/32 is directly connected, GigabitEthernet0/0/1\nC 172.16.2.0/23 is directly connected, GigabitEthernet0/0/1\nL 172.16.2.1/32 is directly connected, GigabitEthernet0/0/1\nS* 0.0.0.0/0 [1/0] via 172.16.2.2\nMột gói tin có nguồn từ 10.10.10.1 có đích đến là 172.16.3.254. Subnet mask của tuyến đích là gì?",
       "options_vi": {

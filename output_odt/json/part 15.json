@@ -20,7 +20,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "We need to choose “Layer 2 Mac Filtering” so that only clients with specific MAC addresses are allowed to join. And the “WPA2 Policy” option to instruct WLC to use WPA2 only with one of WPA2 Encryption (AES or TKIP).",
+      "explanation": "Câu hỏi này yêu cầu cấu hình WLAN với hai mục tiêu: sử dụng WPA2 PSK để mã hóa và xác thực, đồng thời chỉ cho phép các thiết bị cụ thể kết nối.\n\nĐáp án C đúng vì để sử dụng WPA2 PSK, bạn phải bật tùy chọn WPA2 Policy trong cấu hình bảo mật WLAN. Đây là bước bắt buộc để kích hoạt cơ chế mã hóa AES và xác thực PSK trên controller.\n\nĐáp án E đúng vì MAC Filtering là tính năng cho phép lọc thiết bị dựa trên địa chỉ MAC, đây là cách để giới hạn chỉ những client cụ thể mới được phép tham gia vào WLAN.\n\nĐáp án A sai vì CCKM (Cisco Centralized Key Management) là cơ chế dành cho roaming nhanh trong môi trường enterprise, không liên quan đến PSK.\n\nĐáp án B sai vì 802.1X là phương thức xác thực dùng cho WPA2 Enterprise với RADIUS server, còn yêu cầu ở đây là PSK, không phải 802.1X.\n\nĐáp án D sai vì OSEN (Opportunistic Security for Enterprise Networks) là một chính sách bảo mật khác, không phải WPA2 PSK và không phù hợp với yêu cầu đề bài.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng đang cấu hình WLAN để sử dụng WPA2 PSK và chỉ cho phép các máy khách cụ thể kết nối. Hai hành động nào phải được thực hiện để hoàn tất quy trình? (Chọn hai)",
       "options_vi": {
@@ -121,7 +121,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "This interface has “input errors” (100) and high “collision” (100) so the most likely cause of this problem is the other end was configured in half-duplex, which creates a duplex mismatched problem.",
+      "explanation": "Đáp án C đúng vì output cho thấy 100 collisions trên interface, đây là dấu hiệu điển hình của xung đột xảy ra khi một đầu kết nối chạy full-duplex còn đầu kia chạy half-duplex (duplex mismatch). Khi có duplex mismatch, thiết bị chạy half-duplex sẽ phát hiện collision trong khi thiết bị full-duplex tiếp tục gửi, dẫn đến frame bị loại bỏ và kết nối không ổn định. Ngoài ra còn có 100 CRC errors và 100 frame errors, cũng là triệu chứng phổ biến của duplex mismatch.\n\nĐáp án A sai vì ARP timeout là cơ chế bình thường để xóa bộ nhớ cache ARP sau một khoảng thời gian, không liên quan đến việc từ chối broadcast hay gây mất kết nối. Đáp án B sai vì chỉ có 110 broadcasts được ghi nhận, con số này quá nhỏ để gây ra broadcast storm, và receive buffer không có dấu hiệu đầy (input queue drops là 0). Đáp án D sai vì runt counter (frame nhỏ hơn 64 bytes) hiển thị giá trị 0, nghĩa là không có frame nào bị loại bỏ vì lý do kích thước.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter-WAN1#show interface g0/0\nGigabitEthernet0/0 is up, line protocol is up\nHardware is CSR NIC, address is 5000.0001.0000 (bia 5000.0001.0000)\nInternet address is 192.168.0.0/31\nMTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nFull Duplex, 1000Mbps, link type is auto, media type is NIC\noutput flow-control is unsupported, input flow-control is unsupported\nARP type: ARPA, ARP Timeout 04:00:00\nLast input never, output 00:00:03, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/40 (size /max)\n5 minute input rate 1000 bits/sec, 0 packets/sec\n5 minute output rate 2000 bits/sec, 1 packets/sec\n0 packets input, 0 bytes, 0 no buffer\nReceived 110 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n100 input errors, 100 CRC, 100 frame, 0 overrun, 0 ignored\n0 watchdog, 0 multicast, 0 pause input\n260 packets output, 89070 bytes, 0 underruns\nOutput 0 broadcasts (0 IP multicasts)\n0 output errors, 100 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n1 lost carrier, 0 no carrier, 0 pause output\nRouter-WAN1 có kết nối mới qua Gi0/0 đến ISP. Người dùng chạy các ứng dụng web cho biết kết nối đến internet không ổn định. Nguyên nhân gây ra sự cố giao diện là gì?",
       "options_vi": {
@@ -326,7 +326,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "There are only three port states left in RSTP that correspond to the three possible operational states. The 802.1D disabled, blocking, and listening states are merged into the 802.1w discarding state.\n* Discarding (Blocking)– the port does not forward frames, process received frames, or learn MAC addresses – but it does listen for BPDUs (like the STP blocking state)* Learning – receives and transmits BPDUs and learns MAC addresses but does not yet forward frames (same as STP).* Forwarding – receives and sends data, normal operation, learns MAC address, receives and transmits BPDUs (same as STP).\nIn fact, there is another state which is Disabled state.\nDisabled StateA LAN port in the disabled state does not participate in frame forwarding or STP. A LAN port in the disabled state is virtually nonoperational.A disabled LAN port performs as follows:+ Discards frames received from the attached segment.+ Discards frames switched from another port for forwarding.+ Does not incorporate the end station location into its address database. (There is no learning, so there is no address database update.)+ Does not receive BPDUs from neighbors.+ Does not receive BPDUs for transmission from the system module.\nReference:",
+      "explanation": "Trạng thái disabled có nghĩa là cổng bị tắt hoàn toàn về mặt hành chính, không tham gia vào quá trình Spanning Tree, không gửi hay nhận BPDU, và không cập nhật bảng địa chỉ MAC. Đây là trạng thái duy nhất mà cổng hoàn toàn không hoạt động ở cả hai khía cạnh đó.\n\nCác đáp án còn lại đều sai vì: listening và blocking đều nhận và xử lý BPDU để tham gia vào quá trình bầu chọn STP, dù không chuyển tiếp dữ liệu; forwarding thì vừa nhận BPDU vừa cập nhật bảng địa chỉ MAC và chuyển tiếp lưu lượng bình thường.",
       "explanation_images": [],
       "question_vi": "Trạng thái cổng Rapid PVST+ nào mà cổng hoạt động mà không nhận BPDU từ các neighbor hoặc cập nhật cơ sở dữ liệu địa chỉ?",
       "options_vi": {
@@ -475,7 +475,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "The current route is learned via BGP (Router D). Among three routing protocols left, the “static route with AD of 105” has the best AD (OSPF AD is 110 and External EIGRP AD is 170).",
+      "explanation": "Câu hỏi này thiếu phần exhibit chi tiết về 4 backup route qua router A, B, C, D, nhưng dựa trên cấu trúc câu hỏi CCNA chuẩn, đây là bài kiểm tra về Administrative Distance (AD) - chỉ số ưu tiên của các giao thức định tuyến.\n\nRoute hiện tại là BGP external với AD = 20. Khi route đó mất, router Y sẽ chọn backup route có AD thấp nhất. Trong bài này, router B thường đại diện cho OSPF (AD = 110) hoặc một giao thức có AD thấp hơn các lựa chọn còn lại như EIGRP summary (AD = 5), EIGRP internal (AD = 90), OSPF (AD = 110), RIP (AD = 120), hay EIGRP external (AD = 170).\n\nThứ tự AD mặc định của Cisco cần nhớ: Connected = 0, Static = 1, EIGRP summary = 5, eBGP = 20, EIGRP internal = 90, OSPF = 110, RIP = 120, EIGRP external = 170, iBGP = 200. Router Y sẽ chọn route có AD nhỏ nhất trong số các backup còn lại.\n\nCác đáp án A, C, D sai vì các giao thức tương ứng của chúng có AD cao hơn giao thức của router B, nên bị xếp ưu tiên thấp hơn theo mặc định của Cisco IOS.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter-Y#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted\nB 10.220.100.96/27 [20/0] via 10.224.1.3, 1w6d\nTuyến đường đến 10.220.100.96/27 rất không ổn định. Cùng tuyến đường có bốn bản sao lưu đến router A, B, C và D qua các phương thức tương ứng. Các giá trị mặc định của giao thức định tuyến cho router Y không bị thay đổi. Khi tuyến đường hiện tại đến 10.220.100.96/27 không khả dụng, router Y sẽ sử dụng router nào để định tuyến lưu lượng đến 10.220.100.96/27?",
       "options_vi": {
@@ -712,7 +712,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "We need to choose “PSK” from Auth Key Mgmt:\nNext choose “ASCII” from PSK Format and type the password:",
+      "explanation": "Đây là câu hỏi về cấu hình WLAN trên Cisco WLC GUI, cụ thể là thiết lập WPA2 với AES và preshared key.\n\nĐáp án E đúng vì để dùng WPA2 với AES, bạn chỉ cần tích chọn WPA2 Policy và AES. Không cần chọn thêm TKIP vì TKIP là thuật toán mã hóa yếu hơn, thuộc WPA (không phải WPA2), và đề bài yêu cầu AES.\n\nĐáp án A đúng vì khi dùng preshared key, bạn phải chọn PSK trong Auth Key Mgmt, sau đó chọn định dạng ASCII và nhập key Cisc0123456. Đây là quy trình chuẩn để WLC biết phương thức xác thực là PSK thay vì 802.1X.\n\nĐáp án B sai vì CCKM là cơ chế quản lý key dành cho fast roaming với Cisco Centralized Key Management, không phải cho preshared key thông thường. Ngoài ra, key Cisc0123456 là chuỗi ASCII nên không dùng định dạng Hex.\n\nĐáp án C sai vì không thể để trống Auth Key Mgmt. WLC cần biết phương thức xác thực là PSK hay 802.1X để xử lý đúng quá trình kết nối.\n\nĐáp án D sai vì nó chọn cả TKIP lẫn AES. Dùng cả hai không cần thiết và không phù hợp với yêu cầu đề bài là WPA2 thuần với AES.",
       "explanation_images": [
         "q15.28_img2.jpg",
         "q15.28_img3.jpg"
@@ -741,7 +741,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Ansible uses an agentless architecture to manage network devices. Agentless means that the managed device does not need any code (agent) to be installed on it. Therefore Ansible uses SSH (NETCONF over SSH in particular) to “push” changes and extract information to managed devices.",
+      "explanation": "Ansible sử dụng SSH để kết nối đến các node và đẩy module xuống thực thi, đây là cơ chế mặc định và không cần cài agent trên node đích. SSH được chọn vì nó cung cấp kênh truyền mã hóa, an toàn và được hỗ trợ rộng rãi trên các thiết bị mạng.\n\nKerberos là giao thức xác thực, không phải giao thức truyền dữ liệu hay quản lý cấu hình. SNMP dùng để giám sát và thu thập thông tin từ thiết bị mạng, không dùng để đẩy và thực thi module. Telnet tuy có thể kết nối từ xa nhưng không mã hóa dữ liệu và Ansible không sử dụng Telnet làm phương thức truyền tải.",
       "explanation_images": [
         "q15.29_img1.jpg"
       ],
@@ -1000,7 +1000,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "RSA (Rivest-Shamir-Adleman) is a public-key cryptosystem that uses a pair of keys: a public key for encryption and a private key for decryption. This key pair allows secure data transmission without requiring both parties to have identical keys. Public-key cryptography like RSA enables one party to encrypt data using the recipient’s public key, which only the recipient can decrypt with their private key.",
+      "explanation": "RSA là một hệ thống mã hóa bất đối xứng, sử dụng cặp khóa công khai và khóa riêng tư. Dữ liệu được mã hóa bằng khóa công khai và chỉ có thể giải mã bằng khóa riêng tư tương ứng, hoặc ngược lại khi dùng cho chữ ký số.\n\nĐáp án A sai vì yêu cầu cả hai bên có khóa giống nhau là đặc điểm của mã hóa đối xứng như AES, không phải RSA. Đáp án B sai vì RSA không phải thuật toán khóa riêng tư, nó dùng cặp khóa công khai và riêng tư. Đáp án C sai vì preshared key là khái niệm thuộc mã hóa đối xứng hoặc các giao thức như IKE, không liên quan đến cơ chế hoạt động của RSA.",
       "explanation_images": [],
       "question_vi": "Đặc điểm của RSA là gì?",
       "options_vi": {
@@ -1025,7 +1025,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "The control plane is responsible for managing and exchanging routing and topology information within the network. This information allows routers to make decisions about the best paths across the network. The control plane handles functions like routing protocols (OSPF, EIGRP, BGP…), which are essential for building and maintaining routers’ routing table.",
+      "explanation": "Đáp án B đúng vì control plane chịu trách nhiệm xây dựng và duy trì các bảng định tuyến thông qua việc trao đổi thông tin topology với các router khác, ví dụ như thông qua các giao thức định tuyến OSPF, EIGRP hay BGP.\n\nĐáp án A sai vì truy cập CLI thuộc về management plane, không phải control plane. Đáp án C và D đều sai vì tra cứu FIB và chuyển tiếp lưu lượng là chức năng của data plane (còn gọi là forwarding plane), nơi xử lý việc chuyển gói tin thực tế dựa trên thông tin mà control plane đã xây dựng.",
       "explanation_images": [],
       "question_vi": "Chức năng của control plane trong mạng là gì?",
       "options_vi": {
@@ -1050,7 +1050,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "In a RESTful request, the URI (Uniform Resource Identifier) is used primarily to identify the specific resource on a server that the client wants to interact with. The URI typically includes information about the path to the resource and any query parameters needed to locate it. For example, this is the URI of an online library system:\nhttps://api.library.com/books/12345\nIn this URI:\nhttps://api.library.com: This part is the base URL, which points to the library’s API server.\n/books: This path identifies the collection of resources, in this case, “books.”\n/12345: This is the unique identifier (ID) for a specific book. By adding this ID to the end of the URI, we’re identifying a single resource within the “books” collection.",
+      "explanation": "URI là viết tắt của Uniform Resource Identifier, và đúng như tên gọi, mục đích chính của nó là định danh một tài nguyên cụ thể trên máy chủ đích, ví dụ như /api/devices/1 xác định thiết bị có ID là 1.\n\nĐáp án A sai vì cách thức tác động lên tài nguyên được xác định bởi HTTP method như GET, POST, PUT, DELETE, không phải URI. Đáp án C sai vì thông tin mã hóa nội dung phản hồi nằm trong HTTP headers, không phải URI. Đáp án D sai vì dữ liệu hoặc payload được truyền trong phần body của request, không phải trong URI.",
       "explanation_images": [],
       "question_vi": "Mục đích của chuỗi URI trong một yêu cầu REST là gì?",
       "options_vi": {
@@ -1102,7 +1102,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "FlexConnect is designed for environments where remote sites (such as branch offices) do not have a local WLC but require centralized management. It allows access points to function in “FlexConnect mode,” enabling them to switch traffic locally at the remote site while still being managed by a centralized WLC at the main office.",
+      "explanation": "FlexConnect được thiết kế chính xác cho tình huống này: các văn phòng chi nhánh từ xa không có WLC riêng nhưng vẫn cần được quản lý tập trung từ một WLC trung tâm qua WAN. Với FlexConnect, các AP có thể chuyển mạch traffic cục bộ tại chi nhánh ngay cả khi kết nối WAN bị gián đoạn, đồng thời vẫn nhận cấu hình và quản lý từ WLC trung tâm khi kết nối ổn định.\n\nĐáp án A sai vì độ trễ vượt 300ms thực ra là điều kiện bất lợi cho FlexConnect, không phải lý do để chọn nó. Cisco khuyến nghị độ trễ WAN dưới 100ms để FlexConnect hoạt động ổn định.\n\nĐáp án B sai vì dịch vụ định vị chính xác cao yêu cầu kiến trúc tập trung với các tính năng như Cisco CMX hoặc DNA Spaces, không phải FlexConnect.\n\nĐáp án D sai vì đó là mô tả của kiến trúc Local Mode hoặc triển khai WLC phân tán, nơi mỗi chi nhánh có WLC riêng, hoàn toàn ngược lại với mục đích của FlexConnect.",
       "explanation_images": [],
       "question_vi": "Trong điều kiện nào thì kiến trúc không dây FlexConnect sẽ được ưu tiên hơn các lựa chọn kiến trúc khác?",
       "options_vi": {
@@ -1129,7 +1129,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "We need to use the “ifconfig” on Linux to find out the IP address and subnet mask of an interface. For example:",
+      "explanation": "Đáp án A đúng vì client A chạy Linux, nên lệnh kiểm tra cấu hình mạng phải là ifconfig (không phải ipconfig như trên Windows). Subnet mask 255.254.0.0 tương ứng với /15, và nếu default gateway là 10.0.0.1 thì địa chỉ IP của client A phải nằm trong cùng dải mạng đó để có thể giao tiếp được.\n\nĐáp án B và C sai vì ipconfig là lệnh của Windows, không dùng được trên Linux. Đáp án D dùng đúng lệnh ifconfig nhưng subnet mask 255.255.128.0 (/17) không khớp với dải mạng của default gateway 10.0.0.1 trong bài.",
       "explanation_images": [
         "q15.44_img2.jpg"
       ],
@@ -1182,7 +1182,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "From the exhibit, we see “MAC Filtering” is being chosen. This option allows to control access to a network based on the MAC address of a device -> Answer C is correct.",
+      "explanation": "Đáp án C đúng vì MAC filtering hoạt động bằng cách kiểm tra địa chỉ MAC của thiết bị trước khi cho phép kết nối vào mạng Wi-Fi. Chỉ những thiết bị có địa chỉ MAC nằm trong danh sách được phép mới có thể tham gia mạng, tạo thêm một lớp bảo mật ở tầng Layer 2.\n\nĐáp án A sai vì Galois cache algorithm không liên quan đến MAC filtering, đây là khái niệm không chính xác trong ngữ cảnh này. Đáp án B sai vì xác thực lẫn nhau qua chuẩn x.509 là cơ chế của PKI hoặc EAP-TLS, không phải MAC filtering. Đáp án D sai vì MAC filtering không cung cấp cơ chế bảo vệ toàn diện chống lại các tấn công Layer 2 và Layer 3, thực tế nó còn dễ bị vượt qua bằng cách giả mạo địa chỉ MAC (MAC spoofing).",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMạng WLAN Wi-Fi \"Office_WLan\" được cấu hình bảo mật Layer 2 với tính năng lọc MAC (MAC filtering) được bật. Tính năng cụ thể này cung cấp bảo mật bổ sung gì?",
       "options_vi": {
@@ -1235,7 +1235,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "If an attacker is able to sniff a clear-text password, it suggests the authentication process is not secure enough. Multifactor authentication (MFA) enhances security by requiring an additional authentication factor, such as:\n+ Something you know (password or PIN…).+ Something you have (a hardware token or mobile app…).+ Something you are (biometric authentication like a fingerprint…).\nEven if the attacker captures the password, they would still need the second factor to gain access, effectively mitigating the risk.",
+      "explanation": "Khi kẻ tấn công đã sniff được mật khẩu dạng clear-text, nghĩa là mật khẩu đó đã bị lộ hoàn toàn. Lúc này, xác thực đa yếu tố (MFA) là giải pháp phù hợp vì ngay cả khi kẻ tấn công có mật khẩu, chúng vẫn cần thêm một yếu tố xác thực thứ hai từ nguồn độc lập (ví dụ: OTP từ điện thoại) để đăng nhập thành công, do đó vô hiệu hóa mật khẩu bị đánh cắp.\n\nCác đáp án còn lại không giải quyết đúng vấn đề. Next-generation firewall với stateful inspection (A) kiểm tra trạng thái kết nối mạng, không ngăn được việc sử dụng mật khẩu đã bị lộ. ACL hạn chế Telnet (C) có thể giới hạn nguồn kết nối nhưng không ngăn kẻ tấn công dùng mật khẩu hợp lệ đã sniff được từ một địa chỉ IP được phép. IPS với block list (D) chặn các vector tấn công đã biết, nhưng việc đăng nhập bằng mật khẩu hợp lệ sẽ không bị nhận diện là tấn công.",
       "explanation_images": [],
       "question_vi": "Giải pháp nào phù hợp khi giảm thiểu các cuộc tấn công mật khẩu mà kẻ tấn công có thể bắt được mật khẩu dạng văn bản rõ (clear-text) của quản trị viên hệ thống?",
       "options_vi": {
@@ -1260,7 +1260,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "A dynamic interface is simply an interface that maps a WLAN to a wired vlan or subnet. To create a new interface, Choose Controller > Interfaces > New to open the Interfaces page:\nNext, enter the IP address, subnet mask, and gateway address… for the interface.\nNext, while creating a new WLAN, we assign above interface to it:",
+      "explanation": "Trong quá trình cấu hình cơ bản một mạng LAN không dây trên Wireless LAN Controller (WLC), các bước thực hiện theo thứ tự là: cấu hình management interface, cấu hình authentication server (RADIUS), tạo dynamic interface (còn gọi là interface cho VLAN người dùng), sau đó tạo WLAN và gắn dynamic interface vào WLAN đó. Vì engineer đã hoàn thành bước cấu hình authentication server và tạo dynamic interface, bước tiếp theo hợp lý là tạo WLAN và liên kết dynamic interface với WLAN đó để hoàn tất luồng xác thực và phân vùng mạng cho người dùng không dây.\n\nĐáp án A sai vì management interface phải được cấu hình ngay từ đầu, trước cả authentication server, nên bước này đã được thực hiện rồi. Đáp án B sai vì high availability và redundancy là tính năng nâng cao, không thuộc phạm vi cấu hình cơ bản ban đầu. Đáp án C sai vì Telnet không được khuyến nghị dùng trong môi trường thực tế do thiếu bảo mật, và việc bật RADIUS trên management interface không phải bước tiếp theo trong quy trình này.",
       "explanation_images": [
         "q15.50_img1.jpg",
         "q15.50_img2.jpg",
@@ -1314,7 +1314,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "Hotspot (captive portal) – uses web-proxy and it is capable of using only the default routing table.\nReference:\nHotspot feature in an Access Point provides a captive portal, which forces users to authenticate, register, or accept terms before accessing the internet. It is commonly used in public Wi-Fi networks, such as those in hotels, cafes, and airports.",
+      "explanation": "Hotspot là tính năng trên Access Point cho phép tạo một cổng xác thực (captive portal), buộc người dùng phải đăng nhập, đăng ký hoặc chấp nhận điều khoản sử dụng trước khi được phép truy cập internet. Đây là tính năng phổ biến trong các môi trường Wi-Fi công cộng như quán cà phê, khách sạn, sân bay.\n\nCác đáp án còn lại không liên quan: One-Click là tính năng thiết lập nhanh, không phải xác thực người dùng. Enhanced Bluetooth liên quan đến kết nối Bluetooth, không phải quản lý truy cập Wi-Fi. Whole Home là tính năng mở rộng vùng phủ sóng trong nhà, không có chức năng captive portal.",
       "explanation_images": [],
       "question_vi": "Tính năng AP nào cung cấp cổng captive (captive portal) để người dùng xác thực, đăng ký và chấp nhận điều khoản trước khi truy cập internet?",
       "options_vi": {
@@ -1391,7 +1391,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "In security, machine learning continuously learns by analyzing data to find patterns so we can better detect malware in encrypted traffic, find insider threats, predict where “bad neighborhoods” are online to keep people safe when browsing, or protect data in the cloud by uncovering suspicious user behavior.\nReference:",
+      "explanation": "Học máy (machine learning) cải thiện khả năng phát hiện truy cập trái phép bằng cách phân tích lượng lớn dữ liệu mạng để nhận diện các mẫu hành vi bất thường hoặc đáng ngờ, từ đó phát hiện xâm nhập mà các hệ thống dựa trên quy tắc cố định có thể bỏ sót. Đây là lý do đáp án C chính xác.\n\nĐáp án A sai vì việc theo dõi phần mềm lỗi thời là chức năng của công cụ quản lý vá lỗi, không phải ứng dụng cốt lõi của học máy trong phát hiện xâm nhập. Đáp án B sai vì học máy không tự động ra quyết định cập nhật chính sách bảo mật, đó là nhiệm vụ của con người hoặc hệ thống quản lý chính sách. Đáp án D sai vì phân cấp độ bảo mật là chức năng của hệ thống kiểm soát truy cập, không liên quan đến học máy trong phát hiện xâm nhập.",
       "explanation_images": [],
       "question_vi": "Học máy (machine learning) cải thiện việc phát hiện truy cập mạng trái phép như thế nào?",
       "options_vi": {
@@ -1475,7 +1475,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The three architectures are summarized as follows:\n+ Autonomous – Access points are standalone and make their own decisions.\n+ Cloud-based – Management and control are handled in the cloud; APs are usually lightweight and cloud-managed.\n+ Split MAC – APs split the MAC-layer processing: some tasks are done on the AP, others on a WLC (used in centralized deployments with lightweight APs and WLCs).",
+      "explanation": "Đáp án A đúng vì lightweight AP (access point nhẹ) chỉ được sử dụng trong kiến trúc split MAC, nơi các chức năng MAC được chia giữa AP và WLC. Autonomous AP và cloud-based AP có kiến trúc khác, không dùng loại AP này.\n\nĐáp án D đúng vì dù là kiến trúc nào, access point vẫn là thiết bị trực tiếp quản lý kết nối không dây của các client và kết nối chúng vào hạ tầng có dây. Đây là vai trò cốt lõi của AP trong cả ba mô hình.\n\nĐáp án B sai vì CAPWAP là giao thức dùng để giao tiếp giữa lightweight AP và WLC, không phải giữa AP và client. Ngoài ra, CAPWAP không phải đặc trưng riêng của cloud-based mà chủ yếu gắn với split MAC.\n\nĐáp án C sai vì kiến trúc autonomous không dùng WLC. Mỗi autonomous AP tự quản lý độc lập mà không cần bộ điều khiển tập trung.\n\nĐáp án E sai vì autonomous AP không dùng tunneling protocol để quản lý từ xa. Chính split MAC và cloud-based mới sử dụng các cơ chế như CAPWAP tunnel để kết nối AP với hệ thống quản lý trung tâm.",
       "explanation_images": [],
       "question_vi": "Một kiến trúc sư mạng đang lập kế hoạch mạng Wi-Fi mới phải quyết định giữa kiến trúc autonomous, cloud-based và split MAC. Hai thông tin nào kiến trúc sư nên xem xét? (Chọn hai)",
       "options_vi": {
@@ -1583,7 +1583,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "In the exhibit, we see that the option “FT + SAE” in “Auth key Mgmt” tab was chosen.\nWPA3 provides improvements to the general Wi-Fi encryption, thanks to Simultaneous Authentication of Equals (SAE) replacing the Pre-Shared Key (PSK) authentication method used in prior WPA versions. With SAE, the user experience is the same (choose a passphrase to connect), but SAE automatically adds a step to the handshake, which makes brute force attacks ineffective. SAE enables individuals or home users to set Wi-Fi passwords that are easier to remember and provide the same security protection even if the passwords are not complex enough.",
+      "explanation": "Câu hỏi này liên quan đến cấu hình SSID sử dụng WPA3-Personal, giao thức xác thực dựa trên SAE (Simultaneous Authentication of Equals) thay thế cho PSK truyền thống.\n\nWPA3-Personal với SAE tăng cường bảo mật chống lại tấn công từ điển ngoại tuyến (offline dictionary attacks) vì kẻ tấn công không thể bắt gói handshake rồi đem về crack offline như với WPA2. Mỗi phiên xác thực SAE tạo ra một khóa riêng biệt, khiến brute force trở nên tốn kém và mất thời gian hơn rất nhiều, từ đó nản lòng kẻ tấn công. Đây chính xác là những gì đáp án B mô tả.\n\nĐáp án A sai vì WPA3 không làm giảm bảo mật hay khuyến khích mật khẩu yếu, ngược lại nó bảo vệ tốt hơn ngay cả khi mật khẩu không quá phức tạp.\n\nĐáp án C sai vì WPA3 không được thiết kế đặc biệt để chống man-in-the-middle hay DoS, đây không phải điểm mạnh chính của giao thức này.\n\nĐáp án D sai hoàn toàn vì WPA3 làm tăng bảo mật, không giảm, và không khuyến khích truy cập dễ dàng vào mạng.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nSSID này sẽ có những chức năng gì khi được sử dụng bởi các thiết bị không dây (wireless clients)?",
       "options_vi": {
@@ -1608,7 +1608,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Syslog level 7 corresponds to the “Debugging” severity level. If you specify a level, that level and all the higher levels will be displayed. Therefore in this case, all levels (from 0 to 7) will be displayed.",
+      "explanation": "Syslog sử dụng các mức độ nghiêm trọng từ 0 đến 7, trong đó mức 7 (Debug) là mức thấp nhất về độ ưu tiên nhưng cung cấp nhiều thông tin nhất. Mức 7 ghi lại đầu ra từ các lệnh debug trên thiết bị, giúp kỹ sư mạng phân tích chi tiết hoạt động của thiết bị khi cần xử lý sự cố.\n\nĐáp án A mô tả mức 3 (Error), dùng để báo cáo các điều kiện lỗi. Đáp án B mô tả mức 6 (Informational), ghi lại các thông báo hoạt động bình thường. Đáp án D mô tả mức 0 (Emergency), là mức cao nhất dùng để cảnh báo hệ thống không thể sử dụng được.",
       "explanation_images": [],
       "question_vi": "Vai trò của syslog level 7 trong việc giám sát tình trạng thiết bị mạng là gì?",
       "options_vi": {
@@ -1808,7 +1808,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "User training: All users should be required to participate in periodic formal training so that they become familiar with all corporate security policies -> Answer B is the best choice for this question.\nNote:\nIn CCNA, security program only includes user awareness, user training and physical access control.\nPhysical access control: Infrastructure locations, such as network closets and data centers, should remain securely locked.\nAsset identification is the systematic process of discovering, mapping, and documenting every single IT asset within an organization’s ecosystem.",
+      "explanation": "Đáp án B đúng vì việc in tài liệu chính sách bảo mật và phân phát cho toàn bộ nhân viên để họ đọc và áp dụng chính là hoạt động đào tạo người dùng, nhằm nâng cao nhận thức và hành vi bảo mật trong tổ chức.\n\nCác đáp án còn lại không phù hợp vì: A liên quan đến việc xác định và phân loại tài sản của tổ chức, không phải truyền đạt chính sách; C liên quan đến kiểm soát quyền truy cập vật lý vào các khu vực hoặc thiết bị; D liên quan đến việc phát hiện và xử lý các lỗ hổng bảo mật trong hệ thống.",
       "explanation_images": [],
       "question_vi": "Một tổ chức đã phát triển các chính sách bảo mật mới và quyết định in các chính sách và phân phát cho tất cả nhân viên để họ xem xét và áp dụng các chính sách. Tổ chức đang triển khai yếu tố nào của chương trình bảo mật?",
       "options_vi": {
@@ -1833,7 +1833,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Link aggregation (LAG) is a partial implementation of the 802.3ad port aggregation standard. It bundles all of the controller’s distribution system ports into a single 802.3ad port channel.",
+      "explanation": "LAG (Link Aggregation Group) là tính năng trên WLC cho phép gộp nhiều cổng distribution system lại thành một nhóm 802.3ad, tức là chuẩn IEEE cho link aggregation (LACP). Khi bật LAG trên WLC, tất cả các cổng vật lý được gộp thành một kênh logic duy nhất, giúp tăng băng thông và cung cấp khả năng dự phòng.\n\nQinQ là kỹ thuật đóng gói VLAN lồng nhau (802.1ad), không liên quan đến việc gộp cổng. ISL là giao thức đóng gói trunk độc quyền của Cisco, cũng không phải cơ chế gộp liên kết. PAgP là giao thức thương lượng EtherChannel độc quyền của Cisco dùng giữa các switch, không phải chuẩn 802.3ad và không được dùng trực tiếp trên WLC theo ngữ cảnh này.",
       "explanation_images": [],
       "question_vi": "Tính năng nào, khi được sử dụng trên WLC, cho phép nó gộp các cổng hệ thống phân phối (distribution system ports) thành một nhóm 802.3ad?",
       "options_vi": {
@@ -1858,7 +1858,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "JSON syntax structure:\n+ A key/value pair consists of a key (must be a string in double quotation marks \"\"), followed by a colon :, followed by a value. For example: “name”:”John”\nTherefore in this question, “switch” is the key while “SW18” is the value.",
+      "explanation": "Trong JSON, mỗi cặp dữ liệu có dạng \"key\": \"value\". Từ \"switch\" nằm ở vị trí bên trái dấu hai chấm, nên nó là key (khóa), còn \"SW18\" là value (giá trị) tương ứng.\n\nĐáp án A sai vì array là toàn bộ cấu trúc nằm trong dấu ngoặc vuông [ ]. Đáp án B sai vì value là phần bên phải dấu hai chấm, tức là \"SW18\". Đáp án D sai vì object là từng phần tử nằm trong dấu ngoặc nhọn { }, ví dụ như {\"switch\": \"SW18\", \"port\":\"ge2/41\"}.",
       "explanation_images": [],
       "question_vi": "Từ \"switch\" đại diện cho điều gì trong JSON schema này?\n1 [\n2 {\"IDS\": \"IPS22\", \"port\":\"te3/46\"},\n3 {\"load balancer\": \"LB12\", \"port\":\"te6/38\"},\n4 {\"switch\": \"SW18\", \"port\":\"ge2/41\"},\n5 ]",
       "options_vi": {
@@ -1960,7 +1960,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "From the last line of the output “Po1 (RU)”, we learn that this is a Layer 3 port (with letter “R”) so we need the command “no switchport” to make the new interface a Layer 3 interface.\nThe protocol in used is LACP so we use mode “active” or “passive” -> Only answer B is correct.",
+      "explanation": "Nhìn vào output, Po1 được đánh dấu là \"RU\" — R nghĩa là Layer 3, U nghĩa là đang hoạt động. Đây là một Layer 3 EtherChannel, tức là interface vật lý trong bundle phải ở chế độ routed (no switchport), không phải switchport. Giao thức đang dùng là LACP, nên lệnh channel-group phải dùng mode active (LACP active). Vì vậy đáp án B đúng: \"no switchport\" chuyển interface sang Layer 3, sau đó \"channel-group 1 mode active\" gắn nó vào Po1 bằng LACP.\n\nĐáp án A sai vì dùng \"switchport mode trunk\" — điều này cấu hình interface ở Layer 2, không khớp với Po1 đang là Layer 3.\n\nĐáp án C sai vì dùng \"mode on\" thay vì \"mode active\". Mode on tắt LACP và dùng static EtherChannel, không tương thích với các port hiện tại đang chạy LACP active.\n\nĐáp án D sai vì chỉ cấu hình switchport và trunk, hoàn toàn không có lệnh channel-group nên interface sẽ không được thêm vào bundle nào cả.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nSW1#show etherchannel summary\nFlags: D - down P - in port-channel\nI - stand-alone s - suspended\nH - Hot-standby (LACP only)\nR - Layer3 S - Layer2\nU - in use f - failed to allocate aggregator\nu - unsuitable for bundling\nw - waiting to be aggregated\nd - default port\nA - formed by auto LAG\nNumber of channel-groups in use: 1\nNumber of aggregators: 2\nGroup Port-channel Protocol Ports\n------+-------------+-----------+-----------------------------------------------\n1 Po1 (RU) LACP Et0/0(P) Et0/1(P)\nMột kỹ sư mạng đang thêm một giao diện vật lý khác làm thành viên mới vào bundle Port-Channel1 hiện có. Bộ lệnh nào phải được cấu hình trên giao diện mới để hoàn tất quá trình?",
       "options_vi": {
@@ -2039,7 +2039,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "From the line “O 10.30.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0”, the first parameter is the AD (110) while the second one is the metric (2).",
+      "explanation": "Dòng \"O 10.30.0.0/30 [110/2] via 10.0.0.2\" cho thấy prefix 10.30.0.0/30 được học qua OSPF. Trong cặp giá trị [110/2], số đầu tiên (110) là administrative distance, số thứ hai (2) là metric. Host 10.30.0.1 nằm trong subnet 10.30.0.0/30, nên AD của prefix này là 110.\n\nCác đáp án sai: 10.0.0.2 là địa chỉ next-hop, không phải AD. 2 là metric (cost) của OSPF, không phải AD. 30 không có ý nghĩa gì trong dòng route này.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nAA#show ip route\n10.0.0.0/8 is variably subnetted, 6 subnets, 2 masks\nC 10.0.0.0/30 is directly connected, GigabitEthernet0/0\nL 10.0.0.1/32 is directly connected, GigabitEthernet0/0\nC 10.10.0.0/30 is directly connected, GigabitEthernet0/1\nL 10.10.0.1/32 is directly connected, GigabitEthernet0/1\nO 10.20.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\nO 10.30.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\n172.16.0.0/24 is subnetted, 1 subnets\nS 172.16.10.0 [1/0] via 10.0.0.2\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nC 192.168.10.0/24 is directly connected, GigabitEthernet0/2\nL 192.168.10.1/32 is directly connected, GigabitEthernet0/2\nS 192.168.20.0/24 [1/0] via 192.168.10.2\nKhoảng cách quản trị (administrative distance) cho prefix được quảng bá bao gồm địa chỉ host IP 10.30.0.1 là bao nhiêu?",
       "options_vi": {
@@ -2114,7 +2114,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "For 10.0.4.10 destination, we only have to check if this destination falls into the range of the entry “O 10.0.4.0/29 [110/2] via 10.0.4.2 00:00:03, GigabitEthernet1/1″.\nSubnet 10.0.4.0/29-> Increment: 8 -> This subnet ranges from 10.0.4.0 to 10.0.4.7 only. Therefore 10.0.4.10 does not belong to this subnet. R1 will use the default route (S* 0.0.0.0/0 [1/0] via 10.0.0.2) for this destination -> R1 will forward packets to the next-hop 10.0.0.2.\nQuestion 15.92 (repeated)\nWhich configuration management mechanism uses TCP port 22 by default when communicating with managed nodes?\nA. AnsibleB. PythonC. PuppetD. Chef",
+      "explanation": "Địa chỉ đích 10.0.4.10 cần được so khớp với bảng định tuyến. Mạng 10.0.4.0/29 có dải địa chỉ từ 10.0.4.0 đến 10.0.4.7, nghĩa là 10.0.4.10 nằm ngoài subnet này và không khớp với route O 10.0.4.0/29. Không có route cụ thể nào khác khớp với 10.0.4.10, nên R1 sẽ dùng default route S* 0.0.0.0/0 và chuyển gói tin đến next-hop 10.0.0.2, đây là đáp án D.\n\nĐáp án A sai vì route 10.0.4.0/29 chỉ bao gồm địa chỉ từ .0 đến .7, còn 10.0.4.10 nằm ngoài phạm vi đó. Đáp án B sai vì FastEthernet1/1 là interface kết nối trực tiếp với 10.0.3.0/24, không liên quan đến đích này. Đáp án C sai vì FastEthernet0/1 kết nối với 10.0.1.0/24, hoàn toàn không khớp với địa chỉ đích.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR1#show ip route\nGateway of last resort is 10.0.0.2 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 10 subnets, 3 masks\nC 10.0.0.0/24 is directly connected, FastEthernet0/0\nL 10.0.0.1/32 is directly connected, FastEthernet0/0\nC 10.0.1.0/24 is directly connected, FastEthernet0/1\nL 10.0.1.1/32 is directly connected, FastEthernet0/1\nC 10.0.2.0/24 is directly connected, FastEthernet1/0\nL 10.0.2.1/32 is directly connected, FastEthernet1/0\nC 10.0.3.0/24 is directly connected, FastEthernet1/1\nL 10.0.3.1/32 is directly connected, GigabitEthernet1/l\nO 10.0.4.0/29 [110/2] via 10.0.4.2 00:00:03, GigabitEthernet1/1\nS 10.1.0.0/16 [1/0] via 10.0.3.2\nS 10.1.3.0/24 [1/0] via 10.0.3.2\nS* 0.0.0.0/0 [1/0] via 10.0.0.2\nRouter R1 chuyển tiếp các gói tin đến 10.0.4.10 như thế nào?",
       "options_vi": {
@@ -2161,7 +2161,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Pure IPsec refers to using IPsec directly for securing network traffic without additional encapsulation protocols like GRE. It does not support:+ Broadcast+ Multicast+ Non-IP traffic (e.g., STP)\n“Unicast” is the correct answer as this is exactly what IPsec is designed for: secure, point-to-point IP communication.",
+      "explanation": "IPsec thuần túy (pure IPsec, không kết hợp với GRE hay các giao thức đường hầm khác) chỉ hỗ trợ lưu lượng unicast. Đây là giới hạn cơ bản của IPsec vì giao thức này được thiết kế để mã hóa và xác thực các gói tin điểm-điểm giữa hai địa chỉ IP cụ thể.\n\nĐáp án D đúng vì lưu lượng unicast từ một host ở site từ xa gửi đến server tại trụ sở chính là giao tiếp một-một, hoàn toàn phù hợp với khả năng của IPsec thuần túy.\n\nĐáp án A sai vì multicast không được IPsec thuần túy hỗ trợ. Đáp án B sai vì Spanning Tree Protocol dùng multicast để trao đổi BPDU. Đáp án C sai vì broadcast cũng không được IPsec thuần túy hỗ trợ. Để truyền multicast hoặc broadcast qua IPsec, cần phải đóng gói chúng trong GRE trước rồi mới mã hóa bằng IPsec.",
       "explanation_images": [],
       "question_vi": "Loại lưu lượng nào được gửi với IPsec thuần (pure IPsec)?",
       "options_vi": {
@@ -2186,7 +2186,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Interal EIGRP learned routes are symbolized by letter “D” and there is only one entry with this letter in the output above: “D 192.168.2.0/24 [90/184437] via 207.165.200.254, 00:00:15, Serial0/0/1″. Therefore answer C is correct.\nQuestion 15.116 (repeated)\nAn engineer is configuring NAT to translate the source subnet of 10.10.0.0/24 to any one of three addresses: 192.168.3.1, 192.168.3.2, or 192.168.3.3. Which configuration should be used?\nOption Aenableconfigure terminalip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30route-map permit 10.10.0.0 255.255.255.0ip nat outside destination list 1 pool mypoolinterface g1/1ip nat insideinterface g1/2ip nat outside\nOption Benableconfigure terminalip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30access-list 1 permit 10.10.0.0 0.0.0.255ip nat outside destination list 1 pool mypoolinterface g1/1ip nat insideinterface g1/2ip nat outside\nOption Cenableconfigure terminalip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30access-list 1 permit 10.10.0.0 0.0.0.255ip nat inside source list 1 pool mypoolinterface g1/1ip nat insideinterface g1/2ip nat outside\nOption Denableconfigure terminalip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30access-list 1 permit 10.10.0.0 0.0.0.254ip nat inside source list 1 pool mypoolinterface g1/1ip nat insideinterface g1/2ip nat outside\nA. Option AB. Option BC. Option CD. Option D",
+      "explanation": "Đáp án C đúng vì route 192.168.2.0/24 được đánh dấu bằng ký tự \"D\" trong bảng định tuyến, đây là ký hiệu của EIGRP nội bộ (internal EIGRP). Administrative distance của nó là 90, đúng với giá trị mặc định của internal EIGRP.\n\nĐáp án A sai vì 192.168.1.0/24 được đánh dấu \"O\", tức là OSPF. Đáp án B sai vì 192.168.3.0/24 được đánh dấu \"E1\", là OSPF external type 1. Đáp án D sai vì 172.16.1.0/24 được đánh dấu \"C\", nghĩa là directly connected, không phải học từ giao thức định tuyến nào cả.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR1# show ip route | begin gateway\nGateway of last resort is not set\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nC 172.16.1.0/24 is directly connected, FastEthernet0/0\nL 172.16.1.3/32 is directly connected, FastEthernet0/0\nEX 172.16.2.0/24 [170/2] via 207.165.200.250, 00:00:25, Serial0/0/0\nO 192.168.1.0/24 [110/84437] via 207.165.200.254, 00:00:17, Serial0/0/1\nD 192.168.2.0/24 [90/184437] via 207.165.200.254, 00:00:15, Serial0/0/1\nE1 192.168.3.0/24 [110/1851437] via 207.165.200.254, 00:00:19, Serial0/0/1\n207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC 207.165.200.248/30 is directly connected, Serial0/0/0\nL 207.165.200.249/32 is directly connected, Serial0/0/0\nC 207.165.200.252/30 is directly connected, Serial0/0/1\nL 207.165.200.253/32 is directly connected, Serial0/0/1\nPrefix nào router R1 học được từ EIGRP nội bộ (internal EIGRP)?",
       "options_vi": {
@@ -2211,7 +2211,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "From the line “Gateway of last resort is 172.17.0.2”, we learn that 172.17.0.2 is the default gateway of this router. And from the line “S* 0.0.0.0/0 [1/0] via 172.17.0.2”, we learn the AD of this route is 1 (the first parameter).",
+      "explanation": "Trong bảng định tuyến, dòng \"S* 0.0.0.0/0 [1/0] via 172.17.0.2\" cho thấy default gateway được học qua static route (ký hiệu S). Cặp số trong ngoặc vuông [1/0] có định dạng [administrative distance/metric], nên AD ở đây là 1, đây là giá trị AD mặc định của static route.\n\nĐáp án A (110) là AD của OSPF, không phải static route. Đáp án B (0) là AD của connected route (ký hiệu C hoặc L trong bảng routing). Đáp án D (10) là metric của tuyến OSPF External Type 2 trong bảng, không phải AD của default gateway.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter#show ip route\nGateway of last resort is 172.17.0.2 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 172.17.0.2\n10.0.0.0/8 is variably subnetted, 412 subnets, 10 masks\nO E2 10.0.0.0/16 [110/10] via 10.2.24.1, 7w0d, Vlan82\nO 10.2.17.0/24 [110/6] via 10.2.24.1, 6w4d, vlan82\nO 10.2.17.0/24 [110/6] via 10.2.24.1, 6w4d, vlan82\nO 10.2.23.0/24 [110/6] via 10.2.24.1, 7w0d, vlan82\n--output suppressed--\nC 10.173.5.0/24 is directly connected, vlan283\nL 10.173.5.2/32 is directly connected, vlan283\nGiá trị khoảng cách quản trị (administrative distance) cho default gateway là bao nhiêu?",
       "options_vi": {

@@ -16,7 +16,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Syslog levels indicate the severity or importance of log messages. According to this figure then the best answer should be “level”:\nA syslog message has the following format:\nseq no:timestamp%FACILTY-SEVERITY-MNEMONIC: message text\nEach portion of a syslog message has a specific meaning:+ Seq no: a sequence number only if the service sequence-numbers global configuration command is configured+ Timestamp: Date and time of the message or event. This information appears only if the service timestamps global configuration command is configured.+ FACILITY: This tells the protocol, module, or process that generated themessage. Some examples are SYS for the operating system, IF for an interface…+ SEVERITY: A number from 0 to 7 designating the importance of the action reported.\nNote: The facility value is used to determine which process of the machine created the message. Since the Syslog protocol was originally written on BSD Unix, the Facilities reflect the names of UNIX processes and daemons -> Answer D is not correct.",
+      "explanation": "Đáp án đúng là C vì syslog sử dụng trường \"level\" (còn gọi là severity level) để phân loại mức độ quan trọng của thông điệp, từ 0 (Emergency) đến 7 (Debug). Máy chủ syslog có thể dựa vào trường này để lọc và ghi các thông điệp vào các file khác nhau tùy theo mức độ nghiêm trọng.\n\nCác đáp án còn lại không phù hợp vì: message body chứa nội dung mô tả sự kiện nhưng không phải tiêu chí phân loại mức độ quan trọng; process ID xác định tiến trình tạo ra thông điệp chứ không phản ánh độ quan trọng; facility xác định nguồn gốc hoặc loại dịch vụ tạo ra thông điệp (ví dụ: kernel, mail, auth) chứ không phải mức độ nghiêm trọng.",
       "explanation_images": [
         "q14.1_img1.jpg"
       ],
@@ -43,7 +43,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Frame switching is one of a few important switching concepts that describe how a switch operates.\n2.1.b Frame switchingLAN switches are characterized by the forwarding method that they support, such as a store-and-forward switch, cut-through switch, or fragment-free switch.Store-and-forward switches store the entire frame in internal memory and check the frame for errors before forwarding the frame to its destination.…\nReference:",
+      "explanation": "Đáp án C đúng vì frame switching (chuyển mạch khung) hoạt động theo cơ chế store-and-forward: switch nhận toàn bộ khung vào bộ đệm, kiểm tra lỗi bằng CRC ở cuối khung, rồi mới chuyển tiếp nếu khung hợp lệ. Đây là đặc điểm cốt lõi phân biệt switch với các thiết bị mạng khác.\n\nA sai vì switch cập nhật bảng MAC address (CAM table) với cổng nguồn, không phải ARP table — ARP là chức năng của tầng 3, không liên quan đến frame switching.\n\nB sai vì khi switch nhận khung có địa chỉ MAC đích chưa có trong bảng, nó sẽ flood khung đó ra tất cả các cổng (trừ cổng nhận vào), chứ không drop.\n\nD sai vì việc ghi lại địa chỉ MAC nguồn và đích là chức năng của router khi thực hiện routing ở tầng 3, không phải switch tầng 2.",
       "explanation_images": [],
       "question_vi": "Đặc điểm của chuyển mạch khung (frame switching) là gì?",
       "options_vi": {
@@ -68,7 +68,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "JSON syntax structure:\n+ A key/value pair consists of a key (must be a string in double quotation marks \"\"), followed by a colon :, followed by a value. For example: “name”:”John”\nTherefore in this question, “router” is the key while “R20” is the value.",
+      "explanation": "Trong JSON, mỗi cặp dữ liệu gồm một key và một value. Ở dòng 3, \"router\" là key còn \"R20\" là value tương ứng với key đó. Đây là cấu trúc cơ bản của JSON: key luôn đứng trước dấu hai chấm, value đứng sau.\n\nB sai vì array là cấu trúc bao ngoài được bao bởi dấu ngoặc vuông, không phải một chuỗi ký tự như \"R20\". C sai vì key trong cặp này là \"router\", không phải \"R20\". D sai vì object là tập hợp các cặp key-value được bao bởi dấu ngoặc nhọn, ví dụ như toàn bộ {\"router\": \"R20\", \"port\":\"te5/5\"} mới là một object.",
       "explanation_images": [],
       "question_vi": "Từ \"R20\" đại diện cho điều gì trong lược đồ JSON này?\n1 [\n2 {\"firewall\": \"FW12\", \"port\":\"e0/23\"},\n3 {\"router\": \"R20\", \"port\":\"te5/5\"},\n4 {\"switch\": \"SW25\", \"port\":\"ge1/36\"},\n5 ]",
       "options_vi": {
@@ -327,7 +327,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Forwarding Per-Hop Behavior (PHB) is a mechanism used in Quality of Service (QoS) to control the behavior of packets as they traverse a network. The following are some of the key components of PHB:\n1. Classification: This is the process of categorizing network traffic into different groups based on specific criteria such as IP address, protocol, port, or application type.\n2. Marking: This is the process of setting a marking or tag on a packet, indicating its priority level or class. Marking is typically done at the edge of the network and is used by the network devices to make QoS decisions.\n3. Queuing: This is the process of holding packets in a queue and scheduling their transmission based on their priority. Queuing algorithms, such as Weighted Fair Queuing (WFQ), ensure that high-priority packets are transmitted before low-priority packets.\n4. Congestion: This occurs when the network becomes congested and there is not enough bandwidth to handle all the traffic. PHB includes mechanisms, such as Random Early Detection (RED), to help manage congestion by discarding low-priority packets before high-priority packets.\n5. Policing: This is the process of monitoring network traffic and enforcing specified traffic rate limits. If a packet exceeds the specified rate limit, it can be discarded or marked with a lower priority.\n6. Shaping: This is the process of controlling the rate at which packets are transmitted into the network. This helps to ensure that the network does not become congested and that all packets are transmitted in a timely manner.\nReference:\nIn this question, answer “marking” is not correct as the packets have been classified into different forwarding classes already. Answers “shaping” and “policing” seems to be incorrect. Only answer “queuing” is the best choice left.",
+      "explanation": "Cần xem exhibit để trả lời chính xác, nhưng dựa trên đáp án đúng là A, câu hỏi này liên quan đến hành vi QoS per-hop mà R1 áp dụng cho các gói tin đến.\n\nQueuing là hành vi xếp hàng, trong đó router phân loại và đặt các gói tin vào các hàng đợi khác nhau dựa trên mức độ ưu tiên, sau đó phục vụ các hàng đợi đó theo thứ tự ưu tiên đã định. Đây là cơ chế quản lý tắc nghẽn, thường thấy khi cấu hình CBWFQ hoặc LLQ trên interface.\n\nMarking sai vì đó là hành vi đánh dấu gói tin, tức là thay đổi giá trị DSCP hoặc CoS trong header để phân loại lưu lượng, không phải xử lý hàng đợi. Policing sai vì policing giới hạn tốc độ lưu lượng bằng cách drop hoặc re-mark các gói tin vượt ngưỡng, không liên quan đến việc xếp hàng. Shaping cũng sai vì shaping làm chậm lưu lượng bằng cách giữ gói tin trong bộ đệm để đảm bảo tốc độ không vượt quá ngưỡng cho phép, và shaping thường áp dụng cho lưu lượng đi ra chứ không phải đi vào.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nHành vi QoS theo từng hop (per-hop) nào mà R1 đang áp dụng cho các gói tin đến?",
       "options_vi": {
@@ -352,7 +352,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "At first, a switch port starts in a discarding state, a discarding port does not forward any frames nor does it learn MAC addresses, and it also listens for BPDUs. Backup and alternate ports remain discarding.\nIn RSTP if a port is elected as a Root port or Designated port, the transition will directly take place from a discarding state to a learning state. Hence, RSTP doesn’t need a listening state. A learning port adds MAC addresses into the Content addressable memory table; However, it can not forward frames.\nIn the next phase, a learning port transitions into a forwarding state. A forwarding port is completely functional i.e., it learns MAC addresses, sends and listens for BPDUs, and forwards frames.\nReference:",
+      "explanation": "Trong Rapid PVST+, khi switch khởi động, tất cả các cổng đều vào trạng thái discarding ngay lập tức. Đây là trạng thái mặc định ban đầu, trong đó cổng không chuyển tiếp dữ liệu và không học địa chỉ MAC, giúp ngăn chặn vòng lặp trong khi giao thức STP đang hội tụ.\n\nCác đáp án còn lại sai vì listening và learning là các trạng thái thuộc STP truyền thống (802.1D), không phải Rapid PVST+. Rapid PVST+ đơn giản hóa quá trình bằng cách chỉ dùng ba trạng thái: discarding, learning và forwarding, trong đó discarding thay thế cho cả blocking và listening. Forwarding là trạng thái hoạt động bình thường sau khi hội tụ, không phải trạng thái khởi động ban đầu.",
       "explanation_images": [],
       "question_vi": "Trạng thái tạm thời mà các cổng switch luôn vào ngay sau quá trình khởi động khi sử dụng Rapid PVST+ là gì?",
       "options_vi": {
@@ -377,7 +377,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "+ Lightweight: The term ‘lightweight’ refers to the fact that these devices cannot work independently. A Cisco lightweight AP (LAP) has to join a Wireless LAN Controller (WLC) to function. LAP and WLC communicate with each other via a logical pair of CAPWAP tunnels.\nNote: The LAP-WLC division of labor is known as a split-MAC architecture, where the normal MAC operations are pulled apart into two distinct locations. This occurs for every LAP in the network; each one must boot and bind itself to a WLC to support wireless clients. The WLC becomes the central hub that supports a number of LAPs scattered about in the network.\nReference:",
+      "explanation": "Đáp án đúng là B vì access point kiểu lightweight được thiết kế đặc biệt cho kiến trúc split-MAC, trong đó các chức năng MAC thời gian thực như truyền và nhận frame được xử lý tại AP, còn các chức năng MAC không thời gian thực như xác thực, quản lý và roaming được chuyển lên Wireless LAN Controller (WLC). Lightweight AP sử dụng giao thức CAPWAP để giao tiếp với WLC, cho phép triển khai \"zero-touch\" vì toàn bộ cấu hình được đẩy xuống từ WLC mà không cần cấu hình thủ công tại từng AP.\n\nAutonomous AP (A) hoạt động độc lập, tự xử lý toàn bộ chức năng MAC mà không cần WLC, nên không phù hợp với split-MAC hay zero-touch deployment. Mesh AP (C) là một dạng triển khai vật lý dùng để mở rộng vùng phủ sóng qua kết nối không dây giữa các AP, không phải là loại AP riêng biệt theo kiến trúc quản lý. Cloud-based AP (D) được quản lý qua nền tảng đám mây như Cisco Meraki, không phụ thuộc vào WLC tại chỗ và không áp dụng mô hình split-MAC theo nghĩa truyền thống.",
       "explanation_images": [],
       "question_vi": "Cần một access point không dây và phải đáp ứng các yêu cầu sau:* triển khai \"zero-touch\" và được quản lý bởi WLC* chỉ xử lý chức năng MAC thời gian thực* được sử dụng trong kiến trúc split-MAC.\nLoại access point nào phải được sử dụng?",
       "options_vi": {
@@ -402,7 +402,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "A Virtual Machine (VM) is a compute resource that uses software instead of a physical computer to run programs and deploy apps.\nA virtual machine needs four core resources: CPU, memory, network, and storage (disk). These resources are granted to the virtual machine through the configuration of the virtual hardware.\nNote: Answer A is not correct as a VM does not contain physical resources. A VM only uses a virtual NIC, a portion of physical RAM and virtual CPU (vCPU).",
+      "explanation": "Đáp án B đúng vì một máy ảo (VM) về bản chất là tập hợp các file cấu hình (như file .vmx, .vmdk) mô tả tài nguyên ảo, và Hypervisor sẽ ánh xạ các tài nguyên ảo đó tới tài nguyên vật lý thực sự bên dưới.\n\nĐáp án A sai vì VM không chứa tài nguyên vật lý trực tiếp, đó là phần thuộc về máy chủ vật lý và được Hypervisor quản lý rồi chia sẻ cho các VM.\n\nĐáp án C sai vì ứng dụng chạy bên trong guest OS của VM, không phải chạy trực tiếp trên Hypervisor.\n\nĐáp án D sai vì các tiến trình chạy trên Hypervisor là của Hypervisor, không phải nằm bên trong VM. VM có guest OS riêng, nhưng bản thân VM được định nghĩa bởi file cấu hình chứ không phải bởi các tiến trình của Hypervisor.",
       "explanation_images": [],
       "question_vi": "Các thành phần nào được chứa trong một máy ảo (virtual machine)?",
       "options_vi": {
@@ -586,7 +586,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "We don’t care about metric in this question as Administrative Distances (AD) are compared first.\nRouter D receives two paths for networks 192.168.1.0/24:+ From Router C: OSPF External route with AD of 110+ From Router B: EIGRP route with AD of 90\n-> Route from Router B wins with lower AD.",
+      "explanation": "Đáp án B đúng vì khi router có nhiều đường đến cùng một mạng đích được học từ các giao thức định tuyến khác nhau, router sẽ ưu tiên đường có Administrative Distance (AD) thấp hơn. Trong bài này, router D học mạng 192.168.1.0/24 qua hai giao thức khác nhau, và đường qua 10.0.0.1 có AD thấp hơn nên được chọn đưa vào bảng định tuyến. AD là tiêu chí so sánh đầu tiên, trước cả metric.\n\nĐáp án A sai vì việc giao thức là link-state hay distance vector không phải lý do quyết định next hop trong trường hợp này. Đáp án C sai vì tương tự, loại giao thức không phải căn cứ để chọn đường ở đây. Đáp án D sai vì metric chỉ được dùng để so sánh khi hai đường đến từ cùng một giao thức định tuyến, không phải giữa các giao thức khác nhau.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng thực thi lệnh show ip route trên router D. Next hop đến mạng 192.168.1.0/24 là gì và tại sao?",
       "options_vi": {
@@ -736,7 +736,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "This interface gets high collision (480 collisions) so one end may be set to “Half-duplex”.",
+      "explanation": "Đáp án D đúng vì output cho thấy interface đang chạy ở chế độ Half-duplex trong khi tốc độ là 100 Mb/s, và quan trọng hơn là có tới 480 collisions. Trong môi trường switched hiện đại, collision không nên xảy ra trừ khi có duplex mismatch, tức là một đầu đang chạy full-duplex còn đầu kia chạy half-duplex, dẫn đến việc một bên gửi trong khi bên kia đang nhận và gây ra collision. Ngoài ra có 35 runts, đây cũng là dấu hiệu điển hình của duplex mismatch.\n\nA sai vì NIC hỏng thường gây ra nhiều input errors, CRC errors hoặc interface resets, nhưng ở đây các giá trị đó đều bằng 0. B sai vì broadcast storm sẽ làm rxload và txload tăng cao, đồng thời số lượng broadcast nhận được sẽ rất lớn, nhưng ở đây rxload chỉ là 1/255 và chỉ có 267 broadcasts. C sai vì không có dấu hiệu nghẽn hàng đợi, total output drops và input queue drops đều bằng 0.",
       "explanation_images": [],
       "question_vi": "Tình trạng giao diện nào đang xảy ra trong đầu ra này?\nR30# show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: madrid_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nHalf-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters 00:00:18\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n35 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 480 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out",
       "options_vi": {
@@ -813,7 +813,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "“operate at 2.4 GHz with 54 Mbps of throughput” -> Only 804.11g is suitable.\n“enhanced SSID security” so we should not broadcast SSID so that no one can see the SSID.\nWireless Standards\nIEEE Standard\nFrequency/Medium\nSpeed\nTransmission Range\n802.11\n2.4GHz RF\n1 to 2Mbps\n20 feet indoors.\n802.11a\n5GHz\nUp to 54Mbps\n25 to 75 feet indoors; range can be affected by building materials.\n802.11b\n2.4GHz\nUp to 11Mbps\nUp to 150 feet indoors; range can be affected by building materials.\n802.11g\n2.4GHz\nUp to 54Mbps\nUp to 150 feet indoors; range can be affected by building materials.\n802.11n\n2.4GHz/5GHz\nUp to 600Mbps\n175+ feet indoors; range can be affected by building materials.",
+      "explanation": "Câu hỏi yêu cầu hai điều kiện: bảo mật SSID nâng cao và hoạt động ở băng tần 2.4 GHz với tốc độ 54 Mbps.\n\n\"Enhanced SSID security\" ở đây ám chỉ việc ẩn SSID, tức là bỏ chọn ô Broadcast SSID. Khi SSID không được phát quảng bá, các thiết bị không biết tên mạng sẽ không thể dễ dàng phát hiện và kết nối. Để đạt 54 Mbps trên băng tần 2.4 GHz, chuẩn phù hợp là 802.11g, vì 802.11g hoạt động ở 2.4 GHz và hỗ trợ tốc độ tối đa 54 Mbps. Vì vậy đáp án D là đúng: bỏ chọn Broadcast SSID và đặt Radio Policy là 802.11g only.\n\nĐáp án A sai vì chọn Broadcast SSID nghĩa là SSID vẫn được phát công khai, không đáp ứng yêu cầu bảo mật, và 802.11a hoạt động ở băng tần 5 GHz chứ không phải 2.4 GHz. Đáp án B sai vì 802.11a/g only vẫn bao gồm 802.11a là chuẩn 5 GHz, không khớp với yêu cầu chỉ dùng 2.4 GHz. Đáp án C sai vì tuy chọn đúng Radio Policy là 802.11g, nhưng lại chọn Broadcast SSID, tức là SSID vẫn hiển thị công khai, không đáp ứng yêu cầu bảo mật nâng cao.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột quản trị viên Cisco WLC đang tạo một mạng không dây mới với bảo mật SSID nâng cao. Mạng mới phải hoạt động ở tần số 2.4 GHz với thông lượng 54 Mbps. Bộ tác vụ nào quản trị viên phải thực hiện để hoàn thành cấu hình?",
       "options_vi": {
@@ -963,7 +963,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Cisco Access Points (APs) can operate in one of two modes: autonomous or lightweight+ Autonomous: self-sufficient and standalone. Used for small wireless networks. Each autonomous AP must be configured with a management IP address so that it can be remotely accessed using Telnet, SSH, or a web interface. Each AP must be individually managed and maintained unless you use a management platform such as Cisco DNA Center.+ Lightweight: The term ‘lightweight’ refers to the fact that these devices cannot work independently. A Cisco lightweight AP (LAP) has to join a Wireless LAN Controller (WLC) to function. LAP and WLC communicate with each other via a logical pair of CAPWAP tunnels.",
+      "explanation": "Đáp án A đúng vì access point lightweight (LAP) không hoạt động độc lập — chúng phụ thuộc hoàn toàn vào Wireless LAN Controller (WLC) để quản lý, bao gồm cả việc cập nhật firmware. Khi WLC đẩy firmware mới, tất cả các LAP được quản lý bởi WLC đó sẽ nhận bản cập nhật đồng loạt. Ngược lại, autonomous AP tự lưu trữ firmware và có thể được cập nhật trực tiếp mà không cần WLC.\n\nĐáp án B sai vì không có cơ chế tự phục hồi tự động từ firmware bị lỗi nào được định nghĩa riêng cho autonomous AP so với lightweight AP theo cách mô tả đó.\n\nĐáp án C sai vì lightweight AP không yêu cầu WLC dự phòng chỉ để hỗ trợ nâng cấp firmware — đây là thông tin bịa đặt không có cơ sở trong kiến trúc Cisco.\n\nĐáp án D sai vì thực tế là lightweight AP không lưu trữ bản sao đầy đủ của firmware cục bộ; chúng tải firmware từ WLC mỗi khi khởi động, đây chính là lý do tại sao WLC là bắt buộc.",
       "explanation_images": [],
       "question_vi": "Một kiến trúc sư mạng đang quyết định nên triển khai Cisco autonomous access point hay lightweight access point. Thông tin nào về cập nhật firmware mà kiến trúc sư phải xem xét?",
       "options_vi": {
@@ -988,7 +988,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "We see the server is located in a different subnet from the clients so we need to configure the “ip helper-address 172.16.32.15” on the router so that DHCP messages can reach the server.",
+      "explanation": "Đáp án D đúng vì khi DHCP server nằm ở một subnet khác với client (172.16.32.15 so với 192.168.52.0/24), router kết nối trực tiếp với subnet của client cần được cấu hình lệnh \"ip helper-address\" trỏ đến địa chỉ IP của DHCP server. Lệnh này cho phép router chuyển tiếp các gói broadcast DHCP (DISCOVER, REQUEST) từ client thành unicast đến DHCP server ở subnet khác, giải quyết vấn đề broadcast không vượt qua được router.\n\nCác đáp án còn lại sai vì lý do sau. Đáp án A (ip forward-protocol udp 137) liên quan đến việc chuyển tiếp giao thức UDP cụ thể theo port 137 (NetBIOS), không phải cơ chế relay DHCP. Đáp án B (ip default-network) dùng để cấu hình định tuyến mặc định trong các giao thức định tuyến classful như RIP, không liên quan đến DHCP relay. Đáp án C (ip default-gateway) chỉ dùng trên các thiết bị không chạy IP routing như switch layer 2 hoặc router khi routing bị tắt, không phải lệnh để chuyển tiếp DHCP request.",
       "explanation_images": [],
       "question_vi": "Một pool DHCP đã được tạo với tên CONTROL. Pool sử dụng địa chỉ IP khả dụng áp chót làm default gateway cho các máy khách DHCP. Máy chủ nằm tại 172.16.32.15. Bước tiếp theo trong quy trình để các máy khách trên subnet 192.168.52.0/24 tiếp cận máy chủ DHCP là gì?",
       "options_vi": {
@@ -1065,7 +1065,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "From the output, we learn that “line protocol is down” which means a Layer 2 issue. Moreover we have “50 collisions” and this interface was set to “half duplex” so we can think about “duplex mismatch” issue.\nIf the issue is “cable disconnect” we will see “down/down (disable)” state instead.",
+      "explanation": "Đáp án B đúng vì output cho thấy interface đang chạy ở chế độ Half Duplex trong khi tốc độ là 1000Mbps (Gigabit). Chuẩn Gigabit Ethernet không hỗ trợ Half Duplex trong môi trường thực tế, và sự không khớp duplex giữa hai đầu kết nối sẽ gây ra các triệu chứng rõ ràng trong output: 50 collisions, 6 interface resets, và 10 input errors. Đây là dấu hiệu điển hình của duplex mismatch, khi một đầu chạy full-duplex còn đầu kia chạy half-duplex, dẫn đến xung đột liên tục.\n\nĐáp án A sai vì nếu cáp bị ngắt, line protocol sẽ down nhưng sẽ không có traffic nào cả, trong khi output vẫn ghi nhận packets và multicast được nhận. Đáp án C sai vì port security thường gây ra err-disabled trên interface, không tạo ra collisions hay resets như thế này. Đáp án D sai vì throughput thực tế rất thấp (1 packet output, 77 bytes), không có dấu hiệu nào của tải cao.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nOutput from R1\nGigabitEthernet0/0/1 is up, line protocol is down\nHardware is SPA—10X1GE-V2, address is 0023.33ee.7o00 (bia 0023.33ee.7c00)\nMTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive not supported\nHalf Duplex, 1000Mbps, link type is auto, media type is LX\noutput flow-control is off, input flow-control is off\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:02:31, output hang never\n10 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog, 314 multicast, 0 pause input\n1 packets output, 77 bytes, 0 underruns\n0 output errors, 50 collisions, 6 interface resets\n17 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\nVấn đề với giao diện GigabitEthernet0/0/1 là gì?",
       "options_vi": {
@@ -1142,7 +1142,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "“its priority is highest” means lowest value.",
+      "explanation": "Trong Spanning Tree Protocol, root bridge được bầu chọn dựa trên Bridge ID, gồm hai thành phần: priority (ưu tiên) và MAC address. Switch nào có Bridge ID thấp nhất sẽ trở thành root bridge. Priority được so sánh trước, nếu bằng nhau mới xét đến MAC address.\n\nSW4 được chọn làm root bridge vì nó có priority cao nhất trong bài — nhưng cần hiểu đúng rằng \"cao nhất\" ở đây nghĩa là giá trị số nhỏ nhất (ví dụ 4096 thấp hơn 32768), tức là Bridge ID của SW4 là thấp nhất. Khi priority đã thấp hơn các switch khác, MAC address không cần xét thêm, nhưng đề bài bổ sung rằng MAC của SW4 cũng nhỏ hơn để củng cố thêm.\n\nĐáp án A sai vì priority cao nhất theo nghĩa giá trị số lớn nhất sẽ thua, không phải thắng. Đáp án B sai vì MAC address cao nhất đồng nghĩa Bridge ID cao hơn, dẫn đến thua trong bầu chọn. Đáp án D sai vì SW1 có priority thấp nhất theo nghĩa giá trị số nhỏ nhất thì đúng là lợi thế, nhưng đề nói MAC address của SW1 cao hơn — điều này chỉ có ý nghĩa nếu priority bằng nhau, và trong trường hợp này SW4 vẫn có priority tốt hơn SW1.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nChế độ Rapid PVST+ đang hoạt động trên cùng một VLAN trên mỗi switch. Switch nào trở thành root bridge và tại sao?",
       "options_vi": {
@@ -1242,7 +1242,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "For your information, the port security violation modes are described below:\nProtect – This mode permits traffic from known MAC addresses to continue to be forwarded while dropping traffic from unknown MAC addresses when over the allowed MAC address limit. When configured with this mode, no notification action is taken when traffic is dropped.\nRestrict – This mode permits traffic from known MAC addresses to continue to be forwarded while dropping traffic from unknown MAC addresses when over the allowed MAC address limit. When configured with this mode, a syslog message is logged, a Simple Network Management Protocol (SNMP) trap is sent, and a violation counter is incremented when traffic is dropped.\nShutdown – This mode is the default violation mode; when in this mode, the switch will automatically force the switchport into an error disabled (err-disable)state when a violation occurs. While in this state, the switchport forwards no traffic. The switchport can be brought out of this error disabled state by issuing the errdisable recovery cause CLI command or by disabling and reenabling the switchport.\nShutdown VLAN -This mode mimics the behavior of the shutdown mode but limits the error disabled state the specific violating VLAN.\nReference:",
+      "explanation": "Chế độ restrict sẽ loại bỏ các frame đến từ địa chỉ MAC không được phép, đồng thời tăng bộ đếm vi phạm bảo mật và gửi thông báo SNMP trap, nhưng cổng vẫn tiếp tục hoạt động bình thường. Đây là điểm khác biệt quan trọng so với các chế độ còn lại.\n\nChế độ protect cũng loại bỏ traffic từ MAC không hợp lệ nhưng không gửi SNMP trap và không tăng bộ đếm vi phạm, nên loại B sai. Chế độ shutdown tắt hẳn cổng và chuyển nó sang trạng thái err-disabled khi có vi phạm, không chỉ đơn giản là bỏ qua traffic, nên loại D sai. Chế độ shutdown VLAN tương tự shutdown nhưng chỉ tắt VLAN liên quan thay vì toàn bộ cổng, cũng không phù hợp với mô tả trong câu hỏi.",
       "explanation_images": [],
       "question_vi": "Chế độ vi phạm port-security nào loại bỏ lưu lượng từ các địa chỉ MAC không xác định và gửi một SNMP trap?",
       "options_vi": {
@@ -1267,7 +1267,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Although the VM is still dependent on the host’s physical resources, those resources are virtualized and distributed across the VMs and can be reassigned as necessary.\nReference:",
+      "explanation": "Đáp án A đúng vì hypervisor hoạt động bằng cách chia sẻ tài nguyên phần cứng vật lý như CPU, RAM và bộ nhớ từ một máy chủ vật lý duy nhất cho nhiều máy ảo chạy đồng thời trên đó. Đây chính là bản chất cốt lõi của ảo hóa.\n\nCác đáp án còn lại không chính xác vì: giao diện mạng (B) thường được ảo hóa riêng cho từng VM chứ không phải là thành phần vật lý được phân phối trực tiếp; backplane network (C) là khái niệm liên quan đến kiến trúc switch, không phải hypervisor; external storage (D) là thiết bị lưu trữ bên ngoài được kết nối độc lập, không phải thứ hypervisor phân phối giữa các VM.",
       "explanation_images": [],
       "question_vi": "Thành phần vật lý nào được phân phối giữa nhiều máy ảo (virtual machine) chạy trên cùng một hypervisor?",
       "options_vi": {
@@ -1522,7 +1522,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "There are large number of CRC errors (1790 CRC) so answer A is the best choice.\nNote: CRC field in the “show interfaces …” command is the number of packets received with CRC (Cyclic Redundancy Checksum) errors. This means that the checksum that was generated by the sender does not match the checksum that the receiver calculated. On a LAN this typically occurs when you have issues with cabling or defective network cards.",
+      "explanation": "Đáp án A đúng vì output cho thấy 1790 lỗi CRC và 1790 lỗi frame. CRC (Cyclic Redundancy Check) chính là cơ chế kiểm tra checksum của Ethernet — khi giá trị CRC không khớp, switch sẽ loại bỏ frame đó. Số lượng lỗi này đủ lớn để gây ra mất kết nối đến dịch vụ in ấn. Nguyên nhân thường gặp là cáp bị hỏng, đầu nối kém chất lượng, hoặc nhiễu tín hiệu.\n\nĐáp án B sai vì chỉ có 1 collision, con số này hoàn toàn bình thường và không đủ để gây ra vấn đề nghiêm trọng.\n\nĐáp án C sai vì broadcast cao (1.9 triệu) không trực tiếp gây ra port reset. Interface reset thường do lỗi vật lý hoặc keepalive timeout, và ở đây chỉ có 1 interface reset.\n\nĐáp án D sai vì output queue chỉ có 1 drop, không phải nguyên nhân gây mất kết nối trong trường hợp này.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\ncat9k-acc-1# show interfaces gigabitethernet 1/0/1\ngigabitethernet 1/0/1 is up, line protocol is up\nHardware is gigabitethernet, address is aa00.0400.0134 (via 0000.0c00.4369)\nMTU 1500 bytes, BW 1000 Kbit, DLY 1000 usec, rely 255/255, load 1/255\nEncapsulation ARPA, loopback not set, keepalive set (10 sec)\nARP type: ARPA, PROBE, ARP Timeout 4:00:00\nLast input 0:00:00, output 0:00:00, output hang never\nOutput queue 1/1, 1 drops; input queue 0/0, 0 drops\nFive minute input rate 61000 bits/sec, 200 packets/sec\nFive minute output rate 1000 bits/sec, 200 packets/sec\n2295197 packets input, 305539992 bytes, 0 no buffer\nReceived 1925500 broadcasts, 0 runts, 0 giants\n0 input errors, 1790 CRC, 1790 frame, 0 overrun, 0 ignored, 0 abort\n0 input packets with dribble condition detected\n3594664 packets output, 436549843 bytes, 1 underruns\n0 output errors, 1 collisions, 1 interface resets, 0 restarts\nSwitch cat9k-acc-1 kết nối người dùng đến mạng LAN của campus. Dịch vụ in không thể truy cập qua mạng. Vấn đề giao diện nào đang gây ra sự cố kết nối?",
       "options_vi": {
@@ -1677,7 +1677,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "From the dialog in the exhibit, we see the both IP address and default gateway were configured correctly for host A. But the IP addresses of “Preferred DNSserver” and “Alternate DNS server” were wrongly configured. The correct DNS server should be 196.1.38.132 (not 192.168.1.254 or 196.1.38.254).",
+      "explanation": "Để trả lời câu hỏi này chính xác, tôi cần xem nội dung của exhibit (sơ đồ hoặc cấu hình đi kèm), nhưng dựa trên đáp án đúng là D, có thể suy luận như sau.\n\nDNS server được cấu hình trên host A trỏ đến một địa chỉ IP không thể truy cập được từ mạng hiện tại, ví dụ địa chỉ DNS nằm ngoài subnet hoặc không có route đến nó. Khi host A cố gắng duyệt web hoặc kết nối internet bằng tên miền, quá trình phân giải DNS thất bại, khiến toàn bộ kết nối internet bị chặn dù cấu hình IP và gateway hoàn toàn đúng.\n\nĐáp án A sai vì LAN và WAN thường dùng các subnet khác nhau, đó là thiết kế bình thường và không phải nguyên nhân gây lỗi. Đáp án B sai vì địa chỉ IP được gán đúng trong subnet tương ứng. Đáp án C sai vì không có quy tắc nào bắt buộc default gateway phải là địa chỉ IP đầu tiên có thể dùng được trong subnet, router có thể dùng bất kỳ địa chỉ hợp lệ nào trong dải đó.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nĐiều gì đang ngăn host A truy cập internet?",
       "options_vi": {
@@ -1962,7 +1962,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "Link aggregation (LAG) is a partial implementation of the 802.3ad port aggregation standard. It bundles all of the controller’s distribution system ports into a single 802.3ad port channel.\nRestriction for Link aggregation:\n+ LAG requires the EtherChannel to be configured for ‘mode on’ on both the controller and the Catalyst switch.…\nReference:",
+      "explanation": "Khi cấu hình LAG (Link Aggregation) trên WLC (Wireless LAN Controller), cổng switch kết nối với WLC phải được đặt ở chế độ \"On\" vì WLC không hỗ trợ các giao thức đàm phán động như LACP hay PAgP. Chế độ \"On\" buộc EtherChannel hoạt động ngay lập tức mà không cần trao đổi gói tin đàm phán với thiết bị đầu kia.\n\nCác chế độ còn lại đều yêu cầu đàm phán: \"active\" và \"passive\" là các chế độ của LACP, còn \"auto\" là chế độ của PAgP. Vì WLC không hiểu các giao thức này, nếu dùng bất kỳ chế độ nào trong số đó thì EtherChannel sẽ không được thiết lập thành công.",
       "explanation_images": [],
       "question_vi": "Chế độ EtherChannel nào phải được cấu hình khi sử dụng LAG trên WLC?",
       "options_vi": {
@@ -2112,7 +2112,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Once Ansible is installed, it creates several text files:\n+ Playbooks: These files provide actions and logic about what Ansible should do. Ansible playbooks are files that contain tasks to configure hosts. Ansible playbooks are written in YAML format.+ Inventory: a file contains a list of the hosts (usually their IP addresses, ports) which you want to configure or manage. Hosts in an inventory can be divided into smaller groups for easier management and configuration. Each group can run different tasks. An example of a task is to ping all hosts in group [routers].+ Templates: Using Jinja2 language, the templates represent a device’s configuration but with variables.+ Variables: Using YAML, a file can list variables that Ansible will substitute into templates.",
+      "explanation": "Đáp án D đúng vì Ansible inventory là một file (thường có tên hosts hoặc inventory.ini) dùng để liệt kê và nhóm các thiết bị mục tiêu mà Ansible sẽ quản lý, bao gồm địa chỉ IP, hostname và các biến liên quan.\n\nĐáp án A mô tả Ansible Playbook, không phải inventory. Đáp án B mô tả Ansible Module, là các đơn vị mã Python thực thi tác vụ cụ thể. Đáp án C mô tả Ansible Control Node, tức là máy chủ cài Ansible để điều phối các thiết bị khác.",
       "explanation_images": [
         "q14.99_img1.jpg"
       ],
@@ -2141,7 +2141,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "The following IPv4 address ranges are reserved by the IANA for private internets, and are not publicly routable on the global internet:+ 10.0.0.0/8 IP addresses: 10.0.0.0 – 10.255.255.255 -> Answer A is correct.+ 172.16.0.0/12 IP addresses: 172.16.0.0 – 172.31.255.255 -> Answer E is correct.+ 192.168.0.0/16 IP addresses: 192.168.0.0 – 192.168.255.255",
+      "explanation": "Theo RFC 1918, có ba dải địa chỉ IP được dành riêng cho mạng nội bộ (private): 10.0.0.0/8 (từ 10.0.0.0 đến 10.255.255.255), 172.16.0.0/12 (từ 172.16.0.0 đến 172.31.255.255), và 192.168.0.0/16 (từ 192.168.0.0 đến 192.168.255.255).\n\nĐịa chỉ A (10.172.76.200) thuộc dải 10.0.0.0/8 nên là địa chỉ private hợp lệ. Địa chỉ E (172.31.255.100) thuộc dải 172.16.0.0/12 vì 172.31.x.x vẫn nằm trong phạm vi kết thúc tại 172.31.255.255, nên cũng là private.\n\nĐịa chỉ B (12.17.1.20) là địa chỉ public vì dải 12.x.x.x không thuộc RFC 1918. Địa chỉ C (172.15.2.250) trông giống private nhưng thực ra là public vì dải private bắt đầu từ 172.16.x.x, còn 172.15.x.x nằm ngoài phạm vi đó. Địa chỉ D (192.169.32.10) cũng là public vì dải private chỉ là 192.168.x.x, còn 192.169.x.x đã vượt ra ngoài.",
       "explanation_images": [],
       "question_vi": "Hai địa chỉ host nào được dành riêng cho sử dụng riêng (private) trong mạng doanh nghiệp? (Chọn hai)",
       "options_vi": {
@@ -2239,7 +2239,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Traffic destined to host 192.168.10.33 will match the entry “O IA 192.168.10.32/28 [110/193] via 192.168.30.10, 00:18:49, Serial0/0.1″ so the metric is the second parameter in the square bracket.",
+      "explanation": "Địa chỉ 192.168.10.33 thuộc subnet 192.168.10.32/28 (dải từ .32 đến .47), vì vậy router sẽ dùng route \"O IA 192.168.10.32/28 [110/193]\" để chuyển tiếp gói tin đến host này. Metric của route đó là 193, được hiển thị là số thứ hai trong cặp ngoặc vuông [administrative distance/metric].\n\nĐáp án A (84) là metric của default route 0.0.0.0/0, không phải route đến 192.168.10.33. Đáp án B (110) là administrative distance của OSPF, không phải metric. Đáp án C (192) là metric của route 192.168.10.0/27, nhưng địa chỉ .33 không nằm trong subnet đó (dải /27 chỉ đến .31).",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route\nGateway of last resort is 192.168.30.10 to network 0.0.0.0\n192.168.30.0/29 is subnetted, 2 subnets\nC 192.168.30.0 is directly connected, FastEthernet0/0\nC192.168.30.8 is directly connected, Serial0/0.1\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nO IA192.168.10.32/28 [110/193] via 192.168.30.10, 00:18:49, Serial0/0.1\nO IA192.168.10.0/27 [110/192] via 192.168.30.10, 00:18:49, Serial0/0.1\n192.168.20.0/30 is subnetted, 1 subnets\nO IA192.168.20.0 [110/128] via 192.168.30.10, 00:18:49, Serial0/0.1\n192.168.50.0/32 is subnetted, 1 subnets\nC192.168.50.1 is directly connected, Loopback0\nO*IA 0.0.0.0/0 [110/84] via 192.168.30.10, 00:10:36, Serial0/0.1\nMetric cho tuyến đường đến host 192.168.10.33 là bao nhiêu?",
       "options_vi": {

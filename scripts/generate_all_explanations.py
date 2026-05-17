@@ -71,8 +71,14 @@ def needs_generate(q):
     exp = q.get('explanation') or ''
     if not exp.strip():
         return True
-    # Re-generate if English only (no Vietnamese chars)
-    if not any(ord(c) > 127 for c in exp):
+    # Re-generate if mostly English — count Vietnamese chars vs total alpha chars
+    vi_chars = sum(1 for c in exp if ord(c) > 127)
+    alpha_chars = sum(1 for c in exp if c.isalpha())
+    if alpha_chars == 0:
+        return True
+    vi_ratio = vi_chars / alpha_chars
+    # If less than 15% Vietnamese chars, consider it English
+    if vi_ratio < 0.15:
         return True
     return False
 

@@ -68,7 +68,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "All of the member interfaces of an Etherchannel port must have the same configuration or the Etherchannel interface would not be formed. Therefore we must add VLAN 300 to the interface Fa0/2 on SW1 to match the configuration on interface Fa0/1 by the command “switchport trunk allowed vlan add 300″ on interface Fa0/2 of SW1. But this command does not exist in the four choices so the best alternative command should be answer D. After using this command, two physical interfaces will have the same configuration.",
+      "explanation": "Để LACP có thể bundle một interface vào port-channel, cấu hình của interface đó phải khớp với các interface đã có trong nhóm, bao gồm danh sách VLAN được phép trên trunk. Trong bài này, SW1 port-channel 1 hiện chỉ cho phép VLAN 100 và 200, trong khi Fa0/2 trên SW1 đang cho phép VLAN 100, 200 và 300. Vì port-channel interface là logical interface đại diện cho toàn bộ nhóm, ta phải cập nhật danh sách VLAN trên port-channel 1 của SW1 bằng lệnh switchport trunk allowed vlan add 300 để nó khớp với Fa0/2, từ đó LACP mới chấp nhận bundle cổng thứ hai.\n\nĐáp án A sai vì lệnh switchport trunk allowed vlan 300 sẽ thay thế toàn bộ danh sách VLAN hiện có bằng chỉ VLAN 300, làm mất VLAN 100 và 200 thay vì bổ sung thêm.\n\nĐáp án B sai vì vấn đề nằm ở port-channel interface trên SW1, không phải ở Fa0/2 của SW1. Fa0/2 đã có VLAN 300 rồi.\n\nĐáp án C sai vì SW2 không phải nơi xảy ra sự không khớp. Vấn đề là port-channel 1 trên SW1 thiếu VLAN 300 so với Fa0/2 của chính SW1.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đang xây dựng một EtherChannel LACP Layer 2 mới giữa SW1 và SW2, và họ đã thực thi các lệnh show đã cho để xác minh công việc. Tác vụ bổ sung nào phải được thực hiện để các switch gộp thành công thành viên thứ hai trong LACP port-channel?",
       "options_vi": {
@@ -121,7 +121,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Cisco Wireless LAN Controller Configuration Guide, Release 7.4…\nWhen using Link aggregation (LAG) make sure all ports of the controller have the same Layer 2 configuration on the switch side.\nReference:",
+      "explanation": "Link aggregation (LAG) cho phép gộp nhiều liên kết vật lý thành một liên kết logic duy nhất giữa WLC và switch Layer 2, từ đó cung cấp đồng thời cả ba tính năng được đề cập: dự phòng kết nối (nếu một liên kết bị lỗi, các liên kết còn lại vẫn hoạt động), tăng băng thông tổng hợp, và phân tải lưu lượng (load sharing) giữa các liên kết thành viên.\n\nVLAN trunking chỉ cho phép truyền nhiều VLAN trên một liên kết, không cung cấp dự phòng hay tăng băng thông. Tunneling là kỹ thuật đóng gói gói tin để truyền qua mạng khác, không liên quan đến mục tiêu ở đây. First hop redundancy (như HSRP, VRRP) giải quyết dự phòng cho default gateway ở Layer 3, không phải dự phòng liên kết vật lý giữa WLC và switch.",
       "explanation_images": [],
       "question_vi": "Điều gì cung cấp dự phòng kết nối, tăng băng thông và chia sẻ tải giữa bộ điều khiển mạng LAN không dây (wireless LAN controller) và switch Layer 2?",
       "options_vi": {
@@ -223,7 +223,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "We don’t need to set high MTU between sites -> Answer A is not correct.\nWe can use any connection types (broadcast, point-to-point…) between two devices -> Answer C is not correct.\nWe can use full-mesh topology with all routing protocols, not only BGP -> Answer E is not correct.",
+      "explanation": "Trong mô hình full-mesh, mỗi thiết bị phải kết nối trực tiếp với tất cả các thiết bị còn lại, nên số lượng liên kết tăng theo công thức n(n-1)/2. Điều này dẫn đến chi phí triển khai rất cao vì cần nhiều đường truyền, thiết bị, và băng thông. Đồng thời, việc cấu hình và quản lý từng kết nối riêng lẻ giữa tất cả các nút khiến hệ thống trở nên phức tạp, đặc biệt khi mạng mở rộng.\n\nCác đáp án còn lại không chính xác vì: MTU không phải yêu cầu đặc thù của full-mesh, đây là thông số cấu hình độc lập với kiểu topology. Full-mesh thực ra hỗ trợ giao tiếp đa điểm chứ không bị giới hạn chỉ point-to-point, đó là đặc điểm của hub-and-spoke. Và full-mesh hoàn toàn có thể hoạt động với nhiều giao thức định tuyến khác nhau, không bị ràng buộc với BGP.",
       "explanation_images": [],
       "question_vi": "Hai nhược điểm của topology full-mesh là gì? (Chọn hai)",
       "options_vi": {
@@ -374,7 +374,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "Both versions of Wi-Fi Protected Access (WPA/WPA2) can be implemented in either of two modes:+ Personal or Pre-Shared Key (PSK) Mode: This mode is appropriate for most home networks—but not business networks. You define an encryption passphraseon the wireless router and any other access points (APs). Then the passphrase must be entered by users when connecting to the Wi-Fi network.\nThough this mode seems very easy to implement, it actually makes properly securing a business network nearly impossible. Unlike with the Enterprise mode, wireless access can’t be individually or centrally managed. One passphrase applies to all users. If the global passphrase should need to be changed, it must be manually changed on all the APs and computers. This would be a big headache when you need to change it; for instance, when an employee leaves the company or when any computers are stolen or compromised. Unlike with the Enterprise mode, the encryption passphrase is stored on the computers. Therefore, anyone on the computer—whether it be employees or thieves—can connect to the network and also recover the encryption passphrase.\nReference:",
+      "explanation": "WPA Personal sử dụng phương thức xác thực PSK (Pre-Shared Key), nghĩa là tất cả người dùng dùng chung một mật khẩu để kết nối vào mạng Wi-Fi. Đây là chế độ phổ biến trong mạng gia đình và văn phòng nhỏ.\n\nWPA Enterprise thì ngược lại, sử dụng máy chủ RADIUS để xác thực từng người dùng riêng lẻ, không dùng PSK. Local và Client không phải là các chế độ WPA hợp lệ.",
       "explanation_images": [],
       "question_vi": "Chế độ WPA nào sử dụng xác thực PSK?",
       "options_vi": {
@@ -399,7 +399,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "A “collapsed core” is when the distribution layer and core layer functions are implemented by a single device.\nReference:\nBut in reality, we often use redundant pair to increase reliability.",
+      "explanation": "Kiến trúc collapsed-core (hay còn gọi là two-tier) là mô hình trong đó lớp core và lớp distribution được gộp lại thành một, thay vì triển khai trên các thiết bị riêng biệt như trong mô hình ba lớp truyền thống. Do đó, chức năng của cả hai lớp này được thực hiện trên một thiết bị duy nhất hoặc một cặp thiết bị dự phòng (redundant pair) để đảm bảo tính sẵn sàng cao. Đây chính xác là điều mà đáp án D mô tả.\n\nĐáp án A sai vì việc sử dụng IPv4 hay IPv6 không liên quan đến định nghĩa hay chức năng của kiến trúc collapsed-core. Đáp án B sai vì nó mô tả ngược lại — collapsed-core có nghĩa là hai lớp được gộp vào một thiết bị, không phải triển khai trên hai thiết bị khác nhau. Đáp án C sai vì HSRP là giao thức dự phòng ở Layer 3 (không phải Layer 2), và câu này không mô tả đúng chức năng của collapsed-core.",
       "explanation_images": [],
       "question_vi": "Chức năng của lớp core và distribution trong kiến trúc collapsed-core là gì?",
       "options_vi": {
@@ -627,7 +627,7 @@
         "A"
       ],
       "answer_images": [],
-      "explanation": "JSON syntax structure:\n+ A key/value pair consists of a key (must be a string in double quotation marks \"\"), followed by a colon :, followed by a value. For example: “name”:”John”\nTherefore in this question, “interface” is the key while “ge3/36” is the value.",
+      "explanation": "Trong JSON, mỗi cặp dữ liệu gồm có key và value, ví dụ \"interface\" là key còn \"ge3/36\" là value tương ứng. Vì vậy \"ge3/36\" là một value vì nó là dữ liệu thực tế được gán cho key \"interface\".\n\nCác đáp án còn lại sai vì: array là cấu trúc danh sách được bao bởi dấu ngoặc vuông như toàn bộ đoạn JSON trên, không phải một chuỗi đơn lẻ. Key là tên định danh đứng bên trái dấu hai chấm như \"interface\" hay \"VPN concentrator\". Object là tập hợp các cặp key-value được bao bởi dấu ngoặc nhọn như {\"VPN concentrator\": \"VPN36\", \"interface\":\"ge3/36\"}, không phải một giá trị riêng lẻ.",
       "explanation_images": [],
       "question_vi": "Từ \"ge3/36\" đại diện cho điều gì trong lược đồ JSON này?\n1 [\n2 {\"VPN concentrator\": \"VPN36\", \"interface\":\"ge3/36\"},\n3 {\"load balancer\": \"LB33\", \"interface\":\"te7/10\"},\n4 {\"switch\": \"SW31\", \"interface\":\"fe2/25\"},\n5 ]",
       "options_vi": {
@@ -779,7 +779,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "Dynamic Anchoring for Clients with Static IP\nAt times you may want to configure static IP addresses for wireless clients. When these wireless clients move about in a network, they could try associating with other controllers. If the clients try to associate with a controller that does notsupport the same subnet as the static IP, the clients fail to connect to the network. You can now enable dynamic tunneling of clients with static IP addresses.Dynamic anchoring of static IP clients with static IP addresses can be associated with other controllers where the client’s subnet is supported by tunneling the traffic to another controller in the same mobility group. This feature enables you to configure your WLAN so that the network is serviced even though the clients use static IP addresses.\nReference:",
+      "explanation": "Khi một client di chuyển giữa các vị trí trong mạng campus, client đó có thể kết nối vào một AP thuộc subnet khác với subnet mà nó đã được cấp IP ban đầu. Tính năng Static IP Tunneling cho phép WLC tạo một tunnel để chuyển tiếp lưu lượng của client đó về đúng subnet gốc, nhờ đó client giữ nguyên địa chỉ IP đã được gán mà không cần xin cấp lại. Đây chính xác là yêu cầu mà đề bài đặt ra.\n\nCác đáp án còn lại không phù hợp vì lý do sau. P2P Blocking Action với tùy chọn Forward-UpStream liên quan đến việc kiểm soát lưu lượng giữa các client với nhau, không liên quan đến việc duy trì địa chỉ IP khi roaming. DHCP Addr. Assignment là tùy chọn bắt buộc client phải lấy IP qua DHCP, điều này ngược lại với mục tiêu giữ nguyên IP tĩnh đã có. Coverage Hole Detection là tính năng giám sát vùng phủ sóng RF, hoàn toàn không liên quan đến quản lý địa chỉ IP.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nTùy chọn P2P Blocking Action bị tắt trên WLC. Đội ngũ bảo mật có yêu cầu mới là mỗi client phải giữ nguyên địa chỉ IP được gán khi client di chuyển giữa các vị trí trong mạng campus. Hành động nào hoàn thành cấu hình này?",
       "options_vi": {
@@ -929,7 +929,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "TXLoad is the amount of traffic being transmitted from your interface and the RXLoad is the amount of traffic received on the interface. Both of them are 1 in this question so answer D is not the problem.\nThis interface received “25 broadcasts” so answer C is not the problem.",
+      "explanation": "Đáp án B đúng vì interface FastEthernet0/0 đang chạy ở chế độ Half-duplex trong khi tốc độ là 100Mb/s. Đây là dấu hiệu cấu hình sai duplex, thường xảy ra khi một đầu được cấu hình cứng còn đầu kia tự đàm phán (auto-negotiation), dẫn đến duplex mismatch. Hậu quả là số lượng collision rất cao (831 collisions) và 383 CRC errors, gây ra truyền lại gói tin liên tục, làm chậm tốc độ tải xuống, ảnh hưởng chất lượng VoIP và hiệu năng ứng dụng.\n\nA sai vì QoS queuing không gây ra CRC errors hay collisions, nó chỉ ưu tiên lưu lượng chứ không làm hỏng gói tin ở tầng vật lý.\n\nC sai vì chỉ có 25 broadcasts, con số này quá thấp để gây ra broadcast storm.\n\nD sai vì tốc độ input/output chỉ khoảng 516 Kbit/s trên đường truyền 100 Mb/s, tức là băng thông chưa đến 1%, không phải overutilization.",
       "explanation_images": [],
       "question_vi": "Tham khảo hình minh họa.\nRouter# show interface FastEthernet0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is Gt96k FE, address is 0017.59b2.7fb2 (bia 0017.59b2.7fb2) Internet address is 10.0.0.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nHalf-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:04, output 00:00:04, output hang sever\nLast clearing of \"show interface\" counters never\nInput queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 1 Queueing strategy: fifo\nOutput queue: 0/40 (size/max)\n5 minute input rate 516000 bits/sec, 45 packets/sec\n5 minute output rate 516000 bits/sec, 46 packets/sec\n13282 packets input, 20075670 bytes\nReceived 25 broadcasts, 0 runts, 0 giants, 0 throttles\n383 input errors, 383 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n13438 packets output, 20084258 bytes, 0 underruns\n0 output errors, 831 collision, 5 interface resets\n11 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nNgười dùng tại văn phòng chi nhánh đang gặp vấn đề về hiệu suất ứng dụng, chất lượng âm thanh VoIP kém và tải xuống chậm. Nguyên nhân của các vấn đề này là gì?",
       "options_vi": {
@@ -1106,7 +1106,7 @@
         "D"
       ],
       "answer_images": [],
-      "explanation": "The “route print” and netstat -r” commands are very similar. This is the output of the “route print” command:\nAnd “netstat -r” command:\nNote: “-r” means “displays the routing table”",
+      "explanation": "Lệnh netstat -r hiển thị bảng định tuyến IP trên Windows, tương đương với lệnh route print. Cả hai lệnh đều cho thấy các tuyến đường mạng mà hệ thống sử dụng để chuyển tiếp gói tin.\n\nnetstat -n chỉ hiển thị các kết nối mạng đang hoạt động dưới dạng địa chỉ số, không hiển thị bảng định tuyến. ipconfig dùng để xem cấu hình địa chỉ IP của các giao diện mạng. ifconfig là lệnh tương tự ipconfig nhưng dùng trên hệ thống Linux/Unix, không phải Windows.",
       "explanation_images": [
         "q13.63_img1.jpg",
         "q13.63_img2.jpg"
@@ -1134,7 +1134,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "A controller with OfficeExtend access points in an access point group publishes only up to 15 WLANs to each connected OfficeExtend access point because it reserves one WLAN for the personal SSID -> OfficeExtend support personal SSID -> Answer A is not correct.\nA Cisco OfficeExtend access point (Cisco OEAP) provides secure communications from a controller to a Cisco AP at a remote location, seamlessly extending the corporate WLAN over the Internet to an employee’s residence. The user’s experience at the home office is exactly the same as it would be at the corporate office. Datagram Transport Layer Security (DTLS) encryption between the access point and the controller (-> Answer B is not correct) ensures that all communications have the highest level of security.\nCisco OEAPs are designed to work behind a router or other gateway device that is using network address translation (NAT) -> Answer D is not correct.\nReference:\nOEAP tunnels back to a Cisco WLC with an IPsec VPN tunnel.\nWith FlexConnect, AP simply terminates user traffic in a VLAN & destined to gateway defined on a local switch.",
+      "explanation": "Đáp án C đúng vì OfficeExtend AP được thiết kế để triển khai tại nhà của nhân viên, toàn bộ traffic của client được đưa qua CAPWAP tunnel về WLC tại trụ sở công ty, đảm bảo bảo mật tập trung. FlexConnect (trước đây là HREAP) ngược lại cho phép AP xử lý và chuyển mạch traffic của client ngay tại chỗ thông qua switch port cục bộ, không cần gửi tất cả về WLC, phù hợp với các chi nhánh có kết nối WAN không ổn định.\n\nĐáp án A sai vì thực tế OfficeExtend hỗ trợ cấu hình một personal SSID (dành cho lưu lượng cá nhân của nhân viên tại nhà), đây là tính năng đặc trưng của chế độ này chứ không phải FlexConnect.\n\nĐáp án B sai vì OfficeExtend hoàn toàn hỗ trợ DTLS để mã hóa CAPWAP tunnel về WLC, thực ra đây là yêu cầu bắt buộc vì traffic đi qua mạng internet công cộng.\n\nĐáp án D sai vì chính OfficeExtend mới là chế độ được triển khai sau NAT tại nhà của nhân viên, còn FlexConnect không yêu cầu điều kiện NAT như vậy.",
       "explanation_images": [],
       "question_vi": "Điều gì phân biệt chế độ Cisco OfficeExtend AP với chế độ FlexConnect AP?",
       "options_vi": {
@@ -1311,7 +1311,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "SNMP uses UDP as its transport protocol because it has no need for the overhead of TCP. “Reliability” is not required because each request generates a response. If the SNMP application does not receive a response, it simply re-issues the request.",
+      "explanation": "Đáp án C đúng vì SNMP (Simple Network Management Protocol) là giao thức dùng để giám sát và quản lý các thiết bị mạng, hoạt động ở tầng ứng dụng (Application Layer) trong mô hình OSI, và sử dụng UDP làm giao thức truyền tải bên dưới (cổng 161 cho truy vấn, cổng 162 cho trap).\n\nĐáp án A sai vì SNMP không dùng TCP mà dùng UDP, và không hoạt động ở tầng trình bày (Presentation Layer). Đáp án B sai vì SNMP không sử dụng SSL làm underlay và không hoạt động ở tầng vận chuyển (Transport Layer). Đáp án D sai vì SNMP không dùng SSH và không hoạt động ở tầng mạng (Network Layer).",
       "explanation_images": [],
       "question_vi": "Vai trò của SNMP trong mạng là gì?",
       "options_vi": {
@@ -1414,7 +1414,7 @@
         "B"
       ],
       "answer_images": [],
-      "explanation": "WPA3-Personal uses AES-128 -> Answer D is not correct.\nWPA3 networks include perfect forward secrecy. With this protection, even if an adversary successfully guesses the correct network password, they cannot observe a user’s earlier interactions on the network, determine the session keys for that interaction, or decrypt wireless traffic from other users on the network -> Answer B is correct.\nReference:\nWPA3 provides improvements to the general Wi-Fi encryption, thanks to Simultaneous Authentication of Equals (SAE) replacing the Pre-Shared Key (PSK) authentication method used in prior WPA versions. SAE enables individuals or home users to set Wi-Fi passwords that are easier to remember and provide the same security protection even if the passwords are not complex enough.",
+      "explanation": "WPA3 giới thiệu hai cải tiến quan trọng: SAE (Simultaneous Authentication of Equals) thay thế PSK trong chế độ cá nhân, giúp quá trình trao đổi khóa ban đầu an toàn hơn và chống lại tấn công từ điển offline, đồng thời bổ sung forward secrecy để đảm bảo rằng ngay cả khi khóa bị lộ sau này, các phiên trước đó vẫn không thể bị giải mã.\n\nĐáp án A sai vì TKIP và per-packet keying là cải tiến của WPA (phiên bản 1), không phải WPA3. Đáp án C sai vì 802.1x và AES-128 là đặc điểm của WPA2 Enterprise, không phải tính năng mới trong WPA3. Đáp án D sai vì không tồn tại \"AES-64\" trong bất kỳ chuẩn Wi-Fi nào, đây là thông tin bịa đặt.",
       "explanation_images": [],
       "question_vi": "Những cải tiến nào được triển khai như một phần của WPA3?",
       "options_vi": {
@@ -1439,7 +1439,7 @@
         "C"
       ],
       "answer_images": [],
-      "explanation": "Lightweight: The term ‘lightweight’ refers to the fact that these devices cannot work independently. A Cisco lightweight AP (LAP) has to join a Wireless LAN Controller (WLC) to function. LAP and WLC communicate with each other via a logical pair of CAPWAP tunnels.",
+      "explanation": "Trong kiến trúc wireless tập trung, AP ở chế độ lightweight (LAP) không tự xử lý cấu hình mà phụ thuộc hoàn toàn vào Wireless LAN Controller (WLC). Mọi thay đổi cấu hình đều được đẩy xuống AP thông qua tunnel CAPWAP (hoặc LWAPP trên các hệ thống cũ hơn) — đây là giao thức chuyên dụng để WLC quản lý và điều khiển các LAP. Người quản trị thực hiện thay đổi trên WLC, sau đó WLC truyền cấu hình đó xuống AP qua tunnel này.\n\nĐáp án A sai vì LAP không có giao diện quản lý độc lập để SSH vào như AP autonomous. Đáp án B sai vì LAP không chạy web server HTTPS để quản lý trực tiếp. Đáp án D sai vì EoIP (Ethernet over IP) là giao thức tunneling của Mikrotik, không liên quan đến kiến trúc Cisco WLC/LAP.",
       "explanation_images": [],
       "question_vi": "Thay đổi cấu hình được thực hiện như thế nào đối với AP không dây ở chế độ lightweight?",
       "options_vi": {
@@ -1538,7 +1538,7 @@
         "E"
       ],
       "answer_images": [],
-      "explanation": "When applying access-list to line vty we must use “access-class”, not “access-group”.\nThe access-list command “permit tcp any range 22 23 203.0.113.0 0.0.0.255” means permit TCP traffic from any source with range 22 (SSH) and 23 (Telnet) to the destination 203.0.113.0/24 (not from source 203.0.113.0/24) so answer A is not correct.",
+      "explanation": "Đây là câu hỏi về bảo mật quản lý switch thông qua ACL và VTY lines.\n\nĐáp án B đúng vì lệnh \"access-class Management in\" áp dụng ACL tên \"Management\" vào các đường VTY, từ đó kiểm soát những host nào được phép kết nối SSH/Telnet vào switch. Đây là cách duy nhất để giới hạn truy cập quản lý từ xa trên thiết bị Cisco.\n\nĐáp án E đúng vì ACL standard với wildcard mask 0.0.0.255 là cú pháp chính xác để cho phép mạng 203.0.113.0/24. ACL standard chỉ lọc theo địa chỉ nguồn, phù hợp với mục đích kiểm soát ai được phép kết nối vào switch.\n\nĐáp án A sai vì dùng ACL extended với cú pháp ngược — ACL extended có thứ tự là \"permit [protocol] [source] [destination]\", nhưng ở đây source là \"any\" và destination là dải 203.0.113.0, tức là cho phép bất kỳ ai kết nối đến mạng quản lý, ngược hoàn toàn với yêu cầu.\n\nĐáp án C sai vì dùng subnet mask 255.255.255.0 thay vì wildcard mask 0.0.0.255. Trong ACL của Cisco, phần mask sau địa chỉ nguồn phải là wildcard mask, không phải subnet mask, nên lệnh này sẽ báo lỗi hoặc hoạt động sai.\n\nĐáp án D sai vì áp dụng ACL vào tất cả các VLAN interface theo hướng outbound sẽ lọc traffic đang transit qua switch, vi phạm yêu cầu \"other traffic must transit without interruption\". Ngoài ra, đây không phải cách đúng để giới hạn truy cập quản lý.",
       "explanation_images": [],
       "question_vi": "Quản trị viên đang cấu hình một switch Cisco Catalyst để nó chỉ chấp nhận kết nối quản lý từ các host trong mạng 203.0.113.0/24. Lưu lượng khác đi qua switch phải truyền qua mà không bị gián đoạn. Hai cấu hình nào kỹ sư phải áp dụng cho router? (Chọn hai)",
       "options_vi": {

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState, Component } from 'react';
 import HomeScreen from './components/HomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
+import ScrollScreen from './components/ScrollScreen';
 import { loadSource } from './utils/dataLoader';
 import useQuiz from './hooks/useQuiz';
 import './App.css';
@@ -127,7 +128,7 @@ export default function App() {
     }
   }, []);
 
-  const handleStart = useCallback(async ({ sourceId, topicId, count, srsMode, randomOrder }) => {
+  const handleStart = useCallback(async ({ sourceId, topicId, count, srsMode, randomOrder, scrollMode }) => {
     setLoading(true);
     setError(null);
     try {
@@ -140,11 +141,12 @@ export default function App() {
         topicId,
         mode,
         questions: subset,
+        scrollMode: !!scrollMode,
       };
       setSession(newSession);
       setInitialProgress(null);
       setResult(null);
-      setScreen('quiz');
+      setScreen(scrollMode ? 'scroll' : 'quiz');
       sessionStorage.setItem(SESSION_KEY, JSON.stringify(newSession));
       sessionStorage.removeItem(PROGRESS_KEY);
     } catch (e) {
@@ -224,6 +226,13 @@ export default function App() {
   return (
     <>
       {screen === 'home' && <HomeContainer onStart={handleStart} />}
+      {screen === 'scroll' && session && (
+        <ScrollScreen
+          questions={session.questions}
+          sourceId={session.sourceId}
+          onExit={handleExit}
+        />
+      )}
       {screen === 'quiz' && session && (
         <ErrorBoundary>
           <QuizContainer

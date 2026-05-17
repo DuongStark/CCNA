@@ -105,7 +105,7 @@
   min-width: 0;
   max-width: var(--max-content-width);
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-lg) 0;
+  padding: var(--space-xl) var(--space-lg) 80px;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
