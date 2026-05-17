@@ -1,0 +1,658 @@
+[
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 4,
+    "total": 59,
+    "id": "7.6",
+    "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is not set\n209.165.200.0/27 is subnetted, 1 subnets\nB\t   209.165.200.224 [20/0] via 10.10.12.2, 00:08:34\n10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks\nC\t   10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC\t   10.10.11.0/30 is directly connected, FastEthernet2/0\nO\t   10.10.13.0/24 [110/2] via 10.10.10.1, 00:09:25, GigabitEthernet0/0\nC\t   10.10.12.0/30 is directly connected, GigabitEthernet0/1\nWhich action is taken by the router when a packet is sourced from 10.10.10.2 and destined for 10.10.10.16?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 7,
+    "total": 59,
+    "id": "7.26",
+    "question": "Refer to the exhibit.\nR1#show ip route\n--output omitted--\nGateway of last resort is 192.168.14.4 to network 0.0.0.0\nC     172.16.1.128/25 is directly connected, GigabitEthernet1/1/0\nC     192.168.12.0/24 is directly connected, FastEthernet0/0\nC     192.168.13.0/24 is directly connected, FastEthernet0/1\nC     192.168.14.0/24 is directly connected, FastEthernet1/0\nC     172.16.16.1 is directly connected, Loopback1\n192.168.10.0/24 is variably subnetted, 3 subnets, 3 masks\nO     192.168.10.0/24 [110/2] via 192.168.14.4, 00:03:01, FastEthernet1/0\nO     192.168.10.32/27 [110/11] via 192.168.13.3, 00:00:11, FastEthernet0/1\nO     192.168.0.0/16 [110/2] via 192.168.15.5, 00:05:11, FastEthernet1/1\nD     192.168.10.1/32 [90/52778] via 192.168.12.2, 00:05:11, FastEthernet0/0\nO*E2  0.0.0.0/0 [110/1] via 192.168.14.4, 00:05:11, FastEthernet1/0\nIf R1 receives a packet destined to 172.16.1.1, to which IP address does it send the packet?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 9,
+    "total": 59,
+    "id": "7.53",
+    "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route\nGateway of last resort is 192.168.30.10 to network 0.0.0.0\n192.168.30.0/29 is subnetted, 2 subnets\nC       192.168.30.0 is directly connected, FastEthernet0/0\nC       192.168.30.8 is directly connected, Serial0/0.1\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nO IA    192.168.10.32/28 [110/193] via 192.168.30.10, 00:11:34, Serial0/0.1\nO IA    192.168.10.0/27 [110/192] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.20.0/30 is subnetted, 1 subnets\nO IA    192.168.20.0 [110/128] via 192.168.30.10, 00:11:34, Serial0/0.1\n192.168.50.0/32 is subnetted, 1 subnets\nC       192.168.50.1 is directly connected, Loopback0\nO*IA 0.0.0.0/0 [110/84] via 192.168.30.10, 00:11:21, Serial0/0.1\nWhat is the metric of the route to the 192.168.10.33/28 subnet?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 26,
+    "total": 59,
+    "id": "9.21",
+    "question": "Refer to the exhibit.\nA#show ip ospf neighbor\nNeighbor ID  Pri   State       Dead Time   Address       Interface\n172.1.1.1    1     EXCHANGE/-  00:00:36    172.16.32.1   Serial0.1\nAn engineer assumes a configuration task from a peer. Router A must establish an OSPF neighbor relationship with neighbor 172.1.1.1. The output displays the status of the adjacency after 2 hours. What is the next step in the configuration process for the routers to establish an adjacency?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 27,
+    "total": 59,
+    "id": "9.22",
+    "question": "Refer to the exhibit.\nCPE#show ip route\n192.168.1.0/24 is variably subnetted, 3 subnets, 3 masks\nB    192.168.1.0/24 [20/1] via 192.168.12.2, 00:00:06\nR    192.168.1.128/25 [120/5] via 192.168.13.3, 00:02:22, Ethernet0/1\nO    192.168.1.192/26 [110/11] via 192.168.14.4, 00:02:22, Ethernet0/2\nD    192.168.1.224/27 [90/1024640] via 192.168.15.5, 00:01:33, Ethernet0/3\nAll traffic enters the CPE router from interface Serial0/3 with an IP address of 192.168.50.1. Web traffic from the WAN is destined for a LAN network where servers are load-balanced. An IP packet with a destination address of the HTTP virtual IP of 192.168.1.250 must be forwarded. Which routing table entry does the router use?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 31,
+    "total": 59,
+    "id": "9.35",
+    "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets\nB     209.165.200.224 [20/0] via 10.10.12.2,03:32:14\n209.165.201.0/27 is subnetted, 1 subnets\nB     209.165.201.0 [20/0] via 10.10.12.2,02:26:53\n209.165.202.0/27 is subnetted, 1 subnets\nB     209.165.202.128 [20/0] via 10.10.12.2,02:46:03\n10.0.0.0/8 is variably subnetted, 10 subnets, 4 masks\nO     10.10.13.0/25 [110/2] via 10.10.10.1,00:00:04, GigabitEthernet0/0\nO     10.10.13.128/28 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO     10.10.13.144/28 [110/2] via 10.10.10.9,00:01:57, GigabitEthernet0/2\nO     10.10.13.160/29 [110/2] via 10.10.10.5,00:00:12, GigabitEthernet0/1\nO     10.10.13.208/29 [110/2] via 10.10.10.13,00:01:57, GigabitEthernet0/3\nS*  0.0.0.0/0 [1/0] via 10.10.11.2\nWhich next-hop IP address does Router1 use for packets destined to host 10.10.13.158?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 40,
+    "total": 59,
+    "id": "9.104",
+    "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override\nGateway of last resort is 10.56.0.1 to network 0.0.0.0\nS*\t0.0.0.0/0 [1/0] via 10.56.0.1\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC\t  10.56.0.0/17 is directly connected, Vlan56\nL\t  10.56.0.19/32 is directly connected, Vlan56\nC\t  10.56.128.0/18 is directly connected, Vlan57\nL\t  10.56.128.19/32 is directly connected, Vlan57\nWhen router R1 is sending traffic to IP address 10.56.192.1, which interface or next hop address does it use to route the packet?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 51,
+    "total": 59,
+    "id": "10.39",
+    "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0 0\n209.165.200.0/27 is subnetted, 1 subnets\nB     209.165.200.224 [20/0] via 10 10.12.2,03:22:14\n209.165.201.0/27 is subnetted, 1 subnets\nB     209.165.201.0 [20/0] via 10.10.12.2, 02:26:33\n209.165.202.0/27 is subnetted, 1 subnets\nB     209.165.202.128 [20/0] via 10.10.12.2,02:26:03\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC     10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC     10.10.11.0/30 is directly connected, FastEthernet2/0\nC     10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO     10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nO     10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:04, GigabitEthernet0/0\nS* 0.0.0 0/0 [1/0] via 10.10.11.2\nWhat is the subnet mask of the route to the 10.10.13.160 prefix?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 53,
+    "total": 59,
+    "id": "10.56",
+    "question": "Refer to the exhibit.\n--Some output missing--\nRouting Descriptor Blocks:\n* directly connected, via Ethernet0/1\nRoute metric is 0, traffic share count is 1\nCPE# ping 203.0.113.1\nType escape sequence to abort.\nSending 5, 100-byte ICMP Echos to 203.0.113.1, timeout is 2 seconds:\n!!!!!\nSuccess rate is 100 percent (5/5), round-trip min/avg/oax = 1/1/1 ms\nCPE# show ip route\nGateway of last resort is 198.51.100.1 to network 0.0.0.0\nB*  0.0.0.0/0 [20/0] via 198.51.100.1, 00:02:07\n198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC\t  198.51.100.0/30 is directly connected, Ethernet0/0\nL\t  198.51.100.2/32 is directly connected, Ethernet0/0\n203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC\t  203.0.113.0/30 is directly connected, Ethernet0/1\nL\t  203.0.113.2/32 is directly connected, Etheraet0/1\nAfter configuring a new static route on the CPE, the engineer entered this series of commands to verify that the new configuration is operating normally. When is the static default route installed into the routing table?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_IP_Connectivity",
+    "pos": 58,
+    "total": 59,
+    "id": "10.91",
+    "question": "Refer to the exhibit. With which metric does router R1 learn the route to host 172.16.0.202?\nR1#show ip route | begin gateway\nGateway of last resort is 209.165.200.246 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 209.165.200.246, Serial0/1/0\nis directly connected, Serial0/1/0\n172.16.0.0/16 is variably subnetted, 3 subnets, 3 masks\nS   172.16.0.0/24 [1/0] via 207.165.200.250, Serial0/0/0\nO   172.16.0.128/25 [110/32445] via 207.165.200.254, 00:00:33, Serial0/0/1\nD   172.16.0.192/29 [90/3184439] via 207.165.200.254, 00:00:33, Serial0/0/1\n207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC   207.165.200.248/30 is directly connected, Serial0/0/0\nL   207.165.200.249/32 is directly connected, Serial0/0/0\nC   207.165.200.252/30 is directly connected, Serial0/0/1\nL   207.165.200.253/32 is directly connected, Serial0/0/1"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Network_Access",
+    "pos": 35,
+    "total": 102,
+    "id": "7.44",
+    "question": "An engineer configures interface Gi1/0 on the company PE router to connect to an ISP.\nNeighbor discovery is disabled.\ninterface Gi1/0\ndescription HQ_DC3392-9383\nduplex full\nspeed 100\nnegotiation auto\nlldp transmit\nlldp receive\nWhich action is necessary to complete the configuration if the ISP uses third-party network devices?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Network_Access",
+    "pos": 59,
+    "total": 102,
+    "id": "9.1",
+    "question": "Refer to the exhibit.\nSwitch#show etherchannel summary\n[output omitted]\nGroup   Port-channel  Protocol   Ports\n-------+--------------+---------+---------------------\n10      Po10(SU)       LACP      Gi0/0(P)  Gi0/1(P)\n20      Po20(SU)       LACP      Gi0/2(P)  Gi0/3(P)\nWhich two commands when used together create port channel 10? (Choose two)"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Network_Access",
+    "pos": 79,
+    "total": 102,
+    "id": "9.76",
+    "question": "Refer to the exhibit.\nCat9K-1#show lldp entry Cat9K-2\nLocal Intf: Gi1/0/21\nChassis ID: 308b.b2b3.2880\nPort id: Gi1/0/21\nPort Description: GigabitEthernet1/0/21\nSystem Name: Cat9K-2\nManagement Addresses:\nIP: 10.6.110.2\nThe network administrator must prevent the switch Cat9K-2 IP address from being visible in LLDP without disabling the protocol. Which action must be taken must be taken to complete the task?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Network_Access",
+    "pos": 84,
+    "total": 102,
+    "id": "10.10",
+    "question": "Refer to the exhibit.\ninterface g2/0/0\nchannel-group 1 mode active\ninterface g4/0/0\nchannel-group 1 mode active\ninterface Port-channel1\nip address 203.0.113.65 255.255.255.252\n%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to down\nAn engineer is configuring a Layer 3 port-channel interface with LACP. The configuration on the first device is complete, and it is verified that both interfaces have registered the neighbor device in the CDP table. Which task on the neighbor device enables the new port channel to come up without negotiating the channel?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Network_Access",
+    "pos": 99,
+    "total": 102,
+    "id": "10.67",
+    "question": "Refer to the exhibit.\nSW1#show ip interface brief\nInterface        IP-Address   OK? Method Status Protocol\nFastEthernet0/1  unassigned   YES manual down   down\nSW1#show interface fa0/1 status\nPort     Name  Status      Vlan   Duplex   Speed  Type\nFa0/1          notconnect  1      a-full   a-100  10/100BaseTX\nWhat is the cause of the issue?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Network_Fundamentals",
+    "pos": 10,
+    "total": 43,
+    "id": "6.18",
+    "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report intermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent connectivity issue?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Network_Fundamentals",
+    "pos": 26,
+    "total": 43,
+    "id": "8.51",
+    "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report intermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent connectivity issue?"
+  },
+  {
+    "source": "docx",
+    "topic": "CCNA_Security_Fundamentals",
+    "pos": 47,
+    "total": 66,
+    "id": "9.90",
+    "question": "Refer to the exhibit.\nip arp inspection vlan 5-10\ninterface fastethernet0/1\nswitchport mode access\nswitchport access vlan 5\nWhat is the effect of this configuration?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 4,
+    "total": 62,
+    "id": "11.4",
+    "question": "R2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 14,
+    "total": 62,
+    "id": "11.14",
+    "question": "Refer to the exhibit.\nrouter# show ip route\n...\nD 172.18.32.0/26 [90/25789217] via 10.1.1.1\nR 172.18.32.0/24 [120/4] via 10.1.1.2\nO 172.18.32.0/19 [110/229840] via 10.1.1.3\nC 172.18.32.32/32 is directly connected, Loopback0\nC 172.18.32.36/30 directly connected, GigabitEthernet0/0\nL 172.18.32.37/32 is directly connected, GigabitEthernet0/0\nA packet sourced from 172.18.33.2 is destined for 172.18.32.38. Where does the router forward the packet?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 25,
+    "total": 62,
+    "id": "11.25",
+    "question": "Refer the exhibit.\nR19#show int fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: SALES_SUBNET\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops:\n135298429\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n73310 packets input, 7101162 bytes\nReceived 73115 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 4 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927513096455 packets output, 14404034810952 bytes, 0 underruns\n0 output errors, 11 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nWhat is the cause of poor performance on router R19?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 44,
+    "total": 62,
+    "id": "11.44",
+    "question": "Refer to the exhibit.\nRouter#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nRouter(config)#hostname R1\nR1(config)#ip domain-name CC-Net.com\nR1(config)#enable secret Passfornewuser\nR1(config)#line vty 0 15\nR1(config-line)#transport input ssh\nR1(config-line)#login local\nA network administrator is configuring a router for user access via SSH. The service-password encryption command has been issued. The configuration must meet these requirements:\n– Create the username as CCUser.– Create the password as NA!2$cc.– Encrypt the user password.\nWhat must be configured to meet the requirements?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 45,
+    "total": 62,
+    "id": "11.45",
+    "question": "Refer to the exhibit.\nR1# show ip route | begin Gateway\nGateway of last resort is 0.0.0.0 to network 0.0.0.0\nS* 0.0.0.0/0 is directly connected, Serial0/0/1\n172.16.0.0/16 is variably subnetted, 4 subnets, 2 masks\nC 172.16.2.0/24 is directly connected, GigabitKthernet0/0\nL 172.16.2.2/32 is directly connected, GigabitEthernet0/0\nC 172.16.4.0/21 is directly connected, Serial0/0/1\nL 172.16.8.2/26 is directly connected, Serial0/0/1\nWhat is the subnet mask for route 172.16.4.0?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 51,
+    "total": 62,
+    "id": "11.51",
+    "question": "Refer to the exhibit.\nRouter1#show interface ethernet 1\nEthernet1 is up, line protocol is up\nHardware is Lance, address is 0010.7b36.Ibe8 (bia 0010.7b36.Ibe8)\nInternet address is 10.100.48.240/24\nMTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec,\nreliability 255/255, txload 1/255, rxload 1/255 Encapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:00, output 00:00:06, output hang never\nLast clearing of \"show interface” counters never\nInput queue: 1/75/1/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: random early detection(RED)\nOutput queue :0/40 (size/max)\n5 minute input rate 1000 bits/sec, 2 packets/sec\n5 minute output rate 0 bits/sec, 0 packets/sec\n7558065 packets input, 783768942 bytes, 1 no buffer\nReceived 8280963 broadcasts, 0 runts, 0 giants, 1 throttles\n15 input errors, 14278 GRC, 0 frame, 0 overrun, 3 ignored\n0 input packets with dribble condition detected\n798092 packets output, 50280266 bytes, 0 underruns\n0 output errors, 15000 collisions, 0 interface resets\n0 babbles, 0 late collision, 179 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nAn administrator received a call from a branch office regarding poor application performance hosted at the headquarters. Ethernet 1 is connected between Router1 and the LAN switch. What identifies the issue?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 52,
+    "total": 62,
+    "id": "11.52",
+    "question": "Refer to the exhibit.\nSW1#show etherchannel\nChannel-group listing:\n----------------------\nGroup: 2\n--------\nGroup state = L2\nPorts: 1 Maxports = 8\nPort-channels: 1 Max Portchannels = 1\nProtocol: PAGP\nA network engineer updates the existing configuration on interface fastethernet1/1 switch SW1. It must establish an EtherChannel by using the same group designation with another vendor switch. Which configuration must be performed to complete the process?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 11",
+    "pos": 59,
+    "total": 62,
+    "id": "11.59",
+    "question": "Refer to the exhibit.\nR7#\n172.22.0.0/24 is subnetted, 1 subnets\nD 172.22.49.0 [90/284160] via 10.81.22.2, 04:55:53, FastEthernet0/0\n10.0.0.0/8 is variably subnetted, 26 subnets, 5 masks\nD EX 10.10.10.10/32 [170/35840] via 10.3.5.1, 04:55:55, FastEthernet0/1\nD 10.9.1.0/30 [90/33280] via 10.3.5.1, 04:55:56, FastEthernet0/1\nB 10.111.99.0/24 [20/0] via 10.6.25.2, 03:58:52\nD 10.14.3.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nC 10.9.4.0/30 is directly connected, FastEthernet1/0\nB 10.100.100.0/24 [20/0] via 10.6.25.2, 03:58:53\nD 10.0.1.0/30 [90/30720] via 10.3.5.1, 04:55:58, FastEthernet0/1\nD EX 10.10.10.70/32 [170/1612801 via 10.3.5.1, 04:55:57, FastEthernet0/1\nB 10.90.0.0/16 [200/0] via 0.0.0.0, 03:57:59, Null0\nD EX 10.90.1.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD EX 10.90.2.0/24 [170/158720] via 10.3.5.1, 04:55:57, FastEthernet0/1\nD 10.90.3.0/29 [90/161280] via 10.3.5.1, 02:46:03, FastEthernet0/1\nD EX 10.90.3.0/24 [170/158720] via 10.3.5.1, 02:46:04, FastEthernet0/1\nD EX 10.90.4.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nD EX 10.90.5.0/24 [170/158720] via 10.3.5.1, 04:55:59, FastEthernet0/1\nB* 0.0.0.0/0 [20/0] via 10.6.25.2, 02:22:38\nAccording to the output, which parameter set is validated using the routing table of R7?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 5,
+    "total": 93,
+    "id": "12.8",
+    "question": "Refer to the exhibit.\nRouter-Y#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override, p - overrides from PfR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted\nB 10.0.0.0/8 [1/0] via 10.224.1.2\nB 10.27.150.224/27 [20/0] via 10.224.1.3, 1w6d\nS 10.128.0.0/9 [1/0] via 10.224.1.3\nB 10.224.0.0/11 [20/0] via 10.224.1.5, 5d18h\nB 10.224.0.0/15 [20/0] via 10.224.1.4, 5d18h\nC 10.223.0.0/24 is directly connected, GigabitEthernet0/1\nC 10.224.0.0/24 is directly connected, GigabitEthernet0/0\nB 10.226.34.0/24 [20/0] via 10.224.1.5, 5d18h\nPC A is communicating with another device at IP address 10.227.225.255. Through which router does router Y route the traffic?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 11,
+    "total": 93,
+    "id": "12.15",
+    "question": "Refer to the exhibit.\nSW1#show run\nBuilding configuration...\n!\nhostname SW1\n!\nip domain-name test\n!\nusername CCNA privilege 1 password 0 ciscol23\n!\ninterface FastEthernet0/1\nswitchport access vlan 10\n!\ninterface Vlan10\nip address 192.168.1.2 255.255.255.0\n!\nline vty 0 4\nlogin local\ntransport input telnet\nline vty 5 15\nlogin local\ntransport input telnet\nSW1#show crypto key mypubkey rsa\n% Key pair was generated at: 0:1:23 UTC Mar 1 2021\nKey name: SW1.test\nAn engineer is updating the management access configuration of switch SW1 to allow secured, encrypted remote configuration. Which two commands or command sequences must the engineer apply to the switch? (Choose two)"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 17,
+    "total": 93,
+    "id": "12.22",
+    "question": "Refer to the exhibit.\nR1#\n!\ninterface Loopback0\nip address 10.1.1.1 255.255.255.255\n!\ninterface FastEthernet0/0\nip address 10.139.91.1 255.255.255.252\nip virtual—reassembly in\n!\ninterface FastEthernet1/0\nip address 172.16.29.1 255.255.255.0\nip virtual-reassembly in\n!\nrouter eigrp 100\nnetwork 10.1.1.1 0.0.0.0\nnetwork 10.139.91.0 0.0.0.3\n!\n--output suppressed--\nAn engineer must translate the PC1 IP address to 10.199.77.100 and permit PC1 to ping the loopback 0 interface on router R2. Which configuration must be used?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 31,
+    "total": 93,
+    "id": "12.38",
+    "question": "Refer to the exhibit.\nCat9300-1# show interface g1/0/1 switchport\nName: Gi1/0/1\nSwitchport: Enabled\nAdministrative Mode: trunk\nOperational Mode: trunk\nAdministrative Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nNegotiation of Trunking: On\nAccess Mode VLAN: 1 (default)\nTrunking Native Mode VLAN: 321 (VLAN0321)\nAdministrative Native VLAN tagging: enabled\nTrunking VLANs Enabled: 100,200,300\nPruning VLANs Enabled: 2-1001\nA network administrator configures an interface on a new switch so that it connects to interface Gi1/0/1 on switch Cat9300-1. Which configuration must be applied to the new interface?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 51,
+    "total": 93,
+    "id": "12.60",
+    "question": "Refer to the exhibit.\nR1# show ip route\nCodes: C — connected, S — static, I — IGRP, R - RIP, M - mobile, B — BGP\nD — EIGRP, EX - EIGRP external, O — OSPF, IA — OSPF inter area\nN1 — OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 — OSPF external type 2, E — EGP\ni — IS-IS, L1 - IS-IS level-1, L2 — IS-IS level-2, * — candidate default\nU - per-user static route, o — ODR\nGateway of last resort is not set\nC 172.16.0.0/16 is directly connected, Loopback0\n172.16.0/16 is variably subnetted, 4 subnets, 2 masks\nO172.16.1.3/3 [110/100] via 192.168.7.40, 00:39:08, Serial0\nC172.16.1.0/24 is directly connected, Serial0\nO172.16.1.184/29 [110/5] via 192.168.7.35, 00:39:08, Serial0\nO172.16.3.0/24 [110/10] via 192.168.7.4, 00:39:08, GigabitEthernet 0/0\nD172.16.1.0/28 [90/10] via 192.168.7.7, 00:39:08, GigabitEthernet 0/0\nLoad-balanced traffic is coming in from the WAN destined to a host at 172.16.1.190. Which next-hop is used by the router to forward the request?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 52,
+    "total": 93,
+    "id": "12.61",
+    "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 45, Wait 15, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 54,
+    "total": 93,
+    "id": "12.65",
+    "question": "Refer to the exhibit.\nhostname CPE\nservice password-encryption\nip domain name ccna.cisco.com\nip name-server 198.51.100.210\ncrypto key generate rsa modulus 1024\nusername admin privilege 15 secret S0m3s3cr3t\nline vty 0 4\ntransport input ssh\nlogin local\nAn engineer executed the script and added commands that were not necessary for SSH and now must remove the commands. Which two commands must be executed to correct the configuration? (Choose two)"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 64,
+    "total": 93,
+    "id": "12.77",
+    "question": "A technician receives a report of network slowness and the issue has been isolated to the interface FastEthernet0/13. What is the root cause of the issue?\nFastEthernet0/13 is up, line protocol is up\nHardware is Fast Ethernet, address is 0001.4d27.66cd (bia 0001.4d27.66cd)\nMTU 1500 bytes, BW 100000 Kbit, DLY 100 usec,\nreliability 250/255, txload 1/255, ndoad 1/255\nEncapsulation ARPA, loopback not set\nKeepalive not set\nAuto-duplex (Full), Auto Speed (100), 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 18:52:43, output 00:00:01, output hang never\nLast clearing of \"show interface\" counters never\nQueueing strategy: fifo\nOutput queue 0/40,0 drops; input queue 0/75, 0 drops\n5 minute input rate 12000 bits/sec, 6 packets/sec\n5 minute output rate 24000 bits/sec, 6 packets/sec\n14488019 packets input, 2441805322 bytes\nReceived 345346 broadcasts, 0 runts, 0 giants, 0 throttles\n261028 input errors, 259429 CRC, 1599 frame, 0 overrun, 0 ignored\n0 watchdog, 84207 multicast 0 input packets with dribble condition detected\n19658279 packets output, 3529106068 bytes, 0 underruns\n0 output errors, 0 collisions, 1 interface resets\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 70,
+    "total": 93,
+    "id": "12.83",
+    "question": "Which interface condition is occurring in this output?\nR25#show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: atlanta_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n1876 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 71,
+    "total": 93,
+    "id": "12.84",
+    "question": "Which interface condition is occurring in this output?\nR25#show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: singapore_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 255/255, rxload 255/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 225953751 bits/sec, 0 packets/sec\n30 second output rate 232423817 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 74,
+    "total": 93,
+    "id": "12.87",
+    "question": "Refer to the exhibit.\nR1\ninterface GigabitEthernet0/1\nip address 192.168.12.1 255.255.255.128\nno shutdown\nrouter ospf 1\nnetwork 192.168.12.1 0.0.0.0 area 1\nR2\ninterface GigabitEthernet0/1\nip address 192.168.12.2 255.255.255.128\nno shutdown\nA network engineer started to configure two directly-connected routers as shown. Which command sequence must the engineer configure on R2 so that the two routers become OSPF neighbors?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 75,
+    "total": 93,
+    "id": "12.88",
+    "question": "Refer to the exhibit.\nR1# show ip route\nCodes: C - connected, S - static, I - IGRP, R - rip, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\ni - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, * - candidate\ndefault\nU - per-user static route, o - ODR\nGateway of last resort is not set\nC 10.0.0.0/8 is directly connected, Loopback0\n10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks\nO10.0.1.3/32 [110/100] via 10.0.1.100, 00:39:08, Serial0\nC10.0.1.0/24 is directly connected, Serial0\nO10.0.1.5/32 [110/5] via 10.0.1.50, 00:39:08, Gigabit Ethernet 0/0\nD10.0.1.4/32 [110/10] via 10.0.1.4, 00:39:08, Gigabit Ethernet 0/0\nWhat does route 10.0.1.3/32 represent in the routing table?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 79,
+    "total": 93,
+    "id": "12.93",
+    "question": "Which interface condition is occurring in this output?\nR19# show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: portland_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 139 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 81,
+    "total": 93,
+    "id": "12.95",
+    "question": "Which interface condition is occurring in this output?\nR17# show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: chicago_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 255/255, rxload 255/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 201240151 bits/sec, 0 packets/sec\n30 second output rate 228594263 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n1876 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 84,
+    "total": 93,
+    "id": "12.98",
+    "question": "Refer to the exhibit.\nR1#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.2, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:08\nIndex 1/1, flood queue length 0\nNext 0x0(0) /0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nR2#show ip ospf interface g0/0/0\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 10.1.1.1, Network Type POINT-TO-POINT, Cost: 1\nTransmit Delay is 1 sec, State POINT-TO-POINT,\nTimer intervals configured, Hello 15, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:11\nIndex 1/1, flood queue length 0\nNext 0x0(0)/0x0(0)\nLast flood scan length is 1, maximum is 1\nLast flood scan time is 0 msec, maximum is 0 msec\nSuppress hello for 0 neighbor(s)\nThe network engineer is configuring router R2 as a replacement router on the network. After the initial configuration is applied it is determined that R2 failed to show R1 as a neighbor. Which configuration must be applied to R2 to complete the OSPF configuration and enable it to establish the neighbor relationship with R1?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 88,
+    "total": 93,
+    "id": "12.103",
+    "question": "Which interface condition is occurring in this output?\nR25# show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: tokyo_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 185/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n1876 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 91,
+    "total": 93,
+    "id": "12.112",
+    "question": "Refer to the exhibit.\nHost A switch interface is configured in VLAN 2. Host D sends a unicast packet destined for the IP address of host A.\nSw1#show mac-address table\nMac Address Table\n-----------------------------\nVlan Mac Address Type Ports\n---- ----------- ------- ----\n2 000c.859c.bb7b DYNAMIC e0/1\n3 000c.85dc.bb7b DYNAMIC e0/1\n2 0010.11dc.3e91 DYNAMIC e0/2\n3 0010.11dC.3e91 DYNAMIC e0/2\n2 0044.42d9.c693 DYNAMIC e0/3\nSw1#\nWhat does the switch do when it receives the frame from host D?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 12",
+    "pos": 93,
+    "total": 93,
+    "id": "12.114",
+    "question": "Refer to the exhibit.\nR1# show ip route\nC 1.0.0.0/8 is directly connected, Loopback0\n10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks\nO10.10.10.3/32 [110/100] via 10.10.10.3, 00:39:08, Gigabitethernet0/3\nC10.10.10.0/24 is directly connected, Gigabitethernet0/0\nO10.10.10.2/32 [110/5] via 10.10.10.2, 00:39:08, Gigabitethernet0/2\nR10.10.10.4/32 [120/10] via 10.10.10.4, 00:39:08, Gigabitethernet0/4\nWhich next-hop IP address has the least desirable metric when sourced from R1?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 13",
+    "pos": 22,
+    "total": 79,
+    "id": "13.34",
+    "question": "Refer to the exhibit.\nR1# show ip route\nCodes: C - connected, S — static, I — IGRP, R — RIP, M — mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, XA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2, E — EGP\ni - IS-IS, LI - IS-IS level-1, L2 — IS-IS level-2, * — candidate default\nU - per-user static route, o - ODR\nGateway of last resort is not set\nC 172.16.0.0/16 is directly connected, Loopback0\n172.16.0.0/16 is variably subnetted, 4 subnets, 2 masks\nO 172.16.1.3/32 [110/100] via 10.0.1.100, 00:39:08, Serial0\nO 172.16.1.9/32 [110/5] via 172.16.1.50, 00:43:01, Gigabit Ethernet 0/0\nD 172.16.1.4/30 [90/7445] via 172.16.9.5, 00:39:08, Gigabit Ethernet 0/0\n[90/7445] via 172.16.4.4, 00:39:08, Gigabit Ethernet 0/4\nHow does router R1 handle traffic to the 172.16.1.4/30 subnet?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 13",
+    "pos": 33,
+    "total": 79,
+    "id": "13.51",
+    "question": "Refer to the exhibit.\nrouter# show ip route\n...\nD 172.16.32.0/26 [90/25789217] via 10.0.0.1\nR 172.16.32.0/24 [120/4] via 10.0.0.2\nO 172.16.32.0/19 [110/229840] via 10.0.0.3\nC 172.16.32.32/32 is directly connected, Loopback0\nC 172.16.32.4/30 is directly connected, GigabitEthernet0/0\nA packet sourced from 172.16.32.254 is destined for 172.16.32.8. What is the subnet mask of the preferred destination route?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 13",
+    "pos": 37,
+    "total": 79,
+    "id": "13.56",
+    "question": "Refer to the exhibit.\nRouter# show interface FastEthernet0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is Gt96k FE, address is 0017.59b2.7fb2 (bia 0017.59b2.7fb2) Internet address is 10.0.0.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nHalf-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:04, output 00:00:04, output hang sever\nLast clearing of \"show interface” counters never\nInput queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 1 Queueing strategy: fifo\nOutput queue: 0/40 (size/max)\n5 minute input rate 516000 bits/sec, 45 packets/sec\n5 minute output rate 516000 bits/sec, 46 packets/sec\n13282 packets input, 20075670 bytes\nReceived 25 broadcasts, 0 runts, 0 giants, 0 throttles\n383 input errors, 383 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n13438 packets output, 20084258 bytes, 0 underruns\n0 output errors, 831 collision, 5 interface resets\n11 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out\nUsers at a branch office are experiencing application performance issues, poor VoIP audio quality, and slow downloads. What is the cause of the issues?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 13",
+    "pos": 38,
+    "total": 79,
+    "id": "13.57",
+    "question": "Refer to the exhibit.\n0ldR#show ip ospf interface\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.2/24, Area 0\nProcess ID 1, Router ID 192.168.1.1, Network Type BROADCAST, Cost: 1 Transmit Delay is 1 sec, State DROTHER, Priority 1\nDesignated Router (ID) 192.168.1.1, Interface address 192.168.1.1\nBackup Designated Router (ID) 192.168.1.1, Interface address 192.168.1.1\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:01\nIndex 1/1, flood queue length 0\nNeighbor Count is 1, Adjacent neighbor count is 2\nR2#show ip ospf interface\nGigabitEthernet0/0/0 is up, line protocol is up\nInternet address is 192.168.1.1/24, Area 0\nProcess ID 1, Router ID 192.168.1.1, Network Type BROADCAST, Cost: 1\nTransmit Delay is 1 sec, State DROTHER, Priority 1\nDesignated Router (ID) 192.168.1.1, Interface address 192.168.1.2\nBackup Designated Router (ID) 192.168.1.1, Interface address 192.168.1.2\nTimer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5\nHello due in 00:00:02\nIndex 2/2, flood queue length 0\nNeighbor Count is 1, Adjacent neighbor count is 2\nRouter OldR is replacing another router on the network with the intention of having OldR and R2 exchange routes. After the engineer applied the initial OSPF configuration, the routes were still missing on both devices. Which command sequence must be issued before the clear IP ospf process command is entered to enable the neighbor relationship?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 13",
+    "pos": 39,
+    "total": 79,
+    "id": "13.58",
+    "question": "Refer to the exhibit.\nRouter-Y#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override, p - overrides from PfR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted\nB 10.0.0.0/8 [1/0] via 10.224.1.2\nB 10.27.150.224/27 [20/0] via 10.224.1.3, 1w6d\nS 10.128.0.0/9 [1/0] via 10.224.1.3\nB 10.224.0.0/11 [20/0] via 10.224.1.5, 5d18h\nB 10.224.0.0/15 [20/0] via 10.224.1.4, 5d18h\nC 10.223.0.0/24 is directly connected, GigabitEthernet0/1\nC 10.224.0.0/24 is directly connected, GigabitEthernet0/0\nB 10.226.34.0/24 [20/0] via 10.224.1.5, 5d18h\nPC A is communicating with another device at IP address 10.225.34.225. Through which router does router Y route the traffic?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 1,
+    "total": 72,
+    "id": "16.1",
+    "question": "Refer to the exhibit.\nSW1#\nName: Et0/0\nSwitchport: Enabled\nAdministrative Node: trunk\nOperational Mode: trunk\nAdministrative Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nNegotiation of Trunking: On\nAccess Mode VLAN: 1 (default)\nTrunking Native Mode VLAN: 1 (default)\nAdministrative Native VLAN tagging: enabled\nVoice VLAN: none\nAdministrative private-vlan host-association: none\nAdministrative private-vlan mapping: none\nAdministrative private-vlan trunk native VLAN: none\nAdministrative private-vlan trunk Native VLAN tagging: enabled\nAdministrative private-vlan trunk encapsulation: dot1q\nAdministrative private-vlan trunk normal VLANs: none\nAdministrative private—vlan trunk associations: none\nAdministrative private-vlan trunk mappings: none\nOperational private-vlan: none\nTrunking VLANs Enabled: 1,22\nPruning VLANs Enabled: 2-1001\nCapture Mode Disabled\nCapture VLANs Allowed: ALL\nVLAN 23 is being implemented between SW1 and SW2. The command show interface ethernet0/0 switchport has been issued on SW1. Ethernet0/0 on SW1 is the uplink to SW2. Which command when entered on the uplink interface allows PC 1 and PC 2 to communicate without impact to the communication between PC 11 and PC 12?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 5,
+    "total": 72,
+    "id": "16.5",
+    "question": "Refer to the exhibit.\nAMDP2_FE-5-COLL: AMDP2/FE 0/0/ [DEC] , Excessive collisions, TDR=[DEC] , TRC=[DEC]\n%DEC21140-5-COLL: [chars] excessive collisions\n%ILACC-5-COLL: Unit [DEC], excessive collisions. TDR=[DEC]\n%LANCE—5-COLL: Unit [DEC], excessive collisions. TDR=[DEC]\n%PQUICC-5-COLL: Unit [DEC], excessive collisions. Retry limit [DEC] exceeded\n%PQUICC_ETHER-5-COLL: Unit [DEC], excessive collisions. Retry limit [DEC] exceeded\nWhat is occurring on this switch?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 22,
+    "total": 72,
+    "id": "16.25",
+    "question": "Refer to the exhibit.\nR3#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP, D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area,\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2,\nE1 - OSPF external type 1, E2 - OSPF external type 2, i - IS-IS,\nsu - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS\ninter area, * - candidate default, I - per-user static route, o - ODR,\nP - periodic download static route, H - NHRP, I - LISP,\na - application route, + - replicated route, % - next hop override,\np - overrides from PfR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC 10.10.10.16/28 is directly connected, FastEthernet 0/0\nL 10.10.10.17/32 is directly connected, FastEthernet 0/0\nC 10.10.10.8/29 is directly connected, FastEthernet 0/1\nL 10.10.10.9/32 is directly connected, FastEthernet 0/1\nC 10.10.10.4/30 is directly connected, FastEthernet 0/2\nL 10.10.10.5/32 is directly connected, FastEthernet 0/2\nC 10.10.10.0/30 is directly connected, Serial 0/0\nL 10.10.10.1/32 is directly connected, Serial 0/0\nWhich interface does a packet take to reach the destination address of 10.10.10.14?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 28,
+    "total": 72,
+    "id": "16.33",
+    "question": "Refer to the exhibit.\nR4#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 14 subnets, 2 masks\n10.0.12.0/24 [100/2] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\n10.0.13.0/24 [90/3072] via 10.0.34.3, 00:00:19, GigabitEthernet0/0\n10.0.24.0/24 is directly connected, GigabitEthernet0/1\n10.0.24.4/32 is directly connected, GigabitEthernet0/1\n10.0.34.0/24 is directly connected, GigabitEthernet0/0\n10.0.34.4/32 is directly connected, GigabitEthernet0/0\n10.0.45.0/24 is directly connected, GigabitEthernet0/2\n10.0.45.4/32 is directly connected, GigabitEthernet0/2\n10.2.0.0/24 [90/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\n10.255.1.1/32 [100/3] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\n[100/3] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\n10.255.2.2/32 [90/130816] via 10.0.24.2, 00:14:46, GigabitEthernet0/1\n10.255.3.3/32 [100/2] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\n10.255.4.4/32 is directly connected, Loopback0\n10.255.5.5/32 [90/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\nConsidering default routing protocol configurations were used, which routing protocol is used to learn the 10.255.2.2/32 route?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 31,
+    "total": 72,
+    "id": "16.36",
+    "question": "A switch receives a frame with the destination MAC address 3C:5D:7E:9F:1A:2B.\nSwitch# show ethernet-frame-and-mac-address-table\nEthernet Frame:\n+----------------------------------------------------+\n| Destination MAC Address: 3C:5D:7E:9F:1A:2B |\n| Source MAC Address: D3:F4:47:57:67:46 |\n| EtherType/Length: 0x0800 (IPv4) |\n| Payload: [Data] |\n| Frame Check Sequence: [CRC] |\n+----------------------------------------------------+\nMAC Address Table:\nVLAN MAC Address Type Ports\n---- ----------------- -------- ----------\n12 D3:F4:47:57:67:46 Dynamic Gi1/0/1\n16 20:31:42:53:64:DE Static Gi1/0/2\n24 A0:B3:C4:D3:B4:48 Secure Gi1/0/3\n31 B5:16:32:12:6B:68 Dynamic Gi1/0/4\n44 8F:A0:B3:C4:34:50 Static Gi1/0/5\nHow does the switch handle the frame?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 34,
+    "total": 72,
+    "id": "16.39",
+    "question": "Refer to the exhibit.\nR4#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 14 subnets, 2 masks\nO 10.0.12.0/24 [100/2] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\nD 10.0.13.0/24 [90/3072] via 10.0.34.3, 00:00:19, GigabitEthernet0/0\nC 10.0.24.0/24 is directly connected, GigabitEthernet0/1\nL 10.0.24.4/32 is directly connected, GigabitEthernet0/1\nC 10.0.34.0/24 is directly connected, GigabitEthernet0/0\nL 10.0.34.4/32 is directly connected, GigabitEthernet0/0\nC 10.0.45.0/24 is directly connected, GigabitEthernet0/2\nL 10.0.45.4/32 is directly connected, GigabitEthernet0/2\nR 10.2.0.0/24 [120/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\nO 10.255.1.1/32 [100/3] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\n[100/3] via 10.0.24.2, 00:02:27, GigabitEthernet0/1\nD 10.255.2.2/32 [90/130816] via 10.0.24.2, 00:01:46, GigabitEthernet0/1\nO 10.255.3.3/32 [100/2] via 10.0.34.3, 00:02:27, GigabitEthernet0/0\nC 10.255.4.4/32 is directly connected, Loopback0\nR 10.255.5.5/32 [120/1] via 10.0.45.5, 00:00:08, GigabitEthernet0/2\nOf the routes learned with dynamic routing protocols, which has the least preferred metric?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 35,
+    "total": 72,
+    "id": "16.40",
+    "question": "Refer to the exhibit.\nR1#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP,\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area,\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2,\nE1 - OSPF external type 1, E2 - OSPF external type 2, i - IS-IS,\nsu - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2,\nia - IS-IS inter area, * - candidate default, I - per-user static route,\no - ODR, P - periodic downloaded static route, H - NHRP, I - LISP, a -\napplication route, + - replicated route, % - next hop override,\np - overrides from PFR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 6 subnets, 2 masks\nC 10.10.10.0/24 is directly connected, GigabitEthernet0/0\nL 10.10.10.1/32 is directly connected, GigabitEthernet0/0\nC 10.10.20.0/24 is directly connected, GigabitEthernet1/0\nL 10.10.20.1/32 is directly connected, GigabitEthernet1/0\nC 10.10.30.0/24 is directly connected, GigabitEthernet2/0\nL 10.10.30.1/32 is directly connected, GigabitEthernet2/0\n192.168.18.0/24 is variably subnetted, 3 subnets, 3 masks\nD 192.168.18.0/24 [90/3072] via 10.10.10.10, 00:13:10, GigabitEthernet0/0\nR 192.168.18.0/27 [120/1] via 10.10.20.10, 00:09:15, GigabitEthernet1/0\nO 192.168.18.0/28 [110/2] via 10.10.30.10, 00:12:56, GigabitEthernet2/0\nWhich interface does a packet take to reach the host address of 192.168.18.16?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 37,
+    "total": 72,
+    "id": "16.42",
+    "question": "Refer to the exhibit.\nR1#show ip route static\n10.0.0.0/8 is variably subnetted, 3 subnets, 3 masks\nS 10.20.1.0/26 [1/0] via 172.16.1.4\nS 10.20.1.0/24 [1/0] via 172.16.1.2\nS 10.20.1.32/27 [1/0] via 172.16.1.3\n192.168.2.0/24 is variably subnetted, 3 subnets, 3 masks\nS 192.168.2.0/24 [1/0] via 172.16.1.4\nS 192.168.2.64/27 [1/0] via 172.16.1.2\nS 192.168.2.80/29 [1/0] via 172.16.1.3\nWhat is the correct next hop for router R1 to reach IP addresses 192.168.2.86 and 10.20.1.50?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 47,
+    "total": 72,
+    "id": "16.52",
+    "question": "Refer to the exhibit.\nR1#show ip route\nS 192.168.64.0/18 [1/0] via 10.1.1.1\nO 192.168.64.0/18 [110/236855] via 10.1.1.2\nO 192.168.64.0/18 [110/229840] via 10.1.1.3\nS 192.168.64.0/19 [1/0] via Null0\nHow will router R1 handle packets destined to 192.168.64.22?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 50,
+    "total": 72,
+    "id": "16.55",
+    "question": "Refer to the exhibit.\nAA#show ip route\n10.0.0.0/8 is variably subnetted, 6 subnets, 2 masks\nC 10.0.0.0/30 is directly connected, GigabitEthernet0/0\nL 10.0.0.1/32 is directly connected, GigabitEthernet0/0\nC 10.10.0.0/30 is directly connected, GigabitEthernet0/1\nL 10.10.0.1/32 is directly connected, GigabitEthernet0/1\nO 10.20.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\nO 10.30.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\n172.16.0.0/24 is subnetted, 1 subnets\nS 172.16.10.0 [1/0] via 10.0.0.2\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nC 192.168.10.0/24 is directly connected, GigabitEthernet0/2\nL 192.168.10.1/32 is directly connected, GigabitEthernet0/2\nS 192.168.20.0/24 [1/0] via 192.168.10.2\nWhat is the administrative distance for the advertised prefix that includes the host IP address 192.168.20.1?"
+  },
+  {
+    "source": "odt",
+    "topic": "Part 16",
+    "pos": 71,
+    "total": 72,
+    "id": "16.77",
+    "question": "Refer to the exhibit.\nip route 172.0.0.0 255.0.0.0 10.12.13.14\nip route 172.16.0.0 255.255.0.0 10.56.22.23\nip route 122.16.153.0 255.255.255.0 10.35.47.17\nip route 172.16.153.153 255.255.255.255 10.65.34.19\nip route 0.0.0.0 0.0.0.0 10.17.44.36\nThe static routes were implemented on the border router. What is the next hop IP address for a ping sent to 172.16.153.154 from the border router?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 10,
+    "total": 90,
+    "id": "14.13",
+    "question": "Refer to the exhibit.\nR_1# show ip route\n.....\nD192.168.20.0/26 [90/24513456] via 10.10.10.1\nR192.168.20.0/24 [120/5] via 10.10.10.2\n0192.168.0.0/19 [110/219414] via 10.10.10.13\nB192.168.0.0/16 is variably subnetted, 4 subnets,4 masks\nD192.168.20.0/27 [90/4123710] via 10.10.10.12\nD192.168.20.0/25 [90/14464211] via 10.10.10.11\nS*0.0.0.0/0 [1/0] via 10.10.10.14\nPackets are flowing from 192.168.10.1 to the destination at IP address 192.168.20.75. Which next hop will the router select for the packet?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 29,
+    "total": 90,
+    "id": "14.37",
+    "question": "Which interface condition is occurring in this output?\nR30# show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: madrid_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nHalf-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters 00:00:18\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n35 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 480 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 40,
+    "total": 90,
+    "id": "14.48",
+    "question": "Refer to the exhibit.\nR1#\nGateway of last resort is 10.56.0.1 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 10.56.0.1\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.56.0.0/16 is directly connected, Null0\nC 10.56.0.0/26 is directly connected, Vlan58\nC 10.56.0.0/17 is directly connected, Vlan59\nC 10.56.0.0/24 is directly connected, Vlan60\nWhen router R1 receives a packet with destination IP address 10.56.0.62, through which interface does it route the packet?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 42,
+    "total": 90,
+    "id": "14.50",
+    "question": "Refer to the exhibit.\nOutput from R1\nGigabitEthernet0/0/1 is up, line protocol is down\nHardware is SPA—10X1GE-V2, address is 0023.33ee.7o00 (bia 0023.33ee.7c00)\nMTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive not supported\nHalf Duplex, 1000Mbps, link type is auto, media type is LX\noutput flow-control is off, input flow-control is off\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:02:31, output hang never\n10 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog, 314 multicast, 0 pause input\n1 packets output, 77 bytes, 0 underruns\n0 output errors, 50 collisions, 6 interface resets\n17 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\nWhat is the issue with the interface GigabitEthernet0/0/1 ?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 54,
+    "total": 90,
+    "id": "14.66",
+    "question": "Which interface condition is occurring in this output?\nR9# show interface fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: atlanta_subnet\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nfull-duplex, 100 Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters 00:00:18\nInput queue: 175/300/0/0 (size/max/drops/flushes); Total output drops: 100\nQueueing strategy: fifo\nOutput queue: 50/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n7331 packets input, 7101162 bytes\nReceived 267 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927 packets output, 1440403 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n0 lost carrier, 0 no carrier\n0 output buffer failures, 0 output buffers swapped out"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 55,
+    "total": 90,
+    "id": "14.67",
+    "question": "Network security team noticed that an increasing number of employees are becoming victims of phishing attacks. Which security program should be implemented to mitigate the problem?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 60,
+    "total": 90,
+    "id": "14.72",
+    "question": "Refer to the exhibit.\ncat9k-acc-1# show interfaces gigabitethernet 1/0/1\ngigabitethernet 1/0/1 is up, line protocol is up\nHardware is gigabitethernet, address is aa00.0400.0134 (via 0000.0c00.4369)\nMTU 1500 bytes, BW 1000 Kbit, DLY 1000 usec, rely 255/255, load 1/255\nEncapsulation ARPA, loopback not set, keepalive set (10 sec)\nARP type: ARPA, PROBE, ARP Timeout 4:00:00\nLast input 0:00:00, output 0:00:00, output hang never\nOutput queue 1/1, 1 drops; input queue 0/0, 0 drops\nFive minute input rate 61000 bits/sec, 200 packets/sec\nFive minute output rate 1000 bits/sec, 200 packets/sec\n2295197 packets input, 305539992 bytes, 0 no buffer\nReceived 1925500 broadcasts, 0 runts, 0 giants\n0 input errors, 1790 CRC, 1790 frame, 0 overrun, 0 ignored, 0 abort\n0 input packets with dribble condition detected\n3594664 packets output, 436549843 bytes, 1 underruns\n0 output errors, 1 collisions, 1 interface resets, 0 restarts\nThe switch cat9k-acc-1 connects users to the campus LAN. Printing services are inaccessible through the network. Which interface issue is causing the connectivity problems?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 64,
+    "total": 90,
+    "id": "14.76",
+    "question": "Refer to the exhibit.\nSW_1#show vlan\nVLAN Name Status Ports\n1 default active Et0/2,Et1/0,Et1/0,Et1/3\n5 MGMT Vlan active Et1/1\n6 Server Vlan active\n72 Data Vlan active Et0/0\n1002 fddi-default act/unsup\n1003 token-ring-default act/unsup\n1004 fddinet-default act/unsup\n1005 trnet-default act/unsup\nVoIP is being implemented in the network using VLAN ID 73 and named “VoIP”. Each user needs a Cisco IP phone at their desk. Switchport e0/0 has been configured as an access port in the data VLAN. Cisco Discovery Protocol is enabled globally. Which command sequence completed the configuration?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 65,
+    "total": 90,
+    "id": "14.77",
+    "question": "Refer to the exhibit.\nRouter-Y#show ip route\nCodes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route, H - NHRP, l - LISP\n+ - replicated route, % - next hop override, p - overrides from PfR\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted\nS 10.0.0.0/8 [1/0] via 10.224.4.2\nB 10.127.151.192/27 [20/0] via 10.224.4.3, 1w6d\nS 10.128.0.0/9 [1/0] via 10.224.4.3\nB 10.224.0.0/11 [20/0] via 10.224.4.5, 5d18h\nB 10.224.0.0/15 [20/0] via 10.224.4.4, 5d18h\nC 10.223.4.0/24 is directly connected, GigabitEthernet0/1\nC 10.224.4.0/24 is directly connected, GigabitEthernet0/0\nB 10.226.34.0/24 [20/0] via 10.224.4.5, 5d18h\nPC A is communicating with another device at IP address 10.227.151.255.Through which router does router Y route the traffic?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 67,
+    "total": 90,
+    "id": "14.80",
+    "question": "Refer to the exhibit.\nconfigure terminal\ninterface range GigabitEthernet 0/1-2\nswitchport mode trunk\nchannel-group 1 mode active\nSW2\nconfigure terminal\ninterface range GigabitEthernet 0/1-2\nswitchport mode trunk\ninterface Port-channel1\nswitchport mode trunk\nAn LACP EtherChannel between two directly connected switches is in the configuration process. Which command must be configured on switch SW2s Gi0/1-2 interfaces to establish the channel to SW1?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 14",
+    "pos": 88,
+    "total": 90,
+    "id": "14.104",
+    "question": "Refer to the exhibit.\nR1#show ip route\nCodes: C - connected, S - static, R - RIP, M - mobile, B - BGP\nD - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\nN1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\nE1 - OSPF external type 1, E2 - OSPF external type 2\ni - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2\nia - IS-IS inter area, * - candidate default, U - per-user static route\no - ODR, P - periodic downloaded static route\nGateway of last resort is 192.168.30.10 to network 0.0.0.0\n192.168.30.0/29 is subnetted, 2 subnets\nC 192.168.30.0 is directly connected, FastEthernet0/0\nC192.168.30.8 is directly connected, Serial0/0.1\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nO IA192.168.10.32/28 [110/193] via 192.168.30.10, 00:18:49, Serial0/0.1\nO IA192.168.10.0/27 [110/192] via 192.168.30.10, 00:18:49, Serial0/0.1\n192.168.20.0/30 is subnetted, 1 subnets\nO IA192.168.20.0 [110/128] via 192.168.30.10, 00:18:49, Serial0/0.1\n192.168.50.0/32 is subnetted, 1 subnets\nC192.168.50.1 is directly connected, Loopback0\nO*IA 0.0.0.0/0 [110/84] via 192.168.30.10, 00:10:36, Serial0/0.1\nWhat is the metric for the route to the 192.168.10.33 host?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 5,
+    "total": 86,
+    "id": "15.5",
+    "question": "Refer to the exhibit.\nRouter-WAN1#show interface g0/0\nGigabitEthernet0/0 is up, line protocol is up\nHardware is CSR NIC, address is 5000.0001.0000 (bia 5000.0001.0000)\nInternet address is 192.168.0.0/31\nMTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (10 sec)\nFull Duplex, 1000Mbps, link type is auto, media type is NIC\noutput flow-control is unsupported, input flow-control is unsupported\nARP type: ARPA, ARP Timeout 04:00:00\nLast input never, output 00:00:03, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0\nQueueing strategy: fifo\nOutput queue: 0/40 (size /max)\n5 minute input rate 1000 bits/sec, 0 packets/sec\n5 minute output rate 2000 bits/sec, 1 packets/sec\n0 packets input, 0 bytes, 0 no buffer\nReceived 110 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n100 input errors, 100 CRC, 100 frame, 0 overrun, 0 ignored\n0 watchdog, 0 multicast, 0 pause input\n260 packets output, 89070 bytes, 0 underruns\nOutput 0 broadcasts (0 IP multicasts)\n0 output errors, 100 collisions, 0 interface resets\n0 unknown protocol drops\n0 babbles, 0 late collision, 0 deferred\n1 lost carrier, 0 no carrier, 0 pause output\nRouter-WAN1 has a new connection via Gi0/0 to the ISP. Users running the web applications indicate that connectivity is unstable to the internet. What is causing the interface issue?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 9,
+    "total": 86,
+    "id": "15.9",
+    "question": "Refer to the exhibit.\nNetwork services must be enabled on interface Gi1/0/34. Which configuration meets the needs for this implementation?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 17,
+    "total": 86,
+    "id": "15.17",
+    "question": "Refer to the exhibit.\nSW1#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nSW1(config)#enable password test!2E\nSW1(config)#line con 0\nSW1(config-line)#password Labtest32!\nSH1(config-line)#exit\nSW1(config)#\nA network engineer started to change default settings on SW1 to allow remote access and has entered the following in the configuration mode:\nSW1#(config)#line vty 0 15SW1#(config-line)#password Labtest32!\nWhich set of commands are needed to allow only SSH access and hide passwords in the running configuration?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 19,
+    "total": 86,
+    "id": "15.19",
+    "question": "Refer to the exhibit.\nRouter-Y#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted\nB 10.220.100.96/27 [20/0] via 10.224.1.3, 1w6d\nThe route for 10.220.100.96/27 has been very unstable. The same route has four backups to routers A, B, C, and D via the respective methods. The routing protocol defaults for router Y have not been changed. When the current route for 10.220.100.96/27 becomes unavailable, which router will router Y use to route traffic to 10.220.100.96/27?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 42,
+    "total": 86,
+    "id": "15.42",
+    "question": "Refer to the exhibit.\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets\nB 209.165.200.224 [20/0] via 10.10.12.2, 03:03:03\n209.165.201.0/27 is subnetted, 1 subnets\nB 209.165.201.0 [20/0] via 10.10.12.2, 03:03:03\n209.165.202.0/27 is subnetted, 1 subnets\nB 209.165.202.128 [20/0] via 10.10.12.2, 03:03:03\n10.0.0.0/8 is variably subnetted, 8 subnets, 4 masks\nC 10.10.10.0/28 is directly connected, GigabitEthernet0/0\nC 10.10.11.0/30 is directly connected, FastEthernet2/0\nC 10.10.12.0/30 is directly connected, GigabitEthernet0/1\nO 10.10.13.0/25 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.128/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.144/28 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.160/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nO 10.10.13.208/29 [110/2] via 10.10.10.1, 00:00:03, GigabitEthernet0/0\nS* 0.0.0.0/0 [1/0] via 10.10.11.2\nWhat is the prefix length for the route that router1 will use to reach host A?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 45,
+    "total": 86,
+    "id": "15.45",
+    "question": "Refer to the exhibit.\nCPE# show ip access-list Services\nExtended IP access list Services\n10 permit tcp 10.0.0.0 0.255.255.255 any eq www\n20 permit tcp 10.0.0.0 0.255.255.255 any eq 443\n30 permit udp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\n40 deny ip any any log\nThis ACL is configured to allow client access only to HTTP, HTTPS, and DNS services via UDP. The new administrator wants to add TCP access to the DNS service. Which configuration updates the ACL efficiently?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 76,
+    "total": 86,
+    "id": "15.82",
+    "question": "Refer to the exhibit.\nSW1#show etherchannel summary\nFlags: D - down P - in port-channel\nI - stand-alone s - suspended\nH - Hot-standby (LACP only)\nR - Layer3 S - Layer2\nU - in use f - failed to allocate aggregator\nu - unsuitable for bundling\nw - waiting to be aggregated\nd - default port\nA - formed by auto LAG\nNumber of channel-groups in use: 1\nNumber of aggregators: 2\nGroup Port-channel Protocol Ports\n------+-------------+-----------+-----------------------------------------------\n1 Po1 (RU) LACP Et0/0(P) Et0/1(P)\nA network engineer is adding another physical interface as a new member to the existing Port-Channel1 bundle. Which command set must be configured on the new interface to complete the process?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 79,
+    "total": 86,
+    "id": "15.86",
+    "question": "Refer to the exhibit.\nAA#show ip route\n10.0.0.0/8 is variably subnetted, 6 subnets, 2 masks\nC 10.0.0.0/30 is directly connected, GigabitEthernet0/0\nL 10.0.0.1/32 is directly connected, GigabitEthernet0/0\nC 10.10.0.0/30 is directly connected, GigabitEthernet0/1\nL 10.10.0.1/32 is directly connected, GigabitEthernet0/1\nO 10.20.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\nO 10.30.0.0/30 [110/2] via 10.0.0.2, 00:00:40, GigabitEthernet0/0\n172.16.0.0/24 is subnetted, 1 subnets\nS 172.16.10.0 [1/0] via 10.0.0.2\n192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks\nC 192.168.10.0/24 is directly connected, GigabitEthernet0/2\nL 192.168.10.1/32 is directly connected, GigabitEthernet0/2\nS 192.168.20.0/24 [1/0] via 192.168.10.2\nWhat is the administrative distance for the advertised prefix that includes the host IP address 10.30.0.1?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 82,
+    "total": 86,
+    "id": "15.91",
+    "question": "Refer to the exhibit.\nR1#show ip route\nGateway of last resort is 10.0.0.2 to network 0.0.0.0\n10.0.0.0/8 is variably subnetted, 10 subnets, 3 masks\nC 10.0.0.0/24 is directly connected, FastEthernet0/0\nL 10.0.0.1/32 is directly connected, FastEthernet0/0\nC 10.0.1.0/24 is directly connected, FastEthernet0/1\nL 10.0.1.1/32 is directly connected, FastEthernet0/1\nC 10.0.2.0/24 is directly connected, FastEthernet1/0\nL 10.0.2.1/32 is directly connected, FastEthernet1/0\nC 10.0.3.0/24 is directly connected, FastEthernet1/1\nL 10.0.3.1/32 is directly connected, GigabitEthernet1/l\nO 10.0.4.0/29 [110/2] via 10.0.4.2 00:00:03, GigabitEthernet1/1\nS 10.1.0.0/16 [1/0] via 10.0.3.2\nS 10.1.3.0/24 [1/0] via 10.0.3.2\nS* 0.0.0.0/0 [1/0] via 10.0.0.2\nHow does router R1 forward packets destined to 10.0.4.10?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 85,
+    "total": 86,
+    "id": "15.115",
+    "question": "Refer to the exhibit.\nR1# show ip route | begin gateway\nGateway of last resort is not set\n172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks\nC 172.16.1.0/24 is directly connected, FastEthernet0/0\nL 172.16.1.3/32 is directly connected, FastEthernet0/0\nEX 172.16.2.0/24 [170/2] via 207.165.200.250, 00:00:25, Serial0/0/0\nO 192.168.1.0/24 [110/84437] via 207.165.200.254, 00:00:17, Serial0/0/1\nD 192.168.2.0/24 [90/184437] via 207.165.200.254, 00:00:15, Serial0/0/1\nE1 192.168.3.0/24 [110/1851437] via 207.165.200.254, 00:00:19, Serial0/0/1\n207.165.200.0/24 is variably subnetted, 4 subnets, 2 masks\nC 207.165.200.248/30 is directly connected, Serial0/0/0\nL 207.165.200.249/32 is directly connected, Serial0/0/0\nC 207.165.200.252/30 is directly connected, Serial0/0/1\nL 207.165.200.253/32 is directly connected, Serial0/0/1\nWhich prefix did router R1 learn from internal EIGRP?"
+  },
+  {
+    "source": "odt",
+    "topic": "part 15",
+    "pos": 86,
+    "total": 86,
+    "id": "15.121",
+    "question": "Refer to the exhibit.\nRouter#show ip route\nGateway of last resort is 172.17.0.2 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 172.17.0.2\n10.0.0.0/8 is variably subnetted, 412 subnets, 10 masks\nO E2 10.0.0.0/16 [110/10] via 10.2.24.1, 7w0d, Vlan82\nO 10.2.17.0/24 [110/6] via 10.2.24.1, 6w4d, vlan82\nO 10.2.17.0/24 [110/6] via 10.2.24.1, 6w4d, vlan82\nO 10.2.23.0/24 [110/6] via 10.2.24.1, 7w0d, vlan82\n--output suppressed--\nC 10.173.5.0/24 is directly connected, vlan283\nL 10.173.5.2/32 is directly connected, vlan283\nWhat is the value of the administrative distance for the default gateway?"
+  }
+]
