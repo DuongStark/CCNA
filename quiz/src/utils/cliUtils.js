@@ -12,8 +12,26 @@ export function looksLikeCli(line) {
   return false;
 }
 
+// Detect inline CLI block: "Refer to the exhibit. Cat9K-1#show lldp..." — CLI starts mid-sentence
+// Match only when there's a clear sentence boundary before the CLI prompt
+const INLINE_CLI_RE = /^(.+?[.!?])\s+([\w][\w.:-]*(?:\([\w-]*\))?[>#]\s.+)$/;
+
 export function splitIntoSegments(text) {
   if (!text) return [];
+
+  // First: handle inline CLI — text has CLI prompt mid-sentence on same line
+  // Only applies to single-line text; multi-line text is handled by the loop below
+  const inlineMatch = !text.includes('\n') ? text.match(INLINE_CLI_RE) : null;
+  if (inlineMatch && inlineMatch[1].trim().length > 0) {
+    // There's prose before the CLI prompt — split into prose + cli
+    const prosePart = inlineMatch[1].trim();
+    const cliPart = inlineMatch[2].trim();
+    const segments = [];
+    if (prosePart) segments.push({ kind: 'prose', text: prosePart });
+    if (cliPart) segments.push({ kind: 'cli', text: cliPart });
+    return segments;
+  }
+
   const lines = text.split('\n');
   const segments = [];
   let buffer = [];
