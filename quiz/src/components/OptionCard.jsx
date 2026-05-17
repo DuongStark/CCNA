@@ -1,5 +1,4 @@
 import styles from './OptionCard.module.css';
-import { looksLikeCli, splitOptionSegments } from '../utils/cliUtils';
 import { IconCheck, IconX } from '../icons';
 
 export default function OptionCard({
@@ -20,19 +19,24 @@ export default function OptionCard({
   else if (revealed && isIncorrect) classes.push(styles.incorrect);
   else if (selected) classes.push(styles.selected);
 
-  const segments = splitOptionSegments(text);
-
-  const isCliConfig =
-    typeof text === 'string' &&
-    text.includes('\n') &&
-    looksLikeCli(text.split('\n')[0]);
-  const showViBlock = !!textVi && !isCliConfig;
+  const showViBlock = !!textVi;
   const viClasses = [styles.viBlock];
   if (showVi && showViBlock) viClasses.push(styles.viBlockOpen);
 
   const handleClick = () => {
     if (disabled || revealed) return;
     onSelect?.(letter);
+  };
+
+  // Render text with newlines preserved
+  const renderText = (t) => {
+    if (!t) return null;
+    return t.split('\n').map((line, i, arr) => (
+      <span key={i}>
+        {line}
+        {i < arr.length - 1 && <br />}
+      </span>
+    ));
   };
 
   return (
@@ -56,21 +60,7 @@ export default function OptionCard({
         </span>
       )}
       <span className={styles.body}>
-        {segments.length === 0 ? (
-          <span className={styles.text}>{text}</span>
-        ) : (
-          segments.map((seg, i) =>
-            seg.kind === 'cli' ? (
-              <pre key={i} className={styles.codeBlock}>
-                <code>{seg.text}</code>
-              </pre>
-            ) : (
-              <span key={i} className={styles.text}>
-                {seg.text}
-              </span>
-            )
-          )
-        )}
+        <span className={styles.text}>{renderText(text)}</span>
         {showViBlock && (
           <span className={viClasses.join(' ')} aria-hidden={!showVi}>
             <span className={styles.viInner}>{textVi}</span>
