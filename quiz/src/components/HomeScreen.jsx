@@ -21,7 +21,6 @@ export default function HomeScreen({ onStart }) {
   const [topicId, setTopicId] = useState(null);
   const [count, setCount] = useState(20);
   const [randomOrder, setRandomOrder] = useState(true);
-  const [srsMode, setSrsMode] = useState(false);
   const [scrollMode, setScrollMode] = useState(false);
 
   const countSegmentRef = useRef(null);
@@ -54,7 +53,6 @@ export default function HomeScreen({ onStart }) {
       sourceId,
       topicId,
       count: count === 'all' ? null : count,
-      srsMode,
       randomOrder,
       scrollMode,
     });
@@ -198,23 +196,6 @@ export default function HomeScreen({ onStart }) {
                 type="checkbox"
                 checked={randomOrder}
                 onChange={(e) => setRandomOrder(e.target.checked)}
-              />
-              <span className={styles.switchSlider} aria-hidden="true" />
-            </span>
-          </label>
-
-          <label className={styles.toggleRow}>
-            <span className={styles.toggleLabel}>
-              <span className={styles.toggleTitle}>Chế độ SRS</span>
-              <span className={styles.toggleHint}>
-                Ưu tiên câu sai hoặc đến hạn ôn tập.
-              </span>
-            </span>
-            <span className={styles.switch}>
-              <input
-                type="checkbox"
-                checked={srsMode}
-                onChange={(e) => setSrsMode(e.target.checked)}
               />
               <span className={styles.switchSlider} aria-hidden="true" />
             </span>

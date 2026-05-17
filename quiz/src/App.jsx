@@ -135,7 +135,7 @@ export default function App() {
       const all = await loadSource(sourceId, topicId);
       if (!all.length) throw new Error('No questions available for this topic.');
       const subset = pickQuestions(all, count);
-      const mode = srsMode ? 'srs' : randomOrder ? 'random' : 'sequential';
+      const mode = randomOrder ? 'random' : 'sequential';
       const newSession = {
         sourceId,
         topicId,
