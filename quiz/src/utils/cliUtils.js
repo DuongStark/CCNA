@@ -76,6 +76,7 @@ export function splitIntoSegments(text) {
       flush();
       bufferKind = kind;
     }
+    if (kind === 'cli') inCliBlock = true;
     buffer.push(line);
   }
   flush();
