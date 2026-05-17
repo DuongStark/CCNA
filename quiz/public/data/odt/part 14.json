@@ -420,10 +420,10 @@
         "q14.20_img1.jpg"
       ],
       "options": {
-        "A": "Switch(config)#interface vlan 10Switch(config-if)#ip address 192.168.0.1 255.255.255.252",
-        "B": "Switch(config)#interface vlan 10Switch(config-if)#ip address 192.168.0.1 255.255.255.248",
-        "C": "Switch(config)#interface vlan 10Switch(config-if)#ip address 192.168.0.1 255.255.255.0",
-        "D": "Switch(config)#interface vlan 10Switch(config-if)#ip address 192.168.0.1 255.255.255.128"
+        "A": "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.252",
+        "B": "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.248",
+        "C": "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.0",
+        "D": "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.128"
       },
       "answer": [
         "B"
