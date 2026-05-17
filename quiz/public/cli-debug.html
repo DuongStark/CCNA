@@ -50,7 +50,7 @@ let currentSource = 'all';
 function splitIntoSegments(text) {
   if (!text) return [];
   const CLI_PROMPT_RE = /^(?:[\w.-]+(?:\([\w-]*\))?[>#]\s*|Router[>(#]|Switch[>(#]|R\d+[\w(>#]|SW\d+[\w(>#])/;
-  const CLI_KEYWORD_RE = /^(?:interface\s|ip\s|no\s|router\s(?:ospf|bgp|eigrp|rip|isis|static)\s|switch\s(?:virtual|mode|trunk|access)\s|enable\b|configure\s|line\s|access-list\s|vlan\s|hostname\s|description\s|switchport\s|spanning-tree\s|encapsulation\s|show\s|debug\s|copy\s|exit\b|end\b|duplex\s|speed\s|negotiation\s|lldp\s|cdp\s|shutdown\b|bandwidth\s|delay\s|mtu\s|keepalive\b|clock\s|service\s|crypto\s|ntp\s|logging\s|snmp\s|aaa\s|username\s|password\s|privilege\s|permit\s|deny\s|network\s|area\s|passive-interface\s|default-information\s|redistribute\s|maximum-paths\s|timers\s|auto-cost\s|channel-group\s|port-channel\s|lacp\s|pagp\s|%[A-Z]+-\d+-[A-Z]+:|spanning\s|storm-control\s|carrier-delay\s|load-interval\s|media-type\s|full-duplex\b|half-duplex\b|--[\w\s])/i;
+  const CLI_KEYWORD_RE = /^(?:interface\s|ip\s|no\s|router\s(?:ospf|bgp|eigrp|rip|isis|static)\s|switch\s(?:virtual|mode|trunk|access)\s|enable\b|configure\s|line\s|access-list\s|vlan\s|hostname\s|description\s|switchport\s|spanning-tree\s|encapsulation\s|show\s|debug\s|copy\s|exit\b|end\b|duplex\s|speed\s|negotiation\s|lldp\s|cdp\s|shutdown\b|bandwidth\s|delay\s|mtu\s|keepalive\b|clock\s|service\s|crypto\s|ntp\s|logging\s|snmp\s|aaa\s|username\s|password\s|privilege\s|permit\s|deny\s|network\s|area\s|passive-interface\s|default-information\s|redistribute\s|maximum-paths\s|timers\s|auto-cost\s|channel-group\s|port-channel\s|lacp\s|pagp\s|%?[\w]+-\d+-[\w]+:|spanning\s|storm-control\s|carrier-delay\s|load-interval\s|media-type\s|full-duplex\b|half-duplex\b|--[\w\s]|FastEthernet\S*\s+is\s|GigabitEthernet\S*\s+is\s|TenGigabitEthernet\S*\s+is\s|Ethernet\S*\s+is\s|Serial\S*\s+is\s|Loopback\S*\s+is\s|Vlan\S*\s+is\s|Port-channel\S*\s+is\s|Codes:\s|Gateway of last resort|[A-Z*+%]\s+\d+\.\d+\.\d+\.\d+\/\d+\s+is\s|[a-z]\s+-\s+\w)/i;
   const PROSE_RE = /^(?:which|what|how|why|where|when|who|select|choose|an |a |the |this |that |these |if |given |based |refer |drag |place |match |\w.*\?$)/i;
 
   function looksLikeCli(line) {
@@ -94,6 +94,7 @@ function splitIntoSegments(text) {
     }
     const kind = looksLikeCli(line) ? 'cli' : 'prose';
     if (kind !== bufferKind) { flush(); bufferKind = kind; }
+    if (kind === 'cli') inCliBlock = true;
     buffer.push(line);
   }
   flush();
