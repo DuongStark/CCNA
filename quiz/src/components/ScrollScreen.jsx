@@ -3,6 +3,19 @@ import { looksLikeCli, splitIntoSegments } from '../utils/cliUtils';
 import ExhibitImage from './ExhibitImage';
 import styles from './ScrollScreen.module.css';
 
+function renderMarkdown(text) {
+  return (text || '').split('\n').filter(l => l.trim()).map((line, i) => {
+    const parts = line.split(/(\*\*.*?\*\*|`.*?`)/g).map((part, j) => {
+      if (part.startsWith('**') && part.endsWith('**'))
+        return <strong key={j}>{part.slice(2, -2)}</strong>;
+      if (part.startsWith('`') && part.endsWith('`'))
+        return <code key={j}>{part.slice(1, -1)}</code>;
+      return part;
+    });
+    return <p key={i}>{parts}</p>;
+  });
+}
+
 function OptionItem({ letter, text, isCorrect, revealed }) {
   const segments = splitIntoSegments(text);
   const cls = [styles.option];
@@ -75,7 +88,15 @@ function QuestionCard({ question, index, sourceId }) {
         return src ? <ExhibitImage key={i} src={src} alt={`Hình minh họa ${i + 1}`} /> : null;
       })}
 
-      <p className={styles.questionText}>{question.question}</p>
+      <div className={styles.questionText}>
+        {splitIntoSegments(question.question).map((seg, i) =>
+          seg.kind === 'cli' ? (
+            <pre key={i} className={styles.codeBlock}><code>{seg.text}</code></pre>
+          ) : (
+            <p key={i}>{seg.text}</p>
+          )
+        )}
+      </div>
 
       {question.question_vi && (
         <button
@@ -113,9 +134,9 @@ function QuestionCard({ question, index, sourceId }) {
       ) : (
         <div className={styles.explanation}>
           <span className={styles.explanationLabel}>Giải thích</span>
-          <p className={styles.explanationText}>
-            {question.explanation || 'Chưa có giải thích.'}
-          </p>
+          <div className={styles.explanationText}>
+            {renderMarkdown(question.explanation || 'Chưa có giải thích.')}
+          </div>
         </div>
       )}
     </article>

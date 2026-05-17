@@ -114,7 +114,19 @@ export default function QuizScreen({
           </span>
         </div>
         {question.explanation && (
-          <p className={styles.explanationText}>{question.explanation.replace(/\*\*(.*?)\*\*/g, '$1').replace(/`(.*?)`/g, '$1')}</p>
+          <div className={styles.explanationText}>
+            {question.explanation.split('\n').filter(l => l.trim()).map((line, i) => {
+              // render **bold** and `code` inline
+              const parts = line.split(/(\*\*.*?\*\*|`.*?`)/g).map((part, j) => {
+                if (part.startsWith('**') && part.endsWith('**'))
+                  return <strong key={j}>{part.slice(2, -2)}</strong>;
+                if (part.startsWith('`') && part.endsWith('`'))
+                  return <code key={j}>{part.slice(1, -1)}</code>;
+                return part;
+              });
+              return <p key={i}>{parts}</p>;
+            })}
+          </div>
         )}
         {explanationImages.map((src, i) => (
           <ExhibitImage
