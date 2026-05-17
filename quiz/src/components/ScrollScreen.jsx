@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { looksLikeCli, splitIntoSegments, splitOptionSegments } from '../utils/cliUtils';
+import { splitIntoSegments } from '../utils/cliUtils';
 import ExhibitImage from './ExhibitImage';
 import styles from './ScrollScreen.module.css';
 
@@ -17,9 +17,15 @@ function renderMarkdown(text) {
 }
 
 function OptionItem({ letter, text, isCorrect, revealed }) {
-  const segments = splitOptionSegments(text);
   const cls = [styles.option];
   if (revealed && isCorrect) cls.push(styles.optionCorrect);
+
+  const renderText = (t) => {
+    if (!t) return null;
+    return t.split('\n').map((line, i, arr) => (
+      <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+    ));
+  };
 
   return (
     <div className={cls.join(' ')}>
@@ -27,17 +33,7 @@ function OptionItem({ letter, text, isCorrect, revealed }) {
         {letter}
       </span>
       <span className={styles.optionBody}>
-        {segments.length === 0 ? (
-          <span>{text}</span>
-        ) : (
-          segments.map((seg, i) =>
-            seg.kind === 'cli' ? (
-              <pre key={i} className={styles.codeBlock}><code>{seg.text}</code></pre>
-            ) : (
-              <span key={i}>{seg.text}</span>
-            )
-          )
-        )}
+        {renderText(text)}
       </span>
     </div>
   );
