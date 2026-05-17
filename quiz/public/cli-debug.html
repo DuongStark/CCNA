@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLI Debug — CCNA Quiz</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #FAF9F5; font-family: Inter, system-ui, sans-serif; font-size: 15px; color: #1a1a1a; padding: 24px; }
+  h1 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .meta { color: #888; font-size: 13px; margin-bottom: 24px; }
+  .card { background: #fff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  .card-header { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .badge { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+  .badge-pos { background: #f0f0f0; color: #555; }
+  .badge-id { background: #D97757; color: #fff; }
+  .badge-source { background: #e8f0fe; color: #1a56db; }
+  .badge-topic { background: #f3f4f6; color: #374151; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .question { line-height: 1.6; }
+  .question p { margin-bottom: 6px; }
+  .question p:last-child { margin-bottom: 0; }
+  pre.cli { background: #1e1e2e; color: #cdd6f4; font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 13px; padding: 14px 16px; border-radius: 8px; overflow-x: auto; margin: 8px 0; white-space: pre; }
+  .status { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+  .filter-bar input { padding: 6px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; width: 200px; }
+  .filter-bar button { padding: 6px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 13px; cursor: pointer; background: #fff; }
+  .filter-bar button.active { background: #D97757; color: #fff; border-color: #D97757; }
+  .count { color: #888; font-size: 13px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>CLI Debug Page</h1>
+<p class="meta">Tất cả câu hỏi có CLI block — dùng để kiểm tra render đúng/sai</p>
+
+<div class="filter-bar">
+  <input type="text" id="search" placeholder="Tìm theo ID hoặc text..." oninput="filterCards()">
+  <button class="active" onclick="filterSource('all', this)">Tất cả</button>
+  <button onclick="filterSource('docx', this)">DOCX</button>
+  <button onclick="filterSource('odt', this)">ODT</button>
+  <span class="count" id="count"></span>
+</div>
+
+<div id="cards"></div>
+
+<script>
+let questions = [];
+let currentSource = 'all';
+
+function splitIntoSegments(text) {
+  if (!text) return [];
+  const CLI_PROMPT_RE = /^(?:[\w.-]+(?:\([\w-]*\))?[>#]\s*|Router[>(#]|Switch[>(#]|R\d+[\w(>#]|SW\d+[\w(>#])/;
+  const CLI_KEYWORD_RE = /^(?:interface\s|ip\s|no\s|router\s(?:ospf|bgp|eigrp|rip|isis|static)\s|switch\s(?:virtual|mode|trunk|access)\s|enable\b|configure\s|line\s|access-list\s|vlan\s|hostname\s|description\s|switchport\s|spanning-tree\s|encapsulation\s|show\s|debug\s|copy\s|exit\b|end\b|duplex\s|speed\s|negotiation\s|lldp\s|cdp\s|shutdown\b|bandwidth\s|delay\s|mtu\s|keepalive\b|clock\s|service\s|crypto\s|ntp\s|logging\s|snmp\s|aaa\s|username\s|password\s|privilege\s|permit\s|deny\s|network\s|area\s|passive-interface\s|default-information\s|redistribute\s|maximum-paths\s|timers\s|auto-cost\s|channel-group\s|port-channel\s|lacp\s|pagp\s|%[A-Z]+-\d+-[A-Z]+:|spanning\s|storm-control\s|carrier-delay\s|load-interval\s|media-type\s|full-duplex\b|half-duplex\b|--[\w\s])/i;
+  const PROSE_RE = /^(?:which|what|how|why|where|when|who|select|choose|an |a |the |this |that |these |if |given |based |refer |drag |place |match |\w.*\?$)/i;
+
+  function looksLikeCli(line) {
+    const t = line.trim();
+    if (!t) return false;
+    if (CLI_PROMPT_RE.test(t)) return true;
+    if (CLI_KEYWORD_RE.test(t)) return true;
+    return false;
+  }
+
+  const INLINE_CLI_RE = /^(.+?[.!?])\s+([\w][\w.:-]*(?:\([\w-]*\))?[>#]\s.+)$/;
+  const inlineMatch = !text.includes('\n') ? text.match(INLINE_CLI_RE) : null;
+  if (inlineMatch && inlineMatch[1].trim().length > 0) {
+    const segs = [];
+    if (inlineMatch[1]) segs.push({ kind: 'prose', text: inlineMatch[1].trim() });
+    if (inlineMatch[2]) segs.push({ kind: 'cli', text: inlineMatch[2].trim() });
+    return segs;
+  }
+
+  const lines = text.split('\n');
+  const segments = [];
+  let buffer = [], bufferKind = null, inCliBlock = false;
+
+  const flush = () => {
+    if (!buffer.length) return;
+    if (bufferKind === 'cli') while (buffer.length && !buffer[buffer.length-1].trim()) buffer.pop();
+    if (buffer.length) segments.push({ kind: bufferKind, text: buffer.join('\n') });
+    buffer = [];
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (inCliBlock) {
+      const isClearProse = PROSE_RE.test(trimmed) && !looksLikeCli(line) && trimmed.length > 20;
+      if (isClearProse) { inCliBlock = false; flush(); bufferKind = 'prose'; buffer.push(line); }
+      else buffer.push(line);
+      continue;
+    }
+    if (CLI_PROMPT_RE.test(trimmed)) {
+      inCliBlock = true; flush(); bufferKind = 'cli'; buffer.push(line); continue;
+    }
+    const kind = looksLikeCli(line) ? 'cli' : 'prose';
+    if (kind !== bufferKind) { flush(); bufferKind = kind; }
+    buffer.push(line);
+  }
+  flush();
+  return segments;
+}
+
+function renderQuestion(text) {
+  const segs = splitIntoSegments(text);
+  if (!segs.length) return `<p>${escHtml(text)}</p>`;
+  return segs.map(s => s.kind === 'cli'
+    ? `<pre class="cli">${escHtml(s.text)}</pre>`
+    : `<p>${escHtml(s.text)}</p>`
+  ).join('');
+}
+
+function escHtml(t) {
+  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderCards() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const container = document.getElementById('cards');
+  let visible = 0;
+  container.innerHTML = questions.map((q, i) => {
+    const matchSource = currentSource === 'all' || q.source === currentSource;
+    const matchSearch = !search || q.id.toLowerCase().includes(search) || q.question.toLowerCase().includes(search) || q.topic.toLowerCase().includes(search);
+    const hide = !matchSource || !matchSearch;
+    if (!hide) visible++;
+    return `<div class="card ${hide ? 'hidden' : ''}" data-source="${q.source}" data-id="${q.id}">
+      <div class="card-header">
+        <span class="badge badge-pos">Câu ${q.pos}/${q.total}</span>
+        <span class="badge badge-id">#${q.id}</span>
+        <span class="badge badge-source">${q.source.toUpperCase()}</span>
+        <span class="badge badge-topic">${q.topic}</span>
+      </div>
+      <div class="question">${renderQuestion(q.question)}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('count').textContent = `${visible} câu`;
+}
+
+function filterCards() { renderCards(); }
+function filterSource(src, btn) {
+  currentSource = src;
+  document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards();
+}
+
+fetch('cli_debug.json').then(r => r.json()).then(data => {
+  questions = data;
+  renderCards();
+});
+</script>
+</body>
+</html>
