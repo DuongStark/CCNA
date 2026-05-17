@@ -1,0 +1,1063 @@
+{
+  "count": 43,
+  "questions": [
+    {
+      "id": "5.5",
+      "type": "single",
+      "question": "In which situation is private IPv4 addressing appropriate for a new subnet on the network of an organization?",
+      "question_images": [],
+      "options": {
+        "A": "There is limited unique address space, and traffic on the new subnet will stay local within the organization.",
+        "B": "The network has multiple endpoint listeners, and it is desired to limit the number of broadcasts.",
+        "C": "Traffic on the subnet must traverse a site-to-site VPN to an outside organization.",
+        "D": "The ISP requires the new subnet to be advertised to the internet for web services."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Trong tình huống nào thì việc sử dụng địa chỉ IPv4 riêng (private IPv4 addressing) là phù hợp cho một mạng con (subnet) mới trên mạng của một tổ chức?",
+      "options_vi": {
+        "A": "Không gian địa chỉ duy nhất bị hạn chế, và lưu lượng trên mạng con mới sẽ ở trong nội bộ tổ chức.",
+        "B": "Mạng có nhiều thiết bị đầu cuối lắng nghe (endpoint listeners), và mong muốn giới hạn số lượng broadcast.",
+        "C": "Lưu lượng trên mạng con phải đi qua một VPN site-to-site đến một tổ chức bên ngoài.",
+        "D": "ISP yêu cầu mạng con mới phải được quảng bá ra internet cho các dịch vụ web."
+      },
+      "explanation": "Địa chỉ IPv4 riêng tư (private) được thiết kế chính xác cho hai trường hợp: khi không gian địa chỉ công cộng bị hạn chế và khi lưu lượng không cần ra ngoài internet. Đáp án A đáp ứng cả hai điều kiện đó, vì địa chỉ private không thể định tuyến trên internet nên chỉ phù hợp khi traffic giữ nguyên trong nội bộ tổ chức.\n\nĐáp án B sai vì việc giảm broadcast liên quan đến việc chia subnet (subnetting) hoặc dùng VLAN, không liên quan đến việc chọn địa chỉ private hay public. Đáp án C sai vì khi traffic phải đi qua VPN site-to-site đến tổ chức bên ngoài, cần có sự phối hợp địa chỉ giữa hai bên và địa chỉ private có thể gây xung đột nếu cả hai bên dùng cùng dải địa chỉ. Đáp án D sai hoàn toàn vì địa chỉ private không thể quảng bá lên internet và ISP sẽ không chấp nhận định tuyến các dải địa chỉ này."
+    },
+    {
+      "id": "5.8",
+      "type": "single",
+      "question": "How do servers connect to the network in a virtual environment?",
+      "question_images": [],
+      "options": {
+        "A": "wireless to an access point that is physically connected to the network",
+        "B": "a cable connected to a physical switch on the network",
+        "C": "a virtual switch that links to an access point that is physically connected to the network",
+        "D": "a software switch on a hypervisor that is physically connected to the network"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Các máy chủ (server) kết nối với mạng như thế nào trong môi trường ảo hóa (virtual environment)?",
+      "options_vi": {
+        "A": "không dây đến một điểm truy cập (access point) được kết nối vật lý với mạng",
+        "B": "một cáp kết nối đến một switch vật lý trên mạng",
+        "C": "một switch ảo (virtual switch) liên kết đến một điểm truy cập (access point) được kết nối vật lý với mạng",
+        "D": "một switch phần mềm trên hypervisor được kết nối vật lý với mạng"
+      },
+      "explanation": "Trong môi trường ảo hóa, các máy chủ ảo (virtual machines) kết nối mạng thông qua một switch phần mềm chạy trên hypervisor. Hypervisor là nền tảng quản lý các máy ảo và nó cung cấp một virtual switch để các VM giao tiếp với nhau và với mạng bên ngoài. Kết nối vật lý ra ngoài mạng được thực hiện qua card mạng vật lý của máy chủ host đang chạy hypervisor đó.\n\nĐáp án A sai vì máy chủ trong môi trường ảo không kết nối không dây qua access point. Đáp án B sai vì máy chủ ảo không cắm cáp trực tiếp vào switch vật lý, đó là cách kết nối của máy chủ vật lý thông thường. Đáp án C sai vì virtual switch không liên kết với access point mà liên kết với card mạng vật lý của hypervisor."
+    },
+    {
+      "id": "5.18",
+      "type": "single",
+      "question": "What is the maximum bandwidth of a T1 point-to-point connection?",
+      "question_images": [],
+      "options": {
+        "A": "1.544 Mbps",
+        "B": "2.048 Mbps",
+        "C": "34.368 Mbps",
+        "D": "43.7 Mbps"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Băng thông tối đa của một kết nối point-to-point T1 là bao nhiêu?",
+      "options_vi": {
+        "A": "1.544 Mbps",
+        "B": "2.048 Mbps",
+        "C": "34.368 Mbps",
+        "D": "43.7 Mbps"
+      },
+      "explanation": "Đáp án A đúng vì T1 là chuẩn truyền dẫn của Bắc Mỹ với tốc độ 1.544 Mbps, bao gồm 24 kênh DS0 mỗi kênh 64 Kbps cộng thêm overhead. Đáp án B là tốc độ của E1, chuẩn tương đương ở châu Âu. C là tốc độ của E3, còn D không phải tốc độ chuẩn nào trong hệ thống phân cấp TDM phổ biến."
+    },
+    {
+      "id": "5.31",
+      "type": "single",
+      "question": "What is a characteristic of a SOHO network?",
+      "question_images": [],
+      "options": {
+        "A": "connects each switch to every other switch in the network",
+        "B": "enables multiple users to share a single broadband connection",
+        "C": "provides high throughput access for 1000 or more users",
+        "D": "includes at least three tiers of devices to provide load balancing and redundancy"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Đặc điểm của mạng SOHO là gì?",
+      "options_vi": {
+        "A": "kết nối mỗi switch với mọi switch khác trong mạng",
+        "B": "cho phép nhiều người dùng chia sẻ một kết nối băng thông rộng (broadband) duy nhất",
+        "C": "cung cấp truy cập thông lượng cao cho 1000 người dùng trở lên",
+        "D": "bao gồm ít nhất ba tầng thiết bị để cung cấp cân bằng tải (load balancing) và dự phòng (redundancy)"
+      },
+      "explanation": "Mạng SOHO (Small Office/Home Office) được thiết kế cho môi trường văn phòng nhỏ hoặc gia đình, cho phép nhiều người dùng cùng chia sẻ một kết nối băng thông rộng duy nhất như DSL hoặc cáp. Đây là đặc điểm cốt lõi phân biệt SOHO với các loại mạng doanh nghiệp lớn hơn.\n\nĐáp án A mô tả topology dạng full-mesh, thường dùng trong mạng WAN doanh nghiệp, không phải SOHO. Đáp án C mô tả mạng doanh nghiệp quy mô lớn với hàng nghìn người dùng, vượt xa phạm vi của SOHO. Đáp án D mô tả kiến trúc phân cấp ba tầng (core, distribution, access) dành cho mạng campus lớn, không áp dụng cho SOHO."
+    },
+    {
+      "id": "5.32",
+      "type": "single",
+      "question": "Which resource is able to be shared among virtual machines deployed on the same physical server?",
+      "question_images": [],
+      "options": {
+        "A": "applications",
+        "B": "operating system",
+        "C": "VM configuration file",
+        "D": "disk"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tài nguyên nào có thể được chia sẻ giữa các máy ảo (virtual machines) được triển khai trên cùng một máy chủ vật lý?",
+      "options_vi": {
+        "A": "ứng dụng (applications)",
+        "B": "hệ điều hành (operating system)",
+        "C": "tệp cấu hình VM (VM configuration file)",
+        "D": "ổ đĩa (disk)"
+      },
+      "explanation": "Trong môi trường ảo hóa, các máy ảo (VM) chạy trên cùng một máy chủ vật lý có thể chia sẻ tài nguyên phần cứng vật lý như CPU, RAM, và đặc biệt là ổ đĩa (disk). Bộ nhớ lưu trữ vật lý có thể được phân vùng và chia sẻ giữa nhiều VM thông qua hypervisor.\n\nCác đáp án còn lại sai vì: mỗi VM có ứng dụng (A) riêng biệt chạy trong môi trường cô lập của nó; mỗi VM cũng chạy hệ điều hành (B) riêng, đó chính là một trong những đặc điểm cốt lõi của ảo hóa; và file cấu hình VM (C) là duy nhất cho từng máy ảo, không thể chia sẻ vì nó định nghĩa cấu hình riêng của từng VM đó."
+    },
+    {
+      "id": "5.37",
+      "type": "single",
+      "question": "Which WAN topology provides a combination of simplicity quality, and availability?",
+      "question_images": [],
+      "options": {
+        "A": "partial mesh",
+        "B": "full mesh",
+        "C": "point-to-point",
+        "D": "hub-and-spoke"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Topo WAN nào cung cấp sự kết hợp giữa tính đơn giản, chất lượng và tính sẵn sàng (availability)?",
+      "options_vi": {
+        "A": "partial mesh",
+        "B": "full mesh",
+        "C": "point-to-point",
+        "D": "hub-and-spoke"
+      },
+      "explanation": "Câu trả lời C (point-to-point) là chính xác vì topology này kết nối trực tiếp hai điểm với nhau, mang lại sự đơn giản trong cấu hình, chất lượng đường truyền ổn định và độ sẵn sàng cao do không phụ thuộc vào các nút trung gian.\n\nCác đáp án còn lại không phù hợp vì: partial mesh (A) phức tạp hơn và không đảm bảo kết nối đầy đủ giữa tất cả các điểm; full mesh (B) cung cấp độ sẵn sàng cao nhất nhưng rất tốn kém và phức tạp, không đạt được sự đơn giản; hub-and-spoke (D) đơn giản nhưng điểm hub trung tâm là single point of failure, làm giảm độ sẵn sàng tổng thể."
+    },
+    {
+      "id": "5.50",
+      "type": "single",
+      "question": "What is a characteristic of private IPv4 addressing?",
+      "question_images": [],
+      "options": {
+        "A": "used without tracking or registration",
+        "B": "issued by IANA in conjunction with an autonomous system number",
+        "C": "traverse the Internet when an outbound ACL is applied",
+        "D": "composed of up to 65,536 available addresses"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Đặc điểm của địa chỉ IPv4 riêng (private IPv4 addressing) là gì?",
+      "options_vi": {
+        "A": "được sử dụng mà không cần theo dõi hoặc đăng ký",
+        "B": "được cấp bởi IANA kết hợp với một số hệ thống tự trị (autonomous system number)",
+        "C": "đi qua Internet khi một ACL chiều ra (outbound ACL) được áp dụng",
+        "D": "bao gồm tối đa 65.536 địa chỉ khả dụng"
+      },
+      "explanation": "Địa chỉ IPv4 riêng tư (private) được định nghĩa trong RFC 1918 và có thể được bất kỳ tổ chức nào sử dụng tự do mà không cần đăng ký với IANA hay bất kỳ cơ quan nào, vì chúng không được định tuyến trên Internet công cộng. Đây là đặc điểm cốt lõi phân biệt chúng với địa chỉ public.\n\nB sai vì địa chỉ public mới cần IANA cấp phát, còn ASN là thứ riêng biệt dùng cho định tuyến BGP, không liên quan đến địa chỉ private. C sai vì địa chỉ private không thể đi qua Internet, ACL outbound không thay đổi điều đó mà chính NAT mới là cơ chế cho phép traffic từ mạng private ra ngoài. D sai vì con số 65.536 không mô tả đặc điểm của địa chỉ private, thực tế các dải private như 10.0.0.0/8 chứa hàng triệu địa chỉ."
+    },
+    {
+      "id": "6.11",
+      "type": "single",
+      "question": "What is a similarity between OM3 and OM4 fiber optic cable?",
+      "question_images": [],
+      "options": {
+        "A": "Both have a 50 micron core diameter",
+        "B": "Both have a 9 micron core diameter",
+        "C": "Both have a 62.5 micron core diameter",
+        "D": "Both have a 100 micron core diameter"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Điểm tương đồng giữa cáp quang (fiber optic cable) OM3 và OM4 là gì?",
+      "options_vi": {
+        "A": "Cả hai đều có đường kính lõi (core diameter) 50 micron",
+        "B": "Cả hai đều có đường kính lõi (core diameter) 9 micron",
+        "C": "Cả hai đều có đường kính lõi (core diameter) 62.5 micron",
+        "D": "Cả hai đều có đường kính lõi (core diameter) 100 micron"
+      },
+      "explanation": "OM3 và OM4 đều là cáp quang đa mode (multimode) với đường kính lõi 50 micron, đây là điểm chung quan trọng giữa hai loại này. Sự khác biệt giữa chúng nằm ở chất lượng sợi quang và băng thông, trong đó OM4 có hiệu suất cao hơn và hỗ trợ khoảng cách truyền xa hơn.\n\nĐáp án B sai vì lõi 9 micron là đặc trưng của cáp quang đơn mode (SMF), không phải OM3 hay OM4. Đáp án C sai vì lõi 62.5 micron thuộc về cáp OM1. Đáp án D sai vì không có loại cáp OM tiêu chuẩn nào có lõi 100 micron."
+    },
+    {
+      "id": "6.16",
+      "type": "single",
+      "question": "What describes the operation of virtual machines?",
+      "question_images": [],
+      "options": {
+        "A": "Virtual machines are responsible for managing and allocating host hardware resources",
+        "B": "Virtual machines are operating system instances that are decoupled from server hardware",
+        "C": "Virtual machines are the physical hardware that support a virtual environment",
+        "D": "In a virtual machine environment, physical servers must run one operating system at a time"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Điều gì mô tả hoạt động của máy ảo (virtual machines)?",
+      "options_vi": {
+        "A": "Máy ảo chịu trách nhiệm quản lý và phân bổ tài nguyên phần cứng của máy chủ",
+        "B": "Máy ảo là các phiên bản hệ điều hành (operating system instances) được tách rời khỏi phần cứng máy chủ",
+        "C": "Máy ảo là phần cứng vật lý hỗ trợ môi trường ảo hóa",
+        "D": "Trong môi trường máy ảo, các máy chủ vật lý phải chạy một hệ điều hành tại một thời điểm"
+      },
+      "explanation": "Đáp án B đúng vì máy ảo (virtual machine) là các phiên bản hệ điều hành chạy độc lập với phần cứng vật lý của máy chủ, được tách biệt thông qua một lớp phần mềm gọi là hypervisor.\n\nĐáp án A sai vì đó là vai trò của hypervisor, không phải của máy ảo. Đáp án C sai vì phần cứng vật lý là máy chủ thực (host), không phải máy ảo. Đáp án D sai vì mục đích chính của ảo hóa là cho phép nhiều hệ điều hành chạy đồng thời trên cùng một máy chủ vật lý."
+    },
+    {
+      "id": "6.18",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report intermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent connectivity issue?",
+      "question_images": [],
+      "options": {
+        "A": "Interface errors are incrementing",
+        "B": "An incorrect SFP media type was used at SiteA",
+        "C": "High usage is causing high latency",
+        "D": "The sites were connected with the wrong cable type"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 166/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 265746000 bits/sec, 24343 packets/sec\n5 minute output rate 123245000 bits/sec, 12453 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nNgay sau khi SiteA được kết nối với SiteB qua một đường cáp quang đơn mode (single-mode fiber) mới, người dùng tại SiteA báo cáo các vấn đề kết nối không liên tục với các ứng dụng được lưu trữ tại SiteB. Nguyên nhân của vấn đề kết nối không liên tục là gì?",
+      "options_vi": {
+        "A": "Các lỗi giao diện (interface errors) đang tăng",
+        "B": "Loại SFP media không đúng đã được sử dụng tại SiteA",
+        "C": "Mức sử dụng cao đang gây ra độ trễ (latency) cao",
+        "D": "Các site đã được kết nối bằng loại cáp sai"
+      },
+      "explanation": "Đáp án A đúng vì chỉ số reliability trên interface của SiteA chỉ đạt 166/255, thấp hơn đáng kể so với mức lý tưởng là 255/255 như ở SiteB. Reliability thấp cho thấy interface đang gặp lỗi truyền dẫn, và khi lỗi tích lũy theo thời gian thì kết nối sẽ bị gián đoạn không liên tục, đúng với triệu chứng người dùng báo cáo.\n\nĐáp án B sai vì cả hai đầu đều dùng SFP-LR, tức là loại SFP phù hợp cho cáp single-mode fiber, không có sự không khớp về media type. Đáp án C sai vì traffic load trên cả hai interface đều rất thấp (txload và rxload là 1/255), không có dấu hiệu tắc nghẽn gây ra độ trễ cao. Đáp án D sai vì single-mode fiber là loại cáp đúng cho kết nối SFP-LR đường dài, và đường link đang ở trạng thái up/up nên cáp không phải nguyên nhân."
+    },
+    {
+      "id": "6.21",
+      "type": "single",
+      "question": "Which technology allows for multiple operating systems to be run on a single host computer?",
+      "question_images": [],
+      "options": {
+        "A": "virtual device contexts",
+        "B": "network port ID visualization",
+        "C": "virtual routing and forwarding",
+        "D": "server virtualization"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Công nghệ nào cho phép nhiều hệ điều hành chạy trên một máy tính chủ (host computer) duy nhất?",
+      "options_vi": {
+        "A": "virtual device contexts",
+        "B": "network port ID visualization",
+        "C": "virtual routing and forwarding",
+        "D": "ảo hóa máy chủ (server virtualization)"
+      },
+      "explanation": "Server virtualization là công nghệ cho phép chạy nhiều hệ điều hành đồng thời trên một máy chủ vật lý duy nhất bằng cách sử dụng phần mềm hypervisor để tạo ra các máy ảo (VM) độc lập. Đây chính xác là định nghĩa của câu hỏi.\n\nVirtual device contexts là tính năng trên thiết bị Cisco Nexus cho phép chia một thiết bị vật lý thành nhiều thiết bị logic, không liên quan đến việc chạy hệ điều hành. Virtual routing and forwarding (VRF) cho phép tạo nhiều bảng định tuyến độc lập trên một router, cũng không phải công nghệ ảo hóa máy chủ. Network port ID visualization không phải là thuật ngữ kỹ thuật chuẩn trong lĩnh vực này."
+    },
+    {
+      "id": "6.32",
+      "type": "single",
+      "question": "What is the function of a hub-and-spoke WAN topology?",
+      "question_images": [],
+      "options": {
+        "A": "supports application optimization",
+        "B": "provides direct connections between subscribers",
+        "C": "supports Layer 2 VPNs",
+        "D": "allows access restrictions to be implemented between subscriber sites"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng của topo WAN hub-and-spoke là gì?",
+      "options_vi": {
+        "A": "hỗ trợ tối ưu hóa ứng dụng (application optimization)",
+        "B": "cung cấp kết nối trực tiếp giữa các thuê bao (subscribers)",
+        "C": "hỗ trợ VPN Lớp 2 (Layer 2 VPNs)",
+        "D": "cho phép triển khai các hạn chế truy cập giữa các site thuê bao"
+      },
+      "explanation": "Trong mô hình hub-and-spoke, tất cả lưu lượng giữa các site nhánh (spoke) đều phải đi qua site trung tâm (hub), điều này cho phép áp dụng các chính sách kiểm soát truy cập tập trung tại hub để quản lý luồng dữ liệu giữa các site nhánh với nhau.\n\nĐáp án A sai vì tối ưu hóa ứng dụng không phải chức năng đặc trưng của hub-and-spoke. Đáp án B sai vì mô hình này không cung cấp kết nối trực tiếp giữa các spoke, đó là đặc điểm của mô hình full-mesh. Đáp án C sai vì hỗ trợ Layer 2 VPN là tính năng của công nghệ cụ thể như VPLS, không phải của topology hub-and-spoke."
+    },
+    {
+      "id": "7.2",
+      "type": "single",
+      "question": "What is a characteristic of cloud-based network topology?",
+      "question_images": [],
+      "options": {
+        "A": "physical workstations are configured to share resources",
+        "B": "services are provided by a public, private, or hybrid deployment",
+        "C": "onsite network services are provided with physical Layer 2 and Layer 3 components",
+        "D": "wireless connections provide the sole access method to services"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Đặc điểm của topo mạng dựa trên đám mây (cloud-based network topology) là gì?",
+      "options_vi": {
+        "A": "các máy trạm vật lý (physical workstations) được cấu hình để chia sẻ tài nguyên",
+        "B": "các dịch vụ được cung cấp bởi triển khai công khai (public), riêng tư (private), hoặc kết hợp (hybrid)",
+        "C": "các dịch vụ mạng tại chỗ (onsite) được cung cấp với các thành phần Lớp 2 (Layer 2) và Lớp 3 (Layer 3) vật lý",
+        "D": "kết nối không dây cung cấp phương thức truy cập duy nhất đến các dịch vụ"
+      },
+      "explanation": "Đáp án B đúng vì đây là đặc điểm cốt lõi của mô hình điện toán đám mây: dịch vụ được triển khai theo ba hình thức là public cloud (dùng chung cho nhiều tổ chức), private cloud (dành riêng cho một tổ chức), hoặc hybrid cloud (kết hợp cả hai).\n\nĐáp án A mô tả mô hình mạng ngang hàng (peer-to-peer), không phải đám mây. Đáp án C mô tả mạng truyền thống tại chỗ (on-premises) với thiết bị vật lý Layer 2 và Layer 3, trái ngược với bản chất ảo hóa của đám mây. Đáp án D sai vì đám mây có thể truy cập qua nhiều phương thức khác nhau như có dây, không dây, hoặc VPN, không giới hạn chỉ kết nối không dây."
+    },
+    {
+      "id": "7.11",
+      "type": "single",
+      "question": "Why was the RFC 1918 address space defined?",
+      "question_images": [],
+      "options": {
+        "A": "preserve public IPv6 address space",
+        "B": "support the NAT protocol",
+        "C": "reduce instances of overlapping IP addresses",
+        "D": "conserve public IPv4 addressing"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tại sao không gian địa chỉ RFC 1918 được định nghĩa?",
+      "options_vi": {
+        "A": "bảo tồn không gian địa chỉ IPv6 công cộng (public)",
+        "B": "hỗ trợ giao thức NAT",
+        "C": "giảm các trường hợp trùng lặp địa chỉ IP (overlapping IP addresses)",
+        "D": "bảo tồn địa chỉ IPv4 công cộng (public IPv4 addressing)"
+      },
+      "explanation": "RFC 1918 được định nghĩa để bảo tồn không gian địa chỉ IPv4 công cộng, vốn có giới hạn chỉ khoảng 4,3 tỷ địa chỉ. Bằng cách cho phép các tổ chức sử dụng các dải địa chỉ riêng tư như 10.0.0.0/8, 172.16.0.0/12 và 192.168.0.0/16 trong nội bộ, nhiều thiết bị có thể dùng chung một địa chỉ IP công cộng thông qua NAT, giúp kéo dài tuổi thọ của IPv4.\n\nĐáp án A sai vì RFC 1918 ra đời trước khi IPv6 được triển khai rộng rãi và không liên quan đến việc bảo tồn địa chỉ IPv6. Đáp án B sai vì NAT là công nghệ được phát triển để tận dụng địa chỉ RFC 1918, chứ không phải ngược lại, RFC 1918 không được tạo ra để hỗ trợ NAT. Đáp án C sai vì địa chỉ RFC 1918 thực ra làm tăng khả năng trùng lặp địa chỉ trong các mạng nội bộ khác nhau, không phải giảm thiểu."
+    },
+    {
+      "id": "7.19",
+      "type": "single",
+      "question": "Which action does the router take as it forwards a packet through the network?",
+      "question_images": [],
+      "options": {
+        "A": "The router replaces the source and destination labels with the sending router interface label as a source and the next hop router label as a destination",
+        "B": "The router encapsulates the source and destination IP addresses with the sending router IP address as the source and the neighbor IP address as the destination",
+        "C": "The router encapsulates the original packet and then includes a tag that identifies the source router MAC address and transmit transparently to the destination",
+        "D": "The router replaces the original source and destination MAC addresses with the sending router MAC address as the source and neighbor MAC address as the destination"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Router thực hiện hành động nào khi chuyển tiếp một gói tin (packet) qua mạng?",
+      "options_vi": {
+        "A": "Router thay thế nhãn nguồn và đích bằng nhãn giao diện router gửi làm nguồn và nhãn router chặng tiếp theo (next hop) làm đích",
+        "B": "Router đóng gói (encapsulates) địa chỉ IP nguồn và đích với địa chỉ IP của router gửi làm nguồn và địa chỉ IP của router lân cận (neighbor) làm đích",
+        "C": "Router đóng gói gói tin gốc và sau đó bao gồm một thẻ (tag) xác định địa chỉ MAC của router nguồn và truyền trong suốt (transparently) đến đích",
+        "D": "Router thay thế địa chỉ MAC nguồn và đích ban đầu bằng địa chỉ MAC của router gửi làm nguồn và địa chỉ MAC của router lân cận (neighbor) làm đích"
+      },
+      "explanation": "Khi router chuyển tiếp một gói tin, nó hoạt động ở lớp 3 nhưng vẫn phải đóng gói lại frame lớp 2 cho mỗi chặng. Cụ thể, router sẽ thay thế địa chỉ MAC nguồn bằng địa chỉ MAC của cổng ra trên chính nó, và địa chỉ MAC đích bằng địa chỉ MAC của thiết bị kế tiếp (next-hop neighbor). Địa chỉ IP nguồn và đích trong gói tin vẫn được giữ nguyên xuyên suốt hành trình.\n\nĐáp án A sai vì \"label\" là khái niệm của MPLS, không phải hoạt động định tuyến IP thông thường. Đáp án B sai vì router không thay thế địa chỉ IP nguồn và đích bằng địa chỉ của chính nó, đó là chức năng của NAT chứ không phải routing. Đáp án C sai vì router không đóng gói thêm tag MAC nguồn rồi chuyển trong suốt, đó gần với mô tả của bridging hoặc tunneling hơn."
+    },
+    {
+      "id": "7.32",
+      "type": "single",
+      "question": "An implementer is preparing hardware for virtualization to create virtual machines on a host. What is needed to provide communication between hardware and virtual machines?",
+      "question_images": [],
+      "options": {
+        "A": "straight cable",
+        "B": "router",
+        "C": "hypervisor",
+        "D": "switch"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Một người triển khai đang chuẩn bị phần cứng cho ảo hóa (virtualization) để tạo các máy ảo (virtual machines) trên một máy chủ (host). Cần gì để cung cấp giao tiếp giữa phần cứng và các máy ảo?",
+      "options_vi": {
+        "A": "cáp thẳng (straight cable)",
+        "B": "bộ định tuyến (router)",
+        "C": "hypervisor",
+        "D": "switch"
+      },
+      "explanation": "Hypervisor là phần mềm nằm giữa phần cứng vật lý và các máy ảo, có nhiệm vụ quản lý tài nguyên phần cứng và cung cấp môi trường để các máy ảo hoạt động. Nó tạo ra lớp trừu tượng hóa giúp nhiều máy ảo có thể chia sẻ cùng một phần cứng vật lý và giao tiếp với nhau cũng như với phần cứng bên dưới.\n\nCác đáp án còn lại không phù hợp vì straight cable là cáp mạng vật lý dùng để kết nối thiết bị, không liên quan đến giao tiếp giữa phần cứng và máy ảo. Router dùng để định tuyến lưu lượng giữa các mạng khác nhau, còn switch dùng để kết nối các thiết bị trong cùng một mạng LAN, cả hai đều là thiết bị mạng vật lý không có vai trò trong việc ảo hóa phần cứng."
+    },
+    {
+      "id": "7.33",
+      "type": "multiple",
+      "question": "What are two characteristics of the distribution layer in a three-tier network architecture? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "provides a boundary between Layer 2 and Layer 3 communications",
+        "B": "designed to meet continuous, redundant uptime requirements",
+        "C": "serves as the network aggregation point",
+        "D": "physical connection point for a LAN printer",
+        "E": "is the backbone for the network topology"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai đặc điểm của lớp phân phối (distribution layer) trong kiến trúc mạng ba lớp (three-tier) là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "cung cấp ranh giới giữa truyền thông Lớp 2 (Layer 2) và Lớp 3 (Layer 3)",
+        "B": "được thiết kế để đáp ứng yêu cầu hoạt động liên tục, dự phòng (redundant)",
+        "C": "đóng vai trò là điểm tập hợp (aggregation point) của mạng",
+        "D": "điểm kết nối vật lý cho máy in LAN",
+        "E": "là xương sống (backbone) cho cấu trúc liên kết mạng (network topology)"
+      },
+      "explanation": "Trong kiến trúc mạng ba tầng, tầng distribution đóng vai trò là ranh giới giữa Layer 2 (switching) ở tầng access và Layer 3 (routing) ở tầng core, đây là nơi thực hiện các chính sách định tuyến và kiểm soát lưu lượng. Đồng thời, tầng này cũng là điểm tập hợp (aggregation point) cho tất cả các thiết bị và kết nối từ tầng access trước khi đưa lên tầng core.\n\nB sai vì yêu cầu uptime liên tục và dự phòng cao là đặc trưng của tầng core, không phải distribution. D sai vì kết nối vật lý cho các thiết bị đầu cuối như máy in là nhiệm vụ của tầng access. E sai vì backbone của toàn bộ topology chính là tầng core, không phải distribution."
+    },
+    {
+      "id": "7.38",
+      "type": "single",
+      "question": "What is the difference in data transmission delivery and reliability between TCP and UDP?",
+      "question_images": [],
+      "options": {
+        "A": "UDP sets up a connection between both devices before transmitting data. TCP uses the three-way handshake to transmit data with a reliable connection.",
+        "B": "TCP transmits data at a higher rate and ensures packet delivery. UDP retransmits lost data to ensure applications receive the data on the remote end.",
+        "C": "UDP is used for multicast and broadcast communication. TCP is used for unicast communication and transmits data at a higher rate with error checking.",
+        "D": "TCP requires the connection to be established before transmitting data. UDP transmits data at a higher rate without ensuring packet delivery."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Sự khác biệt trong việc truyền tải dữ liệu và độ tin cậy giữa TCP và UDP là gì?",
+      "options_vi": {
+        "A": "UDP thiết lập kết nối giữa hai thiết bị trước khi truyền dữ liệu. TCP sử dụng bắt tay ba bước (three-way handshake) để truyền dữ liệu với kết nối đáng tin cậy.",
+        "B": "TCP truyền dữ liệu với tốc độ cao hơn và đảm bảo gói tin được gửi đến. UDP truyền lại dữ liệu bị mất để đảm bảo ứng dụng nhận được dữ liệu ở đầu xa.",
+        "C": "UDP được sử dụng cho truyền thông multicast và broadcast. TCP được sử dụng cho truyền thông unicast và truyền dữ liệu với tốc độ cao hơn kèm kiểm tra lỗi.",
+        "D": "TCP yêu cầu kết nối phải được thiết lập trước khi truyền dữ liệu. UDP truyền dữ liệu với tốc độ cao hơn mà không đảm bảo gói tin được gửi đến."
+      },
+      "explanation": "Đáp án D đúng vì TCP là giao thức hướng kết nối, yêu cầu thiết lập kết nối qua quá trình bắt tay ba bước (three-way handshake) trước khi truyền dữ liệu, đảm bảo độ tin cậy thông qua xác nhận và truyền lại gói tin. UDP ngược lại là giao thức không kết nối, truyền dữ liệu nhanh hơn nhưng không đảm bảo gói tin đến đích, phù hợp cho các ứng dụng ưu tiên tốc độ như video streaming hay VoIP.\n\nĐáp án A sai vì mô tả ngược lại, UDP mới là giao thức không thiết lập kết nối trước, còn TCP mới dùng three-way handshake. Đáp án B sai vì chính TCP mới đảm bảo giao hàng và truyền lại dữ liệu bị mất, không phải UDP. Đáp án C sai vì UDP có thể dùng cho multicast và broadcast là đúng, nhưng việc nói TCP truyền nhanh hơn với error checking là không chính xác, TCP chậm hơn do overhead của cơ chế đảm bảo độ tin cậy."
+    },
+    {
+      "id": "7.39",
+      "type": "single",
+      "question": "What are network endpoints?",
+      "question_images": [],
+      "options": {
+        "A": "a threat to the network if they are compromised",
+        "B": "support inter-VLAN connectivity",
+        "C": "act as routers to connect a user to the service prowler network",
+        "D": "enforce policies for campus-wide traffic going to the internet"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Thiết bị đầu cuối (network endpoints) là gì?",
+      "options_vi": {
+        "A": "một mối đe dọa cho mạng nếu chúng bị xâm phạm (compromised)",
+        "B": "hỗ trợ kết nối giữa các VLAN (inter-VLAN connectivity)",
+        "C": "hoạt động như bộ định tuyến (router) để kết nối người dùng với mạng nhà cung cấp dịch vụ (service provider network)",
+        "D": "thực thi các chính sách cho lưu lượng toàn khuôn viên (campus-wide) đi ra Internet"
+      },
+      "explanation": "Network endpoints là các thiết bị đầu cuối như máy tính, điện thoại, máy in kết nối vào mạng. Khi bị xâm phạm, chúng trở thành mối đe dọa vì kẻ tấn công có thể dùng chúng để lan rộng tấn công trong mạng nội bộ.\n\nCác đáp án còn lại mô tả chức năng của các thành phần khác: hỗ trợ inter-VLAN là vai trò của Layer 3 switch hoặc router, kết nối người dùng đến mạng dịch vụ là vai trò của router biên, còn thực thi chính sách lưu lượng internet là chức năng của firewall hoặc thiết bị bảo mật tập trung."
+    },
+    {
+      "id": "7.51",
+      "type": "multiple",
+      "question": "What are two similarities between UTP Cat 5e and Cat 6a cabling? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Both support runs of up to 100 meters.",
+        "B": "Both support runs of up to 55 meters.",
+        "C": "Both operate at a frequency of 500 MHz.",
+        "D": "Both support speeds of at least 1 Gigabit.",
+        "E": "Both support speeds up to 10 Gigabit."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai điểm tương đồng giữa cáp UTP Cat 5e và Cat 6a là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Cả hai đều hỗ trợ đường chạy lên đến 100 mét.",
+        "B": "Cả hai đều hỗ trợ đường chạy lên đến 55 mét.",
+        "C": "Cả hai đều hoạt động ở tần số 500 MHz.",
+        "D": "Cả hai đều hỗ trợ tốc độ ít nhất 1 Gigabit.",
+        "E": "Cả hai đều hỗ trợ tốc độ lên đến 10 Gigabit."
+      },
+      "explanation": "Đây là câu hỏi về đặc điểm kỹ thuật của cáp UTP, cần so sánh hai loại Cat 5e và Cat 6a.\n\nĐáp án A đúng vì cả Cat 5e lẫn Cat 6a đều tuân theo tiêu chuẩn Ethernet cho phép chiều dài tối đa 100 mét cho một đoạn cáp. Đây là giới hạn chung của hầu hết các loại cáp UTP trong môi trường LAN.\n\nĐáp án D đúng vì Cat 5e hỗ trợ tốc độ 1 Gbps (Gigabit Ethernet), còn Cat 6a hỗ trợ lên đến 10 Gbps, nên cả hai đều đạt ít nhất 1 Gigabit.\n\nĐáp án B sai vì giới hạn 55 mét chỉ áp dụng cho Cat 6 khi chạy 10 Gbps, không phải Cat 5e hay Cat 6a. Đáp án C sai vì 500 MHz là tần số của Cat 6a, còn Cat 5e chỉ hoạt động ở 100 MHz. Đáp án E sai vì Cat 5e không hỗ trợ 10 Gbps, chỉ Cat 6a mới đạt được tốc độ đó."
+    },
+    {
+      "id": "8.2",
+      "type": "single",
+      "question": "What is a similarly between 1000BASE-LX and 1000BASE-T standards?",
+      "question_images": [],
+      "options": {
+        "A": "Both use the same data-link header and trailer formats",
+        "B": "Both cable types support LP connectors",
+        "C": "Both cable types support RJ-45 connectors",
+        "D": "Both support up to 550 meters between nodes"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Điểm tương đồng giữa chuẩn 1000BASE-LX và 1000BASE-T là gì?",
+      "options_vi": {
+        "A": "Cả hai đều sử dụng cùng định dạng header và trailer của lớp liên kết dữ liệu (data-link)",
+        "B": "Cả hai loại cáp đều hỗ trợ đầu nối LP (LP connectors)",
+        "C": "Cả hai loại cáp đều hỗ trợ đầu nối RJ-45",
+        "D": "Cả hai đều hỗ trợ khoảng cách lên đến 550 mét giữa các nút (nodes)"
+      },
+      "explanation": "Đáp án A đúng vì 1000BASE-LX và 1000BASE-T đều là các chuẩn Gigabit Ethernet, và tất cả các chuẩn Ethernet đều dùng chung định dạng frame ở tầng data-link, bao gồm header và trailer theo chuẩn IEEE 802.3, bất kể phương tiện truyền dẫn vật lý là gì.\n\nĐáp án B sai vì 1000BASE-LX dùng đầu nối LC hoặc SC cho cáp quang, không phải LP. Đáp án C sai vì 1000BASE-LX dùng cáp quang với đầu nối quang học, còn RJ-45 chỉ dùng cho 1000BASE-T với cáp đồng. Đáp án D sai vì 550 mét là giới hạn của 1000BASE-SX trên cáp quang đa mode, không phải của cả hai chuẩn này, và 1000BASE-T chỉ hỗ trợ tối đa 100 mét."
+    },
+    {
+      "id": "8.15",
+      "type": "multiple",
+      "question": "What are two characteristics of a public cloud implementation? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "It is owned and maintained by one party, but it is shared among multiple organizations",
+        "B": "It enables an organization to fully customize how it deploys network resources",
+        "C": "It provides services that are accessed over the Internet",
+        "D": "It is a data center on the public Internet that maintains cloud services for only one company",
+        "E": "It supports network resources from a centralized third-party provider and privately-owned virtual resources"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai đặc điểm của triển khai đám mây công cộng (public cloud) là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Được sở hữu và duy trì bởi một bên, nhưng được chia sẻ giữa nhiều tổ chức",
+        "B": "Cho phép tổ chức tùy chỉnh hoàn toàn cách triển khai tài nguyên mạng",
+        "C": "Cung cấp các dịch vụ được truy cập qua Internet",
+        "D": "Là trung tâm dữ liệu trên Internet công cộng duy trì dịch vụ đám mây chỉ cho một công ty",
+        "E": "Hỗ trợ tài nguyên mạng từ nhà cung cấp bên thứ ba tập trung và tài nguyên ảo thuộc sở hữu riêng"
+      },
+      "explanation": "Đáp án đúng là A và C vì đây là hai đặc điểm cốt lõi của public cloud. Public cloud được sở hữu và vận hành bởi một nhà cung cấp duy nhất (như AWS, Azure, Google Cloud) nhưng chia sẻ tài nguyên cho nhiều tổ chức khác nhau, và người dùng truy cập các dịch vụ đó thông qua Internet.\n\nB sai vì khả năng tùy chỉnh hoàn toàn là đặc điểm của private cloud, không phải public cloud. Trong public cloud, tổ chức bị giới hạn bởi những gì nhà cung cấp cho phép cấu hình.\n\nD sai vì public cloud không phục vụ riêng cho một công ty, đó là định nghĩa của private cloud. Public cloud phục vụ nhiều khách hàng cùng lúc.\n\nE mô tả hybrid cloud, tức là mô hình kết hợp giữa tài nguyên từ nhà cung cấp bên thứ ba và tài nguyên ảo hóa do tổ chức tự sở hữu."
+    },
+    {
+      "id": "8.20",
+      "type": "single",
+      "question": "Which type of organization should use a collapsed-core architecture?",
+      "question_images": [],
+      "options": {
+        "A": "large and requires a flexible, scalable network design",
+        "B": "small and needs to reduce networking costs currently",
+        "C": "large and must minimize downtime when hardware fails",
+        "D": "small but is expected to grow dramatically in the near future"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Loại tổ chức nào nên sử dụng kiến trúc lõi thu gọn (collapsed-core architecture)?",
+      "options_vi": {
+        "A": "lớn và cần thiết kế mạng linh hoạt, có khả năng mở rộng",
+        "B": "nhỏ và cần giảm chi phí mạng hiện tại",
+        "C": "lớn và phải giảm thiểu thời gian ngừng hoạt động khi phần cứng gặp sự cố",
+        "D": "nhỏ nhưng dự kiến sẽ phát triển đáng kể trong tương lai gần"
+      },
+      "explanation": "Kiến trúc collapsed-core (hay còn gọi là two-tier) gộp tầng core và tầng distribution thành một, giúp giảm số lượng thiết bị và chi phí triển khai. Đây là lựa chọn phù hợp cho tổ chức nhỏ với ngân sách hạn chế và không cần khả năng mở rộng phức tạp.\n\nCác đáp án A và C sai vì tổ chức lớn hoặc yêu cầu tính sẵn sàng cao nên dùng kiến trúc three-tier đầy đủ, vốn có khả năng mở rộng và dự phòng tốt hơn. Đáp án D sai vì nếu tổ chức dự kiến tăng trưởng mạnh, nên đầu tư ngay vào three-tier để tránh phải thiết kế lại toàn bộ hạ tầng sau này."
+    },
+    {
+      "id": "8.28",
+      "type": "single",
+      "question": "What is an appropriate use for private IPv4 addressing?",
+      "question_images": [],
+      "options": {
+        "A": "on the public-facing interface of a firewall",
+        "B": "to allow hosts inside to communicate in both directions with hosts outside the organization",
+        "C": "on internal hosts that stream data solely to external resources",
+        "D": "on hosts that communicates only with other internal hosts"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Việc sử dụng phù hợp cho địa chỉ IPv4 riêng (private IPv4 addressing) là gì?",
+      "options_vi": {
+        "A": "trên giao diện hướng ra công cộng (public-facing interface) của tường lửa (firewall)",
+        "B": "để cho phép các máy chủ bên trong giao tiếp hai chiều với các máy chủ bên ngoài tổ chức",
+        "C": "trên các máy chủ nội bộ chỉ truyền dữ liệu đến tài nguyên bên ngoài",
+        "D": "trên các máy chủ chỉ giao tiếp với các máy chủ nội bộ khác"
+      },
+      "explanation": "Địa chỉ IPv4 riêng tư (private) được thiết kế để dùng trong mạng nội bộ và không thể định tuyến trực tiếp trên Internet, vì vậy chúng phù hợp nhất cho các thiết bị chỉ giao tiếp với các thiết bị khác trong cùng tổ chức. Đáp án D đúng vì nếu một host không cần kết nối ra ngoài Internet, dùng địa chỉ private là lựa chọn hợp lý và tiết kiệm địa chỉ public.\n\nĐáp án A sai vì interface hướng ra Internet của firewall cần địa chỉ public để có thể định tuyến được trên Internet. Đáp án B sai vì để giao tiếp hai chiều với host bên ngoài tổ chức, thiết bị cần địa chỉ public hoặc phải qua NAT, và bản thân địa chỉ private không đủ để làm điều đó. Đáp án C sai vì dù host chỉ gửi dữ liệu ra ngoài, nó vẫn cần địa chỉ public (hoặc NAT) để các gói tin có thể được định tuyến đến đích trên Internet."
+    },
+    {
+      "id": "8.47",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must provide configured IP addressing details to investigate a firewall rule issue. Which subnet and mask identify what is configured on the en0 interface?",
+      "question_images": [
+        "q8.47_img1.jpg"
+      ],
+      "options": {
+        "A": "10.8.0.0/16",
+        "B": "10.8.64.0/18",
+        "C": "10.8.128.0/19",
+        "D": "10.8.138.0/24"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cần cung cấp thông tin chi tiết về địa chỉ IP đã cấu hình để điều tra sự cố quy tắc tường lửa (firewall rule). Subnet và mask nào xác định những gì được cấu hình trên giao diện en0?",
+      "options_vi": {
+        "A": "10.8.0.0/16",
+        "B": "10.8.64.0/18",
+        "C": "10.8.128.0/19",
+        "D": "10.8.138.0/24"
+      },
+      "explanation": "Câu hỏi này yêu cầu xác định địa chỉ mạng (network address) và subnet mask từ thông tin cấu hình trên interface en0. Thông thường trong output của lệnh ifconfig hoặc ip addr, interface en0 sẽ hiển thị địa chỉ IP dạng 10.8.138.x với prefix /19. Để tìm địa chỉ mạng, ta thực hiện phép AND giữa địa chỉ IP và subnet mask.\n\nVới /19, subnet mask là 255.255.224.0. Octet thứ ba có giá trị 224, nghĩa là các bit cao nhất của octet đó được dùng cho phần network. Lấy giá trị 138 (octet thứ ba của IP) AND với 224: 138 trong nhị phân là 10001010, còn 224 là 11100000, kết quả AND là 10000000 tức là 128. Vậy địa chỉ mạng là 10.8.128.0/19, đây chính là đáp án C.\n\nĐáp án A sai vì /16 cho ra network 10.8.0.0, đây là subnet quá lớn và không khớp với prefix /19 được cấu hình. Đáp án B sai vì 10.8.64.0/18 thuộc một dải khác hoàn toàn, octet thứ ba bắt đầu từ 64 không liên quan đến địa chỉ IP thực tế trên interface. Đáp án D sai vì 10.8.138.0/24 chỉ đơn giản lấy nguyên địa chỉ IP mà không thực hiện phép tính subnet, tức là nhầm lẫn giữa host address và network address."
+    },
+    {
+      "id": "8.51",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nShortly after SiteA was connected to SiteB over a new single-mode fiber path, users at SiteA report intermittent connectivity issues with applications hosted at SiteB. What is the cause of the intermittent connectivity issue?",
+      "question_images": [
+        "q8.51_img1.jpg"
+      ],
+      "options": {
+        "A": "An incorrect type of transceiver has been inserted into a device on the link.",
+        "B": "The wrong cable type was used to make the connection.",
+        "C": "Heavy usage is causing high latency.",
+        "D": "Physical network errors are being transmitted between the two sites."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSiteA#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is aabb.cc00.0100 (bia aabb.cc00.0100)\nDescription: Connection to SiteB\nInternet address is 10.10.10.1/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-SR\n5 minute input rate 264797000 bits/sec, 26672 packets/sec\n5 minute output rate 122464000 bits/sec, 15724 packets/sec\nSiteB#show interface TenGigabitEthernet0/1/0\nTenGigabitEthernet0/1/0 is up, line protocol is up\nHardware is BUILT-IN-EPA-8x10G, address is 0000.0c00.750c (bia 0000.0c00.750c)\nDescription: Connection to SiteA\nInternet address is 10.10.10.2/30\nMTU 8146 bytes, BW 10000000 Kbit/sec, DLY 10 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nFull Duplex, 10000Mbps, link type is force-up, media type is SFP-LR\n5 minute input rate 123245000 bits/sec, 15343 packets/sec\n5 minute output rate 265746000 bits/sec, 12453 packets/sec\nNgay sau khi SiteA được kết nối với SiteB qua một đường cáp quang đơn mode (single-mode fiber) mới, người dùng tại SiteA báo cáo sự cố kết nối không liên tục với các ứng dụng được lưu trữ tại SiteB. Nguyên nhân của sự cố kết nối không liên tục là gì?",
+      "options_vi": {
+        "A": "Một loại bộ thu phát (transceiver) không đúng đã được lắp vào thiết bị trên đường liên kết.",
+        "B": "Loại cáp sai đã được sử dụng để thực hiện kết nối.",
+        "C": "Lưu lượng sử dụng cao đang gây ra độ trễ (latency) cao.",
+        "D": "Lỗi mạng vật lý đang được truyền giữa hai site."
+      },
+      "explanation": "Đáp án A đúng vì SiteA đang dùng transceiver SFP-SR (Short Range), trong khi SiteB dùng SFP-LR (Long Range). Cáp single-mode fiber yêu cầu transceiver LR ở cả hai đầu — SR được thiết kế cho multimode fiber với khoảng cách ngắn. Sự không tương thích này khiến tín hiệu quang không ổn định, dẫn đến mất gói tin và kết nối bị gián đoạn dù đường link vẫn hiển thị \"up\".\n\nB sai vì cáp single-mode fiber là đúng cho kết nối LR, vấn đề nằm ở transceiver chứ không phải loại cáp. C sai vì dù traffic khá cao nhưng băng thông 10Gbps vẫn còn dư nhiều, không đủ để gây latency nghiêm trọng. D sai vì output của lệnh show interface không hiển thị bất kỳ lỗi vật lý nào như input errors hay CRC errors."
+    },
+    {
+      "id": "8.71",
+      "type": "single",
+      "question": "What is a characteristic or private IPv4 addressing?",
+      "question_images": [],
+      "options": {
+        "A": "composed of up to 65,536 available addresses",
+        "B": "issued by IANA in conjunction with an autonomous system number",
+        "C": "used without tracking or registration",
+        "D": "traverse the Internet when an outbound ACL is applied"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Đặc điểm của địa chỉ IPv4 riêng (private IPv4 addressing) là gì?",
+      "options_vi": {
+        "A": "bao gồm tối đa 65.536 địa chỉ khả dụng",
+        "B": "được cấp bởi IANA kèm theo số hệ thống tự trị (autonomous system number)",
+        "C": "được sử dụng mà không cần theo dõi hoặc đăng ký",
+        "D": "đi qua Internet khi một ACL chiều ra (outbound ACL) được áp dụng"
+      },
+      "explanation": "Đáp án C đúng vì địa chỉ IPv4 riêng tư (private) được định nghĩa trong RFC 1918 và có thể được bất kỳ tổ chức nào sử dụng tự do mà không cần đăng ký với IANA hay bất kỳ cơ quan nào, không giống địa chỉ công cộng phải được cấp phát và theo dõi.\n\nA sai vì con số 65.536 không mô tả đặc điểm của địa chỉ private — thực tế có hàng triệu địa chỉ private khả dụng trải rộng trên ba dải 10.0.0.0/8, 172.16.0.0/12 và 192.168.0.0/16.\n\nB sai vì địa chỉ private không liên quan đến autonomous system number, đó là khái niệm thuộc về giao thức định tuyến BGP dùng cho Internet.\n\nD sai vì địa chỉ private không thể định tuyến trên Internet, ngay cả khi có ACL outbound, mà phải qua NAT mới có thể giao tiếp ra ngoài."
+    },
+    {
+      "id": "8.80",
+      "type": "single",
+      "question": "What is a function of an endpoint on a network?",
+      "question_images": [],
+      "options": {
+        "A": "allows users to record data and transmit to a file server",
+        "B": "connects server and client devices to a network",
+        "C": "provides wireless services to users in a building",
+        "D": "forwards traffic between VLANs on a network"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng của một thiết bị đầu cuối (endpoint) trên mạng là gì?",
+      "options_vi": {
+        "A": "cho phép người dùng ghi dữ liệu và truyền đến máy chủ tệp (file server)",
+        "B": "kết nối các thiết bị máy chủ (server) và máy khách (client) vào mạng",
+        "C": "cung cấp dịch vụ không dây cho người dùng trong tòa nhà",
+        "D": "chuyển tiếp lưu lượng giữa các VLAN trên mạng"
+      },
+      "explanation": "Endpoint là thiết bị đầu cuối trên mạng, nơi người dùng tương tác trực tiếp như máy tính, điện thoại, hoặc máy in. Chức năng chính của endpoint là tạo ra, gửi và nhận dữ liệu, ví dụ như ghi dữ liệu và truyền lên file server, đúng như đáp án A mô tả.\n\nĐáp án B mô tả chức năng của switch hoặc hub, không phải endpoint. Đáp án C là chức năng của access point không dây. Đáp án D là chức năng của router hoặc Layer 3 switch khi thực hiện inter-VLAN routing."
+    },
+    {
+      "id": "9.17",
+      "type": "single",
+      "question": "Refer to the exhibit.\nTraffic that is flowing over interface TenGigabitEthernet0/0 experiences slow transfer speeds. What is the reason for the issue?",
+      "question_images": [
+        "q9.17_img1.jpg"
+      ],
+      "options": {
+        "A": "heavy traffic congestion",
+        "B": "queuing drops",
+        "C": "a speed conflict",
+        "D": "a duplex incompatibility"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLưu lượng đang chạy qua giao diện TenGigabitEthernet0/0 gặp tốc độ truyền chậm. Nguyên nhân của sự cố là gì?",
+      "options_vi": {
+        "A": "tắc nghẽn lưu lượng nặng (heavy traffic congestion)",
+        "B": "mất gói do hàng đợi (queuing drops)",
+        "C": "xung đột tốc độ (speed conflict)",
+        "D": "không tương thích duplex (duplex incompatibility)"
+      },
+      "explanation": "Đây là câu hỏi liên quan đến việc đọc thông tin từ output của lệnh show interface, vì vậy cần hiểu các chỉ số quan trọng trong đó.\n\nĐáp án D đúng vì khi có sự không khớp duplex giữa hai đầu kết nối (một đầu full-duplex, đầu kia half-duplex), interface sẽ xuất hiện các lỗi như late collisions và input errors tăng cao. Đây là dấu hiệu đặc trưng nhất của duplex mismatch, dẫn đến tốc độ truyền chậm dù băng thông vật lý vẫn hoạt động bình thường.\n\nĐáp án A sai vì tắc nghẽn lưu lượng nặng sẽ thể hiện qua output drops hoặc queue drops, không phải late collisions. Đáp án B sai vì queuing drops cũng sẽ hiển thị rõ ở output queue, không liên quan đến các lỗi collision. Đáp án C sai vì xung đột tốc độ (speed mismatch) thường khiến interface không lên được trạng thái up/up hoặc liên tục flap, chứ không gây ra late collisions như trong trường hợp này."
+    },
+    {
+      "id": "9.32",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhat is a reason for poor performance on the network interface?",
+      "question_images": [
+        "q9.32_img1.jpg"
+      ],
+      "options": {
+        "A": "The interface is receiving excessive broadcast traffic.",
+        "B": "The cable connection between the two devices is faulty.",
+        "C": "The interface is operating at a different speed than the connected device.",
+        "D": "The bandwidth setting of the interface is misconfigured"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nLý do nào gây ra hiệu suất kém trên giao diện mạng (network interface)?",
+      "options_vi": {
+        "A": "Giao diện đang nhận lưu lượng broadcast quá mức.",
+        "B": "Kết nối cáp giữa hai thiết bị bị lỗi.",
+        "C": "Giao diện đang hoạt động ở tốc độ khác với thiết bị được kết nối.",
+        "D": "Cài đặt băng thông (bandwidth) của giao diện bị cấu hình sai."
+      },
+      "explanation": "Để trả lời câu này cần xem exhibit, nhưng dựa vào đáp án đúng là B, có thể suy ra exhibit hiển thị output của lệnh \"show interfaces\" với số lượng lỗi cao như input errors, CRC errors, frame errors hoặc runts/giants. Đây là dấu hiệu đặc trưng của cáp vật lý bị lỗi, tiếp xúc kém, hoặc nhiễu tín hiệu trên đường truyền, khiến các frame bị hỏng trong quá trình truyền.\n\nĐáp án A sai vì broadcast quá nhiều sẽ làm tăng chỉ số input queue drops hoặc load cao, không gây ra CRC hay input errors. Đáp án C sai vì lệch tốc độ giữa hai thiết bị thường dẫn đến interface ở trạng thái down/down hoặc không kết nối được, không phải lỗi frame liên tục. Đáp án D sai vì bandwidth chỉ là thông số tham chiếu dùng cho các giao thức định tuyến như OSPF hay EIGRP để tính metric, nó không ảnh hưởng đến tốc độ truyền thực tế hay gây lỗi vật lý trên interface."
+    },
+    {
+      "id": "9.57",
+      "type": "single",
+      "question": "How do UTP and STP cables compare?",
+      "question_images": [],
+      "options": {
+        "A": "STP cables are cheaper to produre and easier to install and UTP cables are more expensive and harder to install.",
+        "B": "UTP cables are less prone to crosstalk and interference and STP cables are more prone to crosstalk and interference.",
+        "C": "UTP cables provide faster and more reliable data transfer rates and STP cables are slower and less reliable.",
+        "D": "STP cables are shielded and protect against electromagnetic interference and UTP lacks the same protection against electromagnetic interference."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Cáp UTP và STP so sánh với nhau như thế nào?",
+      "options_vi": {
+        "A": "Cáp STP rẻ hơn để sản xuất và dễ lắp đặt hơn, còn cáp UTP đắt hơn và khó lắp đặt hơn.",
+        "B": "Cáp UTP ít bị xuyên nhiễu (crosstalk) và nhiễu hơn, còn cáp STP dễ bị xuyên nhiễu và nhiễu hơn.",
+        "C": "Cáp UTP cung cấp tốc độ truyền dữ liệu nhanh hơn và đáng tin cậy hơn, còn cáp STP chậm hơn và kém tin cậy hơn.",
+        "D": "Cáp STP được bọc chống nhiễu và bảo vệ khỏi nhiễu điện từ (electromagnetic interference), còn UTP không có cùng mức bảo vệ khỏi nhiễu điện từ."
+      },
+      "explanation": "Đáp án D đúng vì đây là sự khác biệt cốt lõi giữa hai loại cáp: STP (Shielded Twisted Pair) có lớp bọc kim loại bảo vệ từng cặp dây hoặc toàn bộ cáp, giúp chống nhiễu điện từ (EMI) hiệu quả hơn, còn UTP (Unshielded Twisted Pair) không có lớp bọc này nên dễ bị ảnh hưởng bởi nhiễu từ môi trường xung quanh.\n\nĐáp án A sai vì thực tế ngược lại: STP đắt hơn và khó lắp đặt hơn UTP do có thêm lớp bọc và yêu cầu tiếp đất đúng cách.\n\nĐáp án B sai vì UTP thực ra dễ bị crosstalk và nhiễu hơn STP, không phải ít bị hơn.\n\nĐáp án C sai vì tốc độ và độ tin cậy không phụ thuộc vào việc cáp có bọc hay không mà phụ thuộc vào category của cáp (ví dụ Cat5e, Cat6), cả UTP và STP đều có thể đạt tốc độ tương đương ở cùng category."
+    },
+    {
+      "id": "9.77",
+      "type": "single",
+      "question": "Which WAN topology has the highest degree of reliability?",
+      "question_images": [],
+      "options": {
+        "A": "router-on-a-stick",
+        "B": "Point-to-point",
+        "C": "hub-and-spoke",
+        "D": "full mesh"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Topo mạng WAN nào có mức độ tin cậy cao nhất?",
+      "options_vi": {
+        "A": "router-on-a-stick",
+        "B": "Point-to-point",
+        "C": "hub-and-spoke",
+        "D": "full mesh"
+      },
+      "explanation": "Topo full mesh có độ tin cậy cao nhất vì mỗi thiết bị đều được kết nối trực tiếp với tất cả các thiết bị còn lại, tạo ra nhiều đường dự phòng. Nếu một liên kết bị đứt, lưu lượng vẫn có thể đi qua các đường khác mà không bị gián đoạn.\n\nRouter-on-a-stick không phải là topo WAN mà là kỹ thuật định tuyến inter-VLAN dùng một cổng vật lý với các subinterface. Point-to-point chỉ kết nối hai điểm, không có đường dự phòng nên nếu liên kết đứt là mất kết nối hoàn toàn. Hub-and-spoke tập trung tất cả kết nối qua một hub trung tâm, nếu hub gặp sự cố thì toàn bộ mạng bị ảnh hưởng."
+    },
+    {
+      "id": "9.93",
+      "type": "single",
+      "question": "What is a benefit for external users who consume public cloud resources?",
+      "question_images": [],
+      "options": {
+        "A": "implemented over a dedicated WAN",
+        "B": "located in the same data center as the users",
+        "C": "all hosted on physical servers",
+        "D": "accessed over the Internet"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Lợi ích nào dành cho người dùng bên ngoài khi sử dụng tài nguyên đám mây công cộng (public cloud)?",
+      "options_vi": {
+        "A": "được triển khai qua đường WAN chuyên dụng",
+        "B": "nằm trong cùng trung tâm dữ liệu (data center) với người dùng",
+        "C": "tất cả được lưu trữ trên máy chủ vật lý",
+        "D": "được truy cập qua Internet"
+      },
+      "explanation": "Đây là câu hỏi định nghĩa cơ bản về public cloud. Public cloud được truy cập qua Internet, đó chính là đặc điểm cốt lõi giúp người dùng bên ngoài có thể sử dụng tài nguyên từ bất kỳ đâu mà không cần kết nối riêng.\n\nĐáp án A sai vì WAN chuyên dụng là đặc điểm của private cloud hoặc các kết nối doanh nghiệp nội bộ, không phải public cloud. Đáp án B sai vì public cloud được lưu trữ tại các trung tâm dữ liệu của nhà cung cấp dịch vụ, không phải tại vị trí của người dùng. Đáp án C sai vì public cloud thường sử dụng ảo hóa và tài nguyên dùng chung, không nhất thiết phải là máy chủ vật lý riêng biệt."
+    },
+    {
+      "id": "9.97",
+      "type": "single",
+      "question": "When should an engineer implement a collapsed-core architecture?",
+      "question_images": [],
+      "options": {
+        "A": "for large networks that are connected to multiple remote sites",
+        "B": "the access and distribution layers must be on the same device",
+        "C": "only when using VSS technology",
+        "D": "for small networks with minimal need for growth"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Khi nào kỹ sư nên triển khai kiến trúc collapsed-core?",
+      "options_vi": {
+        "A": "cho các mạng lớn được kết nối đến nhiều site từ xa",
+        "B": "tầng truy cập (access) và tầng phân phối (distribution) phải nằm trên cùng một thiết bị",
+        "C": "chỉ khi sử dụng công nghệ VSS",
+        "D": "cho các mạng nhỏ với nhu cầu mở rộng tối thiểu"
+      },
+      "explanation": "Kiến trúc collapsed-core (hay còn gọi là two-tier) gộp tầng core và distribution vào một thiết bị duy nhất, phù hợp với các mạng nhỏ không có nhu cầu mở rộng lớn vì chi phí thấp hơn và độ phức tạp ít hơn so với mô hình ba tầng đầy đủ.\n\nĐáp án A sai vì mạng lớn kết nối nhiều site từ xa cần kiến trúc ba tầng đầy đủ để đảm bảo khả năng mở rộng và quản lý lưu lượng hiệu quả. Đáp án B mô tả sai bản chất của collapsed-core, vì đây là sự gộp tầng core và distribution, không phải access và distribution. Đáp án C sai vì collapsed-core không phụ thuộc vào công nghệ VSS, đây là hai khái niệm độc lập với nhau."
+    },
+    {
+      "id": "9.106",
+      "type": "single",
+      "question": "What is the difference between 1000BASE-LX/LH and 1000BASE-ZX interfaces?",
+      "question_images": [],
+      "options": {
+        "A": "1000BASE-LX/LH interoperates with multimode and single-mode fiber, and 1000BASE-ZX needs a conditioning patch cable with a multimode.",
+        "B": "1000BASE-ZX is supported on links up to 1000km, and 1000BASE-LX/LH operates over links up to 70 km.",
+        "C": "1000BASE-ZX interoperates with dual-rate 100M/1G 10Km SFP over multimode fiber, and 1000BASE-LX/LH supports only single-rate.",
+        "D": "1000BASE-LX/LH is supported on links up to 10km, and 1000BASE-ZX operates over links up to 70 km."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Sự khác biệt giữa giao diện 1000BASE-LX/LH và 1000BASE-ZX là gì?",
+      "options_vi": {
+        "A": "1000BASE-LX/LH tương thích với cáp quang multimode và single-mode, còn 1000BASE-ZX cần cáp patch điều hòa (conditioning patch cable) với multimode.",
+        "B": "1000BASE-ZX được hỗ trợ trên các liên kết lên đến 1000km, còn 1000BASE-LX/LH hoạt động trên các liên kết lên đến 70 km.",
+        "C": "1000BASE-ZX tương thích với SFP dual-rate 100M/1G 10Km qua cáp quang multimode, còn 1000BASE-LX/LH chỉ hỗ trợ single-rate.",
+        "D": "1000BASE-LX/LH được hỗ trợ trên các liên kết lên đến 10km, còn 1000BASE-ZX hoạt động trên các liên kết lên đến 70 km."
+      },
+      "explanation": "Đáp án D đúng vì đây là sự khác biệt khoảng cách chuẩn giữa hai loại interface này. 1000BASE-LX/LH sử dụng bước sóng 1310nm, hỗ trợ khoảng cách lên đến 10km trên cáp single-mode fiber. 1000BASE-ZX sử dụng bước sóng 1550nm với công suất phát cao hơn, cho phép truyền tín hiệu lên đến 70km trên cáp single-mode fiber.\n\nĐáp án A sai vì thực tế là ngược lại: chính 1000BASE-LX/LH mới cần conditioning patch cable khi dùng với multimode fiber, không phải 1000BASE-ZX. 1000BASE-ZX thực tế chỉ dùng với single-mode fiber.\n\nĐáp án B sai vì con số 1000km là hoàn toàn không thực tế với bất kỳ chuẩn Gigabit Ethernet nào. Khoảng cách tối đa của 1000BASE-ZX chỉ là 70km, không phải 1000km.\n\nĐáp án C sai vì 1000BASE-ZX không hỗ trợ dual-rate 100M/1G và không hoạt động trên multimode fiber. Đây là mô tả không chính xác về cả hai chuẩn này."
+    },
+    {
+      "id": "9.108",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhat is expected when PC_A sends data to PC_B after their initial communication?",
+      "question_images": [
+        "q9.108_img1.jpg"
+      ],
+      "options": {
+        "A": "The source and destination MAC addresses remain the same",
+        "B": "The switch rewrites the source and destination MAC addresses with its own",
+        "C": "The source MAC address is changed",
+        "D": "The destination MAC address is replaced with ffff.ffff.ffff"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nĐiều gì được mong đợi khi PC_A gửi dữ liệu đến PC_B sau lần giao tiếp ban đầu của chúng?",
+      "options_vi": {
+        "A": "Địa chỉ MAC nguồn và đích vẫn giữ nguyên",
+        "B": "Switch viết lại địa chỉ MAC nguồn và đích bằng địa chỉ của chính nó",
+        "C": "Địa chỉ MAC nguồn bị thay đổi",
+        "D": "Địa chỉ MAC đích được thay thế bằng ffff.ffff.ffff"
+      },
+      "explanation": "Sau lần giao tiếp đầu tiên, cả PC_A và switch đều đã học được địa chỉ MAC của nhau thông qua quá trình ARP và ghi vào bảng MAC. Khi PC_A gửi dữ liệu đến PC_B lần tiếp theo, switch chỉ chuyển tiếp frame mà không thay đổi bất kỳ địa chỉ MAC nào, địa chỉ MAC nguồn vẫn là của PC_A và địa chỉ MAC đích vẫn là của PC_B.\n\nĐáp án B sai vì switch không bao giờ thay thế địa chỉ MAC bằng địa chỉ của chính nó, đó là chức năng của router khi xử lý địa chỉ IP ở Layer 3. Đáp án C sai vì địa chỉ MAC nguồn luôn là của thiết bị gửi gốc và không bị thay đổi khi đi qua switch. Đáp án D sai vì địa chỉ broadcast ffff.ffff.ffff chỉ được dùng trong gói ARP request lần đầu khi chưa biết địa chỉ MAC đích, sau khi đã có thông tin trong bảng ARP thì frame sẽ được gửi unicast với địa chỉ MAC đích cụ thể."
+    },
+    {
+      "id": "10.3",
+      "type": "single",
+      "question": "What is the collapsed layer in collapsed core architectures?",
+      "question_images": [],
+      "options": {
+        "A": "core and WAN",
+        "B": "access and WAN",
+        "C": "distribution and access",
+        "D": "core and distribution"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tầng nào được gộp lại trong kiến trúc collapsed core?",
+      "options_vi": {
+        "A": "core và WAN",
+        "B": "access và WAN",
+        "C": "distribution và access",
+        "D": "core và distribution"
+      },
+      "explanation": "Trong kiến trúc collapsed core, tầng core và tầng distribution được gộp lại thành một tầng duy nhất, giúp giảm chi phí và độ phức tạp cho các mạng quy mô nhỏ đến trung bình. Tầng access vẫn được giữ nguyên để kết nối các thiết bị đầu cuối. Các đáp án A, B, C đều sai vì WAN không phải là một tầng trong mô hình phân cấp ba tầng của Cisco, và tầng access không bị gộp trong kiến trúc này."
+    },
+    {
+      "id": "10.18",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe given Windows PC is requesting the IP address of the host at www.cisco.com. To which IP address is the request sent?",
+      "question_images": [
+        "q10.18_img1.jpg"
+      ],
+      "options": {
+        "A": "192.168.1.226",
+        "B": "192.168.1.253",
+        "C": "192.168.1.100",
+        "D": "192.168.1.254"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nPC Windows đã cho đang yêu cầu địa chỉ IP của host tại www.cisco.com. Yêu cầu được gửi đến địa chỉ IP nào?",
+      "options_vi": {
+        "A": "192.168.1.226",
+        "B": "192.168.1.253",
+        "C": "192.168.1.100",
+        "D": "192.168.1.254"
+      },
+      "explanation": "Khi một máy tính cần phân giải tên miền như www.cisco.com thành địa chỉ IP, nó sẽ gửi truy vấn DNS đến địa chỉ IP của DNS server được cấu hình trong cài đặt mạng của máy đó. Trong bài này, DNS server được cấu hình trên máy Windows PC là 192.168.1.253, vì vậy yêu cầu DNS được gửi đến địa chỉ đó.\n\nCác đáp án còn lại sai vì chúng không phải là DNS server của máy này. 192.168.1.254 thường là địa chỉ default gateway (router), không phải DNS server. 192.168.1.100 có thể là địa chỉ của chính máy PC hoặc một thiết bị khác trong mạng. 192.168.1.226 không liên quan đến vai trò DNS trong cấu hình này."
+    },
+    {
+      "id": "10.41",
+      "type": "single",
+      "question": "What is a function of an endpoint?",
+      "question_images": [],
+      "options": {
+        "A": "It passes unicast communication between hosts in a network",
+        "B": "It is used directly by an individual user to access network services",
+        "C": "It provides security between trusted and untrusted sections of the network",
+        "D": "It transmits broadcast traffic between devices in the same VLAN"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng của thiết bị đầu cuối (endpoint) là gì?",
+      "options_vi": {
+        "A": "Nó chuyển tiếp giao tiếp unicast giữa các host trong mạng",
+        "B": "Nó được người dùng cá nhân sử dụng trực tiếp để truy cập các dịch vụ mạng",
+        "C": "Nó cung cấp bảo mật giữa các phần đáng tin cậy và không đáng tin cậy của mạng",
+        "D": "Nó truyền lưu lượng broadcast giữa các thiết bị trong cùng VLAN"
+      },
+      "explanation": "Đáp án B đúng vì endpoint (thiết bị đầu cuối) là các thiết bị như máy tính, điện thoại, máy tính bảng mà người dùng trực tiếp sử dụng để truy cập các dịch vụ mạng như web, email, hay ứng dụng.\n\nĐáp án A mô tả chức năng của switch, thiết bị chuyển tiếp lưu lượng unicast giữa các host. Đáp án C mô tả chức năng của firewall, phân tách vùng mạng tin cậy và không tin cậy. Đáp án D cũng mô tả chức năng của switch, thiết bị chịu trách nhiệm truyền broadcast trong cùng một VLAN."
+    },
+    {
+      "id": "10.45",
+      "type": "single",
+      "question": "In a cloud-computing environment, what is rapid elasticity?",
+      "question_images": [],
+      "options": {
+        "A": "automatic adjustment of capacity based on need",
+        "B": "control and monitoring of resource consumption by the tenant",
+        "C": "pooling resources in a multitenant model based on need",
+        "D": "self-service of computing resources by the tenant"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Trong môi trường điện toán đám mây (cloud-computing), tính co giãn nhanh (rapid elasticity) là gì?",
+      "options_vi": {
+        "A": "tự động điều chỉnh dung lượng dựa trên nhu cầu",
+        "B": "kiểm soát và giám sát mức tiêu thụ tài nguyên bởi người thuê (tenant)",
+        "C": "gộp tài nguyên trong mô hình đa người thuê (multitenant) dựa trên nhu cầu",
+        "D": "tự phục vụ tài nguyên tính toán bởi người thuê (tenant)"
+      },
+      "explanation": "Rapid elasticity (co giãn nhanh) là khả năng hệ thống tự động mở rộng hoặc thu hẹp tài nguyên theo nhu cầu thực tế, ví dụ như tăng thêm máy chủ khi lưu lượng tăng đột biến rồi giảm lại khi không cần. Đây chính xác là định nghĩa của đáp án A.\n\nĐáp án B mô tả tính năng đo lường và giám sát (measured service), không phải co giãn. Đáp án C nói về resource pooling, tức là gộp tài nguyên dùng chung cho nhiều khách thuê, cũng là một đặc tính riêng của cloud. Đáp án D mô tả self-service theo yêu cầu (on-demand self-service), cho phép người dùng tự cấp phát tài nguyên mà không cần liên hệ nhà cung cấp."
+    },
+    {
+      "id": "10.69",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must configure the link with these requirements:\n• Consume as few IP addresses as possible.\n• Leave at least two additional useable IP addresses for future growth.\nWhich set of configurations must be applied?",
+      "question_images": [
+        "q10.69_img1.jpg"
+      ],
+      "options": {
+        "A": "R1(config-if)#ip address 10.10.10.1 255.255.255.248 \nR2(config-if)#ip address 10.10.10.4 255.255.255.248",
+        "B": "R1(config-if)#ip address 10.10.10.1 255.255.255.240 \nR2(config-if)#ip address 10.10.10.12 255.255.255.240",
+        "C": "R1 (config-if)#ip address 10.10.10.1 255.255.255.252 \nR2(config-if)#ip address 10.10.10.2 255.255.255.252",
+        "D": "R1 (config-if)#ip address 10.10.10.1 255.255.255.0 \nR2(config-if)#ip address 10.10.10.5 255.255.255.0"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cần cấu hình liên kết với các yêu cầu sau:\n• Sử dụng càng ít địa chỉ IP càng tốt.\n• Để lại ít nhất hai địa chỉ IP khả dụng bổ sung cho việc mở rộng trong tương lai.\nBộ cấu hình nào phải được áp dụng?",
+      "options_vi": {
+        "A": "R1(config-if)#ip address 10.10.10.1 255.255.255.248 \nR2(config-if)#ip address 10.10.10.4 255.255.255.248",
+        "B": "R1(config-if)#ip address 10.10.10.1 255.255.255.240 \nR2(config-if)#ip address 10.10.10.12 255.255.255.240",
+        "C": "R1 (config-if)#ip address 10.10.10.1 255.255.255.252 \nR2(config-if)#ip address 10.10.10.2 255.255.255.252",
+        "D": "R1 (config-if)#ip address 10.10.10.1 255.255.255.0 \nR2(config-if)#ip address 10.10.10.5 255.255.255.0"
+      },
+      "explanation": "Đáp án A dùng subnet mask /29 (255.255.255.248), tạo ra subnet với 6 địa chỉ khả dụng (từ .1 đến .6). Hai router chiếm .1 và .4, còn lại 4 địa chỉ trống, thỏa mãn yêu cầu \"ít nhất 2 địa chỉ dự phòng cho tương lai\" trong khi vẫn tiết kiệm địa chỉ IP hơn các subnet lớn hơn.\n\nĐáp án C dùng /30 (255.255.255.252) chỉ có 2 địa chỉ khả dụng, đủ cho 2 router nhưng không còn địa chỉ nào dự phòng cho tương lai, vi phạm yêu cầu đề bài.\n\nĐáp án B dùng /28 (255.255.255.240) có 14 địa chỉ khả dụng, đáp ứng yêu cầu nhưng lãng phí địa chỉ IP hơn /29, không thỏa mãn yêu cầu \"tiêu thụ ít địa chỉ nhất có thể\". Ngoài ra, .1 và .12 thuộc cùng subnet /28 nhưng đây không phải lựa chọn tối ưu.\n\nĐáp án D dùng /24 (255.255.255.0) có tới 254 địa chỉ khả dụng, quá lãng phí cho một liên kết point-to-point chỉ cần vài địa chỉ."
+    },
+    {
+      "id": "10.81",
+      "type": "single",
+      "question": "How do TCP and UDP fit into a query-response model?",
+      "question_images": [],
+      "options": {
+        "A": "TCP avoids using sequencing, and UDP avoids using acknowledgments.",
+        "B": "TCP uses error detection for packets, and UDP uses error recovery.",
+        "C": "TCP establishes a connection prior to sending data, and UDP sends immediately.",
+        "D": "TCP encourages out-of-order packet delivery, and UDP prevents re-ordering."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "TCP và UDP phù hợp với mô hình truy vấn-phản hồi (query-response) như thế nào?",
+      "options_vi": {
+        "A": "TCP tránh sử dụng đánh số thứ tự (sequencing), còn UDP tránh sử dụng xác nhận (acknowledgments).",
+        "B": "TCP sử dụng phát hiện lỗi (error detection) cho các gói tin, còn UDP sử dụng khôi phục lỗi (error recovery).",
+        "C": "TCP thiết lập kết nối trước khi gửi dữ liệu, còn UDP gửi ngay lập tức.",
+        "D": "TCP khuyến khích gửi gói tin không theo thứ tự, còn UDP ngăn chặn việc sắp xếp lại."
+      },
+      "explanation": "TCP là giao thức hướng kết nối, nghĩa là trước khi truyền dữ liệu, nó phải thực hiện quá trình bắt tay ba bước (three-way handshake) để thiết lập kết nối với đầu nhận. UDP thì ngược lại, không cần thiết lập kết nối trước mà gửi dữ liệu ngay lập tức, phù hợp với các ứng dụng cần tốc độ như DNS query hay streaming.\n\nĐáp án A sai vì TCP thực sự sử dụng sequencing (đánh số thứ tự gói tin), và UDP mới là giao thức không dùng acknowledgment, không phải ngược lại. Đáp án B sai vì cả hai giao thức đều có thể dùng error detection (checksum), nhưng chỉ TCP mới có error recovery, còn UDP thì không. Đáp án D sai hoàn toàn vì TCP được thiết kế để đảm bảo thứ tự gói tin, không khuyến khích giao hàng lộn xộn, và UDP cũng không có cơ chế sắp xếp lại thứ tự."
+    },
+    {
+      "id": "10.86",
+      "type": "multiple",
+      "question": "What are two reasons to implement IPv4 private addressing on a network? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "to expand the routing table on the router",
+        "B": "to facilitate renumbering when merging networks",
+        "C": "to enable internal applications to treat the private IPv4 addresses as unique",
+        "D": "to conserve global unique IPv4 addresses",
+        "E": "to provide protection from external denial-of-service attacks"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai lý do nào để triển khai địa chỉ IPv4 riêng (private addressing) trên mạng? (Chọn hai)",
+      "options_vi": {
+        "A": "để mở rộng bảng định tuyến (routing table) trên router",
+        "B": "để tạo thuận lợi cho việc đánh số lại khi hợp nhất các mạng",
+        "C": "để cho phép các ứng dụng nội bộ coi các địa chỉ IPv4 riêng là duy nhất",
+        "D": "để tiết kiệm địa chỉ IPv4 duy nhất toàn cầu (global unique)",
+        "E": "để cung cấp bảo vệ khỏi các cuộc tấn công từ chối dịch vụ (denial-of-service) từ bên ngoài"
+      },
+      "explanation": "Hai lý do chính để triển khai địa chỉ IPv4 riêng tư là tiết kiệm địa chỉ IPv4 công cộng toàn cầu và cung cấp một mức độ bảo vệ nhất định trước các cuộc tấn công từ bên ngoài.\n\nD đúng vì không gian địa chỉ IPv4 công cộng có giới hạn, và việc dùng địa chỉ riêng tư (như 10.x.x.x, 172.16.x.x, 192.168.x.x) kết hợp với NAT cho phép nhiều thiết bị nội bộ chia sẻ một số ít địa chỉ công cộng, giúp làm chậm quá trình cạn kiệt IPv4.\n\nE đúng vì các thiết bị dùng địa chỉ riêng tư không thể định tuyến trực tiếp từ internet, nghĩa là kẻ tấn công bên ngoài không thể gửi gói tin trực tiếp đến các máy nội bộ đó, giúp giảm bề mặt tấn công từ các cuộc tấn công DoS bên ngoài.\n\nA sai vì địa chỉ riêng tư không được quảng bá ra internet, nên chúng không làm tăng bảng định tuyến của router mà thực ra còn giúp giảm kích thước bảng định tuyến toàn cầu.\n\nB sai vì việc hợp nhất mạng dùng địa chỉ riêng tư thường gây ra xung đột địa chỉ chứ không giúp đánh số lại dễ dàng hơn, đây không phải lý do để triển khai địa chỉ riêng tư.\n\nC sai vì địa chỉ riêng tư không phải là duy nhất toàn cầu, nhiều tổ chức khác nhau có thể dùng cùng một dải địa chỉ riêng tư, nên ứng dụng nội bộ không thể xem chúng là duy nhất trên toàn mạng internet."
+    }
+  ]
+}

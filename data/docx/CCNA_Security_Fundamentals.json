@@ -1,0 +1,1647 @@
+{
+  "count": 66,
+  "questions": [
+    {
+      "id": "5.3",
+      "type": "single",
+      "question": "Which type of security program is violated when a group of employees enters a building using the ID badge of only one person?",
+      "question_images": [],
+      "options": {
+        "A": "intrusion detection",
+        "B": "user awareness",
+        "C": "physical access control",
+        "D": "network authorization"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Loại chương trình bảo mật nào bị vi phạm khi một nhóm nhân viên vào tòa nhà chỉ sử dụng thẻ ID của một người?",
+      "options_vi": {
+        "A": "phát hiện xâm nhập (intrusion detection)",
+        "B": "nhận thức người dùng (user awareness)",
+        "C": "kiểm soát truy cập vật lý (physical access control)",
+        "D": "ủy quyền mạng (network authorization)"
+      },
+      "explanation": "Đáp án đúng là C vì tình huống này mô tả hành vi \"tailgating\" hoặc \"piggybacking\" — nhiều người đi vào tòa nhà chỉ bằng một thẻ ID duy nhất, đây là vi phạm trực tiếp chính sách kiểm soát truy cập vật lý. Kiểm soát truy cập vật lý yêu cầu mỗi người phải xác thực danh tính của chính mình trước khi được phép vào khu vực bảo mật.\n\nCác đáp án còn lại không phù hợp vì: intrusion detection (A) liên quan đến việc phát hiện xâm nhập trong hệ thống mạng, không phải kiểm soát ra vào tòa nhà; user awareness (B) là chương trình nâng cao nhận thức bảo mật cho người dùng, không phải loại chính sách bị vi phạm ở đây; network authorization (D) liên quan đến quyền truy cập tài nguyên mạng, hoàn toàn không liên quan đến việc vào cửa vật lý."
+    },
+    {
+      "id": "5.11",
+      "type": "single",
+      "question": "Which device tracks the state of active connections in order to make a decision to forward a packet through?",
+      "question_images": [],
+      "options": {
+        "A": "firewall",
+        "B": "wireless access point",
+        "C": "router",
+        "D": "wireless LAN controller"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Thiết bị nào theo dõi trạng thái của các kết nối đang hoạt động để đưa ra quyết định chuyển tiếp gói tin?",
+      "options_vi": {
+        "A": "tường lửa (firewall)",
+        "B": "điểm truy cập không dây (wireless access point)",
+        "C": "bộ định tuyến (router)",
+        "D": "bộ điều khiển mạng LAN không dây (wireless LAN controller)"
+      },
+      "explanation": "Firewall là thiết bị theo dõi trạng thái của các kết nối đang hoạt động thông qua kỹ thuật gọi là stateful inspection. Dựa vào bảng trạng thái này, firewall quyết định cho phép hay chặn gói tin đi qua, không chỉ dựa trên địa chỉ IP hay cổng mà còn dựa trên ngữ cảnh của toàn bộ phiên kết nối.\n\nRouter chỉ đưa ra quyết định chuyển tiếp dựa trên địa chỉ IP đích trong bảng định tuyến, không theo dõi trạng thái kết nối. Wireless access point chỉ kết nối các thiết bị không dây vào mạng có dây, không có chức năng kiểm tra trạng thái gói tin. Wireless LAN controller quản lý tập trung các access point, không phải thiết bị xử lý quyết định chuyển tiếp dựa trên trạng thái kết nối."
+    },
+    {
+      "id": "5.13",
+      "type": "single",
+      "question": "Refer to the exhibit. A network administrator has been tasked with securing VTY access to a router. Which access-list entry accomplishes this task?",
+      "question_images": [
+        "q5.13_img1.jpg"
+      ],
+      "options": {
+        "A": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq ssh",
+        "B": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq scp",
+        "C": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq telnet",
+        "D": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq https"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa. Một quản trị viên mạng được giao nhiệm vụ bảo mật truy cập VTY đến một bộ định tuyến (router). Mục nhập access-list nào hoàn thành nhiệm vụ này?",
+      "options_vi": {
+        "A": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq ssh",
+        "B": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq scp",
+        "C": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq telnet",
+        "D": "access-list 101 permit tcp 10.1.1.0 0.0.0.255 172.16.1.0 0.0.0.255 eq https"
+      },
+      "explanation": "Đáp án A đúng vì SSH (port 22) là giao thức được dùng để truy cập VTY một cách bảo mật, mã hóa toàn bộ phiên kết nối bao gồm cả thông tin xác thực. Khi áp dụng access-list này vào đường VTY, chỉ các host thuộc mạng 10.1.1.0/24 mới được phép kết nối SSH đến router tại địa chỉ 172.16.1.0/24, đây chính là mục tiêu \"bảo mật truy cập VTY\".\n\nĐáp án B sai vì SCP (Secure Copy Protocol) dùng để truyền file, không phải để đăng nhập quản lý thiết bị qua VTY. Đáp án C sai vì Telnet truyền dữ liệu dạng plaintext, không mã hóa, nên không đáp ứng yêu cầu bảo mật. Đáp án D sai vì HTTPS là giao thức web, không liên quan đến truy cập VTY của router."
+    },
+    {
+      "id": "5.33",
+      "type": "single",
+      "question": "Which implementation provides the strongest encryption combination for the wireless environment?",
+      "question_images": [],
+      "options": {
+        "A": "WPA2 + AES",
+        "B": "WPA + AES",
+        "C": "WEP",
+        "D": "WPA + TKIP"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Triển khai nào cung cấp tổ hợp mã hóa mạnh nhất cho môi trường không dây (wireless)?",
+      "options_vi": {
+        "A": "WPA2 + AES",
+        "B": "WPA + AES",
+        "C": "WEP",
+        "D": "WPA + TKIP"
+      },
+      "explanation": "WPA2 kết hợp với AES là lựa chọn mạnh nhất vì WPA2 sử dụng chuẩn mã hóa AES-CCMP, được thiết kế dựa trên thuật toán AES 128-bit, cung cấp mức độ bảo mật cao nhất hiện có cho mạng không dây. WPA2 là phiên bản nâng cấp của WPA, khắc phục nhiều điểm yếu bảo mật và được yêu cầu bắt buộc bởi Wi-Fi Alliance từ năm 2006.\n\nWPA + AES tuy dùng AES nhưng nền tảng WPA vẫn còn một số hạn chế so với WPA2, nên tổ hợp này không mạnh bằng WPA2 + AES. WPA + TKIP sử dụng giao thức TKIP vốn là bản vá tạm thời cho WEP, có nhiều lỗ hổng đã được biết đến và không còn được coi là an toàn. WEP là chuẩn cũ nhất và yếu nhất, có thể bị bẻ khóa trong vài phút bằng các công cụ phổ biến, không nên sử dụng trong bất kỳ môi trường nào."
+    },
+    {
+      "id": "5.42",
+      "type": "single",
+      "question": "What is a network appliance that checks the state of a packet to determine whether the packet is legitimate?",
+      "question_images": [],
+      "options": {
+        "A": "Layer 2 switch",
+        "B": "LAN controller",
+        "C": "load balancer",
+        "D": "firewall"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Thiết bị mạng nào kiểm tra trạng thái của một gói tin để xác định xem gói tin đó có hợp lệ hay không?",
+      "options_vi": {
+        "A": "switch Lớp 2 (Layer 2 switch)",
+        "B": "bộ điều khiển LAN (LAN controller)",
+        "C": "bộ cân bằng tải (load balancer)",
+        "D": "tường lửa (firewall)"
+      },
+      "explanation": "Firewall là thiết bị bảo mật mạng có khả năng kiểm tra trạng thái của gói tin (stateful inspection) để xác định gói tin đó có hợp lệ hay không, từ đó cho phép hoặc chặn lưu lượng dựa trên các quy tắc bảo mật đã định sẵn.\n\nLayer 2 switch chỉ chuyển tiếp frame dựa trên địa chỉ MAC, không có chức năng kiểm tra bảo mật gói tin. LAN controller dùng để quản lý các thiết bị mạng không dây, không liên quan đến việc lọc gói tin. Load balancer có nhiệm vụ phân phối lưu lượng đến nhiều máy chủ để cân bằng tải, không phải kiểm tra tính hợp lệ của gói tin theo nghĩa bảo mật."
+    },
+    {
+      "id": "5.47",
+      "type": "single",
+      "question": "What causes a port to be placed in the err-disabled state?",
+      "question_images": [],
+      "options": {
+        "A": "latency",
+        "B": "nothing plugged into the port",
+        "C": "shutdown command issued on the port",
+        "D": "port security violation"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Điều gì khiến một cổng bị đặt vào trạng thái err-disabled?",
+      "options_vi": {
+        "A": "độ trễ (latency)",
+        "B": "không có gì được cắm vào cổng",
+        "C": "lệnh shutdown được thực thi trên cổng",
+        "D": "vi phạm bảo mật cổng (port security violation)"
+      },
+      "explanation": "Đáp án D đúng vì khi một cổng vi phạm chính sách port security, ví dụ như có địa chỉ MAC không được phép kết nối vào, Cisco switch sẽ tự động chuyển cổng đó sang trạng thái err-disabled để ngăn chặn truy cập trái phép. Trạng thái này khác với shutdown thông thường vì nó được kích hoạt tự động bởi hệ thống, không phải do người quản trị.\n\nĐáp án A sai vì độ trễ mạng không gây ra err-disabled. Đáp án B sai vì cổng không có thiết bị cắm vào sẽ ở trạng thái down bình thường, không phải err-disabled. Đáp án C sai vì lệnh shutdown chỉ đưa cổng về trạng thái administratively down, hoàn toàn khác với err-disabled."
+    },
+    {
+      "id": "5.49",
+      "type": "single",
+      "question": "Which security program element involves installing badge readers on data-center doors to allow workers to enter and exit based on their job roles?",
+      "question_images": [],
+      "options": {
+        "A": "physical access control",
+        "B": "biometrics",
+        "C": "role-based access control",
+        "D": "multifactor authentication"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Yếu tố chương trình bảo mật nào liên quan đến việc lắp đặt đầu đọc thẻ trên cửa trung tâm dữ liệu (data center) để cho phép nhân viên ra vào dựa trên vai trò công việc của họ?",
+      "options_vi": {
+        "A": "kiểm soát truy cập vật lý (physical access control)",
+        "B": "sinh trắc học (biometrics)",
+        "C": "kiểm soát truy cập dựa trên vai trò (role-based access control)",
+        "D": "xác thực đa yếu tố (multifactor authentication)"
+      },
+      "explanation": "Đáp án đúng là A vì badge reader trên cửa trung tâm dữ liệu là một biện pháp kiểm soát truy cập vật lý, nhằm hạn chế người có thể vào hoặc ra khỏi không gian thực tế dựa trên vai trò công việc.\n\nBiometrics (B) cũng là kiểm soát truy cập vật lý nhưng dùng đặc điểm sinh học như vân tay hoặc nhận diện khuôn mặt, không phải badge. Role-based access control (C) liên quan đến quyền truy cập hệ thống và dữ liệu trong phần mềm, không phải cửa vật lý. Multifactor authentication (D) là xác thực nhiều yếu tố dùng để đăng nhập vào hệ thống, không phải cơ chế kiểm soát cửa ra vào."
+    },
+    {
+      "id": "6.4",
+      "type": "single",
+      "question": "When a WLAN with WPA2 PSK is configured in the Wireless LAN Controller GUI which format is supported?",
+      "question_images": [],
+      "options": {
+        "A": "Unicode",
+        "B": "base64",
+        "C": "ASCII",
+        "D": "decimal"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Khi một WLAN với WPA2 PSK được cấu hình trong giao diện GUI của Wireless LAN Controller, định dạng nào được hỗ trợ?",
+      "options_vi": {
+        "A": "Unicode",
+        "B": "base64",
+        "C": "ASCII",
+        "D": "decimal"
+      },
+      "explanation": "Khi cấu hình WLAN với WPA2 PSK trên giao diện GUI của Wireless LAN Controller, mật khẩu PSK được nhập dưới dạng ASCII, tức là chuỗi ký tự văn bản thông thường có độ dài từ 8 đến 63 ký tự. Đây là định dạng chuẩn mà WPA2 PSK sử dụng để người dùng nhập passphrase dễ đọc và dễ nhớ.\n\nCác đáp án còn lại đều không đúng vì Unicode, base64 và decimal không phải là định dạng được hỗ trợ để nhập PSK trong giao diện WLC. Base64 và decimal là các hệ thống mã hóa hoặc biểu diễn số, không phải định dạng nhập passphrase trực tiếp, còn Unicode tuy là bộ ký tự rộng hơn ASCII nhưng không được WLC hỗ trợ cho trường PSK này."
+    },
+    {
+      "id": "6.30",
+      "type": "multiple",
+      "question": "Which two protocols are supported on service-port interfaces? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "RADIUS",
+        "B": "TACACS+",
+        "C": "Telnet",
+        "D": "SCP",
+        "E": "SSH"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai giao thức nào được hỗ trợ trên các giao diện service-port? (Chọn hai)",
+      "options_vi": {
+        "A": "RADIUS",
+        "B": "TACACS+",
+        "C": "Telnet",
+        "D": "SCP",
+        "E": "SSH"
+      },
+      "explanation": "Service-port interface là cổng quản lý ngoài băng tần (out-of-band management) trên các thiết bị Cisco, được dùng để truy cập quản trị thiết bị khi mạng chính gặp sự cố. Cổng này hỗ trợ Telnet và SSH vì đây là hai giao thức truy cập terminal từ xa, cho phép quản trị viên đăng nhập và cấu hình thiết bị trực tiếp qua service-port.\n\nRADIUS và TACACS+ là các giao thức xác thực AAA, chúng được dùng để xác minh danh tính người dùng chứ không phải để thiết lập kết nối quản lý trực tiếp đến cổng dịch vụ. SCP là giao thức truyền file an toàn, không phải giao thức truy cập terminal nên cũng không được hỗ trợ trên service-port interface."
+    },
+    {
+      "id": "6.33",
+      "type": "single",
+      "question": "Which global command encrypts all passwords in the running configuration?",
+      "question_images": [],
+      "options": {
+        "A": "enable secret",
+        "B": "enable password-encryption",
+        "C": "service password-encryption",
+        "D": "password-encrypt"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Lệnh toàn cục (global command) nào mã hóa tất cả mật khẩu trong cấu hình đang chạy (running configuration)?",
+      "options_vi": {
+        "A": "enable secret",
+        "B": "enable password-encryption",
+        "C": "service password-encryption",
+        "D": "password-encrypt"
+      },
+      "explanation": "Lệnh \"service password-encryption\" được nhập ở chế độ global configuration và sẽ mã hóa tất cả các mật khẩu dạng plaintext trong file cấu hình, bao gồm enable password, console, VTY và các mật khẩu khác. Đây là lệnh duy nhất có tác dụng toàn cục lên toàn bộ cấu hình đang chạy.\n\n\"enable secret\" chỉ tạo một mật khẩu riêng cho chế độ privileged EXEC và tự động dùng MD5 để băm, không phải lệnh mã hóa toàn cục. \"enable password-encryption\" và \"password-encrypt\" không phải là lệnh hợp lệ trong IOS của Cisco."
+    },
+    {
+      "id": "7.20",
+      "type": "single",
+      "question": "When a site-to-site VPN is configured, which IPsec mode provides encapsulation and encryption of the entire original IP packet?",
+      "question_images": [],
+      "options": {
+        "A": "IPsec tunnel mode with AH",
+        "B": "IPsec transport mode with AH",
+        "C": "IPsec tunnel mode with ESP",
+        "D": "IPsec transport mode with ESP"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Khi một VPN site-to-site được cấu hình, chế độ IPsec nào cung cấp đóng gói và mã hóa toàn bộ gói IP gốc?",
+      "options_vi": {
+        "A": "IPsec tunnel mode với AH",
+        "B": "IPsec transport mode với AH",
+        "C": "IPsec tunnel mode với ESP",
+        "D": "IPsec transport mode với ESP"
+      },
+      "explanation": "Đáp án C đúng vì IPsec tunnel mode đóng gói toàn bộ gói IP gốc (bao gồm cả header) vào một gói IP mới, và ESP (Encapsulating Security Payload) cung cấp khả năng mã hóa dữ liệu, đây chính xác là yêu cầu đề bài đặt ra.\n\nĐáp án A sai vì AH (Authentication Header) không cung cấp mã hóa, chỉ xác thực tính toàn vẹn của gói tin, dù tunnel mode có đóng gói toàn bộ gói IP gốc.\n\nĐáp án B sai vì transport mode chỉ bảo vệ phần payload của gói IP gốc chứ không đóng gói toàn bộ gói, và AH cũng không mã hóa dữ liệu.\n\nĐáp án D sai vì dù ESP có khả năng mã hóa, transport mode không đóng gói toàn bộ gói IP gốc mà chỉ bảo vệ phần dữ liệu bên trong, không phù hợp với site-to-site VPN cần ẩn địa chỉ IP nội bộ."
+    },
+    {
+      "id": "7.22",
+      "type": "single",
+      "question": "What is the role of a firewall in an enterprise network?",
+      "question_images": [],
+      "options": {
+        "A": "determines which packets are allowed to cross from unsecured to secured networks",
+        "B": "processes unauthorized packets and allows passage to less secure segments of the network",
+        "C": "forwards packets based on stateless packet inspection",
+        "D": "explicitly denies all packets from entering an administrative domain"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Vai trò của tường lửa (firewall) trong mạng doanh nghiệp (enterprise network) là gì?",
+      "options_vi": {
+        "A": "xác định gói tin nào được phép đi qua từ mạng không an toàn sang mạng an toàn",
+        "B": "xử lý các gói tin trái phép và cho phép chuyển đến các phân đoạn mạng kém an toàn hơn",
+        "C": "chuyển tiếp gói tin dựa trên kiểm tra gói tin không trạng thái (stateless packet inspection)",
+        "D": "từ chối rõ ràng tất cả các gói tin đi vào một miền quản trị (administrative domain)"
+      },
+      "explanation": "Firewall có nhiệm vụ kiểm tra lưu lượng mạng và quyết định gói tin nào được phép đi qua ranh giới giữa vùng không an toàn (như internet) và vùng an toàn (như mạng nội bộ), đây chính xác là định nghĩa cốt lõi của thiết bị này.\n\nĐáp án B sai vì firewall không \"xử lý rồi cho phép\" các gói tin trái phép đi vào vùng kém bảo mật hơn, mà ngược lại, nó chặn chúng. Đáp án C sai vì firewall hiện đại sử dụng stateful inspection (kiểm tra trạng thái kết nối), không phải stateless. Đáp án D sai vì firewall không từ chối tất cả mọi gói tin, nó cho phép lưu lượng hợp lệ đi qua dựa trên các quy tắc được cấu hình sẵn."
+    },
+    {
+      "id": "7.24",
+      "type": "single",
+      "question": "How are VLAN hopping attacks mitigated?",
+      "question_images": [],
+      "options": {
+        "A": "manually implement trunk ports and disable DTP",
+        "B": "configure extended VLANs",
+        "C": "activate all ports and place in the default VLAN",
+        "D": "enable dynamic ARP inspection"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Các cuộc tấn công VLAN hopping được giảm thiểu như thế nào?",
+      "options_vi": {
+        "A": "cấu hình thủ công các cổng trunk và vô hiệu hóa DTP",
+        "B": "cấu hình các VLAN mở rộng (extended VLANs)",
+        "C": "kích hoạt tất cả các cổng và đặt vào VLAN mặc định",
+        "D": "bật kiểm tra ARP động (dynamic ARP inspection)"
+      },
+      "explanation": "Tấn công VLAN hopping thường khai thác giao thức DTP (Dynamic Trunking Protocol) để thương lượng trunk với switch, từ đó truy cập vào các VLAN khác. Cách phòng chống hiệu quả là cấu hình thủ công các trunk port thay vì để DTP tự động thương lượng, đồng thời tắt DTP trên tất cả các port không cần thiết để loại bỏ khả năng bị lợi dụng.\n\nĐáp án B sai vì extended VLAN chỉ mở rộng phạm vi đánh số VLAN, không có tác dụng ngăn chặn tấn công hopping. Đáp án C ngược lại với biện pháp bảo mật, vì kích hoạt tất cả port và đặt vào VLAN mặc định còn làm tăng bề mặt tấn công. Đáp án D là biện pháp chống ARP spoofing, không liên quan đến VLAN hopping."
+    },
+    {
+      "id": "7.30",
+      "type": "multiple",
+      "question": "Which two protocols must be disabled to increase security for management connections to a Wireless LAN Controller? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Telnet",
+        "B": "SSH",
+        "C": "HTTP",
+        "D": "HTTPS",
+        "E": "TFTP"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai giao thức nào phải được vô hiệu hóa để tăng cường bảo mật cho các kết nối quản lý đến Bộ điều khiển mạng LAN không dây (Wireless LAN Controller)? (Chọn hai)",
+      "options_vi": {
+        "A": "Telnet",
+        "B": "SSH",
+        "C": "HTTP",
+        "D": "HTTPS",
+        "E": "TFTP"
+      },
+      "explanation": "Telnet và HTTP là hai giao thức truyền dữ liệu dưới dạng văn bản thuần túy, không mã hóa, nên thông tin đăng nhập và dữ liệu quản lý có thể bị đánh cắp qua tấn công nghe lén. Để tăng cường bảo mật cho kết nối quản lý đến WLC, cần vô hiệu hóa hai giao thức này và thay thế bằng các phiên bản an toàn hơn.\n\nSSH là giao thức thay thế Telnet với khả năng mã hóa toàn bộ phiên kết nối, nên cần được giữ lại chứ không phải vô hiệu hóa. HTTPS là phiên bản bảo mật của HTTP, sử dụng TLS để mã hóa lưu lượng web, vì vậy đây là giao thức nên dùng để quản lý WLC qua giao diện web. TFTP là giao thức truyền file đơn giản, không liên quan trực tiếp đến việc thiết lập phiên quản lý tương tác nên không phải đáp án trong ngữ cảnh này."
+    },
+    {
+      "id": "7.40",
+      "type": "single",
+      "question": "What does physical access control regulate?",
+      "question_images": [],
+      "options": {
+        "A": "access to specific networks based on business function",
+        "B": "access to servers to prevent malicious activity",
+        "C": "access to computer networks and file systems",
+        "D": "access to networking equipment and facilities"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Kiểm soát truy cập vật lý (physical access control) điều chỉnh điều gì?",
+      "options_vi": {
+        "A": "truy cập vào các mạng cụ thể dựa trên chức năng kinh doanh",
+        "B": "truy cập vào máy chủ để ngăn chặn hoạt động độc hại",
+        "C": "truy cập vào mạng máy tính và hệ thống tệp",
+        "D": "truy cập vào thiết bị mạng và cơ sở hạ tầng"
+      },
+      "explanation": "Kiểm soát truy cập vật lý (physical access control) liên quan đến việc hạn chế ai được phép tiếp cận trực tiếp các thiết bị mạng như router, switch, server vật lý, và các cơ sở hạ tầng như phòng máy chủ hay tủ rack. Đây là lớp bảo mật đầu tiên, ngăn chặn người không có thẩm quyền chạm tay vào thiết bị.\n\nCác đáp án còn lại mô tả các hình thức kiểm soát truy cập logic (logical access control): đáp án A nói về phân quyền mạng theo chức năng nghiệp vụ, đáp án B nói về bảo vệ server khỏi hoạt động độc hại qua phần mềm, và đáp án C mô tả kiểm soát truy cập vào hệ thống mạng và file system thông qua xác thực tài khoản. Tất cả đều là kiểm soát logic, không phải vật lý."
+    },
+    {
+      "id": "7.49",
+      "type": "single",
+      "question": "Which function is performed by DHCP snooping?",
+      "question_images": [],
+      "options": {
+        "A": "rate-limits certain traffic",
+        "B": "listens to multicast traffic for packet forwarding",
+        "C": "provides DDoS mitigation",
+        "D": "propagates VLAN information between switches"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng nào được thực hiện bởi DHCP snooping?",
+      "options_vi": {
+        "A": "giới hạn tốc độ một số lưu lượng nhất định",
+        "B": "lắng nghe lưu lượng multicast để chuyển tiếp gói tin",
+        "C": "cung cấp giảm thiểu tấn công DDoS",
+        "D": "truyền thông tin VLAN giữa các switch"
+      },
+      "explanation": "DHCP snooping là một tính năng bảo mật trên switch, hoạt động bằng cách phân biệt cổng tin cậy (trusted) và không tin cậy (untrusted), đồng thời giới hạn tốc độ (rate-limit) các gói tin DHCP đến từ cổng untrusted để ngăn chặn tấn công DHCP starvation hoặc rogue DHCP server.\n\nB sai vì đó là chức năng của IGMP snooping, dùng để theo dõi lưu lượng multicast. C sai vì DHCP snooping không được thiết kế để chống DDoS theo nghĩa rộng, dù nó có thể hạn chế một số kiểu tấn công nhỏ liên quan đến DHCP. D sai vì đó là chức năng của VTP (VLAN Trunking Protocol), không liên quan gì đến DHCP snooping."
+    },
+    {
+      "id": "7.55",
+      "type": "single",
+      "question": "Which access layer threat-mitigation technique provides security based on identity?",
+      "question_images": [],
+      "options": {
+        "A": "using a non-default native VLAN",
+        "B": "Dynamic ARP Inspection",
+        "C": "DHCP snooping",
+        "D": "802.1x"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Kỹ thuật giảm thiểu mối đe dọa tầng truy cập (access layer) nào cung cấp bảo mật dựa trên danh tính (identity)?",
+      "options_vi": {
+        "A": "sử dụng VLAN native không mặc định",
+        "B": "Dynamic ARP Inspection",
+        "C": "DHCP snooping",
+        "D": "802.1x"
+      },
+      "explanation": "802.1x là giao thức kiểm soát truy cập mạng dựa trên danh tính (identity-based), yêu cầu người dùng hoặc thiết bị phải xác thực trước khi được phép truy cập vào mạng. Nó sử dụng ba thành phần gồm supplicant, authenticator và authentication server (thường là RADIUS) để xác minh danh tính trước khi mở cổng switch.\n\nCác đáp án còn lại không liên quan đến danh tính. Sử dụng native VLAN không mặc định là biện pháp chống VLAN hopping, không liên quan đến xác thực người dùng. Dynamic ARP Inspection ngăn chặn ARP spoofing bằng cách kiểm tra bảng DHCP snooping binding, không dựa trên danh tính. DHCP snooping lọc các gói DHCP giả mạo từ các cổng không tin cậy, cũng không liên quan đến việc xác thực danh tính người dùng hay thiết bị."
+    },
+    {
+      "id": "8.3",
+      "type": "single",
+      "question": "How does WPA3 improve security?",
+      "question_images": [],
+      "options": {
+        "A": "It uses SAE for authentication.",
+        "B": "It uses a 4-way handshake for authentication.",
+        "C": "It uses RC4 for encryption.",
+        "D": "It uses TKIP for encryption."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "WPA3 cải thiện bảo mật như thế nào?",
+      "options_vi": {
+        "A": "Nó sử dụng SAE để xác thực.",
+        "B": "Nó sử dụng bắt tay 4 bước (4-way handshake) để xác thực.",
+        "C": "Nó sử dụng RC4 để mã hóa.",
+        "D": "Nó sử dụng TKIP để mã hóa."
+      },
+      "explanation": "WPA3 cải thiện bảo mật bằng cách thay thế cơ chế xác thực PSK (Pre-Shared Key) cũ bằng SAE (Simultaneous Authentication of Equals), giúp chống lại các cuộc tấn công từ điển và brute-force ngay cả khi mật khẩu yếu. SAE cũng cung cấp tính năng forward secrecy, nghĩa là dù kẻ tấn công có được mật khẩu sau này cũng không thể giải mã các phiên trước đó.\n\nĐáp án B sai vì 4-way handshake là cơ chế của WPA2, không phải WPA3. Đáp án C sai vì RC4 là thuật toán mã hóa lỗi thời, yếu, được dùng trong WEP chứ không phải WPA3. Đáp án D sai vì TKIP cũng là giao thức mã hóa cũ thuộc WPA thế hệ đầu, WPA3 sử dụng AES-GCMP thay thế."
+    },
+    {
+      "id": "8.16",
+      "type": "single",
+      "question": "Which type of traffic is sent with pure IPsec?",
+      "question_images": [],
+      "options": {
+        "A": "broadcast packets from a switch that is attempting to locate a MAC address at one of several remote sites",
+        "B": "multicast traffic from a server at one site to hosts at another location",
+        "C": "spanning-tree updates between switches that are at two different sites",
+        "D": "unicast messages from a host at a remote site to a server at headquarters"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Loại lưu lượng nào được gửi với IPsec thuần túy (pure IPsec)?",
+      "options_vi": {
+        "A": "gói tin broadcast từ một switch đang cố gắng định vị địa chỉ MAC tại một trong nhiều site từ xa",
+        "B": "lưu lượng multicast từ một máy chủ tại một site đến các host tại vị trí khác",
+        "C": "cập nhật spanning-tree giữa các switch tại hai site khác nhau",
+        "D": "thông điệp unicast từ một host tại site từ xa đến máy chủ tại trụ sở chính"
+      },
+      "explanation": "IPsec thuần túy (pure IPsec) chỉ hỗ trợ lưu lượng unicast, tức là gói tin được gửi từ một nguồn đến một đích duy nhất. Đây là giới hạn cơ bản của IPsec khi hoạt động độc lập, không kết hợp với GRE hay các giao thức đường hầm khác.\n\nĐáp án A sai vì broadcast (ví dụ ARP để tìm địa chỉ MAC) không được IPsec hỗ trợ trực tiếp. Đáp án B sai vì multicast cũng nằm ngoài khả năng của pure IPsec. Đáp án C sai vì Spanning Tree Protocol dùng multicast để trao đổi BPDU giữa các switch, nên cũng không thể truyền qua pure IPsec. Nếu cần truyền broadcast hoặc multicast qua IPsec, cần bọc thêm GRE (GRE over IPsec) để đóng gói các loại lưu lượng đó thành unicast trước."
+    },
+    {
+      "id": "8.24",
+      "type": "single",
+      "question": "Which device permits or denies network traffic based on a set of rules?",
+      "question_images": [],
+      "options": {
+        "A": "access point",
+        "B": "switch",
+        "C": "wireless controller",
+        "D": "firewall"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Thiết bị nào cho phép hoặc từ chối lưu lượng mạng dựa trên một tập hợp các quy tắc?",
+      "options_vi": {
+        "A": "điểm truy cập (access point)",
+        "B": "switch",
+        "C": "bộ điều khiển không dây (wireless controller)",
+        "D": "tường lửa (firewall)"
+      },
+      "explanation": "Firewall là thiết bị được thiết kế chuyên biệt để kiểm soát luồng lưu lượng mạng bằng cách áp dụng các quy tắc cho phép hoặc từ chối kết nối dựa trên địa chỉ IP, cổng, giao thức và nhiều tiêu chí khác. Đây chính xác là chức năng cốt lõi của firewall trong bảo mật mạng.\n\nBa lựa chọn còn lại không có chức năng này. Access point chỉ cung cấp kết nối không dây cho các thiết bị. Switch chuyển tiếp khung dữ liệu giữa các thiết bị trong cùng mạng LAN dựa trên địa chỉ MAC, không lọc lưu lượng theo quy tắc bảo mật. Wireless controller quản lý và cấu hình tập trung các access point, không phải thiết bị lọc lưu lượng."
+    },
+    {
+      "id": "8.34",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRefer to the exhibit. The access list denies Telnet access from PC-1 to RTR-1 and should allow it from other hosts. PC-2 gets “% Connection refused by remote host” when trying to Telnet. Without permitting Telnet from PC-1, what must be done to allow the traffic?",
+      "question_images": [
+        "q8.34_img1.jpg"
+      ],
+      "options": {
+        "A": "Add the access-list 10 permit any command to the configuration",
+        "B": "Remove the access-class 10 in command from line vty 0 4.",
+        "C": "Add the ip access-group 10 out command to interface g0/0.",
+        "D": "Remove the password command from line vty 0 4."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nTham khảo hình minh họa. Danh sách truy cập (access list) từ chối truy cập Telnet từ PC-1 đến RTR-1 và nên cho phép từ các host khác. PC-2 nhận được thông báo \"% Connection refused by remote host\" khi cố gắng Telnet. Nếu không cho phép Telnet từ PC-1, cần phải làm gì để cho phép lưu lượng này?",
+      "options_vi": {
+        "A": "Thêm lệnh access-list 10 permit any vào cấu hình",
+        "B": "Xóa lệnh access-class 10 in khỏi line vty 0 4.",
+        "C": "Thêm lệnh ip access-group 10 out vào interface g0/0.",
+        "D": "Xóa lệnh password khỏi line vty 0 4."
+      },
+      "explanation": "Đây là câu hỏi về ACL áp dụng trên đường VTY để kiểm soát truy cập Telnet.\n\nAccess list 10 hiện tại chỉ có một dòng deny cho PC-1, nhưng thiếu câu lệnh permit cuối cùng. Trong Cisco IOS, mọi ACL đều có implicit deny any ở cuối, nghĩa là tất cả traffic không khớp với bất kỳ dòng nào sẽ bị chặn — đó là lý do PC-2 bị từ chối dù không có rule nào nhắm vào nó. Thêm access-list 10 permit any sẽ cho phép tất cả các host khác (trừ PC-1 đã bị deny trước đó) kết nối Telnet thành công.\n\nĐáp án B sai vì xóa access-class 10 in sẽ gỡ bỏ toàn bộ ACL khỏi VTY, kể cả rule deny PC-1, tức là PC-1 cũng được phép Telnet — vi phạm yêu cầu đề bài.\n\nĐáp án C sai vì ip access-group áp dụng trên interface vật lý, không phải trên VTY, nên không ảnh hưởng đến việc kiểm soát truy cập Telnet vào router.\n\nĐáp án D sai vì xóa password trên VTY sẽ khiến Telnet bị từ chối hoàn toàn do Cisco yêu cầu phải có password trên VTY mới cho phép kết nối."
+    },
+    {
+      "id": "8.37",
+      "type": "multiple",
+      "question": "Which two components comprise part of a PKI? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "RSA token",
+        "B": "clear-text password that authenticates connections",
+        "C": "one of more CRLs",
+        "D": "preshared key that authenticates connections",
+        "E": "CA that grants certificates"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai thành phần nào là một phần của PKI? (Chọn hai)",
+      "options_vi": {
+        "A": "RSA token",
+        "B": "mật khẩu văn bản rõ (clear-text password) xác thực các kết nối",
+        "C": "một hoặc nhiều CRL",
+        "D": "khóa chia sẻ trước (preshared key) xác thực các kết nối",
+        "E": "CA cấp chứng chỉ (certificates)"
+      },
+      "explanation": "PKI (Public Key Infrastructure) là một hệ thống quản lý chứng chỉ số, bao gồm hai thành phần cốt lõi. CA (Certificate Authority) là tổ chức có thẩm quyền cấp phát và ký số các chứng chỉ, đây là trung tâm của toàn bộ hệ thống PKI. CRL (Certificate Revocation List) là danh sách các chứng chỉ đã bị thu hồi trước hạn, giúp các thiết bị kiểm tra xem chứng chỉ còn hiệu lực hay không — đây cũng là thành phần bắt buộc trong PKI.\n\nCác đáp án còn lại không thuộc PKI vì chúng dùng cơ chế xác thực khác. RSA token là thiết bị tạo mã OTP, không liên quan đến hạ tầng chứng chỉ. Clear-text password và preshared key đều là phương thức xác thực truyền thống, không sử dụng chứng chỉ số, nên không phải thành phần của PKI."
+    },
+    {
+      "id": "8.46",
+      "type": "single",
+      "question": "Which wireless security protocol relies on Perfect Forward Secrecy?",
+      "question_images": [],
+      "options": {
+        "A": "WPA",
+        "B": "WPA3",
+        "C": "WPA2",
+        "D": "WEP"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Giao thức bảo mật không dây nào dựa vào Bảo mật chuyển tiếp hoàn hảo (Perfect Forward Secrecy)?",
+      "options_vi": {
+        "A": "WPA",
+        "B": "WPA3",
+        "C": "WPA2",
+        "D": "WEP"
+      },
+      "explanation": "WPA3 là giao thức bảo mật không dây sử dụng Perfect Forward Secrecy thông qua cơ chế bắt tay SAE (Simultaneous Authentication of Equals), đảm bảo rằng ngay cả khi khóa phiên bị lộ, các phiên trước đó vẫn không thể bị giải mã. Đây là một trong những cải tiến quan trọng nhất của WPA3 so với các thế hệ trước.\n\nWPA và WPA2 không hỗ trợ Perfect Forward Secrecy vì chúng dùng cơ chế bắt tay 4 bước truyền thống, cho phép kẻ tấn công có thể giải mã lưu lượng cũ nếu lấy được khóa. WEP là giao thức cũ và yếu nhất, hoàn toàn không có các tính năng bảo mật hiện đại như vậy."
+    },
+    {
+      "id": "8.55",
+      "type": "multiple",
+      "question": "Refer to the exhibit.\nWhich two commands must be configured on router R1 to enable the router to accept secure remote-access connections? (Choose two)",
+      "question_images": [
+        "q8.55_img1.jpg"
+      ],
+      "options": {
+        "A": "transport input telnet",
+        "B": "username cisco password 0 cisco",
+        "C": "login console",
+        "D": "ip ssh pubkey-chain",
+        "E": "crypto key generate rsa"
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai lệnh nào phải được cấu hình trên router R1 để cho phép router chấp nhận các kết nối truy cập từ xa an toàn? (Chọn hai)",
+      "options_vi": {
+        "A": "transport input telnet",
+        "B": "username cisco password 0 cisco",
+        "C": "login console",
+        "D": "ip ssh pubkey-chain",
+        "E": "crypto key generate rsa"
+      },
+      "explanation": "Đây là câu hỏi về cấu hình SSH trên router, yêu cầu xác định hai lệnh bắt buộc để cho phép kết nối remote an toàn (SSH).\n\nĐáp án B đúng vì SSH yêu cầu xác thực bằng tài khoản cục bộ. Lệnh \"username cisco password 0 cisco\" tạo một tài khoản người dùng trên router, và khi kết hợp với lệnh \"login local\" trên đường VTY, router mới có thể xác thực người dùng SSH. Không có tài khoản cục bộ thì SSH không thể hoạt động đúng cách.\n\nĐáp án E đúng vì SSH là giao thức mã hóa, nên bắt buộc phải có cặp khóa RSA. Lệnh \"crypto key generate rsa\" tạo ra cặp khóa công khai và riêng tư, đây là điều kiện tiên quyết để bật SSH trên router. Nếu không có khóa RSA, lệnh \"ip ssh version 2\" cũng không thể kích hoạt được.\n\nĐáp án A sai vì \"transport input telnet\" chỉ cho phép Telnet, không phải SSH. Để chấp nhận SSH, cần dùng \"transport input ssh\" hoặc \"transport input ssh telnet\".\n\nĐáp án C sai vì \"login console\" không phải lệnh hợp lệ trong ngữ cảnh này. Lệnh đúng để yêu cầu xác thực tài khoản cục bộ trên VTY là \"login local\".\n\nĐáp án D sai vì \"ip ssh pubkey-chain\" dùng để cấu hình xác thực bằng khóa công khai cho SSH client, không phải lệnh cần thiết để bật SSH cơ bản trên router."
+    },
+    {
+      "id": "8.59",
+      "type": "single",
+      "question": "An engineer must configure R1 for a new user account. The account must meet these requirements:\n* It must be configured in the local database.\n* The username is engineer2\n* It must use the strongest password configurable.\nWhich command must the engineer configure on the router?",
+      "question_images": [],
+      "options": {
+        "A": "R1(config)# username engineer2 algorithm-type scrypt secret test2021",
+        "B": "R1(config)# username engineer2 secret 5 password $1$bUu$kZbBS1Pyh4QzwXyZ",
+        "C": "R1(config)# username engineer2 privilege 1 password 7 test2021",
+        "D": "R1(config)# username engineer2 secret 4 $1Sb1Ju$kZbBSlFyh4QxwXyZ"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư phải cấu hình R1 cho một tài khoản người dùng mới. Tài khoản phải đáp ứng các yêu cầu sau:\n* Phải được cấu hình trong cơ sở dữ liệu cục bộ (local database).\n* Tên người dùng là engineer2\n* Phải sử dụng mật khẩu mạnh nhất có thể cấu hình.\nKỹ sư phải cấu hình lệnh nào trên router?",
+      "options_vi": {
+        "A": "R1(config)# username engineer2 algorithm-type scrypt secret test2021",
+        "B": "R1(config)# username engineer2 secret 5 password $1$bUu$kZbBS1Pyh4QzwXyZ",
+        "C": "R1(config)# username engineer2 privilege 1 password 7 test2021",
+        "D": "R1(config)# username engineer2 secret 4 $1Sb1Ju$kZbBSlFyh4QxwXyZ"
+      },
+      "explanation": "Đáp án A đúng vì lệnh `algorithm-type scrypt` chỉ định thuật toán mã hóa mạnh nhất có thể cấu hình trên router Cisco cho tài khoản local. Scrypt là thuật toán băm hiện đại, mạnh hơn MD5 (type 5) và SHA-256 (type 4), đáp ứng yêu cầu \"mật khẩu mạnh nhất có thể cấu hình\".\n\nĐáp án B sai vì `secret 5` sử dụng MD5 để băm mật khẩu, đây là thuật toán yếu hơn scrypt và không phải mạnh nhất. Ngoài ra cú pháp này dùng để nhập hash có sẵn chứ không phải mật khẩu plaintext thông thường.\n\nĐáp án C sai vì `password 7` chỉ dùng mã hóa Vigenere (type 7) — đây là mã hóa đảo ngược được, rất yếu, không phải hashing thực sự, và hoàn toàn không đáp ứng yêu cầu mật khẩu mạnh nhất.\n\nĐáp án D sai vì `secret 4` sử dụng SHA-256, mạnh hơn MD5 nhưng vẫn kém hơn scrypt. Hơn nữa Cisco đã không khuyến khích dùng type 4 do lỗi triển khai trong một số phiên bản IOS khiến nó kém an toàn hơn dự kiến."
+    },
+    {
+      "id": "8.69",
+      "type": "single",
+      "question": "An engineer is configuring remote access to a router from IP subnet 10.139.58.0/28. The domain name, crypto keys, and SSH have been configured. Which configuration enables the traffic on the destination router?",
+      "question_images": [],
+      "options": {
+        "A": "interface FastEthernet0/0 \nip address 10.122.49.1 255.255.255.252 \nip access-group 10 in\n!\nip access-list standard 10\npermit udp 10.139.58.0 0.0.0.7 host 10.122.49.1 eq 22",
+        "B": "line vty 0 15 \naccess-class 120 in\n!\nip access-list extended 120\npermit tcp 10.139.58.0 0.0.0.15 any eq 22",
+        "C": "line vty 0 15 \naccess-group 120 in\n!\nip access-list extended 120\npermit tcp 10.139.58.0 0.0.0.15 any eq 22",
+        "D": "interface FastEthernet0/0 \nip address 10.122.49.1 255.255.255.252 \nip access-group 110 in\n!\nip access-list standard 110\npermit tcp 10.139.58.0 0.0.0.15 eq 22 host 10.122.49.1"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình truy cập từ xa đến router từ mạng con IP 10.139.58.0/28. Tên miền, khóa mã hóa (crypto keys) và SSH đã được cấu hình. Cấu hình nào cho phép lưu lượng trên router đích?",
+      "options_vi": {
+        "A": "interface FastEthernet0/0 \nip address 10.122.49.1 255.255.255.252 \nip access-group 10 in\n!\nip access-list standard 10\npermit udp 10.139.58.0 0.0.0.7 host 10.122.49.1 eq 22",
+        "B": "line vty 0 15 \naccess-class 120 in\n!\nip access-list extended 120\npermit tcp 10.139.58.0 0.0.0.15 any eq 22",
+        "C": "line vty 0 15 \naccess-group 120 in\n!\nip access-list extended 120\npermit tcp 10.139.58.0 0.0.0.15 any eq 22",
+        "D": "interface FastEthernet0/0 \nip address 10.122.49.1 255.255.255.252 \nip access-group 110 in\n!\nip access-list standard 110\npermit tcp 10.139.58.0 0.0.0.15 eq 22 host 10.122.49.1"
+      },
+      "explanation": "Đáp án B đúng vì để kiểm soát truy cập SSH vào các đường VTY, ta phải dùng lệnh access-class trên line vty, không phải ip access-group. Subnet 10.139.58.0/28 có wildcard mask là 0.0.0.15, và SSH dùng TCP port 22, nên cần ACL extended với permit tcp. Cấu hình \"permit tcp 10.139.58.0 0.0.0.15 any eq 22\" cho phép đúng subnet nguồn kết nối SSH đến bất kỳ địa chỉ nào trên router.\n\nĐáp án A sai vì dùng ip access-group trên interface thay vì access-class trên VTY, dùng ACL standard thay vì extended, dùng UDP thay vì TCP, và wildcard mask 0.0.0.7 không khớp với /28.\n\nĐáp án C sai vì lệnh access-group không tồn tại trên line vty, cú pháp đúng phải là access-class.\n\nĐáp án D sai vì dùng ip access-group trên interface thay vì access-class trên VTY, và ACL standard không thể lọc theo giao thức hay port."
+    },
+    {
+      "id": "8.70",
+      "type": "single",
+      "question": "Which protocol is used for secure remote CLI access?",
+      "question_images": [],
+      "options": {
+        "A": "HTTP",
+        "B": "Telnet",
+        "C": "SSH",
+        "D": "HTTPS"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Giao thức nào được sử dụng để truy cập CLI từ xa an toàn?",
+      "options_vi": {
+        "A": "HTTP",
+        "B": "Telnet",
+        "C": "SSH",
+        "D": "HTTPS"
+      },
+      "explanation": "SSH (Secure Shell) là giao thức được thiết kế để cung cấp quyền truy cập CLI từ xa một cách bảo mật, sử dụng mã hóa để bảo vệ toàn bộ phiên làm việc. Telnet cũng cho phép truy cập CLI từ xa nhưng truyền dữ liệu dạng plaintext, nghĩa là mật khẩu và lệnh đều có thể bị nghe lén. HTTP và HTTPS là giao thức web dùng để truy cập trang web, không phải để truy cập CLI."
+    },
+    {
+      "id": "9.3",
+      "type": "single",
+      "question": "Which field within the access-request packet is encrypted by RADIUS?",
+      "question_images": [],
+      "options": {
+        "A": "authorized services",
+        "B": "authenticator",
+        "C": "username",
+        "D": "password"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Trường nào trong gói access-request được mã hóa bởi RADIUS?",
+      "options_vi": {
+        "A": "dịch vụ được ủy quyền (authorized services)",
+        "B": "bộ xác thực (authenticator)",
+        "C": "tên người dùng (username)",
+        "D": "mật khẩu (password)"
+      },
+      "explanation": "RADIUS mã hóa trường password trong gói access-request bằng thuật toán MD5, kết hợp với shared secret giữa client và server để bảo vệ thông tin xác thực. Đây là thiết kế cố ý của RADIUS nhằm bảo vệ mật khẩu người dùng trong quá trình truyền qua mạng.\n\nCác đáp án còn lại đều sai vì RADIUS không mã hóa chúng. Username được gửi dưới dạng plaintext, authenticator là giá trị dùng để xác minh tính toàn vẹn của gói tin chứ không phải trường được mã hóa, còn authorized services là thông tin được trả về trong gói access-accept chứ không nằm trong access-request."
+    },
+    {
+      "id": "9.6",
+      "type": "single",
+      "question": "What is a function of a Next-Generation IPS?",
+      "question_images": [],
+      "options": {
+        "A": "makes forwarding decisions based on learned MAC addresses",
+        "B": "serves as a controller within a controller-based network",
+        "C": "integrates with a RADIUS server to enforce Layer 2 device authentication rules",
+        "D": "correlates user activity with network events"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng của IPS thế hệ tiếp theo (Next-Generation IPS) là gì?",
+      "options_vi": {
+        "A": "đưa ra quyết định chuyển tiếp dựa trên các địa chỉ MAC đã học",
+        "B": "hoạt động như một bộ điều khiển trong mạng dựa trên bộ điều khiển (controller-based network)",
+        "C": "tích hợp với máy chủ RADIUS để thực thi các quy tắc xác thực thiết bị Lớp 2 (Layer 2)",
+        "D": "tương quan hoạt động của người dùng với các sự kiện mạng"
+      },
+      "explanation": "Hệ thống ngăn chặn xâm nhập thế hệ mới (Next-Generation IPS) không chỉ phát hiện các mối đe dọa dựa trên chữ ký như IPS truyền thống, mà còn có khả năng liên kết hoạt động của người dùng với các sự kiện mạng để cung cấp bối cảnh đầy đủ hơn cho việc phân tích bảo mật. Điều này giúp xác định ai đang thực hiện hành động nào trên mạng, từ đó phát hiện các mối đe dọa phức tạp hơn.\n\nĐáp án A mô tả chức năng của switch Layer 2, không liên quan đến IPS. Đáp án B mô tả vai trò của một controller trong mạng SDN như Cisco DNA Center. Đáp án C mô tả chức năng xác thực thiết bị Layer 2 thông qua 802.1X kết hợp RADIUS, đây là nhiệm vụ của hệ thống kiểm soát truy cập mạng (NAC), không phải NGIPS."
+    },
+    {
+      "id": "9.8",
+      "type": "multiple",
+      "question": "Refer to the exhibit.\nWhich two commands must be added to update the configuration of router R1 so that it accepts only encrypted connections? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "username CNAC secret R!41!4319115@",
+        "B": "crypto key generate rsa 1024",
+        "C": "ip ssh version 2",
+        "D": "line vty 0 4",
+        "E": "transport input ssh"
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai lệnh nào phải được thêm vào để cập nhật cấu hình của router R1 sao cho nó chỉ chấp nhận các kết nối được mã hóa? (Chọn hai)",
+      "options_vi": {
+        "A": "username CNAC secret R!41!4319115@",
+        "B": "crypto key generate rsa 1024",
+        "C": "ip ssh version 2",
+        "D": "line vty 0 4",
+        "E": "transport input ssh"
+      },
+      "explanation": "Để router R1 chỉ chấp nhận kết nối được mã hóa (SSH), cần có hai điều kiện cốt lõi: tạo khóa RSA để kích hoạt SSH và cấu hình các đường VTY chỉ cho phép SSH.\n\nLệnh \"crypto key generate rsa 1024\" tạo ra cặp khóa RSA cần thiết để SSH hoạt động — không có khóa này, SSH không thể được bật trên router. Lệnh \"transport input ssh\" được áp dụng trên các đường VTY để chặn Telnet và chỉ cho phép kết nối SSH đến, đây chính là yêu cầu \"chỉ chấp nhận kết nối mã hóa\".\n\nCác đáp án sai: A sai vì lệnh username với secret có thể đã tồn tại trong cấu hình hiện tại (đề bài hỏi những gì cần thêm), và dù sao nó cũng không trực tiếp bật SSH hay chặn Telnet. C sai vì \"ip ssh version 2\" là tùy chọn nâng cao để chỉ định phiên bản SSH, không bắt buộc để SSH hoạt động cơ bản. D sai vì \"line vty 0 4\" chỉ là lệnh vào chế độ cấu hình đường VTY, không phải lệnh cấu hình thực sự — nó không thay đổi hành vi nào cả."
+    },
+    {
+      "id": "9.13",
+      "type": "single",
+      "question": "Which WLC management connection type is vulnerable to man-in-the-middle attacks?",
+      "question_images": [],
+      "options": {
+        "A": "SSH",
+        "B": "HTTPS",
+        "C": "Telnet",
+        "D": "console"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Loại kết nối quản lý WLC nào dễ bị tấn công xen giữa (man-in-the-middle)?",
+      "options_vi": {
+        "A": "SSH",
+        "B": "HTTPS",
+        "C": "Telnet",
+        "D": "console"
+      },
+      "explanation": "Telnet truyền dữ liệu dưới dạng văn bản thuần túy (plaintext), bao gồm cả tên đăng nhập và mật khẩu, nên kẻ tấn công có thể dễ dàng nghe lén và đánh cắp thông tin trên đường truyền, đây chính là bản chất của tấn công man-in-the-middle. SSH và HTTPS đều mã hóa toàn bộ phiên kết nối nên không thể bị đọc trộm dù bị chặn giữa chừng. Kết nối console là kết nối vật lý trực tiếp vào thiết bị, không đi qua mạng nên không có nguy cơ bị tấn công man-in-the-middle."
+    },
+    {
+      "id": "9.15",
+      "type": "single",
+      "question": "Which characteristic differentiates the concept of authentication from authorization and accounting?",
+      "question_images": [],
+      "options": {
+        "A": "user-activity logging",
+        "B": "service limitations",
+        "C": "consumption-based billing",
+        "D": "identity verification"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Đặc điểm nào phân biệt khái niệm xác thực (authentication) với ủy quyền (authorization) và kế toán (accounting)?",
+      "options_vi": {
+        "A": "ghi nhật ký hoạt động người dùng (user-activity logging)",
+        "B": "giới hạn dịch vụ (service limitations)",
+        "C": "thanh toán dựa trên mức sử dụng (consumption-based billing)",
+        "D": "xác minh danh tính (identity verification)"
+      },
+      "explanation": "Xác thực (authentication) là quá trình xác minh danh tính của người dùng, tức là kiểm tra xem \"bạn là ai\" thông qua tên đăng nhập, mật khẩu, hoặc các phương thức khác. Đây chính là điểm phân biệt authentication với hai khái niệm còn lại trong mô hình AAA.\n\nAuthorization (phân quyền) liên quan đến việc giới hạn dịch vụ hoặc tài nguyên mà người dùng được phép truy cập sau khi đã xác thực, nên đáp án B mô tả authorization chứ không phải authentication. Accounting (kiểm toán) theo dõi và ghi lại hoạt động của người dùng để phục vụ mục đích kiểm tra hoặc tính phí, nên đáp án A và C đều mô tả accounting. Đáp án D đúng vì identity verification chính xác là bản chất của authentication trong mô hình AAA."
+    },
+    {
+      "id": "9.18",
+      "type": "single",
+      "question": "Which type of network attack overwhelms the target server by sending multiple packets to a port until the half-open TCP resources of the target are exhausted?",
+      "question_images": [],
+      "options": {
+        "A": "SYN flood",
+        "B": "reflection",
+        "C": "teardrop",
+        "D": "amplification"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Loại tấn công mạng nào làm quá tải máy chủ đích bằng cách gửi nhiều gói tin đến một cổng cho đến khi tài nguyên TCP nửa mở (half-open) của mục tiêu bị cạn kiệt?",
+      "options_vi": {
+        "A": "SYN flood",
+        "B": "reflection",
+        "C": "teardrop",
+        "D": "amplification"
+      },
+      "explanation": "Tấn công SYN flood khai thác quá trình bắt tay ba bước của TCP. Kẻ tấn công gửi hàng loạt gói SYN đến máy chủ mục tiêu nhưng không bao giờ hoàn thành bước thứ ba (gửi ACK), khiến máy chủ phải giữ hàng loạt kết nối ở trạng thái half-open cho đến khi tài nguyên bị cạn kiệt và không thể phục vụ các kết nối hợp lệ nữa.\n\nReflection và amplification là hai kỹ thuật liên quan đến việc lợi dụng bên thứ ba để khuếch đại lưu lượng tấn công, không nhắm vào tài nguyên TCP half-open. Teardrop là kiểu tấn công gửi các gói IP bị phân mảnh chồng chéo nhau để làm hệ thống mục tiêu bị lỗi khi cố gắng tái hợp các mảnh đó, hoàn toàn khác với cơ chế của SYN flood."
+    },
+    {
+      "id": "9.28",
+      "type": "single",
+      "question": "What is a function of Opportunistic Wireless Encryption in an environment?",
+      "question_images": [],
+      "options": {
+        "A": "offer compression",
+        "B": "increase security by using a WEP connection",
+        "C": "provide authentication",
+        "D": "protect traffic on open networks"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng của Mã hóa không dây cơ hội (Opportunistic Wireless Encryption) trong một môi trường là gì?",
+      "options_vi": {
+        "A": "cung cấp nén dữ liệu (compression)",
+        "B": "tăng cường bảo mật bằng cách sử dụng kết nối WEP",
+        "C": "cung cấp xác thực (authentication)",
+        "D": "bảo vệ lưu lượng trên các mạng mở (open networks)"
+      },
+      "explanation": "OWE (Opportunistic Wireless Encryption) được thiết kế để mã hóa lưu lượng trên các mạng Wi-Fi mở, tức là những mạng không yêu cầu mật khẩu. Thay vì truyền dữ liệu dạng plaintext như trước, OWE tự động thiết lập kết nối mã hóa giữa client và access point mà không cần xác thực, giúp bảo vệ người dùng khỏi các cuộc tấn công nghe lén.\n\nA sai vì OWE không liên quan đến nén dữ liệu. B sai vì WEP là giao thức cũ đã bị coi là không an toàn và OWE không sử dụng WEP. C sai vì OWE không cung cấp xác thực người dùng, đây là điểm khác biệt chính so với WPA2/WPA3 Enterprise."
+    },
+    {
+      "id": "9.30",
+      "type": "single",
+      "question": "Which action implements physical access control as part of the security program of an organization?",
+      "question_images": [],
+      "options": {
+        "A": "setting up IP cameras to monitor key infrastructure",
+        "B": "backing up syslogs at a remote location",
+        "C": "configuring enable passwords on network devices",
+        "D": "configuring a password for the console port"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Hành động nào triển khai kiểm soát truy cập vật lý (physical access control) như một phần của chương trình bảo mật của tổ chức?",
+      "options_vi": {
+        "A": "thiết lập camera IP để giám sát cơ sở hạ tầng quan trọng",
+        "B": "sao lưu syslog tại một vị trí từ xa",
+        "C": "cấu hình mật khẩu enable trên các thiết bị mạng",
+        "D": "cấu hình mật khẩu cho cổng console"
+      },
+      "explanation": "Kiểm soát truy cập vật lý (physical access control) là các biện pháp bảo vệ cơ sở hạ tầng trong thế giới thực, không phải trên mạng. Lắp đặt camera IP để giám sát các khu vực quan trọng là một biện pháp bảo mật vật lý điển hình vì nó kiểm soát và theo dõi ai có thể tiếp cận thiết bị thực tế.\n\nCác đáp án còn lại đều là biện pháp bảo mật logic hoặc hành chính: sao lưu syslog ở địa điểm từ xa là biện pháp bảo vệ dữ liệu, còn cấu hình enable password hay password cho cổng console đều là kiểm soát truy cập logic vào thiết bị qua phần mềm, không phải kiểm soát ai được phép đến gần thiết bị về mặt vật lý."
+    },
+    {
+      "id": "9.40",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich minimum configuration items are needed to enable Secure Shell version 2 access to R15?",
+      "question_images": [
+        "q9.40_img1.jpg"
+      ],
+      "options": {
+        "A": "Router(config)#hostname R15\nR15(config)#crypto key generate rsa general-keys modulus 1024\nR15(config-line)#line vty 0 15\nR15(config-line)# transport input ssh \nR15(config)#ip ssh source-interface Fa0/0 \nR15(config)#ip ssh stricthostkeycheck",
+        "B": "Router(config)#ip domain-name cisco.com\nRouter(config)#crypto key generate rsa general-keys modulus 1024\nRouter(config)#ip ssh version 2 \nRouter(config-line)#line vty 0 15 \nRouter(config-line)# transport input all \nRouter(config)#ip ssh logging events",
+        "C": "Router(config)#hostname R15 \nR15(config)#ip domain-name cisco.com\nR15(config)#crypto key generate rsa general-keys modulus 1024\nR15(config)#ip ssh version 2 \nR15(config-line)#line vty 0 15 \nR15(config-line)# transport input ssh",
+        "D": "Router(config)#crypto key generate rsa general-keys modulus 1024 \nRouter(config)#ip ssh version 2\nRouter(config-line)#line vty 0 15\nRouter(config-line)# transport input ssh \nRouter(config)#ip ssh logging events \nR15(config)#ip ssh stricthostkeycheck"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác mục cấu hình tối thiểu nào cần thiết để kích hoạt truy cập Secure Shell phiên bản 2 đến R15?",
+      "options_vi": {
+        "A": "Router(config)#hostname R15\nR15(config)#crypto key generate rsa general-keys modulus 1024\nR15(config-line)#line vty 0 15\nR15(config-line)# transport input ssh \nR15(config)#ip ssh source-interface Fa0/0 \nR15(config)#ip ssh stricthostkeycheck",
+        "B": "Router(config)#ip domain-name cisco.com\nRouter(config)#crypto key generate rsa general-keys modulus 1024\nRouter(config)#ip ssh version 2 \nRouter(config-line)#line vty 0 15 \nRouter(config-line)# transport input all \nRouter(config)#ip ssh logging events",
+        "C": "Router(config)#hostname R15 \nR15(config)#ip domain-name cisco.com\nR15(config)#crypto key generate rsa general-keys modulus 1024\nR15(config)#ip ssh version 2 \nR15(config-line)#line vty 0 15 \nR15(config-line)# transport input ssh",
+        "D": "Router(config)#crypto key generate rsa general-keys modulus 1024 \nRouter(config)#ip ssh version 2\nRouter(config-line)#line vty 0 15\nRouter(config-line)# transport input ssh \nRouter(config)#ip ssh logging events \nR15(config)#ip ssh stricthostkeycheck"
+      },
+      "explanation": "Đáp án C đúng vì nó bao gồm đầy đủ các bước tối thiểu bắt buộc để bật SSH v2: đặt hostname (khác mặc định \"Router\"), cấu hình domain name, tạo RSA key (cần hostname + domain name để tạo FQDN làm tên key), bật SSH version 2, và cấu hình VTY chỉ chấp nhận SSH. Đây là quy trình chuẩn và không có lệnh nào thừa hay không cần thiết.\n\nĐáp án A sai vì thiếu lệnh ip domain-name, đây là yêu cầu bắt buộc để tạo RSA key. Ngoài ra, ip ssh source-interface và ip ssh stricthostkeycheck không phải cấu hình tối thiểu cần thiết.\n\nĐáp án B sai vì thiếu hostname (vẫn là \"Router\" mặc định), và quan trọng hơn là thiếu ip domain-name nên không thể tạo RSA key thành công. Lệnh transport input all cũng cho phép cả Telnet, không đảm bảo chỉ dùng SSH.\n\nĐáp án D sai vì thiếu cả hostname lẫn ip domain-name, tức là không thể tạo RSA key. Các lệnh ip ssh logging events và ip ssh stricthostkeycheck là tùy chọn, không phải cấu hình tối thiểu."
+    },
+    {
+      "id": "9.45",
+      "type": "single",
+      "question": "Which protocol uses the SSL?",
+      "question_images": [],
+      "options": {
+        "A": "HTTP",
+        "B": "HTTPS",
+        "C": "SSH",
+        "D": "Telnet"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Giao thức nào sử dụng SSL?",
+      "options_vi": {
+        "A": "HTTP",
+        "B": "HTTPS",
+        "C": "SSH",
+        "D": "Telnet"
+      },
+      "explanation": "HTTPS (HyperText Transfer Protocol Secure) là phiên bản bảo mật của HTTP, sử dụng SSL/TLS để mã hóa dữ liệu truyền giữa trình duyệt và máy chủ web. Đây là lý do tại sao HTTPS là đáp án đúng.\n\nHTTP (A) không sử dụng SSL, dữ liệu truyền đi hoàn toàn không được mã hóa. SSH (C) cũng là giao thức bảo mật nhưng dùng cơ chế mã hóa riêng của nó, không phải SSL. Telnet (D) không có bảo mật, truyền dữ liệu dạng plaintext."
+    },
+    {
+      "id": "9.48",
+      "type": "single",
+      "question": "A network engineer is configuring a switch so that it is remotely reachable via SSH. The engineer has already configured the host name on the router. Which additional command must the engineer configure before entering the command to generate the RSA key?",
+      "question_images": [],
+      "options": {
+        "A": "password password",
+        "B": "crypto key generate rsa modulus 1024",
+        "C": "ip domain-name domain",
+        "D": "ip ssh authentication-retries 2"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư mạng đang cấu hình switch để có thể truy cập từ xa qua SSH. Kỹ sư đã cấu hình tên máy chủ (hostname) trên router. Lệnh bổ sung nào kỹ sư phải cấu hình trước khi nhập lệnh tạo khóa RSA?",
+      "options_vi": {
+        "A": "password password",
+        "B": "crypto key generate rsa modulus 1024",
+        "C": "ip domain-name domain",
+        "D": "ip ssh authentication-retries 2"
+      },
+      "explanation": "Để tạo khóa RSA trên thiết bị Cisco, IOS yêu cầu phải có đủ hai thành phần để tạo tên định danh đầy đủ (FQDN): hostname và domain name. Vì engineer đã cấu hình hostname rồi, bước tiếp theo bắt buộc là khai báo domain name bằng lệnh ip domain-name, sau đó mới có thể chạy lệnh crypto key generate rsa.\n\nĐáp án A sai vì lệnh password chỉ đặt mật khẩu, không liên quan đến việc tạo khóa RSA. Đáp án B chính là lệnh tạo khóa RSA, tức là lệnh cần chạy sau, không phải trước. Đáp án D cấu hình số lần thử xác thực SSH, đây là tùy chọn tùy chỉnh, không phải điều kiện bắt buộc để tạo khóa."
+    },
+    {
+      "id": "9.62",
+      "type": "single",
+      "question": "Refer to the exhibit. What must be configured to enable 802.11w on the WLAN?",
+      "question_images": [
+        "q9.62_img1.jpg"
+      ],
+      "options": {
+        "A": "Set PMF to Required",
+        "B": "Enable MAC Filtering",
+        "C": "Enable WPA Policy",
+        "D": "Set Fast Transition to Enabled"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa. Cần cấu hình gì để kích hoạt 802.11w trên WLAN?",
+      "options_vi": {
+        "A": "Đặt PMF thành Required",
+        "B": "Bật MAC Filtering",
+        "C": "Bật WPA Policy",
+        "D": "Đặt Fast Transition thành Enabled"
+      },
+      "explanation": "802.11w là chuẩn bảo vệ các khung quản lý không dây (Management Frame Protection - MFP), và PMF (Protected Management Frames) chính là tên gọi của tính năng này trong cấu hình WLAN. Để kích hoạt 802.11w, bạn phải đặt PMF ở chế độ Required (bắt buộc) hoặc Optional, nhưng chỉ Required mới đảm bảo toàn bộ thiết bị kết nối đều phải sử dụng bảo vệ khung quản lý.\n\nCác đáp án còn lại không liên quan trực tiếp đến 802.11w. MAC Filtering chỉ kiểm soát thiết bị nào được phép kết nối dựa trên địa chỉ MAC, không liên quan đến bảo vệ khung quản lý. WPA Policy là điều kiện cần cho bảo mật chung của WLAN nhưng bản thân nó không kích hoạt 802.11w. Fast Transition (802.11r) là tính năng hỗ trợ roaming nhanh giữa các AP, hoàn toàn độc lập với 802.11w."
+    },
+    {
+      "id": "9.66",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer configures the Cisco WLC to authenticate local wireless clients against a RADIUS server. Which task must be performed to complete the process?",
+      "question_images": [
+        "q9.66_img1.jpg"
+      ],
+      "options": {
+        "A": "Disable the Server Status option",
+        "B": "Enable the Management option",
+        "C": "Enable the Network User option",
+        "D": "Enable the Support for CoA option"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng cấu hình Cisco WLC để xác thực các máy khách không dây cục bộ với máy chủ RADIUS. Tác vụ nào phải được thực hiện để hoàn tất quy trình?",
+      "options_vi": {
+        "A": "Tắt tùy chọn Server Status",
+        "B": "Bật tùy chọn Management",
+        "C": "Bật tùy chọn Network User",
+        "D": "Bật tùy chọn Support for CoA"
+      },
+      "explanation": "Khi cấu hình WLC xác thực client không dây qua RADIUS server, tùy chọn Network User phải được bật để WLC biết rằng RADIUS server này sẽ được dùng để xác thực người dùng truy cập mạng thông thường (tức là các wireless client). Nếu không bật tùy chọn này, WLC sẽ không gửi yêu cầu xác thực của client đến RADIUS server đó.\n\nTùy chọn Management dùng để xác thực các quản trị viên đăng nhập vào giao diện quản lý của WLC, không liên quan đến client không dây. Disable Server Status sẽ vô hiệu hóa RADIUS server, hoàn toàn ngược với mục tiêu. Support for CoA liên quan đến Change of Authorization, một tính năng nâng cao cho phép RADIUS server thay đổi phiên đang hoạt động, không phải bước bắt buộc để hoàn tất cấu hình xác thực cơ bản cho client."
+    },
+    {
+      "id": "9.71",
+      "type": "single",
+      "question": "What is the function of Cisco Advanced Malware protection for next-generation IPS?",
+      "question_images": [],
+      "options": {
+        "A": "authorizing potentially compromised wireless traffic",
+        "B": "URL filtering",
+        "C": "authenticating end users",
+        "D": "inspecting specific files and files types for malware"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Chức năng của Cisco Advanced Malware Protection cho IPS thế hệ tiếp theo (next-generation IPS) là gì?",
+      "options_vi": {
+        "A": "ủy quyền lưu lượng không dây có khả năng bị xâm phạm",
+        "B": "lọc URL (URL filtering)",
+        "C": "xác thực người dùng cuối (end users)",
+        "D": "kiểm tra các tệp cụ thể và các loại tệp để phát hiện phần mềm độc hại (malware)"
+      },
+      "explanation": "Cisco Advanced Malware Protection (AMP) được thiết kế chuyên biệt để phát hiện và ngăn chặn phần mềm độc hại bằng cách kiểm tra nội dung của các tệp tin và loại tệp tin cụ thể đi qua hệ thống. Đây là chức năng cốt lõi của AMP khi tích hợp với next-generation IPS, cho phép phân tích sâu các tệp để xác định mối đe dọa.\n\nCác đáp án còn lại sai vì: A mô tả chức năng kiểm soát truy cập không dây, không liên quan đến AMP. B là chức năng của Web Security hoặc DNS-layer security như Cisco Umbrella. C là chức năng của các giải pháp xác thực như ISE hoặc AAA, không phải AMP."
+    },
+    {
+      "id": "9.72",
+      "type": "single",
+      "question": "An administrator must use the password complexity not manufacturer-name command to prevent users from adding “cisco” as a password. Which command must be issued before this command?",
+      "question_images": [],
+      "options": {
+        "A": "Password complexity enable",
+        "B": "confreg 0x2142",
+        "C": "login authentication my-auth-list",
+        "D": "service password-encryption"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Quản trị viên phải sử dụng lệnh password complexity not manufacturer-name để ngăn người dùng thêm \"cisco\" làm mật khẩu. Lệnh nào phải được thực thi trước lệnh này?",
+      "options_vi": {
+        "A": "Password complexity enable",
+        "B": "confreg 0x2142",
+        "C": "login authentication my-auth-list",
+        "D": "service password-encryption"
+      },
+      "explanation": "Đáp án A đúng vì lệnh \"password complexity not manufacturer-name\" là một tùy chọn cấu hình trong tính năng password complexity của Cisco. Trước khi có thể cấu hình các quy tắc cụ thể như loại trừ tên nhà sản xuất, bạn phải kích hoạt tính năng này trước bằng lệnh \"password complexity enable\".\n\nBa đáp án còn lại không liên quan. Lệnh \"confreg 0x2142\" dùng để bỏ qua cấu hình startup khi khôi phục mật khẩu, không liên quan đến password complexity. Lệnh \"login authentication my-auth-list\" thuộc AAA authentication và không có tác dụng kích hoạt tính năng kiểm tra độ phức tạp mật khẩu. Lệnh \"service password-encryption\" chỉ mã hóa mật khẩu đang lưu trong cấu hình, không phải điều kiện tiên quyết cho password complexity."
+    },
+    {
+      "id": "9.74",
+      "type": "multiple",
+      "question": "Which two practices are recommended for an acceptable security posture in a network? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Maintain network equipment in a secure location",
+        "B": "Backup device configurations to encrypted USB drives for secure retrieval",
+        "C": "Use a cryptographic keychain to authenticate to network devices",
+        "D": "Place internal email and file servers in a designated DMZ",
+        "E": "Disable unused or unnecessary ports, interfaces and services"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai phương pháp nào được khuyến nghị để đảm bảo tình trạng bảo mật chấp nhận được trong mạng? (Chọn hai)",
+      "options_vi": {
+        "A": "Đặt thiết bị mạng ở vị trí an toàn",
+        "B": "Sao lưu cấu hình thiết bị vào ổ USB được mã hóa để truy xuất an toàn",
+        "C": "Sử dụng chuỗi khóa mật mã (cryptographic keychain) để xác thực với các thiết bị mạng",
+        "D": "Đặt máy chủ email nội bộ và máy chủ tệp trong vùng DMZ được chỉ định",
+        "E": "Vô hiệu hóa các cổng, giao diện và dịch vụ không sử dụng hoặc không cần thiết"
+      },
+      "explanation": "Đáp án A đúng vì bảo vệ thiết bị mạng ở nơi an toàn là biện pháp bảo mật vật lý cơ bản, ngăn chặn truy cập trái phép trực tiếp vào thiết bị. Đáp án E đúng vì vô hiệu hóa các cổng, giao diện và dịch vụ không dùng đến giúp thu hẹp bề mặt tấn công, giảm thiểu các điểm có thể bị khai thác.\n\nĐáp án B sai vì sao lưu cấu hình ra USB, dù có mã hóa, không phải là thực hành được khuyến nghị rộng rãi trong bảo mật mạng, và USB có thể bị mất hoặc đánh cắp. Đáp án C sai vì \"cryptographic keychain\" không phải là thuật ngữ chuẩn trong bảo mật mạng CCNA, đây là khái niệm không chính xác hoặc không được định nghĩa rõ ràng trong ngữ cảnh này. Đáp án D sai vì máy chủ email và file nội bộ không nên đặt trong DMZ, DMZ dành cho các dịch vụ cần truy cập từ bên ngoài như web server hay DNS công khai, còn tài nguyên nội bộ phải nằm trong mạng nội bộ được bảo vệ."
+    },
+    {
+      "id": "9.75",
+      "type": "multiple",
+      "question": "Refer to the exhibit.\nWhat are the two steps an engineer must take to provide the highest encryption and authentication using domain credentials from LDAP? (Choose two)",
+      "question_images": [
+        "q9.75_img1.jpg"
+      ],
+      "options": {
+        "A": "Select WPA policy with TKIP Encryption",
+        "B": "Select WPA + WPA2 on layer 2 security",
+        "C": "Select PSK under authentication key management",
+        "D": "Select Static-WEP + 802.1x on Layer 2 security",
+        "E": "Select 802.1x from under authentication key management"
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHai bước nào mà kỹ sư phải thực hiện để cung cấp mức mã hóa và xác thực cao nhất sử dụng thông tin xác thực miền từ LDAP? (Chọn hai)",
+      "options_vi": {
+        "A": "Chọn chính sách WPA với mã hóa TKIP",
+        "B": "Chọn WPA + WPA2 trên bảo mật lớp 2 (layer 2 security)",
+        "C": "Chọn PSK trong quản lý khóa xác thực (authentication key management)",
+        "D": "Chọn Static-WEP + 802.1x trên bảo mật lớp 2 (Layer 2 security)",
+        "E": "Chọn 802.1x trong quản lý khóa xác thực (authentication key management)"
+      },
+      "explanation": "Đây là câu hỏi về cấu hình bảo mật không dây trên Cisco WLC (Wireless LAN Controller) với yêu cầu mã hóa cao nhất và xác thực qua LDAP.\n\nĐáp án B đúng vì WPA + WPA2 ở lớp 2 cho phép hỗ trợ cả hai chuẩn, trong đó WPA2 sử dụng AES/CCMP là chuẩn mã hóa mạnh nhất hiện có trên nền tảng này. Việc chọn cả hai giúp đảm bảo tương thích đồng thời vẫn ưu tiên mức bảo mật cao nhất.\n\nĐáp án E đúng vì 802.1x là phương thức xác thực dựa trên EAP, cho phép tích hợp với RADIUS server và từ đó kết nối đến LDAP để xác thực bằng thông tin tài khoản miền (domain credentials). Đây là cơ chế xác thực doanh nghiệp chuẩn, khác với PSK chỉ dùng mật khẩu tĩnh.\n\nĐáp án A sai vì TKIP là thuật toán mã hóa của WPA cũ, yếu hơn AES của WPA2, không đáp ứng yêu cầu mã hóa cao nhất. Đáp án C sai vì PSK (Pre-Shared Key) là xác thực bằng mật khẩu dùng chung, không liên kết được với LDAP hay domain credentials. Đáp án D sai vì Static-WEP là chuẩn bảo mật đã lỗi thời và bị phá vỡ từ lâu, không phù hợp với yêu cầu mã hóa cao nhất."
+    },
+    {
+      "id": "9.78",
+      "type": "single",
+      "question": "What is a feature of WPA?",
+      "question_images": [],
+      "options": {
+        "A": "802.1x authentication",
+        "B": "preshared key",
+        "C": "TKIP/MIC encryption",
+        "D": "small Wi-Fi application"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Đâu là một tính năng của WPA?",
+      "options_vi": {
+        "A": "Xác thực 802.1x (802.1x authentication)",
+        "B": "Khóa chia sẻ trước (preshared key)",
+        "C": "Mã hóa TKIP/MIC (TKIP/MIC encryption)",
+        "D": "Ứng dụng Wi-Fi nhỏ"
+      },
+      "explanation": "WPA (Wi-Fi Protected Access) được thiết kế để thay thế WEP với cơ chế mã hóa mạnh hơn. Tính năng đặc trưng của WPA là sử dụng TKIP (Temporal Key Integrity Protocol) kết hợp với MIC (Message Integrity Check) để mã hóa dữ liệu và bảo vệ tính toàn vẹn của gói tin, khắc phục các điểm yếu của WEP.\n\nĐáp án A sai vì 802.1x là tính năng của WPA2 Enterprise, không phải đặc trưng riêng của WPA. Đáp án B sai vì preshared key là phương thức xác thực, không phải tính năng mã hóa đặc trưng của WPA. Đáp án D sai vì \"small Wi-Fi application\" không phải thuật ngữ kỹ thuật có nghĩa trong ngữ cảnh này."
+    },
+    {
+      "id": "9.88",
+      "type": "single",
+      "question": "How does authentication differ from authorization?",
+      "question_images": [],
+      "options": {
+        "A": "Authentication verifies the identity of a person accessing a network, and authorization determines what resource a user can access.",
+        "B": "Authentication is used to determine what resources a user is allowed to access, and authorization is used to track what equipment is allowed access to the network",
+        "C": "Authentication is used to verify a person’s identity, and authorization is used to create syslog messages for logins",
+        "D": "Authentication is used to record what resource a user accesses, and authorization is used to determine what resources a user can access"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Xác thực (authentication) khác với ủy quyền (authorization) như thế nào?",
+      "options_vi": {
+        "A": "Xác thực (Authentication) xác minh danh tính của người truy cập mạng, và ủy quyền (authorization) xác định tài nguyên nào mà người dùng có thể truy cập.",
+        "B": "Xác thực (Authentication) được sử dụng để xác định tài nguyên nào người dùng được phép truy cập, và ủy quyền (authorization) được sử dụng để theo dõi thiết bị nào được phép truy cập mạng",
+        "C": "Xác thực (Authentication) được sử dụng để xác minh danh tính của một người, và ủy quyền (authorization) được sử dụng để tạo thông báo syslog cho các lần đăng nhập",
+        "D": "Xác thực (Authentication) được sử dụng để ghi lại tài nguyên mà người dùng truy cập, và ủy quyền (authorization) được sử dụng để xác định tài nguyên nào người dùng có thể truy cập"
+      },
+      "explanation": "Đáp án A đúng vì nó mô tả chính xác hai khái niệm trong mô hình AAA: authentication (xác thực) là quá trình xác minh danh tính người dùng, còn authorization (ủy quyền) là quá trình xác định tài nguyên nào người dùng đó được phép truy cập sau khi đã xác thực thành công.\n\nĐáp án B sai vì đảo ngược vai trò của hai khái niệm và nhầm lẫn authorization với việc kiểm soát thiết bị truy cập mạng. Đáp án C sai vì ghi lại syslog là chức năng của accounting, không phải authorization. Đáp án D sai vì đảo ngược hoàn toàn định nghĩa: ghi lại tài nguyên người dùng truy cập là nhiệm vụ của accounting, không phải authentication hay authorization."
+    },
+    {
+      "id": "9.90",
+      "type": "single",
+      "question": "Refer to the exhibit.\nip arp inspection vlan 5-10\ninterface fastethernet0/1\nswitchport mode access\nswitchport access vlan 5\nWhat is the effect of this configuration?",
+      "question_images": [],
+      "options": {
+        "A": "Egress traffic is passed only if the destination is a DHCP server.",
+        "B": "All ingress and egress traffic is dropped because the interface is untrusted.",
+        "C": "All ARP packets are dropped by the switch.",
+        "D": "The switch discards all ingress ARP traffic with invalid MAC-to-IP address bindings."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nip arp inspection vlan 5-10\ninterface fastethernet0/1\nswitchport mode access\nswitchport access vlan 5\nHiệu ứng của cấu hình này là gì?",
+      "options_vi": {
+        "A": "Lưu lượng đi ra (egress) chỉ được chuyển tiếp nếu đích là máy chủ DHCP.",
+        "B": "Tất cả lưu lượng đi vào và đi ra đều bị loại bỏ vì giao diện không được tin cậy (untrusted).",
+        "C": "Tất cả các gói ARP đều bị switch loại bỏ.",
+        "D": "Switch loại bỏ tất cả lưu lượng ARP đi vào có liên kết MAC-to-IP không hợp lệ."
+      },
+      "explanation": "Đáp án D đúng vì lệnh \"ip arp inspection vlan 5-10\" kích hoạt Dynamic ARP Inspection (DAI) trên các VLAN từ 5 đến 10. Interface fastethernet0/1 được cấu hình là access port thuộc VLAN 5 nhưng không được đánh dấu là trusted, nên mặc định nó là untrusted. Với cổng untrusted, switch sẽ kiểm tra từng gói ARP đến và so sánh thông tin MAC-to-IP với bảng DHCP snooping binding — nếu không khớp, gói đó bị hủy.\n\nĐáp án A sai vì DAI không liên quan đến việc lọc traffic dựa trên đích đến là DHCP server, đó là chức năng của DHCP snooping.\n\nĐáp án B sai vì DAI chỉ kiểm tra và lọc các gói ARP đến trên cổng untrusted, không phải toàn bộ ingress và egress traffic.\n\nĐáp án C sai vì DAI không hủy tất cả các gói ARP — nó chỉ hủy những gói có thông tin MAC-to-IP không hợp lệ, còn các gói ARP hợp lệ vẫn được chuyển tiếp bình thường."
+    },
+    {
+      "id": "9.102",
+      "type": "multiple",
+      "question": "Which two wireless security standards use Counter Mode Cipher Block Chaining Message Authentication Code Protocol for encryption and data integrity? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "WPA2",
+        "B": "WPA3",
+        "C": "WEP",
+        "D": "WPA",
+        "E": "Wi-Fi 6"
+      },
+      "answer": [
+        "A",
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai tiêu chuẩn bảo mật không dây nào sử dụng Counter Mode Cipher Block Chaining Message Authentication Code Protocol (CCMP) để mã hóa và toàn vẹn dữ liệu? (Chọn hai)",
+      "options_vi": {
+        "A": "WPA2",
+        "B": "WPA3",
+        "C": "WEP",
+        "D": "WPA",
+        "E": "Wi-Fi 6"
+      },
+      "explanation": "WPA2 và WPA3 đều sử dụng CCMP (Counter Mode Cipher Block Chaining Message Authentication Code Protocol) làm giao thức mã hóa và đảm bảo tính toàn vẹn dữ liệu. WPA2 sử dụng CCMP dựa trên AES-128, còn WPA3 mở rộng thêm với chế độ GCMP-256 nhưng vẫn hỗ trợ CCMP như một phần trong bộ tiêu chuẩn của mình.\n\nWEP là chuẩn bảo mật cũ sử dụng RC4 và CRC-32, không dùng CCMP và đã bị coi là không an toàn từ lâu. WPA (phiên bản gốc) sử dụng TKIP thay vì CCMP, đây là giải pháp tạm thời trước khi WPA2 ra đời. Wi-Fi 6 (802.11ax) là chuẩn tốc độ không dây, không phải chuẩn bảo mật, nên không liên quan đến CCMP."
+    },
+    {
+      "id": "9.103",
+      "type": "single",
+      "question": "What is a practice that protects a network from VLAN hopping attacks?",
+      "question_images": [],
+      "options": {
+        "A": "Implement port security on internet-facing VLANs.",
+        "B": "Configure an ACL to prevent traffic from changing VLANs.",
+        "C": "Assign all access ports to VLANs other than the native VLAN.",
+        "D": "Enable dynamic ARP inspection."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Phương pháp nào bảo vệ mạng khỏi các cuộc tấn công VLAN hopping?",
+      "options_vi": {
+        "A": "Triển khai bảo mật cổng (port security) trên các VLAN hướng ra internet.",
+        "B": "Cấu hình ACL để ngăn lưu lượng chuyển đổi giữa các VLAN.",
+        "C": "Gán tất cả các cổng truy cập (access port) vào các VLAN khác với VLAN gốc (native VLAN).",
+        "D": "Bật kiểm tra ARP động (dynamic ARP inspection)."
+      },
+      "explanation": "VLAN hopping là kỹ thuật tấn công khai thác native VLAN trên các trunk link. Khi một access port được gán vào native VLAN, kẻ tấn công có thể gửi frame không có tag 802.1Q và frame đó sẽ được chuyển tiếp trên trunk mà không bị lọc, từ đó nhảy sang các VLAN khác. Bằng cách gán tất cả access port vào các VLAN khác với native VLAN (thường là VLAN 1 mặc định), lưu lượng từ người dùng cuối sẽ luôn được tag, loại bỏ khả năng khai thác cơ chế này.\n\nĐáp án A sai vì port security chỉ giới hạn số lượng MAC address trên một port, không ngăn chặn VLAN hopping. Đáp án B sai vì ACL hoạt động ở tầng 3 và không kiểm soát được việc frame nhảy VLAN ở tầng 2 thông qua native VLAN. Đáp án D sai vì Dynamic ARP Inspection dùng để chống ARP spoofing, không liên quan đến VLAN hopping."
+    },
+    {
+      "id": "10.24",
+      "type": "single",
+      "question": "An engineer has configured the domain name, user name, and password on the local router. What is the next step to complete the configuration for a Secure Shell access RSA key?",
+      "question_images": [],
+      "options": {
+        "A": "crypto key generate rsa",
+        "B": "crypto key pubkey-chain rsa",
+        "C": "crypto key import rsa pem",
+        "D": "crypto key zeroize rsa"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đã cấu hình tên miền, tên người dùng và mật khẩu trên router cục bộ. Bước tiếp theo để hoàn thành cấu hình khóa RSA cho truy cập Secure Shell là gì?",
+      "options_vi": {
+        "A": "crypto key generate rsa",
+        "B": "crypto key pubkey-chain rsa",
+        "C": "crypto key import rsa pem",
+        "D": "crypto key zeroize rsa"
+      },
+      "explanation": "Để hoàn tất cấu hình SSH trên router Cisco, sau khi đã thiết lập domain name, username và password, bước tiếp theo bắt buộc là tạo cặp khóa RSA bằng lệnh \"crypto key generate rsa\". Lệnh này sinh ra khóa công khai và khóa riêng tư, cho phép router mã hóa các phiên SSH.\n\nCác lựa chọn còn lại không phù hợp trong ngữ cảnh này. Lệnh \"crypto key pubkey-chain rsa\" dùng để cấu hình xác thực dựa trên khóa công khai của người dùng từ xa, không phải để tạo khóa cho router. Lệnh \"crypto key import rsa pem\" dùng để nhập khóa RSA từ file PEM bên ngoài, không phải tạo mới. Lệnh \"crypto key zeroize rsa\" thực hiện ngược lại, tức là xóa bỏ khóa RSA hiện có."
+    },
+    {
+      "id": "10.25",
+      "type": "single",
+      "question": "Which encryption method is used by WPA3?",
+      "question_images": [],
+      "options": {
+        "A": "TKIP",
+        "B": "SAE",
+        "C": "PSK",
+        "D": "AES"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Phương pháp mã hóa nào được WPA3 sử dụng?",
+      "options_vi": {
+        "A": "TKIP",
+        "B": "SAE",
+        "C": "PSK",
+        "D": "AES"
+      },
+      "explanation": "WPA3 sử dụng AES (Advanced Encryption Standard) làm phương thức mã hóa, cụ thể là AES-GCMP 128-bit (và 256-bit trong WPA3-Enterprise). Đây là thuật toán mã hóa mạnh, được coi là tiêu chuẩn bảo mật hiện đại thay thế cho các phương thức cũ hơn.\n\nTKIP là phương thức mã hóa của WPA (không phải WPA3), đã bị coi là lỗi thời và không còn được hỗ trợ trong WPA3. SAE (Simultaneous Authentication of Equals) là phương thức xác thực của WPA3 thay thế cho PSK, không phải phương thức mã hóa. PSK (Pre-Shared Key) cũng là cơ chế xác thực, không phải mã hóa, và đã bị SAE thay thế trong WPA3."
+    },
+    {
+      "id": "10.26",
+      "type": "single",
+      "question": "An engineer is configuring remote access to a router from IP subnet 10.139.58.0/28. The domain name, crypto keys, and SSH have been configured. Which configuration enables the traffic on the destination router?",
+      "question_images": [],
+      "options": {
+        "A": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.248\nip access-group 10 in\nip access-list standard 10\npermit udp 10.139.58.0 0.0.0.7 host 10.122.49.1 eq 22",
+        "B": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252 \nip access-group 105 in\nip access-list standard 105\npermit tcp 10.139.58.0 0.0.0.7 eq 22 host 10.122.49.1",
+        "C": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252 \nip access-group 110 in\nip access-list extended 110\npermit tcp 10.139.58.0 0.0.0.15 host 10.122.49.1 eq 22",
+        "D": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.240 \naccess-group 120 in\nip access-list extended 120\npermit tcp 10.139.58.0 255.255.255.248 any eq 22"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư đang cấu hình truy cập từ xa đến router từ mạng con IP 10.139.58.0/28. Tên miền, khóa mật mã và SSH đã được cấu hình. Cấu hình nào cho phép lưu lượng trên router đích?",
+      "options_vi": {
+        "A": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.248\nip access-group 10 in\nip access-list standard 10\npermit udp 10.139.58.0 0.0.0.7 host 10.122.49.1 eq 22",
+        "B": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252 \nip access-group 105 in\nip access-list standard 105\npermit tcp 10.139.58.0 0.0.0.7 eq 22 host 10.122.49.1",
+        "C": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.252 \nip access-group 110 in\nip access-list extended 110\npermit tcp 10.139.58.0 0.0.0.15 host 10.122.49.1 eq 22",
+        "D": "interface FastEthernet0/0\nip address 10.122.49.1 255.255.255.240 \naccess-group 120 in\nip access-list extended 120\npermit tcp 10.139.58.0 255.255.255.248 any eq 22"
+      },
+      "explanation": "Đáp án C đúng vì nó sử dụng ACL extended (cần thiết để lọc theo giao thức TCP và cổng đích), wildcard mask 0.0.0.15 khớp đúng với subnet /28 (256-240=16 host, wildcard = 15), cho phép TCP từ subnet nguồn đến đúng địa chỉ đích cổng 22 (SSH), và cú pháp \"ip access-group\" được dùng đúng trên interface.\n\nĐáp án A sai vì dùng ACL standard (không thể lọc theo giao thức hay cổng), lại còn chỉ định UDP và cổng 22 trong ACL standard vốn không hỗ trợ điều đó, đồng thời wildcard 0.0.0.7 chỉ khớp /29 chứ không phải /28.\n\nĐáp án B sai vì dùng ACL standard nhưng lại cố gắng viết cú pháp của ACL extended (chỉ định TCP và eq 22), đây là cú pháp không hợp lệ cho standard ACL. Ngoài ra wildcard 0.0.0.7 cũng sai cho /28.\n\nĐáp án D sai vì dùng wildcard 255.255.255.248 thay vì 0.0.0.15, đây là subnet mask chứ không phải wildcard mask, nên sẽ không khớp đúng subnet nguồn. Ngoài ra cú pháp thiếu từ khóa \"ip\" trước \"access-group\" trên interface."
+    },
+    {
+      "id": "10.31",
+      "type": "single",
+      "question": "What is a zero-day exploit?",
+      "question_images": [],
+      "options": {
+        "A": "It is when an attacker inserts malicious code into a SQL server.",
+        "B": "It is when a new network vulnerability is discovered before a fix is available.",
+        "C": "It is when the perpetrator inserts itself in a conversation between two parties and captures or alters data.",
+        "D": "It is when the network is saturated with malicious traffic that overloads resources and bandwidth."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Khai thác zero-day (zero-day exploit) là gì?",
+      "options_vi": {
+        "A": "Là khi kẻ tấn công chèn mã độc vào máy chủ SQL.",
+        "B": "Là khi một lỗ hổng mạng mới được phát hiện trước khi có bản vá.",
+        "C": "Là khi thủ phạm chèn mình vào cuộc hội thoại giữa hai bên và chặn bắt hoặc thay đổi dữ liệu.",
+        "D": "Là khi mạng bị bão hòa bởi lưu lượng độc hại làm quá tải tài nguyên và băng thông."
+      },
+      "explanation": "Zero-day exploit là khi một lỗ hổng bảo mật mới được phát hiện và bị khai thác trước khi nhà sản xuất kịp phát hành bản vá, khiến nạn nhân không có cách phòng thủ hiệu quả. Đây là lý do đáp án B chính xác.\n\nCác đáp án còn lại mô tả các loại tấn công khác: A mô tả SQL injection, C mô tả tấn công man-in-the-middle, và D mô tả tấn công DoS/DDoS."
+    },
+    {
+      "id": "10.36",
+      "type": "single",
+      "question": "What is the default port-security behavior on a trunk link?",
+      "question_images": [],
+      "options": {
+        "A": "It causes a network loop when a violation occurs.",
+        "B": "It disables the native VLAN configuration as soon as port security is enabled.",
+        "C": "It places the port in the err-disabled state if it learns more than one MAC address.",
+        "D": "It places the port in the err-disabled state after 10 MAC addresses are statically configured."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Hành vi mặc định của bảo mật cổng (port-security) trên liên kết trunk là gì?",
+      "options_vi": {
+        "A": "Nó gây ra vòng lặp mạng (network loop) khi xảy ra vi phạm.",
+        "B": "Nó vô hiệu hóa cấu hình VLAN gốc (native VLAN) ngay khi bảo mật cổng được bật.",
+        "C": "Nó đặt cổng vào trạng thái err-disabled nếu học được nhiều hơn một địa chỉ MAC.",
+        "D": "Nó đặt cổng vào trạng thái err-disabled sau khi 10 địa chỉ MAC được cấu hình tĩnh."
+      },
+      "explanation": "Khi bạn bật port security trên một trunk link mà không cấu hình gì thêm, giá trị maximum MAC address mặc định là 1. Vì trunk link thường học nhiều MAC address từ nhiều VLAN khác nhau, nó sẽ ngay lập tức vi phạm giới hạn đó và bị đưa vào trạng thái err-disabled. Đây là lý do tại sao port security thường không được khuyến nghị dùng trên trunk link.\n\nĐáp án A sai vì port security không liên quan đến network loop, đó là vấn đề của Spanning Tree Protocol. Đáp án B sai vì port security không tự động vô hiệu hóa native VLAN. Đáp án D sai vì con số 10 không phải giá trị mặc định, mặc định chỉ là 1 MAC address."
+    },
+    {
+      "id": "10.38",
+      "type": "multiple",
+      "question": "What are two examples of multifactor authentication? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "single sign-on",
+        "B": "unique user knowledge",
+        "C": "passwords that expire",
+        "D": "soft tokens",
+        "E": "shared password responsibility"
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Hai ví dụ nào là xác thực đa yếu tố (multifactor authentication)? (Chọn hai)",
+      "options_vi": {
+        "A": "Đăng nhập một lần (single sign-on)",
+        "B": "Kiến thức riêng của người dùng (unique user knowledge)",
+        "C": "Mật khẩu có thời hạn (passwords that expire)",
+        "D": "Token mềm (soft tokens)",
+        "E": "Chia sẻ trách nhiệm mật khẩu (shared password responsibility)"
+      },
+      "explanation": "Xác thực đa yếu tố (MFA) yêu cầu kết hợp ít nhất hai trong ba loại yếu tố: thứ bạn biết (knowledge), thứ bạn có (possession), và thứ bạn là (inherence). \"Unique user knowledge\" thuộc loại \"thứ bạn biết\" như mã PIN hoặc câu hỏi bảo mật riêng, còn \"soft tokens\" là ứng dụng tạo mã OTP trên điện thoại thuộc loại \"thứ bạn có\" — hai yếu tố này kết hợp lại tạo thành MFA.\n\nSingle sign-on (A) là cơ chế đăng nhập một lần để truy cập nhiều hệ thống, không phải một yếu tố xác thực. Mật khẩu có thời hạn (C) chỉ là chính sách quản lý mật khẩu, vẫn thuộc một yếu tố duy nhất. Chia sẻ mật khẩu (E) thực ra là thực hành bảo mật kém và không liên quan đến MFA."
+    },
+    {
+      "id": "10.42",
+      "type": "multiple",
+      "question": "Refer to the exhibit.\nA network engineer started to configure port security on a new switch. These requirements must be met:\n– MAC addresses must be learned dynamically.\n– Log messages must be generated without disabling the interface when unwanted traffic is seen.\nWhich two commands must be configured to complete this task? (Choose two)",
+      "question_images": [
+        "q10.42_img1.jpg"
+      ],
+      "options": {
+        "A": "SW(config-if)#switchport port-security mac-address 0010.7B84.45E6",
+        "B": "SW(config-if)#switchport port-security maximum 2",
+        "C": "SW(config-if)#switchport port-security mac-address sticky",
+        "D": "SW(config-if)#switchport port-security violation shutdown",
+        "E": "SW(config-if)#switchport port-security violation restrict"
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng bắt đầu cấu hình bảo mật cổng (port security) trên một switch mới. Các yêu cầu sau phải được đáp ứng:\n– Địa chỉ MAC phải được học động (dynamically).\n– Thông báo nhật ký (log messages) phải được tạo mà không vô hiệu hóa giao diện khi phát hiện lưu lượng không mong muốn.\nHai lệnh nào phải được cấu hình để hoàn thành nhiệm vụ này? (Chọn hai)",
+      "options_vi": {
+        "A": "SW(config-if)#switchport port-security mac-address 0010.7B84.45E6",
+        "B": "SW(config-if)#switchport port-security maximum 2",
+        "C": "SW(config-if)#switchport port-security mac-address sticky",
+        "D": "SW(config-if)#switchport port-security violation shutdown",
+        "E": "SW(config-if)#switchport port-security violation restrict"
+      },
+      "explanation": "Đáp án B và E là đúng vì chúng đáp ứng đủ hai yêu cầu đề bài đặt ra.\n\nLệnh B đặt số lượng MAC address tối đa được phép trên cổng là 2, phù hợp với cấu hình hiện tại trong exhibit (thường đã có sẵn một thiết bị kết nối). Quan trọng hơn, khi không chỉ định MAC address tĩnh và không dùng sticky, switch sẽ tự động học MAC address động — đúng với yêu cầu đầu tiên.\n\nLệnh E cấu hình chế độ vi phạm là restrict, nghĩa là khi có traffic từ MAC address không hợp lệ, switch sẽ drop gói tin và ghi log cảnh báo nhưng không tắt cổng — đúng với yêu cầu thứ hai.\n\nTại sao các đáp án còn lại sai:\n\nA sai vì đây là cấu hình MAC address tĩnh, trong khi đề yêu cầu học động.\n\nC sai vì sticky học MAC address và lưu vào running-config như thể là cấu hình tĩnh, không phải học động thuần túy theo nghĩa đề bài muốn.\n\nD sai vì chế độ shutdown sẽ tắt cổng khi có vi phạm, vi phạm trực tiếp yêu cầu không được disable interface."
+    },
+    {
+      "id": "10.57",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWireless LAN access must be set up to force all clients from the NA WLAN to authenticate against the local database. The WLAN is configured for local EAP authentication. The time that users access the network must not be limited. Which action completes this configuration?",
+      "question_images": [
+        "q10.57_img1.jpg"
+      ],
+      "options": {
+        "A": "Check the Guest User Role check box",
+        "B": "Clear the Lifetime (seconds) value",
+        "C": "Set the Lifetime (seconds) value to 0",
+        "D": "Uncheck the Guest User check box"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMạng WLAN khách phải được tạo để yêu cầu máy khách nhập tên người dùng và mật khẩu trên trang web cục bộ của WLC. WLAN được cấu hình cho xác thực EAP cục bộ. Thời gian người dùng truy cập mạng không được bị giới hạn. Hành động nào hoàn thành cấu hình này?",
+      "options_vi": {
+        "A": "Đánh dấu hộp kiểm Guest User Role",
+        "B": "Xóa giá trị Lifetime (seconds)",
+        "C": "Đặt giá trị Lifetime (seconds) thành 0",
+        "D": "Bỏ đánh dấu hộp kiểm Guest User"
+      },
+      "explanation": "Khi tạo tài khoản người dùng trong cơ sở dữ liệu nội bộ của Cisco WLC, tùy chọn \"Guest User\" sẽ giới hạn thời gian tồn tại của tài khoản đó. Nếu ô này được đánh dấu, tài khoản sẽ hết hạn sau một khoảng thời gian nhất định, điều này vi phạm yêu cầu \"không giới hạn thời gian truy cập mạng\". Bỏ chọn \"Guest User\" sẽ tạo ra một tài khoản người dùng thông thường, tồn tại vĩnh viễn và phù hợp để xác thực EAP cục bộ cho WLAN NA.\n\nĐáp án A sai vì việc đánh dấu \"Guest User Role\" sẽ áp đặt giới hạn thời gian, ngược lại với yêu cầu. Đáp án B sai vì chỉ xóa giá trị Lifetime mà không bỏ chọn Guest User không đủ để loại bỏ ràng buộc thời gian, trường này cần có giá trị hợp lệ khi chế độ Guest được bật. Đáp án C sai vì đặt Lifetime về 0 không có nghĩa là vô hạn trong ngữ cảnh này mà có thể gây lỗi hoặc tài khoản hết hạn ngay lập tức."
+    },
+    {
+      "id": "10.58",
+      "type": "single",
+      "question": "Which remote access protocol provides unsecured remote CLI access?",
+      "question_images": [],
+      "options": {
+        "A": "Telnet",
+        "B": "SSH",
+        "C": "console",
+        "D": "Bash"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "question_vi": "Giao thức truy cập từ xa nào cung cấp truy cập CLI từ xa không bảo mật?",
+      "options_vi": {
+        "A": "Telnet",
+        "B": "SSH",
+        "C": "console",
+        "D": "Bash"
+      },
+      "explanation": "Telnet là giao thức truy cập từ xa qua CLI nhưng không mã hóa dữ liệu, nghĩa là tên đăng nhập, mật khẩu và toàn bộ phiên làm việc đều được truyền dưới dạng văn bản thuần túy, rất dễ bị nghe lén. SSH cũng cung cấp truy cập CLI từ xa nhưng mã hóa toàn bộ kết nối nên được coi là an toàn. Console là phương thức truy cập trực tiếp qua cổng vật lý, không phải truy cập từ xa. Bash là shell trên Linux, không phải giao thức truy cập từ xa."
+    },
+    {
+      "id": "10.59",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer must configure the interface that connects to PC1 and secure it in a way that only PC1 is allowed to use the port. No VLAN tagging can be used except for a voice VLAN. Which command sequence must be entered to configure the switch?",
+      "question_images": [
+        "q10.59_img1.jpg"
+      ],
+      "options": {
+        "A": "SW1(config-if)#switchport mode nonegotiate \nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security maximum 1",
+        "B": "SW1(config-if)#switchport mode access \nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800",
+        "C": "SW1(config-if)#switchport mode dynamic desirable\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800 \nSW1 (config-if)#switchport port-security mac-address sticky",
+        "D": "SW1(config-if)#switchport mode dynamic auto \nSW1(config-if)#switchport port-security \nSW1(config-if)#switchport port-security violation restrict"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư phải cấu hình giao diện kết nối với PC1 và bảo mật nó sao cho chỉ PC1 được phép sử dụng cổng. Không được sử dụng gắn thẻ VLAN (VLAN tagging) ngoại trừ VLAN thoại (voice VLAN). Chuỗi lệnh nào phải được nhập để cấu hình switch?",
+      "options_vi": {
+        "A": "SW1(config-if)#switchport mode nonegotiate \nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security maximum 1",
+        "B": "SW1(config-if)#switchport mode access \nSW1(config-if)#switchport port-security\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800",
+        "C": "SW1(config-if)#switchport mode dynamic desirable\nSW1(config-if)#switchport port-security mac-address 0050.7966.6800 \nSW1 (config-if)#switchport port-security mac-address sticky",
+        "D": "SW1(config-if)#switchport mode dynamic auto \nSW1(config-if)#switchport port-security \nSW1(config-if)#switchport port-security violation restrict"
+      },
+      "explanation": "Đáp án B đúng vì nó cấu hình cổng ở chế độ access (không có VLAN tagging, đúng yêu cầu), bật port-security, rồi chỉ định đúng MAC address của PC1 (0050.7966.6800) để chỉ cho phép thiết bị đó sử dụng cổng. Đây là cách duy nhất trong các đáp án vừa đáp ứng điều kiện \"không dùng VLAN tagging\" vừa ràng buộc cổng với đúng một thiết bị cụ thể.\n\nĐáp án A sai vì \"switchport mode nonegotiate\" không tự đặt cổng về chế độ access mà chỉ tắt DTP negotiation, và lệnh này cần được dùng kết hợp với \"switchport mode trunk\" hoặc \"access\" trước đó. Ngoài ra, A chỉ giới hạn số lượng MAC tối đa là 1 nhưng không chỉ định MAC cụ thể của PC1, nghĩa là bất kỳ thiết bị nào cắm vào trước cũng được phép.\n\nĐáp án C sai vì \"dynamic desirable\" khiến cổng cố gắng thương lượng thành trunk, vi phạm yêu cầu không dùng VLAN tagging. Ngoài ra, cú pháp \"mac-address sticky\" không đúng vì sticky là một tùy chọn riêng, không đi kèm sau mac-address theo cách đó.\n\nĐáp án D sai vì \"dynamic auto\" cũng có thể thương lượng thành trunk nếu phía kia là desirable, không đảm bảo cổng luôn ở chế độ access. Lệnh này cũng không chỉ định MAC của PC1 nên không đảm bảo chỉ PC1 được phép dùng cổng."
+    },
+    {
+      "id": "10.73",
+      "type": "multiple",
+      "question": "A network engineer is replacing the switches that belong to a managed-services client with new Cisco Catalyst switches. The new switches will be configured for updated security standards, including replacing Telnet services with encrypted connections and doubling the modulus size from 1024. Which two commands must the engineer configure on the new switches? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "transport input ssh",
+        "B": "transport input all",
+        "C": "crypto key generate rsa general-keys modulus 1024",
+        "D": "crypto key generate rsa usage-keys",
+        "E": "crypto key generate rsa modulus 2048"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": [],
+      "question_vi": "Một kỹ sư mạng đang thay thế các switch thuộc về khách hàng dịch vụ quản lý bằng các switch Cisco Catalyst mới. Các switch mới sẽ được cấu hình theo tiêu chuẩn bảo mật cập nhật, bao gồm thay thế dịch vụ Telnet bằng kết nối mã hóa và tăng gấp đôi kích thước modulus từ 1024. Hai lệnh nào kỹ sư phải cấu hình trên các switch mới? (Chọn hai)",
+      "options_vi": {
+        "A": "transport input ssh",
+        "B": "transport input all",
+        "C": "crypto key generate rsa general-keys modulus 1024",
+        "D": "crypto key generate rsa usage-keys",
+        "E": "crypto key generate rsa modulus 2048"
+      },
+      "explanation": "Đây là câu hỏi về cấu hình SSH để thay thế Telnet trên switch Cisco, yêu cầu hai bước chính.\n\nLệnh \"transport input ssh\" (đáp án A) được cấu hình trên các VTY lines để chỉ cho phép kết nối SSH, từ chối Telnet. Đây là bước bắt buộc để đảm bảo chỉ có kết nối mã hóa mới được chấp nhận vào thiết bị.\n\nLệnh \"crypto key generate rsa modulus 2048\" (đáp án E) tạo cặp khóa RSA với kích thước 2048 bit, đúng với yêu cầu đề bài là nhân đôi modulus từ 1024 lên 2048. Lệnh này kích hoạt SSH trên thiết bị và kích thước khóa lớn hơn đồng nghĩa với bảo mật mạnh hơn.\n\nĐáp án B sai vì \"transport input all\" cho phép cả Telnet lẫn SSH, không đáp ứng yêu cầu thay thế Telnet bằng kết nối mã hóa.\n\nĐáp án C sai vì modulus 1024 là kích thước cũ đang được thay thế, không phải kích thước mới theo yêu cầu.\n\nĐáp án D sai vì \"usage-keys\" tạo ra hai cặp khóa riêng biệt cho mã hóa và chữ ký, không phải cú pháp tiêu chuẩn dùng để chỉ định kích thước modulus cụ thể trong trường hợp này."
+    },
+    {
+      "id": "10.84",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network administrator must permit traffic from the 10.10.0.0/24 subnet to the WAN on interface Serial0. What is the effect of the configuration as the administrator applies the command?",
+      "question_images": [],
+      "options": {
+        "A": "The sourced traffic from IP range 10.0.0.0 – 10.0.0.255 is allowed on Serial0.",
+        "B": "The permit command fails and returns an error code.",
+        "C": "The router fails to apply the access list to the interface.",
+        "D": "The router accepts all incoming traffic to Serial0 with the last octet of the source IP set to 0."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột quản trị viên mạng phải cho phép lưu lượng từ mạng con 10.10.0.0/24 đến WAN trên giao diện Serial0. Hiệu ứng của cấu hình khi quản trị viên áp dụng lệnh là gì?",
+      "options_vi": {
+        "A": "Lưu lượng có nguồn từ dải IP 10.0.0.0 – 10.0.0.255 được cho phép trên Serial0.",
+        "B": "Lệnh permit thất bại và trả về mã lỗi.",
+        "C": "Router không thể áp dụng danh sách truy cập (access list) vào giao diện.",
+        "D": "Router chấp nhận tất cả lưu lượng đến Serial0 với octet cuối cùng của IP nguồn được đặt thành 0."
+      },
+      "explanation": "Trong câu hỏi này, quản trị viên đang cố gắng áp dụng một access list lên interface Serial0, nhưng vấn đề nằm ở chỗ access list đó chưa được tạo trước khi áp dụng lên interface. Khi bạn dùng lệnh ip access-group để gán một access list chưa tồn tại vào interface, router sẽ không thể áp dụng được và trả về thông báo lỗi, khiến lệnh không có hiệu lực. Đây là lý do đáp án C đúng — router thất bại trong việc áp dụng access list lên interface.\n\nĐáp án A sai vì không có access list nào được áp dụng thành công, nên không có traffic nào được cho phép hay từ chối theo cấu hình đó. Đáp án B gần đúng về mặt kết quả nhưng không chính xác về cách diễn đạt — lệnh permit không phải là lệnh gây lỗi, mà chính lệnh ip access-group mới là lệnh thất bại khi access list chưa tồn tại. Đáp án D mô tả một hành vi hoàn toàn không xảy ra vì không có access list nào được áp dụng thành công lên interface đó."
+    },
+    {
+      "id": "10.87",
+      "type": "multiple",
+      "question": "Refer to the exhibit.\nA guest WLAN must be created that prompts the client for a username and password on the local web page of the WLC. Which two actions must be performed on the Layer 2 tab before enabling the Authentication option on the Layer 3 tab? (Choose two)",
+      "question_images": [
+        "q10.87_img1.jpg"
+      ],
+      "options": {
+        "A": "Uncheck the MAC Filtering option check box.",
+        "B": "Set the Security Type option to Personal.",
+        "C": "Change the WPA Encryption option from TKIP to CCMP128(AES).",
+        "D": "Set the Layer 2 Security option to None.",
+        "E": "Uncheck the WPA Policy option check box, and check the WPA2 Policy option check box."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột WLAN khách phải được tạo để yêu cầu máy khách nhập tên người dùng và mật khẩu trên trang web cục bộ của WLC. Hai hành động nào phải được thực hiện trên tab Layer 2 trước khi bật tùy chọn Authentication trên tab Layer 3? (Chọn hai)",
+      "options_vi": {
+        "A": "Bỏ đánh dấu hộp kiểm tùy chọn MAC Filtering.",
+        "B": "Đặt tùy chọn Security Type thành Personal.",
+        "C": "Thay đổi tùy chọn WPA Encryption từ TKIP sang CCMP128(AES).",
+        "D": "Đặt tùy chọn Layer 2 Security thành None.",
+        "E": "Bỏ đánh dấu hộp kiểm tùy chọn WPA Policy, và đánh dấu hộp kiểm tùy chọn WPA2 Policy."
+      },
+      "explanation": "Để sử dụng xác thực Layer 3 (Web Authentication) trên WLC, Layer 2 Security phải được đặt thành None. Lý do là WLC không cho phép bật Web Auth ở Layer 3 khi vẫn còn cơ chế bảo mật Layer 2 như WPA/WPA2 đang hoạt động. Ngoài ra, MAC Filtering phải được bỏ chọn vì nếu bật, WLC sẽ cố xác thực client qua địa chỉ MAC trước, xung đột với luồng xác thực web mà ta muốn thiết lập.\n\nCác đáp án còn lại sai vì: B và E liên quan đến cấu hình WPA/WPA2 Personal, nhưng khi đã chọn Layer 2 Security là None thì các tùy chọn WPA này không còn áp dụng nữa. C cũng không liên quan vì việc thay đổi thuật toán mã hóa từ TKIP sang AES chỉ có ý nghĩa khi dùng WPA2, không phải trong kịch bản Guest WLAN với Web Authentication thuần Layer 3."
+    },
+    {
+      "id": "10.89",
+      "type": "single",
+      "question": "Which IPsec transport mode encrypts the IP header and the payload?",
+      "question_images": [],
+      "options": {
+        "A": "pipe",
+        "B": "tunnel",
+        "C": "control",
+        "D": "transport"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "question_vi": "Chế độ truyền tải IPsec (IPsec transport mode) nào mã hóa tiêu đề IP (IP header) và phần tải (payload)?",
+      "options_vi": {
+        "A": "pipe",
+        "B": "tunnel",
+        "C": "control",
+        "D": "transport"
+      },
+      "explanation": "Trong IPsec, có hai chế độ hoạt động chính là tunnel mode và transport mode. Tunnel mode mã hóa toàn bộ gói IP gốc, bao gồm cả IP header và payload, sau đó đóng gói vào một gói IP mới với header mới — đây chính là lý do đáp án B là đúng. Transport mode chỉ mã hóa phần payload, giữ nguyên IP header gốc, nên D sai. Còn \"pipe\" và \"control\" không phải là các chế độ IPsec hợp lệ, nên A và C đều sai."
+    },
+    {
+      "id": "10.90",
+      "type": "single",
+      "question": "What does WPA3 provide in wireless networking?",
+      "question_images": [],
+      "options": {
+        "A": "increased security and requirement of a complex configuration",
+        "B": "backward compatibility with WPA and WPA2",
+        "C": "optional Protected Management Frame negotiation",
+        "D": "safeguards against brute force attacks with SAE"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "WPA3 cung cấp gì trong mạng không dây?",
+      "options_vi": {
+        "A": "Tăng cường bảo mật và yêu cầu cấu hình phức tạp",
+        "B": "Tương thích ngược với WPA và WPA2",
+        "C": "Thương lượng Protected Management Frame tùy chọn",
+        "D": "Bảo vệ chống lại các cuộc tấn công brute force với SAE"
+      },
+      "explanation": "WPA3 sử dụng SAE (Simultaneous Authentication of Equals) thay thế cho PSK trong WPA2, giúp bảo vệ chống lại các cuộc tấn công brute force ngay cả khi mật khẩu yếu. SAE đảm bảo rằng mỗi phiên xác thực là độc lập, khiến kẻ tấn công không thể thu thập dữ liệu để giải mã offline.\n\nĐáp án A sai vì WPA3 không yêu cầu cấu hình phức tạp hơn, thực tế nó còn có chế độ WPA3-Personal dễ dùng hơn. Đáp án B sai vì WPA3 không có khả năng tương thích ngược với WPA (chỉ có thể tương thích với WPA2 qua chế độ chuyển tiếp). Đáp án C sai vì WPA3 bắt buộc sử dụng Protected Management Frames (PMF), không phải tùy chọn như trong WPA2."
+    },
+    {
+      "id": "10.94",
+      "type": "single",
+      "question": "A WLC sends alarms about a rogue AP, and the network administrator verifies that the alarms are caused by a legitimate autonomous AP. How must the alarms be stopped for the MAC address of the AP?",
+      "question_images": [],
+      "options": {
+        "A": "Place the AP into manual containment.",
+        "B": "Remove the AP from WLC management.",
+        "C": "Manually remove the AP from Pending state.",
+        "D": "Set the AP Class Type to Friendly."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "question_vi": "WLC gửi cảnh báo về một AP giả mạo (rogue AP), và quản trị viên mạng xác minh rằng cảnh báo được gây ra bởi một AP tự trị (autonomous AP) hợp lệ. Làm thế nào để dừng cảnh báo cho địa chỉ MAC của AP?",
+      "options_vi": {
+        "A": "Đặt AP vào chế độ ngăn chặn thủ công (manual containment).",
+        "B": "Xóa AP khỏi quản lý WLC.",
+        "C": "Xóa thủ công AP khỏi trạng thái Pending.",
+        "D": "Đặt AP Class Type thành Friendly."
+      },
+      "explanation": "Khi WLC phát hiện một AP không được quản lý bởi nó, AP đó sẽ bị gắn nhãn là \"rogue\" theo mặc định. Nếu quản trị viên xác nhận đây là AP hợp lệ (ví dụ: AP autonomous của chính tổ chức), cách đúng là thay đổi Class Type của AP đó thành \"Friendly\" — điều này báo cho WLC biết rằng AP này đã được nhận diện và tin cậy, từ đó dừng các cảnh báo liên quan đến địa chỉ MAC đó.\n\nĐáp án A sai vì \"manual containment\" là hành động chủ động chặn AP rogue bằng cách gửi deauthentication frames, tức là leo thang vấn đề thay vì giải quyết cảnh báo.\n\nĐáp án B sai vì AP autonomous này không nằm trong hệ thống quản lý của WLC, nên không có gì để \"xóa khỏi WLC management\".\n\nĐáp án C sai vì \"Pending state\" liên quan đến AP lightweight đang chờ được thêm vào WLC, không liên quan đến việc xử lý cảnh báo rogue AP."
+    },
+    {
+      "id": "10.95",
+      "type": "single",
+      "question": "Which security method is used to prevent man-in-the-middle attack?",
+      "question_images": [],
+      "options": {
+        "A": "authorization",
+        "B": "authentication",
+        "C": "anti-replay",
+        "D": "accounting"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "question_vi": "Phương pháp bảo mật nào được sử dụng để ngăn chặn tấn công man-in-the-middle?",
+      "options_vi": {
+        "A": "authorization",
+        "B": "authentication",
+        "C": "anti-replay",
+        "D": "accounting"
+      },
+      "explanation": "Anti-replay là cơ chế bảo mật ngăn chặn kẻ tấn công chặn bắt và phát lại các gói tin hợp lệ để giả mạo phiên kết nối, đây chính là bản chất của tấn công man-in-the-middle. Cơ chế này hoạt động bằng cách đánh số thứ tự các gói tin và từ chối bất kỳ gói nào bị trùng lặp hoặc đến không đúng thứ tự, thường được dùng trong IPsec.\n\nAuthentication xác minh danh tính người dùng hoặc thiết bị nhưng không ngăn được việc tái sử dụng dữ liệu đã bị chặn. Authorization kiểm soát quyền truy cập sau khi xác thực, không liên quan đến việc chặn tấn công phát lại. Accounting ghi lại nhật ký hoạt động để kiểm toán, hoàn toàn không có chức năng phòng chống tấn công."
+    }
+  ]
+}

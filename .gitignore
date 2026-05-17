@@ -1,0 +1,10 @@
+*.bak
+zip_extracted/
+dump_extracted/
+docx_q864_exhibit.jpeg
+img_preview.jpg
+img_preview2.jpg
+page7_full.png
+test_option_render.png
+scan_results2.json
+output_pdf_preview

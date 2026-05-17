@@ -1,0 +1,3299 @@
+{
+  "count": 120,
+  "questions": [
+    {
+      "id": "1",
+      "source_id": "1",
+      "type": "single",
+      "question": "Which three statements about MAC addresses are correct? (Choose three)",
+      "question_images": [],
+      "options": {
+        "A": "To communicate with other devices on a network, a network device must have a unique MAC\naddress"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Ba phát biểu nào về địa chỉ MAC là đúng? (Chọn ba)",
+      "options_vi": {
+        "A": "Để giao tiếp với các thiết bị khác trên mạng, một thiết bị mạng phải có một địa chỉ MAC duy nhất"
+      }
+    },
+    {
+      "id": "2",
+      "source_id": "6",
+      "type": "multi",
+      "question": "A frame that enters a switch fails the Frame Check Sequence. Which two interface counters are\nincremented? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "runts",
+        "B": "giants",
+        "C": "frame",
+        "D": "CRC",
+        "E": "input errors"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "Whenever the physical transmission has problems, the receiving device might receive a frame\nwhose bits have changed values. These frames do not pass the error detection logic as\nimplemented in the FCS field in the Ethernet trailer. The receiving device discards the frame and\ncounts it as some kind of input error. Cisco switches list this error as a CRC error. Cyclic\nredundancy check (CRC) is a term related to how the FCS math detects an error.\nThe “input errors” includes runts, giants, no buffer, CRC, frame, overrun, and ignored counts.\nThe output below show the interface counters with the “show interface s0/0/0” command:\nRouter#show interface s0/0/0\nSerial0/0/0 is up, line protocol is up\nHardware is M4T\nDescription: Link to R2\nInternet address is 10.1.1.1/30\nMTU 1500 bytes, BW 1544 Kbit, DLY 20000 usec,\nreliability 255/255, txload 1/255, rxload 1/255\n--output omitted--\n5 minute output rate 0 bits/sec, 0 packets/sec\n268 packets input, 24889 bytes, 0 no buffer\nReceived 0 broadcasts, 0 runts, 0 giants, 0 throttles\n0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\n251 packets output, 23498 bytes, 0 underruns\n0 output errors, 0 collisions, 0 interface resets\n0 output buffer failures, 0 output buffers swapped out\n0 carrier transitions DCD=up DSR=up DTR=up RTS=up CTS=up",
+      "explanation_images": [],
+      "question_vi": "Một khung (frame) đi vào switch không vượt qua được kiểm tra Frame Check Sequence. Hai bộ đếm giao diện nào được tăng lên? (Chọn hai)",
+      "options_vi": {
+        "A": "runts",
+        "B": "giants",
+        "C": "frame",
+        "D": "CRC",
+        "E": "input errors"
+      }
+    },
+    {
+      "id": "3",
+      "source_id": "7",
+      "type": "multi",
+      "question": "What are two reasons that cause late collisions to increment on an Ethernet interface? (Choose\ntwo)",
+      "question_images": [],
+      "options": {
+        "A": "when the sending device waits 15 seconds before sending the frame again",
+        "B": "when the cable length limits are exceeded",
+        "C": "when one side of the connection is configured for half-duplex",
+        "D": "when Carrier Sense Multiple Access/Collision Detection is used",
+        "E": "when a collision occurs after the 32nd byte of a frame has been transmitted"
+      },
+      "answer": [
+        "B",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "A late collision is defined as any collision that occurs after the first 512 bits (or 64th byte) of the\nframe have been transmitted. The usual possible causes are full-duplex/half-duplex mismatch,\nexceeded Ethernet cable length limits, or defective hardware such as incorrect cabling, non-\ncompliant number of hubs in the network, or a bad NIC.\nLate collisions should never occur in a properly designed Ethernet network. They usually occur\nwhen Ethernet cables are too long or when there are too many repeaters in the network.\nReference: https://www.cisco.com/en/US/docs/internetworking/troubleshooting/guide/tr1904.html",
+      "explanation_images": [],
+      "question_vi": "Hai nguyên nhân nào khiến bộ đếm xung đột muộn (late collisions) tăng trên giao diện Ethernet? (Chọn hai)",
+      "options_vi": {
+        "A": "Khi thiết bị gửi đợi 15 giây trước khi gửi lại khung",
+        "B": "Khi giới hạn chiều dài cáp bị vượt quá",
+        "C": "Khi một phía của kết nối được cấu hình ở chế độ half-duplex",
+        "D": "Khi Carrier Sense Multiple Access/Collision Detection được sử dụng",
+        "E": "Khi xung đột xảy ra sau byte thứ 32 của khung đã được truyền"
+      }
+    },
+    {
+      "id": "4",
+      "source_id": "2",
+      "type": "multi",
+      "question": "The SW1 interface g0/1 is in the down/down state. Which two configurations are valid reasons for\nthe interface conditions? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "There is a duplex mismatch",
+        "B": "There is a speed mismatch",
+        "C": "There is a protocol mismatch",
+        "D": "The interface is shut down",
+        "E": "The interface is error-disabled"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "The down/down state indicates a Layer 1 problem -> “Protocol mismatch” answer is a Layer 2\nproblem so it is not correct.\nDuplex should be matched on both side but it is not a must -> Therefore “duplex mismatch” is not\na correct answer.\nThe most common Layer 1 problems are faulty or incorrect cabling or hardware failure but none of\nthem is in the answer choices.\nIf the port is error-disabled, we will see it in down/down state so this answer is correct.\nSW#sh int f1/0/1\nFastEthernet1/0/1 is down, line protocol is down (err-disabled)\nThere are only two answers left, which are “speed mismatch” and “interface is shut down” and we\nhave to choose one. Speed must match between two ends. We tested speed mismatch on real\ndevice but we only received “up/down” state. So the answer “interface is shut down” is better. But\nwe have to say with the local interface is shut down, we will see the “administratively down/down”,\nnot “down/down” state. But the “down/down” state would be seen on the far end interface.",
+      "explanation_images": [],
+      "question_vi": "Giao diện g0/1 của SW1 đang ở trạng thái down/down. Hai cấu hình nào là nguyên nhân hợp lệ cho tình trạng giao diện này? (Chọn hai)",
+      "options_vi": {
+        "A": "Có sự không khớp duplex",
+        "B": "Có sự không khớp tốc độ",
+        "C": "Có sự không khớp giao thức",
+        "D": "Giao diện bị tắt (shutdown)",
+        "E": "Giao diện bị error-disabled"
+      }
+    },
+    {
+      "id": "5",
+      "source_id": "3",
+      "type": "multi",
+      "question": "What are two functions of a Layer 2 switch? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "makes forwarding decisions based on the MAC address of a packet",
+        "B": "selects the best route between networks on a WAN",
+        "C": "moves packets within a VLAN",
+        "D": "moves packets between different VLANs",
+        "E": "acts as a central point for association and authentication servers"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Hai chức năng của switch Layer 2 là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Đưa ra quyết định chuyển tiếp dựa trên địa chỉ MAC của gói tin",
+        "B": "Chọn tuyến đường tốt nhất giữa các mạng trên WAN",
+        "C": "Di chuyển các gói tin trong một VLAN",
+        "D": "Di chuyển các gói tin giữa các VLAN khác nhau",
+        "E": "Hoạt động như một điểm trung tâm cho các máy chủ liên kết và xác thực"
+      }
+    },
+    {
+      "id": "6",
+      "source_id": "4",
+      "type": "single",
+      "question": "How does the dynamically-learned MAC address feature function?",
+      "question_images": [],
+      "options": {
+        "A": "It requires a minimum number of secure MAC addresses to be filled dynamically",
+        "B": "Switches dynamically learn MAC addresses of each connecting CAM table",
+        "C": "The ports are restricted and learn up to a maximum of 10 dynamically-learned addresses",
+        "D": "The CAM table is empty until ingress traffic arrives at each port"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The MAC addresses in the CAM table are the source MAC addresses only. Therefore it only learns\nMAC address from ingress traffic.",
+      "explanation_images": [],
+      "question_vi": "Tính năng địa chỉ MAC được học động (dynamically-learned MAC address) hoạt động như thế nào?",
+      "options_vi": {
+        "A": "Nó yêu cầu một số lượng tối thiểu các địa chỉ MAC bảo mật được điền động",
+        "B": "Switch học động các địa chỉ MAC của mỗi bảng CAM kết nối",
+        "C": "Các cổng bị hạn chế và học tối đa 10 địa chỉ được học động",
+        "D": "Bảng CAM trống cho đến khi lưu lượng đến (ingress traffic) đi vào mỗi cổng"
+      }
+    },
+    {
+      "id": "7",
+      "source_id": "2",
+      "type": "single",
+      "question": "What is the default behavior of a Layer 2 switch when a frame with an unknown destination MAC\naddress is received?",
+      "question_images": [],
+      "options": {
+        "A": "The Layer 2 switch drops the received frame",
+        "B": "The Layer 2 switch floods packets to all ports except the receiving port in the given VLAN",
+        "C": "The Layer 2 switch sends a copy of a packet to CPU for destination MAC address learning",
+        "D": "The Layer 2 switch forwards the packet and adds the destination MAC address to Its MAC\naddress table"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "1 VLAN = 1 Broadcast domain.\nExplanation\nIf the destination MAC address is not in the CAM table (unknown destination MAC address), the\nswitch sends the frame out all other ports that are in the same VLAN as the received frame. This is\ncalled flooding. It does not flood the frame out the same port on which the frame was received.",
+      "explanation_images": [],
+      "question_vi": "Hành vi mặc định của switch Layer 2 khi nhận được một khung có địa chỉ MAC đích không xác định là gì?",
+      "options_vi": {
+        "A": "Switch Layer 2 loại bỏ khung đã nhận",
+        "B": "Switch Layer 2 flood gói tin đến tất cả các cổng trừ cổng nhận trong VLAN đã cho",
+        "C": "Switch Layer 2 gửi một bản sao của gói tin đến CPU để học địa chỉ MAC đích",
+        "D": "Switch Layer 2 chuyển tiếp gói tin và thêm địa chỉ MAC đích vào bảng địa chỉ MAC của nó"
+      }
+    },
+    {
+      "id": "8",
+      "source_id": "3",
+      "type": "single",
+      "question": "What is the destination MAC address of a broadcast frame?",
+      "question_images": [],
+      "options": {
+        "A": "00:00:0c:07:ac:01",
+        "B": "ff:ff:ff:ff:ff:ff",
+        "C": "43:2e:08:00:00:0c",
+        "D": "00:00:0c:43:2e:08",
+        "E": "00:00:0crfHfrff"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Địa chỉ MAC đích của một khung broadcast là gì?",
+      "options_vi": {
+        "A": "00:00:0c:07:ac:01",
+        "B": "ff:ff:ff:ff:ff:ff",
+        "C": "43:2e:08:00:00:0c",
+        "D": "00:00:0c:43:2e:08",
+        "E": "00:00:0crfHfrff"
+      }
+    },
+    {
+      "id": "9",
+      "source_id": "4",
+      "type": "single",
+      "question": "Which action is taken by a switch port enabled for PoE power classification override?",
+      "question_images": [],
+      "options": {
+        "A": "When a powered device begins drawing power from a PoE switch port a syslog message is\ngenerated",
+        "B": "As power usage on a PoE switch port is checked data flow to the connected device is\ntemporarily paused",
+        "C": "If a switch determines that a device is using less than the minimum configured power it\nassumes the device has failed and disconnects",
+        "D": "If a monitored port exceeds the maximum administrative value for power, the port is shutdown\nand err-disabled"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [
+        "page_5_img_2.png"
+      ],
+      "explanation": "POE = Power Over Ethernet\nExplanation\nPoE monitoring and policing compares the power consumption on ports with the administrative\nmaximum value (either a configured maximum value or the port’s default value). If the power\nconsumption on a monitored port exceeds the administrative maximum value, the following\nactions occur:\n+ A syslog message is issued.\n+ The monitored port is shut down and error-disabled.\n+ The allocated power is freed.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-\n2SX/configuration/guide/book/power_over_ethernet.pdf",
+      "explanation_images": [],
+      "question_vi": "Hành động nào được thực hiện bởi cổng switch được bật tính năng ghi đè phân loại công suất PoE (PoE power classification override)?",
+      "options_vi": {
+        "A": "Khi một thiết bị được cấp nguồn bắt đầu lấy điện từ cổng switch PoE, một thông báo syslog được tạo ra",
+        "B": "Khi mức sử dụng điện trên cổng switch PoE được kiểm tra, luồng dữ liệu đến thiết bị kết nối bị tạm dừng",
+        "C": "Nếu switch xác định rằng thiết bị đang sử dụng ít hơn công suất tối thiểu được cấu hình, nó giả định thiết bị đã hỏng và ngắt kết nối",
+        "D": "Nếu cổng được giám sát vượt quá giá trị công suất quản trị tối đa, cổng bị tắt và err-disabled"
+      }
+    },
+    {
+      "id": "10",
+      "source_id": "15",
+      "type": "single",
+      "question": "Refer to the exhibit. PC1 is trying to ping PC3 for the first time and sends out an ARP to S1. Which\naction is taken by S1?",
+      "question_images": [
+        "page_6_img_3.jpeg"
+      ],
+      "options": {
+        "A": "It forwards it out G0/3 only",
+        "B": "It is flooded out every port except G0/0",
+        "C": "It drops the frame",
+        "D": "It forwards it out interface G0/2 only"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. PC1 đang cố ping PC3 lần đầu tiên và gửi một ARP đến S1. Hành động nào được S1 thực hiện?",
+      "options_vi": {
+        "A": "Nó chuyển tiếp ra G0/3 duy nhất",
+        "B": "Nó được flood ra mọi cổng trừ G0/0",
+        "C": "Nó loại bỏ khung",
+        "D": "Nó chuyển tiếp ra giao diện G0/2 duy nhất"
+      }
+    },
+    {
+      "id": "11",
+      "source_id": "19",
+      "type": "single",
+      "question": "What does a switch use to build its MAC address table?",
+      "question_images": [],
+      "options": {
+        "A": "VTP",
+        "B": "DTP",
+        "C": "egress traffic",
+        "D": "ingress traffic"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The MAC addresses in the CAM table are the source MAC addresses only. Therefore it only learns\nMAC address from ingress traffic.",
+      "explanation_images": [],
+      "question_vi": "Switch sử dụng gì để xây dựng bảng địa chỉ MAC của nó?",
+      "options_vi": {
+        "A": "VTP",
+        "B": "DTP",
+        "C": "Lưu lượng đi ra (egress traffic)",
+        "D": "Lưu lượng đi vào (ingress traffic)"
+      }
+    },
+    {
+      "id": "12",
+      "source_id": "36",
+      "type": "multi",
+      "question": "If a switch port receives a new frame while it is actively transmitting a previous frame, how does it\nprocess the frames?",
+      "question_images": [],
+      "options": {
+        "A": "The previous frame is delivered, the new frame is dropped, and a retransmission request is\nsent.",
+        "B": "The new frame is delivered first, the previous frame is dropped, and a retransmission request is\nsent.",
+        "C": "The two frames are processed and delivered at the same time.",
+        "D": "The new frame is placed in a queue for transmission after the previous frame."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Nếu một cổng switch nhận được một khung mới trong khi đang truyền một khung trước đó, nó xử lý các khung như thế nào?",
+      "options_vi": {
+        "A": "Khung trước đó được gửi đi, khung mới bị loại bỏ, và một yêu cầu truyền lại được gửi.",
+        "B": "Khung mới được gửi đi trước, khung trước đó bị loại bỏ, và một yêu cầu truyền lại được gửi.",
+        "C": "Hai khung được xử lý và gửi đi cùng lúc.",
+        "D": "Khung mới được đặt vào hàng đợi để truyền sau khung trước đó."
+      }
+    },
+    {
+      "id": "13",
+      "source_id": "40",
+      "type": "single",
+      "question": "Why does a switch flood a frame to all ports?",
+      "question_images": [],
+      "options": {
+        "A": "The destination MAC address of the frame is unknown",
+        "B": "The source MAC address of the frame is unknown",
+        "C": "The source and destination MAC addresses of the frame are the same",
+        "D": "The frame has zero destination MAC addresses"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "If the destination MAC address is not in the CAM table (that is, unknown unicast), the switch sends\nthe frame out all other ports that are in the same VLAN as the received frame. This is\ncalled flooding. It does not flood the frame out the same port on which the frame was received.",
+      "explanation_images": [],
+      "question_vi": "Tại sao switch flood một khung đến tất cả các cổng?",
+      "options_vi": {
+        "A": "Địa chỉ MAC đích của khung không xác định",
+        "B": "Địa chỉ MAC nguồn của khung không xác định",
+        "C": "Địa chỉ MAC nguồn và đích của khung giống nhau",
+        "D": "Khung có địa chỉ MAC đích bằng không"
+      }
+    },
+    {
+      "id": "14",
+      "source_id": "20",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe entire contents of the MAC address table are shown. Sales-4 sends a data frame to Sales-1.\nWhat does the switch do as it receives the frame from Sales-4?",
+      "question_images": [
+        "page_7_img_4.jpeg",
+        "page_7_img_5.jpeg"
+      ],
+      "options": {
+        "A": "Map the Layer 2 MAC address to the Layer 3 IP address and forward the frame",
+        "B": "Insert the source MAC address and port into the forwarding table and forward the frame to\nSales-1",
+        "C": "Perform a lookup in the MAC address table and discard the frame due to a missing entry",
+        "D": "Flood the frame out of all ports except on the port where Sales-1 is connected"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The Sales-1 information was already learned by the switch so it just forwards the frames to Sales-\n1. The switch also learns the information of Sales-4 because this is the first time this host\ncommunicates to other hosts.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nToàn bộ nội dung của bảng địa chỉ MAC được hiển thị. Sales-4 gửi một khung dữ liệu đến Sales-1.\nSwitch làm gì khi nhận được khung từ Sales-4?",
+      "options_vi": {
+        "A": "Ánh xạ địa chỉ MAC Layer 2 sang địa chỉ IP Layer 3 và chuyển tiếp khung",
+        "B": "Chèn địa chỉ MAC nguồn và cổng vào bảng chuyển tiếp và chuyển tiếp khung đến Sales-1",
+        "C": "Thực hiện tra cứu trong bảng địa chỉ MAC và loại bỏ khung do thiếu mục nhập",
+        "D": "Flood khung ra tất cả các cổng trừ cổng nơi Sales-1 được kết nối"
+      }
+    },
+    {
+      "id": "15",
+      "source_id": "9",
+      "type": "single",
+      "question": "When a switch receives a frame for a known destination MAC address, how is the frame\nhandled?",
+      "question_images": [],
+      "options": {
+        "A": "flooded to all ports except the one from which it originated",
+        "B": "broadcast to all ports",
+        "C": "forwarded to the first available port",
+        "D": "sent to the port identified for the known MAC address"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Known v",
+      "explanation_images": [],
+      "question_vi": "Khi switch nhận được một khung cho địa chỉ MAC đích đã biết, khung được xử lý như thế nào?",
+      "options_vi": {
+        "A": "Flood đến tất cả các cổng trừ cổng mà nó đến",
+        "B": "Broadcast đến tất cả các cổng",
+        "C": "Chuyển tiếp đến cổng khả dụng đầu tiên",
+        "D": "Gửi đến cổng được xác định cho địa chỉ MAC đã biết"
+      }
+    },
+    {
+      "id": "16",
+      "source_id": "53",
+      "type": "single",
+      "question": "Refer to the exhibit.\nHost A sent a data frame destined for host D.\nWhat does the switch do when ft receives the frame from host A?",
+      "question_images": [
+        "page_8_img_6.jpeg",
+        "page_8_img_7.jpeg"
+      ],
+      "options": {
+        "A": "It shuts down the port Fa0/1 and places it in err-disable mode.",
+        "B": "It experiences a broadcast storm,",
+        "C": "It floods the frame out of all ports except port Fa0/1.",
+        "D": "It drops the frame from the switch CAM table."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "When the switch receives a frame for a MAC destination address not listed in its address table, it\nfloods the frame to all LAN ports of the same VLAN except the port that received the frame.\nIn this question, switch has not learned about host D yet so it floods the frame to all LAN ports of\nthe same VLAN except Fa0/1 which it received frame from host A.\n. Question 120\nWhich PoE mode enables powered-device detection and guarantees power when the device is\ndetected?\nA. dynamic\nB. static\nC. active\nD. auto\nAnswer: D\nExplanation\nauto – Enables powered-device detection; if enough power is available, automatically allocates\npower to the PoE port after device detection (default setting).\nReference: https://www.thinlabs.com/faq/configure-cisco-switch-for-powering-poe-client",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHost A gửi một khung dữ liệu đến host D.\nSwitch làm gì khi nhận được khung từ host A?",
+      "options_vi": {
+        "A": "Nó tắt cổng Fa0/1 và đặt nó ở chế độ err-disable.",
+        "B": "Nó gặp bão broadcast.",
+        "C": "Nó flood khung ra tất cả các cổng trừ cổng Fa0/1.",
+        "D": "Nó loại bỏ khung khỏi bảng CAM của switch."
+      }
+    },
+    {
+      "id": "17",
+      "source_id": "105",
+      "type": "single",
+      "question": "What is a function of MAC learning on a switch?",
+      "question_images": [],
+      "options": {
+        "A": "A static MAC address is manually added to the MAC table.",
+        "B": "MAC address learning is disabled by default on all VLANs.",
+        "C": "Frames received for a destination MAC address not listed in the address table are dropped.",
+        "D": "The MAC address table is used to populate the ARP table."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "MAC address learning is enabled by default on all VLANs -> Answer B is not correct.\nIf a destination MAC address is unknown then the switch will broadcast the frame out all ports\nexcept the port where the frame is received -> Answer C is not correct.\nThe ARP table is built from the replies to the ARP requests, recorded before a packet is sent on the\nnetwork ->Answer D is not correct.\nWe can use the “mac address-table static 001d.a18b.36d0 vlan 5 interface fastEthernet 0/2” for\nexample to manually add a MAC address into the MAC table.",
+      "explanation_images": [],
+      "question_vi": "Chức năng của việc học MAC (MAC learning) trên switch là gì?",
+      "options_vi": {
+        "A": "Một địa chỉ MAC tĩnh được thêm thủ công vào bảng MAC.",
+        "B": "Việc học địa chỉ MAC bị tắt theo mặc định trên tất cả các VLAN.",
+        "C": "Các khung nhận được cho địa chỉ MAC đích không có trong bảng địa chỉ sẽ bị loại bỏ.",
+        "D": "Bảng địa chỉ MAC được sử dụng để điền vào bảng ARP."
+      }
+    },
+    {
+      "id": "18",
+      "source_id": "35",
+      "type": "single",
+      "question": "When a switch receives a frame for an unknown destination MAC address, how is the frame\nhandled?",
+      "question_images": [],
+      "options": {
+        "A": "broadcast to all ports on the switch",
+        "B": "flooded to all ports except the origination port",
+        "C": "forwarded to the first available port",
+        "D": "inspected and dropped by the switch"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Khi switch nhận được một khung cho địa chỉ MAC đích không xác định, khung được xử lý như thế nào?",
+      "options_vi": {
+        "A": "Broadcast đến tất cả các cổng trên switch",
+        "B": "Flood đến tất cả các cổng trừ cổng gốc",
+        "C": "Chuyển tiếp đến cổng khả dụng đầu tiên",
+        "D": "Được kiểm tra và loại bỏ bởi switch"
+      }
+    },
+    {
+      "id": "19",
+      "source_id": "51",
+      "type": "single",
+      "question": "What is a function of MAC address learning?",
+      "question_images": [],
+      "options": {
+        "A": "It is disabled by default on all interfaces connected to trunks",
+        "B": "It increases security on the management VLAN",
+        "C": "It is enabled by default on all VLANs and interfaces",
+        "D": "It increases the potential for MAC address flooding"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Chức năng của việc học địa chỉ MAC (MAC address learning) là gì?",
+      "options_vi": {
+        "A": "Nó bị tắt theo mặc định trên tất cả các giao diện kết nối với trunk",
+        "B": "Nó tăng cường bảo mật trên VLAN quản lý",
+        "C": "Nó được bật theo mặc định trên tất cả các VLAN và giao diện",
+        "D": "Nó tăng khả năng bị tấn công flood địa chỉ MAC"
+      }
+    },
+    {
+      "id": "20",
+      "source_id": "65",
+      "type": "single",
+      "question": "Which function forwards frames to ports that have a matching destination MAC address?",
+      "question_images": [],
+      "options": {
+        "A": "frame pushing",
+        "B": "frame filtering",
+        "C": "frame flooding",
+        "D": "frame switching"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Chức năng nào chuyển tiếp các khung đến các cổng có địa chỉ MAC đích khớp?",
+      "options_vi": {
+        "A": "frame pushing",
+        "B": "frame filtering",
+        "C": "frame flooding",
+        "D": "frame switching"
+      }
+    },
+    {
+      "id": "21",
+      "source_id": "21",
+      "type": "single",
+      "question": "What does a switch do when it receives a frame whose destination MAC address is missing from\nthe MAC address table?",
+      "question_images": [],
+      "options": {
+        "A": "It floods the frame unchanged across all remaining ports in the incoming VLAN.",
+        "B": "It appends the table with a static entry for the MAC and shuts down the port.",
+        "C": "It updates the CAM table with the destination MAC address of the frame.",
+        "D": "It changes the checksum of the frame to a value that indicates an invalid frame."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Switch làm gì khi nhận được một khung có địa chỉ MAC đích không có trong bảng địa chỉ MAC?",
+      "options_vi": {
+        "A": "Nó flood khung không thay đổi đến tất cả các cổng còn lại trong VLAN đến.",
+        "B": "Nó thêm một mục tĩnh cho MAC vào bảng và tắt cổng.",
+        "C": "Nó cập nhật bảng CAM với địa chỉ MAC đích của khung.",
+        "D": "Nó thay đổi checksum của khung thành giá trị chỉ ra khung không hợp lệ."
+      }
+    },
+    {
+      "id": "22",
+      "source_id": "24",
+      "type": "multi",
+      "question": "What are two reasons a switch experiences frame flooding? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "A defective patch cable is connected to the switch port",
+        "B": "Topology changes are occurring within spanning-tree",
+        "C": "An aged MAC table entry is causing excessive updates",
+        "D": "Port-security is configured globally",
+        "E": "The forwarding table has overflowed"
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "However, other events in the network might cause the switch MAC address table to be flushed\nmore frequently than the configured aging time. One such event is due to spanning-tree topology\nchanges in the network.\nTopology changes reduce the MAC address table aging time from the default time of 300 seconds\nto 15 seconds in the case of 802.1D Spanning Tree Protocol (STP) to freshen stale MAC address\ntable entries -> Answer B is correct.\nIf the Layer 2 forwarding table or the MAC address table is full and it can not save any more MAC\naddress, its enters into a fail-open mode and start behaving like a network Hub. Frames are\nflooded to all ports, similar to broadcast type of communication. The MAC flooding attack uses this\nfeature of the switch to steal information -> Answer E is correct.",
+      "explanation_images": [],
+      "question_vi": "Hai nguyên nhân nào khiến switch bị flood khung? (Chọn hai)",
+      "options_vi": {
+        "A": "Một dây nối (patch cable) bị lỗi được kết nối vào cổng switch",
+        "B": "Các thay đổi topology đang xảy ra trong spanning-tree",
+        "C": "Một mục bảng MAC đã hết hạn đang gây ra cập nhật quá mức",
+        "D": "Port-security được cấu hình toàn cục",
+        "E": "Bảng chuyển tiếp (forwarding table) đã bị tràn"
+      }
+    },
+    {
+      "id": "23",
+      "source_id": "32",
+      "type": "single",
+      "question": "Refer the exhibit.\nR19#show int fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: SALES_SUBNET\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops:\n135298429\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n73310 packets input, 7101162 bytes\nReceived 73115 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 4 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927513096455 packets output, 14404034810952 bytes, 0 underruns\n0 output errors, 11 collisions, 0 interface resets\nWhat is the cause of poor performance on router R19?",
+      "question_images": [],
+      "options": {
+        "A": "excessive collisions",
+        "B": "speed and duplex mismatch",
+        "C": "port oversubscription",
+        "D": "excessive CRC errors"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "We see the “Total output drops: 135298429” is high.\nTypically, the output drops can occur if QoS is configured and does not provide enough\nbandwidth to certain class of packets. It also occurs when the hardware hits an oversubscription.\nReference: https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6500-series-\nswitches/12027-53.html#anc75\nNote: Total output drops: The number of packets dropped because the output queue is full. A\ncommon cause of this might be traffic from a high bandwidth link being switched to a lower\nbandwidth link or traffic from multiple inbound links being switched to a single outbound link.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nR19#show int fa0/0\nFastEthernet0/0 is up, line protocol is up\nHardware is DEC21140, address is ca02.7788.0000 (bia ca02.7788.0000)\nDescription: SALES_SUBNET\nInternet address is 10.32.102.2/30\nMTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,\nreliability 255/255, txload 1/255, rxload 1/255\nEncapsulation ARPA, loopback not set\nKeepalive set (60 sec)\nFull-duplex, 100Mb/s, 100BaseTX/FX\nARP type: ARPA, ARP Timeout 04:00:00\nLast input 00:00:01, output 00:00:00, output hang never\nLast clearing of \"show interface\" counters never\nInput queue: 0/300/0/0 (size/max/drops/flushes); Total output drops:\n135298429\nQueueing strategy: fifo\nOutput queue: 0/300 (size/max)\n30 second input rate 0 bits/sec, 0 packets/sec\n30 second output rate 0 bits/sec, 0 packets/sec\n73310 packets input, 7101162 bytes\nReceived 73115 broadcasts (0 IP multicasts)\n0 runts, 0 giants, 0 throttles\n0 input errors, 4 CRC, 0 frame, 0 overrun, 0 ignored\n0 watchdog\n0 input packets with dribble condition detected\n3927513096455 packets output, 14404034810952 bytes, 0 underruns\n0 output errors, 11 collisions, 0 interface resets\nNguyên nhân gây ra hiệu suất kém trên router R19 là gì?",
+      "options_vi": {
+        "A": "Xung đột quá nhiều (excessive collisions)",
+        "B": "Không khớp tốc độ và duplex (speed and duplex mismatch)",
+        "C": "Quá tải cổng (port oversubscription)",
+        "D": "Lỗi CRC quá nhiều (excessive CRC errors)"
+      }
+    },
+    {
+      "id": "24",
+      "source_id": "80",
+      "type": "single",
+      "question": "What occurs when a switch receives a frame that has a destination that is an unknown MAC\naddress?",
+      "question_images": [],
+      "options": {
+        "A": "The frame is flooded to all interfaces in the VLAN to which the frame belongs.",
+        "B": "The frame is flooded to all interfaces in the switch.",
+        "C": "The frame is discarded",
+        "D": "The MAC address table of the switch is flushed"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [
+        "page_12_img_8.png",
+        "page_13_img_9.png"
+      ],
+      "explanation": "CDP & LLDP Questions\nCDP Quick Summary\nCisco Discovery Protocol (CDP) is a Layer 2 protocol that runs on Cisco devices and\nenables networking applications to learn about directly connected devices nearby. The\ninformation contained in Cisco Discovery Protocol advertisements varies based on the\ntype of device and the installed version of the operating system. Some of the information\nthat Cisco Discovery Protocol can learn includes:\n+ Cisco IOS version running on Cisco devices\n+ Hardware platform of devices\n+ IP addresses of interfaces on devices\n+ Locally connected devices advertising Cisco Discovery Protocol\n+ Interfaces active on Cisco devices, including encapsulation type\n+ Hostname\n+ Duplex setting\n+ VLAN Trunking Protocol (VTP) domain\n+ Native VLAN\nReference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/cdp/configuration/15-\nmt/cdp-15-mt-book/nm-cdp-discover.html\nLLDP Quick Summary\nLink Layer Discovery Protocol (LLDP) is a industry standard protocol that allows devices\nto advertise, and discover connected devices, and there capabilities (same as CDP of\nCisco). To enable it on Cisco devices, we have to use this command under global\nconfiguration mode:\nSw(config)# lldp run",
+      "explanation_images": [],
+      "question_vi": "Điều gì xảy ra khi switch nhận được một khung có đích là địa chỉ MAC không xác định?",
+      "options_vi": {
+        "A": "Khung được flood đến tất cả các giao diện trong VLAN mà khung thuộc về.",
+        "B": "Khung được flood đến tất cả các giao diện trong switch.",
+        "C": "Khung bị loại bỏ",
+        "D": "Bảng địa chỉ MAC của switch bị xóa sạch"
+      }
+    },
+    {
+      "id": "25",
+      "source_id": "1",
+      "type": "single",
+      "question": "How can the Cisco Discovery Protocol be used?",
+      "question_images": [],
+      "options": {
+        "A": "to allow a switch to discover the devices that are connected to its ports",
+        "B": "to determine the hardware platform of the device",
+        "C": "to determine the IP addresses of connected Cisco devices",
+        "D": "all of the above"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Cisco Discovery Protocol có thể được sử dụng như thế nào?",
+      "options_vi": {
+        "A": "Để cho phép switch phát hiện các thiết bị được kết nối vào các cổng của nó",
+        "B": "Để xác định nền tảng phần cứng của thiết bị",
+        "C": "Để xác định địa chỉ IP của các thiết bị Cisco được kết nối",
+        "D": "Tất cả các đáp án trên"
+      }
+    },
+    {
+      "id": "26",
+      "source_id": "2",
+      "type": "single",
+      "question": "In a CDP environment, what happens when the CDP interface on an adjacent device is configured\nwithout an IP address?",
+      "question_images": [],
+      "options": {
+        "A": "CDP operates normally, but it cannot provide any information for that neighbor.",
+        "B": "CDP operates normally, but it cannot provide IP address information for that neighbor.",
+        "C": "CDP uses the IP address of another interface for that neighbor.",
+        "D": "CDP becomes inoperable on that neighbor."
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "If a neighbor has no IP address on an interface enabled with Cisco Discovery Protocol, the IP\naddress of another interface will be updated as IP address for the non-IP address interface.\nReference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/cdp/configuration/15-mt/cdp-15-\nmt-book/nm-cdp-discover.html",
+      "explanation_images": [
+        "page_14_img_11.png"
+      ],
+      "question_vi": "Trong môi trường CDP, điều gì xảy ra khi giao diện CDP trên thiết bị lân cận được cấu hình mà không có địa chỉ IP?",
+      "options_vi": {
+        "A": "CDP hoạt động bình thường, nhưng không thể cung cấp bất kỳ thông tin nào cho thiết bị lân cận đó.",
+        "B": "CDP hoạt động bình thường, nhưng không thể cung cấp thông tin địa chỉ IP cho thiết bị lân cận đó.",
+        "C": "CDP sử dụng địa chỉ IP của giao diện khác cho thiết bị lân cận đó.",
+        "D": "CDP trở nên không hoạt động trên thiết bị lân cận đó."
+      }
+    },
+    {
+      "id": "27",
+      "source_id": "3",
+      "type": "single",
+      "question": "Which command should you enter to configure an LLDP delay time of 5 seconds?",
+      "question_images": [],
+      "options": {
+        "A": "lldp reinit 5",
+        "B": "lldp reinit 5000",
+        "C": "lldp holdtime 5",
+        "D": "lldp timer 5000"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [
+        "page_15_img_12.png"
+      ],
+      "explanation": "+ lldp holdtime seconds: Specify the amount of time a receiving device should hold the\ninformation from your device before discarding it\n+ lldp reinit delay: Specify the delay time in seconds for LLDP to initialize on an interface\n+ lldp timer rate: Set the sending frequency of LLDP updates in seconds\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3560/software/release/12\n-2_55_se/configuration/guide/3560_scg/swlldp.html",
+      "explanation_images": [],
+      "question_vi": "Lệnh nào bạn nên nhập để cấu hình thời gian trì hoãn LLDP là 5 giây?",
+      "options_vi": {
+        "A": "lldp reinit 5",
+        "B": "lldp reinit 5000",
+        "C": "lldp holdtime 5",
+        "D": "lldp timer 5000"
+      }
+    },
+    {
+      "id": "28",
+      "source_id": "4",
+      "type": "single",
+      "question": "Which command is used to enable LLDP globally on a Cisco IOS ISR?",
+      "question_images": [],
+      "options": {
+        "A": "lldp run",
+        "B": "lldp enable",
+        "C": "lldp transmit",
+        "D": "cdp run",
+        "E": "cdp enable"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Link Layer Discovery Protocol (LLDP) is a industry standard protocol that allows devices to\nadvertise, and discover connected devices, and there capabilities (same as CDP of Cisco). To\nenable it on Cisco devices, we have to use this command under global configuration mode:\nSw(config)# lldp run",
+      "explanation_images": [],
+      "question_vi": "Lệnh nào được sử dụng để bật LLDP toàn cục trên Cisco IOS ISR?",
+      "options_vi": {
+        "A": "lldp run",
+        "B": "lldp enable",
+        "C": "lldp transmit",
+        "D": "cdp run",
+        "E": "cdp enable"
+      }
+    },
+    {
+      "id": "29",
+      "source_id": "5",
+      "type": "single",
+      "question": "Refer to the exhibit. Which command provides this output?\nCapability Codes: k - Router, I - Trans Bridge, B - source Route bridge\nS - Switch, H - Host, I - IGMP, r - Repeater, P - Phone,\nD - Remote, C - CVTA, M - Two-port Mac Relay\nDevice ID Local Intrfce Holdtme Capability Platform Port ID\n10.1.1.2 Gig37/3 176 RI CPT 600 Gig36/41\n10.1.1.2 Gig37/1 174 RI CPT 600 Gig36/43\n10.1.1.2 Gig36/41 134 RI CPT 600 Gig37/3\n10.1.1.2 Gig36/43 134 RI CPT 600 Gig37/1\n10.1.1.2 Ten3/2 132 RI CPT 600 Ten4/2\n10.1.1.2 Ten4/2 174 RI CPT 600 Ten3/2",
+      "question_images": [],
+      "options": {
+        "A": "show ip route",
+        "B": "show ip interface",
+        "C": "show interface",
+        "D": "show cdp neighbor"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [
+        "page_16_img_14.png"
+      ],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Lệnh nào tạo ra kết quả này?\nCapability Codes: k - Router, I - Trans Bridge, B - source Route bridge\nS - Switch, H - Host, I - IGMP, r - Repeater, P - Phone,\nD - Remote, C - CVTA, M - Two-port Mac Relay\nDevice ID Local Intrfce Holdtme Capability Platform Port ID\n10.1.1.2 Gig37/3 176 RI CPT 600 Gig36/41\n10.1.1.2 Gig37/1 174 RI CPT 600 Gig36/43\n10.1.1.2 Gig36/41 134 RI CPT 600 Gig37/3\n10.1.1.2 Gig36/43 134 RI CPT 600 Gig37/1\n10.1.1.2 Ten3/2 132 RI CPT 600 Ten4/2\n10.1.1.2 Ten4/2 174 RI CPT 600 Ten3/2",
+      "options_vi": {
+        "A": "show ip route",
+        "B": "show ip interface",
+        "C": "show interface",
+        "D": "show cdp neighbor"
+      }
+    },
+    {
+      "id": "30",
+      "source_id": "6",
+      "type": "single",
+      "question": "Which command is used to specify the delay time in seconds for LLDP to initialize on any interface?",
+      "question_images": [],
+      "options": {
+        "A": "lldp timer",
+        "B": "lldp holdtime",
+        "C": "lldp reinit",
+        "D": "lldp tlv-select"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "+ lldp holdtime seconds: Specify the amount of time a receiving device should hold the\ninformation from your device before discarding it\n+ lldp reinit delay: Specify the delay time in seconds for LLDP to initialize on an interface\n+ lldp timer rate: Set the sending frequency of LLDP updates in seconds\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3560/software/release/12\n-2_55_se/configuration/guide/3560_scg/swlldp.html",
+      "explanation_images": [],
+      "question_vi": "Lệnh nào được sử dụng để chỉ định thời gian trì hoãn tính bằng giây để LLDP khởi tạo trên bất kỳ giao diện nào?",
+      "options_vi": {
+        "A": "lldp timer",
+        "B": "lldp holdtime",
+        "C": "lldp reinit",
+        "D": "lldp tlv-select"
+      }
+    },
+    {
+      "id": "31",
+      "source_id": "7",
+      "type": "single",
+      "question": "A network engineer must create a diagram of a multivendor network. Which command must be\nconfigured on the Cisco devices so that the topology of the network can be mapped?",
+      "question_images": [],
+      "options": {
+        "A": "Device(Config)#lldp run",
+        "B": "Device(Config)#cdp run",
+        "C": "Device(Config-if)#cdp enable",
+        "D": "Device(Config)#flow-sampler-map topology"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư mạng cần tạo sơ đồ của một mạng đa nhà cung cấp (multivendor). Lệnh nào phải được cấu hình trên các thiết bị Cisco để có thể lập bản đồ topology của mạng?",
+      "options_vi": {
+        "A": "Device(Config)#lldp run",
+        "B": "Device(Config)#cdp run",
+        "C": "Device(Config-if)#cdp enable",
+        "D": "Device(Config)#flow-sampler-map topology"
+      }
+    },
+    {
+      "id": "32",
+      "source_id": "8",
+      "type": "single",
+      "question": "An engineer needs to configure LLDP to send the port description time length value (TLV). What\ncommand sequence must be implemented?",
+      "question_images": [],
+      "options": {
+        "A": "switch#lldp port-description",
+        "B": "switch(config)#lldp port-description",
+        "C": "switch(config-line)#lldp port-description",
+        "D": "switch(config-if)#lldp port-description"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [
+        "page_17_img_15.png"
+      ],
+      "explanation": "Use the switch(config)#lldp port-description option to specify the port description TLV\nmessages.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus6000/sw/layer2/7x/\nb_6k_Layer2_Config_7x/config_lldp.pdf",
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư cần cấu hình LLDP để gửi giá trị thời gian mô tả cổng (port description TLV). Chuỗi lệnh nào phải được thực hiện?",
+      "options_vi": {
+        "A": "switch#lldp port-description",
+        "B": "switch(config)#lldp port-description",
+        "C": "switch(config-line)#lldp port-description",
+        "D": "switch(config-if)#lldp port-description"
+      }
+    },
+    {
+      "id": "33",
+      "source_id": "12",
+      "type": "single",
+      "question": "Which protocol does an access point use to draw power from a connected switch?",
+      "question_images": [],
+      "options": {
+        "A": "Internet Group Management Protocol",
+        "B": "Cisco Discovery Protocol",
+        "C": "Adaptive Wireless Path Protocol",
+        "D": "Neighbor Discovery Protocol"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Giao thức nào mà access point sử dụng để lấy nguồn điện từ switch được kết nối?",
+      "options_vi": {
+        "A": "Internet Group Management Protocol",
+        "B": "Cisco Discovery Protocol",
+        "C": "Adaptive Wireless Path Protocol",
+        "D": "Neighbor Discovery Protocol"
+      }
+    },
+    {
+      "id": "34",
+      "source_id": "22",
+      "type": "multi",
+      "question": "Refer to the exhibit.\nAn administrator must turn off the Cisco Discovery Protocol on the port configured with last usable\naddress in the 10.0.0.0/30 subnet. Which command set meets the requirement?",
+      "question_images": [
+        "page_18_img_16.jpeg"
+      ],
+      "options": {
+        "A": "interface gi0/1\nno cdp enable",
+        "B": "interface gi0/1\nclear cdp table",
+        "C": "interface gi0/0\nno cdp run -> Global command",
+        "D": "interface gi0/0\nno cdp advertise-v2"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "In order to disable CDP on an interface, we have to use the “no cdp enable” under interface mode.\nNote: “no cdp run” is a global configuration command.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nQuản trị viên phải tắt Cisco Discovery Protocol trên cổng được cấu hình với địa chỉ khả dụng cuối cùng trong subnet 10.0.0.0/30. Bộ lệnh nào đáp ứng yêu cầu?",
+      "options_vi": {
+        "A": "interface gi0/1\nno cdp enable",
+        "B": "interface gi0/1\nclear cdp table",
+        "C": "interface gi0/0\nno cdp run -> Global command",
+        "D": "interface gi0/0\nno cdp advertise-v2"
+      }
+    },
+    {
+      "id": "35",
+      "source_id": "31",
+      "type": "single",
+      "question": "Refer to the exhibit.\nHow must router A be configured so that it only sends Cisco Discovery Protocol Information to\nrouter C?",
+      "question_images": [
+        "page_18_img_0.jpeg",
+        "options_q35.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nRouter A phải được cấu hình như thế nào để nó chỉ gửi thông tin Cisco Discovery Protocol đến router C?\nOption A Option B\nconf t conf t\nRouterA(config)#no cdp run RouterA(config)#cdp run\nRouterA(config)#interface RouterA(config)#interface\ngi0/0/1 gi0/0/1\nRouterA(config)#cdp enable RouterA(config)#cdp enable\nOption C Option D\nconf t conf t\nRouterA(config)#cdp run RouterA(config)#cdp run\nRouterA(config)#interface RouterA(config)#interface\ngi0/0/0 gi0/0/0\nRouterA(config)#cdp enable RouterA(config)#no cdp\nenable",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "36",
+      "source_id": "44",
+      "type": "multi",
+      "question": "An engineer configures interface Gi1/0 on the company PE router to connect to an ISP.\nNeighbor discovery is disabled.\ninterface Gi1/0\ndescription HQ_DC3392-9383\nduplex full\nspeed 100\nnegotiation auto\nlldp transmit\nlldp receive\nWhich action is necessary to complete the configuration if the ISP uses third-party network\ndevices?",
+      "question_images": [],
+      "options": {
+        "A": "Enable LLDP globally",
+        "B": "Disable autonegotiation",
+        "C": "Disable Cisco Discovery Protocol on the interface",
+        "D": "Enable LLDP-MED on the ISP device"
+      },
+      "answer": [
+        "D",
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "From the output we see LLDP has been enabled on Gi1/0 interface but this questions said\n“neighbor discovery is disabled”. Therefore we must turn on LLDP globally with the “lldp run”\nunder global configuration mode: Router(config)# lldp run\nNote: LLDP for Media Endpoint Devices (LLDP-MED) is an extension to LLDP that operates between\nendpoint devices such as IP phones and network devices such as switches. It specifically provides\nsupport for voice over IP (VoIP) applications and provides additional TLVs for capabilities\ndiscovery, network policy, Power over Ethernet, inventory management, and location information",
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư cấu hình giao diện Gi1/0 trên router PE của công ty để kết nối với ISP.\nKhám phá thiết bị lân cận (neighbor discovery) bị tắt.\ninterface Gi1/0\ndescription HQ_DC3392-9383\nduplex full\nspeed 100\nnegotiation auto\nlldp transmit\nlldp receive\nHành động nào cần thiết để hoàn thành cấu hình nếu ISP sử dụng thiết bị mạng của bên thứ ba?",
+      "options_vi": {
+        "A": "Bật LLDP toàn cục",
+        "B": "Tắt autonegotiation",
+        "C": "Tắt Cisco Discovery Protocol trên giao diện",
+        "D": "Bật LLDP-MED trên thiết bị ISP"
+      }
+    },
+    {
+      "id": "37",
+      "source_id": "31",
+      "type": "single",
+      "question": "Refer to the exhibit.\nFor security reasons, automatic neighbor discovery must be disabled on the R5 Gi0/1 interface.\nThese tasks must be completed:\n* Disable all neighbor discovery methods on R5 interface Gi0/1.\n* Permit neighbor discovery on R5 interface Gi0/2.\n* Verify there are no dynamically learned neighbors on R5 interface Gi0/1.\n* Display the IP address of R6’s interface Gi0/2.\nWhich configuration must be used?",
+      "question_images": [
+        "page_19_img_0.jpeg",
+        "options_q37.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Although CDP is a Layer 2 protocol but we can check the neighbor IP address with the “show cdp\nneighbor detail” command.\nOne of the task in this question is “display the IP address of R6’s interface Gi0/2” so we must use\n“show cdp neighbor detail” command -> Only Option A and Option C are correct.\nIf we want to disable LLDP on an interface we can use two commands under interface mode:\nno lldp transmit: Disallows sending LLDP packets on the interface.\nno lldp receive: Disallows receiving LLDP packets on the interface.\nBut these two commands are not used in this question so we have to disable LLDP globally (with\ncommand “no lldp run”) so that only CDP is enabled on R5 interface Gi0/2 -> Only Option C is\ncorrect.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nVì lý do bảo mật, khám phá thiết bị lân cận tự động phải được tắt trên giao diện Gi0/1 của R5.\nCác nhiệm vụ sau phải được hoàn thành:\n* Tắt tất cả các phương pháp khám phá thiết bị lân cận trên giao diện Gi0/1 của R5.\n* Cho phép khám phá thiết bị lân cận trên giao diện Gi0/2 của R5.\n* Xác minh không có thiết bị lân cận nào được học động trên giao diện Gi0/1 của R5.\n* Hiển thị địa chỉ IP của giao diện Gi0/2 của R6.\nCấu hình nào phải được sử dụng?\nOption A Option B\nR5(config)#int Gi0/1 R5(config)#int Gi0/1\nR5(config-if)#no cdp enable R5(config-if)#no cdp run\nR5(config-if)#exit R5(config-if)#exit\nR5(config)#lldp run R5(config)#lldp run\nR5(config)#no cdp run R5(config)#cdp enable\nR5#sh cdp neighbor detail R5#sh cdp neighbor\nR5#sh lldp neighbor R5#sh lldp neighbor\nOption C Option D\nR5(config)#Gi0/1 R5(config)#int Gi0/1\nR5(config-if)#no cdp enable R5(config-if)#no cdp enable\nR5(config-if)#exit R5(config-if)#exit\nR5(config)#no lldp run R5(config)#no lldp run\nR5(config)#cdp run R5(config)#cdp run\nR5#sh cdp neighbor detail R5#sh cdp neighbor\nR5#sh lldp neighbor R5#sh lldp neighbor",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "38",
+      "source_id": "67",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must update the configuration on Switch2 so that it sends LLDP packets every\nminute and the information sent via LLDP is refreshed every 3 minutes. Which configuration must\nthe engineer apply?",
+      "question_images": [
+        "page_21_img_19.jpeg"
+      ],
+      "options": {
+        "A": "Switch2(config)#lldp timer 60\nSwitch2(config)# lldp tlv-select 180",
+        "B": "Switch2(config)#lldp timer 60\nSwitch2(config)#lldp holdtime 180",
+        "C": "Switch2(config)#lldp timer 1\nSwitch2(config)#lldp tlv-select 3",
+        "D": "Switch2(config)#lldp timer 1\nSwitch2(config)#lldp holdtime 3"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "+ lldp holdtime seconds: Specify the amount of time a receiving device should hold the\ninformation from your device before discarding it\n+ lldp timer rate: Set the sending frequency of LLDP updates in seconds\n+ lldp tlv-select command. This will specify the LLDP TLVs to send or receive.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư mạng phải cập nhật cấu hình trên Switch2 để nó gửi các gói LLDP mỗi phút và thông tin gửi qua LLDP được làm mới mỗi 3 phút. Cấu hình nào kỹ sư phải áp dụng?",
+      "options_vi": {
+        "A": "Switch2(config)#lldp timer 60\nSwitch2(config)# lldp tlv-select 180",
+        "B": "Switch2(config)#lldp timer 60\nSwitch2(config)#lldp holdtime 180",
+        "C": "Switch2(config)#lldp timer 1\nSwitch2(config)#lldp tlv-select 3",
+        "D": "Switch2(config)#lldp timer 1\nSwitch2(config)#lldp holdtime 3"
+      }
+    },
+    {
+      "id": "39",
+      "source_id": "55",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich action must be taken so that neighboring devices rapidly discover switch Cat9300?",
+      "question_images": [
+        "page_22_img_20.jpeg"
+      ],
+      "options": {
+        "A": "Enable portfast on the ports that connect to neighboring devices",
+        "B": "Configure the cdp holdtime 10 command on switch Cat9300",
+        "C": "Configure the cdp timer 10 command on the neighbors of switch Cat9300",
+        "D": "Configure the cdp timer 10 command on switch Cat9300"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The “cdp timer seconds” command sets the transmission frequency of CDP updates in seconds so\nwe should reduce it so that CDP updates are sent more often.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nHành động nào phải được thực hiện để các thiết bị lân cận phát hiện nhanh chóng switch Cat9300?",
+      "options_vi": {
+        "A": "Bật portfast trên các cổng kết nối đến các thiết bị lân cận",
+        "B": "Cấu hình lệnh cdp holdtime 10 trên switch Cat9300",
+        "C": "Cấu hình lệnh cdp timer 10 trên các thiết bị lân cận của switch Cat9300",
+        "D": "Cấu hình lệnh cdp timer 10 trên switch Cat9300"
+      }
+    },
+    {
+      "id": "40",
+      "source_id": "76",
+      "type": "single",
+      "question": "Refer to the exhibit.\nCat9K-1#show lldp entry Cat9K-2\nLocal Intf: Gi1/0/21\nChassis ID: 308b.b2b3.2880\nPort id: Gi1/0/21\nPort Description: GigabitEthernet1/0/21\nSystem Name: Cat9K-2\nManagement Addresses:\nIP: 10.6.110.2\nThe network administrator must prevent the switch Cat9K-2 IP address from being visible in LLDP\nwithout disabling the protocol. Which action must be taken must be taken to complete the task?",
+      "question_images": [],
+      "options": {
+        "A": "Configure the no lldp tlv-select-management-address command globally on Cat9K-2",
+        "B": "Configure the no lldp transmit command on interface G1/0/21 in Cat9K-1",
+        "C": "Configure the no lldp receive command on interface G1/0/21 on Cat9K-1",
+        "D": "Configure the no lldp mac-phy-cfg command globally on Cat9K-2"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "LLDP stands for Link Layer Discovery Protocol and runs over data link layer. It is used for network\ndevices to send information about themselves to other directly connected devices on the network.\nBy using LLDP, two devices running different network layer protocols can learn information about\neach other. A set of attributes are used to discover neighbor devices. These attributes contains\ntype, length, and value descriptions and are referred to TLVs. Details such as port description,\nsystem name, system description, system capabilities, and management address can be sent and\nreceived on this Managed Switch.\nThe command no lldp tlv-select-management-address disables the Management Address\nattribute to be sent.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCat9K-1#show lldp entry Cat9K-2\nLocal Intf: Gi1/0/21\nChassis ID: 308b.b2b3.2880\nPort id: Gi1/0/21\nPort Description: GigabitEthernet1/0/21\nSystem Name: Cat9K-2\nManagement Addresses:\nIP: 10.6.110.2\nQuản trị viên mạng phải ngăn địa chỉ IP của switch Cat9K-2 hiển thị trong LLDP mà không tắt giao thức. Hành động nào phải được thực hiện để hoàn thành nhiệm vụ?",
+      "options_vi": {
+        "A": "Cấu hình lệnh no lldp tlv-select management-address toàn cục trên Cat9K-2",
+        "B": "Cấu hình lệnh no lldp transmit trên giao diện G1/0/21 của Cat9K-1",
+        "C": "Cấu hình lệnh no lldp receive trên giao diện G1/0/21 của Cat9K-1",
+        "D": "Cấu hình lệnh no lldp mac-phy-cfg toàn cục trên Cat9K-2"
+      }
+    },
+    {
+      "id": "41",
+      "source_id": "95",
+      "type": "single",
+      "question": "An engineer must configure neighbor discovery between the company router and an ISP.\ninterface gigabitethernet0/0\ndescription Circuit-ATT4202-\n89930\nduplex full\nspeed 1000\nmedia-type gbic\nnegotiation auto\nlldp transmit\nlldp receive\nWhat is the next step to complete the configuration if the ISP uses a third-party router?",
+      "question_images": [],
+      "options": {
+        "A": "Disable CDP on gi0/0.",
+        "B": "Disable auto-negotiation.",
+        "C": "Enable LLDP TLVs on the ISP router.",
+        "D": "Enable LLDP globally."
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư cần cấu hình khám phá láng giềng (neighbor discovery) giữa router của công ty và ISP.\ninterface gigabitethernet0/0\ndescription Circuit-ATT4202-\n89930\nduplex full\nspeed 1000\nmedia-type gbic\nnegotiation auto\nlldp transmit\nlldp receive\nBước tiếp theo để hoàn thành cấu hình là gì nếu ISP sử dụng router của bên thứ ba?",
+      "options_vi": {
+        "A": "Tắt CDP trên gi0/0.",
+        "B": "Tắt auto-negotiation.",
+        "C": "Bật LLDP TLVs trên router ISP.",
+        "D": "Bật LLDP trên toàn cục (globally)."
+      }
+    },
+    {
+      "id": "42",
+      "source_id": "40",
+      "type": "single",
+      "question": "Refer to the exhibit.\nRouters R1, R2, and R3 use a protocol to identify their neighbors’ IP addresses, hardware\nplatforms, and software versions. A network engineer must configure R2 to avoid sharing any\nneighbor information with R3, and maintain its relationship with R1. What action meets this\nrequirement?",
+      "question_images": [
+        "page_23_img_21.jpeg"
+      ],
+      "options": {
+        "A": "Configure the no lldp run command globally",
+        "B": "Configure the no lldp receive command on g0/1",
+        "C": "Configure the no cdp run command globally",
+        "D": "Configure the no cdp enable command on g0/2"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "In order to disable CDP on an interface, we have to use the “no cdp enable” under interface mode.\nIf we want to disable sending LLDP on g0/2 only then we have to use the command “no lldp\ntransmit”.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác router R1, R2 và R3 sử dụng một giao thức để xác định địa chỉ IP, nền tảng phần cứng và phiên bản phần mềm của các láng giềng. Kỹ sư mạng phải cấu hình R2 để tránh chia sẻ bất kỳ thông tin láng giềng nào với R3, và duy trì mối quan hệ với R1. Hành động nào đáp ứng yêu cầu này?",
+      "options_vi": {
+        "A": "Cấu hình lệnh no lldp run trên toàn cục",
+        "B": "Cấu hình lệnh no lldp receive trên g0/1",
+        "C": "Cấu hình lệnh no cdp run trên toàn cục",
+        "D": "Cấu hình lệnh no cdp enable trên g0/2"
+      }
+    },
+    {
+      "id": "43",
+      "source_id": "79",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA multivendor network exists and the company is implementing VoIP over the network for the first\ntime. Which configuration is needed to implement the neighbor discovery protocol on the interface\nand allow it to remain off for the remaining interfaces?",
+      "question_images": [
+        "page_24_img_22.jpeg"
+      ],
+      "options": {
+        "A": "SW1(config)#no cdp enable\nSW1 (config)#interface gigabitethernet1/0/1\nSW1(config-if)#cdp run",
+        "B": "SW1(config)#lldp enable\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp run",
+        "C": "SW1(config)#lldp run\nSW1 (config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp enable",
+        "D": "SW1(config)#no cdp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp transmit\nSW1(config-if)#lldp receive"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "There is no totally correct answer. LLDP is disabled by default so in fact we need one additional\ncommand to enable LLDP:\nSW1(config)# lldp run\nBut this answer is still the best choice as we have to disable neighbor discovery protocol for the\nremaining interfaces with the “no cdp run” command (not “no cdp enable”).\nVLAN & Trunking Questions\nQuick summary about VLAN:\nBe default all access ports belong to VLAN 1. If we want to assign a new VLAN, we have\nto use the command “switchport access vlan <vlan-id>” under interface mode.\nVLAN Benefits:\n– Logically group devices by department/function, not location so it provides more\nefficient use of bandwidth\n– Separate broadcast domains, thus reducing their sizes and help mitigate broadcast\nstorms\n– Provide additional security because it separates sensitive data traffic from other traffic\nThe following commands are used to a create a VLAN (for example VLAN 10) and\nassign it to an interface (for example fa0/1) on a switch:\nSwitch(config)#vlan 10 //Create VLAN 10 first\nSwitch(config)#interface fa0/1\nSwitch(config-if)# switchport mode access\nSwitch(config-if)#switchport access vlan 10\n//assign Fa0/1 interface to VLAN 10\nTo verify a VLAN or check which ports belong to which VLAN, use the “show vlan”\ncommand (or “show vlan id <vlan-id>” for a specific VLAN)",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột mạng đa nhà cung cấp (multivendor) tồn tại và công ty đang triển khai VoIP trên mạng lần đầu tiên. Cấu hình nào cần thiết để triển khai giao thức khám phá láng giềng (neighbor discovery protocol) trên interface và cho phép nó vẫn tắt trên các interface còn lại?",
+      "options_vi": {
+        "A": "SW1(config)#no cdp enable\nSW1 (config)#interface gigabitethernet1/0/1\nSW1(config-if)#cdp run",
+        "B": "SW1(config)#lldp enable\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp run",
+        "C": "SW1(config)#lldp run\nSW1 (config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp enable",
+        "D": "SW1(config)#no cdp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp transmit\nSW1(config-if)#lldp receive"
+      }
+    },
+    {
+      "id": "44",
+      "source_id": "1",
+      "type": "single",
+      "question": "Refer to the exhibit. After the switch configuration the ping test fails between PC A and PC B.\nBased on the output for switch 1, which error must be corrected?\nSwitch 1 Switch 2\nName: Gi0/1 Name: Gi0/1\nSwitchport: Enabled Switchport: Enabled\nAdministrative Mode: trunk (Static TRUNK) Administrative Mode: trunk (Static TRUNK)\nOperational Mode: trunk\nOperational Mode: trunk\nAdministrative Trunking Encapsulation: dot1q\nAdministrative Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nOperational Trunking Encapsulation: dot1q\nNegotiation of Trunking: Off (DTP Off)\nNegotiation of Trunking: Off\nAccess Mode VLAN: 1 (default)\nAccess Mode VLAN: 1 (default)\nTrunking Native Mode VLAN: 99 (default)\nTrunking Native Mode VLAN: 1 (default)\nAdministrative Native VLAN tagging: enabled\nAdministrative Native VLAN tagging: enabled\nVoice VLAN: none\nVoice VLAN: none\n<output omitted>\n<output omitted>\nTrunking VLANs Enabled: 50-100\nTrunking VLANs Enabled: 50-100\nPruning VLANs Enabled: 2-1001\nPruning VLANs Enabled: 2-1001\nCapture Mode Disabled\nCapture Mode Disabled\nCapture VLANs Allowed: ALL\nCapture VLANs Allowed: ALL",
+      "question_images": [
+        "page_26_img_23.jpeg"
+      ],
+      "options": {
+        "A": "There is a native VLAN mismatch",
+        "B": "Access mode is configured on the switch ports.",
+        "C": "The PCs are in the incorrect VLAN",
+        "D": "All VLANs are not enabled on the trunk"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "From the output we see the native VLAN of Switch1 on Gi0/1 interface is VLAN 1 while that of\nSwitch2 is VLAN 99 so there would be a native VLAN mismatch.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Sau khi cấu hình switch, kiểm tra ping giữa PC A và PC B thất bại. Dựa trên đầu ra của switch 1, lỗi nào cần được sửa?",
+      "options_vi": {
+        "A": "Có sự không khớp native VLAN (native VLAN mismatch)",
+        "B": "Chế độ access được cấu hình trên các cổng switch.",
+        "C": "Các PC nằm trong VLAN không đúng",
+        "D": "Không phải tất cả VLAN đều được bật trên trunk"
+      }
+    },
+    {
+      "id": "45",
+      "source_id": "2",
+      "type": "single",
+      "question": "Two switches are connected and using Cisco Dynamic Trunking Protocol. SW1 is set to Dynamic\nDesirable. What is the result of this configuration?",
+      "question_images": [],
+      "options": {
+        "A": "The link is in a downstate.",
+        "B": "The link is in an error disables stale",
+        "C": "The link is becomes an access port",
+        "D": "The link becomes a trunkport"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Maybe this question is missing the “SW2 is set to Dynamic Auto” part so we assume this part to\nfind out the best answer. Dynamic Desirable + Dynamic Desirable/Dynamic Auto/Trunk will form a\ntrunk link.",
+      "explanation_images": [],
+      "question_vi": "Hai switch được kết nối và sử dụng Cisco Dynamic Trunking Protocol. SW1 được đặt ở chế độ Dynamic Desirable. Kết quả của cấu hình này là gì?",
+      "options_vi": {
+        "A": "Liên kết ở trạng thái down.",
+        "B": "Liên kết ở trạng thái error disabled",
+        "C": "Liên kết trở thành cổng access",
+        "D": "Liên kết trở thành cổng trunk"
+      }
+    },
+    {
+      "id": "46",
+      "source_id": "3",
+      "type": "single",
+      "question": "Refer to exhibit. Which action do the switches take on the trunk link?\ninterface FastEthernet0/1 interface FastEthernet0/1\nswitchport trunk encapsulation dot1q switchport trunk encapsulation dot1q\nswitchport trunk native vlan 999 switchport trunk native vlan 99\nswitchport mode trunk switchport mode trunk",
+      "question_images": [
+        "page_27_img_24.jpeg"
+      ],
+      "options": {
+        "A": "The trunk does not form and the ports go into an err-disabled status",
+        "B": "The trunk forms but the mismatched native VLANs are merged into a single broadcast domain",
+        "C": "The trunk does not form, but VLAN 99 and VLAN 999 are allowed to traverse the link",
+        "D": "The trunk forms but VLAN 99 and VLAN 999 are in a shutdown state"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The trunk still forms with mismatched native VLANs and the traffic can actually flow between\nmismatched switches. But it is absolutely necessary that the native VLANs on both ends of a trunk\nlink match; otherwise a native VLAN mismatch occurs, causing the two VLANs to effectively merge.\nFor example with the above configuration, SW1 would send untagged frames for VLAN 999. SW2\nreceives them but would think they are for VLAN 99 so we can say these two VLANs are merged.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Các switch thực hiện hành động gì trên liên kết trunk?",
+      "options_vi": {
+        "A": "Trunk không hình thành và các cổng chuyển sang trạng thái err-disabled",
+        "B": "Trunk hình thành nhưng các native VLAN không khớp được gộp vào một broadcast domain duy nhất",
+        "C": "Trunk không hình thành, nhưng VLAN 99 và VLAN 999 được phép đi qua liên kết",
+        "D": "Trunk hình thành nhưng VLAN 99 và VLAN 999 ở trạng thái shutdown"
+      }
+    },
+    {
+      "id": "47",
+      "source_id": "4",
+      "type": "single",
+      "question": "Refer to the exhibit. The network administrator wants VLAN 67 traffic to be untagged between\nSwitch 1 and Switch 2 while all other VLANs are to remain tagged. Which command accomplishes\nthis task?",
+      "question_images": [
+        "page_28_img_25.jpeg"
+      ],
+      "options": {
+        "A": "switchport access vlan 67",
+        "B": "switchport trunk allowed vlan 67",
+        "C": "switchport private-vlan association host 67",
+        "D": "switchport trunk native vlan 67"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [
+        "page_28_img_26.png"
+      ],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Quản trị viên mạng muốn lưu lượng VLAN 67 không được gắn thẻ (untagged) giữa Switch 1 và Switch 2 trong khi tất cả các VLAN khác vẫn được gắn thẻ (tagged). Lệnh nào thực hiện nhiệm vụ này?",
+      "options_vi": {
+        "A": "switchport access vlan 67",
+        "B": "switchport trunk allowed vlan 67",
+        "C": "switchport private-vlan association host 67",
+        "D": "switchport trunk native vlan 67"
+      }
+    },
+    {
+      "id": "48",
+      "source_id": "43",
+      "type": "multi",
+      "question": "How is the native VLAN secured in a network?",
+      "question_images": [],
+      "options": {
+        "A": "separate from other VLANs within the administrative domain",
+        "B": "give it a value in the private VLAN range",
+        "C": "assign it as VLAN 1",
+        "D": "configure it as a different VLAN ID on each end of the link"
+      },
+      "answer": [
+        "D",
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Native VLAN được bảo mật trong mạng bằng cách nào?",
+      "options_vi": {
+        "A": "Tách biệt khỏi các VLAN khác trong miền quản trị (administrative domain)",
+        "B": "Gán cho nó một giá trị trong phạm vi private VLAN",
+        "C": "Gán nó là VLAN 1",
+        "D": "Cấu hình nó với ID VLAN khác nhau ở mỗi đầu của liên kết"
+      }
+    },
+    {
+      "id": "49",
+      "source_id": "5",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA frame from VLAN1 of switch S1 is sent to switch S2 where the frame received on VLAN2. What\ncauses this behavior?",
+      "question_images": [
+        "page_29_img_27.jpeg",
+        "page_29_img_28.jpeg"
+      ],
+      "options": {
+        "A": "trunk mode mismatches",
+        "B": "VLANs that do not correspond to a unique IP subnet",
+        "C": "native vlan mismatches",
+        "D": "allowing only vlan 2 on the destination"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "For 802.1q encapsulation, the native VLAN must matched at both side; otherwise the link will not\nwork. In this case the native VLAN of S1 is 1 while the native VLAN of S2 is 2. Therefore when a\nframe from VLAN 1 is sent from S1 to S2, it will be untagged before leaving S1. When S2 receives\nthis untagged frame, it believes this frame was sent from the native VLAN. But the native VLAN\non S2 is VLAN 2, not VLAN 1. Therefore only hosts on VLAN2 of S2 will receive this frame.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột frame từ VLAN1 của switch S1 được gửi đến switch S2 nơi frame được nhận trên VLAN2. Nguyên nhân gì gây ra hành vi này?",
+      "options_vi": {
+        "A": "Không khớp chế độ trunk (trunk mode mismatches)",
+        "B": "Các VLAN không tương ứng với một subnet IP duy nhất",
+        "C": "Không khớp native VLAN (native VLAN mismatches)",
+        "D": "Chỉ cho phép VLAN 2 trên đích"
+      }
+    },
+    {
+      "id": "50",
+      "source_id": "6",
+      "type": "single",
+      "question": "Refer to the exhibit. Which action is expected from SW1 when the untagged frame is received on\nthe GigabitEthernet0/1 interface?\nSW1#show run int gig 0/1\ninterface GigabitEthernet0/1\nswitchport access vlan 11\nswitchport trunk allowed vlan 1-10\nswitchport trunk encapsulation dot1q\nswitchport trunk native vlan 5\nswitchport mode trunk\nspeed 1000\nduplex full",
+      "question_images": [],
+      "options": {
+        "A": "The frame is processed in VLAN 5",
+        "B": "The frame is processed in VLAN 11",
+        "C": "The frame is processed in VLAN 1",
+        "D": "The frame is dropped"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Hành động nào được mong đợi từ SW1 khi frame không gắn thẻ (untagged) được nhận trên interface GigabitEthernet0/1?",
+      "options_vi": {
+        "A": "Frame được xử lý trong VLAN 5",
+        "B": "Frame được xử lý trong VLAN 11",
+        "C": "Frame được xử lý trong VLAN 1",
+        "D": "Frame bị loại bỏ (dropped)"
+      }
+    },
+    {
+      "id": "51",
+      "source_id": "8",
+      "type": "single",
+      "question": "What occurs to frames during the process of frame flooding?",
+      "question_images": [],
+      "options": {
+        "A": "Frames are sent to all ports, including those that are assigned to other VLANs",
+        "B": "Frames are sent to every port on the switch that has a matching entry in MAC address table",
+        "C": "Frames are sent to every port on the switch in the same VLAN except from the originating port",
+        "D": "Frames are sent to every port on the switch in the same VLAN"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "1 VLAN = 1 BROADCAST DOMAIN",
+      "explanation_images": [],
+      "question_vi": "Điều gì xảy ra với các frame trong quá trình flooding (phát tràn frame)?",
+      "options_vi": {
+        "A": "Frame được gửi đến tất cả các cổng, bao gồm cả những cổng được gán cho các VLAN khác",
+        "B": "Frame được gửi đến mọi cổng trên switch có mục khớp trong bảng địa chỉ MAC",
+        "C": "Frame được gửi đến mọi cổng trên switch trong cùng VLAN ngoại trừ cổng gốc",
+        "D": "Frame được gửi đến mọi cổng trên switch trong cùng VLAN"
+      }
+    },
+    {
+      "id": "52",
+      "source_id": "9",
+      "type": "single",
+      "question": "Refer to the exhibit. An administrator is tasked with configuring a voice VLAN. What is the expected outcome when a Cisco phone is connected to the GigabitEthernet 3/1/4 port on a switch?\ninterface GigabitEthernet3/1/4\nswitchport voice vlan 50\n!",
+      "question_images": [],
+      "options": {
+        "A": "The phone and a workstation that is connected to the phone do not have VLAN connectivity.",
+        "B": "The phone sends and receives data in VLAN 50, but a workstation connected to the phone sends\nand receives data in VLAN 1.",
+        "C": "The phone sends and receives data in VLAN 50, but a workstation connected to the phone has\nno VLAN connected.",
+        "D": "The phone and a workstation that is connected to the phone send and receive data in VLAN 50."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [
+        "page_31_img_29.png"
+      ],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Quản trị viên được giao nhiệm vụ cấu hình voice VLAN. Kết quả mong đợi khi điện thoại Cisco được kết nối vào cổng GigabitEthernet 3/1/4 trên switch là gì?",
+      "options_vi": {
+        "A": "Điện thoại và máy trạm kết nối với điện thoại không có kết nối VLAN.",
+        "B": "Điện thoại gửi và nhận dữ liệu trong VLAN 50, nhưng máy trạm kết nối với điện thoại gửi và nhận dữ liệu trong VLAN 1.",
+        "C": "Điện thoại gửi và nhận dữ liệu trong VLAN 50, nhưng máy trạm kết nối với điện thoại không có kết nối VLAN.",
+        "D": "Điện thoại và máy trạm kết nối với điện thoại gửi và nhận dữ liệu trong VLAN 50."
+      }
+    },
+    {
+      "id": "53",
+      "source_id": "1",
+      "type": "single",
+      "question": "Refer to the exhibit. Which outcome is expected when PC_A sends data to PC_B?",
+      "question_images": [
+        "page_33_img_31.jpeg"
+      ],
+      "options": {
+        "A": "The source MAC address is changed",
+        "B": "The source and destination MAC addresses remain the same",
+        "C": "The destination MAC address is replaced with ffff.ffff.ffff",
+        "D": "The switch rewrites the source and destination MAC addresses with its own"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Kết quả mong đợi khi PC_A gửi dữ liệu đến PC_B là gì?",
+      "options_vi": {
+        "A": "Địa chỉ MAC nguồn bị thay đổi",
+        "B": "Địa chỉ MAC nguồn và đích giữ nguyên",
+        "C": "Địa chỉ MAC đích được thay thế bằng ffff.ffff.ffff",
+        "D": "Switch viết lại địa chỉ MAC nguồn và đích bằng địa chỉ của chính nó"
+      }
+    },
+    {
+      "id": "54",
+      "source_id": "2",
+      "type": "single",
+      "question": "Refer to the exhibit. A network administrator assumes a task to complete the connectivity between\nPC A and the File Server. Switch A and Switch B have been partially configured with VLANs 10, 11,\n12 and 13. What is the next step in the configuration?",
+      "question_images": [
+        "page_34_img_32.jpeg",
+        "page_34_img_33.jpeg"
+      ],
+      "options": {
+        "A": "Add PC A to the same subnet as the File Server allowing for intra-VLAN communication",
+        "B": "Add PC A to VLAN 10 and the File Server to VLAN 11 for VLAN segmentation",
+        "C": "Add a router on a stick between Switch A and Switch B allowing for inter-VLAN routing",
+        "D": "Add VLAN 13 to the trunk links on Switch A and Switch B for VLAN propagation"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "In fact we only need to add (allow) VLAN 13 to the trunk link of Switch A. Switch B allows all\nVLANs by default so we don’t need to do any further configuration.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Quản trị viên mạng nhận nhiệm vụ hoàn thành kết nối giữa PC A và File Server. Switch A và Switch B đã được cấu hình một phần với VLAN 10, 11, 12 và 13. Bước tiếp theo trong cấu hình là gì?",
+      "options_vi": {
+        "A": "Thêm PC A vào cùng subnet với File Server cho phép giao tiếp intra-VLAN",
+        "B": "Thêm PC A vào VLAN 10 và File Server vào VLAN 11 để phân đoạn VLAN",
+        "C": "Thêm router on a stick giữa Switch A và Switch B cho phép định tuyến inter-VLAN (inter-VLAN routing)",
+        "D": "Thêm VLAN 13 vào các liên kết trunk trên Switch A và Switch B để truyền VLAN (VLAN propagation)"
+      }
+    },
+    {
+      "id": "55",
+      "source_id": "3",
+      "type": "single",
+      "question": "An engineer must establish a trunk link between two switches. The neighboring switch is set to\ntrunk or desirable mode. What action should be taken?",
+      "question_images": [],
+      "options": {
+        "A": "configure switchport nonegotiate",
+        "B": "configure switchport mode dynamic desirable",
+        "C": "configure switchport mode dynamic auto",
+        "D": "configure switchport trunk dynamic desirable"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư cần thiết lập liên kết trunk giữa hai switch. Switch láng giềng được đặt ở chế độ trunk hoặc desirable. Hành động nào nên được thực hiện?",
+      "options_vi": {
+        "A": "Cấu hình switchport nonegotiate",
+        "B": "Cấu hình switchport mode dynamic desirable",
+        "C": "Cấu hình switchport mode dynamic auto",
+        "D": "Cấu hình switchport trunk dynamic desirable"
+      }
+    },
+    {
+      "id": "56",
+      "source_id": "4",
+      "type": "single",
+      "question": "An engineer requires a scratch interface to actively attempt to establish a trunk link with a\nneighbor switch. What command must be configured?",
+      "question_images": [],
+      "options": {
+        "A": "switchport mode trunk",
+        "B": "switchport mode dynamic desirable (INIT)",
+        "C": "switchport mode dynamic auto (LISTEN ONLY)",
+        "D": "switchport nonegotiate"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư cần một interface mới chủ động cố gắng thiết lập liên kết trunk với switch láng giềng. Lệnh nào phải được cấu hình?",
+      "options_vi": {
+        "A": "switchport mode trunk",
+        "B": "switchport mode dynamic desirable (INIT)",
+        "C": "switchport mode dynamic auto (LISTEN ONLY)",
+        "D": "switchport nonegotiate"
+      }
+    },
+    {
+      "id": "57",
+      "source_id": "5",
+      "type": "single",
+      "question": "An engineer must configure interswitch VLAN communication between a Cisco switch and a third-\nparty switch. Which action should be taken?",
+      "question_images": [],
+      "options": {
+        "A": "configure IEEE 802.1p",
+        "B": "configure IEEE 802.1q (Open standard protocol)",
+        "C": "configure ISL",
+        "D": "configure DSCP"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "IEEE 802.1Q is the networking standard that supports virtual LANs (VLANs) on an Ethernet\nnetwork. When a frame enters the VLAN-aware portion of the network (a trunk link, for example),\na VLAN ID tag is added to represent the VLAN membership of that frame. The picture below shows\nhow VLAN tag is added and removed while going through the network.",
+      "explanation_images": [
+        "page_35_img_34.jpeg"
+      ],
+      "question_vi": "Một kỹ sư cần cấu hình giao tiếp VLAN giữa các switch (interswitch) giữa switch Cisco và switch của bên thứ ba. Hành động nào nên được thực hiện?",
+      "options_vi": {
+        "A": "Cấu hình IEEE 802.1p",
+        "B": "Cấu hình IEEE 802.1q (Giao thức tiêu chuẩn mở)",
+        "C": "Cấu hình ISL",
+        "D": "Cấu hình DSCP"
+      }
+    },
+    {
+      "id": "58",
+      "source_id": "17",
+      "type": "single",
+      "question": "An engineer must configure traffic for a VLAN that is untagged by the switch as it crosses a trunk\nlink. Which command should be used?",
+      "question_images": [],
+      "options": {
+        "A": "switchport trunk allowed vlan 10",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport mode trunk",
+        "D": "switchport trunk encapsulation dot1q"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư cần cấu hình lưu lượng cho một VLAN không được gắn thẻ (untagged) bởi switch khi đi qua liên kết trunk. Lệnh nào nên được sử dụng?",
+      "options_vi": {
+        "A": "switchport trunk allowed vlan 10",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport mode trunk",
+        "D": "switchport trunk encapsulation dot1q"
+      }
+    },
+    {
+      "id": "59",
+      "source_id": "23",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1 and PC-2 must\nbe placed in the Data VLAN and Phone-1 must be placed in the Voice VLAN. Which configuration\nmeets these requirements?",
+      "question_images": [
+        "page_35_img_0.jpeg",
+        "options_q59.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "According to the exhibit above, we have to configure VLAN 8 as access vlan and VLAN 9 asa voice\nvlan.\nThe voice VLAN feature enables access ports to carry IP voice traffic from an IP phone. You can\nconfigure a voice VLAN with the “switchport voice vlan …” command under interface mode. The full\nconfiguration is shown below:\nSwitch(config)#interface fastethernet0/1\nSwitch(config-if)#switchport mode access\nSwitch(config-if)#switchport access vlan 10\nSwitch(config-if)#switchport voice vlan 20\nReference: http://www.cisco.com/c/en/us/support/docs/switches/catalyst-4500-series-\nswitches/69632-configuring-cat-ip-phone.html\nNote: When you connect an IP phone to a switch using a trunk link, it can cause high CPU\nutilization in the switches. As all the VLANs for a particular interface are trunked to the phone, it\nincreases the number of STP instances the switch has to manage. This increases the CPU\nutilization. Trunking also causes unnecessary broadcast / multicast / unknown unicast traffic to hit\nthe phone link.\nIn order to avoid this, remove the trunk configuration and keep the voice and access VLAN\nconfigured along with Quality of Service (QoS). Technically, it is still a trunk, but it is called a\nMulti-VLAN Access Port (MVAP). Because voice and data traffic can travel through the same\nport, you should specify a different VLAN for each type of traffic. You can configure a switch port to\nforward voice and data traffic on different VLANs. Configure IP phone ports with a voice VLAN\nconfiguration. This configuration creates a pseudo trunk, but does not require you to manually\nprune the unnecessary VLANs.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nQuản trị viên phải cấu hình các interface Gi1/1 và Gi1/3 trên switch SW11. PC-1 và PC-2 phải được đặt trong Data VLAN và Phone-1 phải được đặt trong Voice VLAN. Cấu hình nào đáp ứng các yêu cầu này?",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "60",
+      "source_id": "25",
+      "type": "single",
+      "question": "How does a switch process a frame received on Fa0/1 with the destination MAC address of\n0e38.7363.657b when the table is missing the address?",
+      "question_images": [],
+      "options": {
+        "A": "It floods the frame to all interfaces except Fa0/1.",
+        "B": "It forwards the frame back out of interface Fa0/1.",
+        "C": "It drops the frame immediately.",
+        "D": "It holds the frame until the MAC address timer expires and then drops the frame."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Switch xử lý frame nhận được trên Fa0/1 với địa chỉ MAC đích là 0e38.7363.657b như thế nào khi bảng thiếu địa chỉ này?",
+      "options_vi": {
+        "A": "Nó phát tràn (flood) frame đến tất cả các interface ngoại trừ Fa0/1.",
+        "B": "Nó chuyển tiếp frame trở lại qua interface Fa0/1.",
+        "C": "Nó loại bỏ (drop) frame ngay lập tức.",
+        "D": "Nó giữ frame cho đến khi bộ đếm thời gian địa chỉ MAC hết hạn và sau đó loại bỏ frame."
+      }
+    },
+    {
+      "id": "61",
+      "source_id": "39",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network engineer must configured communication between PC A and the File Server. To prevent\ninterruption for any other communications, which command must be configured?",
+      "question_images": [
+        "page_38_img_36.jpeg",
+        "page_38_img_37.jpeg"
+      ],
+      "options": {
+        "A": "Switchport trunk allowed vlan 12",
+        "B": "Switchport trunk allowed vlan none",
+        "C": "Switchport trunk allowed vlan add 13",
+        "D": "Switchport trunk allowed vlan remove 10-11"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Switch A does not allow VLAN 13 to go through so we must add VLAN 13 to the allowed list of\ninterface Gi0/1 of SwitchA by the command “switchport trunk allowed vlan add 13”.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKỹ sư mạng phải cấu hình giao tiếp giữa PC A và File Server. Để tránh gián đoạn cho bất kỳ giao tiếp nào khác, lệnh nào phải được cấu hình?",
+      "options_vi": {
+        "A": "Switchport trunk allowed vlan 12",
+        "B": "Switchport trunk allowed vlan none",
+        "C": "Switchport trunk allowed vlan add 13",
+        "D": "Switchport trunk allowed vlan remove 10-11"
+      }
+    },
+    {
+      "id": "62",
+      "source_id": "14",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich command must be executed for Gi1/1 on SW1 to become a trunk port if Gi1/1 on SW2 is\nconfigured in desirable or trunk mode?",
+      "question_images": [
+        "page_38_img_38.jpeg"
+      ],
+      "options": {
+        "A": "switchport mode trunk",
+        "B": "switchport mode dot1-tunnel",
+        "C": "switchport mode dynamic auto",
+        "D": "switchport mode dynamic desirable"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "According to the trunking condition table below, we can use either (dynamic) “auto” or (dynamic)\n“desirable” mode or even “trunk” mode so in fact this question has three correct answers.",
+      "explanation_images": [
+        "page_39_img_39.png"
+      ],
+      "question_vi": "Tham khảo hình minh họa.\nLệnh nào phải được thực thi cho Gi1/1 trên SW1 để trở thành cổng trunk nếu Gi1/1 trên SW2 được cấu hình ở chế độ desirable hoặc trunk?",
+      "options_vi": {
+        "A": "switchport mode trunk",
+        "B": "switchport mode dot1-tunnel",
+        "C": "switchport mode dynamic auto",
+        "D": "switchport mode dynamic desirable"
+      }
+    },
+    {
+      "id": "63",
+      "source_id": "15",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which\nconfiguration accomplishes this task?",
+      "question_images": [
+        "page_38_img_0.png",
+        "page_38_img_1.jpeg",
+        "options_q63.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKỹ sư phải cấu hình GigabitEthernet1/1 để phục vụ lưu lượng thoại (voice) và dữ liệu (data). Cấu hình nào hoàn thành nhiệm vụ này?",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "64",
+      "source_id": "48",
+      "type": "single",
+      "question": "A network administrator is asked to configure VLANs 2, 3 and 4 for a new implementation. Some\nports must be assigned to the new VLANs with unused remaining. Which action should be taken for\nthe unused ports?",
+      "question_images": [],
+      "options": {
+        "A": "configure port in the native VLAN",
+        "B": "configure ports in a black hole VLAN (unused VLAN)",
+        "C": "configure in a nondefault native VLAN",
+        "D": "configure ports as access ports"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Black hole VLAN is a VLAN that is unused where you put unused ports in or hosts that you don’t\nwant to be on the network.",
+      "explanation_images": [],
+      "question_vi": "Quản trị viên mạng được yêu cầu cấu hình VLAN 2, 3 và 4 cho một triển khai mới. Một số cổng phải được gán cho các VLAN mới với các cổng còn lại không sử dụng. Hành động nào nên được thực hiện cho các cổng không sử dụng?",
+      "options_vi": {
+        "A": "Cấu hình cổng trong native VLAN",
+        "B": "Cấu hình các cổng trong black hole VLAN (VLAN không sử dụng)",
+        "C": "Cấu hình trong native VLAN không mặc định (nondefault native VLAN)",
+        "D": "Cấu hình các cổng là cổng access"
+      }
+    },
+    {
+      "id": "65",
+      "source_id": "42",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich plan must be implemented to ensure optimal QoS marking practices on this network?",
+      "question_images": [
+        "page_40_img_41.jpeg"
+      ],
+      "options": {
+        "A": "As traffic enters from the access layer on SW1 and SW2, trust all traffic markings",
+        "B": "Trust the IP phone markings on SW1 and mark traffic entering SW2 at SW2",
+        "C": "As traffic traverses MLS1 remark the traffic, but trust all markings at the access layer",
+        "D": "Remark traffic as it traverses R1 and trust all markings at the access layer"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "“Classify, mark, and police as close to the traffic-sources as possible.” -> Answer C is not correct.\nReference: https://www.cisco.com/en/US/technologies/tk543/tk759/technologies_white_paper090\n0aecd80295aa1.pdf\nAs a rule, it is not recommended to trust markings set by end users leveraging PCs or other\nendpoint devices. End users can intentionally or unintentionally abuse QoS policies that trust\nmarkings of end devices. If users and unclassified applications take advantage of the configured\nQoS policy as a result of trusting end devices, this can result in easily starving priority queues with\nnonpriority traffic, ruining quality of service for real-time applications.\nReference: https://www.ciscopress.com/articles/article.asp?p=2756478&seqNum=2\n-> Answer A and answer D are not correct.",
+      "explanation_images": [
+        "page_41_img_42.jpeg"
+      ],
+      "question_vi": "Tham khảo hình minh họa.\nKế hoạch nào phải được triển khai để đảm bảo các phương pháp đánh dấu QoS (QoS marking) tối ưu trên mạng này?",
+      "options_vi": {
+        "A": "Khi lưu lượng đi vào từ lớp truy cập (access layer) trên SW1 và SW2, tin cậy tất cả các đánh dấu lưu lượng",
+        "B": "Tin cậy các đánh dấu của IP phone trên SW1 và đánh dấu lưu lượng đi vào SW2 tại SW2",
+        "C": "Khi lưu lượng đi qua MLS1, đánh dấu lại lưu lượng, nhưng tin cậy tất cả các đánh dấu tại lớp truy cập",
+        "D": "Đánh dấu lại lưu lượng khi đi qua R1 và tin cậy tất cả các đánh dấu tại lớp truy cập"
+      }
+    },
+    {
+      "id": "66",
+      "source_id": "49",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn administrator must connect SW_1 and the printer to the network. SW_2 requires DTP to be\nused for the connection to SW_1. The printer is configured as an access port with VLAN 5. Which\nset of commands completes the connectivity?",
+      "question_images": [
+        "page_42_img_43.jpeg"
+      ],
+      "options": {
+        "A": "switchport mode trunk\nswitchport trunk pruning vlan add 5",
+        "B": "switchport mode dynamic desirable\nswitchport trunk allowed vlan add 5",
+        "C": "switchport mode dynamic auto\nswitchport private-vlan association host 5",
+        "D": "switchport mode dynamic auto\nswitchport trunk encapsulation negotiate"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nQuản trị viên phải kết nối SW_1 và máy in vào mạng. SW_2 yêu cầu DTP được sử dụng cho kết nối đến SW_1. Máy in được cấu hình là cổng access với VLAN 5. Bộ lệnh nào hoàn thành kết nối?",
+      "options_vi": {
+        "A": "switchport mode trunk\nswitchport trunk pruning vlan add 5",
+        "B": "switchport mode dynamic desirable\nswitchport trunk allowed vlan add 5",
+        "C": "switchport mode dynamic auto\nswitchport private-vlan association host 5",
+        "D": "switchport mode dynamic auto\nswitchport trunk encapsulation negotiate"
+      }
+    },
+    {
+      "id": "67",
+      "source_id": "54",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer has started to configure replacement switch SW1. To verify part of the configuration,\nthe engineer issued the commands as shown and noticed that the entry for PC2 is missing. Which\nchange must be applied to SW1 so that PC1 and PC2 communicate normally?",
+      "question_images": [
+        "page_42_img_44.jpeg"
+      ],
+      "options": {
+        "A": "SW1(config)#interface fa0/2\nSW1(config-if)#no switchport access vlan 2\nSW1(config-if}#no switchport trunk allowed vlan 3\nSW1 (config-if)#switchport trunk allowed vlan 2",
+        "B": "SW1(config)#interface fa0/1\nSW1(config-if}#no switchport access vlan 2\nSW1(config-if)#switchport trunk native vlan 2\nSW1(config-if)#switchport trunk allowed vlan 3",
+        "C": "SW1(config-if)#interface fa0/2\nSW1(config-if)#no switchport mode trunk\nSW1(config-if)#no switchport trunk allowed vlan 3\nSW1(config-if)#switchport mode access",
+        "D": "SW1(config)#interface fa0/1\nSW1(config-if)#no switchport access vlan 2\nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#switchport trunk allowed vlan 2"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKỹ sư đã bắt đầu cấu hình switch thay thế SW1. Để xác minh một phần cấu hình, kỹ sư đã thực hiện các lệnh như hình và nhận thấy mục cho PC2 bị thiếu. Thay đổi nào phải được áp dụng cho SW1 để PC1 và PC2 giao tiếp bình thường?",
+      "options_vi": {
+        "A": "SW1(config)#interface fa0/2\nSW1(config-if)#no switchport access vlan 2\nSW1(config-if}#no switchport trunk allowed vlan 3\nSW1 (config-if)#switchport trunk allowed vlan 2",
+        "B": "SW1(config)#interface fa0/1\nSW1(config-if}#no switchport access vlan 2\nSW1(config-if)#switchport trunk native vlan 2\nSW1(config-if)#switchport trunk allowed vlan 3",
+        "C": "SW1(config-if)#interface fa0/2\nSW1(config-if)#no switchport mode trunk\nSW1(config-if)#no switchport trunk allowed vlan 3\nSW1(config-if)#switchport mode access",
+        "D": "SW1(config)#interface fa0/1\nSW1(config-if)#no switchport access vlan 2\nSW1(config-if)#switchport access vlan 3\nSW1(config-if)#switchport trunk allowed vlan 2"
+      }
+    },
+    {
+      "id": "68",
+      "source_id": "76",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAll VLANs are present in the VLAN database. Which command sequence must be applied to\ncomplete the configuration?",
+      "question_images": [
+        "page_43_img_45.jpeg"
+      ],
+      "options": {
+        "A": "interface FastEthernet0/1\nswitchport trunk native vlan 10\nswitchport trunk allowed vlan 10,15",
+        "B": "interface FastEthernet0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 10,15",
+        "C": "interface FastEthernet0/1\nswitchport trunk allowed vlan add 10\nvlan 10\nprivate-vlan isolated",
+        "D": "interface FastEthernet0/1\nswitchport mode access\nswitchport voice vlan 10"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The voice VLAN feature enables access ports to carry IP voice traffic from an IP phone. You can\nconfigure a voice VLAN with the “switchport voice vlan …” command under interface mode. The full\nconfiguration is shown below:\nSwitch(config)#interface fastethernet0/1\nSwitch(config-if)#switchport mode access\nSwitch(config-if)#switchport access vlan 15\nSwitch(config-if)#switchport voice vlan 10",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nTất cả VLAN đều có trong cơ sở dữ liệu VLAN (VLAN database). Chuỗi lệnh nào phải được áp dụng để hoàn thành cấu hình?",
+      "options_vi": {
+        "A": "interface FastEthernet0/1\nswitchport trunk native vlan 10\nswitchport trunk allowed vlan 10,15",
+        "B": "interface FastEthernet0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 10,15",
+        "C": "interface FastEthernet0/1\nswitchport trunk allowed vlan add 10\nvlan 10\nprivate-vlan isolated",
+        "D": "interface FastEthernet0/1\nswitchport mode access\nswitchport voice vlan 10"
+      }
+    },
+    {
+      "id": "69",
+      "source_id": "113",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is asked to insert the new VLAN into the existing trunk without modifying anything\npreviously configured Which command accomplishes this task?",
+      "question_images": [
+        "page_44_img_46.jpeg"
+      ],
+      "options": {
+        "A": "switchport trunk allowed vlan 100-104",
+        "B": "switchport trunk allowed vlan all",
+        "C": "switchport trunk allowed vlan add 104",
+        "D": "switchport trunk allowed vlan 104"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Question 121\nA Cisco engineer must configure a single switch interface to meet these requirements\n* accept untagged frames and place them in VLAN 20\n* accept tagged frames in VLAN 30 when CDP detects a Cisco IP phone\nWhich command set must the engineer apply?\nA. switchport mode access\nswitchport access vlan 20\nswitchport voice vlan 30\nB. switchport mode trunk\nswitchport access vlan 20\nswitchport voice vlan 30\nC. switchport mode dynamic auto\nswitchport trunk native vlan 20\nswitchport trunk allowed vlan 30\nswitchport voice vlan 30\nD. switchport mode dynamic desirable\nswitchport access vlan 20\nswitchport trunk allowed vlan 30\nswitchport voice vlan 30\nAnswer: C ch",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKỹ sư được yêu cầu thêm VLAN mới vào trunk hiện có mà không thay đổi bất kỳ cấu hình nào trước đó. Lệnh nào hoàn thành nhiệm vụ này?",
+      "options_vi": {
+        "A": "switchport trunk allowed vlan 100-104",
+        "B": "switchport trunk allowed vlan all",
+        "C": "switchport trunk allowed vlan add 104",
+        "D": "switchport trunk allowed vlan 104"
+      }
+    },
+    {
+      "id": "70",
+      "source_id": "131",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSwitch A is newly configured. All VLANs are present in the VLAN database. The IP phone and PC A\non Gi0/1 must be configured for the appropriate VLANs to establish connectivity between the PCs.\nWhich command set fulfills the requirement?",
+      "question_images": [
+        "page_45_img_47.jpeg"
+      ],
+      "options": {
+        "A": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan 51",
+        "B": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan untagged",
+        "C": "SwitchA(config-if)#switchport mode trunk\nSwitchA(config-if)#switchport trunk allowed vlan add 50, 51\nSwitchA(config-if)#switchport voice vlan dot1p",
+        "D": "SwitchA(config-if)#switchport mode trunk\nSwitchA(config-if)#switchport trunk allowed vlan 50, 51\nSwitchA(config-if)#switchport qos trust cos"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch A mới được cấu hình. Tất cả VLAN đều có trong cơ sở dữ liệu VLAN. IP phone và PC A trên Gi0/1 phải được cấu hình cho các VLAN phù hợp để thiết lập kết nối giữa các PC. Bộ lệnh nào đáp ứng yêu cầu?",
+      "options_vi": {
+        "A": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan 51",
+        "B": "SwitchA(config-if)#switchport mode access\nSwitchA(config-if)#switchport access vlan 50\nSwitchA(config-if)#switchport voice vlan untagged",
+        "C": "SwitchA(config-if)#switchport mode trunk\nSwitchA(config-if)#switchport trunk allowed vlan add 50, 51\nSwitchA(config-if)#switchport voice vlan dot1p",
+        "D": "SwitchA(config-if)#switchport mode trunk\nSwitchA(config-if)#switchport trunk allowed vlan 50, 51\nSwitchA(config-if)#switchport qos trust cos"
+      }
+    },
+    {
+      "id": "71",
+      "source_id": "134",
+      "type": "single",
+      "question": "Which Layer 2 switch function encapsulates packets for different VLANs so that the packets\ntraverse the same port and maintain traffic separation between the VLANs?",
+      "question_images": [],
+      "options": {
+        "A": "VLAN numbering",
+        "B": "VLAN DSCP",
+        "C": "VLAN tagging",
+        "D": "VLAN marking"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "VLAN tagging is a method through which more than one VLAN is handled on a port. VLAN tagging\nis used to tell which packet belongs to which VLAN on the other side. To make recognition easier, a\npacket is tagged with a VLAN tag in the Ethernet frame.",
+      "explanation_images": [],
+      "question_vi": "Chức năng nào của switch Layer 2 đóng gói các gói tin cho các VLAN khác nhau để các gói tin đi qua cùng một cổng và duy trì sự tách biệt lưu lượng giữa các VLAN?",
+      "options_vi": {
+        "A": "Đánh số VLAN (VLAN numbering)",
+        "B": "VLAN DSCP",
+        "C": "Gắn thẻ VLAN (VLAN tagging)",
+        "D": "Đánh dấu VLAN (VLAN marking)"
+      }
+    },
+    {
+      "id": "72",
+      "source_id": "56",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSW2 is replaced due to a hardware failure. A network engineer starts to configure SW2 by copying\nthe Fa0/1 interface configuration from SW1. Which command must be configured on the Fa0/1\ninterface of SW2 to enable PC1 to connect to PC2?",
+      "question_images": [
+        "page_46_img_48.jpeg"
+      ],
+      "options": {
+        "A": "switchport mode trunk",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport trunk allowed remove 10",
+        "D": "switchport mode access"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSW2 được thay thế do lỗi phần cứng. Kỹ sư mạng bắt đầu cấu hình SW2 bằng cách sao chép cấu hình interface Fa0/1 từ SW1. Lệnh nào phải được cấu hình trên interface Fa0/1 của SW2 để cho phép PC1 kết nối với PC2?",
+      "options_vi": {
+        "A": "switchport mode trunk",
+        "B": "switchport trunk native vlan 10",
+        "C": "switchport trunk allowed remove 10",
+        "D": "switchport mode access"
+      }
+    },
+    {
+      "id": "73",
+      "source_id": "85",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe following must be considered\n+ SW1 is fully configured for all traffic\n+ The SW4 and SW9 links to SW1 have been configured\n+ The SW4 interface Gi0/1 and Gi0/0 on SW9 have been configured\n+ The remaining switches have had all VLANs added to their VLAN database\nWhich configuration establishes a successful ping from PC2 to PC7 without interruption to traffic\nflow between other PCs?",
+      "question_images": [
+        "page_46_img_0.jpeg",
+        "options_q73.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Option B is not correct as either the link between SW4 & SW11 or the link between SW9 & SW11\nmust allow VLAN 108. But Gi0/2 of SW4 and Gi0/2 of SW9 only allow VLAN 14 -> PC3 cannot\nreach PC9 in VLAN 108.\nOption C is not correct as Gi0/2 of SW4 and Gi0/1 of SW11 only allows VLAN 14 -> PC3 cannot\nreach PC9 in VLAN 108.\nOption D has configured Gi0/0 of SW11 but there is no such interface in the topology. Also with\noption D interface Gi0/2 of SW4 and Gi0/2 of SW9 only allow VLAN 14 -> PC3 cannot reach PC9 in\nVLAN 108.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCần xem xét các điều sau:\n+ SW1 đã được cấu hình đầy đủ cho tất cả lưu lượng\n+ Các liên kết từ SW4 và SW9 đến SW1 đã được cấu hình\n+ Interface Gi0/1 của SW4 và Gi0/0 của SW9 đã được cấu hình\n+ Các switch còn lại đã có tất cả VLAN được thêm vào cơ sở dữ liệu VLAN\nCấu hình nào thiết lập ping thành công từ PC2 đến PC7 mà không gián đoạn luồng lưu lượng giữa các PC khác?",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "74",
+      "source_id": "66",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given these requirements:\n+ Allow all PCs to communicate with each other at Layer 3.\n+ Configure untagged traffic to use VLAN 5.\n+ Disable VLAN 1 from being used.\nWhich configuration set meets these requirements?",
+      "question_images": [
+        "page_47_img_0.jpeg",
+        "options_q74.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "This question requires “Configure untagged traffic to use VLAN 5” so we must use the command\n“switchport trunk native vlan 5” on both Gi0/1 of Sw1 and Gi0/7 of Sw2 -> Only Option B and\nOption D are correct.\nIn order to allow all PCs to communicate with each other at Layer 3, interface Gi0/2 of SW1 must\nbe configured as trunk, not access mode -> Only Option D is correct.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCác cổng Gi0/0 của SW1 và SW2 đã được cấu hình trước. Kỹ sư được đưa ra các yêu cầu sau:\n+ Cho phép tất cả PC giao tiếp với nhau ở Layer 3.\n+ Cấu hình lưu lượng không gắn thẻ (untagged) sử dụng VLAN 5.\n+ Vô hiệu hóa VLAN 1 khỏi việc sử dụng.\nBộ cấu hình nào đáp ứng các yêu cầu này?",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "75",
+      "source_id": "38",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is configuring a new Cisco switch NewSW, to replace SW2. The details have been\nprovided:\n* Switches SW1 and SW2 are third-party devices without support for trunk ports\n* The existing connections must be maintained between PC1 PC2 and PC3\n* Allow the switch to pass traffic from future VLAN 10. Which configuration must be applied?",
+      "question_images": [
+        "page_49_img_0.jpeg",
+        "options_q75.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "We can configure trunking on the NewSW and set the native VLAN to the access VLAN 2 of SW1 so\nthat untagged frames received from SW1 will be placed into VLAN 2.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nKỹ sư đang cấu hình switch Cisco mới NewSW để thay thế SW2. Các chi tiết được cung cấp:\n* Các switch SW1 và SW2 là thiết bị của bên thứ ba không hỗ trợ cổng trunk\n* Các kết nối hiện có phải được duy trì giữa PC1, PC2 và PC3\n* Cho phép switch truyền lưu lượng từ VLAN 10 trong tương lai. Cấu hình nào phải được áp dụng?",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "76",
+      "source_id": "53",
+      "type": "single",
+      "question": "Two switches have been implemented and all interfaces are at the default configuration level. A\ntrunk link must be implemented between two switches with these requirements:\n+ using an industry-standard trunking protocol\n+ permitting VLANs 1-10 and denying other VLANs\nHow must the interconnecting ports be configured?",
+      "question_images": [],
+      "options": {
+        "A": "switchport mode trunk\nswitchport trunk allowed vlans 1-10\nswitchport trunk native vlan 11",
+        "B": "switchport mode trunk\nswitchport trunk encapsulation dot1q\nswitchport trunk allowed vlans 1-10",
+        "C": "switchport mode dynamic desirable\nchannel-group 1 mode desirable\nswitchport trunk encapsulation isl\nswitchport trunk allowed vlan except 11-4094",
+        "D": "switchport mode dynamic\nchannel-protocol lacp\nswitchport trunk allowed vlans 1-10"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "“Using an industry-standard trunking protocol” so we have to use 802.1Q, not ISL.\nSTP & VTP Questions",
+      "explanation_images": [
+        "page_51_img_52.png"
+      ],
+      "question_vi": "Hai switch đã được triển khai và tất cả interface ở mức cấu hình mặc định. Một liên kết trunk phải được triển khai giữa hai switch với các yêu cầu sau:\n+ sử dụng giao thức trunking tiêu chuẩn công nghiệp\n+ cho phép VLAN 1-10 và từ chối các VLAN khác\nCác cổng kết nối phải được cấu hình như thế nào?",
+      "options_vi": {
+        "A": "switchport mode trunk\nswitchport trunk allowed vlans 1-10\nswitchport trunk native vlan 11",
+        "B": "switchport mode trunk\nswitchport trunk encapsulation dot1q\nswitchport trunk allowed vlans 1-10",
+        "C": "switchport mode dynamic desirable\nchannel-group 1 mode desirable\nswitchport trunk encapsulation isl\nswitchport trunk allowed vlan except 11-4094",
+        "D": "switchport mode dynamic\nchannel-protocol lacp\nswitchport trunk allowed vlans 1-10"
+      }
+    },
+    {
+      "id": "77",
+      "source_id": "1",
+      "type": "single",
+      "question": "How does STP prevent forwarding loops at OSI Layer 2?",
+      "question_images": [],
+      "options": {
+        "A": "TTL",
+        "B": "MAC address forwarding",
+        "C": "Collision avoidance.",
+        "D": "Port blocking"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "STP ngăn chặn vòng lặp chuyển tiếp (forwarding loops) ở OSI Layer 2 bằng cách nào?",
+      "options_vi": {
+        "A": "TTL",
+        "B": "Chuyển tiếp địa chỉ MAC (MAC address forwarding)",
+        "C": "Tránh xung đột (Collision avoidance)",
+        "D": "Chặn cổng (Port blocking)"
+      }
+    },
+    {
+      "id": "78",
+      "source_id": "2",
+      "type": "single",
+      "question": "What is the primary effect of the spanning-tree portfast command?",
+      "question_images": [],
+      "options": {
+        "A": "It enables BPDU messages",
+        "B": "It minimizes spanning-tree convergence time",
+        "C": "It immediately puts the port into the forwarding state when the switch is reloaded",
+        "D": "It immediately enables the port in the listening state"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "The purpose of Port Fast is to minimize the time interfaces must wait for spanning-tree to\nconverge, it is effective only when used on interfaces connected to end stations.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3560/software/release/12\n-2_55_se/configuration/guide/3560_scg/swstpopt.html",
+      "explanation_images": [],
+      "question_vi": "Tác dụng chính của lệnh spanning-tree portfast là gì?",
+      "options_vi": {
+        "A": "Nó bật các thông điệp BPDU",
+        "B": "Nó giảm thiểu thời gian hội tụ spanning-tree (spanning-tree convergence time)",
+        "C": "Nó ngay lập tức đưa cổng vào trạng thái forwarding khi switch được khởi động lại",
+        "D": "Nó ngay lập tức bật cổng ở trạng thái listening"
+      }
+    },
+    {
+      "id": "79",
+      "source_id": "3",
+      "type": "single",
+      "question": "Which result occurs when PortFast is enabled on an interface that is connected to another switch?",
+      "question_images": [],
+      "options": {
+        "A": "Spanning tree may fail to detect a switching loop in the network that causes broadcast storms",
+        "B": "VTP is allowed to propagate VLAN configuration information from switch to switch automatically.",
+        "C": "Root port choice and spanning tree recalculation are accelerated when a switch link goes down",
+        "D": "After spanning tree converges PortFast shuts down any port that receives BPDUs."
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Enabling the PortFast feature causes a switch or a trunk port to enter the STP forwarding-state\nimmediately or upon a linkup event, thus bypassing the listening and learning states.\nNote: To enable portfast on a trunk port you need the trunk keyword “spanning-tree\nportfast trunk“",
+      "explanation_images": [],
+      "question_vi": "Kết quả nào xảy ra khi PortFast được bật trên interface kết nối với switch khác?",
+      "options_vi": {
+        "A": "Spanning tree có thể không phát hiện được vòng lặp chuyển mạch (switching loop) trong mạng gây ra bão broadcast (broadcast storms)",
+        "B": "VTP được phép tự động truyền thông tin cấu hình VLAN từ switch sang switch.",
+        "C": "Việc chọn root port và tính toán lại spanning tree được tăng tốc khi liên kết switch bị ngắt",
+        "D": "Sau khi spanning tree hội tụ, PortFast tắt bất kỳ cổng nào nhận được BPDU."
+      }
+    },
+    {
+      "id": "80",
+      "source_id": "4",
+      "type": "single",
+      "question": "Refer to exhibit. How does SW2 interact with other switches in this VTP domain?\nSW2\nvtp domain cisco\nvtp mode transparent\nvtp password test\ninterface fastethernet0/1\ndescription connection to SW1\nswitchport mode trunk\nswitchport trunk encapsulation dot1q",
+      "question_images": [],
+      "options": {
+        "A": "It processes VTP updates from any VTP clients on the network on its access ports",
+        "B": "It receives updates from all VTP servers and forwards all locally configured VLANs out all trunk\nports",
+        "C": "It forwards only the VTP advertisements that it receives on its trunk ports",
+        "D": "It transmits and processes VTP updates from any VTP Clients on the network on its trunk ports"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The VTP mode of SW2 is transparent so it only forwards the VTP updates it receives to its trunk\nlinks without processing them.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. SW2 tương tác với các switch khác trong VTP domain này như thế nào?",
+      "options_vi": {
+        "A": "Nó xử lý các cập nhật VTP từ bất kỳ VTP client nào trên mạng trên các cổng access của nó",
+        "B": "Nó nhận cập nhật từ tất cả VTP server và chuyển tiếp tất cả VLAN được cấu hình cục bộ ra tất cả cổng trunk",
+        "C": "Nó chỉ chuyển tiếp các quảng bá VTP (VTP advertisements) mà nó nhận được trên các cổng trunk của nó",
+        "D": "Nó truyền và xử lý các cập nhật VTP từ bất kỳ VTP Client nào trên mạng trên các cổng trunk của nó"
+      }
+    },
+    {
+      "id": "81",
+      "source_id": "26",
+      "type": "single",
+      "question": "An engineer needs to add an old switch back into a network. To prevent the switch from corrupting\nthe VLAN database which action must be taken?",
+      "question_images": [],
+      "options": {
+        "A": "Add the switch in the VTP domain with a lower revision number",
+        "B": "Add the switch in the VTP domain with a higher revision number",
+        "C": "Add the switch with DTP set to dynamic desirable",
+        "D": "Add the switch with DTP set to desirable"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Một kỹ sư cần thêm một switch cũ trở lại mạng. Để ngăn switch làm hỏng cơ sở dữ liệu VLAN, hành động nào phải được thực hiện?",
+      "options_vi": {
+        "A": "Thêm switch vào miền VTP với số revision thấp hơn",
+        "B": "Thêm switch vào miền VTP với số revision cao hơn",
+        "C": "Thêm switch với DTP được đặt thành dynamic desirable",
+        "D": "Thêm switch với DTP được đặt thành desirable"
+      }
+    },
+    {
+      "id": "82",
+      "source_id": "5",
+      "type": "multi",
+      "question": "Refer to the exhibit. What two conclusions should be made about this configuration? (Choose two)",
+      "question_images": [
+        "page_53_img_53.jpeg"
+      ],
+      "options": {
+        "A": "The designated port is FastEthernet 2/1",
+        "B": "This is a root bridge",
+        "C": "The spanning-tree mode is Rapid PVST+",
+        "D": "The spanning-tree mode is PVST+",
+        "E": "The root port is FastEthernet 2/1"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "This bridge is not the root bridge because it does not have the statement “This bridge is the root”.\nWhen the local switch is not the root bridge, the port it shows would be the root port to the root\nbridge. Therefore in this case FastEthernet2/1 is the root port that is connected to the root bridge.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Hai kết luận nào nên được rút ra từ cấu hình này? (Chọn hai)",
+      "options_vi": {
+        "A": "Cổng designated là FastEthernet 2/1",
+        "B": "Đây là root bridge",
+        "C": "Chế độ spanning-tree là Rapid PVST+",
+        "D": "Chế độ spanning-tree là PVST+",
+        "E": "Cổng root là FastEthernet 2/1"
+      }
+    },
+    {
+      "id": "83",
+      "source_id": "6",
+      "type": "single",
+      "question": "Refer to the exhibit. Which switch in this configuration will be elected as the root bridge?\nSW1: 0C:E0:38:00:36:75\nSW2: 0C:0E:15:22:05:97\nSW3: 0C:0E:15:1A:3C:9D\nSW4: 0C:E0:18:A1:B3:19",
+      "question_images": [
+        "page_54_img_54.jpeg"
+      ],
+      "options": {
+        "A": "SW1",
+        "B": "SW2",
+        "C": "SW3",
+        "D": "SW4"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "As this question did not state about bridge priority so we can assume all of them are using the\ndefault priority. Therefore the switch with lowest MAC address wins the election.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Switch nào trong cấu hình này sẽ được bầu làm root bridge?\nSW1: 0C:E0:38:00:36:75\nSW2: 0C:0E:15:22:05:97\nSW3: 0C:0E:15:1A:3C:9D\nSW4: 0C:E0:18:A1:B3:19",
+      "options_vi": {
+        "A": "SW1",
+        "B": "SW2",
+        "C": "SW3",
+        "D": "SW4"
+      }
+    },
+    {
+      "id": "84",
+      "source_id": "7",
+      "type": "single",
+      "question": "Refer to the exhibit. Which switch becomes the root bridge?",
+      "question_images": [
+        "page_54_img_55.jpeg"
+      ],
+      "options": {
+        "A": "S1",
+        "B": "S2",
+        "C": "S3",
+        "D": "S4"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Switch nào trở thành root bridge?",
+      "options_vi": {
+        "A": "S1",
+        "B": "S2",
+        "C": "S3",
+        "D": "S4"
+      }
+    },
+    {
+      "id": "85",
+      "source_id": "8",
+      "type": "single",
+      "question": "Which state does the switch port move to when PortFast is enabled?",
+      "question_images": [],
+      "options": {
+        "A": "learning",
+        "B": "forwarding",
+        "C": "blocking",
+        "D": "listening"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Cổng switch chuyển sang trạng thái nào khi PortFast được bật?",
+      "options_vi": {
+        "A": "learning",
+        "B": "forwarding",
+        "C": "blocking",
+        "D": "listening"
+      }
+    },
+    {
+      "id": "86",
+      "source_id": "9",
+      "type": "single",
+      "question": "What criteria is used first during the root port selection process?",
+      "question_images": [],
+      "options": {
+        "A": "lowest neighbor’s port ID (third)",
+        "B": "lowest path cost to the root bridge (first)",
+        "C": "lowest neighbor’s bridge ID (second)",
+        "D": "local port ID (fourth)"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tiêu chí nào được sử dụng đầu tiên trong quá trình chọn root port?",
+      "options_vi": {
+        "A": "Port ID thấp nhất của neighbor (thứ ba)",
+        "B": "Chi phí đường dẫn thấp nhất đến root bridge (thứ nhất)",
+        "C": "Bridge ID thấp nhất của neighbor (thứ hai)",
+        "D": "Port ID cục bộ (thứ tư)"
+      }
+    },
+    {
+      "id": "87",
+      "source_id": "10",
+      "type": "single",
+      "question": "Which configuration ensures that the switch is always the root for VLAN 750?",
+      "question_images": [],
+      "options": {
+        "A": "Switch(config)#spanning-tree vlan 750 priority 0",
+        "B": "Switch(config)#spanning-tree vlan 750 priority 614440",
+        "C": "Switch(config)#spanning-tree vlan 750 priority 38003685",
+        "D": "Switch(config)#spanning-tree vlan 750 root primary"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Cấu hình nào đảm bảo rằng switch luôn là root cho VLAN 750?",
+      "options_vi": {
+        "A": "Switch(config)#spanning-tree vlan 750 priority 0",
+        "B": "Switch(config)#spanning-tree vlan 750 priority 614440",
+        "C": "Switch(config)#spanning-tree vlan 750 priority 38003685",
+        "D": "Switch(config)#spanning-tree vlan 750 root primary"
+      }
+    },
+    {
+      "id": "88",
+      "source_id": "11",
+      "type": "single",
+      "question": "Which spanning-tree enhancement avoids the learning and listening states and immediately places\nports in the forwarding state?",
+      "question_images": [],
+      "options": {
+        "A": "BPDUfilter",
+        "B": "BPDUguard",
+        "C": "Backbonefast",
+        "D": "PortFast"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tính năng nâng cao spanning-tree nào bỏ qua trạng thái learning và listening và đặt ngay lập tức các cổng vào trạng thái forwarding?",
+      "options_vi": {
+        "A": "BPDUfilter",
+        "B": "BPDUguard",
+        "C": "Backbonefast",
+        "D": "PortFast"
+      }
+    },
+    {
+      "id": "89",
+      "source_id": "12",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSwitch1: 0C.E0.38.57.24.22\nSwitch2: 0C.0E.15.22.1A.61\nSwitch3: 0C.0E.15.1D.3C.9A\nSwitch4: 0C.E0.19.A1.4D.16\nAfter the election process what is the root bridge in the HQ LAN?",
+      "question_images": [
+        "page_56_img_56.jpeg"
+      ],
+      "options": {
+        "A": "Switch 1",
+        "B": "Switch 2",
+        "C": "Switch 3",
+        "D": "Switch 4"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch1: 0C.E0.38.57.24.22\nSwitch2: 0C.0E.15.22.1A.61\nSwitch3: 0C.0E.15.1D.3C.9A\nSwitch4: 0C.E0.19.A1.4D.16\nSau quá trình bầu chọn, root bridge trong mạng LAN HQ là gì?",
+      "options_vi": {
+        "A": "Switch 1",
+        "B": "Switch 2",
+        "C": "Switch 3",
+        "D": "Switch 4"
+      }
+    },
+    {
+      "id": "90",
+      "source_id": "13",
+      "type": "single",
+      "question": "When using Rapid PVST+, which command guarantees the switch is always the root bridge for\nVLAN 200?",
+      "question_images": [],
+      "options": {
+        "A": "spanning-tree vlan 200 priority 38572422",
+        "B": "spanning-tree vlan 200 priority 614440",
+        "C": "spanning-tree vlan 200 priority 0",
+        "D": "spanning-tree vlan 200 root primary"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Khi sử dụng Rapid PVST+, lệnh nào đảm bảo switch luôn là root bridge cho VLAN 200?",
+      "options_vi": {
+        "A": "spanning-tree vlan 200 priority 38572422",
+        "B": "spanning-tree vlan 200 priority 614440",
+        "C": "spanning-tree vlan 200 priority 0",
+        "D": "spanning-tree vlan 200 root primary"
+      }
+    },
+    {
+      "id": "91",
+      "source_id": "6",
+      "type": "multi",
+      "question": "Aside from discarding, which two states does the switch port transition through while using RSTP\n(802.1w)? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "listening",
+        "B": "blocking",
+        "C": "forwarding",
+        "D": "learning",
+        "E": "speaking"
+      },
+      "answer": [
+        "C",
+        "D"
+      ],
+      "answer_images": [
+        "page_57_img_57.png"
+      ],
+      "explanation": "There are only three port states left in RSTP that correspond to the three possible operational\nstates. The 802.1D blocking, and listening states are merged into the 802.1w discarding state.\n* Discarding – the port does not forward frames, process received frames, or learn MAC\naddresses – but it does listen for BPDUs (like the STP blocking state)\n* Learning – receives and transmits BPDUs and learns MAC addresses but does not yet forward\nframes (same as STP).\n* Forwarding – receives and sends data, normal operation, learns MAC address, receives and\ntransmits BPDUs (same as STP).\nSTP State (802.1d) RSTP State (802.1w)\nBlocking Discarding\nListening Discarding\nLearning Learning\nForwarding Forwarding\nAlthough the learning state is also used in RSTP but it only takes place for a short time as\ncompared to STP. RSTP converges with all ports either in forwarding state or discarding state.",
+      "explanation_images": [],
+      "question_vi": "Ngoài discarding, hai trạng thái nào mà cổng switch chuyển qua khi sử dụng RSTP (802.1w)? (Chọn hai)",
+      "options_vi": {
+        "A": "listening",
+        "B": "blocking",
+        "C": "forwarding",
+        "D": "learning",
+        "E": "speaking"
+      }
+    },
+    {
+      "id": "92",
+      "source_id": "16",
+      "type": "single",
+      "question": "Refer to the exhibit. What is the result if Gig1/11 receives an STP BPDU?\nswitch(config)#interface gigabitEthernet 1/11\nswitch(config-if)#switchport mode access\nswitch(config-if)#spanning-tree portfast\nswitch(config-if)#spanning-tree bpduguard\nenable",
+      "question_images": [],
+      "options": {
+        "A": "The port transitions to STP blocking",
+        "B": "The port transitions to the root port",
+        "C": "The port immediately transitions to STP forwarding",
+        "D": "The port goes into error-disable state"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "BPDU Guard feature allows STP to shut an access port in the event of receiving a BPDU and put\nthat port into err-disabled state.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Kết quả là gì nếu Gig1/11 nhận được một STP BPDU?\nswitch(config)#interface gigabitEthernet 1/11\nswitch(config-if)#switchport mode access\nswitch(config-if)#spanning-tree portfast\nswitch(config-if)#spanning-tree bpduguard\nenable",
+      "options_vi": {
+        "A": "Cổng chuyển sang trạng thái STP blocking",
+        "B": "Cổng chuyển thành root port",
+        "C": "Cổng chuyển ngay lập tức sang trạng thái STP forwarding",
+        "D": "Cổng chuyển sang trạng thái error-disable"
+      }
+    },
+    {
+      "id": "93",
+      "source_id": "22",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSwitch 1\nVLAN 110 – 32778 0018.184e.3c00\nSwitch 2\nVLAN 110 – 24586 001a.e3ff.a680\nSwitch 3\nVLAN 110 – 28682 0022.55cf.cc00\nSwitch 4\nVLAN 110 – 64000 0e38.7363.657f\nWhich switch becomes the root of the spanning tree for VLAN 110?",
+      "question_images": [
+        "page_58_img_58.jpeg"
+      ],
+      "options": {
+        "A": "Switch 1",
+        "B": "Switch 2",
+        "C": "Switch 3",
+        "D": "Switch 4"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch 1\nVLAN 110 – 32778 0018.184e.3c00\nSwitch 2\nVLAN 110 – 24586 001a.e3ff.a680\nSwitch 3\nVLAN 110 – 28682 0022.55cf.cc00\nSwitch 4\nVLAN 110 – 64000 0e38.7363.657f\nSwitch nào trở thành root của spanning tree cho VLAN 110?",
+      "options_vi": {
+        "A": "Switch 1",
+        "B": "Switch 2",
+        "C": "Switch 3",
+        "D": "Switch 4"
+      }
+    },
+    {
+      "id": "94",
+      "source_id": "46",
+      "type": "single",
+      "question": "Which switch technology establishes a network connection immediately when it is plugged in?",
+      "question_images": [],
+      "options": {
+        "A": "UplinkFast",
+        "B": "PortFast",
+        "C": "BPDU guard",
+        "D": "BackboneFast"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Portfast is often configured on switch ports that connect to hosts. Interfaces with Portfast enabled\nwill go to forwarding state immediately without passing the listening and learning state. Therefore\nit can save about 30 to 45 seconds to transition through these states.\nUplinkFast is a Cisco specific feature that improves the convergence time of the Spanning-Tree\nProtocol (STP) in the event of the failure of an uplink.",
+      "explanation_images": [],
+      "question_vi": "Công nghệ switch nào thiết lập kết nối mạng ngay lập tức khi được cắm vào?",
+      "options_vi": {
+        "A": "UplinkFast",
+        "B": "PortFast",
+        "C": "BPDU guard",
+        "D": "BackboneFast"
+      }
+    },
+    {
+      "id": "95",
+      "source_id": "19",
+      "type": "single",
+      "question": "Refer to the exhibit.\nOnly four switches are participating in the VLAN spanning-tree process.\nBranch-1: priority 614440\nBranch-2: priority 39082416\nBranch-3: priority 0\nBranch-4: root primary\nWhich switch becomes the permanent root bridge for VLAN 5?",
+      "question_images": [
+        "page_59_img_59.jpeg"
+      ],
+      "options": {
+        "A": "Branch-1",
+        "B": "Branch-2",
+        "C": "Branch-3",
+        "D": "Branch-4"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Priority 0 is the lowest priority of a bridge so it will be elected the root bridge.\nNote: The command “root primary” only checks the current root bridge priority and tries to use a\nbetter (lower) priority value to become the new root bridge. But it does not ensure the local switch\nwill become the root bridge. If another switch has priority of 0 and we issue the “root primary”\ncommand then it will inform that it cannot become root, as it cannot get a value lower than 0.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nChỉ có bốn switch tham gia vào quá trình spanning-tree của VLAN.\nBranch-1: priority 614440\nBranch-2: priority 39082416\nBranch-3: priority 0\nBranch-4: root primary\nSwitch nào trở thành root bridge vĩnh viễn cho VLAN 5?",
+      "options_vi": {
+        "A": "Branch-1",
+        "B": "Branch-2",
+        "C": "Branch-3",
+        "D": "Branch-4"
+      }
+    },
+    {
+      "id": "96",
+      "source_id": "23",
+      "type": "single",
+      "question": "What is the benefit of configuring PortFast on an interface?",
+      "question_images": [],
+      "options": {
+        "A": "After the cable is connected, the interface uses the fastest speed setting available for that cable\ntype",
+        "B": "The frames entering the interface are marked with higher priority and then processed faster by\na switch",
+        "C": "After the cable is connected, the interface is available faster to send and receive user data",
+        "D": "Real-time voice and video frames entering the interface are processed faster"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Lợi ích của việc cấu hình PortFast trên một interface là gì?",
+      "options_vi": {
+        "A": "Sau khi cáp được kết nối, interface sử dụng cài đặt tốc độ nhanh nhất có sẵn cho loại cáp đó",
+        "B": "Các frame đi vào interface được đánh dấu với mức ưu tiên cao hơn và sau đó được switch xử lý nhanh hơn",
+        "C": "Sau khi cáp được kết nối, interface sẵn sàng nhanh hơn để gửi và nhận dữ liệu người dùng",
+        "D": "Các frame thoại và video thời gian thực đi vào interface được xử lý nhanh hơn"
+      }
+    },
+    {
+      "id": "97",
+      "source_id": "47",
+      "type": "multi",
+      "question": "What are two benefits of using the PortFast feature? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "Enabled interfaces are automatically placed in listening state",
+        "B": "Enabled interfaces wait 50 seconds before they move to the forwarding state",
+        "C": "Enabled interfaces never generate topology change notifications.",
+        "D": "Enabled interfaces that move to the learning state generate switch topology change\nnotifications",
+        "E": "Enabled interfaces come up and move to the forwarding state immediately"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "Portfast does two things for us:\n+ Interfaces with portfast enabled that come up will go to forwarding mode immediately, the\ninterface will skip the listening and learning state.\n+ A switch will never generate a topology change notification for an interface that has portfast\nenabled.",
+      "explanation_images": [],
+      "question_vi": "Hai lợi ích của việc sử dụng tính năng PortFast là gì? (Chọn hai)",
+      "options_vi": {
+        "A": "Các interface được bật sẽ tự động được đặt vào trạng thái listening",
+        "B": "Các interface được bật chờ 50 giây trước khi chuyển sang trạng thái forwarding",
+        "C": "Các interface được bật không bao giờ tạo ra thông báo thay đổi topology",
+        "D": "Các interface được bật chuyển sang trạng thái learning sẽ tạo ra thông báo thay đổi topology của switch",
+        "E": "Các interface được bật khởi động và chuyển sang trạng thái forwarding ngay lập tức"
+      }
+    },
+    {
+      "id": "98",
+      "source_id": "13",
+      "type": "single",
+      "question": "Which port type supports the spanning-tree portfast command without additional configuration?",
+      "question_images": [],
+      "options": {
+        "A": "access ports",
+        "B": "Layer 3 main interfaces",
+        "C": "Layer 3 subinterfaces",
+        "D": "trunk ports"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Loại cổng nào hỗ trợ lệnh spanning-tree portfast mà không cần cấu hình bổ sung?",
+      "options_vi": {
+        "A": "Cổng access (access ports)",
+        "B": "Interface chính Layer 3",
+        "C": "Subinterface Layer 3",
+        "D": "Cổng trunk (trunk ports)"
+      }
+    },
+    {
+      "id": "99",
+      "source_id": "44",
+      "type": "single",
+      "question": "Which command on a port enters the forwarding state immediately when a PC is connected to it?",
+      "question_images": [],
+      "options": {
+        "A": "switch(config)#spanning-tree portfast default",
+        "B": "switch(config)#spanning-tree portfast bpduguard default",
+        "C": "switch(config-if)#spanning-tree portfast trunk",
+        "D": "switch(config-if)#no spanning-tree portfast"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Although this question said “which command on a port” but it gave two answers in global\nconfiguration mode so it is a bit unclear. But we believe the correct answer should be “spanning-\ntree portfast default”, which enables PortFast on all non-trunking interfaces.\nNote: The command “spanning-tree portfast trunk” enables portfast on a trunk port. The trunk\nport enters the STP forwarding-state immediately or upon a linkup event, thus bypassing the\nlistening and learning states.",
+      "explanation_images": [],
+      "question_vi": "Lệnh nào trên một cổng cho phép đi vào trạng thái forwarding ngay lập tức khi PC được kết nối vào?",
+      "options_vi": {
+        "A": "switch(config)#spanning-tree portfast default",
+        "B": "switch(config)#spanning-tree portfast bpduguard default",
+        "C": "switch(config-if)#spanning-tree portfast trunk",
+        "D": "switch(config-if)#no spanning-tree portfast"
+      }
+    },
+    {
+      "id": "100",
+      "source_id": "17",
+      "type": "single",
+      "question": "What prevents a workstation from receiving a DHCP address?",
+      "question_images": [],
+      "options": {
+        "A": "DTP",
+        "B": "STP",
+        "C": "VTP",
+        "D": "802.10"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "STP can prevent DHCP clients from getting an IP address because the port doesn’t start forwarding\ntraffic until STP goes into the forwarding state.",
+      "explanation_images": [],
+      "question_vi": "Điều gì ngăn máy trạm nhận được địa chỉ DHCP?",
+      "options_vi": {
+        "A": "DTP",
+        "B": "STP",
+        "C": "VTP",
+        "D": "802.10"
+      }
+    },
+    {
+      "id": "101",
+      "source_id": "56",
+      "type": "multi",
+      "question": "Which two spanning-tree states are bypassed on an interface running PortFast? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "forwarding",
+        "B": "blocking",
+        "C": "disabled",
+        "D": "learning",
+        "E": "listening"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "Enabling the PortFast feature causes a switch or a trunk port to enter the STP forwarding-state\nimmediately or upon a linkup event, thus bypassing the listening and learning states.",
+      "explanation_images": [],
+      "question_vi": "Hai trạng thái spanning-tree nào bị bỏ qua trên một interface chạy PortFast? (Chọn hai)",
+      "options_vi": {
+        "A": "forwarding",
+        "B": "blocking",
+        "C": "disabled",
+        "D": "learning",
+        "E": "listening"
+      }
+    },
+    {
+      "id": "102",
+      "source_id": "94",
+      "type": "single",
+      "question": "How does Rapid PVST+ create a fast loop-free network topology?",
+      "question_images": [],
+      "options": {
+        "A": "It requires multiple links between core switches",
+        "B": "It maps multiple VLANs into the same spanning-tree instance",
+        "C": "It generates one spanning-tree instance for each VLAN",
+        "D": "It uses multiple active paths between end stations\nPvst+ per vlan spanning tree plus, v"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Rapid PVST+ tạo ra topology mạng không có vòng lặp nhanh chóng bằng cách nào?",
+      "options_vi": {
+        "A": "Nó yêu cầu nhiều liên kết giữa các switch lõi",
+        "B": "Nó ánh xạ nhiều VLAN vào cùng một instance spanning-tree",
+        "C": "Nó tạo ra một instance spanning-tree cho mỗi VLAN",
+        "D": "Nó sử dụng nhiều đường dẫn hoạt động giữa các trạm cuối"
+      }
+    },
+    {
+      "id": "103",
+      "source_id": "125",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSW1 = 24596\n0018.184e.3c00\nSW2 = 28692\n004a.14e5.4077\nSW3 = 32788\n0022.55cf.dd00\nSW4 = 64000\n0041.454d.407f\nWhich switch becomes the root of a spanning tree for VLAN 20 if all links are of equal speed?",
+      "question_images": [
+        "page_62_img_60.jpeg"
+      ],
+      "options": {
+        "A": "SW1",
+        "B": "SW2",
+        "C": "SW3",
+        "D": "SW4"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSW1 = 24596\n0018.184e.3c00\nSW2 = 28692\n004a.14e5.4077\nSW3 = 32788\n0022.55cf.dd00\nSW4 = 64000\n0041.454d.407f\nSwitch nào trở thành root của spanning tree cho VLAN 20 nếu tất cả các liên kết có tốc độ bằng nhau?",
+      "options_vi": {
+        "A": "SW1",
+        "B": "SW2",
+        "C": "SW3",
+        "D": "SW4"
+      }
+    },
+    {
+      "id": "104",
+      "source_id": "78",
+      "type": "single",
+      "question": "What is the operating mode and role of a backup port on a shared LAN segment in Rapid PVST+?",
+      "question_images": [],
+      "options": {
+        "A": "blocking mode and provides an alternate path toward the designated bridge",
+        "B": "listening mode and provides an alternate path toward the root bridge",
+        "C": "forwarding mode and provides the lowest-cost path to the root bridge for each VLAN",
+        "D": "learning mode and provides the shortest path toward the root bridge handling traffic away from\nthe LAN"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "An alternate port and a backup port are in a blocking state (or discarding state) to prevent loops.\nReference: https://www.ciscopress.com/articles/article.asp?p=2832407&seqNum=4\nEtherChannel Questions\ntype, vlan, trunk) ko",
+      "explanation_images": [
+        "page_63_img_61.jpeg",
+        "page_63_img_62.png"
+      ],
+      "question_vi": "Chế độ hoạt động và vai trò của backup port trên một phân đoạn LAN chia sẻ trong Rapid PVST+ là gì?",
+      "options_vi": {
+        "A": "Chế độ blocking và cung cấp đường dẫn thay thế đến designated bridge",
+        "B": "Chế độ listening và cung cấp đường dẫn thay thế đến root bridge",
+        "C": "Chế độ forwarding và cung cấp đường dẫn chi phí thấp nhất đến root bridge cho mỗi VLAN",
+        "D": "Chế độ learning và cung cấp đường dẫn ngắn nhất đến root bridge xử lý lưu lượng ra khỏi LAN"
+      }
+    },
+    {
+      "id": "105",
+      "source_id": "1",
+      "type": "multi",
+      "question": "Which two statements about EtherChannel technology are true? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "EtherChannel provides increased bandwidth by bundling existing FastEthernet or Gigabit\nEthernet interfaces into a single EtherChannel",
+        "B": "STP does not block EtherChannel links",
+        "C": "You can configure multiple EtherChannel links between two switches, using up to a limit of\nsixteen physical ports",
+        "D": "EtherChannel does not allow load sharing of traffic among the physical links within the\nEtherChannel",
+        "E": "EtherChannel allows redundancy in case one or more links in the EtherChannel fail"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "In fact answer B is also correct as STP considers Etherchannel links as one physical link so this\nquestion should have three correct answers. But answer B is not as obvious as the other two\nanswers so we should choose them.",
+      "explanation_images": [],
+      "question_vi": "Hai phát biểu nào về công nghệ EtherChannel là đúng? (Chọn hai)",
+      "options_vi": {
+        "A": "EtherChannel cung cấp băng thông tăng lên bằng cách gộp các interface FastEthernet hoặc Gigabit Ethernet hiện có thành một EtherChannel duy nhất",
+        "B": "STP không chặn các liên kết EtherChannel",
+        "C": "Bạn có thể cấu hình nhiều liên kết EtherChannel giữa hai switch, sử dụng tối đa mười sáu cổng vật lý",
+        "D": "EtherChannel không cho phép chia sẻ tải lưu lượng giữa các liên kết vật lý trong EtherChannel",
+        "E": "EtherChannel cho phép dự phòng trong trường hợp một hoặc nhiều liên kết trong EtherChannel bị lỗi"
+      }
+    },
+    {
+      "id": "106",
+      "source_id": "2",
+      "type": "single",
+      "question": "Which mode must be used to configure EtherChannel between two switches without using a\nnegotiation protocol?",
+      "question_images": [],
+      "options": {
+        "A": "on",
+        "B": "auto",
+        "C": "active",
+        "D": "desirable"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "The Static Persistence (or “on” mode) bundles the links unconditionally and no negotiation protocol\nis used. In this mode, neither PAgP nor LACP packets are sent or received.",
+      "explanation_images": [],
+      "question_vi": "Chế độ nào phải được sử dụng để cấu hình EtherChannel giữa hai switch mà không sử dụng giao thức đàm phán?",
+      "options_vi": {
+        "A": "on",
+        "B": "auto",
+        "C": "active",
+        "D": "desirable"
+      }
+    },
+    {
+      "id": "107",
+      "source_id": "3",
+      "type": "single",
+      "question": "Refer to the exhibit. Based on the LACP neighbor status, in which mode is the SW1 port channel\nconfigured?",
+      "question_images": [
+        "page_64_img_63.jpeg"
+      ],
+      "options": {
+        "A": "passive",
+        "B": "mode on",
+        "C": "auto",
+        "D": "active"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "From the neighbor status, we notice the “Flags” are SP. “P” here means the neighbor is in Passive\nmode. In order to create an Etherchannel interface, the (local) SW1 ports should be in Active\nmode. Moreover, the “Port State” in the exhibit is “0x3c” (which equals to “00111100″ in binary\nformat). Bit 3 is “1” which means the ports are synchronizing -> the ports are working so the local\nports should be in Active mode.\nReference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/software/release/3s\ne/consolidated_guide/command_reference/b_consolidated_3650_3se_cr/b_consolidated_3650_3s\ne_cr_chapter_0100.pdf",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa. Dựa trên trạng thái LACP neighbor, port channel của SW1 được cấu hình ở chế độ nào?",
+      "options_vi": {
+        "A": "passive",
+        "B": "mode on",
+        "C": "auto",
+        "D": "active"
+      }
+    },
+    {
+      "id": "108",
+      "source_id": "5",
+      "type": "multi",
+      "question": "Which two command sequences must you configure on a switch to establish a Layer 3\nEtherChannel with an open-standard protocol? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "interface GigabitEthernet0/0/1\nchannel-group 10 mode active",
+        "B": "interface GigabitEthernet0/0/1\nchannel-group 10 mode auto",
+        "C": "interface GigabitEthernet0/0/1\nchannel-group 10 mode on",
+        "D": "interface port-channel 10\nno switchport\nip address 172.16.0.1 255.255.255.0",
+        "E": "interface port-channel 10\nswitchport\nswitchport mode trunk"
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "In order to configure a Layer 3 EtherChannel, we must use the “no switchport” command and set\nthe IP address on the (logical) port-channel interface. For open-standard EtherChannel protocol we\nmust use LACP with “passive” & “active” mode.",
+      "explanation_images": [],
+      "question_vi": "Hai chuỗi lệnh nào bạn phải cấu hình trên switch để thiết lập EtherChannel Layer 3 với giao thức tiêu chuẩn mở? (Chọn hai)",
+      "options_vi": {
+        "A": "interface GigabitEthernet0/0/1\nchannel-group 10 mode active",
+        "B": "interface GigabitEthernet0/0/1\nchannel-group 10 mode auto",
+        "C": "interface GigabitEthernet0/0/1\nchannel-group 10 mode on",
+        "D": "interface port-channel 10\nno switchport\nip address 172.16.0.1 255.255.255.0",
+        "E": "interface port-channel 10\nswitchport\nswitchport mode trunk"
+      }
+    },
+    {
+      "id": "109",
+      "source_id": "7",
+      "type": "single",
+      "question": "Refer to the exhibit.\nA network administrator is configuring an EtherChannel between SW1 and SW2. The SW1\nconfiguration is shown. What is the correct configuration for SW2?",
+      "question_images": [
+        "page_66_img_65.jpeg"
+      ],
+      "options": {
+        "A": "interface FastEthernet 0/1\nchannel-group 1 mode active\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 1 mode active\nswitchport trunk encapsulation dot1q\nswitchport mode trunk",
+        "B": "interface FastEthernet 0/1\nchannel-group 2 mode auto\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 2 mode auto\nswitchport trunk encapsulation dot1q\nswitchport mode trunk",
+        "C": "interface FastEthernet 0/1\nchannel-group 1 mode desirable\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 1 mode desirable\nswitchport trunk encapsulation dot1q\nswitchport mode trunk",
+        "D": "interface FastEthernet 0/1\nchannel-group 1 mode passive\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 1 mode passive\nswitchport trunk encapsulation dot1q\nswitchport mode trunk"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "From the configuration of SW1, we see it is using Port Aggregation Protocol (PAgP) with “auto”\nmode so the other end (SW2) must also runs PAgP with “desirable” mode to actively sending\nrequest to form an Etherchannel.",
+      "explanation_images": [
+        "page_68_img_66.jpeg"
+      ],
+      "question_vi": "Tham khảo hình minh họa.\nMột quản trị viên mạng đang cấu hình EtherChannel giữa SW1 và SW2. Cấu hình của SW1 được hiển thị. Cấu hình đúng cho SW2 là gì?",
+      "options_vi": {
+        "A": "interface FastEthernet 0/1\nchannel-group 1 mode active\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 1 mode active\nswitchport trunk encapsulation dot1q\nswitchport mode trunk",
+        "B": "interface FastEthernet 0/1\nchannel-group 2 mode auto\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 2 mode auto\nswitchport trunk encapsulation dot1q\nswitchport mode trunk",
+        "C": "interface FastEthernet 0/1\nchannel-group 1 mode desirable\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 1 mode desirable\nswitchport trunk encapsulation dot1q\nswitchport mode trunk",
+        "D": "interface FastEthernet 0/1\nchannel-group 1 mode passive\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface FastEthernet 0/2\nchannel-group 1 mode passive\nswitchport trunk encapsulation dot1q\nswitchport mode trunk"
+      }
+    },
+    {
+      "id": "110",
+      "source_id": "5",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich change to the configuration on Switch allows the two switches to establish an EtherChannel?",
+      "question_images": [],
+      "options": {
+        "A": "Change the protocol to EtherChannel mode on",
+        "B": "Change the LACP mode to active",
+        "C": "Change the LACP mode to desirable",
+        "D": "Change the protocol to PAgP and use auto mode"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nThay đổi nào đối với cấu hình trên Switch cho phép hai switch thiết lập EtherChannel?",
+      "options_vi": {
+        "A": "Thay đổi giao thức sang chế độ EtherChannel on",
+        "B": "Thay đổi chế độ LACP sang active",
+        "C": "Thay đổi chế độ LACP sang desirable",
+        "D": "Thay đổi giao thức sang PAgP và sử dụng chế độ auto"
+      }
+    },
+    {
+      "id": "111",
+      "source_id": "4",
+      "type": "single",
+      "question": "A network administrator needs to aggregate 4 ports into a single logical link which must negotiate\nlayer 2 connectivity to ports on another switch. What must be configured when using active mode\non both sides of the connection?",
+      "question_images": [],
+      "options": {
+        "A": "802.1q trunks",
+        "B": "Cisco vPC",
+        "C": "LLDP",
+        "D": "LACP"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Một quản trị viên mạng cần gộp 4 cổng thành một liên kết logic duy nhất phải đàm phán kết nối layer 2 với các cổng trên switch khác. Điều gì phải được cấu hình khi sử dụng chế độ active ở cả hai phía của kết nối?",
+      "options_vi": {
+        "A": "802.1q trunks",
+        "B": "Cisco vPC",
+        "C": "LLDP",
+        "D": "LACP"
+      }
+    },
+    {
+      "id": "112",
+      "source_id": "60",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 and SW2 by using\nan industry-standard protocol, and to support full IP connectivity between all PCs?",
+      "question_images": [
+        "page_68_img_0.jpeg",
+        "options_q112.png"
+      ],
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "LACP is the IEEE Standard (IEEE 802.3ad) and is the most common dynamic ether-channel\nprotocol, whereas PAgP is a Cisco proprietary protocol.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào cho phép EtherChannel hình thành động giữa SW1 và SW2 bằng cách sử dụng giao thức tiêu chuẩn công nghiệp, và hỗ trợ kết nối IP đầy đủ giữa tất cả các PC?",
+      "options_vi": {
+        "A": "Phương án A",
+        "B": "Phương án B",
+        "C": "Phương án C",
+        "D": "Phương án D"
+      }
+    },
+    {
+      "id": "113",
+      "source_id": "66",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer built a new L2 LACP EtherChannel between SW1 and SW2 and executed\nthese show commands to verify the work. Which additional task allows the two switches to\nestablish an LACP port channel?",
+      "question_images": [
+        "page_70_img_68.jpeg"
+      ],
+      "options": {
+        "A": "Change the channel-group mode on SW1 to desirable.",
+        "B": "Change the channel-group mode on SW1 to active or passive.",
+        "C": "Change the channel-group mode on SW2 to auto.",
+        "D": "Configure the interface port-channel 1 command on both switches."
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đã xây dựng một EtherChannel LACP L2 mới giữa SW1 và SW2 và thực thi các lệnh show này để xác minh công việc. Tác vụ bổ sung nào cho phép hai switch thiết lập LACP port channel?",
+      "options_vi": {
+        "A": "Thay đổi chế độ channel-group trên SW1 sang desirable.",
+        "B": "Thay đổi chế độ channel-group trên SW1 sang active hoặc passive.",
+        "C": "Thay đổi chế độ channel-group trên SW2 sang auto.",
+        "D": "Cấu hình lệnh interface port-channel 1 trên cả hai switch."
+      }
+    },
+    {
+      "id": "114",
+      "source_id": "83",
+      "type": "multi",
+      "question": "Refer to the exhibit.\nSwitch#show etherchannel summary\n[output omitted]\nGroup Port-channel Protocol Ports\n-------+--------------+---------+---------------------\n10 Po10(SU) LACP Gi0/0(P) Gi0/1(P)\n20 Po20(SU) LACP Gi0/2(P) Gi0/3(P)\nWhich two commands when used together create port channel 10? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "int range g0/0-1\nchannel-group 10 mode active",
+        "B": "int range g0/0-1\nchannel-group 10 mode desirable",
+        "C": "int range g0/0-1\nchannel-group 10 mode passive",
+        "D": "int range g0/0-1\nchannel-group 10 mode auto",
+        "E": "int range g0/0-1\nchannel-group 10 mode on"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSwitch#show etherchannel summary\n[output omitted]\nGroup Port-channel Protocol Ports\n-------+--------------+---------+---------------------\n10 Po10(SU) LACP Gi0/0(P) Gi0/1(P)\n20 Po20(SU) LACP Gi0/2(P) Gi0/3(P)\nHai lệnh nào khi sử dụng cùng nhau tạo ra port channel 10? (Chọn hai)",
+      "options_vi": {
+        "A": "int range g0/0-1\nchannel-group 10 mode active",
+        "B": "int range g0/0-1\nchannel-group 10 mode desirable",
+        "C": "int range g0/0-1\nchannel-group 10 mode passive",
+        "D": "int range g0/0-1\nchannel-group 10 mode auto",
+        "E": "int range g0/0-1\nchannel-group 10 mode on"
+      }
+    },
+    {
+      "id": "115",
+      "source_id": "124",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAn engineer is configuring an EtherChannel using LACP between Switches 1 and 2. Which\nconfiguration must be applied so that only Switch 1 sends LACP initiation packets?",
+      "question_images": [
+        "page_71_img_69.jpeg"
+      ],
+      "options": {
+        "A": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode passive",
+        "B": "Switch1(config-if)#channel-group 1 mode passive\nSwitch2(config-if)#channel-group 1 mode active",
+        "C": "Switch1(config-if)#channel-group 1 mode active\nSwitch2(config-if)#channel-group 1 mode passive",
+        "D": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode active"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nMột kỹ sư đang cấu hình EtherChannel sử dụng LACP giữa Switch 1 và 2. Cấu hình nào phải được áp dụng để chỉ Switch 1 gửi các gói khởi tạo LACP?",
+      "options_vi": {
+        "A": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode passive",
+        "B": "Switch1(config-if)#channel-group 1 mode passive\nSwitch2(config-if)#channel-group 1 mode active",
+        "C": "Switch1(config-if)#channel-group 1 mode active\nSwitch2(config-if)#channel-group 1 mode passive",
+        "D": "Switch1(config-if)#channel-group 1 mode on\nSwitch2(config-if)#channel-group 1 mode active"
+      }
+    },
+    {
+      "id": "116",
+      "source_id": "65",
+      "type": "single",
+      "question": "Refer to the exhibit.\nWhich configuration establishes a Layer 2 LACP EtherChannel when applied to both switches?",
+      "question_images": [
+        "page_72_img_70.jpeg"
+      ],
+      "options": {
+        "A": "interface range G1/1 -1/3\nswitchport mode access\nchannel-group 1 mode passive\nno shutdown",
+        "B": "interface range G1/1 -1/3\nswitchport mode trunk\nchannel-group 1 mode desirable\nno shutdown",
+        "C": "interface range G1/1 -1/3\nswitchport mode trunk\nchannel-group 1 mode active\nno shutdown",
+        "D": "interface range G1/1 -1/3\nswitchport mode access\nchannel-group 1 mode on\nno shutdown"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "The question clear stated that we use LACP so we must use mode “active” on both interfaces.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nCấu hình nào thiết lập EtherChannel LACP Layer 2 khi được áp dụng trên cả hai switch?",
+      "options_vi": {
+        "A": "interface range G1/1 -1/3\nswitchport mode access\nchannel-group 1 mode passive\nno shutdown",
+        "B": "interface range G1/1 -1/3\nswitchport mode trunk\nchannel-group 1 mode desirable\nno shutdown",
+        "C": "interface range G1/1 -1/3\nswitchport mode trunk\nchannel-group 1 mode active\nno shutdown",
+        "D": "interface range G1/1 -1/3\nswitchport mode access\nchannel-group 1 mode on\nno shutdown"
+      }
+    },
+    {
+      "id": "117",
+      "source_id": "10",
+      "type": "single",
+      "question": "Refer to the exhibit.\ninterface g2/0/0\nchannel-group 1 mode active\ninterface g4/0/0\nchannel-group 1 mode active\ninterface Port-channel1\nip address 203.0.113.65 255.255.255.252\n%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to\ndown\nAn engineer is configuring a Layer 3 port-channel interface with LACP. The configuration on the\nfirst device is complete, and it is verified that both interfaces have registered the neighbor device\nin the CDP table. Which task on the neighbor device enables the new port channel to come up\nwithout negotiating the channel?",
+      "question_images": [],
+      "options": {
+        "A": "Bring up the neighboring interfaces using the no shutdown command.",
+        "B": "Change the EtherChannel mode on the neighboring interfaces to auto",
+        "C": "Modify the static EtherChannel configuration of the device to passive mode",
+        "D": "Configure the IP address of the neighboring device"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\ninterface g2/0/0\nchannel-group 1 mode active\ninterface g4/0/0\nchannel-group 1 mode active\ninterface Port-channel1\nip address 203.0.113.65 255.255.255.252\n%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to\ndown\nMột kỹ sư đang cấu hình interface port-channel Layer 3 với LACP. Cấu hình trên thiết bị đầu tiên đã hoàn tất, và đã xác minh rằng cả hai interface đã đăng ký thiết bị neighbor trong bảng CDP. Tác vụ nào trên thiết bị neighbor cho phép port channel mới hoạt động mà không cần đàm phán kênh?",
+      "options_vi": {
+        "A": "Bật các interface neighbor bằng lệnh no shutdown.",
+        "B": "Thay đổi chế độ EtherChannel trên các interface neighbor sang auto",
+        "C": "Sửa đổi cấu hình EtherChannel tĩnh của thiết bị sang chế độ passive",
+        "D": "Cấu hình địa chỉ IP của thiết bị neighbor"
+      }
+    },
+    {
+      "id": "118",
+      "source_id": "30",
+      "type": "single",
+      "question": "Refer to the exhibit.\nPC1 regularly sends 1800 Mbps of traffic to the server. A network engineer needs to configure the\nEtherChannel to disable Port Channel 1 between SW1 and SW2 when the Ge0/0 and Ge0/1 ports\non SW2 go down. Which configuration must the engineer apply to the switch?",
+      "question_images": [
+        "page_73_img_71.jpeg"
+      ],
+      "options": {
+        "A": "SW2#configure terminal\nSW2(config)# interface port-channel 1\nSW2(config-if)#lacp port-priority 32000",
+        "B": "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#lacp max-bundle 2",
+        "C": "SW2#configure terminal\nSW2(config)#lacp system-priority 32000",
+        "D": "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#port-channel min-links 2"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "The port-channel min-links command specifies the minimum number of interfaces that the\nconfiguration mode LAG requires to be active. If there are fewer ports than specified by this\ncommand, the port channel interface does not become active.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nPC1 thường xuyên gửi 1800 Mbps lưu lượng đến server. Một kỹ sư mạng cần cấu hình EtherChannel để vô hiệu hóa Port Channel 1 giữa SW1 và SW2 khi các cổng Ge0/0 và Ge0/1 trên SW2 bị down. Cấu hình nào kỹ sư phải áp dụng cho switch?",
+      "options_vi": {
+        "A": "SW2#configure terminal\nSW2(config)# interface port-channel 1\nSW2(config-if)#lacp port-priority 32000",
+        "B": "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#lacp max-bundle 2",
+        "C": "SW2#configure terminal\nSW2(config)#lacp system-priority 32000",
+        "D": "SW2#configure terminal\nSW2(config)#interface port-channel 1\nSW2(config-if)#port-channel min-links 2"
+      }
+    },
+    {
+      "id": "119",
+      "source_id": "64",
+      "type": "single",
+      "question": "Refer to the exhibit.\nThe EtherChannel is configured with a speed of 1000 and duplex as full on both ends of channel\ngroup 1. What is the next step to configure the channel on switch A to respond to but not initiate\nLACP communication?",
+      "question_images": [
+        "page_74_img_72.jpeg"
+      ],
+      "options": {
+        "A": "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode desirable",
+        "B": "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode on",
+        "C": "interface port-channel 1\nchannel-group 1 mode auto",
+        "D": "interface port-channel 1\nchannel-group 1 mode passive"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nEtherChannel được cấu hình với tốc độ 1000 và duplex là full ở cả hai đầu của channel group 1. Bước tiếp theo để cấu hình kênh trên switch A để phản hồi nhưng không khởi tạo giao tiếp LACP là gì?",
+      "options_vi": {
+        "A": "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode desirable",
+        "B": "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode on",
+        "C": "interface port-channel 1\nchannel-group 1 mode auto",
+        "D": "interface port-channel 1\nchannel-group 1 mode passive"
+      }
+    },
+    {
+      "id": "120",
+      "source_id": "68",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSW1#show etherchannel\nChannel-group listing:\n----------------------\nGroup: 2\n--------\nGroup state = L2\nPorts: 1 Maxports = 8\nPort-channels: 1 Max Portchannels = 1\nProtocol: PAGP\nA network engineer updates the existing configuration on interface fastethernet1/1 switch SW1. It\nmust establish an EtherChannel by using the same group designation with another vendor switch.\nWhich configuration must be performed to complete the process?",
+      "question_images": [],
+      "options": {
+        "A": "interface port-channel 2\nchannel-group 2 mode desirable",
+        "B": "interface fastethernet 1/1\nchannel-group 2 mode on",
+        "C": "interface port-channel 2\nchannel-group 2 mode auto",
+        "D": "interface fastethernet 1/1\nchannel-group 2 mode active"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": null,
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình minh họa.\nSW1#show etherchannel\nChannel-group listing:\n----------------------\nGroup: 2\n--------\nGroup state = L2\nPorts: 1 Maxports = 8\nPort-channels: 1 Max Portchannels = 1\nProtocol: PAGP\nMột kỹ sư mạng cập nhật cấu hình hiện có trên interface fastethernet1/1 của switch SW1. Nó phải thiết lập EtherChannel bằng cách sử dụng cùng nhóm chỉ định với switch của nhà cung cấp khác. Cấu hình nào phải được thực hiện để hoàn tất quá trình?",
+      "options_vi": {
+        "A": "interface port-channel 2\nchannel-group 2 mode desirable",
+        "B": "interface fastethernet 1/1\nchannel-group 2 mode on",
+        "C": "interface port-channel 2\nchannel-group 2 mode auto",
+        "D": "interface fastethernet 1/1\nchannel-group 2 mode active"
+      }
+    }
+  ]
+}
