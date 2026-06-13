@@ -1,5 +1,5 @@
 {
-  "count": 102,
+  "count": 109,
   "questions": [
     {
       "id": "5.4",
@@ -129,7 +129,7 @@
     {
       "id": "5.16",
       "type": "single",
-      "question": "Refer to the exhibit. What is the result if Gig1/11 receives an STP BPDU?",
+      "question": "Refer to the exhibit.\nswitch(config)#interface gigabitEthernet 1/11 \nswitch(config-if)#switchport mode access \nswitch(config-if)#spanning-tree portfast \nswitch(config-if)#spanning-tree bpduguard enable\nWhat is the result if Gig1/11 receives an STP BPDU?",
       "question_images": [],
       "options": {
         "A": "The port transitions to STP blocking",
@@ -225,7 +225,7 @@
     {
       "id": "5.23",
       "type": "single",
-      "question": "Refer to the exhibit.\nWhich switch becomes the root of the spanning tree for VLAN 110?",
+      "question": "Refer to the exhibit.\nSwitch 1\nVLAN 110 – 32778 0018.184e.3c00\nSwitch 2\nVLAN 110 – 24586 001a.e3ff.a680\nSwitch 3\nVLAN 110 – 28682 0022.55cf.cc00\nSwitch 4\nVLAN 110 – 64000 0e38.7363.657f\nWhich switch becomes the root of the spanning tree for VLAN 110?",
       "question_images": [
         "q5.23_img1.jpg"
       ],
@@ -1715,7 +1715,7 @@
     {
       "id": "9.43",
       "type": "single",
-      "question": "Refer to the exhibit.\nWhich switch becomes the root of a spanning tree for VLAN 20 if all links are of equal speed?",
+      "question": "Refer to the exhibit.\nSW1 = 24596 0018.184e.3c00\nSW2 = 28692 004a.14e5.4077\nSW3 = 32788 0022.55cf.dd00\nSW4 = 64000 0041.454d.407f\nWhich switch becomes the root of a spanning tree for VLAN 20 if all links are of equal speed?",
       "question_images": [
         "q9.43_img1.jpg"
       ],
@@ -1965,7 +1965,7 @@
     {
       "id": "9.95",
       "type": "single",
-      "question": "An engineer must configure neighbor discovery between the company router and an ISP.\nWhat is the next step to complete the configuration if the ISP uses a third-party router?",
+      "question": "interface gigabitethernet0/0\ndescription Circuit-ATT4202-89930\nduplex full\nspeed 1000\nmedia-type gbic\nnegotiation auto\nlldp transmit\nlldp receive\nAn engineer must configure neighbor discovery between the company router and an ISP.\nWhat is the next step to complete the configuration if the ISP uses a third-party router?",
       "question_images": [],
       "options": {
         "A": "Disable CDP on gi0/0.",
@@ -2524,6 +2524,160 @@
         "D": "SW1(config)#no cdp run\nSW1(config)#interface gigabitethernet1/0/1\nSW1(config-if)#lldp transmit\nSW1(config-if)#lldp receive"
       },
       "explanation": "Đáp án D đúng vì môi trường multivendor yêu cầu dùng LLDP (chuẩn mở IEEE 802.1AB) thay vì CDP (độc quyền của Cisco). Lệnh \"no cdp run\" tắt CDP toàn cục, sau đó vào interface cụ thể và dùng \"lldp transmit\" + \"lldp receive\" để bật LLDP chỉ trên cổng đó. LLDP mặc định tắt trên thiết bị Cisco, nên các interface còn lại sẽ không chạy LLDP — đúng yêu cầu đề bài.\n\nĐáp án A sai vì dùng CDP thay vì LLDP, mà CDP là giao thức độc quyền Cisco, không hoạt động được với thiết bị của hãng khác. Ngoài ra, \"cdp run\" không phải lệnh hợp lệ ở cấp interface.\n\nĐáp án B sai vì \"lldp enable\" và \"lldp run\" không phải cú pháp đúng của Cisco IOS — không có lệnh nào tên như vậy.\n\nĐáp án C sai vì \"lldp run\" bật LLDP toàn cục, còn \"lldp enable\" không phải lệnh hợp lệ ở cấp interface. Cú pháp đúng để bật LLDP trên interface phải là \"lldp transmit\" và \"lldp receive\" riêng biệt."
+    },
+    {
+      "id": "5.24",
+      "question": "Refer to the exhibit.\nAn administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1 and PC-2 must be placed in the Data VLAN and Phone-1 must be placed in the Voice VLAN. Which configuration meets these requirements?",
+      "options": {
+        "A": "interface gigabitethernet1/1\nswitchport mode access\nswitchport access vlan 8\n!\ninterface gigabitethernet1/3\nswitchport mode access\nswitchport voice vlan 8\nswitchport access vlan 9",
+        "B": "interface gigabitethernet1/1\nswitchport mode access\nswitchport access vlan 9\n!\ninterface gigabitethernet1/3\nswitchport mode trunk\nswitchport voice vlan 8\nswitchport access vlan 9",
+        "C": "interface gigabitethernet1/1\nswitchport mode access\nswitchport access vlan 8\n!\ninterface gigabitethernet1/3\nswitchport mode access\nswitchport access vlan 8\nswitchport voice vlan 9",
+        "D": "interface gigabitethernet1/1\nswitchport mode access\nswitchport access vlan 8\n!\ninterface gigabitethernet1/3\nswitchport mode trunk\nswitchport voice vlan 8\nswitchport access vlan 9"
+      },
+      "answer": "C",
+      "explanation": "",
+      "question_images": [
+        "q5.24_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Network_Access",
+      "_uid": "docx:CCNA_Network_Access:5.24",
+      "imageFolder": "CCNA_Network_Access"
+    },
+    {
+      "id": "6.15",
+      "question": "Refer to the exhibit.\nAn engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which configuration accomplishes this task?",
+      "options": {
+        "A": "interface gigabitethernet1/1\nswitchport mode access\nswitchport access vlan 300\nswitchport voice vlan 400",
+        "B": "interface gigabitethernet1/1\nswitchport mode access\nswitchport access vlan 400\nswitchport voice vlan 300",
+        "C": "interface gigabitethernet1/1\nswitchport mode trunk\nswitchport access vlan 300\nswitchport voice vlan 400",
+        "D": "interface gigabitethernet1/1\nswitchport mode trunk\nswitchport trunk vlan 300\nswitchport trunk vlan 400"
+      },
+      "answer": "A",
+      "explanation": "",
+      "question_images": [
+        "q6.15_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Network_Access",
+      "_uid": "docx:CCNA_Network_Access:6.15",
+      "imageFolder": "CCNA_Network_Access"
+    },
+    {
+      "id": "6.31",
+      "question": "Refer to the exhibit.\nHow must router A be configured so that it only sends Cisco Discovery Protocol Information to router C?",
+      "options": {
+        "A": "conf t\nRouterA(config)#no cdp run\nRouterA(config)#interface gi0/0/1\nRouterA(config)#cdp enable",
+        "B": "conf t\nRouterA(config)#cdp run\nRouterA(config)#interface gi0/0/1\nRouterA(config)#cdp enable",
+        "C": "conf t\nRouterA(config)#cdp run\nRouterA(config)#interface gi0/0/0\nRouterA(config)#cdp enable",
+        "D": "conf t\nRouterA(config)#cdp run\nRouterA(config)#interface gi0/0/0\nRouterA(config)#no cdp enable"
+      },
+      "answer": "D",
+      "explanation": "",
+      "question_images": [
+        "q6.31_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Network_Access",
+      "_uid": "docx:CCNA_Network_Access:6.31",
+      "imageFolder": "CCNA_Network_Access"
+    },
+    {
+      "id": "8.31",
+      "question": "Refer to the exhibit.\nFor security reasons, automatic neighbor discovery must be disabled on the R5 Gi0/1 interface.\nThese tasks must be completed:* Disable all neighbor discovery methods on R5 interface Gi0/1.* Permit neighbor discovery on R5 interface Gi0/2.* Verify there are no dynamically learned neighbors on R5 interface Gi0/1.* Display the IP address of R6’s interface Gi0/2.\nWhich configuration must be used?",
+      "options": {
+        "A": "R5(config)#int Gi0/1 \nR5(config-if)#no cdp enable \nR5(config-if)#exit \nR5(config)#lldp run \nR5(config)#no cdp run \nR5#sh cdp neighbor detail \nR5#sh lldp neighbor",
+        "B": "R5(config)#int Gi0/1 \nR5(config-if)#no cdp run \nR5(config-if)#exit \nR5(config)#lldp run \nR5(config)#cdp enable \nR5#sh cdp neighbor \nR5#sh lldp neighbor",
+        "C": "R5(config)#int Gi0/1 \nR5(config-if)#no cdp enable \nR5(config-if)#exit \nR5(config)#no lldp run \nR5(config)#cdp run \nR5#sh cdp neighbor detail \nR5#sh lldp neighbor",
+        "D": "R5(config)#int Gi0/1 \nR5(config-if)#no cdp enable \nR5(config-if)#exit \nR5(config)#no lldp run \nR5(config)#cdp run \nR5#sh cdp neighbor \nR5#sh lldp neighbor"
+      },
+      "answer": "C",
+      "explanation": "",
+      "question_images": [
+        "q8.31_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Network_Access",
+      "_uid": "docx:CCNA_Network_Access:8.31",
+      "imageFolder": "CCNA_Network_Access"
+    },
+    {
+      "id": "8.60",
+      "question": "Refer to the exhibit.\nWhich configuration enables an EtherChannel to form dynamically between SW1 and SW2 by using an industry-standard protocol, and to support full IP connectivity between all PCs?",
+      "options": {
+        "A": "SW1#\ninterface Gi0/1 \nswitchport\nswitchport mode trunk \nchannel-group 1 mode on\n!\ninterface Gi0/2 \nswitchport\nswitchport mode trunk \nchannel-group 1 mode auto\nSW2# \ninterface Gi0/1 \nswitchport \nswitchport mode trunk \nchannel-group 1 mode auto\n! \ninterface Gi0/2 \nswitchport \nswitchport mode trunk \nchannel-group 1 mode on \ninterface port-channel 1 \nswitchport \nswitchport mode trunk",
+        "B": "SW1# \ninterface Gi0/1 \nswitchport\nswitchport mode trunk \nchannel-group 1 mode auto\n!\ninterface Gi0/2 \nswitchport \nswitchport mode access\nchannel-group 1 mode active\nSW2# \ninterface gi0/1\nswitchport \nswitchport mode access \nchannel-group 1 mode desirable\n!\ninterface Gi0/2 \nswitchport \nswitchport mode access \nchannel-group 1 mode desirable",
+        "C": "SW1#\ninterface Gi0/1 \nswitchport\nswitchport mode trunk \nchannel-group 1 mode active\n!\ninterface Gi0/2 \nswitchport\nswitchport mode trunk \nchannel-group 1 mode active\nSW2# \ninterface Gi0/1 \nswitchport \nswitchport mode trunk \nchannel-group 1 mode passive\n! \ninterface Gi0/2 \nswitchport \nswitchport mode trunk \nchannel-group 1 mode passive",
+        "D": "SW1#\ninterface Gi0/1 \nswitchport\nswitchport mode access\nchannel-group 1 mode active\n!\ninterface Gi0/2 \nswitchport\nswitchport mode access\nchannel-group 1 mode active\nSW2# \ninterface Gi0/1 \nswitchport \nswitchport mode access\nchannel-group 1 mode desirable\n! \ninterface Gi0/2 \nswitchport \nswitchport mode access\nchannel-group 1 mode desirable"
+      },
+      "answer": "C",
+      "explanation": "",
+      "question_images": [
+        "q8.60_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Network_Access",
+      "_uid": "docx:CCNA_Network_Access:8.60",
+      "imageFolder": "CCNA_Network_Access"
+    },
+    {
+      "id": "9.85",
+      "question": "Refer to the exhibit.\nThe following must be considered\n+ SW1 is fully configured for all traffic+ The SW4 and SW9 links to SW1 have been configured+ The SW4 interface Gi0/1 and Gi0/0 on SW9 have been configured+ The remaining switches have had all VLANs added to their VLAN database\nWhich configuration establishes a successful ping from PC2 to PC7 without interruption to traffic flow between other PCs?",
+      "options": {
+        "A": "SW4#\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 14,108\nSW11#\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 14,108\n!\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 14,108\nSW9#\ninterface Gi0/2 \nswitchport mode trunk \nswitchport trunk allowed vlan 14",
+        "B": "SW4\ninterface Gi0/7 \nswitchport mode trunk \nswitchport trunk allowed vlan 108\n!\ninterface Gi0/2\nswitchport mode access \nswitchport access vlan 14\nSW11#\ninterface Gi0/2\nswitchport mode trunk \nswitchport trunk allowed vlan 14,108\n!\ninterface Gi0/1\nswitchport mode trunk \nswitchport trunk allowed vlan 14,108\nSW9#\ninterface Gi0/2 \nswitchport mode access \nswitchport access vlan 14",
+        "C": "SW4\ninterface Gi0/2\nswitchport mode trunk \nswitchport trunk allowed vlan 14\nSW11#\ninterface Gi0/1\nswitchport mode trunk \nswitchport trunk allowed vlan 14\nSW9#\ninterface Gi0/2 \nswitchport mode trunk\nswitchport trunk allowed vlan 108",
+        "D": "SW4\ninterface Gi0/2\nswitchport mode access \nswitchport access vlan 14\nSW11#\ninterface Gi0/2\nswitchport mode access \nswitchport access vlan 14\n!\ninterface Gi0/0\nswitchport mode access \nswitchport access vlan 14\n!\ninterface Gi0/1\nswitchport mode trunk\nSW9#\ninterface Gi0/2 \nswitchport mode access \nswitchport access vlan 14"
+      },
+      "answer": "A",
+      "explanation": "",
+      "question_images": [
+        "q9.85_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Network_Access",
+      "_uid": "docx:CCNA_Network_Access:9.85",
+      "imageFolder": "CCNA_Network_Access"
+    },
+    {
+      "id": "10.66",
+      "question": "Refer to the exhibit.\nThe SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given these requirements:\n+ Allow all PCs to communicate with each other at Layer 3.+ Configure untagged traffic to use VLAN 5.+ Disable VLAN 1 from being used.\nWhich configuration set meets these requirements?",
+      "options": {
+        "A": "SW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 7,9,108\nSW2#\ninterface Gi0/1 \nswitchport mode trunk \nswitchport trunk allowed vlan 7\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108",
+        "B": "SW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5\ninterface Gi0/2\nswitchport mode access\nswitchport trunk allowed vlan 7,9,108\nSW2#\ninterface Gi0/1\nswitchport mode access\nno switchport access vlan 1\nswitchport access vlan 7\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 7,9,108\nswitchport trunk native vlan 5",
+        "C": "SW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nSW2#\ninterface Gi0/1\nswitchport mode access\nswitchport access vlan 7\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 7,9,108",
+        "D": "SW1#\ninterface Gi0/1\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5\ninterface Gi0/2\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nSW2#\ninterface Gi0/1\nswitchport mode access\nswitchport access vlan 7\ninterface Gi0/7\nswitchport mode trunk\nswitchport trunk allowed vlan 5,7,9,108\nswitchport trunk native vlan 5"
+      },
+      "answer": "D",
+      "explanation": "",
+      "question_images": [
+        "q10.66_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Network_Access",
+      "_uid": "docx:CCNA_Network_Access:10.66",
+      "imageFolder": "CCNA_Network_Access"
     }
   ]
 }

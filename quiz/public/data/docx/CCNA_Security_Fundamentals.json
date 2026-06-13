@@ -1,5 +1,5 @@
 {
-  "count": 66,
+  "count": 70,
   "questions": [
     {
       "id": "5.3",
@@ -1497,7 +1497,7 @@
     {
       "id": "10.84",
       "type": "single",
-      "question": "Refer to the exhibit.\nA network administrator must permit traffic from the 10.10.0.0/24 subnet to the WAN on interface Serial0. What is the effect of the configuration as the administrator applies the command?",
+      "question": "Refer to the exhibit.\naccess-list 10 permit 10.0.0.0 0.0.0.255 \ninterface Serial0\nip access-list 10 in\nA network administrator must permit traffic from the 10.10.0.0/24 subnet to the WAN on interface Serial0. What is the effect of the configuration as the administrator applies the command?",
       "question_images": [],
       "options": {
         "A": "The sourced traffic from IP range 10.0.0.0 – 10.0.0.255 is allowed on Serial0.",
@@ -1642,6 +1642,88 @@
         "D": "accounting"
       },
       "explanation": "Anti-replay là cơ chế bảo mật ngăn chặn kẻ tấn công chặn bắt và phát lại các gói tin hợp lệ để giả mạo phiên kết nối, đây chính là bản chất của tấn công man-in-the-middle. Cơ chế này hoạt động bằng cách đánh số thứ tự các gói tin và từ chối bất kỳ gói nào bị trùng lặp hoặc đến không đúng thứ tự, thường được dùng trong IPsec.\n\nAuthentication xác minh danh tính người dùng hoặc thiết bị nhưng không ngăn được việc tái sử dụng dữ liệu đã bị chặn. Authorization kiểm soát quyền truy cập sau khi xác thực, không liên quan đến việc chặn tấn công phát lại. Accounting ghi lại nhật ký hoạt động để kiểm toán, hoàn toàn không có chức năng phòng chống tấn công."
+    },
+    {
+      "id": "5.29",
+      "question": "Refer to the exhibit.\nAn access list is required to permit traffic from any host on interface G0/0 and deny traffic from interface Gi0/1. Which access list must be applied?",
+      "options": {
+        "A": "ip access-list standard 99\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.0.255.255",
+        "B": "ip access-list standard 99\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.255.255.255",
+        "C": "ip access-list standard 100\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.255.255.255",
+        "D": "ip access-list standard 199\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.0.255.255"
+      },
+      "answer": "A",
+      "explanation": "",
+      "question_images": [
+        "q5.29_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Security_Fundamentals",
+      "_uid": "docx:CCNA_Security_Fundamentals:5.29",
+      "imageFolder": "CCNA_Security_Fundamentals"
+    },
+    {
+      "id": "6.2",
+      "question": "A network administrator must to configure SSH for remote access to router R1. The requirement is to use a public and private key pair to encrypt management traffic to and from the connecting client. Which configuration, when applied, meets the requirements?\nA. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key generate ec keysize 1024\nB. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key generate rsa modulus 1024\nC. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key generate ec keysize 2048\nD. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key encrypt rsa name myKey",
+      "options": {
+        "A": "R1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate ec keysize 1024",
+        "B": "R1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate rsa modulus 1024",
+        "C": "R1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key generate ec keysize 2048",
+        "D": "R1#enable\nR1#configure terminal\nR1(config)#ip domain-name cisco.com\nR1(config)#crypto key encrypt rsa name myKey"
+      },
+      "answer": "B",
+      "explanation": "",
+      "question_images": [],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Security_Fundamentals",
+      "_uid": "docx:CCNA_Security_Fundamentals:6.2",
+      "imageFolder": "CCNA_Security_Fundamentals"
+    },
+    {
+      "id": "8.77",
+      "question": "A Cisco engineer is configuring a factory-default router with these three passwords:* The user EXEC password for console access is p4ssw0rd1.* The user EXEC password for Telnet access is s3cr3t2.* The password for privileged EXEC mode is priv4t3p4ss.Which command sequence must the engineer configure?",
+      "options": {
+        "A": "enable secret priv4t3p4ss\n!\nline con 0\npassword p4ssw0rd1 \nlogin\n!\nline vty 0 15 \npassword s3cr3t2 \nlogin",
+        "B": "enable secret privilege 15 priv4t3p4ss\n!\nline con 0\npassword p4ssw0rdi \nlogin\n!\nline vty 0 15 \npassword s3cr3t2\nlogin",
+        "C": "enable secret priv413p4ss\n!\nline con 0\npassword login p4ssw0rd1\n!\nline vty 0 15 \npassword login s3cr3t2 \nlogin",
+        "D": "enable secret priv4t3p4ss\n!\nline con 0\npassword p4ssw0rd1 \n!\nline vty 0 15 \npassword s3cr3t2"
+      },
+      "answer": "A",
+      "explanation": "",
+      "question_images": [],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Security_Fundamentals",
+      "_uid": "docx:CCNA_Security_Fundamentals:8.77",
+      "imageFolder": "CCNA_Security_Fundamentals"
+    },
+    {
+      "id": "10.32",
+      "question": "After a recent security breach and a RADIUS failure, an engineer must secure the console port of each enterprise router with a local username and password. Which configuration must the engineer apply to accomplish this task?",
+      "options": {
+        "A": "aaa new-model\naaa authorization exec default local \naaa authentication login default radius\nusername localuser privilege 15 secret plaintextpassword",
+        "B": "username localuser secret plaintextpassword \nline con 0\nlogin authentication default \nprivilege level 15",
+        "C": "username localuser secret plaintextpassword \nline con 0 \nno login local \nprivilege level 15",
+        "D": "aaa new-model \nline con 0\npassword plaintextpassword \nprivilege level 15"
+      },
+      "answer": "B",
+      "explanation": "",
+      "question_images": [],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_Security_Fundamentals",
+      "_uid": "docx:CCNA_Security_Fundamentals:10.32",
+      "imageFolder": "CCNA_Security_Fundamentals"
     }
   ]
 }

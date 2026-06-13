@@ -1,5 +1,5 @@
 {
-  "count": 42,
+  "count": 44,
   "questions": [
     {
       "id": "5.1",
@@ -177,7 +177,7 @@
     {
       "id": "6.13",
       "type": "single",
-      "question": "When deploying syslog, which severity level logs informational message?",
+      "question": "Level  Keyword  Description\n0  emergencies  System is unusable\n1  alerts  Immediate action is needed\n2  critical  Critical conditions exist\n3  errors  Error conditions exist\n4  warnings  Warning conditions exist\n5  notification  Normal, but significant, conditions exist\n6  informational  Informational messages\n7  debugging  Debugging messages\nWhen deploying syslog, which severity level logs informational message?",
       "question_images": [],
       "options": {
         "A": "0",
@@ -592,7 +592,7 @@
     {
       "id": "8.44",
       "type": "single",
-      "question": "Refer to the exhibit.\nWhich configuration enables DHCP addressing for hosts connected to interface FastEthernet0/1 on router R4?",
+      "question": "Refer to the exhibit.\ninterface FastEthernet0/10\ndescription WAN_INTERFACE \nip address 10.0.1.2 255.255.255.252 \nip access-group 100 in\n!\ninterface FastEthernet0/1 \ndescription LAN INTERFACE \nip address 10.148.2.1 255.255.255.0\nduplex auto\nspeed auto\n!\nip forward-protocol nd\n!\naccess-list 100 permit eigrp any any \naccess-list 100 permit icmp any any\naccess-list 100 permit tcp 10.149.3.0 0.0.0.255 host 10.0.1.2 eq 22 \naccess-list 100 permit tcp any any eq 80 \naccess-list 100 permit tcp any any eq 443\naccess-list 100 deny ip any any log\nWhich configuration enables DHCP addressing for hosts connected to interface FastEthernet0/1 on router R4?",
       "question_images": [],
       "options": {
         "A": "interface FastEthernet0/1\nip helper-address 10.0.1.1\n!\naccess-list 100 permit tcp host 10.0.1.1 eq 67 host 10.148.2.1",
@@ -716,7 +716,7 @@
     {
       "id": "9.44",
       "type": "single",
-      "question": "Refer to the exhibit.\nUsers on existing VLAN 100 can reach sites on the Internet. Which action must the administrator take to establish connectivity to the Internet for users in VLAN 200?",
+      "question": "Refer to the exhibit.\nRouter1(config)#interface GigabitEthernet0/0 \nRouter1(config-if)#ip address 209.165.200.225 255.255.255.224 \nRouter1(config-if)#ip nat outside \nRouter1(config)#interface GigabitEthernet0/1 \nRouter1(config-if)#ip nat inside \nRouter1(config)#interface GigabitEthernet\nRouter1(config-if)#encapsulation dot1Q 100 \nRouter1(config-if)#ip address 10.10.10.1 255.255.255.0\nRouter1(config)#interface GigabitEthernet0/1.200 \nRouter1(config-if)#encapsulation dot1Q 200\nRouter1(config-if)#ip address 10.10.20.1 255.255.255.0 \nRouter1(config)#ip access-list standard NAT_INSIDE_RANGES \nRouter1(config-std-nacl)#permit 10.10.10.0 0.0.0.255\nRouter1(config)#ip nat inside source list NAT_INSIDE_RANGES interface GigabitEthernet0/0 overload\nUsers on existing VLAN 100 can reach sites on the Internet. Which action must the administrator take to establish connectivity to the Internet for users in VLAN 200?",
       "question_images": [
         "q9.44_img1.jpg"
       ],
@@ -1036,6 +1036,48 @@
         "E": "đệm (buffering)"
       },
       "explanation": "Traffic policing là cơ chế kiểm soát lưu lượng bằng cách đo tốc độ traffic và thực hiện hành động ngay lập tức khi traffic vượt quá ngưỡng cho phép (rate limit). Khi traffic vượt ngưỡng, policing có thể drop gói tin (C) để loại bỏ lưu lượng dư thừa, hoặc remark gói tin (D) bằng cách thay đổi giá trị DSCP/CoS để hạ thấp mức ưu tiên, cho phép các thiết bị phía sau xử lý hoặc drop chúng sau này. Đây là hai hành động đặc trưng của policing vì nó xử lý traffic tức thời mà không giữ lại gói tin.\n\nBuffering (E) là đặc trưng của traffic shaping, không phải policing. Shaping giữ gói tin trong hàng đợi để làm mượt tốc độ, còn policing thì không. Bursting (A) là khái niệm liên quan đến việc cho phép traffic vượt ngưỡng trong thời gian ngắn, đây là tham số cấu hình của policing chứ không phải hành động đầu ra. Fragmentation (B) là quá trình chia nhỏ gói tin liên quan đến MTU, hoàn toàn không liên quan đến policing."
+    },
+    {
+      "id": "5.25",
+      "question": "Refer to exhibit.\nWhich configuration must be applied to the router that configures PAT to translate all addresses in VLAN 200 while allowing devices on VLAN 100 to use their own IP addresses?",
+      "options": {
+        "A": "Router1(config)#access-list 99 permit 209.165.201.2 0.0.0.0\nRouter1(config)#ip nat inside source list 99 interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside",
+        "B": "Router1(config)#access-list 99 permit 209.165.201.2 255.255.255.255\nRouter1(config)#ip nat inside source list 99 interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside",
+        "C": "Router1(config)#access-list 99 permit 192.168.100.0 0.0.0.255\nRouter1(config)#ip nat inside source list 99 interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside",
+        "D": "Router1(config)#access-list 99 permit 192.168.100.32 0.0.0.31\nRouter1(config)#ip nat inside source list 99 interface gi1/0/0 overload\nRouter1(config)#interface gi2/0/1.200\nRouter1(config)#ip nat inside\nRouter1(config)#interface gi1/0/0\nRouter1(config)#ip nat outside"
+      },
+      "answer": "D",
+      "explanation": "",
+      "question_images": [
+        "q5.25_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_IP_Services",
+      "_uid": "docx:CCNA_IP_Services:5.25",
+      "imageFolder": "CCNA_IP_Services"
+    },
+    {
+      "id": "9.10",
+      "question": "R1 as an NTP server must have:* NTP authentication enabled* NTP packets sourced from Interface loopback 0* NTP stratum 2* NTP packets only permitted to client IP 209.165.200.225\nHow should R1 be configured?",
+      "options": {
+        "A": "ntp authenticate\nntp authentication-key 2 sha1 CISCO123\nntp source Loopback0\nntp access-group server-only 10\nntp master 2\n!\naccess-list 10 permit udp host 209.165.200.225 any eq 123",
+        "B": "ntp authenticate\nntp authentication-key 2 md5 CISCO123\nntp source Loopback0\nntp access-group server-only 10\nntp stratum 2\n!\naccess-list 10 permit udp host 209.165.200.225 any eq 123",
+        "C": "ntp authenticate\nntp authentication-key 2 md5 CISCO123\nntp interface Loopback0\nntp access-group server-only 10\nntp stratum 2\n!\naccess-list 10 permit 209.165.200.225",
+        "D": "ntp authenticate\nntp authentication-key 2 md5 CISCO123\nntp source Loopback0\nntp access-group server-only 10\nntp master 2\n!\naccess-list 10 permit 209.165.200.225"
+      },
+      "answer": "D",
+      "explanation": "",
+      "question_images": [],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_IP_Services",
+      "_uid": "docx:CCNA_IP_Services:9.10",
+      "imageFolder": "CCNA_IP_Services"
     }
   ]
 }

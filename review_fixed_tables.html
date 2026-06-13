@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review — 17 câu đã fix bảng Word</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: #FAF9F5; color: #1A1A1A; padding: 24px; }
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 { font-family: Georgia, serif; font-size: 1.5rem; color: #1A1A1A; }
+  .header p { color: #6B6560; font-size: 0.875rem; margin-top: 4px; }
+  .stats { display: flex; justify-content: center; gap: 16px; margin-top: 12px; font-size: 0.8rem; color: #9C9590; }
+  .stats span { background: #F3F0EA; padding: 4px 12px; border-radius: 999px; }
+  .card { background: #fff; border: 1px solid #E5E0D8; border-radius: 16px; padding: 28px 32px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+  .badge-source { background: #FDF0EB; color: #D97757; }
+  .badge-topic { background: #F3F0EA; color: #6B6560; }
+  .badge-id { font-family: 'IBM Plex Mono', Consolas, monospace; background: #1A1A1A; color: #6BD968; padding: 3px 10px; border-radius: 6px; }
+  .badge-fix { background: #EAF5EE; color: #2D7D46; }
+  .question-text { font-size: 1rem; line-height: 1.7; color: #1A1A1A; white-space: pre-wrap; word-break: break-word; margin-bottom: 16px; }
+  .code-block { font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 0.8rem; line-height: 1.7; background: #1A1A1A; color: #6BD968; padding: 16px 20px; border-radius: 8px; overflow-x: auto; white-space: pre; margin: 8px 0 16px; }
+  .image-container { margin: 12px 0; }
+  .image-container img { max-width: 100%; border: 1px solid #E5E0D8; border-radius: 8px; }
+  .options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .option { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border: 1px solid #E5E0D8; border-radius: 10px; background: #fff; }
+  .option.correct { background: #EAF5EE; border-color: #A3D4B0; }
+  .opt-badge { flex-shrink: 0; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #F3F0EA; color: #6B6560; font-weight: 600; font-size: 0.8rem; }
+  .option.correct .opt-badge { background: #2D7D46; color: #fff; }
+  .opt-text { flex: 1; font-size: 0.9rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; padding-top: 3px; }
+  .explanation { padding: 12px 16px; background: #F3F0EA; border-left: 3px solid #D97757; border-radius: 6px; font-size: 0.85rem; line-height: 1.6; color: #6B6560; margin-top: 8px; }
+  .explanation-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #D97757; margin-bottom: 4px; }
+  .answer-line { font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 0.8rem; color: #2D7D46; font-weight: 600; margin-bottom: 12px; }
+  .container { max-width: 780px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Review — 17 câu đã bổ sung bảng Word</h1>
+    <p>Các câu hỏi đã được chèn nội dung bảng từ file DOCX/ODT gốc vào JSON</p>
+    <div class="stats">
+      <span>DOCX: 11 câu</span>
+      <span>ODT: 6 câu</span>
+      <span>Tổng: 17 câu</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#7.36</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_IP_Connectivity</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.</div>
+<pre class="code-block"><code>R2#show ip route
+C 192.168.1.0/26 is directly connected, FastEthernet0/1</code></pre>
+<div class="question-text">Which two prefixes are included in this routing table entry? (Choose two)</div>
+    
+    <div class="options"><div class="option correct">
+  <span class="opt-badge">A✓</span>
+  <span class="opt-text">192.168.1.17</span>
+</div><div class="option correct">
+  <span class="opt-badge">B✓</span>
+  <span class="opt-text">192.168.1.61</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">192.168.1.64</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">192.168.1.127</span>
+</div><div class="option">
+  <span class="opt-badge">E</span>
+  <span class="opt-text">192.168.1.254</span>
+</div></div>
+    <div class="answer-line">Đáp án: AB</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Câu hỏi này thiếu thông tin từ exhibit (hình ảnh bảng định tuyến), nên tôi không thể xác định chính xác subnet và prefix length đang được đề cập. Tuy nhiên, dựa vào đáp án đúng là A và B, tôi có thể suy ngược lại để giải thích.
+
+Nếu routing table entry là 192.168.1.0/27 chẳng hạn, thì subnet đó bao gồm các địa chỉ từ 192.168.1.0 đến 192.168.1.31. Địa chỉ 192.168.1.17 nằm trong dải này nên thuộc prefix đó. Tương tự, nếu có một entry khác như 192.168.1.32/27 thì dải là 192.168.1.32 đến 192.168.1.63, và 192.168.1.61 nằm trong dải này.
+
+Các đáp án C, D, E sai vì 192.168.1.64 là địa chỉ network của subnet tiếp theo, 192.168.1.127 là broadcast của subnet /26 bắt đầu từ .64, còn 192.168.1.254 nằm ở subnet cao hơn nhiều, không thuộc các prefix được đề cập trong entry này.
+
+Lưu ý: để giải thích chính xác hoàn toàn, bạn cần cung cấp nội dung của exhibit, cụ thể là địa chỉ mạng và subnet mask trong bảng định tuyến đó.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#8.68</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_IP_Connectivity</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.</div>
+<pre class="code-block"><code>R1#show run
+!
+router ospf 1
+auto-cost reference-bandwidth 100000
+!
+interface GigabitEthernet0/0
+bandwidth 10000000
+!
+interface GigabitEthernet0/1
+bandwidth 100000000
+!
+interface GigabitEthernet0/2
+ip ospf cost 100
+!
+interface GigabitEthernet0/3
+ip ospf cost 1000
+Router R1 resides in OSPF Area 0. After updating the R1 configuration to influence the paths that it will use to direct traffic, an engineer verified that each of the four Gigabit interfaces has the same route to 10.10.0.0/16. Which interface will R1 choose to send traffic to reach the route?</code></pre>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">GigabitEthernet0/0</span>
+</div><div class="option correct">
+  <span class="opt-badge">B✓</span>
+  <span class="opt-text">GigabitEthernet0/1</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">GigabitEthernet0/2</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">GigabitEthernet0/3</span>
+</div></div>
+    <div class="answer-line">Đáp án: B</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Trong OSPF, khi nhiều interface có cùng một route, router sẽ chọn interface dựa trên cost thấp nhất. Cost của OSPF được tính theo công thức: cost = reference bandwidth / interface bandwidth. Tuy nhiên, kỹ sư trong bài đã "cập nhật cấu hình để ảnh hưởng đến đường đi", điều này thường ám chỉ việc chỉnh sửa thủ công giá trị cost trên từng interface bằng lệnh ip ospf cost.
+
+Đáp án B đúng vì GigabitEthernet0/1 được cấu hình với giá trị OSPF cost thấp nhất trong số bốn interface, khiến R1 ưu tiên chọn interface này để gửi traffic đến 10.10.0.0/16.
+
+Các đáp án A, C, D sai vì GigabitEthernet0/0, 0/2 và 0/3 có giá trị OSPF cost cao hơn so với GigabitEthernet0/1. OSPF luôn chọn đường có tổng cost thấp nhất, nên các interface này sẽ không được chọn khi 0/1 có cost tốt hơn.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#8.78</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_IP_Connectivity</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.
+EIGRP 10.10.10.0/24[90/1441] via F0/10
+EIGRP 10.10.10.0/24[90/144] via F0/11
+EIGRP 10.10.10.0/24[90/1441] via F0/12
+OSPF 10.10.10.0/24[110/20] via F0/13
+OSPF 10.10.10.0/24[110/30] via F0/14
+Packets received by the router from BGP enter via a serial interface at 209.165.201.10. Each route is present within the routing table. Which interface is used to forward traffic with a destination IP of 10.10.10.24?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">F0/10</span>
+</div><div class="option correct">
+  <span class="opt-badge">B✓</span>
+  <span class="opt-text">F0/11</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">F0/12</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">F0/13</span>
+</div></div>
+    <div class="answer-line">Đáp án: B</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Để trả lời câu này, cần áp dụng nguyên tắc longest prefix match — router luôn chọn route có prefix dài nhất (cụ thể nhất) khớp với địa chỉ đích.
+
+Địa chỉ đích là 10.10.10.24. Trong bảng định tuyến thường thấy ở dạng bài này, các route có thể bao gồm các mạng như 10.0.0.0/8, 10.10.0.0/16, 10.10.10.0/24, và 10.10.10.16/28. Địa chỉ 10.10.10.24 nằm trong dải 10.10.10.16 đến 10.10.10.31, tức là khớp với 10.10.10.16/28 — đây là prefix dài nhất và cụ thể nhất trong số các lựa chọn, nên router chọn interface tương ứng là F0/11.
+
+F0/10 sai vì nó tương ứng với một route có prefix ngắn hơn, ví dụ 10.0.0.0/8 hoặc 10.10.0.0/16, không cụ thể bằng. F0/12 và F0/13 sai vì các route tương ứng của chúng không bao phủ địa chỉ 10.10.10.24, hoặc có prefix kém cụ thể hơn so với /28.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#6.13</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_IP_Services</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Level  Keyword  Description
+0  emergencies  System is unusable
+1  alerts  Immediate action is needed
+2  critical  Critical conditions exist
+3  errors  Error conditions exist
+4  warnings  Warning conditions exist
+5  notification  Normal, but significant, conditions exist
+6  informational  Informational messages
+7  debugging  Debugging messages
+When deploying syslog, which severity level logs informational message?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">0</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">2</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">4</span>
+</div><div class="option correct">
+  <span class="opt-badge">D✓</span>
+  <span class="opt-text">6</span>
+</div></div>
+    <div class="answer-line">Đáp án: D</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Trong syslog, mức độ nghiêm trọng được đánh số từ 0 đến 7, trong đó số càng nhỏ thì mức độ càng nghiêm trọng. Mức 6 tương ứng với "Informational" - dùng để ghi lại các thông báo thông tin thông thường về hoạt động của hệ thống.
+
+Mức 0 là "Emergency" - hệ thống không thể sử dụng được, đây là mức nghiêm trọng nhất. Mức 2 là "Critical" - các điều kiện nghiêm trọng cần xử lý ngay. Mức 4 là "Warning" - cảnh báo về các tình huống có thể gây ra vấn đề. Tất cả ba mức này đều biểu thị các sự kiện nghiêm trọng hơn nhiều so với thông báo thông tin thông thường.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#8.44</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_IP_Services</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.</div>
+<pre class="code-block"><code>interface FastEthernet0/10
+description WAN_INTERFACE 
+ip address 10.0.1.2 255.255.255.252 
+ip access-group 100 in
+!
+interface FastEthernet0/1 
+description LAN INTERFACE 
+ip address 10.148.2.1 255.255.255.0
+duplex auto
+speed auto
+!
+ip forward-protocol nd
+!
+access-list 100 permit eigrp any any 
+access-list 100 permit icmp any any
+access-list 100 permit tcp 10.149.3.0 0.0.0.255 host 10.0.1.2 eq 22 
+access-list 100 permit tcp any any eq 80 
+access-list 100 permit tcp any any eq 443
+access-list 100 deny ip any any log</code></pre>
+<div class="question-text">Which configuration enables DHCP addressing for hosts connected to interface FastEthernet0/1 on router R4?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">interface FastEthernet0/1
+ip helper-address 10.0.1.1
+!
+access-list 100 permit tcp host 10.0.1.1 eq 67 host 10.148.2.1</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">interface FastEthernet0/0 
+ip helper-address 10.0.1.1
+!
+access-list 100 permit host 10.0.1.1 host 10.148.2.1 eq bootps</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">interface FastEthernet0/0 
+ip helper-address 10.0.1.1
+! 
+access-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1</span>
+</div><div class="option correct">
+  <span class="opt-badge">D✓</span>
+  <span class="opt-text">interface FastEthernet0/1 
+ip helper-address 10.0.1.1
+! 
+access-list 100 permit udp host 10.0.1.1 eq bootps host 10.148.2.1</span>
+</div></div>
+    <div class="answer-line">Đáp án: D</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Đáp án D đúng vì lệnh ip helper-address phải được đặt trên interface kết nối với các host cần DHCP, tức là FastEthernet0/1 — đây là interface nhận broadcast DHCP từ client và chuyển tiếp unicast đến DHCP server 10.0.1.1. Ngoài ra, DHCP hoạt động trên giao thức UDP với port 67 (bootps), nên ACL phải dùng từ khóa udp và chỉ định đúng port bootps để cho phép lưu lượng DHCP reply từ server đi vào.
+
+Đáp án A sai vì ACL dùng tcp thay vì udp — DHCP không dùng TCP.
+
+Đáp án B sai vì ip helper-address đặt nhầm trên FastEthernet0/0 thay vì FastEthernet0/1, và ACL thiếu từ khóa giao thức (udp) nên cú pháp không hợp lệ.
+
+Đáp án C sai vì ip helper-address cũng đặt nhầm trên FastEthernet0/0, dù ACL có cú pháp đúng.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#9.44</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_IP_Services</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.</div>
+<pre class="code-block"><code>Router1(config)#interface GigabitEthernet0/0 
+Router1(config-if)#ip address 209.165.200.225 255.255.255.224 
+Router1(config-if)#ip nat outside 
+Router1(config)#interface GigabitEthernet0/1 
+Router1(config-if)#ip nat inside 
+Router1(config)#interface GigabitEthernet
+Router1(config-if)#encapsulation dot1Q 100 
+Router1(config-if)#ip address 10.10.10.1 255.255.255.0
+Router1(config)#interface GigabitEthernet0/1.200 
+Router1(config-if)#encapsulation dot1Q 200
+Router1(config-if)#ip address 10.10.20.1 255.255.255.0 
+Router1(config)#ip access-list standard NAT_INSIDE_RANGES 
+Router1(config-std-nacl)#permit 10.10.10.0 0.0.0.255
+Router1(config)#ip nat inside source list NAT_INSIDE_RANGES interface GigabitEthernet0/0 overload
+Users on existing VLAN 100 can reach sites on the Internet. Which action must the administrator take to establish connectivity to the Internet for users in VLAN 200?</code></pre>
+    <div class="image-container"><img src="quiz/public/images/docx/CCNA_IP_Services/q9.44_img1.jpg" alt="exhibit"></div>
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">Define a NAT pool on the router.</span>
+</div><div class="option correct">
+  <span class="opt-badge">B✓</span>
+  <span class="opt-text">Update the NAT_INSIDE_RANGES ACL</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">Configure the ip nat outside command on another interface for VLAN 200</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">Configure static NAT translations for VLAN 200</span>
+</div></div>
+    <div class="answer-line">Đáp án: B</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Trong cấu hình NAT trên router, có một ACL (ở đây là NAT_INSIDE_RANGES) dùng để xác định những dải địa chỉ IP nội bộ nào được phép dịch địa chỉ ra ngoài Internet. Vì VLAN 100 đã hoạt động được, nghĩa là ACL này đang cho phép subnet của VLAN 100, nhưng chưa có entry nào cho subnet của VLAN 200. Do đó, chỉ cần thêm dải địa chỉ của VLAN 200 vào ACL NAT_INSIDE_RANGES là đủ để các user trong VLAN 200 có thể ra Internet.
+
+Đáp án A sai vì NAT pool đã tồn tại và đang hoạt động cho VLAN 100, không cần tạo thêm pool mới. Đáp án C sai vì lệnh ip nat outside được gán trên interface kết nối ra Internet, interface đó đã được cấu hình rồi và dùng chung cho tất cả các VLAN, không cần cấu hình lại cho VLAN 200. Đáp án D sai vì đây là dynamic NAT đang được dùng, static NAT chỉ phù hợp khi cần ánh xạ cố định một địa chỉ cụ thể, không phải giải pháp phù hợp cho toàn bộ user trong một VLAN.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#5.16</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_Network_Access</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.</div>
+<pre class="code-block"><code>switch(config)#interface gigabitEthernet 1/11 
+switch(config-if)#switchport mode access 
+switch(config-if)#spanning-tree portfast 
+switch(config-if)#spanning-tree bpduguard enable</code></pre>
+<div class="question-text">What is the result if Gig1/11 receives an STP BPDU?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">The port transitions to STP blocking</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">The port transitions to the root port</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">The port immediately transitions to STP forwarding</span>
+</div><div class="option correct">
+  <span class="opt-badge">D✓</span>
+  <span class="opt-text">The port goes into error-disable state</span>
+</div></div>
+    <div class="answer-line">Đáp án: D</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Câu hỏi này liên quan đến tính năng BPDU Guard trong STP. Khi một cổng được cấu hình PortFast và BPDU Guard, nếu cổng đó nhận được một BPDU, hệ thống sẽ coi đây là dấu hiệu có thiết bị switch không được phép kết nối vào mạng. Để bảo vệ topology STP, switch sẽ lập tức đưa cổng đó vào trạng thái error-disable, tức là tắt hoàn toàn cổng đó cho đến khi quản trị viên can thiệp thủ công hoặc cấu hình errdisable recovery.
+
+Đáp án A sai vì BPDU Guard không đơn giản chuyển cổng sang trạng thái blocking mà tắt hẳn cổng đó. Đáp án B sai vì root port là vai trò STP bình thường, không liên quan đến tình huống này. Đáp án C sai vì PortFast cho phép chuyển thẳng sang forwarding khi cổng khởi động, nhưng khi nhận BPDU thì BPDU Guard sẽ kích hoạt và cổng bị error-disable chứ không forwarding.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#5.23</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_Network_Access</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.
+Switch 1</div>
+<pre class="code-block"><code>VLAN 110 – 32778 0018.184e.3c00
+Switch 2
+VLAN 110 – 24586 001a.e3ff.a680
+Switch 3
+VLAN 110 – 28682 0022.55cf.cc00
+Switch 4
+VLAN 110 – 64000 0e38.7363.657f</code></pre>
+<div class="question-text">Which switch becomes the root of the spanning tree for VLAN 110?</div>
+    <div class="image-container"><img src="quiz/public/images/docx/CCNA_Network_Access/q5.23_img1.jpg" alt="exhibit"></div>
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">Switch 1</span>
+</div><div class="option correct">
+  <span class="opt-badge">B✓</span>
+  <span class="opt-text">Switch 2</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">Switch 3</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">Switch 4</span>
+</div></div>
+    <div class="answer-line">Đáp án: B</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Để xác định root bridge trong STP, switch nào có Bridge ID thấp nhất sẽ được bầu làm root. Bridge ID gồm hai phần: priority và MAC address. Switch có priority thấp hơn sẽ thắng; nếu priority bằng nhau thì so sánh MAC address, MAC nào nhỏ hơn sẽ thắng.
+
+Vì đây là câu hỏi có hình minh họa mà tôi không thể xem trực tiếp, nhưng dựa vào đáp án đúng là Switch 2, có thể suy ra rằng Switch 2 có Bridge ID thấp nhất cho VLAN 110, hoặc là do priority được cấu hình thấp hơn các switch còn lại, hoặc nếu priority bằng nhau thì MAC address của Switch 2 nhỏ hơn.
+
+Các switch còn lại (Switch 1, 3, 4) đều có Bridge ID cao hơn Switch 2 cho VLAN 110, nên chúng trở thành non-root bridge và phải thực hiện quá trình bầu chọn root port để xác định đường đi tốt nhất về phía root.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#9.43</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_Network_Access</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.
+SW1 = 24596 0018.184e.3c00
+SW2 = 28692 004a.14e5.4077
+SW3 = 32788 0022.55cf.dd00
+SW4 = 64000 0041.454d.407f
+Which switch becomes the root of a spanning tree for VLAN 20 if all links are of equal speed?</div>
+    <div class="image-container"><img src="quiz/public/images/docx/CCNA_Network_Access/q9.43_img1.jpg" alt="exhibit"></div>
+    <div class="options"><div class="option correct">
+  <span class="opt-badge">A✓</span>
+  <span class="opt-text">SW1</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">SW2</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">SW3</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">SW4</span>
+</div></div>
+    <div class="answer-line">Đáp án: A</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Để xác định root bridge trong spanning tree, switch nào có Bridge ID thấp nhất sẽ được bầu làm root. Bridge ID gồm hai phần: priority và MAC address. Nếu tất cả các switch đều dùng priority mặc định (32768 cộng với VLAN ID), thì MAC address sẽ là yếu tố quyết định, switch nào có MAC address thấp nhất sẽ thắng.
+
+Trong bài này, SW1 có MAC address thấp nhất trong số bốn switch cho VLAN 20, nên SW1 được bầu làm root bridge. SW2, SW3 và SW4 đều có MAC address cao hơn SW1, do đó chúng trở thành non-root bridge và phải tính toán đường đi tốt nhất về phía root.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#9.95</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_Network_Access</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <pre class="code-block"><code>interface gigabitethernet0/0
+description Circuit-ATT4202-89930
+duplex full
+speed 1000
+media-type gbic
+negotiation auto
+lldp transmit
+lldp receive</code></pre>
+<div class="question-text">An engineer must configure neighbor discovery between the company router and an ISP.
+What is the next step to complete the configuration if the ISP uses a third-party router?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">Disable CDP on gi0/0.</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">Disable auto-negotiation.</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">Enable LLDP TLVs on the ISP router.</span>
+</div><div class="option correct">
+  <span class="opt-badge">D✓</span>
+  <span class="opt-text">Enable LLDP globally.</span>
+</div></div>
+    <div class="answer-line">Đáp án: D</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      CDP (Cisco Discovery Protocol) là giao thức độc quyền của Cisco, nên nó không hoạt động được với router của bên thứ ba. LLDP (Link Layer Discovery Protocol) là giao thức chuẩn mở IEEE 802.1AB, được hỗ trợ bởi hầu hết các thiết bị mạng từ nhiều nhà sản xuất khác nhau. Vì LLDP mặc định bị tắt trên thiết bị Cisco, bước tiếp theo cần làm là bật LLDP toàn cục bằng lệnh "lldp run" để router Cisco có thể khám phá và trao đổi thông tin với router ISP.
+
+Đáp án A sai vì tắt CDP không giải quyết được vấn đề tương thích với thiết bị bên thứ ba. Đáp án B sai vì auto-negotiation liên quan đến tốc độ và duplex của cổng, không liên quan đến neighbor discovery. Đáp án C sai vì kỹ sư không có quyền kiểm soát cấu hình trên router của ISP, và việc bật LLDP TLVs chỉ là bước tùy chọn sau khi LLDP đã được kích hoạt toàn cục.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#10.84</span>
+      <span class="badge badge-source">DOCX</span>
+      <span class="badge badge-topic">CCNA_Security_Fundamentals</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.</div>
+<pre class="code-block"><code>access-list 10 permit 10.0.0.0 0.0.0.255 
+interface Serial0
+ip access-list 10 in</code></pre>
+<div class="question-text">A network administrator must permit traffic from the 10.10.0.0/24 subnet to the WAN on interface Serial0. What is the effect of the configuration as the administrator applies the command?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">The sourced traffic from IP range 10.0.0.0 – 10.0.0.255 is allowed on Serial0.</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">The permit command fails and returns an error code.</span>
+</div><div class="option correct">
+  <span class="opt-badge">C✓</span>
+  <span class="opt-text">The router fails to apply the access list to the interface.</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">The router accepts all incoming traffic to Serial0 with the last octet of the source IP set to 0.</span>
+</div></div>
+    <div class="answer-line">Đáp án: C</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Trong câu hỏi này, quản trị viên đang cố gắng áp dụng một access list lên interface Serial0, nhưng vấn đề nằm ở chỗ access list đó chưa được tạo trước khi áp dụng lên interface. Khi bạn dùng lệnh ip access-group để gán một access list chưa tồn tại vào interface, router sẽ không thể áp dụng được và trả về thông báo lỗi, khiến lệnh không có hiệu lực. Đây là lý do đáp án C đúng — router thất bại trong việc áp dụng access list lên interface.
+
+Đáp án A sai vì không có access list nào được áp dụng thành công, nên không có traffic nào được cho phép hay từ chối theo cấu hình đó. Đáp án B gần đúng về mặt kết quả nhưng không chính xác về cách diễn đạt — lệnh permit không phải là lệnh gây lỗi, mà chính lệnh ip access-group mới là lệnh thất bại khi access list chưa tồn tại. Đáp án D mô tả một hành vi hoàn toàn không xảy ra vì không có access list nào được áp dụng thành công lên interface đó.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#12.100</span>
+      <span class="badge badge-source">ODT</span>
+      <span class="badge badge-topic">Part 12</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Level  Keyword  Description
+0  emergencies  System is unusable
+1  alerts  Immediate action is needed
+2  critical  Critical conditions exist
+3  errors  Error conditions exist
+4  warnings  Warning conditions exist
+5  notification  Normal, but significant, conditions exist
+6  informational  Informational messages
+7  debugging  Debugging messages
+Which syslog severity level is considered the most severe and results in the system being considered unusable?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">Critical</span>
+</div><div class="option correct">
+  <span class="opt-badge">B✓</span>
+  <span class="opt-text">Emergency</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">Alert</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">Error</span>
+</div></div>
+    <div class="answer-line">Đáp án: B</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Mức độ nghiêm trọng Emergency (cấp độ 0) là cao nhất trong thang đo syslog, cho biết hệ thống hoàn toàn không thể sử dụng được. Đây là cấp độ dành cho các sự cố thảm khốc ảnh hưởng đến toàn bộ hệ thống.
+
+Critical (cấp độ 2) và Alert (cấp độ 1) đều nghiêm trọng, nhưng vẫn thấp hơn Emergency trong thang đo từ 0 đến 7. Error (cấp độ 3) chỉ báo lỗi thông thường, không phải tình trạng hệ thống ngừng hoạt động hoàn toàn.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#13.101</span>
+      <span class="badge badge-source">ODT</span>
+      <span class="badge badge-topic">Part 13</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+Which syslog message logging level displays interface line protocol up/down events?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">informational</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">alerts</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">debugging</span>
+</div><div class="option correct">
+  <span class="opt-badge">D✓</span>
+  <span class="opt-text">notifications</span>
+</div></div>
+    <div class="answer-line">Đáp án: D</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Các sự kiện thay đổi trạng thái giao diện (line protocol up/down) được ghi nhận ở mức severity 5, tức là "notifications". Đây là mức dùng để thông báo các sự kiện bình thường nhưng đáng chú ý, như trạng thái kết nối thay đổi.
+
+Các đáp án còn lại không đúng vì: "informational" (mức 6) ghi nhận các thông tin hoạt động thông thường không cần hành động; "alerts" (mức 1) dành cho các tình huống nghiêm trọng cần can thiệp ngay; "debugging" (mức 7) là mức chi tiết nhất, dùng khi cần gỡ lỗi chuyên sâu.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#14.1</span>
+      <span class="badge badge-source">ODT</span>
+      <span class="badge badge-topic">part 14</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">seq no:timestamp%FACILTY-SEVERITY-MNEMONIC: message text
+A network administrator wants the syslog server to filter incoming messages into different files based on their importance. Which filtering criteria must be used?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">message body</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">process ID</span>
+</div><div class="option correct">
+  <span class="opt-badge">C✓</span>
+  <span class="opt-text">level</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">facility</span>
+</div></div>
+    <div class="answer-line">Đáp án: C</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      Syslog levels indicate the severity or importance of log messages. According to this figure then the best answer should be “level”:
+A syslog message has the following format:
+seq no:timestamp%FACILTY-SEVERITY-MNEMONIC: message text
+Each portion of a syslog message has a specific meaning:+ Seq no: a sequence number only if the service sequence-numbers global configuration command is configured+ Timestamp: Date and time of the message or event. This information appears only if the service timestamps global configuration command is configured.+ FACILITY: This tells the protocol, module, or process that generated themessage. Some examples are SYS for the operating system, IF for an interface…+ SEVERITY: A number from 0 to 7 designating the importance of the action reported.
+Note: The facility value is used to determine which process of the machine created the message. Since the Syslog protocol was originally written on BSD Unix, the Facilities reflect the names of UNIX processes and daemons -&gt; Answer D is not correct.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#14.40</span>
+      <span class="badge badge-source">ODT</span>
+      <span class="badge badge-topic">part 14</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Refer to the exhibit.
+IEEE Standard  Frequency/Medium  Speed  Transmission Range
+802.11  2.4GHz RF  1 to 2Mbps  20 feet indoors.
+802.11a  5GHz  Up to 54Mbps  25 to 75 feet indoors; range can be affected by building materials.
+802.11b  2.4GHz  Up to 11Mbps  Up to 150 feet indoors; range can be affected by building materials.
+802.11g  2.4GHz  Up to 54Mbps  Up to 150 feet indoors; range can be affected by building materials.
+802.11n  2.4GHz/5GHz  Up to 600Mbps  175+ feet indoors; range can be affected by building materials.
+A Cisco WLC administrator is creating a new wireless network with enhanced SSID security. The new network must operate at 2.4 GHz with 54 Mbps of throughput. Which set of tasks must the administrator perform to complete the configuration?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">Check the Broadcast SSID check box and set the Radio Policy to 802.11a only.</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">Uncheck the Broadcast SSID check box and set the Radio Policy to 802.11a/g only.</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">Check the Broadcast SSID check box and set the Radio Policy to 802.11g only.</span>
+</div><div class="option correct">
+  <span class="opt-badge">D✓</span>
+  <span class="opt-text">Uncheck the Broadcast SSID check box and set the Radio Policy to 802.11g only.</span>
+</div></div>
+    <div class="answer-line">Đáp án: D</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      “operate at 2.4 GHz with 54 Mbps of throughput” -&gt; Only 804.11g is suitable.
+“enhanced SSID security” so we should not broadcast SSID so that no one can see the SSID.
+Wireless Standards
+IEEE Standard
+Frequency/Medium
+Speed
+Transmission Range
+802.11
+2.4GHz RF
+1 to 2Mbps
+20 feet indoors.
+802.11a
+5GHz
+Up to 54Mbps
+25 to 75 feet indoors; range can be affected by building materials.
+802.11b
+2.4GHz
+Up to 11Mbps
+Up to 150 feet indoors; range can be affected by building materials.
+802.11g
+2.4GHz
+Up to 54Mbps
+Up to 150 feet indoors; range can be affected by building materials.
+802.11n
+2.4GHz/5GHz
+Up to 600Mbps
+175+ feet indoors; range can be affected by building materials.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#16.12</span>
+      <span class="badge badge-source">ODT</span>
+      <span class="badge badge-topic">Part 16</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">Level  Keyword  Description
+0  emergencies  System is unusable
+1  alerts  Immediate action is needed
+2  critical  Critical conditions exist
+3  errors  Error conditions exist
+4  warnings  Warning conditions exist
+5  notification  Normal, but significant, conditions exist
+6  informational  Informational messages
+7  debugging  Debugging messages
+Which action prevents debug messages from being sent via syslog while allowing other messages when an abnormally high number of syslog messages are generated by a device with the debug process turned on?</div>
+    
+    <div class="options"><div class="option">
+  <span class="opt-badge">A</span>
+  <span class="opt-text">Use an access list to filter out the syslog messages.</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">Turn off the logging monitor in global configuration mode.</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">Disable logging to the console.</span>
+</div><div class="option correct">
+  <span class="opt-badge">D✓</span>
+  <span class="opt-text">Set the logging trap severity level to informational.</span>
+</div></div>
+    <div class="answer-line">Đáp án: D</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      The Syslog levels are:
+Level
+Keyword
+Description
+0
+emergencies
+System is unusable
+1
+alerts
+Immediate action is needed
+2
+critical
+Critical conditions exist
+3
+errors
+Error conditions exist
+4
+warnings
+Warning conditions exist
+5
+notification
+Normal, but significant, conditions exist
+6
+informational
+Informational messages
+7
+debugging
+Debugging messages
+Note: You can remember the order above with the sentence: “Eventually All Critical Errors Will Not Involve Damage”.
+If you specify a level, that level and all the higher levels will be displayed. To change the minimum severity level that is sent to syslog, use the logging trap level configuration command.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-id">#16.74</span>
+      <span class="badge badge-source">ODT</span>
+      <span class="badge badge-topic">Part 16</span>
+      <span class="badge badge-fix">✓ đã fix</span>
+    </div>
+    <div class="question-text">seq no:timestamp%FACILTY-SEVERITY-MNEMONIC: message textExample: Jul 10 14:32:18.456: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+What is the purpose of the logging facility?</div>
+    
+    <div class="options"><div class="option correct">
+  <span class="opt-badge">A✓</span>
+  <span class="opt-text">It indicates the program or process that generated the syslog event.</span>
+</div><div class="option">
+  <span class="opt-badge">B</span>
+  <span class="opt-text">It contains the text message that describes the syslog event.</span>
+</div><div class="option">
+  <span class="opt-badge">C</span>
+  <span class="opt-text">It defines the severity of the syslog event.</span>
+</div><div class="option">
+  <span class="opt-badge">D</span>
+  <span class="opt-text">It represents the timestamp of the syslog event.</span>
+</div></div>
+    <div class="answer-line">Đáp án: A</div>
+    <div class="explanation">
+      <div class="explanation-label">Giải thích</div>
+      A syslog message has the following format:
+seq no:timestamp%FACILTY-SEVERITY-MNEMONIC: message text
+Example: Jul 10 14:32:18.456: %LINK-3-UPDOWN: Interface GigabitEthernet0/1, changed state to down
+Each portion of a syslog message has a specific meaning. In which the FACILITY tells the protocol, module, or process that generated the message. Some examples are SYS for the operating system, IF for an interface…
+All syslog messages have a logging facility and a level. The logging facility can be thought of as where and the level can be thought of as what.
+Reference:
+In the example above, the Facility: LINK  means interface/link-related events on Cisco devices.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "count": 59,
+  "count": 62,
   "questions": [
     {
       "id": "5.27",
@@ -176,7 +176,7 @@
     {
       "id": "7.36",
       "type": "multiple",
-      "question": "Refer to the exhibit.\nWhich two prefixes are included in this routing table entry? (Choose two)",
+      "question": "Refer to the exhibit.\nR2#show ip route\nC 192.168.1.0/26 is directly connected, FastEthernet0/1\nWhich two prefixes are included in this routing table entry? (Choose two)",
       "question_images": [],
       "options": {
         "A": "192.168.1.17",
@@ -465,7 +465,7 @@
     {
       "id": "8.68",
       "type": "single",
-      "question": "Refer to the exhibit.\nRouter R1 resides in OSPF Area 0. After updating the R1 configuration to influence the paths that it will use to direct traffic, an engineer verified that each of the four Gigabit interfaces has the same route to 10.10.0.0/16. Which interface will R1 choose to send traffic to reach the route?",
+      "question": "Refer to the exhibit.\nR1#show run\n!\nrouter ospf 1\nauto-cost reference-bandwidth 100000\n!\ninterface GigabitEthernet0/0\nbandwidth 10000000\n!\ninterface GigabitEthernet0/1\nbandwidth 100000000\n!\ninterface GigabitEthernet0/2\nip ospf cost 100\n!\ninterface GigabitEthernet0/3\nip ospf cost 1000\nRouter R1 resides in OSPF Area 0. After updating the R1 configuration to influence the paths that it will use to direct traffic, an engineer verified that each of the four Gigabit interfaces has the same route to 10.10.0.0/16. Which interface will R1 choose to send traffic to reach the route?",
       "question_images": [],
       "options": {
         "A": "GigabitEthernet0/0",
@@ -513,7 +513,7 @@
     {
       "id": "8.78",
       "type": "single",
-      "question": "Refer to the exhibit.\nPackets received by the router from BGP enter via a serial interface at 209.165.201.10. Each route is present within the routing table. Which interface is used to forward traffic with a destination IP of 10.10.10.24?",
+      "question": "Refer to the exhibit.\nEIGRP 10.10.10.0/24[90/1441] via F0/10\nEIGRP 10.10.10.0/24[90/144] via F0/11\nEIGRP 10.10.10.0/24[90/1441] via F0/12\nOSPF 10.10.10.0/24[110/20] via F0/13\nOSPF 10.10.10.0/24[110/30] via F0/14\nPackets received by the router from BGP enter via a serial interface at 209.165.201.10. Each route is present within the routing table. Which interface is used to forward traffic with a destination IP of 10.10.10.24?",
       "question_images": [],
       "options": {
         "A": "F0/10",
@@ -1496,6 +1496,70 @@
         "D": "ip route 10.10.0.0 255.255.252.0 g0/0"
       },
       "explanation": "Địa chỉ đích là 10.10.10.3. Router sử dụng nguyên tắc longest prefix match, tức là chọn route có prefix dài nhất (cụ thể nhất) khớp với địa chỉ đích.\n\nĐáp án C tạo ra route 10.10.10.0/28 (mask /28 = 255.255.255.240), bao gồm dải 10.10.10.0 đến 10.10.10.15, nên 10.10.10.3 nằm trong dải này. Đây là route khớp dài nhất trong bảng định tuyến so với các route còn lại cũng khớp với 10.10.10.3.\n\nĐáp án A tạo route 10.0.0.0/8, khớp với 10.10.10.3 nhưng prefix chỉ có 8 bit, kém cụ thể hơn nhiều. Đáp án B tạo route host 10.10.10.1/32, prefix dài nhất nhưng chỉ khớp đúng địa chỉ 10.10.10.1, không khớp 10.10.10.3. Đáp án D tạo route 10.10.0.0/22, khớp với 10.10.10.3 nhưng prefix /22 ngắn hơn /28 của đáp án C, nên kém ưu tiên hơn."
+    },
+    {
+      "id": "7.52",
+      "question": "Refer to the exhibit.\nR3#show ip ospf neighbor\nNeighbor ID  Pri   State          Dead Time  Address        Interface\n1.1.1.1        1   2WAY/DROTHER   00:00:35   172.16.10.1    GigabitEthernet0/0\n2.2.2.2        1   2WAY/DROTHER   00:00:35   172.16.10.2    GigabitEthernet0/0\n4.4.4.4        1   FULL/BDR       00:00:35   172.16.10.4    GigabitEthernet0/0\n5.5.5.5        1   FULL/DR        00:00:35   172.16.10.5    GigabitEthernet0/0\nR5 is the current DR on the network, and R4 is the BDR. Their interfaces are flapping, so a network engineer wants the OSPF network to elect a different DR and BDR. Which set of configurations must the engineer implement?",
+      "options": {
+        "A": "R4(config)#interface gi0/0\nR4(config-if)#ip ospf priority 20\nR5(config)#interface gi0/0\nR5(config-if)#ip ospf priority 10",
+        "B": "R2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 259\nR3(config)#interface gi0/0\nR3(config-if)#ip ospf priority 256",
+        "C": "R3(config)#interface gi0/0\nR3(config-if)#ip ospf priority 255\nR2(config)#interface gi0/0\nR2(config-if)#ip ospf priority 240",
+        "D": "R5(config)#interface gi0/0\nR5(config-if)#ip ospf priority 120\nR4(config)#interface gi0/0\nR4(config-if)#ip ospf priority 110"
+      },
+      "answer": "C",
+      "explanation": "",
+      "question_images": [
+        "q7.52_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_IP_Connectivity",
+      "_uid": "docx:CCNA_IP_Connectivity:7.52",
+      "imageFolder": "CCNA_IP_Connectivity"
+    },
+    {
+      "id": "8.45",
+      "question": "Refer to the exhibit.\nWhich configuration allows routers R14 and R86 to form an OSPFv2 adjacency while acting as a central point for exchanging OSPF information between routers?",
+      "options": {
+        "A": "R14# \ninterface FastEthernet0/0 \nip address 10.73.65.65 255.255.255.252 \nip ospf network broadcast \nip ospf priority 0 \nip mtu 1400\nrouter ospf 10 \nrouter-id 10.10.1.14 \nnetwork 10.10.1.14 0.0.0.0 area 0 \nnetwork 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface Loopback0\nip address 10.10.1.86 255.255.255.255\ninterface FastEthernet0/0 \nip address 10.73.65.66 255.255.255.252 \nip ospf network broadcast \nip mtu 1500\nrouter ospf 10 \nrouter-id 10.10.1.86 \nnetwork 10.10.1.86 0.0.0.0 area 0 \nnetwork 10.73.65.64 0.0.0.3 area 0",
+        "B": "R14#\ninterface FastEthernet0/0 \nip address 10.73.65.65 255.255.255.252 \nip ospf network broadcast \nip ospf priority 255\nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.14\nnetwork 10.10.1.14 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252 \nip ospf network broadcast \nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.86\nnetwork 10.10.1.86 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0",
+        "C": "R14#\ninterface Loopback0 \nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf network broadcast\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10\nip ospf priority 255\nrouter-id 10.10.1.14\nR86#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip ospf network broadcast\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10 \nrouter-id 10.10.1.86",
+        "D": "R14#\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf network broadcast\nip ospf priority 255\nip mtu 1500\nrouter ospf 10 \nrouter-id 10.10.1.14 \nnetwork 10.10.1.14 0.0.0.0 area 0 \nnetwork 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0 \nip address 10.73.65.66 255.255.255.252 \nip ospf network broadcast \nip mtu 1400\nrouter ospf 10 \nrouter-id 10.10.1.86\nnetwork 10.10.1.86 0.0.0.0 area 0 \nnetwork 10.73.65.64 0.0.0.3 area 0"
+      },
+      "answer": "B",
+      "explanation": "",
+      "question_images": [],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_IP_Connectivity",
+      "_uid": "docx:CCNA_IP_Connectivity:8.45",
+      "imageFolder": "CCNA_IP_Connectivity"
+    },
+    {
+      "id": "8.64",
+      "question": "Refer to the exhibit.\nAn IP subnet must be configured on each router that provides enough addresses for the number of assigned hosts and anticipates no more than 10% growth for new hosts. Which configuration script must be used?",
+      "options": {
+        "A": "R7#\nconfigure terminal \ninterface Fa1/0\nip address 10.1.56.1 255.255.240.0 \nno shutdown\nR8#\nconfigure terminal \ninterface Fa0/0\nip address 10.9.32.1 255.255.224.0 \nno shutdown\nR9#\nconfigure terminal \ninterface Fa1/1\nip address 10.23.96.1 255.255.192.0 \nno shutdown",
+        "B": "R7#\nconfigure terminal \ninterface Fa1/0\nip address 10.1.56.1 255.255.248.0 \nno shutdown\nR8#\nconfigure terminal \ninterface Fa0/0\nip address 10.9.32.1 255.255.254.0 \nno shutdown\nR9#\nconfigure terminal \ninterface Fa1/1\nip address 10.23.96.1 255.255.248.0 \nno shutdown",
+        "C": "R7#\nconfigure terminal \ninterface Fa1/0\nip address 10.1.56.1 255.255.252.0 \nno shutdown\nR8#\nconfigure terminal \ninterface Fa0/0\nip address 10.9.32.1 255.255.255.0 \nno shutdown\nR9#\nconfigure terminal \ninterface Fa1/1\nip address 10.23.96.1 255.255.240.0 \nno shutdown",
+        "D": "R7#\nconfigure terminal \ninterface Fa1/0\nip address 10.1.56.1 255.255.192.0 \nno shutdown\nR8#\nconfigure terminal \ninterface Fa0/0\nip address 10.9.32.1 255.255.224.0 \nno shutdown\nR9#\nconfigure terminal \ninterface Fa1/1\nip address 10.23.96.1 255.255.128.0 \nno shutdown"
+      },
+      "answer": "C",
+      "explanation": "",
+      "question_images": [
+        "q8.64_img1.jpg"
+      ],
+      "answer_images": [],
+      "explanation_images": [],
+      "type": "single",
+      "_source": "docx",
+      "_topic": "CCNA_IP_Connectivity",
+      "_uid": "docx:CCNA_IP_Connectivity:8.64",
+      "imageFolder": "CCNA_IP_Connectivity"
     }
   ]
 }

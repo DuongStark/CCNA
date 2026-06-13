@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review 17 câu DOCX — Newly Restored</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f0f13;--surface:#1a1a24;--surface2:#22222f;--border:#2a2a3a;--text:#e4e4ed;--muted:#8888a0;--subtle:#555568;
+--orange:#f59e0b;--green:#34d399;--red:#f87171;--blue:#60a5fa;--radius:14px;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 80px}
+
+/* Header */
+.hero{text-align:center;padding:48px 0 40px;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:200px;
+background:radial-gradient(circle,rgba(245,158,11,0.08) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:1.75rem;font-weight:700;letter-spacing:-0.02em;background:linear-gradient(135deg,#f59e0b,#f97316);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--muted);font-size:.875rem;margin-top:6px}
+.pills{display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+.pill{font-size:.75rem;font-weight:500;padding:5px 14px;border-radius:999px;border:1px solid var(--border);
+background:var(--surface);color:var(--muted);display:inline-flex;align-items:center;gap:5px}
+.pill b{color:var(--text);font-weight:600}
+
+/* Filter */
+.filters{display:flex;gap:6px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+.fbtn{font-size:.75rem;font-weight:500;padding:6px 14px;border-radius:999px;border:1px solid var(--border);
+background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.fbtn:hover{background:var(--surface2);color:var(--text)}
+.fbtn.active{background:var(--orange);color:#000;border-color:var(--orange);font-weight:600}
+
+/* Card */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;
+margin-bottom:20px;transition:border-color .2s,box-shadow .2s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
+.card:hover{border-color:#3a3a4a;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.card-badges{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--border)}
+.chip-id{background:var(--surface2);color:var(--orange);border-color:rgba(245,158,11,.25);
+font-family:'JetBrains Mono',monospace;font-size:.75rem}
+.chip-topic{font-weight:500}
+.card-num{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--subtle)}
+.card-num-dim{color:var(--subtle);opacity:.5}
+
+/* Question text */
+.qtxt{font-size:.9375rem;line-height:1.7;color:var(--text);margin-bottom:8px;white-space:pre-wrap;word-break:break-word}
+.cli{font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.75;background:#0d1117;color:#7ee787;
+padding:16px 20px;border-radius:10px;overflow-x:auto;white-space:pre;margin:8px 0 12px;
+border:1px solid #1e2a1e;box-shadow:inset 0 1px 3px rgba(0,0,0,.3)}
+
+/* Images */
+.img-wrap{margin:12px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.img-wrap img{width:100%;display:block;background:var(--surface2)}
+
+/* Options */
+.opts{display:flex;flex-direction:column;gap:8px;margin:16px 0 12px}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:1px solid var(--border);border-radius:10px;
+background:var(--surface2);transition:all .2s;position:relative}
+.opt-correct{background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.3)}
+.opt-badge{flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+background:var(--bg);color:var(--muted);font-weight:600;font-size:.8rem;border:1px solid var(--border)}
+.opt-badge-correct{background:var(--green);color:#000;border-color:var(--green)}
+.opt-body{flex:1;font-size:.875rem;line-height:1.6;white-space:pre-wrap;word-break:break-word;padding-top:4px;color:var(--text)}
+.opt-check{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--green);font-size:1.1rem;font-weight:700}
+
+/* Answer bar */
+.ans-bar{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--green);padding:8px 0 0;
+border-top:1px solid var(--border);margin-top:4px}
+.ans-bar strong{font-weight:700;font-size:.9rem}
+
+/* Nav */
+.nav{position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,19,.92);backdrop-filter:blur(12px);
+border-top:1px solid var(--border);padding:10px 16px;display:flex;justify-content:center;gap:4px;z-index:100}
+.nav-btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--surface);
+color:var(--muted);font-size:.7rem;font-weight:600;cursor:pointer;transition:all .15s;
+display:inline-flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace}
+.nav-btn:hover{background:var(--surface2);color:var(--text);transform:translateY(-2px)}
+
+/* Responsive */
+@media(max-width:600px){
+  .wrap{padding:16px 10px 80px}
+  .card{padding:18px 16px}
+  .hero h1{font-size:1.4rem}
+  .cli{font-size:.72rem;padding:12px 14px}
+  .opt{padding:12px 14px;gap:10px}
+  .opt-badge{width:26px;height:26px;font-size:.75rem}
+  .opt-body{font-size:.8125rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>17 Câu DOCX — Newly Restored</h1>
+    <p>Các câu hỏi bị cắm cờ do bảng option 2×2 — đã extract lại từ file gốc</p>
+    <div class="pills">
+      <span class="pill">🔗 IP Connectivity · <b>4</b></span>
+      <span class="pill">⚙️ IP Services · <b>2</b></span>
+      <span class="pill">🔌 Network Access · <b>7</b></span>
+      <span class="pill">🛡️ Security · <b>4</b></span>
+    </div>
+  </div>
+  <div class="filters">
+    <button class="fbtn active" onclick="filterCards('all')">Tất cả</button>
+    <button class="fbtn" onclick="filterCards('CCNA_IP_Connectivity')">🔗 Connectivity</button>
+    <button class="fbtn" onclick="filterCards('CCNA_IP_Services')">⚙️ Services</button>
+    <button class="fbtn" onclick="filterCards('CCNA_Network_Access')">🔌 Access</button>
+    <button class="fbtn" onclick="filterCards('CCNA_Security_Fundamentals')">🛡️ Security</button>
+  </div>
+  <div id="cards">
+<div class="card" style="--accent:#3b82f6">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#7.52</span>
+      <span class="chip chip-topic" style="background:#3b82f615;color:#3b82f6;border-color:#3b82f630">🔗 IP Connectivity</span>
+    </div>
+    <span class="card-num">1<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.</p>
+<pre class="cli">R3#show ip ospf neighbor
+Neighbor ID  Pri   State          Dead Time  Address        Interface
+1.1.1.1        1   2WAY/DROTHER   00:00:35   172.16.10.1    GigabitEthernet0/0
+2.2.2.2        1   2WAY/DROTHER   00:00:35   172.16.10.2    GigabitEthernet0/0
+4.4.4.4        1   FULL/BDR       00:00:35   172.16.10.4    GigabitEthernet0/0
+5.5.5.5        1   FULL/DR        00:00:35   172.16.10.5    GigabitEthernet0/0
+R5 is the current DR on the network, and R4 is the BDR. Their interfaces are flapping, so a network engineer wants the OSPF network to elect a different DR and BDR. Which set of configurations must the engineer implement?
+A. Option AB. Option BC. Option CD. Option D</pre>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_IP_Connectivity/q7.52_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">R4(config)#interface gi0/0
+R4(config-if)#ip ospf priority 20
+R5(config)#interface gi0/0
+R5(config-if)#ip ospf priority 10</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">R2(config)#interface gi0/0
+R2(config-if)#ip ospf priority 259
+R3(config)#interface gi0/0
+R3(config-if)#ip ospf priority 256</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">C</div>
+  <div class="opt-body">R3(config)#interface gi0/0
+R3(config-if)#ip ospf priority 255
+R2(config)#interface gi0/0
+R2(config-if)#ip ospf priority 240</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">R5(config)#interface gi0/0
+R5(config-if)#ip ospf priority 120
+R4(config)#interface gi0/0
+R4(config-if)#ip ospf priority 110</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>C</strong></div>
+</div>
+<div class="card" style="--accent:#3b82f6">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#8.45</span>
+      <span class="chip chip-topic" style="background:#3b82f615;color:#3b82f6;border-color:#3b82f630">🔗 IP Connectivity</span>
+    </div>
+    <span class="card-num">2<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+Which configuration allows routers R14 and R86 to form an OSPFv2 adjacency while acting as a central point for exchanging OSPF information between routers?
+A. Option AB. Option BC. Option CD. Option D</p>
+  
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">R14# 
+interface FastEthernet0/0 
+ip address 10.73.65.65 255.255.255.252 
+ip ospf network broadcast 
+ip ospf priority 0 
+ip mtu 1400
+router ospf 10 
+router-id 10.10.1.14 
+network 10.10.1.14 0.0.0.0 area 0 
+network 10.73.65.64 0.0.0.3 area 0
+R86#
+interface Loopback0
+ip address 10.10.1.86 255.255.255.255
+interface FastEthernet0/0 
+ip address 10.73.65.66 255.255.255.252 
+ip ospf network broadcast 
+ip mtu 1500
+router ospf 10 
+router-id 10.10.1.86 
+network 10.10.1.86 0.0.0.0 area 0 
+network 10.73.65.64 0.0.0.3 area 0</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">B</div>
+  <div class="opt-body">R14#
+interface FastEthernet0/0 
+ip address 10.73.65.65 255.255.255.252 
+ip ospf network broadcast 
+ip ospf priority 255
+ip mtu 1500
+router ospf 10
+router-id 10.10.1.14
+network 10.10.1.14 0.0.0.0 area 0
+network 10.73.65.64 0.0.0.3 area 0
+R86#
+interface FastEthernet0/0
+ip address 10.73.65.66 255.255.255.252 
+ip ospf network broadcast 
+ip mtu 1500
+router ospf 10
+router-id 10.10.1.86
+network 10.10.1.86 0.0.0.0 area 0
+network 10.73.65.64 0.0.0.3 area 0</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">R14#
+interface Loopback0 
+ip ospf 10 area 0
+interface FastEthernet0/0
+ip address 10.73.65.65 255.255.255.252
+ip ospf network broadcast
+ip ospf 10 area 0
+ip mtu 1500
+router ospf 10
+ip ospf priority 255
+router-id 10.10.1.14
+R86#
+interface Loopback0
+ip ospf 10 area 0
+interface FastEthernet0/0
+ip address 10.73.65.66 255.255.255.252
+ip ospf network broadcast
+ip ospf 10 area 0
+ip mtu 1500
+router ospf 10 
+router-id 10.10.1.86</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">R14#
+interface FastEthernet0/0
+ip address 10.73.65.65 255.255.255.252
+ip ospf network broadcast
+ip ospf priority 255
+ip mtu 1500
+router ospf 10 
+router-id 10.10.1.14 
+network 10.10.1.14 0.0.0.0 area 0 
+network 10.73.65.64 0.0.0.3 area 0
+R86#
+interface FastEthernet0/0 
+ip address 10.73.65.66 255.255.255.252 
+ip ospf network broadcast 
+ip mtu 1400
+router ospf 10 
+router-id 10.10.1.86
+network 10.10.1.86 0.0.0.0 area 0 
+network 10.73.65.64 0.0.0.3 area 0</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>B</strong></div>
+</div>
+<div class="card" style="--accent:#3b82f6">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#8.64</span>
+      <span class="chip chip-topic" style="background:#3b82f615;color:#3b82f6;border-color:#3b82f630">🔗 IP Connectivity</span>
+    </div>
+    <span class="card-num">3<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+An IP subnet must be configured on each router that provides enough addresses for the number of assigned hosts and anticipates no more than 10% growth for new hosts. Which configuration script must be used?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_IP_Connectivity/q8.64_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">R7#
+configure terminal 
+interface Fa1/0
+ip address 10.1.56.1 255.255.240.0 
+no shutdown
+R8#
+configure terminal 
+interface Fa0/0
+ip address 10.9.32.1 255.255.224.0 
+no shutdown
+R9#
+configure terminal 
+interface Fa1/1
+ip address 10.23.96.1 255.255.192.0 
+no shutdown</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">R7#
+configure terminal 
+interface Fa1/0
+ip address 10.1.56.1 255.255.248.0 
+no shutdown
+R8#
+configure terminal 
+interface Fa0/0
+ip address 10.9.32.1 255.255.254.0 
+no shutdown
+R9#
+configure terminal 
+interface Fa1/1
+ip address 10.23.96.1 255.255.248.0 
+no shutdown</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">C</div>
+  <div class="opt-body">R7#
+configure terminal 
+interface Fa1/0
+ip address 10.1.56.1 255.255.252.0 
+no shutdown
+R8#
+configure terminal 
+interface Fa0/0
+ip address 10.9.32.1 255.255.255.0 
+no shutdown
+R9#
+configure terminal 
+interface Fa1/1
+ip address 10.23.96.1 255.255.240.0 
+no shutdown</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">R7#
+configure terminal 
+interface Fa1/0
+ip address 10.1.56.1 255.255.192.0 
+no shutdown
+R8#
+configure terminal 
+interface Fa0/0
+ip address 10.9.32.1 255.255.224.0 
+no shutdown
+R9#
+configure terminal 
+interface Fa1/1
+ip address 10.23.96.1 255.255.128.0 
+no shutdown</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>C</strong></div>
+</div>
+<div class="card" style="--accent:#3b82f6">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#9.87</span>
+      <span class="chip chip-topic" style="background:#3b82f615;color:#3b82f6;border-color:#3b82f630">🔗 IP Connectivity</span>
+    </div>
+    <span class="card-num">4<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+An OSPF neighbor relationship must be configured using these guidelines:– R1 is only permitted to establish a neighbor with R2.– R1 will never participate in DR elections.– R1 will use a router-id of 10.1.1.1.
+Which configuration must be used?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_IP_Connectivity/q9.87_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body"></div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">B</div>
+  <div class="opt-body"></div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body"></div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body"></div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>B</strong></div>
+</div>
+<div class="card" style="--accent:#8b5cf6">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#5.25</span>
+      <span class="chip chip-topic" style="background:#8b5cf615;color:#8b5cf6;border-color:#8b5cf630">⚙️ IP Services</span>
+    </div>
+    <span class="card-num">5<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to exhibit.
+Which configuration must be applied to the router that configures PAT to translate all addresses in VLAN 200 while allowing devices on VLAN 100 to use their own IP addresses?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_IP_Services/q5.25_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">Router1(config)#access-list 99 permit 209.165.201.2 0.0.0.0
+Router1(config)#ip nat inside source list 99 interface gi1/0/0 overload
+Router1(config)#interface gi2/0/1.200
+Router1(config)#ip nat inside
+Router1(config)#interface gi1/0/0
+Router1(config)#ip nat outside</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">Router1(config)#access-list 99 permit 209.165.201.2 255.255.255.255
+Router1(config)#ip nat inside source list 99 interface gi1/0/0 overload
+Router1(config)#interface gi2/0/1.200
+Router1(config)#ip nat inside
+Router1(config)#interface gi1/0/0
+Router1(config)#ip nat outside</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">Router1(config)#access-list 99 permit 192.168.100.0 0.0.0.255
+Router1(config)#ip nat inside source list 99 interface gi1/0/0 overload
+Router1(config)#interface gi2/0/1.200
+Router1(config)#ip nat inside
+Router1(config)#interface gi1/0/0
+Router1(config)#ip nat outside</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">D</div>
+  <div class="opt-body">Router1(config)#access-list 99 permit 192.168.100.32 0.0.0.31
+Router1(config)#ip nat inside source list 99 interface gi1/0/0 overload
+Router1(config)#interface gi2/0/1.200
+Router1(config)#ip nat inside
+Router1(config)#interface gi1/0/0
+Router1(config)#ip nat outside</div>
+  <div class="opt-check">✓</div>
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>D</strong></div>
+</div>
+<div class="card" style="--accent:#8b5cf6">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#9.10</span>
+      <span class="chip chip-topic" style="background:#8b5cf615;color:#8b5cf6;border-color:#8b5cf630">⚙️ IP Services</span>
+    </div>
+    <span class="card-num">6<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">R1 as an NTP server must have:* NTP authentication enabled* NTP packets sourced from Interface loopback 0* NTP stratum 2* NTP packets only permitted to client IP 209.165.200.225
+How should R1 be configured?
+A. Option AB. Option BC. Option CD. Option D</p>
+  
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">ntp authenticate
+ntp authentication-key 2 sha1 CISCO123
+ntp source Loopback0
+ntp access-group server-only 10
+ntp master 2
+!
+access-list 10 permit udp host 209.165.200.225 any eq 123</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">ntp authenticate
+ntp authentication-key 2 md5 CISCO123
+ntp source Loopback0
+ntp access-group server-only 10
+ntp stratum 2
+!
+access-list 10 permit udp host 209.165.200.225 any eq 123</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">ntp authenticate
+ntp authentication-key 2 md5 CISCO123
+ntp interface Loopback0
+ntp access-group server-only 10
+ntp stratum 2
+!
+access-list 10 permit 209.165.200.225</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">D</div>
+  <div class="opt-body">ntp authenticate
+ntp authentication-key 2 md5 CISCO123
+ntp source Loopback0
+ntp access-group server-only 10
+ntp master 2
+!
+access-list 10 permit 209.165.200.225</div>
+  <div class="opt-check">✓</div>
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>D</strong></div>
+</div>
+<div class="card" style="--accent:#10b981">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#5.24</span>
+      <span class="chip chip-topic" style="background:#10b98115;color:#10b981;border-color:#10b98130">🔌 Network Access</span>
+    </div>
+    <span class="card-num">7<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+An administrator must configure interfaces Gi1/1 and Gi1/3 on switch SW11 PC-1 and PC-2 must be placed in the Data VLAN and Phone-1 must be placed in the Voice VLAN. Which configuration meets these requirements?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Network_Access/q5.24_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode access
+switchport access vlan 8
+!
+interface gigabitethernet1/3
+switchport mode access
+switchport voice vlan 8
+switchport access vlan 9</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode access
+switchport access vlan 9
+!
+interface gigabitethernet1/3
+switchport mode trunk
+switchport voice vlan 8
+switchport access vlan 9</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">C</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode access
+switchport access vlan 8
+!
+interface gigabitethernet1/3
+switchport mode access
+switchport access vlan 8
+switchport voice vlan 9</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode access
+switchport access vlan 8
+!
+interface gigabitethernet1/3
+switchport mode trunk
+switchport voice vlan 8
+switchport access vlan 9</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>C</strong></div>
+</div>
+<div class="card" style="--accent:#10b981">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#6.15</span>
+      <span class="chip chip-topic" style="background:#10b98115;color:#10b981;border-color:#10b98130">🔌 Network Access</span>
+    </div>
+    <span class="card-num">8<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+An engineer must configure GigabitEthernet1/1 to accommodate voice and data traffic. Which configuration accomplishes this task?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Network_Access/q6.15_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">A</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode access
+switchport access vlan 300
+switchport voice vlan 400</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode access
+switchport access vlan 400
+switchport voice vlan 300</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode trunk
+switchport access vlan 300
+switchport voice vlan 400</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">interface gigabitethernet1/1
+switchport mode trunk
+switchport trunk vlan 300
+switchport trunk vlan 400</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>A</strong></div>
+</div>
+<div class="card" style="--accent:#10b981">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#6.31</span>
+      <span class="chip chip-topic" style="background:#10b98115;color:#10b981;border-color:#10b98130">🔌 Network Access</span>
+    </div>
+    <span class="card-num">9<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+How must router A be configured so that it only sends Cisco Discovery Protocol Information to router C?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Network_Access/q6.31_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">conf t
+RouterA(config)#no cdp run
+RouterA(config)#interface gi0/0/1
+RouterA(config)#cdp enable</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">conf t
+RouterA(config)#cdp run
+RouterA(config)#interface gi0/0/1
+RouterA(config)#cdp enable</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">conf t
+RouterA(config)#cdp run
+RouterA(config)#interface gi0/0/0
+RouterA(config)#cdp enable</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">D</div>
+  <div class="opt-body">conf t
+RouterA(config)#cdp run
+RouterA(config)#interface gi0/0/0
+RouterA(config)#no cdp enable</div>
+  <div class="opt-check">✓</div>
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>D</strong></div>
+</div>
+<div class="card" style="--accent:#10b981">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#8.31</span>
+      <span class="chip chip-topic" style="background:#10b98115;color:#10b981;border-color:#10b98130">🔌 Network Access</span>
+    </div>
+    <span class="card-num">10<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+For security reasons, automatic neighbor discovery must be disabled on the R5 Gi0/1 interface.
+These tasks must be completed:* Disable all neighbor discovery methods on R5 interface Gi0/1.* Permit neighbor discovery on R5 interface Gi0/2.* Verify there are no dynamically learned neighbors on R5 interface Gi0/1.* Display the IP address of R6’s interface Gi0/2.
+Which configuration must be used?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Network_Access/q8.31_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">R5(config)#int Gi0/1 
+R5(config-if)#no cdp enable 
+R5(config-if)#exit 
+R5(config)#lldp run 
+R5(config)#no cdp run 
+R5#sh cdp neighbor detail 
+R5#sh lldp neighbor</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">R5(config)#int Gi0/1 
+R5(config-if)#no cdp run 
+R5(config-if)#exit 
+R5(config)#lldp run 
+R5(config)#cdp enable 
+R5#sh cdp neighbor 
+R5#sh lldp neighbor</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">C</div>
+  <div class="opt-body">R5(config)#int Gi0/1 
+R5(config-if)#no cdp enable 
+R5(config-if)#exit 
+R5(config)#no lldp run 
+R5(config)#cdp run 
+R5#sh cdp neighbor detail 
+R5#sh lldp neighbor</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">R5(config)#int Gi0/1 
+R5(config-if)#no cdp enable 
+R5(config-if)#exit 
+R5(config)#no lldp run 
+R5(config)#cdp run 
+R5#sh cdp neighbor 
+R5#sh lldp neighbor</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>C</strong></div>
+</div>
+<div class="card" style="--accent:#10b981">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#8.60</span>
+      <span class="chip chip-topic" style="background:#10b98115;color:#10b981;border-color:#10b98130">🔌 Network Access</span>
+    </div>
+    <span class="card-num">11<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+Which configuration enables an EtherChannel to form dynamically between SW1 and SW2 by using an industry-standard protocol, and to support full IP connectivity between all PCs?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Network_Access/q8.60_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">SW1#
+interface Gi0/1 
+switchport
+switchport mode trunk 
+channel-group 1 mode on
+!
+interface Gi0/2 
+switchport
+switchport mode trunk 
+channel-group 1 mode auto
+SW2# 
+interface Gi0/1 
+switchport 
+switchport mode trunk 
+channel-group 1 mode auto
+! 
+interface Gi0/2 
+switchport 
+switchport mode trunk 
+channel-group 1 mode on 
+interface port-channel 1 
+switchport 
+switchport mode trunk</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">SW1# 
+interface Gi0/1 
+switchport
+switchport mode trunk 
+channel-group 1 mode auto
+!
+interface Gi0/2 
+switchport 
+switchport mode access
+channel-group 1 mode active
+SW2# 
+interface gi0/1
+switchport 
+switchport mode access 
+channel-group 1 mode desirable
+!
+interface Gi0/2 
+switchport 
+switchport mode access 
+channel-group 1 mode desirable</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">C</div>
+  <div class="opt-body">SW1#
+interface Gi0/1 
+switchport
+switchport mode trunk 
+channel-group 1 mode active
+!
+interface Gi0/2 
+switchport
+switchport mode trunk 
+channel-group 1 mode active
+SW2# 
+interface Gi0/1 
+switchport 
+switchport mode trunk 
+channel-group 1 mode passive
+! 
+interface Gi0/2 
+switchport 
+switchport mode trunk 
+channel-group 1 mode passive</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">SW1#
+interface Gi0/1 
+switchport
+switchport mode access
+channel-group 1 mode active
+!
+interface Gi0/2 
+switchport
+switchport mode access
+channel-group 1 mode active
+SW2# 
+interface Gi0/1 
+switchport 
+switchport mode access
+channel-group 1 mode desirable
+! 
+interface Gi0/2 
+switchport 
+switchport mode access
+channel-group 1 mode desirable</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>C</strong></div>
+</div>
+<div class="card" style="--accent:#10b981">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#9.85</span>
+      <span class="chip chip-topic" style="background:#10b98115;color:#10b981;border-color:#10b98130">🔌 Network Access</span>
+    </div>
+    <span class="card-num">12<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+The following must be considered
++ SW1 is fully configured for all traffic+ The SW4 and SW9 links to SW1 have been configured+ The SW4 interface Gi0/1 and Gi0/0 on SW9 have been configured+ The remaining switches have had all VLANs added to their VLAN database
+Which configuration establishes a successful ping from PC2 to PC7 without interruption to traffic flow between other PCs?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Network_Access/q9.85_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">A</div>
+  <div class="opt-body">SW4#
+interface Gi0/2
+switchport mode trunk
+switchport trunk allowed vlan 14,108
+SW11#
+interface Gi0/2
+switchport mode trunk
+switchport trunk allowed vlan 14,108
+!
+interface Gi0/1
+switchport mode trunk
+switchport trunk allowed vlan 14,108
+SW9#
+interface Gi0/2 
+switchport mode trunk 
+switchport trunk allowed vlan 14</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">SW4
+interface Gi0/7 
+switchport mode trunk 
+switchport trunk allowed vlan 108
+!
+interface Gi0/2
+switchport mode access 
+switchport access vlan 14
+SW11#
+interface Gi0/2
+switchport mode trunk 
+switchport trunk allowed vlan 14,108
+!
+interface Gi0/1
+switchport mode trunk 
+switchport trunk allowed vlan 14,108
+SW9#
+interface Gi0/2 
+switchport mode access 
+switchport access vlan 14</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">SW4
+interface Gi0/2
+switchport mode trunk 
+switchport trunk allowed vlan 14
+SW11#
+interface Gi0/1
+switchport mode trunk 
+switchport trunk allowed vlan 14
+SW9#
+interface Gi0/2 
+switchport mode trunk
+switchport trunk allowed vlan 108</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">SW4
+interface Gi0/2
+switchport mode access 
+switchport access vlan 14
+SW11#
+interface Gi0/2
+switchport mode access 
+switchport access vlan 14
+!
+interface Gi0/0
+switchport mode access 
+switchport access vlan 14
+!
+interface Gi0/1
+switchport mode trunk
+SW9#
+interface Gi0/2 
+switchport mode access 
+switchport access vlan 14</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>A</strong></div>
+</div>
+<div class="card" style="--accent:#10b981">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#10.66</span>
+      <span class="chip chip-topic" style="background:#10b98115;color:#10b981;border-color:#10b98130">🔌 Network Access</span>
+    </div>
+    <span class="card-num">13<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+The SW1 and SW2 Gi0/0 ports have been preconfigured. An engineer is given these requirements:
++ Allow all PCs to communicate with each other at Layer 3.+ Configure untagged traffic to use VLAN 5.+ Disable VLAN 1 from being used.
+Which configuration set meets these requirements?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Network_Access/q10.66_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">SW1#
+interface Gi0/1
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108
+interface Gi0/2
+switchport mode trunk
+switchport trunk allowed vlan 7,9,108
+SW2#
+interface Gi0/1 
+switchport mode trunk 
+switchport trunk allowed vlan 7
+interface Gi0/7
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">SW1#
+interface Gi0/1
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108
+switchport trunk native vlan 5
+interface Gi0/2
+switchport mode access
+switchport trunk allowed vlan 7,9,108
+SW2#
+interface Gi0/1
+switchport mode access
+no switchport access vlan 1
+switchport access vlan 7
+interface Gi0/7
+switchport mode trunk
+switchport trunk allowed vlan 7,9,108
+switchport trunk native vlan 5</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">SW1#
+interface Gi0/1
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108
+switchport trunk native vlan 5
+interface Gi0/2
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108
+SW2#
+interface Gi0/1
+switchport mode access
+switchport access vlan 7
+interface Gi0/7
+switchport mode trunk
+switchport trunk allowed vlan 7,9,108</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">D</div>
+  <div class="opt-body">SW1#
+interface Gi0/1
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108
+switchport trunk native vlan 5
+interface Gi0/2
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108
+SW2#
+interface Gi0/1
+switchport mode access
+switchport access vlan 7
+interface Gi0/7
+switchport mode trunk
+switchport trunk allowed vlan 5,7,9,108
+switchport trunk native vlan 5</div>
+  <div class="opt-check">✓</div>
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>D</strong></div>
+</div>
+<div class="card" style="--accent:#f59e0b">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#5.29</span>
+      <span class="chip chip-topic" style="background:#f59e0b15;color:#f59e0b;border-color:#f59e0b30">🛡️ Security</span>
+    </div>
+    <span class="card-num">14<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">Refer to the exhibit.
+An access list is required to permit traffic from any host on interface G0/0 and deny traffic from interface Gi0/1. Which access list must be applied?
+A. Option AB. Option BC. Option CD. Option D</p>
+  <div class="img-wrap"><img src="quiz/public/images/docx/CCNA_Security_Fundamentals/q5.29_img1.jpg" alt="exhibit" loading="lazy"></div>
+  <div class="opts"><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">A</div>
+  <div class="opt-body">ip access-list standard 99
+permit 10.100.100.0 0.0.0.255
+deny 192.168.0.0 0.0.255.255</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">ip access-list standard 99
+permit 10.100.100.0 0.0.0.255
+deny 192.168.0.0 0.255.255.255</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">ip access-list standard 100
+permit 10.100.100.0 0.0.0.255
+deny 192.168.0.0 0.255.255.255</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">ip access-list standard 199
+permit 10.100.100.0 0.0.0.255
+deny 192.168.0.0 0.0.255.255</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>A</strong></div>
+</div>
+<div class="card" style="--accent:#f59e0b">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#6.2</span>
+      <span class="chip chip-topic" style="background:#f59e0b15;color:#f59e0b;border-color:#f59e0b30">🛡️ Security</span>
+    </div>
+    <span class="card-num">15<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">A network administrator must to configure SSH for remote access to router R1. The requirement is to use a public and private key pair to encrypt management traffic to and from the connecting client. Which configuration, when applied, meets the requirements?
+A. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key generate ec keysize 1024
+B. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key generate rsa modulus 1024
+C. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key generate ec keysize 2048
+D. R1#enableR1#configure terminalR1(config)#ip domain-name cisco.comR1(config)#crypto key encrypt rsa name myKey
+A. Option AB. Option BC. Option CD. Option D</p>
+  
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">R1#enable
+R1#configure terminal
+R1(config)#ip domain-name cisco.com
+R1(config)#crypto key generate ec keysize 1024</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">B</div>
+  <div class="opt-body">R1#enable
+R1#configure terminal
+R1(config)#ip domain-name cisco.com
+R1(config)#crypto key generate rsa modulus 1024</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">R1#enable
+R1#configure terminal
+R1(config)#ip domain-name cisco.com
+R1(config)#crypto key generate ec keysize 2048</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">R1#enable
+R1#configure terminal
+R1(config)#ip domain-name cisco.com
+R1(config)#crypto key encrypt rsa name myKey</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>B</strong></div>
+</div>
+<div class="card" style="--accent:#f59e0b">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#8.77</span>
+      <span class="chip chip-topic" style="background:#f59e0b15;color:#f59e0b;border-color:#f59e0b30">🛡️ Security</span>
+    </div>
+    <span class="card-num">16<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">A Cisco engineer is configuring a factory-default router with these three passwords:* The user EXEC password for console access is p4ssw0rd1.* The user EXEC password for Telnet access is s3cr3t2.* The password for privileged EXEC mode is priv4t3p4ss.Which command sequence must the engineer configure?
+A. Option AB. Option BC. Option CD. Option D</p>
+  
+  <div class="opts"><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">A</div>
+  <div class="opt-body">enable secret priv4t3p4ss
+!
+line con 0
+password p4ssw0rd1 
+login
+!
+line vty 0 15 
+password s3cr3t2 
+login</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">B</div>
+  <div class="opt-body">enable secret privilege 15 priv4t3p4ss
+!
+line con 0
+password p4ssw0rdi 
+login
+!
+line vty 0 15 
+password s3cr3t2
+login</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">enable secret priv413p4ss
+!
+line con 0
+password login p4ssw0rd1
+!
+line vty 0 15 
+password login s3cr3t2 
+login</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">enable secret priv4t3p4ss
+!
+line con 0
+password p4ssw0rd1 
+!
+line vty 0 15 
+password s3cr3t2</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>A</strong></div>
+</div>
+<div class="card" style="--accent:#f59e0b">
+  <div class="card-top">
+    <div class="card-badges">
+      <span class="chip chip-id">#10.32</span>
+      <span class="chip chip-topic" style="background:#f59e0b15;color:#f59e0b;border-color:#f59e0b30">🛡️ Security</span>
+    </div>
+    <span class="card-num">17<span class="card-num-dim">/17</span></span>
+  </div>
+  <p class="qtxt">After a recent security breach and a RADIUS failure, an engineer must secure the console port of each enterprise router with a local username and password. Which configuration must the engineer apply to accomplish this task?
+A. Option AB. Option BC. Option CD. Option D</p>
+  
+  <div class="opts"><div class="opt ">
+  <div class="opt-badge ">A</div>
+  <div class="opt-body">aaa new-model
+aaa authorization exec default local 
+aaa authentication login default radius
+username localuser privilege 15 secret plaintextpassword</div>
+  
+</div><div class="opt opt-correct">
+  <div class="opt-badge opt-badge-correct">B</div>
+  <div class="opt-body">username localuser secret plaintextpassword 
+line con 0
+login authentication default 
+privilege level 15</div>
+  <div class="opt-check">✓</div>
+</div><div class="opt ">
+  <div class="opt-badge ">C</div>
+  <div class="opt-body">username localuser secret plaintextpassword 
+line con 0 
+no login local 
+privilege level 15</div>
+  
+</div><div class="opt ">
+  <div class="opt-badge ">D</div>
+  <div class="opt-body">aaa new-model 
+line con 0
+password plaintextpassword 
+privilege level 15</div>
+  
+</div></div>
+  <div class="ans-bar">Đáp án: <strong>B</strong></div>
+</div></div>
+</div>
+<div class="nav" id="nav"></div>
+<script>
+// Build nav
+const cards=document.querySelectorAll('.card');
+const nav=document.getElementById('nav');
+cards.forEach((c,i)=>{
+  c.id='q'+i;
+  const b=document.createElement('button');
+  b.className='nav-btn';b.textContent=i+1;
+  b.onclick=()=>c.scrollIntoView({behavior:'smooth',block:'center'});
+  nav.appendChild(b);
+});
+
+// Filter
+function filterCards(topic){
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  cards.forEach(c=>{
+    const t=c.querySelector('.chip-topic').textContent;
+    if(topic==='all'){c.style.display=''}
+    else{
+      const map={'CCNA_IP_Connectivity':'Connectivity','CCNA_IP_Services':'Services','CCNA_Network_Access':'Access','CCNA_Security_Fundamentals':'Security'};
+      c.style.display=t.includes(map[topic]||'')?'':'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

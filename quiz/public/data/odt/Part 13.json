@@ -1953,7 +1953,7 @@
     {
       "id": "13.101",
       "type": "single",
-      "question": "Which syslog message logging level displays interface line protocol up/down events?",
+      "question": "%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down\nWhich syslog message logging level displays interface line protocol up/down events?",
       "question_images": [],
       "options": {
         "A": "informational",

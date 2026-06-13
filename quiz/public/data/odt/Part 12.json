@@ -2215,7 +2215,7 @@
     {
       "id": "12.100",
       "type": "single",
-      "question": "Which syslog severity level is considered the most severe and results in the system being considered unusable?",
+      "question": "Level  Keyword  Description\n0  emergencies  System is unusable\n1  alerts  Immediate action is needed\n2  critical  Critical conditions exist\n3  errors  Error conditions exist\n4  warnings  Warning conditions exist\n5  notification  Normal, but significant, conditions exist\n6  informational  Informational messages\n7  debugging  Debugging messages\nWhich syslog severity level is considered the most severe and results in the system being considered unusable?",
       "question_images": [],
       "options": {
         "A": "Critical",

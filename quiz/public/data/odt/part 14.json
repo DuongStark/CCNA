@@ -4,7 +4,7 @@
     {
       "id": "14.1",
       "type": "single",
-      "question": "A network administrator wants the syslog server to filter incoming messages into different files based on their importance. Which filtering criteria must be used?",
+      "question": "seq no:timestamp%FACILTY-SEVERITY-MNEMONIC: message text\nA network administrator wants the syslog server to filter incoming messages into different files based on their importance. Which filtering criteria must be used?",
       "question_images": [],
       "options": {
         "A": "message body",
@@ -799,7 +799,7 @@
     {
       "id": "14.40",
       "type": "single",
-      "question": "Refer to the exhibit.\nA Cisco WLC administrator is creating a new wireless network with enhanced SSID security. The new network must operate at 2.4 GHz with 54 Mbps of throughput. Which set of tasks must the administrator perform to complete the configuration?",
+      "question": "Refer to the exhibit.\nIEEE Standard  Frequency/Medium  Speed  Transmission Range\n802.11  2.4GHz RF  1 to 2Mbps  20 feet indoors.\n802.11a  5GHz  Up to 54Mbps  25 to 75 feet indoors; range can be affected by building materials.\n802.11b  2.4GHz  Up to 11Mbps  Up to 150 feet indoors; range can be affected by building materials.\n802.11g  2.4GHz  Up to 54Mbps  Up to 150 feet indoors; range can be affected by building materials.\n802.11n  2.4GHz/5GHz  Up to 600Mbps  175+ feet indoors; range can be affected by building materials.\nA Cisco WLC administrator is creating a new wireless network with enhanced SSID security. The new network must operate at 2.4 GHz with 54 Mbps of throughput. Which set of tasks must the administrator perform to complete the configuration?",
       "question_images": [
         "q14.40_img1.jpg"
       ],
