@@ -21,6 +21,7 @@ export default function HomeScreen({ onStart }) {
   const [topicId, setTopicId] = useState(null);
   const [count, setCount] = useState(20);
   const [randomOrder, setRandomOrder] = useState(true);
+  const [shuffleOpts, setShuffleOpts] = useState(false);
   const [scrollMode, setScrollMode] = useState(false);
 
   const countSegmentRef = useRef(null);
@@ -54,6 +55,7 @@ export default function HomeScreen({ onStart }) {
       topicId,
       count: count === 'all' ? null : count,
       randomOrder,
+      shuffleOptions: shuffleOpts,
       scrollMode,
     });
   };
@@ -196,6 +198,21 @@ export default function HomeScreen({ onStart }) {
                 type="checkbox"
                 checked={randomOrder}
                 onChange={(e) => setRandomOrder(e.target.checked)}
+              />
+              <span className={styles.switchSlider} aria-hidden="true" />
+            </span>
+          </label>
+
+          <label className={styles.toggleRow}>
+            <span className={styles.toggleLabel}>
+              <span className={styles.toggleTitle}>Đảo vị trí đáp án</span>
+              <span className={styles.toggleHint}>Xáo trộn thứ tự A/B/C/D mỗi câu.</span>
+            </span>
+            <span className={styles.switch}>
+              <input
+                type="checkbox"
+                checked={shuffleOpts}
+                onChange={(e) => setShuffleOpts(e.target.checked)}
               />
               <span className={styles.switchSlider} aria-hidden="true" />
             </span>

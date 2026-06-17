@@ -4,6 +4,7 @@ import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
 import ScrollScreen from './components/ScrollScreen';
 import { loadSource } from './utils/dataLoader';
+import { shuffleAllOptions } from './utils/shuffleOptions';
 import useQuiz from './hooks/useQuiz';
 import './App.css';
 
@@ -138,13 +139,16 @@ export default function App() {
     }
   }, []);
 
-  const handleStart = useCallback(async ({ sourceId, topicId, count, srsMode, randomOrder, scrollMode }) => {
+  const handleStart = useCallback(async ({ sourceId, topicId, count, srsMode, randomOrder, shuffleOptions: shouldShuffleOpts, scrollMode }) => {
     setLoading(true);
     setError(null);
     try {
       const all = await loadSource(sourceId, topicId);
       if (!all.length) throw new Error('No questions available for this topic.');
-      const subset = pickQuestions(all, count);
+      let subset = pickQuestions(all, count);
+      if (shouldShuffleOpts) {
+        subset = shuffleAllOptions(subset);
+      }
       const mode = randomOrder ? 'random' : 'sequential';
       const newSession = {
         sourceId,
