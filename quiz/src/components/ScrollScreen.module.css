@@ -22,6 +22,57 @@
   transition: background-color 200ms ease;
 }
 
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.toggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 6px 14px 6px 10px;
+  transition: all 180ms ease-out;
+  cursor: pointer;
+}
+
+.toggleBtn:hover {
+  background: var(--color-option-hover);
+  color: var(--color-text);
+}
+
+.toggleBtnActive {
+  background: var(--color-correct-bg);
+  border-color: var(--color-correct-border);
+  color: var(--color-correct);
+}
+
+.toggleDot {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-progress-bg);
+  transition: background-color 180ms ease-out;
+  flex-shrink: 0;
+}
+
+.toggleBtnActive .toggleDot {
+  background: var(--color-correct);
+}
+
+.questionId {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-subtle);
+}
+
 .exitBtn {
   font-size: var(--fs-body-sm);
   color: var(--color-text-muted);
@@ -40,6 +91,135 @@
   font-size: var(--fs-body-sm);
   color: var(--color-text-subtle);
   font-variant-numeric: tabular-nums;
+}
+
+/* Search */
+.searchToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: all 150ms ease-out;
+  cursor: pointer;
+}
+
+.searchToggle:hover {
+  background: var(--color-option-hover);
+  color: var(--color-text);
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 4px 4px 4px 12px;
+  animation: searchExpand 200ms ease-out both;
+}
+
+@keyframes searchExpand {
+  from {
+    opacity: 0;
+    transform: scaleX(0.6);
+    transform-origin: right center;
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  color: var(--color-text-subtle);
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--fs-body-sm);
+  color: var(--color-text);
+  width: 220px;
+  padding: 4px 0;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-subtle);
+}
+
+.searchClear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1;
+  transition: background-color 150ms ease-out;
+  cursor: pointer;
+}
+
+.searchClear:hover {
+  background: var(--color-progress-bg);
+  color: var(--color-text);
+}
+
+.searchClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  transition: background-color 150ms ease-out;
+  cursor: pointer;
+}
+
+.searchClose:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+/* Empty state */
+.emptyState {
+  text-align: center;
+  padding: var(--space-xxl) var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+}
+
+.emptyState strong {
+  color: var(--color-primary);
+}
+
+.emptyBtn {
+  margin-top: var(--space-md);
+  padding: 8px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-muted);
+  transition: all 150ms ease-out;
+  cursor: pointer;
+}
+
+.emptyBtn:hover {
+  background: var(--color-option-hover);
+  color: var(--color-text);
 }
 
 .list {
@@ -184,6 +364,18 @@
   color: var(--color-correct);
 }
 
+.optionVi {
+  display: block;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-body-sm);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 .codeBlock {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -308,5 +500,19 @@
 
   .explanationText {
     font-size: 0.875rem;
+  }
+
+  .searchBar {
+    padding: 3px 3px 3px 10px;
+  }
+
+  .searchInput {
+    width: 120px;
+    font-size: 0.8125rem;
+  }
+
+  .searchToggle {
+    width: 38px;
+    height: 38px;
   }
 }
