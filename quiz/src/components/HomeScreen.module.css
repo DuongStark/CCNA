@@ -145,6 +145,68 @@
   font-weight: 500;
 }
 
+.bookmarkDeckRow {
+  margin-bottom: var(--space-sm);
+}
+
+.bookmarkDeckBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background-color 180ms cubic-bezier(0.32, 0.72, 0, 1),
+    border-color 180ms cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 180ms cubic-bezier(0.32, 0.72, 0, 1),
+    transform 180ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.bookmarkDeckBtn:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(120, 80, 50, 0.08);
+  transform: translateY(-2px);
+}
+
+.bookmarkDeckBtnActive {
+  background: var(--color-option-selected);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(217, 119, 87, 0.2);
+  transform: translateY(-1px);
+}
+
+.bookmarkDeckBtnActive .bookmarkDeckLabel {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.bookmarkDeckBtn svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.bookmarkDeckLabel {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+}
+
+.bookmarkDeckCount {
+  padding: 3px 10px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+}
+
 .topicGroup {
   display: flex;
   flex-wrap: wrap;

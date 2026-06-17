@@ -1,0 +1,30 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, transform 0.15s;
+  margin-left: auto;
+}
+
+.btn:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+.active:hover {
+  color: var(--color-text-muted);
+}

@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { getSources } from '../utils/dataLoader';
+import { getAllIds } from '../utils/bookmarks';
 import styles from './HomeScreen.module.css';
 
 const COUNT_OPTIONS = [
@@ -23,16 +24,32 @@ export default function HomeScreen({ onStart }) {
   const [randomOrder, setRandomOrder] = useState(true);
   const [shuffleOpts, setShuffleOpts] = useState(false);
   const [scrollMode, setScrollMode] = useState(false);
+  const [bookmarkCount, setBookmarkCount] = useState(0);
 
   const countSegmentRef = useRef(null);
   const countButtonRefs = useRef({});
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
 
   const activeSource = sources.find((s) => s.id === sourceId) || null;
+  const isBookmarksMode = sourceId === 'bookmarks';
+
+  // Load bookmark count on mount and when source changes
+  useEffect(() => {
+    setBookmarkCount(getAllIds().length);
+  }, []);
 
   useEffect(() => {
-    setTopicId(null);
-  }, [sourceId]);
+    if (!isBookmarksMode) {
+      setTopicId(null);
+    }
+  }, [sourceId, isBookmarksMode]);
+
+  // Auto-select "all" topic when bookmarks mode is activated
+  useEffect(() => {
+    if (isBookmarksMode) {
+      setTopicId('all');
+    }
+  }, [isBookmarksMode]);
 
   useLayoutEffect(() => {
     const container = countSegmentRef.current;
@@ -60,6 +77,9 @@ export default function HomeScreen({ onStart }) {
     });
   };
 
+  const showStep2 = activeSource && !isBookmarksMode;
+  const showStep3 = isBookmarksMode || (activeSource && topicId);
+
   return (
     <div className={styles.screen}>
       <header className={styles.header}>
@@ -74,6 +94,24 @@ export default function HomeScreen({ onStart }) {
           <span className={styles.stepNumber}>1</span>
           <span className={styles.stepTitle}>Chọn nguồn câu hỏi</span>
         </div>
+
+        {bookmarkCount > 0 && (
+          <div className={styles.bookmarkDeckRow}>
+            <button
+              type="button"
+              className={`${styles.bookmarkDeckBtn} ${isBookmarksMode ? styles.bookmarkDeckBtnActive : ''}`}
+              onClick={() => setSourceId(isBookmarksMode ? null : 'bookmarks')}
+              aria-pressed={isBookmarksMode}
+            >
+              <svg width="18" height="18" viewBox="0 0 16 16" fill={isBookmarksMode ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 2l1.8 3.7 4 .6-2.9 2.8.7 4L8 11.3 4.4 13.1l.7-4L2.2 6.3l4-.6z" />
+              </svg>
+              <span className={styles.bookmarkDeckLabel}>Câu đã đánh dấu</span>
+              <span className={styles.bookmarkDeckCount}>{bookmarkCount} câu</span>
+            </button>
+          </div>
+        )}
+
         <div className={styles.cardGrid}>
           {sources.map((s) => {
             const isActive = sourceId === s.id;
@@ -84,7 +122,7 @@ export default function HomeScreen({ onStart }) {
                 key={s.id}
                 type="button"
                 className={cls.join(' ')}
-                onClick={() => setSourceId(s.id)}
+                onClick={() => setSourceId(isActive ? null : s.id)}
                 aria-pressed={isActive}
               >
                 <span className={styles.sourceLabel}>{s.label}</span>
@@ -98,7 +136,7 @@ export default function HomeScreen({ onStart }) {
         </div>
       </section>
 
-      {activeSource && (
+      {showStep2 && (
         <section key={sourceId} className={`${styles.section} ${styles.animated}`}>
           <div className={styles.stepHeader}>
             <span className={styles.stepNumber}>2</span>
@@ -152,11 +190,13 @@ export default function HomeScreen({ onStart }) {
         </section>
       )}
 
-      {activeSource && topicId && (
+      {showStep3 && (
         <section className={`${styles.section} ${styles.animated}`}>
           <div className={styles.stepHeader}>
-            <span className={styles.stepNumber}>3</span>
-            <span className={styles.stepTitle}>Số câu hỏi?</span>
+            <span className={styles.stepNumber}>{isBookmarksMode ? 2 : 3}</span>
+            <span className={styles.stepTitle}>
+              {isBookmarksMode ? 'Ôn tập câu đã đánh dấu' : 'Số câu hỏi?'}
+            </span>
           </div>
           <div className={styles.countSegment} ref={countSegmentRef}>
             <span
@@ -243,7 +283,7 @@ export default function HomeScreen({ onStart }) {
             onClick={handleStart}
             disabled={!canStart}
           >
-            Bắt đầu
+            {isBookmarksMode ? 'Ôn tập' : 'Bắt đầu'}
           </button>
         </section>
       )}

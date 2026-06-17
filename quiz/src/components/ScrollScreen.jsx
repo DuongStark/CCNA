@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { splitIntoSegments } from '../utils/cliUtils';
 import ExhibitImage from './ExhibitImage';
+import BookmarkButton from './BookmarkButton';
 import styles from './ScrollScreen.module.css';
 
 function renderMarkdown(text) {
@@ -42,11 +43,12 @@ function OptionItem({ letter, text, textVi, isCorrect, revealed, showVi }) {
   );
 }
 
-function QuestionCard({ question, index, sourceId, revealAll }) {
+function QuestionCard({ question, index, sourceId, revealAll, isBookmarked, onToggleBookmark }) {
   const [revealed, setRevealed] = useState(false);
   const [showVi, setShowVi] = useState(false);
 
   const isRevealed = revealAll || revealed;
+  const effectiveSourceId = question._source || sourceId;
 
   const correctLetters = new Set(
     typeof question.answer === 'string'
@@ -62,16 +64,14 @@ function QuestionCard({ question, index, sourceId, revealAll }) {
   // image folder logic (mirrors dataLoader)
   const getImageSrc = (filename) => {
     if (!filename) return null;
-    if (sourceId === 'pdf') {
-      const folder = question.imageFolder || '';
+    const folder = question.imageFolder || '';
+    if (effectiveSourceId === 'pdf') {
       return `${import.meta.env.BASE_URL}images/pdf/${folder}/${filename}`.replace(/\/+/g, '/');
     }
-    if (sourceId === 'docx') {
-      const folder = question.imageFolder || '';
+    if (effectiveSourceId === 'docx') {
       return `${import.meta.env.BASE_URL}images/docx/${folder}/${filename}`.replace(/\/+/g, '/');
     }
-    if (sourceId === 'odt') {
-      const folder = question.imageFolder || '';
+    if (effectiveSourceId === 'odt') {
       return `${import.meta.env.BASE_URL}images/odt/${folder}/${filename}`.replace(/\/+/g, '/');
     }
     return null;
@@ -84,6 +84,12 @@ function QuestionCard({ question, index, sourceId, revealAll }) {
         <span className={styles.questionId}>#{question.id}</span>
         {isMultiple && (
           <span className={styles.multipleBadge}>Chọn {correctLetters.size} đáp án</span>
+        )}
+        {onToggleBookmark && (
+          <BookmarkButton
+            isBookmarked={isBookmarked}
+            onClick={() => onToggleBookmark(question._uid || question.id)}
+          />
         )}
       </div>
 
@@ -150,33 +156,48 @@ function QuestionCard({ question, index, sourceId, revealAll }) {
   );
 }
 
-export default function ScrollScreen({ questions, sourceId, onExit }) {
+export default function ScrollScreen({ questions, sourceId, onExit, bookmarks, onToggleBookmark, onFilterBookmarks }) {
   const [revealAll, setRevealAll] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
+  const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
   const searchRef = useRef(null);
 
   const filteredQuestions = useMemo(() => {
-    if (!searchQuery.trim()) return questions;
-    const q = searchQuery.trim().toLowerCase();
-    return questions.filter((question) => {
-      // Search by ID
-      if (question.id && String(question.id).toLowerCase().includes(q)) return true;
-      // Search in question text
-      if (question.question && question.question.toLowerCase().includes(q)) return true;
-      // Search in Vietnamese translation
-      if (question.question_vi && question.question_vi.toLowerCase().includes(q)) return true;
-      // Search in options
-      if (question.options) {
-        for (const text of Object.values(question.options)) {
-          if (text && String(text).toLowerCase().includes(q)) return true;
+    let result = questions;
+
+    // Filter by bookmarks
+    if (showBookmarksOnly && bookmarks) {
+      result = result.filter((q) => {
+        const uid = q._uid || q.id;
+        return !!bookmarks[uid];
+      });
+    }
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      result = result.filter((question) => {
+        // Search by ID
+        if (question.id && String(question.id).toLowerCase().includes(q)) return true;
+        // Search in question text
+        if (question.question && question.question.toLowerCase().includes(q)) return true;
+        // Search in Vietnamese translation
+        if (question.question_vi && question.question_vi.toLowerCase().includes(q)) return true;
+        // Search in options
+        if (question.options) {
+          for (const text of Object.values(question.options)) {
+            if (text && String(text).toLowerCase().includes(q)) return true;
+          }
         }
-      }
-      // Search in explanation
-      if (question.explanation && question.explanation.toLowerCase().includes(q)) return true;
-      return false;
-    });
-  }, [questions, searchQuery]);
+        // Search in explanation
+        if (question.explanation && question.explanation.toLowerCase().includes(q)) return true;
+        return false;
+      });
+    }
+
+    return result;
+  }, [questions, searchQuery, showBookmarksOnly, bookmarks]);
 
   const handleOpenSearch = () => {
     setSearchOpen(true);
@@ -261,6 +282,21 @@ export default function ScrollScreen({ questions, sourceId, onExit }) {
             <span className={styles.toggleDot} aria-hidden="true" />
             Hiện đáp án
           </button>
+          {bookmarks && Object.keys(bookmarks).length > 0 && (
+            <button
+              type="button"
+              className={`${styles.toggleBtn} ${showBookmarksOnly ? styles.toggleBtnActive : ''}`}
+              onClick={() => setShowBookmarksOnly((v) => !v)}
+              title={showBookmarksOnly ? 'Hiện tất cả câu hỏi' : 'Chỉ hiện câu đã đánh dấu'}
+            >
+              <svg width="14" height="14" viewBox="0 0 16 16" fill={showBookmarksOnly ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 2l1.8 3.7 4 .6-2.9 2.8.7 4L8 11.3 4.4 13.1l.7-4L2.2 6.3l4-.6z" />
+              </svg>
+              <span style={{ marginLeft: 4 }}>
+                {showBookmarksOnly ? 'Đang lọc' : 'Đã đánh dấu'} ({Object.keys(bookmarks).length})
+              </span>
+            </button>
+          )}
           <span className={styles.total}>
             {isFiltered ? `${filteredQuestions.length}/${questions.length}` : questions.length} câu
           </span>
@@ -284,6 +320,8 @@ export default function ScrollScreen({ questions, sourceId, onExit }) {
             index={i}
             sourceId={sourceId}
             revealAll={revealAll}
+            isBookmarked={bookmarks ? !!bookmarks[q._uid || q.id] : false}
+            onToggleBookmark={onToggleBookmark}
           />
         ))}
       </div>

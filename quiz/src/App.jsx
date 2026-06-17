@@ -3,9 +3,10 @@ import HomeScreen from './components/HomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
 import ScrollScreen from './components/ScrollScreen';
-import { loadSource } from './utils/dataLoader';
+import { loadSource, getSources } from './utils/dataLoader';
 import { shuffleAllOptions } from './utils/shuffleOptions';
 import useQuiz from './hooks/useQuiz';
+import useBookmarks from './hooks/useBookmarks';
 import './App.css';
 
 const SESSION_KEY = 'ccna_quiz_session';
@@ -64,6 +65,7 @@ function HomeContainer({ onStart }) {
 
 function QuizContainer({ session, initialProgress, onExit, onFinish }) {
   const quiz = useQuiz(session.questions, session.mode, initialProgress);
+  const { isBookmarked, toggle: toggleBookmark } = useBookmarks();
 
   useEffect(() => {
     if (quiz.isFinished) {
@@ -94,6 +96,8 @@ function QuizContainer({ session, initialProgress, onExit, onFinish }) {
 
   if (!quiz.currentQuestion) return null;
 
+  const qId = quiz.currentQuestion._uid || quiz.currentQuestion.id;
+
   return (
     <QuizScreen
       question={quiz.currentQuestion}
@@ -110,6 +114,8 @@ function QuizContainer({ session, initialProgress, onExit, onFinish }) {
       onExit={onExit}
       sourceId={session.sourceId}
       topicId={session.topicId}
+      isBookmarked={isBookmarked(qId)}
+      onToggleBookmark={toggleBookmark}
     />
   );
 }
@@ -121,6 +127,7 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { bookmarks, toggle: toggleBookmark } = useBookmarks();
 
   useEffect(() => {
     const saved = storage.getItem(SESSION_KEY);
@@ -143,7 +150,22 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const all = await loadSource(sourceId, topicId);
+      let all;
+      if (sourceId === 'bookmarks') {
+        // Load all questions from all sources, then filter by bookmarks
+        const sources = getSources();
+        const allQuestions = await Promise.all(
+          sources.map((s) => loadSource(s.id, 'all'))
+        );
+        all = allQuestions.flat();
+        all = all.filter((q) => {
+          const uid = q._uid || q.id;
+          return !!bookmarks[uid];
+        });
+        if (!all.length) throw new Error('Chưa có câu nào được đánh dấu. Gắn sao ⭐ cho câu hỏi trong khi làm bài để tạo bộ đề ôn tập.');
+      } else {
+        all = await loadSource(sourceId, topicId);
+      }
       if (!all.length) throw new Error('No questions available for this topic.');
       let subset = pickQuestions(all, count);
       if (shouldShuffleOpts) {
@@ -168,7 +190,7 @@ export default function App() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [bookmarks]);
 
   const handleFinish = useCallback((res) => {
     setResult(res);
@@ -245,6 +267,8 @@ export default function App() {
           questions={session.questions}
           sourceId={session.sourceId}
           onExit={handleExit}
+          bookmarks={bookmarks}
+          onToggleBookmark={toggleBookmark}
         />
       )}
       {screen === 'quiz' && session && (

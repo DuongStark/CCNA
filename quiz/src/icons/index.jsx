@@ -59,3 +59,11 @@ export function IconArrowLeft(props) {
     </svg>
   );
 }
+
+export function IconStar(props) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M8 2l1.8 3.7 4 .6-2.9 2.8.7 4L8 11.3 4.4 13.1l.7-4L2.2 6.3l4-.6z" />
+    </svg>
+  );
+}

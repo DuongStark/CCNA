@@ -3,6 +3,7 @@ import ProgressBar from './ProgressBar';
 import OptionCard from './OptionCard';
 import ExhibitImage from './ExhibitImage';
 import QuestionNav from './QuestionNav';
+import BookmarkButton from './BookmarkButton';
 import { getImagePath } from '../utils/dataLoader';
 import { splitIntoSegments, splitOptionSegments } from '../utils/cliUtils';
 import { IconCheck, IconX, IconMenu, IconClose, IconCheckbox, IconArrowLeft } from '../icons';
@@ -45,6 +46,8 @@ export default function QuizScreen({
   onExit,
   sourceId,
   topicId,
+  isBookmarked,
+  onToggleBookmark,
 }) {
   const [showVi, setShowVi] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
@@ -91,10 +94,10 @@ export default function QuizScreen({
     [...correctSet].sort().join('') === [...selectedSet].sort().join('');
 
   const questionImages = (question.question_images || [])
-    .map((f) => getImagePath(sourceId, question._topic || topicId, f))
+    .map((f) => getImagePath(question._source || sourceId, question._topic || topicId, f))
     .filter(Boolean);
   const explanationImages = (question.explanation_images || [])
-    .map((f) => getImagePath(sourceId, question._topic || topicId, f))
+    .map((f) => getImagePath(question._source || sourceId, question._topic || topicId, f))
     .filter(Boolean);
 
   const renderExplanation = (refTarget) =>
@@ -205,6 +208,13 @@ export default function QuizScreen({
                   </span>
                 )}
               </span>
+            )}
+            {onToggleBookmark && (
+              <BookmarkButton
+                isBookmarked={isBookmarked}
+                onClick={() => onToggleBookmark(question._uid || question.id)}
+                size={20}
+              />
             )}
           </div>
 
