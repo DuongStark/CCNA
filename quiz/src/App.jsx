@@ -7,6 +7,7 @@ import { loadSource, getSources } from './utils/dataLoader';
 import { shuffleAllOptions } from './utils/shuffleOptions';
 import useQuiz from './hooks/useQuiz';
 import useBookmarks from './hooks/useBookmarks';
+import useTheme from './hooks/useTheme';
 import './App.css';
 
 const SESSION_KEY = 'ccna_quiz_session';
@@ -59,11 +60,11 @@ function pickQuestions(all, count) {
   return a.slice(0, count);
 }
 
-function HomeContainer({ onStart }) {
-  return <HomeScreen onStart={onStart} />;
+function HomeContainer({ onStart, isDark, toggleTheme }) {
+  return <HomeScreen onStart={onStart} isDark={isDark} toggleTheme={toggleTheme} />;
 }
 
-function QuizContainer({ session, initialProgress, onExit, onFinish }) {
+function QuizContainer({ session, initialProgress, onExit, onFinish, isDark, toggleTheme }) {
   const quiz = useQuiz(session.questions, session.mode, initialProgress);
   const { isBookmarked, toggle: toggleBookmark } = useBookmarks();
 
@@ -116,6 +117,8 @@ function QuizContainer({ session, initialProgress, onExit, onFinish }) {
       topicId={session.topicId}
       isBookmarked={isBookmarked(qId)}
       onToggleBookmark={toggleBookmark}
+      isDark={isDark}
+      toggleTheme={toggleTheme}
     />
   );
 }
@@ -128,6 +131,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const { bookmarks, toggle: toggleBookmark } = useBookmarks();
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const saved = storage.getItem(SESSION_KEY);
@@ -261,7 +265,7 @@ export default function App() {
 
   return (
     <>
-      {screen === 'home' && <HomeContainer onStart={handleStart} />}
+      {screen === 'home' && <HomeContainer onStart={handleStart} isDark={isDark} toggleTheme={toggleTheme} />}
       {screen === 'scroll' && session && (
         <ScrollScreen
           questions={session.questions}
@@ -269,6 +273,8 @@ export default function App() {
           onExit={handleExit}
           bookmarks={bookmarks}
           onToggleBookmark={toggleBookmark}
+          isDark={isDark}
+          toggleTheme={toggleTheme}
         />
       )}
       {screen === 'quiz' && session && (
@@ -278,6 +284,8 @@ export default function App() {
             initialProgress={initialProgress}
             onExit={handleExit}
             onFinish={handleFinish}
+            isDark={isDark}
+            toggleTheme={toggleTheme}
           />
         </ErrorBoundary>
       )}

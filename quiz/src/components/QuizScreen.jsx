@@ -18,7 +18,7 @@ function QuestionBody({ text }) {
     <div className={styles.questionBody}>
       {segments.map((seg, i) =>
         seg.kind === 'cli' ? (
-          <pre key={i} className={styles.codeBlock}>
+          <pre key={i} className="code-block">
             <code>{seg.text}</code>
           </pre>
         ) : (
@@ -48,6 +48,8 @@ export default function QuizScreen({
   topicId,
   isBookmarked,
   onToggleBookmark,
+  isDark,
+  toggleTheme,
 }) {
   const [showVi, setShowVi] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
@@ -67,6 +69,19 @@ export default function QuizScreen({
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [navOpen]);
+
+  // Escape to toggle bookmark (when nav is closed)
+  useEffect(() => {
+    if (navOpen) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape' && onToggleBookmark && question) {
+        e.preventDefault();
+        onToggleBookmark(question._uid || question.id);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [navOpen, onToggleBookmark, question]);
 
   useEffect(() => {
     if (isRevealed && explanationRef.current) {
@@ -190,6 +205,26 @@ export default function QuizScreen({
             <span className={styles.counter}>
               {index + 1} <span className={styles.counterDim}>/ {total}</span>
             </span>
+            {toggleTheme && (
+              <button
+                type="button"
+                className={styles.themeBtn}
+                onClick={toggleTheme}
+                aria-label={isDark ? 'Giao diện sáng' : 'Giao diện tối'}
+                title={isDark ? 'Giao diện sáng' : 'Giao diện tối'}
+              >
+                {isDark ? (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="8" cy="8" r="3" />
+                    <path d="M8 1.5v1M8 13.5v1M1.5 8h1M13.5 8h1M3.4 3.4l.7.7M11.9 11.9l.7.7M3.4 12.6l.7-.7M11.9 4.1l.7-.7" />
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M13 9.5A5.5 5.5 0 016.5 3 5.5 5.5 0 1013 9.5z" />
+                  </svg>
+                )}
+              </button>
+            )}
           </div>
         </header>
 
@@ -297,6 +332,11 @@ export default function QuizScreen({
             )}
             {isRevealed && (
               <><kbd>Space</kbd> để tiếp tục</>
+            )}
+            {onToggleBookmark && (
+              <span className={styles.shortcutSep}>
+                <kbd>Esc</kbd> đánh dấu
+              </span>
             )}
           </span>
         </footer>

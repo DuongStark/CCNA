@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-lg);
-  background: rgba(26, 26, 26, 0.45);
+  background: var(--overlay-bg);
   z-index: 1100;
   animation: fadeIn 150ms ease;
 }

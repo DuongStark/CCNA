@@ -16,7 +16,7 @@
 }
 
 .label {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -24,7 +24,7 @@
 }
 
 .value {
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   font-weight: 600;
   color: var(--color-text);
   font-family: var(--font-heading);

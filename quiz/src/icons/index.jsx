@@ -67,3 +67,20 @@ export function IconStar(props) {
     </svg>
   );
 }
+
+export function IconSun(props) {
+  return (
+    <svg {...baseProps} {...props}>
+      <circle cx="8" cy="8" r="3" />
+      <path d="M8 1.5v1M8 13.5v1M1.5 8h1M13.5 8h1M3.4 3.4l.7.7M11.9 11.9l.7.7M3.4 12.6l.7-.7M11.9 4.1l.7-.7" />
+    </svg>
+  );
+}
+
+export function IconMoon(props) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M13 9.5A5.5 5.5 0 016.5 3 5.5 5.5 0 1013 9.5z" />
+    </svg>
+  );
+}

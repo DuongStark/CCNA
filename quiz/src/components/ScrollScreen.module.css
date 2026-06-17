@@ -14,7 +14,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(250, 249, 245, 0.75);
+  background: var(--surface-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: var(--space-sm) 0;
@@ -91,6 +91,22 @@
   font-size: var(--fs-body-sm);
   color: var(--color-text-subtle);
   font-variant-numeric: tabular-nums;
+}
+
+.themeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-subtle);
+  transition: all 180ms ease;
+}
+
+.themeBtn:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
 }
 
 /* Search */
@@ -261,7 +277,7 @@
 }
 
 .multipleBadge {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--color-primary);
   background: var(--color-option-selected);
   border-radius: var(--radius-full);
@@ -345,7 +361,7 @@
 
 .optionBadgeCorrect {
   background: var(--color-correct);
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .optionBody {
@@ -376,22 +392,6 @@
   word-break: break-word;
 }
 
-.codeBlock {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  line-height: 1.7;
-  font-style: italic;
-  background: #ede8df;
-  color: #3d3530;
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--radius-md);
-  border-left: 3px solid #c4a882;
-  margin: var(--space-sm) 0;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
 .revealBtn {
   align-self: flex-start;
   padding: 8px 20px;
@@ -420,7 +420,7 @@
 }
 
 .explanationLabel {
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -474,11 +474,6 @@
 
   .optionBody {
     font-size: 0.9375rem;
-  }
-
-  .codeBlock {
-    font-size: 0.75rem;
-    padding: var(--space-sm) var(--space-md);
   }
 
   .revealBtn {

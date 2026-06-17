@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { getSources } from '../utils/dataLoader';
+import { getSources, fetchTopicCounts } from '../utils/dataLoader';
 import { getAllIds } from '../utils/bookmarks';
 import styles from './HomeScreen.module.css';
 
@@ -11,12 +11,11 @@ const COUNT_OPTIONS = [
 ];
 
 const SOURCE_DESCRIPTIONS_VI = {
-  pdf: 'Nguồn PDF Cisco — 6 chủ đề theo blueprint thi chính thức.',
-  docx: 'Ngân hàng DOCX — phân loại theo domain thi.',
-  odt: 'Bộ đề ODT — Phần 11 đến 16.',
+  docx: 'Ngân hàng Part 5–10 — phân loại theo domain thi.',
+  odt: 'Ngân hàng Part 11–16 — bài tập bổ sung.',
 };
 
-export default function HomeScreen({ onStart }) {
+export default function HomeScreen({ onStart, isDark, toggleTheme }) {
   const sources = useMemo(() => getSources(), []);
   const [sourceId, setSourceId] = useState(null);
   const [topicId, setTopicId] = useState(null);
@@ -25,18 +24,40 @@ export default function HomeScreen({ onStart }) {
   const [shuffleOpts, setShuffleOpts] = useState(false);
   const [scrollMode, setScrollMode] = useState(false);
   const [bookmarkCount, setBookmarkCount] = useState(0);
+  const [topicCounts, setTopicCounts] = useState({});
 
   const countSegmentRef = useRef(null);
   const countButtonRefs = useRef({});
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
 
-  const activeSource = sources.find((s) => s.id === sourceId) || null;
+  // Merge fetched counts into sources
+  const sourcesWithCounts = useMemo(() => {
+    if (!Object.keys(topicCounts).length) return sources;
+    return sources.map((s) => {
+      const counts = topicCounts[s.id] || {};
+      const topics = s.topics.map((t) => ({ ...t, count: counts[t.id] || 0 }));
+      const totalCount = topics.reduce((sum, t) => sum + t.count, 0);
+      return { ...s, topics, totalCount };
+    });
+  }, [sources, topicCounts]);
+
+  const totalQuestions = sourcesWithCounts.reduce((sum, s) => sum + s.totalCount, 0);
+
+  const activeSource = sourcesWithCounts.find((s) => s.id === sourceId) || null;
   const isBookmarksMode = sourceId === 'bookmarks';
 
-  // Load bookmark count on mount and when source changes
+  // Fetch actual question counts from JSON files on mount
   useEffect(() => {
+    const load = async () => {
+      const allCounts = {};
+      for (const s of sources) {
+        allCounts[s.id] = await fetchTopicCounts(s.id);
+      }
+      setTopicCounts(allCounts);
+    };
+    load();
     setBookmarkCount(getAllIds().length);
-  }, []);
+  }, [sources]);
 
   useEffect(() => {
     if (!isBookmarksMode) {
@@ -82,10 +103,45 @@ export default function HomeScreen({ onStart }) {
 
   return (
     <div className={styles.screen}>
+      <button
+        type="button"
+        className={styles.themeToggle}
+        onClick={toggleTheme}
+        aria-label={isDark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối'}
+        title={isDark ? 'Giao diện sáng' : 'Giao diện tối'}
+      >
+        {isDark ? (
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="8" cy="8" r="3" />
+            <path d="M8 1.5v1M8 13.5v1M1.5 8h1M13.5 8h1M3.4 3.4l.7.7M11.9 11.9l.7.7M3.4 12.6l.7-.7M11.9 4.1l.7-.7" />
+          </svg>
+        ) : (
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M13 9.5A5.5 5.5 0 016.5 3 5.5 5.5 0 1013 9.5z" />
+          </svg>
+        )}
+      </button>
       <header className={styles.header}>
+        <div className={styles.heroIcon}>
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="6" fill="currentColor"/>
+            <circle cx="10" cy="12" r="3.5" fill="currentColor" opacity="0.5"/>
+            <circle cx="38" cy="12" r="3.5" fill="currentColor" opacity="0.5"/>
+            <circle cx="10" cy="36" r="3.5" fill="currentColor" opacity="0.5"/>
+            <circle cx="38" cy="36" r="3.5" fill="currentColor" opacity="0.5"/>
+            <circle cx="24" cy="4" r="2.5" fill="currentColor" opacity="0.35"/>
+            <circle cx="24" cy="44" r="2.5" fill="currentColor" opacity="0.35"/>
+            <line x1="24" y1="24" x2="10" y2="12" stroke="currentColor" strokeWidth="1.5" opacity="0.25"/>
+            <line x1="24" y1="24" x2="38" y2="12" stroke="currentColor" strokeWidth="1.5" opacity="0.25"/>
+            <line x1="24" y1="24" x2="10" y2="36" stroke="currentColor" strokeWidth="1.5" opacity="0.25"/>
+            <line x1="24" y1="24" x2="38" y2="36" stroke="currentColor" strokeWidth="1.5" opacity="0.25"/>
+            <line x1="24" y1="24" x2="24" y2="4" stroke="currentColor" strokeWidth="1" opacity="0.15"/>
+            <line x1="24" y1="24" x2="24" y2="44" stroke="currentColor" strokeWidth="1" opacity="0.15"/>
+          </svg>
+        </div>
         <h1>CCNA Quiz</h1>
         <p className={styles.tagline}>
-          Luyện từng câu một. Tiếng Anh trước, dịch tiếng Việt khi cần.
+          {totalQuestions > 0 ? `${totalQuestions.toLocaleString()} questions` : 'Loading…'} &middot; Spaced repetition &middot; Vietnamese translations
         </p>
       </header>
 
@@ -95,25 +151,33 @@ export default function HomeScreen({ onStart }) {
           <span className={styles.stepTitle}>Chọn nguồn câu hỏi</span>
         </div>
 
-        {bookmarkCount > 0 && (
-          <div className={styles.bookmarkDeckRow}>
-            <button
-              type="button"
-              className={`${styles.bookmarkDeckBtn} ${isBookmarksMode ? styles.bookmarkDeckBtnActive : ''}`}
-              onClick={() => setSourceId(isBookmarksMode ? null : 'bookmarks')}
-              aria-pressed={isBookmarksMode}
-            >
-              <svg width="18" height="18" viewBox="0 0 16 16" fill={isBookmarksMode ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M8 2l1.8 3.7 4 .6-2.9 2.8.7 4L8 11.3 4.4 13.1l.7-4L2.2 6.3l4-.6z" />
-              </svg>
-              <span className={styles.bookmarkDeckLabel}>Câu đã đánh dấu</span>
-              <span className={styles.bookmarkDeckCount}>{bookmarkCount} câu</span>
-            </button>
-          </div>
-        )}
-
         <div className={styles.cardGrid}>
-          {sources.map((s) => {
+          {bookmarkCount > 0 && (() => {
+            const isActive = isBookmarksMode;
+            const cls = [styles.sourceCard];
+            if (isActive) cls.push(styles.sourceCardActive);
+            return (
+              <button
+                key="bookmarks"
+                type="button"
+                className={cls.join(' ')}
+                onClick={() => setSourceId(isActive ? null : 'bookmarks')}
+                aria-pressed={isActive}
+              >
+                <span className={styles.sourceLabel}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill={isActive ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: '-2px', marginRight: 6 }}>
+                    <path d="M8 2l1.8 3.7 4 .6-2.9 2.8.7 4L8 11.3 4.4 13.1l.7-4L2.2 6.3l4-.6z" />
+                  </svg>
+                  Đã đánh dấu
+                </span>
+                <span className={styles.sourceDescription}>Ôn lại các câu bạn đã gắn sao từ tất cả nguồn.</span>
+                <span className={styles.sourceCountBadge}>
+                  {bookmarkCount} câu hỏi
+                </span>
+              </button>
+            );
+          })()}
+          {sourcesWithCounts.map((s) => {
             const isActive = sourceId === s.id;
             const cls = [styles.sourceCard];
             if (isActive) cls.push(styles.sourceCardActive);

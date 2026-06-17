@@ -62,7 +62,7 @@
 
 .sectionTitle {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   font-weight: 600;
 }
 
@@ -147,7 +147,7 @@
 
 .correctOptionItem {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: var(--fs-sm);
   color: var(--color-text-muted);
   line-height: 1.5;
   white-space: pre-wrap;
@@ -160,7 +160,7 @@
 }
 
 .explanationExcerpt {
-  font-size: 0.8125rem;
+  font-size: var(--fs-sm);
   color: var(--color-text-subtle);
   line-height: 1.5;
   font-style: italic;
@@ -176,7 +176,7 @@
 .primaryButton {
   padding: 12px 24px;
   background: var(--color-primary);
-  color: #ffffff;
+  color: var(--color-on-primary);
   border-radius: var(--radius-md);
   font-size: var(--fs-body);
   font-weight: 500;

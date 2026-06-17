@@ -101,7 +101,7 @@ function QuestionCard({ question, index, sourceId, revealAll, isBookmarked, onTo
       <div className={styles.questionText}>
         {splitIntoSegments(question.question).map((seg, i) =>
           seg.kind === 'cli' ? (
-            <pre key={i} className={styles.codeBlock}><code>{seg.text}</code></pre>
+            <pre key={i} className="code-block"><code>{seg.text}</code></pre>
           ) : (
             <p key={i}>{seg.text}</p>
           )
@@ -156,7 +156,7 @@ function QuestionCard({ question, index, sourceId, revealAll, isBookmarked, onTo
   );
 }
 
-export default function ScrollScreen({ questions, sourceId, onExit, bookmarks, onToggleBookmark, onFilterBookmarks }) {
+export default function ScrollScreen({ questions, sourceId, onExit, bookmarks, onToggleBookmark, onFilterBookmarks, isDark, toggleTheme }) {
   const [revealAll, setRevealAll] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -300,6 +300,25 @@ export default function ScrollScreen({ questions, sourceId, onExit, bookmarks, o
           <span className={styles.total}>
             {isFiltered ? `${filteredQuestions.length}/${questions.length}` : questions.length} câu
           </span>
+          {toggleTheme && (
+            <button
+              type="button"
+              className={styles.themeBtn}
+              onClick={toggleTheme}
+              aria-label={isDark ? 'Giao diện sáng' : 'Giao diện tối'}
+            >
+              {isDark ? (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="8" cy="8" r="3" />
+                  <path d="M8 1.5v1M8 13.5v1M1.5 8h1M13.5 8h1M3.4 3.4l.7.7M11.9 11.9l.7.7M3.4 12.6l.7-.7M11.9 4.1l.7-.7" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M13 9.5A5.5 5.5 0 016.5 3 5.5 5.5 0 1013 9.5z" />
+                </svg>
+              )}
+            </button>
+          )}
         </div>
       </header>
 
