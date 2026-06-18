@@ -3,6 +3,7 @@ import HomeScreen from './components/HomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
 import ScrollScreen from './components/ScrollScreen';
+import ExamScreen from './components/ExamScreen';
 import { loadSource, getSources } from './utils/dataLoader';
 import { shuffleAllOptions } from './utils/shuffleOptions';
 import useQuiz from './hooks/useQuiz';
@@ -143,18 +144,45 @@ export default function App() {
         // Questions already ordered from previous session — don't re-shuffle
         setSession({ ...s, mode: 'sequential' });
         setInitialProgress(progress);
-        setScreen(s.scrollMode ? 'scroll' : 'quiz');
+        if (s.examMode) {
+          setScreen('exam');
+        } else {
+          setScreen(s.scrollMode ? 'scroll' : 'quiz');
+        }
       }
     } catch {
       // ignore
     }
   }, []);
 
-  const handleStart = useCallback(async ({ sourceId, topicId, count, srsMode, randomOrder, shuffleOptions: shouldShuffleOpts, scrollMode }) => {
+  const handleStart = useCallback(async ({ sourceId, topicId, count, srsMode, randomOrder, shuffleOptions: shouldShuffleOpts, scrollMode, examMode }) => {
     setLoading(true);
     setError(null);
     try {
       let all;
+      if (examMode) {
+        // Exam mode: load 90 random questions from DOCX + ODT only
+        const docxQuestions = await loadSource('docx', 'all');
+        const odtQuestions = await loadSource('odt', 'all');
+        all = [...docxQuestions, ...odtQuestions];
+        if (!all.length) throw new Error('No questions available for exam mode.');
+        const subset = pickQuestions(all, 90);
+        const newSession = {
+          sourceId: 'exam',
+          topicId: 'all',
+          mode: 'random',
+          questions: subset,
+          scrollMode: false,
+          examMode: true,
+        };
+        setSession(newSession);
+        setInitialProgress(null);
+        setResult(null);
+        setScreen('exam');
+        storage.setItem(SESSION_KEY, JSON.stringify(newSession));
+        storage.removeItem(PROGRESS_KEY);
+        return;
+      }
       if (sourceId === 'bookmarks') {
         // Load all questions from all sources, then filter by bookmarks
         const sources = getSources();
@@ -289,6 +317,16 @@ export default function App() {
           />
         </ErrorBoundary>
       )}
+      {screen === 'exam' && session && (
+        <ErrorBoundary>
+          <ExamScreen
+            questions={session.questions}
+            sourceId={session.sourceId}
+            onExit={handleExit}
+            onFinish={handleFinish}
+          />
+        </ErrorBoundary>
+      )}
       {screen === 'result' && result && (
         <ResultScreen
           total={result.total}
@@ -297,6 +335,7 @@ export default function App() {
           onReviewWrong={handleReviewWrong}
           onRepeat={handleRepeat}
           onNewSession={handleExit}
+          examMode={session?.examMode || false}
         />
       )}
       {overlay}

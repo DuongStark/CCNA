@@ -13,23 +13,39 @@ export default function ResultScreen({
   onReviewWrong,
   onNewSession,
   onRepeat,
+  examMode = false,
 }) {
   const safeTotal = Math.max(total, 0);
   const percent = safeTotal === 0 ? 0 : Math.round((correctCount / safeTotal) * 100);
+  const scoreOutOf10 = safeTotal === 0 ? 0 : (correctCount / safeTotal) * 10;
   const hasWrong = wrongAnswers.length > 0;
 
   return (
     <div className={styles.screen}>
       <section className={styles.summary} aria-label="Session summary">
-        <span className={styles.scoreLabel}>Kết quả</span>
-        <span className={styles.score}>
-          {correctCount}
-          <span aria-hidden="true"> / </span>
-          {safeTotal}
-        </span>
-        <span className={`${styles.percent} ${percentClass(percent)}`}>
-          {percent}%
-        </span>
+        <span className={styles.scoreLabel}>{examMode ? 'Điểm thi' : 'Kết quả'}</span>
+        {examMode ? (
+          <>
+            <span className={styles.scoreBig}>
+              {scoreOutOf10.toFixed(1)}
+              <span className={styles.scoreMax}>/10</span>
+            </span>
+            <span className={`${styles.percent} ${percentClass(percent)}`}>
+              {correctCount} / {safeTotal} câu đúng ({percent}%)
+            </span>
+          </>
+        ) : (
+          <>
+            <span className={styles.score}>
+              {correctCount}
+              <span aria-hidden="true"> / </span>
+              {safeTotal}
+            </span>
+            <span className={`${styles.percent} ${percentClass(percent)}`}>
+              {percent}%
+            </span>
+          </>
+        )}
       </section>
 
       <section className={styles.section}>

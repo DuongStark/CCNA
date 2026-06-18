@@ -99,6 +99,12 @@ export default function HomeScreen({ onStart, isDark, toggleTheme }) {
     });
   };
 
+  const handleExam = () => {
+    onStart?.({
+      examMode: true,
+    });
+  };
+
   const showStep2 = activeSource && !isBookmarksMode;
   const showStep3 = isBookmarksMode || (activeSource && topicId);
 
@@ -145,6 +151,19 @@ export default function HomeScreen({ onStart, isDark, toggleTheme }) {
           {totalQuestions > 0 ? `${totalQuestions.toLocaleString()} questions` : 'Loading…'} &middot; Spaced repetition &middot; Vietnamese translations
         </p>
       </header>
+
+      {totalQuestions > 0 && (
+        <button type="button" className={styles.examButton} onClick={handleExam}>
+          <span className={styles.examIcon}>
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="8" cy="8" r="6.5" />
+              <path d="M8 4.5v4l2.5 1.5" />
+            </svg>
+          </span>
+          <span className={styles.examLabel}>Thi thử</span>
+          <span className={styles.examMeta}>90 câu · 120 phút</span>
+        </button>
+      )}
 
       <section className={styles.section}>
         <div className={styles.stepHeader}>
