@@ -45,6 +45,10 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
       ? initialState.results
       : Array(orderedQuestions.length).fill(null)
   );
+  // Store selected answers per question index for back-navigation
+  const [savedAnswers, setSavedAnswers] = useState(() =>
+    Array(orderedQuestions.length).fill('')
+  );
   const [isFinished, setIsFinished] = useState(orderedQuestions.length === 0);
   const [prevQuestions, setPrevQuestions] = useState(orderedQuestions);
 
@@ -57,6 +61,7 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
     setStreak(0);
     setWrongAnswers([]);
     setResults(Array(orderedQuestions.length).fill(null));
+    setSavedAnswers(Array(orderedQuestions.length).fill(''));
     setIsFinished(orderedQuestions.length === 0);
   }
 
@@ -96,6 +101,12 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
     const correct = correctNorm === userNorm;
 
     setIsRevealed(true);
+    // Save the selected answer for this question
+    setSavedAnswers((prev) => {
+      const next = [...prev];
+      next[currentIndex] = selectedAnswer;
+      return next;
+    });
     setResults((prev) => {
       const next = [...prev];
       next[currentIndex] = correct ? 'correct' : 'incorrect';
@@ -129,19 +140,32 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
       setIsFinished(true);
       return;
     }
-    setCurrentIndex((i) => i + 1);
-    setSelectedAnswer('');
-    setIsRevealed(false);
-  }, [isRevealed, currentIndex, orderedQuestions.length]);
+    const nextIdx = currentIndex + 1;
+    setCurrentIndex(nextIdx);
+    // Restore state if this question was already visited
+    if (results[nextIdx] !== null) {
+      setSelectedAnswer(savedAnswers[nextIdx] || '');
+      setIsRevealed(true);
+    } else {
+      setSelectedAnswer('');
+      setIsRevealed(false);
+    }
+  }, [isRevealed, currentIndex, orderedQuestions.length, results, savedAnswers]);
 
   const jumpTo = useCallback(
     (i) => {
       if (i < 0 || i >= orderedQuestions.length) return;
       setCurrentIndex(i);
-      setSelectedAnswer('');
-      setIsRevealed(false);
+      // Restore state if this question was already visited
+      if (results[i] !== null) {
+        setSelectedAnswer(savedAnswers[i] || '');
+        setIsRevealed(true);
+      } else {
+        setSelectedAnswer('');
+        setIsRevealed(false);
+      }
     },
-    [orderedQuestions.length]
+    [orderedQuestions.length, results, savedAnswers]
   );
 
   useEffect(() => {

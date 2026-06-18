@@ -11,6 +11,7 @@ const COUNT_OPTIONS = [
 ];
 
 const SOURCE_DESCRIPTIONS_VI = {
+  pdf: 'Cisco PDF — 6 chủ đề theo blueprint thi chính thức.',
   docx: 'Ngân hàng Part 5–10 — phân loại theo domain thi.',
   odt: 'Ngân hàng Part 11–16 — bài tập bổ sung.',
 };

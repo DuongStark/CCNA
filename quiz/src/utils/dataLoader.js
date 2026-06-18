@@ -3,6 +3,19 @@ const BASE = import.meta.env.BASE_URL || '/';
 // JSON filename + image-folder name vary per source. Topic ids match the JSON
 // stem; imageFolder is the directory name under public/images/{source}/.
 const SOURCES = {
+  pdf: {
+    id: 'pdf',
+    label: 'PDF',
+    description: 'Cisco PDF — 6 chủ đề theo blueprint thi chính thức.',
+    topics: [
+      { id: 'routing', label: 'Routing', file: 'routing.json', imageFolder: 'routing' },
+      { id: 'ip_services', label: 'IP Services', file: 'ip_services.json', imageFolder: 'ip_services' },
+      { id: 'security-and-wireless', label: 'Security & Wireless', file: 'security-and-wireless.json', imageFolder: 'security-and-wireless' },
+      { id: 'tcp-udp', label: 'TCP / UDP', file: 'tcp-udp.json', imageFolder: 'tcp-udp' },
+      { id: 'automation-virtual-sdn', label: 'Automation, Virtualization & SDN', file: 'automation-virtual-sdn.json', imageFolder: 'automation-virtual-sdn' },
+      { id: 'layer2_technologies', label: 'Layer 2 Technologies', file: 'layer2_technologies.json', imageFolder: 'layer2_technologies' },
+    ],
+  },
   docx: {
     id: 'docx',
     label: 'Part 5–10',
