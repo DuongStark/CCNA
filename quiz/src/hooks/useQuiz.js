@@ -46,9 +46,25 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
       : Array(orderedQuestions.length).fill(null)
   );
   // Store selected answers per question index for back-navigation
-  const [savedAnswers, setSavedAnswers] = useState(() =>
-    Array(orderedQuestions.length).fill('')
-  );
+  const [savedAnswers, setSavedAnswers] = useState(() => {
+    if (Array.isArray(initialState?.savedAnswers) && initialState.savedAnswers.length === orderedQuestions.length) {
+      // Check if savedAnswers has actual data (not all empty when results exist)
+      const hasData = initialState.savedAnswers.some((a, i) => a !== '' || initialState.results?.[i] === null);
+      if (hasData) return initialState.savedAnswers;
+    }
+    // Backward compat: reconstruct savedAnswers from wrongAnswers if available
+    if (Array.isArray(initialState?.wrongAnswers) && initialState.wrongAnswers.length > 0) {
+      const reconstructed = Array(orderedQuestions.length).fill('');
+      for (const w of initialState.wrongAnswers) {
+        const idx = orderedQuestions.findIndex(q => (q._uid || q.id) === w.uid);
+        if (idx >= 0 && w.userAnswer) {
+          reconstructed[idx] = w.userAnswer;
+        }
+      }
+      return reconstructed;
+    }
+    return Array(orderedQuestions.length).fill('');
+  });
   const [isFinished, setIsFinished] = useState(orderedQuestions.length === 0);
   const [prevQuestions, setPrevQuestions] = useState(orderedQuestions);
 
@@ -234,6 +250,7 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
     streak,
     wrongAnswers,
     results,
+    savedAnswers,
     isFinished,
     selectAnswer,
     confirmAnswer,

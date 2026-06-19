@@ -52,13 +52,22 @@ class ErrorBoundary extends Component {
 }
 
 function pickQuestions(all, count) {
-  if (!count || count >= all.length) return all;
+  if (!count || count >= all.length) return [...all];
   const a = [...all];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a.slice(0, count);
+}
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 function HomeContainer({ onStart, isDark, toggleTheme, bookmarkCount }) {
@@ -92,9 +101,10 @@ function QuizContainer({ session, initialProgress, onExit, onFinish, isDark, tog
         results: quiz.results,
         isRevealed: quiz.isRevealed,
         selectedAnswer: quiz.selectedAnswer,
+        savedAnswers: quiz.savedAnswers,
       })
     );
-  }, [quiz.currentIndex, quiz.isRevealed, quiz.selectedAnswer]);
+  }, [quiz.currentIndex, quiz.isRevealed, quiz.selectedAnswer, quiz.savedAnswers]);
 
   if (!quiz.currentQuestion) return null;
 
@@ -200,14 +210,19 @@ export default function App() {
       }
       if (!all.length) throw new Error('No questions available for this topic.');
       let subset = pickQuestions(all, count);
+      // Shuffle if random order and pickQuestions didn't already shuffle
+      if (randomOrder && (!count || count >= all.length)) {
+        subset = shuffleArray(subset);
+      }
       if (shouldShuffleOpts) {
         subset = shuffleAllOptions(subset);
       }
-      const mode = randomOrder ? 'random' : 'sequential';
+      // Always save as 'sequential' — pickQuestions already randomizes order
+      // This prevents useQuiz from re-shuffling on session restore
       const newSession = {
         sourceId,
         topicId,
-        mode,
+        mode: 'sequential',
         questions: subset,
         scrollMode: !!scrollMode,
       };
