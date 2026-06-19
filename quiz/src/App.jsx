@@ -61,8 +61,8 @@ function pickQuestions(all, count) {
   return a.slice(0, count);
 }
 
-function HomeContainer({ onStart, isDark, toggleTheme }) {
-  return <HomeScreen onStart={onStart} isDark={isDark} toggleTheme={toggleTheme} />;
+function HomeContainer({ onStart, isDark, toggleTheme, bookmarkCount }) {
+  return <HomeScreen onStart={onStart} isDark={isDark} toggleTheme={toggleTheme} bookmarkCount={bookmarkCount} />;
 }
 
 function QuizContainer({ session, initialProgress, onExit, onFinish, isDark, toggleTheme }) {
@@ -293,7 +293,7 @@ export default function App() {
 
   return (
     <>
-      {screen === 'home' && <HomeContainer onStart={handleStart} isDark={isDark} toggleTheme={toggleTheme} />}
+      {screen === 'home' && <HomeContainer onStart={handleStart} isDark={isDark} toggleTheme={toggleTheme} bookmarkCount={bookmarks ? Object.keys(bookmarks).length : 0} />}
       {screen === 'scroll' && session && (
         <ScrollScreen
           questions={session.questions}

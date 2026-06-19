@@ -1,0 +1,740 @@
+{
+  "count": 28,
+  "questions": [
+    {
+      "id": "12.109",
+      "type": "single",
+      "question": "How will Link Aggregation be implemented on a Cisco Wireless LAN Controller?",
+      "question_images": [],
+      "options": {
+        "A": "To pass client traffic, two or more ports must be configured",
+        "B": "The EtherChannel must be configured in “mode active”",
+        "C": "When enabled, the WLC bandwidth drops to 500 Mbps",
+        "D": "One functional physical port is needed to pass client traffic"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Khi bật LAG trên WLC, tất cả port được gộp thành một logical port duy nhất. Miễn là còn ít nhất một port vật lý hoạt động thì traffic client vẫn được chuyển tiếp bình thường.",
+      "explanation_images": [],
+      "question_vi": "Link Aggregation hoạt động như thế nào trên Cisco WLC?",
+      "options_vi": {
+        "A": "Phải cấu hình ít nhất hai port trở lên mới chuyển được traffic",
+        "B": "EtherChannel phải đặt ở chế độ active",
+        "C": "Khi bật LAG, băng thông WLC bị giới hạn còn 500 Mbps",
+        "D": "Chỉ cần một port vật lý còn hoạt động là traffic vẫn đi qua được"
+      }
+    },
+    {
+      "id": "12.110",
+      "type": "single",
+      "question": "Refer to the exhibit.\nSwitch(config)#hostname R1\nR1(config)#interface FastEthernet0/1\nR1(config-if)#no switchport\nR1(config-if)#ip address 10.100.20.42 255.255.255.0\nR1(config-if)#line vty 0 4\nR1(config-line)#login An engineer booted a new switch and applied this configuration via the console port. Which additional configuration must be applied to allow administrators to authenticate directly to global configuration mode via Telnet using a local username and password?",
+      "question_images": [],
+      "options": {
+        "A": "R1(config)#username admin R1(config-if)#line vty 0 4 R1(config-line)#password p@ss1234",
+        "B": "R1(config)#username admin R1(config-if)#line vty 0 4 R1(config-line)#password p@ss1234 R1(config-line)#transport input telnet",
+        "C": "R1(config)#username admin secret p@ss1234 R1(config-if)#line vty 0 4 R1(config-line)#login local R1(config)#enable secret p@ss1234",
+        "D": "R1(config)#username admin privilege 15 secret p@ss1234 R1(config-if)#line vty 0 4 R1(config-line)#login local"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "SSH cần 3 bước: (1) tạo user 'username admin privilege 15 secret p@ss1234', (2) vào line vty gõ 'login local' để xác thực bằng username, (3) 'transport input ssh' để chỉ cho phép SSH.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Đoạn cấu hình nào cho phép SSH vào router R1 bằng tài khoản admin (password p@ss1234) với đầy đủ quyền privilege 15?",
+      "options_vi": {
+        "A": "Tạo user không có secret, chỉ đặt password thường trên line vty",
+        "B": "Tạo user với password thường, có login local và transport input ssh nhưng thiếu privilege",
+        "C": "Tạo user với secret, có login local nhưng thiếu transport input ssh",
+        "D": "Tạo user privilege 15 với secret, login local và transport input ssh đầy đủ"
+      }
+    },
+    {
+      "id": "13.1",
+      "type": "single",
+      "question": "Refer to the exhibit. A new VLAN and switch are added to the network. A remote engineer configures OldSwitch and must ensure that the configuration meets these requirements: * accommodates current configured VLANs * expands the range to include VLAN 20 * allows for IEEE standard support for virtual LANs Which configuration on the NewSwitch side of the link meets these requirements?",
+      "question_images": [
+        "q13.1_img1.jpeg"
+      ],
+      "options": {
+        "A": "no switchport trunk encapsulation isl switchport trunk encapsulation dot1q switchport trunk allowed vlan add 20",
+        "B": "switchport nonnegotiate no switchport trunk allowed vlan 5,10 switchport trunk allowed vlan 5,10,15,20",
+        "C": "no switchport mode trunk switchport trunk encapsulation isl switchport mode access vlan 20",
+        "D": "switchport mode dynamic channel-group 1 mode active switchport trunk allowed vlan 5,10,15,20"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Cần: 'switchport trunk encapsulation dot1q' để dùng 802.1Q (không phải ISL), 'switchport trunk allowed vlan 5,10,15,20' để thêm VLAN 15, và tắt DTP bằng 'switchport nonegotiate' hoặc không dùng 'dynamic'.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Một VLAN và switch mới được thêm vào mạng. Kỹ sư cần cấu hình OldSwitch sao cho: giữ được kết nối hiện tại, thêm VLAN 15, và tắt DTP. Cấu hình nào đúng?",
+      "options_vi": {
+        "A": "Tắt ISL, chuyển sang dot1q, thêm VLAN 15 vào trunk allowed list",
+        "B": "Dùng nonnegotiate nhưng cấu hình allowed vlan sai",
+        "C": "Xóa trunk, chuyển sang access mode — mất kết nối trunk",
+        "D": "Cấu hình EtherChannel — không liên quan đến yêu cầu"
+      }
+    },
+    {
+      "id": "15.89",
+      "type": "single",
+      "question": "What is a difference between RADIUS and TACACS+?",
+      "question_images": [],
+      "options": {
+        "A": "RADIUS is most appropriate for dial authentication, but TACACS+ can be used for multiple types of authentication",
+        "B": "TACACS+ encrypts only password information and RADIUS encrypts the entire payload",
+        "C": "TACACS+ separates authentication and authorization, and RADIUS merges them",
+        "D": "RADIUS logs all commands that are entered by the administrator, but TACACS+ logs only start, stop, and interim commands"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "TACACS+ tách authentication và authorization thành hai quy trình riêng → linh hoạt hơn. RADIUS gộp chung. Thêm: TACACS+ mã hóa toàn bộ payload (RADIUS chỉ mã password), TACACS+ dùng TCP (RADIUS dùng UDP).",
+      "explanation_images": [],
+      "question_vi": "Điểm khác biệt giữa RADIUS và TACACS+ là gì?",
+      "options_vi": {
+        "A": "RADIUS chỉ dùng cho dial-up, TACACS+ dùng được cho nhiều loại kết nối hơn",
+        "B": "TACACS+ chỉ mã hóa mật khẩu, RADIUS mã hóa toàn bộ gói tin",
+        "C": "TACACS+ tách riêng xác thực và phân quyền, RADIUS gộp chung vào một bước",
+        "D": "RADIUS ghi lại mọi lệnh admin gõ, TACACS+ chỉ ghi phiên bắt đầu/kết thúc"
+      }
+    },
+    {
+      "id": "15.92",
+      "type": "single",
+      "question": "Which configuration management mechanism uses TCP port 22 by default when communicating with managed nodes?",
+      "question_images": [
+        "q15.92_img1.jpeg"
+      ],
+      "options": {
+        "A": "Ansible",
+        "B": "Python",
+        "C": "Puppet",
+        "D": "Chef"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Ansible dùng SSH (TCP 22) để quản lý thiết bị từ xa — không cần cài agent, chỉ cần SSH access. Đây là lợi thế lớn so với Puppet (dùng port 8140) và Chef (dùng port 443/9501).",
+      "explanation_images": [],
+      "question_vi": "Công cụ quản lý cấu hình nào mặc định dùng TCP port 22 để kết nối với thiết bị?",
+      "options_vi": {
+        "A": "Ansible",
+        "B": "Python",
+        "C": "Puppet",
+        "D": "Chef"
+      }
+    },
+    {
+      "id": "15.93",
+      "type": "single",
+      "question": "How do AAA operations compare regarding user identification, user services and access control?",
+      "question_images": [],
+      "options": {
+        "A": "Authorization provides access control and authentication tracks user services",
+        "B": "Authentication identifies users and accounting tracks user services",
+        "C": "Accounting tracks user services, and authentication provides access control",
+        "D": "Authorization identifies users and authentication provides access control"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Authentication = bạn là ai? (nhận dạng). Authorization = bạn được làm gì? (phân quyền). Accounting = bạn đã làm gì? (ghi log sử dụng).",
+      "explanation_images": [],
+      "question_vi": "Trong mô hình AAA, Authentication, Authorization và Accounting khác nhau như thế nào về nhận dạng user và kiểm soát truy cập?",
+      "options_vi": {
+        "A": "Authorization kiểm soát truy cập, Authentication theo dõi dịch vụ đã dùng",
+        "B": "Authentication nhận dạng người dùng, Accounting ghi lại dịch vụ đã sử dụng",
+        "C": "Accounting ghi lại dịch vụ, Authentication kiểm soát truy cập",
+        "D": "Authorization nhận dạng người dùng, Authentication kiểm soát truy cập"
+      }
+    },
+    {
+      "id": "15.94",
+      "type": "multiple",
+      "question": "Refer to the exhibit. What are two conclusions about this configuration? (Choose two)",
+      "question_images": [
+        "q15.94_img1.jpeg"
+      ],
+      "options": {
+        "A": "The designated port is FastEthernet 2/1",
+        "B": "This is a root bridge",
+        "C": "The spanning-tree mode is Rapid PVST+",
+        "D": "The spanning-tree mode is PVST+",
+        "E": "The root port is FastEthernet 2/1"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "answer_images": [],
+      "explanation": "Output 'show spanning-tree' hiển thị 'Rapid PVST' → Rapid PVST+ (C đúng). Port có vai trò Root (cổng tốt nhất đến root bridge) là Fa2/1 → đó là root port (E đúng).",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Hai kết luận nào đúng về cấu hình spanning-tree này? (Chọn hai)",
+      "options_vi": {
+        "A": "Designated port là FastEthernet 2/1",
+        "B": "Switch này là root bridge",
+        "C": "Chế độ spanning-tree là Rapid PVST+",
+        "D": "Chế độ spanning-tree là PVST+",
+        "E": "Root port là FastEthernet 2/1"
+      }
+    },
+    {
+      "id": "15.95",
+      "type": "multiple",
+      "question": "Refer to the exhibit. An extended ACL has been configured and applied to router R2. The configuration failed to work as intended. Which two changes stop outbound traffic on TCP ports 25 and 80 to 10.0.20.0/26 from the 10.0.10.0/26 subnet while still allowing all other traffic? (Choose two)\nR2#config t\nR2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq smtp\nR2(config)#access-list 101 deny tcp 10.0.20.0 0.0.0.63 10.0.10.0 0.0.0.63 eq www\nR2(config)#int gi0/2\nR2(config-if)#ip access-group 101 in",
+      "question_images": [
+        "q15.95_img1.jpeg"
+      ],
+      "options": {
+        "A": "Add a “permit ip any any” statement to the beginning of ACL 101 for allowed traffic",
+        "B": "Add a “permit ip any any” statement at the end of ACL 101 for allowed traffic",
+        "C": "The source and destination IPs must be swapped in ACL 101",
+        "D": "The ACL must be configured the Gi0/2 interface inbound on R1",
+        "E": "The ACL must be moved to the Gi0/1 interface outbound on R2"
+      },
+      "answer": [
+        "B",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Hai lỗi: (1) Source và destination IP bị viết ngược → đổi lại (C). (2) ACL có implicit deny ở cuối, thiếu 'permit ip any any' → mọi traffic không match đều bị chặn → thêm permit any any vào cuối (B).",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. ACL mở rộng đã cấu hình trên R2 nhưng không chặn được traffic như mong muốn. Cần sửa hai chỗ nào để chặn outbound TCP 25 và 80 từ 10.0.10.0/26 đến 10.0.20.0/26 mà vẫn cho các traffic khác đi qua? (Chọn hai)",
+      "options_vi": {
+        "A": "Thêm 'permit ip any any' vào đầu ACL 101",
+        "B": "Thêm 'permit ip any any' vào cuối ACL 101",
+        "C": "Đổi chỗ source IP và destination IP trong ACL 101",
+        "D": "Chuyển ACL sang interface Gi0/2 inbound trên R1",
+        "E": "Chuyển ACL sang interface Gi0/1 outbound trên R2"
+      }
+    },
+    {
+      "id": "15.96",
+      "type": "single",
+      "question": "R1 has learned route 10.10.10.0/24 via numerous routing protocols. Which route is installed?",
+      "question_images": [],
+      "options": {
+        "A": "route with the lowest cost",
+        "B": "route with the next hop that has the highest IP",
+        "C": "route with the shortest prefix length",
+        "D": "route with the lowest administrative distance"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Khi nhiều protocol cùng quảng bá một prefix, router chọn route có AD thấp nhất. Thứ tự AD: Connected=0, EIGRP=90, OSPF=110, RIP=120. EIGRP thắng.",
+      "explanation_images": [],
+      "question_vi": "R1 nhận được route 10.10.10.0/24 từ nhiều routing protocol khác nhau. Route nào sẽ được đưa vào bảng định tuyến?",
+      "options_vi": {
+        "A": "Route có cost thấp nhất",
+        "B": "Route có next-hop với địa chỉ IP cao nhất",
+        "C": "Route có prefix length ngắn nhất",
+        "D": "Route có administrative distance thấp nhất"
+      }
+    },
+    {
+      "id": "15.97",
+      "type": "single",
+      "question": "Which command must be entered to configure a DHCP relay?",
+      "question_images": [
+        "q15.97_img1.jpeg"
+      ],
+      "options": {
+        "A": "ip helper-address",
+        "B": "ip address dhcp",
+        "C": "ip dhcp relay",
+        "D": "ip dhcp pool"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "'ip helper-address <IP-DHCP-server>' đặt trên interface nhận DHCP broadcast từ client → router forward thành unicast gửi đến DHCP server.",
+      "explanation_images": [],
+      "question_vi": "Lệnh nào dùng để cấu hình DHCP relay trên router?",
+      "options_vi": {
+        "A": "ip helper-address",
+        "B": "ip address dhcp",
+        "C": "ip dhcp relay",
+        "D": "ip dhcp pool"
+      }
+    },
+    {
+      "id": "15.99",
+      "type": "single",
+      "question": "Refer to the exhibit. Which path is used by the router for Internet traffic?\nR1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets B 209.165.200.224 [20/0]\nvia 10.10.12.2, 00:10:34\n10.0.0.0/8 is variably subnetted, 4 subnets, 3 masks\nC 10.10.10.0/28\nis directly connected, GigabitEthernet0/0\nC 10.10.11.0/30\nis directly connected, FastEthernet2/0\nC 10.10.13.0/30 [110/2]\nvia 10.10.10.1, 00:03:34, GigabitEthernet0/0\nC 10.10.12.0/30\nis directly connected, GigabitEthernet0/1 S* 0.0.0.0/0 [1/0]\nvia 10.10.11.2 Switch1#show ip route\nGateway of last resort is not set\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.10.10.0/28\nis directly connected, FastEthernet0/1\nC 10.10.13.0/24\nis directly connected, VLAN20",
+      "question_images": [
+        "q15.99_img1.jpeg"
+      ],
+      "options": {
+        "A": "209.165.200.0/27",
+        "B": "10.10.10.0/28",
+        "C": "0.0.0.0/0",
+        "D": "10.10.13.0/24"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Routing table có 'Gateway of last resort is 10.10.11.2 to network 0.0.0.0' và 'S* 0.0.0.0/0 [1/0] via 10.10.11.2'. Route 0.0.0.0/0 là default route — match mọi destination không khớp route nào khác → dùng cho Internet.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Router dùng route nào để gửi traffic ra Internet?",
+      "options_vi": {
+        "A": "209.165.200.0/27",
+        "B": "10.10.10.0/28",
+        "C": "0.0.0.0/0",
+        "D": "10.10.13.0/24"
+      }
+    },
+    {
+      "id": "15.100",
+      "type": "single",
+      "question": "Refer to the exhibit. If the network environment is operating normally, which type of device must be connected to interface FastEthernet 0/1?\nip arp inspection vlan 2-10 interface fastethernet 0/1\nip arp inspection trust",
+      "question_images": [],
+      "options": {
+        "A": "DHCP client",
+        "B": "access point",
+        "C": "router",
+        "D": "PC"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Cấu hình 'ip arp inspection trust' trên Fa0/1 → port này được tin cậy trong DAI. Port trust thường là uplink nối sang router hoặc switch khác. Đáp án: Router.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Nếu mạng đang hoạt động bình thường, thiết bị nào phải nối vào interface FastEthernet 0/1?",
+      "options_vi": {
+        "A": "DHCP client",
+        "B": "Access point",
+        "C": "Router",
+        "D": "PC"
+      }
+    },
+    {
+      "id": "15.101",
+      "type": "single",
+      "question": "Refer to the exhibit. To which device does Router1 send packets that are destined to host 10.10.13.165?\nRouter1#show ip route\nGateway of last resort is 10.10.11.2 to network 0.0.0.0\n209.165.200.0/27 is subnetted, 1 subnets B 209.165.200.224 [20/0]\nvia 10.10.12.2,03:32:14\n209.165.201.0/27 is subnetted, 1 subnets B 209.165.201.0 [20/0]\nvia 10.10.12.2,02:26:53\n209.165.202.0/27 is subnetted, 1 subnets B 209.165.202.128 [20/0]\nvia 10.10.12.2,02:46:03 10.0.0.0/8 is variably subneted, 10 subnets, 4 masks\nO 10.10.13.0/25 [110/2]\nvia 10.10.10.1,00:00:04, GigabitEthernet0/0\nO 10.10.13.128/28 [110/2]\nvia 10.10.10.5,00:00:12, GigabitEthernet0/1\nO 10.10.13.144/28 [110/2]\nvia 10.10.10.9,00:01:57, GigabitEthernet0/2\nO 10.10.13.160/29 [110/2]\nvia 10.10.10.5,00:00:12, GigabitEthernet0/1\nO 10.10.13.208/29 [110/2]\nvia 10.10.10.13,00:01:57, GigabitEthernet0/3 S* 0.0.0.0/0 [1/0]\nvia 10.10.11.2",
+      "question_images": [
+        "q15.101_img1.jpeg"
+      ],
+      "options": {
+        "A": "Router2",
+        "B": "Router3",
+        "C": "Router4",
+        "D": "Router5"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "10.10.13.165 nằm trong 10.10.13.160/29. Routing table: 'O 10.10.13.160/29 [110/2] via 10.10.10.13, Gi0/3'. Next-hop 10.10.10.13 là Router3.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Router1 gửi packet đến host 10.10.13.165 qua router nào?",
+      "options_vi": {
+        "A": "Router2",
+        "B": "Router3",
+        "C": "Router4",
+        "D": "Router5"
+      }
+    },
+    {
+      "id": "15.102",
+      "type": "single",
+      "question": "Refer to the exhibit. Router R1 is running three different routing protocols. Which route characteristic is used by the router to forward the packet that it receives for destination IP 172.16.32.1?",
+      "question_images": [
+        "q15.102_img1.jpeg"
+      ],
+      "options": {
+        "A": "longest prefix",
+        "B": "metric",
+        "C": "cost",
+        "D": "administrative distance"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Router luôn ưu tiên longest prefix match trước. Ví dụ: nếu có 172.16.0.0/16 và 172.16.32.0/24, router chọn /24 vì cụ thể hơn — bất kể AD hay metric.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. R1 chạy ba routing protocol khác nhau. Khi nhận packet gửi đến 172.16.32.1, router dựa vào đặc điểm nào của route để forward?",
+      "options_vi": {
+        "A": "Prefix dài nhất (longest prefix match)",
+        "B": "Metric",
+        "C": "Cost",
+        "D": "Administrative distance"
+      }
+    },
+    {
+      "id": "15.104",
+      "type": "single",
+      "question": "When a WPA2-PSK WLAN is configured in the Wireless LAN Controller, what is the minimum number of characters that is required for the passphrase?",
+      "question_images": [],
+      "options": {
+        "A": "6",
+        "B": "8",
+        "C": "12",
+        "D": "18"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "WPA2-PSK yêu cầu passphrase từ 8 đến 63 ký tự. Passphrase này được dùng để sinh ra Pairwise Master Key (PMK) phục vụ quá trình xác thực 4-way handshake.",
+      "explanation_images": [],
+      "question_vi": "Cấu hình WPA2-PSK trên WLC yêu cầu passphrase tối thiểu bao nhiêu ký tự?",
+      "options_vi": {
+        "A": "6",
+        "B": "8",
+        "C": "12",
+        "D": "18"
+      }
+    },
+    {
+      "id": "15.105",
+      "type": "single",
+      "question": "Which purpose does a northbound API serve in a controller-based networking architecture?",
+      "question_images": [],
+      "options": {
+        "A": "communicates between the controller and the physical network hardware",
+        "B": "reports device errors to a controller",
+        "C": "generates statistics for network hardware and traffic",
+        "D": "facilitates communication between the controller and the applications"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Northbound API (REST API) hướng lên — cho phép ứng dụng (app) giao tiếp với SDN controller. Southbound API (OpenFlow, NETCONF) hướng xuống — controller giao tiếp với thiết bị mạng.",
+      "explanation_images": [],
+      "question_vi": "Northbound API đóng vai trò gì trong kiến trúc mạng SDN?",
+      "options_vi": {
+        "A": "Kết nối controller với thiết bị mạng vật lý",
+        "B": "Báo lỗi thiết bị về controller",
+        "C": "Thu thập thống kê phần cứng và lưu lượng",
+        "D": "Cho phép ứng dụng giao tiếp với controller để lập trình mạng"
+      }
+    },
+    {
+      "id": "15.107",
+      "type": "single",
+      "question": "Refer to the exhibit. A packet is being sent across router R1 to host 172.16.3.14. To which destination does the router send the packet?",
+      "question_images": [
+        "q15.107_img1.jpeg"
+      ],
+      "options": {
+        "A": "207.165.200.246 via Serial0/1/0",
+        "B": "207.165.200.254 via Serial0/0/0",
+        "C": "207.165.200.254 via Serial0/0/1",
+        "D": "207.165.200.250 via Serial0/0/0"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "172.16.3.14 thuộc 172.16.3.0/24. Routing table R1: 'D 172.16.3.0/24 [90/...] via 207.165.200.254, Serial0/0/1'. Next-hop là 207.165.200.254 qua Serial0/0/1.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Packet đi qua R1 đến host 172.16.3.14 sẽ được router gửi đến next-hop nào?",
+      "options_vi": {
+        "A": "207.165.200.246 qua Serial0/1/0",
+        "B": "207.165.200.254 qua Serial0/0/0",
+        "C": "207.165.200.254 qua Serial0/0/1",
+        "D": "207.165.200.250 qua Serial0/0/0"
+      }
+    },
+    {
+      "id": "15.108",
+      "type": "single",
+      "question": "Refer to the exhibit. An engineer must add a subnet for a new office that will add 20 users to the network. Which IPv4 network and subnet mask combination does the engineer assign to minimize wasting addresses?",
+      "question_images": [
+        "q15.108_img1.jpeg"
+      ],
+      "options": {
+        "A": "10.10.225.48 255.255.255.240",
+        "B": "10.10.225.32 255.255.255.240",
+        "C": "10.10.225.48 255.255.255.224",
+        "D": "10.10.225.32 255.255.255.224"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "20 host cần 5 bit host (2^5 - 2 = 30 host). /27 (255.255.255.224) cho 30 host — vừa đủ. /28 chỉ có 14 host — thiếu. 10.10.225.32/27 chạy từ .33 đến .62 → chọn D.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Cần thêm subnet cho văn phòng mới có 20 máy. Chọn network và subnet mask nào để ít lãng phí IP nhất?",
+      "options_vi": {
+        "A": "10.10.225.48 /28",
+        "B": "10.10.225.32 /28",
+        "C": "10.10.225.48 /27",
+        "D": "10.10.225.32 /27"
+      }
+    },
+    {
+      "id": "15.109",
+      "type": "multiple",
+      "question": "What are two recommendations for protecting network ports from being exploited when located in an office space outside of an IT closet? (Choose two)",
+      "question_images": [],
+      "options": {
+        "A": "shut down unused ports",
+        "B": "enable the PortFast feature on ports",
+        "C": "implement port-based authentication",
+        "D": "configure ports to a fixed speed",
+        "E": "configure static ARP entries"
+      },
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Khu vực không kiểm soát được: (1) Shutdown port không dùng → chặn kết nối trái phép (A). (2) Port-based authentication (802.1X) → chỉ cho thiết bị được xác thực mới vào mạng (C).",
+      "explanation_images": [],
+      "question_vi": "Hai biện pháp nào giúp bảo vệ cổng mạng khỏi bị lợi dụng khi đặt ở khu vực văn phòng bên ngoài phòng server? (Chọn hai)",
+      "options_vi": {
+        "A": "Tắt các port không sử dụng",
+        "B": "Bật PortFast trên các port",
+        "C": "Áp dụng xác thực trên port (port-based authentication)",
+        "D": "Cố định tốc độ port",
+        "E": "Cấu hình ARP tĩnh"
+      }
+    },
+    {
+      "id": "15.110",
+      "type": "single",
+      "question": "Which technology must be implemented to configure network device monitoring with the highest security?",
+      "question_images": [],
+      "options": {
+        "A": "SNMPv3",
+        "B": "IP SLA",
+        "C": "NetFlow",
+        "D": "syslog"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "SNMPv3 hỗ trợ mã hóa (AES) và xác thực (SHA) → bảo mật cao nhất trong các phiên bản SNMP. SNMPv1/v2c gửi community string dạng plain text — dễ bị sniff.",
+      "explanation_images": [],
+      "question_vi": "Công nghệ nào cần triển khai để giám sát thiết bị mạng với mức bảo mật cao nhất?",
+      "options_vi": {
+        "A": "SNMPv3",
+        "B": "IP SLA",
+        "C": "NetFlow",
+        "D": "syslog"
+      }
+    },
+    {
+      "id": "15.111",
+      "type": "single",
+      "question": "Which API is used in controller-based architectures to interact with edge devices?",
+      "question_images": [],
+      "options": {
+        "A": "overlay",
+        "B": "northbound",
+        "C": "underlay",
+        "D": "southbound"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "Southbound API đi từ controller xuống thiết bị (switch, router). Phổ biến: OpenFlow, NETCONF, RESTCONF. Northbound đi từ controller lên ứng dụng.",
+      "explanation_images": [
+        "q15.111_img1.jpeg"
+      ],
+      "question_vi": "Trong kiến trúc SDN, API nào dùng để controller giao tiếp với thiết bị mạng ở edge?",
+      "options_vi": {
+        "A": "Overlay",
+        "B": "Northbound",
+        "C": "Underlay",
+        "D": "Southbound"
+      }
+    },
+    {
+      "id": "15.113",
+      "type": "single",
+      "question": "R1 has learned route 192.168.12.0/24 via IS-IS, OSPF, RIP and Internal EIGRP. Under normal operating conditions, which routing protocol is installed in the routing table?",
+      "question_images": [],
+      "options": {
+        "A": "IS-IS",
+        "B": "RIP",
+        "C": "Internal EIGRP",
+        "D": "OSPF"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "Router chọn route có AD thấp nhất: EIGRP=90, OSPF=110, IS-IS=115, RIP=120. Internal EIGRP (AD=90) thấp nhất → được cài vào bảng định tuyến.",
+      "explanation_images": [
+        "q15.113_img1.jpeg"
+      ],
+      "question_vi": "R1 học route 192.168.12.0/24 từ IS-IS, OSPF, RIP và Internal EIGRP. Bình thường thì routing protocol nào được chọn?",
+      "options_vi": {
+        "A": "IS-IS",
+        "B": "RIP",
+        "C": "Internal EIGRP",
+        "D": "OSPF"
+      }
+    },
+    {
+      "id": "15.116",
+      "type": "single",
+      "question": "An engineer is configuring NAT to translate the source subnet of 10.10.0.0/24 to any one of three addresses: 192.168.3.1, 192.168.3.2, or 192.168.3.3. Which configuration should be used?",
+      "question_images": [],
+      "options": {
+        "A": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\nroute-map permit 10.10.0.0 255.255.255.0 ip nat outside destination list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside",
+        "B": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.255 ip nat outside destination list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside",
+        "C": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.255 ip nat inside source list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside",
+        "D": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.254 ip nat inside source list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside"
+      },
+      "answer": [
+        "C"
+      ],
+      "answer_images": [],
+      "explanation": "NAT pool cần: (1) 'ip nat pool' khai báo dải IP public, (2) 'access-list' xác định traffic nội bộ cần NAT, (3) 'ip nat inside source list 1 pool mypool' kết nối ACL với pool.",
+      "explanation_images": [],
+      "question_vi": "Kỹ sư cấu hình NAT để chuyển đổi source subnet 10.10.0.0/24 sang một trong ba IP: 192.168.3.1, .2, hoặc .3. Cấu hình nào đúng?",
+      "options_vi": {
+        "A": "Sai: dùng route-map thay vì access-list",
+        "B": "Sai: dùng 'ip nat outside destination' thay vì 'ip nat inside source'",
+        "C": "Đúng: NAT pool + access-list + lệnh 'ip nat inside source list 1 pool mypool'",
+        "D": "Sai: wildcard mask 0.0.0.254 thay vì 0.0.0.255"
+      }
+    },
+    {
+      "id": "15.118",
+      "type": "single",
+      "question": "How does HSRP provide first hop redundancy?",
+      "question_images": [],
+      "options": {
+        "A": "It load-balances traffic by assigning the same metric value to more than one route to the same destination in the IP routing table",
+        "B": "It load-balances Layer 2 traffic along the path by flooding traffic out all interfaces configured with the same VLAN",
+        "C": "It forwards multiple packets to the same destination over different routed links and data path",
+        "D": "It uses a shared virtual MAC and a virtual IP address to a group of routers that serve as the default gateway for hosts on a LAN"
+      },
+      "answer": [
+        "D"
+      ],
+      "answer_images": [],
+      "explanation": "HSRP tạo virtual router (shared VIP + virtual MAC). Active router xử lý traffic, standby sẵn sàng thay thế nếu active hỏng → đảm bảo gateway luôn sẵn sàng.",
+      "explanation_images": [],
+      "question_vi": "HSRP đảm bảo first-hop redundancy bằng cách nào?",
+      "options_vi": {
+        "A": "Chia tải traffic bằng cách gán metric giống nhau cho nhiều router",
+        "B": "Chia tải Layer 2 bằng cách flood traffic ra tất cả interface",
+        "C": "Gửi nhiều packet cùng đích qua các đường routed khác nhau",
+        "D": "Dùng chung virtual IP và virtual MAC cho nhóm router — chỉ active router xử lý traffic"
+      }
+    },
+    {
+      "id": "15.119",
+      "type": "single",
+      "question": "What is a function of TFTP in network operations?",
+      "question_images": [],
+      "options": {
+        "A": "transfers a configuration files from a server to a router on a congested link",
+        "B": "transfers IOS images from a server to a router for firmware upgrades",
+        "C": "transfers a backup configuration file from a server to a switch using a username and password",
+        "D": "transfers files between file systems on a router"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "TFTP (UDP port 69) đơn giản, không cần xác thực → chủ yếu dùng để backup/restore config và tải IOS image cho router/switch. Nhẹ hơn FTP nhưng không bảo mật.",
+      "explanation_images": [],
+      "question_vi": "TFTP có vai trò gì trong vận hành mạng?",
+      "options_vi": {
+        "A": "Chuyển file cấu hình từ server sang router qua đường truyền tắc nghẽn",
+        "B": "Chuyển IOS image từ server sang router để nâng cấp firmware",
+        "C": "Chuyển backup config từ server sang switch bằng username/password",
+        "D": "Chuyển file giữa các filesystem trên router"
+      }
+    },
+    {
+      "id": "16.22",
+      "type": "single",
+      "question": "Refer to the exhibit. What commands are needed to add a subinterface to Ethernet0/0 on R1 to allow for VLAN 20, with IP address 10.20.20.1/24?\nR1:\ninterface Ethernet0/0\nno ip address\nSW1:\ninterface Ethernet0/0\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface Ethernet0/1\nswitchport trunk allowed vlan 10\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\nSW2:\ninterface Ethernet0/1\nswitchport trunk encapsulation dot1q\nswitchport mode trunk\n!\ninterface Ethernet0/2\nswitchport access vlan 20\nswitchport mode access",
+      "question_images": [
+        "q16.22_img1.jpeg"
+      ],
+      "options": {
+        "A": "R1 (config)#interface ethernet0/0 R1 (config)#encapsulation dot1q 20 R1(config)#ip address 10.20.20.1 255.255.255.0",
+        "B": "R1 (config)#interface ethernet0/0.20 R1 (config)#encapsulation dot1q 20 R1(config)#ip address 10.20.20.1 255.255.255.0",
+        "C": "R1 (config)#interface ethernet0/0.20 R1(config)#ip address 10.20.20.1 255.255.255.0",
+        "D": "R1 (config)#interface ethernet0/0 R1(config)#ip address 10.20.20.1 255.255.255.0"
+      },
+      "answer": [
+        "B"
+      ],
+      "answer_images": [],
+      "explanation": "Router-on-a-stick: tạo subinterface (e0/0.20) → 'encapsulation dot1q 20' để tag VLAN 20 → gán IP. Main interface chỉ cần 'no ip address'.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Lệnh nào tạo đúng subinterface trên Ethernet0/0 của R1 cho VLAN 20 với IP 10.20.20.1/24?",
+      "options_vi": {
+        "A": "Sai: cấu hình encapsulation trên main interface thay vì subinterface",
+        "B": "Đúng: tạo subinterface e0/0.20, encapsulation dot1q 20, gán IP",
+        "C": "Thiếu: có IP nhưng không có encapsulation dot1q",
+        "D": "Sai: gán IP trực tiếp lên main interface, không dùng subinterface"
+      }
+    },
+    {
+      "id": "16.24",
+      "type": "single",
+      "question": "Refer to the exhibit. MacOs$\nifconfig en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500 options=400<CHANNEL_IO>\nether f0:18:98:64:60:32\ninet6 fe80::492:c09f:57cf:8c36%en0 prefixlen 64 secured scopeid 0x6\ninet 10.8.138.14 netmask 0xffffe000 broadcast 10.8.159.255\nnd6 options=201<PERFORMNUD,DAD>\nmedia: autoselect\nstatus: active If the default gateway is the first usable IP address in the subnet, what is the default gateway?",
+      "question_images": [],
+      "options": {
+        "A": "10.8.128.1",
+        "B": "10.8.132.1",
+        "C": "10.8.138.1",
+        "D": "10.8.144.1"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Từ output ifconfig, máy có IP 10.8.138.14 với netmask /23 (255.255.254.0). Subnet 10.8.138.0/23 chạy từ 10.8.138.0–10.8.139.255. Default gateway thường là .1 → 10.8.138.1.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Dựa vào output ifconfig trên MacOS, default gateway của máy này là gì?",
+      "options_vi": {
+        "A": "10.8.128.1",
+        "B": "10.8.132.1",
+        "C": "10.8.138.1",
+        "D": "10.8.144.1"
+      }
+    },
+    {
+      "id": "16.60",
+      "type": "single",
+      "question": "Refer to the exhibit.\nAccessSw1> show ntp associations\naddress ref clock st when poll reach delay offset disp\n*~2001:DB8:12::1 127.127.1.1 3 39 64 377 23.903 -5.581 2.077\n* sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured\n\nA network engineer must replicate the AccessSw1 NTP configuration on a new switch. The engineer could not access privileged mode on AccessSw1 to view its configuration. Which command must be applied to the new switch to replicate the configuration?",
+      "question_images": [],
+      "options": {
+        "A": "ntp server 2001:db8:12::1",
+        "B": "ntp master 3",
+        "C": "ntp master",
+        "D": "ntp server 127.127.1.1"
+      },
+      "answer": [
+        "A"
+      ],
+      "answer_images": [],
+      "explanation": "Output cho thấy AccessSw1 đang đồng bộ với NTP server 2001:DB8:12::1 (IPv6) — ký hiệu '*' = system peer. Để replicate: 'ntp server 2001:db8:12::1'. 127.127.1.1 là ref clock ID, không phải IP thật.",
+      "explanation_images": [],
+      "question_vi": "Tham khảo hình. Dựa vào output 'show ntp associations', lệnh nào cần cấu hình trên switch mới để đồng bộ NTP giống AccessSw1?",
+      "options_vi": {
+        "A": "ntp server 2001:db8:12::1",
+        "B": "ntp master 3",
+        "C": "ntp master",
+        "D": "ntp server 127.127.1.1"
+      }
+    }
+  ]
+}

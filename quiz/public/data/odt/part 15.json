@@ -134,7 +134,9 @@
     {
       "id": "15.6",
       "question": "Refer to the exhibit.\nAll routers in the network are configured correctly, and the expected routes are being exchanged among the routers. Which set of routes are learned from neighbors and installed on router 2?",
-      "question_images": [],
+      "question_images": [
+        "q15.6_img1.jpg"
+      ],
       "options": {
         "A": "10.40.1.0/3010.139.2.0/3010.12.191.0/3010.129.9.0/25",
         "B": "10.129.9.0/2310.139.2.0/3010.129.9.0/2510.22.1.0/24",
@@ -208,7 +210,9 @@
     {
       "id": "15.9",
       "question": "Refer to the exhibit.\nNetwork services must be enabled on interface Gi1/0/34. Which configuration meets the needs for this implementation?",
-      "question_images": [],
+      "question_images": [
+        "q15.9_img1.jpg"
+      ],
       "options": {
         "A": "interface Gi1/0/34switchport mode trunkswitchport trunk allowed vlan 400, 4041switchport voice vlan 4041",
         "B": "interface Gi1/0/34switchport mode accessswitchport access vlan 4041switchport voice vlan 400",
@@ -2127,7 +2131,9 @@
     {
       "id": "15.98",
       "question": "Refer to the exhibit.\nWhich settings must be verified on workstation 1 to establish IP connectivity to server 1 using the server’s fully qualified domain name?",
-      "question_images": [],
+      "question_images": [
+        "q15.98_img1.jpg"
+      ],
       "options": {
         "A": "IP address: 10.0.63.80Subnet mask: 255.255.255.224Default gateway: 10.0.71.0DHCP server: 10.0.63.8",
         "B": "IP address: 10.0.71.16Subnet mask: 255.255.255.224Default gateway: 10.0.71.1DNS server: 10.0.63.5",

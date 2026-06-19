@@ -1,6 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { getSources, fetchTopicCounts } from '../utils/dataLoader';
-import { getAllIds } from '../utils/bookmarks';
 import styles from './HomeScreen.module.css';
 
 const COUNT_OPTIONS = [
@@ -16,7 +15,7 @@ const SOURCE_DESCRIPTIONS_VI = {
   odt: 'Ngân hàng Part 11–16 — bài tập bổ sung.',
 };
 
-export default function HomeScreen({ onStart, isDark, toggleTheme }) {
+export default function HomeScreen({ onStart, isDark, toggleTheme, bookmarkCount = 0 }) {
   const sources = useMemo(() => getSources(), []);
   const [sourceId, setSourceId] = useState(null);
   const [topicId, setTopicId] = useState(null);
@@ -24,7 +23,6 @@ export default function HomeScreen({ onStart, isDark, toggleTheme }) {
   const [randomOrder, setRandomOrder] = useState(true);
   const [shuffleOpts, setShuffleOpts] = useState(false);
   const [scrollMode, setScrollMode] = useState(false);
-  const [bookmarkCount, setBookmarkCount] = useState(0);
   const [topicCounts, setTopicCounts] = useState({});
 
   const countSegmentRef = useRef(null);
@@ -57,7 +55,6 @@ export default function HomeScreen({ onStart, isDark, toggleTheme }) {
       setTopicCounts(allCounts);
     };
     load();
-    setBookmarkCount(getAllIds().length);
   }, [sources]);
 
   useEffect(() => {

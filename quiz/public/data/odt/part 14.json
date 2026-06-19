@@ -1614,7 +1614,9 @@
     {
       "id": "14.76",
       "question": "Refer to the exhibit.\nSW_1#show vlan\nVLAN Name Status Ports\n1 default active Et0/2,Et1/0,Et1/0,Et1/3\n5 MGMT Vlan active Et1/1\n6 Server Vlan active\n72 Data Vlan active Et0/0\n1002 fddi-default act/unsup\n1003 token-ring-default act/unsup\n1004 fddinet-default act/unsup\n1005 trnet-default act/unsup\nVoIP is being implemented in the network using VLAN ID 73 and named “VoIP”. Each user needs a Cisco IP phone at their desk. Switchport e0/0 has been configured as an access port in the data VLAN. Cisco Discovery Protocol is enabled globally. Which command sequence completed the configuration?",
-      "question_images": [],
+      "question_images": [
+        "q14.76_img1.jpg"
+      ],
       "options": {
         "A": "vlan 73name VoIPe0/0switchport trunk allowed vlan 72,73switchport voice vlan 73",
         "B": "vlan 73name VoIPe0/0switchport mode trunkchannel-group 73 mode active",
@@ -1975,7 +1977,9 @@
     {
       "id": "14.94",
       "question": "Refer to the exhibit.\nThe engineer configured the VLANs on the new AccSw2 switch. A router on-a-stick is connected to both switches. How must the ports be configured on AccSw2 to establish full connectivity between the two switches and for Server1?",
-      "question_images": [],
+      "question_images": [
+        "q14.94_img1.jpg"
+      ],
       "options": {
         "A": "interface GigabitEthernet1/3switchport mode accessswitchport access vlan 10\n!\ninterface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 2,10",
         "B": "interface GigabitEthernet1/3switchport mode accessswitchport access vlan 10\n!\ninterface GigabitEthernet1/24switchport mode trunk",
@@ -2180,7 +2184,9 @@
     {
       "id": "14.102",
       "question": "Refer to the exhibit.\nWhich configuration enables SW2 to establish an LACP EtherChannel?",
-      "question_images": [],
+      "question_images": [
+        "q14.102_img1.jpg"
+      ],
       "options": {
         "A": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode desirable\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode desirable",
         "B": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode active\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 1 mode active",

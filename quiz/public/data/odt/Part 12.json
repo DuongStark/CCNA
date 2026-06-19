@@ -435,7 +435,9 @@
     {
       "id": "12.22",
       "question": "Refer to the exhibit.\nR1#\n!\ninterface Loopback0\nip address 10.1.1.1 255.255.255.255\n!\ninterface FastEthernet0/0\nip address 10.139.91.1 255.255.255.252\nip virtual—reassembly in\n!\ninterface FastEthernet1/0\nip address 172.16.29.1 255.255.255.0\nip virtual-reassembly in\n!\nrouter eigrp 100\nnetwork 10.1.1.1 0.0.0.0\nnetwork 10.139.91.0 0.0.0.3\n!\n--output suppressed--\nAn engineer must translate the PC1 IP address to 10.199.77.100 and permit PC1 to ping the loopback 0 interface on router R2. Which configuration must be used?",
-      "question_images": [],
+      "question_images": [
+        "q12.22_img1.jpg"
+      ],
       "options": {
         "A": "R1#\n!\ninterface FastEthernet0/0\nip nat outside\n!\ninterface FastEthernet1/0\nip nat inside\n!\nip nat inside source static 172.16.29.78 10.199.77.100\nR2\nip route 10.199.77.100 255.255.255.255 10.139.91.1",
         "B": "R1#\n!\ninterface FastEthernet0/0\nip nat inside\n!\ninterface FastEthernet1/0 \nip nat outside\n!\nip nat inside source static 10.199.77.100 172.16.29.78\nR2\nip route 10.199.77.100 255.255.255.255 10.139.91.1",
@@ -1127,7 +1129,9 @@
     {
       "id": "12.53",
       "question": "Refer to the exhibit.\nEach router must be configured with the last usable IP address in the subnet. Which configuration fulfills this requirement?",
-      "question_images": [],
+      "question_images": [
+        "q12.53_img1.jpg"
+      ],
       "options": {
         "A": "R7#\ninterface FastEthernet1/0\nip address 10.88.31.126 255.255.255.192\nR8#\ninterface FastEthernet0/0\nip address 10.19.63.95 255.255.255.192\nR9#\ninterface FastEthernet1/1\nip address 10.23.98.159 255.255.255.248",
         "B": "R7#\ninterface FastEthernet1/0\nip address 10.88.31.126 255.255.255.240\nR8#\ninterface FastEthernet0/0\nip address 10.19.63.94 255.255.255.192\nR9#\ninterface FastEthernet1/1\nip address 10.23.98.158 255.255.255.248",
