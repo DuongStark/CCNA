@@ -189,10 +189,10 @@
         "q16.8_img1.jpg"
       ],
       "options": {
-        "A": "Set the File Type to Code, set the Transfer Mode to SFTP, and specify the IP address of the WLC.",
-        "B": "Set the File Type to Configuration, set the Transfer Mode to FTP, and specify the IP address of the file server.",
-        "C": "Set the File Type to Code, set the Transfer Mode to SFTP, and specify the IP address of the file server.",
-        "D": "Set the File Type to Configuration, set the Transfer Mode to SFTP, and specify the IP address of the WLC."
+        "A": "Set the File Type to Code, set the Transfer Mode to SFTP, and specify the\nIP address of the WLC.",
+        "B": "Set the File Type to Configuration, set the Transfer Mode to FTP, and specify the\nIP address of the file server.",
+        "C": "Set the File Type to Code, set the Transfer Mode to SFTP, and specify the\nIP address of the file server.",
+        "D": "Set the File Type to Configuration, set the Transfer Mode to SFTP, and specify the\nIP address of the WLC."
       },
       "answer": [
         "C"
@@ -472,7 +472,7 @@
         "A": "provides protection against spyware",
         "B": "used to identify a Wireless LAN Controller",
         "C": "enables wireless clients to connect to a specific network",
-        "D": "the password used to connect to an access point"
+        "D": "the\npassword used to connect to an access point"
       },
       "answer": [
         "C"
@@ -826,7 +826,7 @@
       "options": {
         "A": "password of 8 to 15 characters and personal 12-digit PIN",
         "B": "authorized USB dongle and mobile phone",
-        "C": "complex password and time-based one-time password",
+        "C": "complex\npassword and time-based one-time password",
         "D": "fingerprint scanning and facial recognition"
       },
       "answer": [
@@ -1286,10 +1286,10 @@
         "q16.56_img1.jpg"
       ],
       "options": {
-        "A": "ip nat pool NATPOOL 209.165.201.1 209.165.201.5 netmask 255.255.255.248ip nat inside source list HQC interface gigabitEthernet0/0 overload",
-        "B": "ip nat pool NATPOOL 209.165.200.225 209.165.200.226 netmask 255.255.255.252ip nat outside source list HQC pool NATPOOL overload",
-        "C": "ip nat pool NATPOOL 209.165.201.1 209.165.201.3 netmask 255.255.255.248ip nat inside source list HQC pool NATPOOL overload",
-        "D": "ip nat pool NATPOOL 209.165.201.1 209.165.201.248 netmask 255.255.255.248ip nat outside source list HQC pool NATPOOL overload"
+        "A": "ip nat pool NATPOOL 209.165.201.1 209.165.201.5 netmask 255.255.255.248\nip nat inside source list HQC interface gigabitEthernet0/0 overload",
+        "B": "ip nat pool NATPOOL 209.165.200.225 209.165.200.226 netmask 255.255.255.252\nip nat outside source list HQC pool NATPOOL overload",
+        "C": "ip nat pool NATPOOL 209.165.201.1 209.165.201.3 netmask 255.255.255.248\nip nat inside source list HQC pool NATPOOL overload",
+        "D": "ip nat pool NATPOOL 209.165.201.1 209.165.201.248 netmask 255.255.255.248\nip nat outside source list HQC pool NATPOOL overload"
       },
       "answer": [
         "C"
@@ -1465,10 +1465,10 @@
         "q16.64_img1.jpg"
       ],
       "options": {
-        "A": "interface GigabitEthernet0/1ip helper-address 172.20.255.11",
-        "B": "interface GigabitEthernet0/0ip helper-address 172.20.255.1",
-        "C": "interface GigabitEthernet0/0ip helper-address 172.20.1.1",
-        "D": "interface GigabitEthernet0/1ip helper-address 172.20.254.1"
+        "A": "interface GigabitEthernet0/1\nip helper-address 172.20.255.11",
+        "B": "interface GigabitEthernet0/0\nip helper-address 172.20.255.1",
+        "C": "interface GigabitEthernet0/0\nip helper-address 172.20.1.1",
+        "D": "interface GigabitEthernet0/1\nip helper-address 172.20.254.1"
       },
       "answer": [
         "A"

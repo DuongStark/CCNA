@@ -32,10 +32,10 @@
       "question": "Refer to the exhibit.\nSwitch(config)#hostname R1\nR1(config)#interface FastEthernet0/1\nR1(config-if)#no switchport\nR1(config-if)#ip address 10.100.20.42 255.255.255.0\nR1(config-if)#line vty 0 4\nR1(config-line)#login An engineer booted a new switch and applied this configuration via the console port. Which additional configuration must be applied to allow administrators to authenticate directly to global configuration mode via Telnet using a local username and password?",
       "question_images": [],
       "options": {
-        "A": "R1(config)#username admin R1(config-if)#line vty 0 4 R1(config-line)#password p@ss1234",
-        "B": "R1(config)#username admin R1(config-if)#line vty 0 4 R1(config-line)#password p@ss1234 R1(config-line)#transport input telnet",
-        "C": "R1(config)#username admin secret p@ss1234 R1(config-if)#line vty 0 4 R1(config-line)#login local R1(config)#enable secret p@ss1234",
-        "D": "R1(config)#username admin privilege 15 secret p@ss1234 R1(config-if)#line vty 0 4 R1(config-line)#login local"
+        "A": "R1(config)#username admin\nR1(config-if)#line vty 0 4\nR1(config-line)#password p@ss1234",
+        "B": "R1(config)#username admin\nR1(config-if)#line vty 0 4\nR1(config-line)#password p@ss1234\nR1(config-line)#transport input telnet",
+        "C": "R1(config)#username admin secret p@ss1234\nR1(config-if)#line vty 0 4\nR1(config-line)#login local\nR1(config)#enable secret p@ss1234",
+        "D": "R1(config)#username admin privilege 15 secret p@ss1234\nR1(config-if)#line vty 0 4\nR1(config-line)#login local"
       },
       "answer": [
         "D"
@@ -59,10 +59,10 @@
         "q13.1_img1.jpeg"
       ],
       "options": {
-        "A": "no switchport trunk encapsulation isl switchport trunk encapsulation dot1q switchport trunk allowed vlan add 20",
-        "B": "switchport nonnegotiate no switchport trunk allowed vlan 5,10 switchport trunk allowed vlan 5,10,15,20",
-        "C": "no switchport mode trunk switchport trunk encapsulation isl switchport mode access vlan 20",
-        "D": "switchport mode dynamic channel-group 1 mode active switchport trunk allowed vlan 5,10,15,20"
+        "A": "no\nswitchport trunk encapsulation isl\nswitchport trunk encapsulation dot1q\nswitchport trunk allowed vlan add 20",
+        "B": "switchport nonnegotiate\nno\nswitchport trunk allowed vlan 5,10\nswitchport trunk allowed vlan 5,10,15,20",
+        "C": "no\nswitchport mode trunk\nswitchport trunk encapsulation isl\nswitchport mode access\nvlan 20",
+        "D": "switchport mode dynamic\nchannel-group 1 mode active\nswitchport trunk allowed vlan 5,10,15,20"
       },
       "answer": [
         "A"
@@ -85,7 +85,7 @@
       "question_images": [],
       "options": {
         "A": "RADIUS is most appropriate for dial authentication, but TACACS+ can be used for multiple types of authentication",
-        "B": "TACACS+ encrypts only password information and RADIUS encrypts the entire payload",
+        "B": "TACACS+ encrypts only\npassword information and RADIUS encrypts the entire payload",
         "C": "TACACS+ separates authentication and authorization, and RADIUS merges them",
         "D": "RADIUS logs all commands that are entered by the administrator, but TACACS+ logs only start, stop, and interim commands"
       },
@@ -165,8 +165,8 @@
       "options": {
         "A": "The designated port is FastEthernet 2/1",
         "B": "This is a root bridge",
-        "C": "The spanning-tree mode is Rapid PVST+",
-        "D": "The spanning-tree mode is PVST+",
+        "C": "The\nspanning-tree mode is Rapid PVST+",
+        "D": "The\nspanning-tree mode is PVST+",
         "E": "The root port is FastEthernet 2/1"
       },
       "answer": [
@@ -590,10 +590,10 @@
       "question": "An engineer is configuring NAT to translate the source subnet of 10.10.0.0/24 to any one of three addresses: 192.168.3.1, 192.168.3.2, or 192.168.3.3. Which configuration should be used?",
       "question_images": [],
       "options": {
-        "A": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\nroute-map permit 10.10.0.0 255.255.255.0 ip nat outside destination list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside",
-        "B": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.255 ip nat outside destination list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside",
-        "C": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.255 ip nat inside source list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside",
-        "D": "enable\nconfigure terminal ip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.254 ip nat inside source list 1 pool mypool\ninterface g1/1 ip nat inside\ninterface g1/2 ip nat outside"
+        "A": "enable\nconfigure terminal\nip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\nroute-map permit 10.10.0.0 255.255.255.0\nip nat outside destination list 1 pool mypool\ninterface g1/1\nip nat inside\ninterface g1/2\nip nat outside",
+        "B": "enable\nconfigure terminal\nip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.255\nip nat outside destination list 1 pool mypool\ninterface g1/1\nip nat inside\ninterface g1/2\nip nat outside",
+        "C": "enable\nconfigure terminal\nip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.255\nip nat inside source list 1 pool mypool\ninterface g1/1\nip nat inside\ninterface g1/2\nip nat outside",
+        "D": "enable\nconfigure terminal\nip nat pool mypool 192.168.3.1 192.168.3.3 prefix-length 30\naccess-list 1 permit 10.10.0.0 0.0.0.254\nip nat inside source list 1 pool mypool\ninterface g1/1\nip nat inside\ninterface g1/2\nip nat outside"
       },
       "answer": [
         "C"
@@ -618,7 +618,7 @@
         "A": "It load-balances traffic by assigning the same metric value to more than one route to the same destination in the IP routing table",
         "B": "It load-balances Layer 2 traffic along the path by flooding traffic out all interfaces configured with the same VLAN",
         "C": "It forwards multiple packets to the same destination over different routed links and data path",
-        "D": "It uses a shared virtual MAC and a virtual IP address to a group of routers that serve as the default gateway for hosts on a LAN"
+        "D": "It uses a shared virtual MAC and a virtual\nIP address to a group of routers that serve as the default gateway for hosts on a LAN"
       },
       "answer": [
         "D"
@@ -642,7 +642,7 @@
       "options": {
         "A": "transfers a configuration files from a server to a router on a congested link",
         "B": "transfers IOS images from a server to a router for firmware upgrades",
-        "C": "transfers a backup configuration file from a server to a switch using a username and password",
+        "C": "transfers a backup configuration file from a server to a switch using a\nusername and password",
         "D": "transfers files between file systems on a router"
       },
       "answer": [
@@ -667,10 +667,10 @@
         "q16.22_img1.jpeg"
       ],
       "options": {
-        "A": "R1 (config)#interface ethernet0/0 R1 (config)#encapsulation dot1q 20 R1(config)#ip address 10.20.20.1 255.255.255.0",
-        "B": "R1 (config)#interface ethernet0/0.20 R1 (config)#encapsulation dot1q 20 R1(config)#ip address 10.20.20.1 255.255.255.0",
-        "C": "R1 (config)#interface ethernet0/0.20 R1(config)#ip address 10.20.20.1 255.255.255.0",
-        "D": "R1 (config)#interface ethernet0/0 R1(config)#ip address 10.20.20.1 255.255.255.0"
+        "A": "R1 (config)#interface ethernet0/0\nR1 (config)#encapsulation dot1q 20\nR1(config)#ip address 10.20.20.1 255.255.255.0",
+        "B": "R1 (config)#interface ethernet0/0.20\nR1 (config)#encapsulation dot1q 20\nR1(config)#ip address 10.20.20.1 255.255.255.0",
+        "C": "R1 (config)#interface ethernet0/0.20\nR1(config)#ip address 10.20.20.1 255.255.255.0",
+        "D": "R1 (config)#interface ethernet0/0\nR1(config)#ip address 10.20.20.1 255.255.255.0"
       },
       "answer": [
         "B"

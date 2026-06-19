@@ -24,7 +24,7 @@ export default function OptionCard({
   if (showVi && showViBlock) viClasses.push(styles.viBlockOpen);
 
   const handleClick = () => {
-    if (disabled || revealed) return;
+    if (disabled) return;
     onSelect?.(letter);
   };
 
@@ -44,7 +44,7 @@ export default function OptionCard({
       type="button"
       className={classes.join(' ')}
       onClick={handleClick}
-      disabled={disabled || revealed}
+      disabled={disabled}
       aria-pressed={selected}
     >
       {isMultiple ? (

@@ -138,7 +138,7 @@
       "question": "Which two values or settings must be entered when configuring a new WLAN in the Cisco Wireless LAN Controller GUI? (Choose two)",
       "question_images": [],
       "options": {
-        "A": "management interface settings",
+        "A": "management\ninterface settings",
         "B": "QoS settings",
         "C": "ip address of one or more access points",
         "D": "SSID",
@@ -780,7 +780,7 @@
         "A": "to enable ‘box by box” configuration and deployment",
         "B": "to limit recurrent management costs",
         "C": "to reduce operational costs",
-        "D": "to support simpler password policies"
+        "D": "to support simpler\npassword policies"
       },
       "answer": [
         "C"
@@ -904,8 +904,8 @@
       "question": "Which type of protocol is VRRP?",
       "question_images": [],
       "options": {
-        "A": "uses dynamic IP address assignment",
-        "B": "uses a destination IP address 224.0.0.102 for router-to-router communication",
+        "A": "uses dynamic\nIP address assignment",
+        "B": "uses a destination\nIP address 224.0.0.102 for router-to-router communication",
         "C": "uses Cisco-proprietary First Hop Redundancy Protocol",
         "D": "allows two or more routers to act as a default gateway"
       },
@@ -1004,10 +1004,10 @@
       "question": "Refer to the exhibit.\nR1#\nGateway of last resort is 10.56.0.1 to network 0.0.0.0\nS* 0.0.0.0/0 [1/0] via 10.56.0.1\n10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks\nC 10.56.0.0/16 is directly connected, Null0\nC 10.56.0.0/26 is directly connected, Vlan58\nC 10.56.0.0/17 is directly connected, Vlan59\nC 10.56.0.0/24 is directly connected, Vlan60\nWhen router R1 receives a packet with destination IP address 10.56.0.62, through which interface does it route the packet?",
       "question_images": [],
       "options": {
-        "A": "Vlan59",
-        "B": "Vlan60",
+        "A": "vlan 59",
+        "B": "vlan 60",
         "C": "Null0",
-        "D": "Vlan58"
+        "D": "vlan 58"
       },
       "answer": [
         "D"
@@ -1161,7 +1161,7 @@
         "A": "Client Exclusion and SSH",
         "B": "Network Access Control State and SSH",
         "C": "802.1x and the MAC address of the server",
-        "D": "AAA Override and the IP address of the server"
+        "D": "AAA Override and the\nIP address of the server"
       },
       "answer": [
         "D"
@@ -1439,7 +1439,7 @@
       "question_images": [],
       "options": {
         "A": "personal 10-digit PIN and RSA certificate",
-        "B": "complex password and personal 10-digit PIN",
+        "B": "complex\npassword and personal 10-digit PIN",
         "C": "password of 8 to 15 characters and personal 12-digit PIN",
         "D": "fingerprint scanning and facial recognition"
       },
@@ -1618,10 +1618,10 @@
         "q14.76_img1.jpg"
       ],
       "options": {
-        "A": "vlan 73name VoIPe0/0switchport trunk allowed vlan 72,73switchport voice vlan 73",
-        "B": "vlan 73name VoIPe0/0switchport mode trunkchannel-group 73 mode active",
-        "C": "vlan 73name VoIPe0/0switchport voice vlan 73",
-        "D": "vlan73name VoIPe0/0switchport voice vlan dot1p"
+        "A": "vlan 73\nname VoIPe0/0\nswitchport trunk allowed vlan 72,73\nswitchport voice vlan 73",
+        "B": "vlan 73\nname VoIPe0/0\nswitchport mode trunk\nchannel-group 73 mode active",
+        "C": "vlan 73\nname VoIPe0/0\nswitchport voice vlan 73",
+        "D": "vlan 73\nname VoIPe0/0\nswitchport voice vlan dot1p"
       },
       "answer": "C",
       "answer_images": [],
@@ -1902,10 +1902,10 @@
         "q14.91_img1.jpg"
       ],
       "options": {
-        "A": "SwitchA(config-if-range)#channel-group 1 mode desirable",
-        "B": "SwitchA(config-if-range)#channel-group 1 mode passive",
-        "C": "SwitchA(config-if-range)#channel-group 1 mode auto",
-        "D": "SwitchA(config-if-range)#channel-group 1 mode active"
+        "A": "S witchA(config-if-range)#channel-group 1 mode desirable",
+        "B": "S witchA(config-if-range)#channel-group 1 mode passive",
+        "C": "S witchA(config-if-range)#channel-group 1 mode auto",
+        "D": "S witchA(config-if-range)#channel-group 1 mode active"
       },
       "answer": [
         "B"
@@ -1981,10 +1981,10 @@
         "q14.94_img1.jpg"
       ],
       "options": {
-        "A": "interface GigabitEthernet1/3switchport mode accessswitchport access vlan 10\n!\ninterface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 2,10",
-        "B": "interface GigabitEthernet1/3switchport mode accessswitchport access vlan 10\n!\ninterface GigabitEthernet1/24switchport mode trunk",
-        "C": "interface GigabitEthernet1/1switchport mode accessswitchport access vlan 11\n!\ninterface GigabitEthernet1/24switchport mode trunk",
-        "D": "interface GigabitEthernet1/1switchport access vlan 11\n!\ninterface GigabitEthernet1/24switchport mode trunkswitchport trunk allowed vlan 10,11"
+        "A": "interface GigabitEthernet1/3\nswitchport mode access\nswitchport access vlan 10\n!\ninterface GigabitEthernet1/24\nswitchport mode trunk\nswitchport trunk allowed vlan 2,10",
+        "B": "interface GigabitEthernet1/3\nswitchport mode access\nswitchport access vlan 10\n!\ninterface GigabitEthernet1/24\nswitchport mode trunk",
+        "C": "interface GigabitEthernet1/1\nswitchport mode access\nswitchport access vlan 11\n!\ninterface GigabitEthernet1/24\nswitchport mode trunk",
+        "D": "interface GigabitEthernet1/1\nswitchport access vlan 11\n!\ninterface GigabitEthernet1/24\nswitchport mode trunk\nswitchport trunk allowed vlan 10,11"
       },
       "answer": "B",
       "answer_images": [],
@@ -2003,10 +2003,10 @@
       "question": "A network administrator is evaluating network security in the aftermath of an attempted ARP spoofing attack. If Port-channel1 is the uplink interface of the access-layer switch toward the distribution-layer switch, which two configurations must the administrator configure on the access-layer switch to provide adequate protection? (Choose two)",
       "question_images": [],
       "options": {
-        "A": "ip dhcp snooping\n!\ninterface Port-channel1switchport port-security maximum 1switchport port-security",
-        "B": "ip dhcp snooping vlan 1-4094\nip dhcp snooping\n!\ninterface Port-channel1\nip dhcp snooping trust",
-        "C": "ip dhcp snooping vlan 1-4094\n!\ninterface Port-channel1switchport protectedswitchport port-security maximum 1",
-        "D": "ip arp inspection trust\n!\ninterface Port-channel1switchport port-security maximum 4094switchport port-security\nip verify source mac-check\nOption E\nip arp inspection vlan 1-4094\n!\ninterface Port-channel1\nip arp inspection trust"
+        "A": "ip dhcp snooping ! interface Port-channel1switchport port-security maximum 1switchport port-security",
+        "B": "ip dhcp snooping vlan 1-4094\nip dhcp snooping ! interface Port-channel1\nip dhcp snooping trust",
+        "C": "ip dhcp snooping vlan 1-4094 ! interface Port-channel1switchport protectedswitchport port-security maximum 1",
+        "D": "ip arp inspection trust ! interface Port-channel1switchport port-security maximum 4094switchport port-security ip verify source mac-check Option E\nip arp inspection vlan 1-4094 ! interface Port-channel1\nip arp inspection trust"
       },
       "answer": "B",
       "answer_images": [],
@@ -2188,10 +2188,10 @@
         "q14.102_img1.jpg"
       ],
       "options": {
-        "A": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode desirable\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode desirable",
-        "B": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode active\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 1 mode active",
-        "C": "SW2(config)#\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode on\nSW2(config-if)#\ninterface glgabitEthernet0/2\nSW2(config-if)#channel-group 1 mode on",
-        "D": "SW2(config \ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode auto\nSW2(config-if)#\ninterface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode auto"
+        "A": "SW2(config)# interface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode desirable\nSW2(config-if)# interface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode desirable",
+        "B": "SW2(config)# interface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode active\nSW2(config-if)# interface gigabitEthernet0/2\nSW2(config-if)#channel-group 1 mode active",
+        "C": "SW2(config)# interface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode on\nSW2(config-if)# interface glgabitEthernet0/2\nSW2(config-if)#channel-group 1 mode on",
+        "D": "SW2(config\ninterface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode auto\nSW2(config-if)# interface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode auto"
       },
       "answer": "B",
       "answer_images": [],

@@ -546,10 +546,10 @@
       "question": "The address block 192.168.32.0/24 must be subnetted into smaller networks. The engineer must meet these requirements:* Create 8 new subnets* Each subnet must accommodate 30 hosts* Interface VLAN 10 must use the last usable IP in the first new subnet* A Layer 3 interface is used\nWhich configuration must be applied to the interface?",
       "question_images": [],
       "options": {
-        "A": "no switchport mode accessip address 192.168.32.62 255.255.255.240",
-        "B": "switchportip address 192.168.32.65 255.255.255.240",
-        "C": "no switchport mode trunkip address 192.168.32.97 255.255.255.224",
-        "D": "no switchportip address 192.168.32.30 255.255.255.224"
+        "A": "no\nswitchport mode access\nip address 192.168.32.62 255.255.255.240",
+        "B": "switchport\nip address 192.168.32.65 255.255.255.240",
+        "C": "no\nswitchport mode trunk\nip address 192.168.32.97 255.255.255.224",
+        "D": "no switchport\nip address 192.168.32.30 255.255.255.224"
       },
       "answer": [
         "D"
@@ -651,8 +651,8 @@
       "question_images": [],
       "options": {
         "A": "switchport port-security mac-address abcd.abcd.abcd",
-        "B": "switchport port-security mac-address abcd.abcd.abcd vlan 4",
-        "C": "switchport port-security mac-address sticky abcd.abcd.abcd vlan 4",
+        "B": "switchport port-security mac-address abcd.abcd.abcd\nvlan 4",
+        "C": "switchport port-security mac-address sticky abcd.abcd.abcd\nvlan 4",
         "D": "switchport port-security mac-address abcd.abcd.abcd vlan voice"
       },
       "answer": [
@@ -907,7 +907,7 @@
       "question": "Refer to the exhibit.\nEIGRP: 192.168.12.0/24RIP: 192.168.12.0/27OSPF: 192.168.12.0/28\nHow does the router manage traffic to 192.168.12.16?",
       "question_images": [],
       "options": {
-        "A": "It selects the RIP route because it has the longest prefix inclusive of the destination address.",
+        "A": "It selects the R\nIP route because it has the longest prefix inclusive of the destination address.",
         "B": "It load-balances traffic between all three routes.",
         "C": "It chooses the OSPF route because it has the longest prefix inclusive of the destination address.",
         "D": "It chooses the EIGRP route because it has the lowest administrative distance."
@@ -982,10 +982,10 @@
       "question": "Two switches have been implemented and all interfaces are at the default configuration level. A trunk link must be implemented between two switches with these requirements:+ using an industry-standard trunking protocol+ permitting VLANs 1-10 and denying other VLANs\nHow must the interconnecting ports be configured?",
       "question_images": [],
       "options": {
-        "A": "switchport mode trunkswitchport trunk allowed vlans 1-10switchport trunk native vlan 11",
-        "B": "switchport mode trunkswitchport trunk encapsulation dot1qswitchport trunk allowed vlans 1-10",
-        "C": "switchport mode dynamic desirablechannel-group 1 mode desirableswitchport trunk encapsulation islswitchport trunk allowed vlan except 11-4094",
-        "D": "switchport mode dynamicchannel-protocol lacpswitchport trunk allowed vlans 1-10"
+        "A": "switchport mode trunk\nswitchport trunk allowed vlans 1-10\nswitchport trunk native vlan 11",
+        "B": "switchport mode trunk\nswitchport trunk encapsulation dot1q switchport trunk allowed vlans 1-10",
+        "C": "switchport mode dynamic desirable\nchannel-group 1 mode desirable\nswitchport trunk encapsulation isl\nswitchport trunk allowed vlan except 11-4094",
+        "D": "switchport mode dynamic\nchannel-protocol lacp\nswitchport trunk allowed vlans 1-10"
       },
       "answer": [
         "B"
@@ -1088,11 +1088,11 @@
         "q11.43_img1.jpg"
       ],
       "options": {
-        "A": "ip route 0.0.0.0 0.0.0.0 198.51.100.1ip route 0.0.0.0 0.0.0.0 203.0.113.1 2",
-        "B": "ip route 0.0.0.0 128.0.0.0 198.51.100.1ip route 128.0.0.0 128.0.0.0 203.0.113.1ip route 0.0.0.0 0.0.0.0 198.51.100.1ip route 0.0.0.0 0.0.0.0 203.0.113.1",
-        "C": "ip route 0.0.0.0 128.0.0.0 198.51.100.1ip route 128.0.0.0 128.0.0.0 203.0.113.1",
-        "D": "ip route 0.0.0.0 0.0.0.0 198.51.100.1 255ip route 0.0.0.0 0.0.0.0 203.0.113.1 255ip route 128.0.0.0 128.0.0.0 203.0.113.1",
-        "E": "ip route 0.0.0.0 0.0.0.0 198.51.100.1ip route 0.0.0.0 0.0.0.0 203.0.113.1"
+        "A": "ip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1 2",
+        "B": "ip route 0.0.0.0 128.0.0.0 198.51.100.1\nip route 128.0.0.0 128.0.0.0 203.0.113.1\nip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1",
+        "C": "ip route 0.0.0.0 128.0.0.0 198.51.100.1\nip route 128.0.0.0 128.0.0.0 203.0.113.1",
+        "D": "ip route 0.0.0.0 0.0.0.0 198.51.100.1 255\nip route 0.0.0.0 0.0.0.0 203.0.113.1 255\nip route 128.0.0.0 128.0.0.0 203.0.113.1",
+        "E": "ip route 0.0.0.0 0.0.0.0 198.51.100.1\nip route 0.0.0.0 0.0.0.0 203.0.113.1"
       },
       "answer": [
         "B"
@@ -1115,10 +1115,10 @@
       "question": "Refer to the exhibit.\nRouter#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nRouter(config)#hostname R1\nR1(config)#ip domain-name CC-Net.com\nR1(config)#enable secret Passfornewuser\nR1(config)#line vty 0 15\nR1(config-line)#transport input ssh\nR1(config-line)#login local\nA network administrator is configuring a router for user access via SSH. The service-password encryption command has been issued. The configuration must meet these requirements:\n– Create the username as CCUser.– Create the password as NA!2$cc.– Encrypt the user password.\nWhat must be configured to meet the requirements?",
       "question_images": [],
       "options": {
-        "A": "username CCUser password NA!2$ccenable password level 5 NA!2$cc",
-        "B": "username CCUser privilege 15 password NA!2$ccenable secret 0 NA!2$cc",
+        "A": "username CCUser\npassword NA!2$cc\nenable password level 5 NA!2$cc",
+        "B": "username CCUser privilege 15\npassword NA!2$cc\nenable secret 0 NA!2$cc",
         "C": "username CCUser secret NA!2$cc",
-        "D": "username CCUser privilege 10 password NA!2$cc"
+        "D": "username CCUser privilege 10\npassword NA!2$cc"
       },
       "answer": [
         "C"
@@ -1217,10 +1217,10 @@
         "q11.48_img1.jpg"
       ],
       "options": {
-        "A": "interface range gigabitethernet0/0/0 -15channel-group 1 mode desirable",
-        "B": "interface range gigabitethernet0/0/0 -15channel-group 1 mode on",
-        "C": "interface port-channel 1channel-group 1 mode auto",
-        "D": "interface port-channel 1channel-group 1 mode passive"
+        "A": "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode desirable",
+        "B": "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode on",
+        "C": "interface port-channel 1\nchannel-group 1 mode auto",
+        "D": "interface port-channel 1\nchannel-group 1 mode passive"
       },
       "answer": [
         "D"
@@ -1320,10 +1320,10 @@
       "question": "Refer to the exhibit.\nSW1#show etherchannel\nChannel-group listing:\n----------------------\nGroup: 2\n--------\nGroup state = L2\nPorts: 1 Maxports = 8\nPort-channels: 1 Max Portchannels = 1\nProtocol: PAGP\nA network engineer updates the existing configuration on interface fastethernet1/1 switch SW1. It must establish an EtherChannel by using the same group designation with another vendor switch. Which configuration must be performed to complete the process?",
       "question_images": [],
       "options": {
-        "A": "interface port-channel 2channel-group 2 mode desirable",
-        "B": "interface fastethernet 1/1channel-group 2 mode on",
-        "C": "interface port-channel 2channel-group 2 mode auto",
-        "D": "interface fastethernet 1/1channel-group 2 mode active"
+        "A": "interface port-channel 2\nchannel-group 2 mode desirable",
+        "B": "interface fastethernet 1/1\nchannel-group 2 mode on",
+        "C": "interface port-channel 2\nchannel-group 2 mode auto",
+        "D": "interface fastethernet 1/1\nchannel-group 2 mode active"
       },
       "answer": [
         "D"
@@ -1423,7 +1423,7 @@
         "A": "Reduce inconsistencies in the network configuration.",
         "B": "Increase recurrent management costs.",
         "C": "Enable “box by box” configuration and deployment.",
-        "D": "Decipher simple password policies."
+        "D": "Decipher simple\npassword policies."
       },
       "answer": [
         "A"

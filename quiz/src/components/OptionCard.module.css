@@ -38,7 +38,8 @@
 }
 
 .card:disabled {
-  cursor: default;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .selected {
@@ -72,10 +73,11 @@
   border-color: var(--color-correct-border);
   color: var(--color-correct);
   animation: popIn 280ms ease-out forwards;
+  cursor: pointer;
 }
 
 .correct:hover:not(:disabled) {
-  background: var(--color-correct-bg);
+  filter: brightness(0.95);
 }
 
 .incorrect {
@@ -83,10 +85,11 @@
   border-color: var(--color-incorrect-border);
   color: var(--color-incorrect);
   animation: shake 280ms ease-out forwards;
+  cursor: pointer;
 }
 
 .incorrect:hover:not(:disabled) {
-  background: var(--color-incorrect-bg);
+  filter: brightness(0.95);
 }
 
 .badge {

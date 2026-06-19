@@ -138,10 +138,10 @@
         "q15.6_img1.jpg"
       ],
       "options": {
-        "A": "10.40.1.0/3010.139.2.0/3010.12.191.0/3010.129.9.0/25",
-        "B": "10.129.9.0/2310.139.2.0/3010.129.9.0/2510.22.1.0/24",
-        "C": "10.129.9.0/2310.40.1.0/3010.12.191.0/3010.129.9.0/25",
-        "D": "10.129.9.0/2310.139.2.0/3010.12.191.0/3010.129.9.0/25"
+        "A": "10.40.1.0/30\n10.139.2.0/30\n10.12.191.0/30\n10.129.9.0/25",
+        "B": "10.129.9.0/23\n10.139.2.0/30\n10.129.9.0/25\n10.22.1.0/24",
+        "C": "10.129.9.0/23\n10.40.1.0/30\n10.12.191.0/30\n10.129.9.0/25",
+        "D": "10.129.9.0/23\n10.139.2.0/30\n10.12.191.0/30\n10.129.9.0/25"
       },
       "answer": "D",
       "answer_images": [],
@@ -214,10 +214,10 @@
         "q15.9_img1.jpg"
       ],
       "options": {
-        "A": "interface Gi1/0/34switchport mode trunkswitchport trunk allowed vlan 400, 4041switchport voice vlan 4041",
-        "B": "interface Gi1/0/34switchport mode accessswitchport access vlan 4041switchport voice vlan 400",
-        "C": "interface Gi1/0/34switchport mode trunkswitchport trunk allowed native vlan 400switchport voice vlan 4041",
-        "D": "interface Gi1/0/34switchport mode accessswitchport access vlan 400switchport voice vlan 4041"
+        "A": "interface Gi1/0/34\nswitchport mode trunk\nswitchport trunk allowed vlan 400, 4041\nswitchport voice vlan 4041",
+        "B": "interface Gi1/0/34\nswitchport mode access\nswitchport access vlan 4041\nswitchport voice vlan 400",
+        "C": "interface Gi1/0/34\nswitchport mode trunk\nswitchport trunk allowed native vlan 400\nswitchport voice vlan 4041",
+        "D": "interface Gi1/0/34\nswitchport mode access\nswitchport access vlan 400\nswitchport voice vlan 4041"
       },
       "answer": "D",
       "answer_images": [],
@@ -396,10 +396,10 @@
       "question": "Which guideline helps to create a secure password policy?",
       "question_images": [],
       "options": {
-        "A": "forbidding users from storing passwords in a password manager",
+        "A": "forbidding users from storing passwords in a\npassword manager",
         "B": "allowing passwords used by service accounts to never expire",
         "C": "requiring complex, lengthy passwords instead of simple, short ones",
-        "D": "restricting password sharing to a very small group"
+        "D": "restricting\npassword sharing to a very small group"
       },
       "answer": [
         "C"
@@ -420,7 +420,7 @@
       "question": "Refer to the exhibit.\nSW1#conf t\nEnter configuration commands, one per line. End with CNTL/Z.\nSW1(config)#enable password test!2E\nSW1(config)#line con 0\nSW1(config-line)#password Labtest32!\nSH1(config-line)#exit\nSW1(config)#\nA network engineer started to change default settings on SW1 to allow remote access and has entered the following in the configuration mode:\nSW1#(config)#line vty 0 15SW1#(config-line)#password Labtest32!\nWhich set of commands are needed to allow only SSH access and hide passwords in the running configuration?",
       "question_images": [],
       "options": {
-        "A": "SW1(config-line)#login local\nSW1(config-line)#exit\nSW1(config)#enable secret test\n!2E",
+        "A": "SW1(config-line)#login local\nSW1(config-line)#exit\nSW1(config)#enable secret test !2E",
         "B": "SW1(config-line)#transport input ssh\nSW1(config-line)#exit\nSW1(config)#service password-encryption",
         "C": "SW1(config-line)#login local\nSW1(config-line)#exit",
         "D": "SW1(config-line)#exit\nSW1(config)#aaa new-model"
@@ -1125,7 +1125,7 @@
       ],
       "options": {
         "A": "Run the ifconfig command on client A to confirm that its IP and subnet mask fall within 255.254.0.0.",
-        "B": "Run the ipconfig command on client A and ensure that the IP address is within the host range of 10.0.0.1 – 10.0.255.254.",
+        "B": "Run the ipconfig command on client A and ensure that the\nIP address is within the host range of 10.0.0.1 – 10.0.255.254.",
         "C": "Run the ipconfig command on client A to confirm that the correct 10.0.0.1 default gateway is used.",
         "D": "Run the ifconfig command on client A to confirm that the subnet mask is set to 255.255.128.0"
       },
@@ -1151,8 +1151,8 @@
       "question_images": [],
       "options": {
         "A": "ip access-list extended Services\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
-        "B": "no \nip access-list extended Services\nip access-list extended Services\n30 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
-        "C": "no \nip access-list extended Services\nip access-list extended Services\npermit udp 10.0.0.0 0.255.255.255 any eq 53\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\ndeny \nip any any log",
+        "B": "no ip access-list extended Services\nip access-list extended Services\n30 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain",
+        "C": "no ip access-list extended Services\nip access-list extended Services\npermit udp 10.0.0.0 0.255.255.255 any eq 53\npermit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain\ndeny ip any any log",
         "D": "ip access-list extended Services\n35 permit tcp 10.0.0.0 0.255.255.255 host 198.51.100.11 eq domain"
       },
       "answer": [
@@ -1286,7 +1286,7 @@
       "options": {
         "A": "It improves real-time threat detection.",
         "B": "It manages firewall rule sets.",
-        "C": "It enforces password complexity requirements.",
+        "C": "It enforces\npassword complexity requirements.",
         "D": "It controls VPN access permissions."
       },
       "answer": [
@@ -1728,7 +1728,7 @@
       "question": "What is the main purpose of SSH management access?",
       "question_images": [],
       "options": {
-        "A": "To validate management access with username and domain name only",
+        "A": "To validate management access with\nusername and domain name only",
         "B": "To allow passwords protected with HTTPS encryption to be sent",
         "C": "To support DES 56-bit and 3DES (168-bit) ciphers",
         "D": "To enable secured access to the inbound management interface"
@@ -1955,10 +1955,10 @@
       "question": "Refer to the exhibit.\nSW1#show etherchannel summary\nFlags: D - down P - in port-channel\nI - stand-alone s - suspended\nH - Hot-standby (LACP only)\nR - Layer3 S - Layer2\nU - in use f - failed to allocate aggregator\nu - unsuitable for bundling\nw - waiting to be aggregated\nd - default port\nA - formed by auto LAG\nNumber of channel-groups in use: 1\nNumber of aggregators: 2\nGroup Port-channel Protocol Ports\n------+-------------+-----------+-----------------------------------------------\n1 Po1 (RU) LACP Et0/0(P) Et0/1(P)\nA network engineer is adding another physical interface as a new member to the existing Port-Channel1 bundle. Which command set must be configured on the new interface to complete the process?",
       "question_images": [],
       "options": {
-        "A": "switchport mode trunkchannel-group 1 mode active",
-        "B": "no switchportchannel-group 1 mode active",
-        "C": "no switchportchannel-group 1 mode on",
-        "D": "switchportswitchport mode trunk"
+        "A": "switchport mode trunk\nchannel-group 1 mode active",
+        "B": "no switchport\nchannel-group 1 mode active",
+        "C": "no switchport\nchannel-group 1 mode on",
+        "D": "switchport\nswitchport mode trunk"
       },
       "answer": [
         "B"
@@ -1982,10 +1982,10 @@
         "q15.83_img1.jpg"
       ],
       "options": {
-        "A": "interface GigabitEthernet0/0ip address 10.10.2.10 255.255.252.0",
-        "B": "interface GigabitEthernet0/0.3encapsulation dot1Q 10ip address 10.10.2.10 255.255.255.252",
-        "C": "interface GigabitEthernet0/0.10encapsulation dot1Q 3ip address 10.10.2.10 255.255.254.0",
-        "D": "interface GigabitEthernet0/0.3encapsulation dot1Q 3 nativeip address 10.10.2.10 255.255.252.0"
+        "A": "interface GigabitEthernet0/0\nip address 10.10.2.10 255.255.252.0",
+        "B": "interface GigabitEthernet0/0.3\nencapsulation dot1Q 10\nip address 10.10.2.10 255.255.255.252",
+        "C": "interface GigabitEthernet0/0.10\nencapsulation dot1Q 3\nip address 10.10.2.10 255.255.254.0",
+        "D": "interface GigabitEthernet0/0.3\nencapsulation dot1Q 3 native\nip address 10.10.2.10 255.255.252.0"
       },
       "answer": [
         "C"
@@ -2135,10 +2135,10 @@
         "q15.98_img1.jpg"
       ],
       "options": {
-        "A": "IP address: 10.0.63.80Subnet mask: 255.255.255.224Default gateway: 10.0.71.0DHCP server: 10.0.63.8",
-        "B": "IP address: 10.0.71.16Subnet mask: 255.255.255.224Default gateway: 10.0.71.1DNS server: 10.0.63.5",
-        "C": "IP address: 10.0.63.80Subnet mask: 255.255.255.0Default gateway: 10.0.71.1DNS server: 10.0.63.5",
-        "D": "IP address: 10.0.71.16Subnet mask: 255.255.255.0Default gateway: 10.0.71.0DHCP server: 10.0.63.8"
+        "A": "IP address: 10.0.63.80\nSubnet mask: 255.255.255.224\nDefault gateway: 10.0.71.0\nDHCP server: 10.0.63.8",
+        "B": "IP address: 10.0.71.16\nSubnet mask: 255.255.255.224\nDefault gateway: 10.0.71.1\nDNS server: 10.0.63.5",
+        "C": "IP address: 10.0.63.80\nSubnet mask: 255.255.255.0\nDefault gateway: 10.0.71.1\nDNS server: 10.0.63.5",
+        "D": "IP address: 10.0.71.16\nSubnet mask: 255.255.255.0\nDefault gateway: 10.0.71.0\nDHCP server: 10.0.63.8"
       },
       "answer": "B",
       "answer_images": [],

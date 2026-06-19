@@ -59,10 +59,10 @@
         "q13.6_img1.jpg"
       ],
       "options": {
-        "A": "Configure the switchport trunk allowed vlan 300 command on SW1 port-channel 1",
-        "B": "Configure the switchport trunk allowed vlan 300 command on interface Fa0/2 on SW1",
-        "C": "Configure the switchport trunk allowed vlan add 300 command on interface Fa0/2 on SW2",
-        "D": "Configure the switchport trunk allowed vlan add 300 command on SW1 port-channel 1"
+        "A": "Configure the\nswitchport trunk allowed vlan 300command on SW1 port-channel 1",
+        "B": "Configure the\nswitchport trunk allowed vlan 300command on\ninterface Fa0/2 on SW1",
+        "C": "Configure the\nswitchport trunk allowed vlan add 300 command on\ninterface Fa0/2 on SW2",
+        "D": "Configure the\nswitchport trunk allowed vlan add 300 command on SW1 port-channel 1"
       },
       "answer": [
         "D"
@@ -470,10 +470,10 @@
         "q13.30_img1.jpg"
       ],
       "options": {
-        "A": "R14#\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1500\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0",
-        "B": "R14#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 255\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14\nR86#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.86",
-        "C": "R14#\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 255\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0",
-        "D": "R14#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10router-id 10.10.1.14network 10.10.1.14 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1400\nrouter ospf 10router-id 10.10.1.86network 10.10.1.86 0.0.0.0 area 0network 10.73.65.64 0.0.0.3 area 0"
+        "A": "R14#\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 0\nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.14\nnetwork 10.10.1.14 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.86\nnetwork 10.10.1.86 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0",
+        "B": "R14#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 255\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.14\nR86#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.86",
+        "C": "R14#\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf priority 255\nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.14\nnetwork 10.10.1.14 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1400\nrouter ospf 10\nrouter-id 10.10.1.86\nnetwork 10.10.1.86 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0",
+        "D": "R14#\ninterface Loopback0\nip ospf 10 area 0\ninterface FastEthernet0/0\nip address 10.73.65.65 255.255.255.252\nip ospf 10 area 0\nip mtu 1500\nrouter ospf 10\nrouter-id 10.10.1.14\nnetwork 10.10.1.14 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0\nR86#\ninterface FastEthernet0/0\nip address 10.73.65.66 255.255.255.252\nip mtu 1400\nrouter ospf 10\nrouter-id 10.10.1.86\nnetwork 10.10.1.86 0.0.0.0 area 0\nnetwork 10.73.65.64 0.0.0.3 area 0"
       },
       "answer": [
         "B"
@@ -799,7 +799,7 @@
       "options": {
         "A": "Provide data services faster.",
         "B": "Enable network segmentation.",
-        "C": "Mitigate spanning-tree loop avoidance.",
+        "C": "Mitigate\nspanning-tree loop avoidance.",
         "D": "Implement granular QoS."
       },
       "answer": [
@@ -950,7 +950,7 @@
         "A": "OldR(config)#router ospf 1\nOldR(config-router)#no router-id 192.168.1.1",
         "B": "OldR(config)#interface g0/0/0\nOldR(config-if)#ip ospf dead-interval 15",
         "C": "OldR(config)#interface g0/0/0\nOldR(config-if)#ip ospf hello-interval 15",
-        "D": "OldR(config)#router ospf 1\nOldR(config-router)# network 192.168.1.0 255.255.255.0 area 2"
+        "D": "OldR(config)#router ospf 1\nOldR(config-router)#network 192.168.1.0 255.255.255.0 area 2"
       },
       "answer": [
         "A"
@@ -1254,10 +1254,10 @@
       "question": "A network engineer must configure an access list on a new Cisco IOS router. The access list must deny HTTP traffic to network 10.125.128.32/27 from the 192.168.240.0/20 network, but it must allow the 192.168.240.0/20 network to reach the rest of the 10.0.0.0/8 network. Which configuration must the engineer apply?",
       "question_images": [],
       "options": {
-        "A": "ip access-list extended deny_outbound\n10 deny tcp 10.125.128.32 255.255.255.224 192.168.240.0 255.255.240.0 eq 443\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit \nip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0",
-        "B": "ip access-list extended deny_outbound\n10 permit \nip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit \nip any any",
-        "C": "ip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n20 permit \nip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255\n30 deny \nip any any log",
-        "D": "ip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 any eq 80\n20 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n30 permit \nip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255"
+        "A": "ip access-list extended deny_outbound\n10 deny tcp 10.125.128.32 255.255.255.224 192.168.240.0 255.255.240.0 eq 443\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit ip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0",
+        "B": "ip access-list extended deny_outbound\n10 permit ip 192.168.240.0 255.255.240.0 10.0.0.0 255.0.0.0\n20 deny tcp 192.168.240.0 255.255.240.0 10.125.128.32 255.255.255.224 eq 443\n30 permit ip any any",
+        "C": "ip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n20 permit ip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255\n30 deny ip any any log",
+        "D": "ip access-list extended deny_outbound\n10 deny tcp 192.168.240.0 0.0.15.255 any eq 80\n20 deny tcp 192.168.240.0 0.0.15.255 10.125.128.32 0.0.0.31 eq 80\n30 permit ip 192.168.240.0 0.0.15.255 10.0.0.0 0.255.255.255"
       },
       "answer": [
         "C"
@@ -1355,8 +1355,8 @@
       "question_images": [],
       "options": {
         "A": "manually control and configure IP addresses on network devices",
-        "B": "reduce administration time in managing IP address ranges for clients",
-        "C": "control the length of time an IP address is used by a network device",
+        "B": "reduce administration time in managing\nIP address ranges for clients",
+        "C": "control the length of time an\nIP address is used by a network device",
         "D": "dynamic control over the best path to reach an IP address",
         "E": "access a website by name instead of by IP address"
       },
@@ -1508,10 +1508,10 @@
         "q13.82_img1.jpg"
       ],
       "options": {
-        "A": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode desirable\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
-        "B": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode on\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
-        "C": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode active\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
-        "D": "SW1(config)#\ninterface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode auto\nSW2(config)#\ninterface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive"
+        "A": "SW1(config)# interface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode desirable\nSW2(config)# interface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
+        "B": "SW1(config)# interface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode on\nSW2(config)# interface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
+        "C": "SW1(config)# interface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode active\nSW2(config)# interface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive",
+        "D": "SW1(config)# interface range f0/13 -14\nSW1(config-if-range)#channel-group 1 mode auto\nSW2(config)# interface range f0/13 -14\nSW2(config-if-range)#channel-group 1 mode passive"
       },
       "answer": "C",
       "answer_images": [],
@@ -1531,11 +1531,11 @@
       "question": "An administrator is configuring a Cisco Catalyst switch so that it will accept management connections only from hosts in the 203.0.113.0/24 network. Other traffic passing through the switch must transit without interruption. Which two configurations must the engineer apply to the router? (Choose two)",
       "question_images": [],
       "options": {
-        "A": "ip access-list extended Managementpermit tcp any range 22 23 203.0.113.0 0.0.0.255",
-        "B": "line vty 0 15access-class Management in",
-        "C": "ip access-list standard Managementpermit 203.0.113.0 255.255.255.0",
-        "D": "interface range vlan 1 – 4094ip access-group Management out",
-        "E": "ip access-list standard Managementpermit 203.0.113.0 0.0.0.255"
+        "A": "ip access-list extended Management\npermit tcp any range 22 23 203.0.113.0 0.0.0.255",
+        "B": "line vty 0 15\naccess-class Management in",
+        "C": "ip access-list standard Management\npermit 203.0.113.0 255.255.255.0",
+        "D": "interface range vlan 1-4094\nip access-group Management out",
+        "E": "ip access-list standard Management\npermit 203.0.113.0 0.0.0.255"
       },
       "answer": [
         "B",
@@ -1585,10 +1585,10 @@
         "q13.85_img1.jpg"
       ],
       "options": {
-        "A": "R1(config)#access-list 1 permit 192.168.2.10\nR1(config)#access-list 1 deny any\nR1(config)#\ninterface g0/1\nR1(config-if)#\nip access-group 1 out",
-        "B": "R2(config)#access-list 1 deny 192.168.2.10\nR2(config)#access-list 1 permit any\nR2(config)#\ninterface g0/1\nR2(config-if)#\nip access-group 1 out",
-        "C": "R2(config)#access-list 1 permit 192.168.2.10\nR2(config)#access-list 1 deny 192.168.2.0 0.0.0.255\nR2(config)#\ninterface g0/1\nR2(config)#\nip access-group 1 in",
-        "D": "R1(config)#access-list 1 deny 192.168.2.10\nR1(config)#access-list 1 permit 192.168.2.0 0.0.0.255\nR1(config)#\ninterface g0/0\nR1(config-if)#\nip access-group 1 in"
+        "A": "R1(config)#access-list 1 permit 192.168.2.10\nR1(config)#access-list 1 deny any\nR1(config)# interface g0/1\nR1(config-if)# ip access-group 1 out",
+        "B": "R2(config)#access-list 1 deny 192.168.2.10\nR2(config)#access-list 1 permit any\nR2(config)# interface g0/1\nR2(config-if)# ip access-group 1 out",
+        "C": "R2(config)#access-list 1 permit 192.168.2.10\nR2(config)#access-list 1 deny 192.168.2.0 0.0.0.255\nR2(config)# interface g0/1\nR2(config)# ip access-group 1 in",
+        "D": "R1(config)#access-list 1 deny 192.168.2.10\nR1(config)#access-list 1 permit 192.168.2.0 0.0.0.255\nR1(config)# interface g0/0\nR1(config-if)# ip access-group 1 in"
       },
       "answer": "B",
       "answer_images": [],
@@ -1685,10 +1685,10 @@
         "q13.89_img1.jpg"
       ],
       "options": {
-        "A": "router ospf 100network 10.120.10.0 0.0.0.255 area 0",
-        "B": "router ospf 100 area 0network 10.120.10.0 0.0.0.255",
-        "C": "router ospf 120network 10.120.10.0 255.255.255.0 area 0ip route 10.120.10.0 255.255.255.0 fa0/1",
-        "D": "router ospf 100network 10.120.10.0 255.255.255.0 area 0"
+        "A": "router ospf 100\nnetwork 10.120.10.0 0.0.0.255 area 0",
+        "B": "router ospf 100 area 0\nnetwork 10.120.10.0 0.0.0.255",
+        "C": "router ospf 120\nnetwork 10.120.10.0 255.255.255.0 area 0\nip route 10.120.10.0 255.255.255.0 fa0/1",
+        "D": "router ospf 100\nnetwork 10.120.10.0 255.255.255.0 area 0"
       },
       "answer": [
         "A"
@@ -1736,10 +1736,10 @@
         "q13.91_img1.jpg"
       ],
       "options": {
-        "A": "Switch(config-if)#switchport mode dynamicSwitch(config-if}#switchport accessvlan 100,105\nSwitch(config-if)#switchport trunk native vlan 1",
-        "B": "Switch(config-if)#switchport mode access\nSwitch(config-if)#switchport trunkencapsulation dot1q\nSwitch(config-if)#switchport access vlan 100.105\nSwitch(config-if)#switchport trunk native vlan 3",
-        "C": "Switch(config-if)#switchport mode trunk\nSwitch(config-if)# switch port trunk encapsulation isl\nSwitch(config-if)#switchport trunk allowed vlan 100,105\nSwitch(config-if)#s witch port trunk native vlan 1",
-        "D": "Switch(config-if)#switchport mode trunk\nSwitch(config-if)#switchport trunk encapsulation dot1q\nSwitch(config-if)#switchport trunk allowed vlan 100,105Switch(config if)#switchport trunk native vlan 3"
+        "A": "Switch(config-if)#switchport mode dynamic\nSwitch(config-if)#switchport access vlan 100,105\nSwitch(config-if)#switchport trunk native vlan 1",
+        "B": "Switch(config-if)#switchport mode access\nSwitch(config-if)#switchport trunk encapsulation dot1q\nSwitch(config-if)#switchport access vlan 100,105\nSwitch(config-if)#switchport trunk native vlan 3",
+        "C": "Switch(config-if)#switchport mode trunk\nSwitch(config-if)#switchport trunk encapsulation isl\nSwitch(config-if)#switchport trunk allowed vlan 100,105\nSwitch(config-if)#switchport trunk native vlan 1",
+        "D": "Switch(config-if)#switchport mode trunk\nSwitch(config-if)#switchport trunk encapsulation dot1q\nSwitch(config-if)#switchport trunk allowed vlan 100,105\nSwitch(config-if)#switchport trunk native vlan 3"
       },
       "answer": "D",
       "answer_images": [],
@@ -1942,7 +1942,7 @@
         "A": "Authentication controls the system processes a user accesses, and authorization logs the activities the user initiates.",
         "B": "Authentication identifies a user who is attempting to access a system, and authorization validates the user s password",
         "C": "Authentication identifies and verifies a user who is attempting to access a system, and authorization controls the tasks the user performs",
-        "D": "Authentication verifies a username and password, and authorization handles the communication between the authentication agent and the user database"
+        "D": "Authentication verifies a\nusername and password, and authorization handles the communication between the authentication agent and the user database"
       },
       "answer": [
         "C"

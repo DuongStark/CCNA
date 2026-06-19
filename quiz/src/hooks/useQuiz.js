@@ -73,11 +73,14 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
 
   const selectAnswer = useCallback(
     (key) => {
-      if (isRevealed) return;
       if (!currentQuestion) return;
       const upper = String(key).toUpperCase();
       if (!VALID_KEYS.includes(upper)) return;
       if (!currentQuestion.options || !(upper in currentQuestion.options)) return;
+      // If question was already revealed, un-reveal it to allow re-answering
+      if (isRevealed) {
+        setIsRevealed(false);
+      }
       setSelectedAnswer((prev) => {
         if (isMultiple) {
           const set = new Set(prev.split('').filter(Boolean));
@@ -92,7 +95,10 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
   );
 
   const confirmAnswer = useCallback(() => {
-    if (isRevealed || !currentQuestion || !selectedAnswer) return;
+    if (!currentQuestion || !selectedAnswer) return;
+    // If already revealed with same answer, do nothing
+    if (isRevealed && selectedAnswer === savedAnswers[currentIndex]) return;
+
     const rawAnswer = Array.isArray(currentQuestion.answer)
       ? currentQuestion.answer.join('')
       : String(currentQuestion.answer || '');
@@ -100,8 +106,26 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
     const userNorm = normalizeAnswerKey(selectedAnswer);
     const correct = correctNorm === userNorm;
 
+    // Handle re-answering: reverse old result if exists
+    const oldResult = results[currentIndex];
+    if (oldResult !== null) {
+      const oldSaved = savedAnswers[currentIndex];
+      const oldCorrect = normalizeAnswerKey(
+        Array.isArray(currentQuestion.answer)
+          ? currentQuestion.answer.join('')
+          : String(currentQuestion.answer || '')
+      ) === normalizeAnswerKey(oldSaved);
+      // Reverse old score
+      if (oldCorrect) {
+        setScore((s) => s - 1);
+      } else {
+        // Remove from wrongAnswers
+        const oldUid = currentQuestion._uid || currentQuestion.id;
+        setWrongAnswers((prev) => prev.filter((w) => w.uid !== oldUid || w.userAnswer !== normalizeAnswerKey(oldSaved)));
+      }
+    }
+
     setIsRevealed(true);
-    // Save the selected answer for this question
     setSavedAnswers((prev) => {
       const next = [...prev];
       next[currentIndex] = selectedAnswer;
@@ -117,22 +141,24 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
       setStreak((s) => s + 1);
     } else {
       setStreak(0);
-      setWrongAnswers((prev) => [
-        ...prev,
-        {
+      setWrongAnswers((prev) => {
+        // Avoid duplicate entries
+        const uid = currentQuestion._uid || currentQuestion.id;
+        const filtered = prev.filter((w) => !(w.uid === uid));
+        return [...filtered, {
           id: currentQuestion.id,
-          uid: currentQuestion._uid || currentQuestion.id,
+          uid,
           question: currentQuestion.question,
           options: currentQuestion.options,
           explanation: currentQuestion.explanation,
           userAnswer: userNorm,
           correctAnswer: correctNorm,
-        },
-      ]);
+        }];
+      });
     }
     const idForSrs = currentQuestion._uid || currentQuestion.id;
     recordAnswer(idForSrs, correct);
-  }, [isRevealed, currentQuestion, selectedAnswer, recordAnswer, currentIndex]);
+  }, [isRevealed, currentQuestion, selectedAnswer, recordAnswer, currentIndex, results, savedAnswers]);
 
   const nextQuestion = useCallback(() => {
     if (!isRevealed) return;
@@ -143,7 +169,8 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
     const nextIdx = currentIndex + 1;
     setCurrentIndex(nextIdx);
     // Restore state if this question was already visited
-    if (results[nextIdx] !== null) {
+    const wasAnswered = results[nextIdx] !== null || savedAnswers[nextIdx] !== '';
+    if (wasAnswered) {
       setSelectedAnswer(savedAnswers[nextIdx] || '');
       setIsRevealed(true);
     } else {
@@ -157,7 +184,8 @@ export default function useQuiz(questions, mode = 'sequential', initialState = n
       if (i < 0 || i >= orderedQuestions.length) return;
       setCurrentIndex(i);
       // Restore state if this question was already visited
-      if (results[i] !== null) {
+      const wasAnswered = results[i] !== null || savedAnswers[i] !== '';
+      if (wasAnswered) {
         setSelectedAnswer(savedAnswers[i] || '');
         setIsRevealed(true);
       } else {
